@@ -1,0 +1,76 @@
+---
+title: "Why Google Sheets Is Underrated"
+module: "google-workspace"
+type: "field-note"
+order: 2
+date: "2025-02-20"
+duration: "6 minutes"
+level: "All Levels"
+summary: "Google Sheets is not just a spreadsheet. It is a free, cloud-native database with a built-in scripting engine."
+tags:
+  - google-sheets
+  - field-note
+  - essay
+  - tools
+author: "J.C. Nevarez"
+draft: false
+---
+
+# Why Google Sheets Is Underrated
+
+Every time a teacher asks me what database to use for their curriculum system, I give the same answer: Google Sheets.
+
+They are usually disappointed. They want something that sounds more sophisticated — Airtable, Notion, a "real" database. But for teacher-scale data (hundreds of rows, not millions), Google Sheets is the right tool, and it is not even close.
+
+## The Case for Sheets
+
+**It is free.** Not freemium. Not "free for 30 days." Free, forever, with a Google account every teacher already has.
+
+**It is everywhere.** Every school device has access. Every teacher knows the basics. There is zero onboarding friction.
+
+**It has a scripting engine.** Google Apps Script is built directly into Sheets. No API keys. No external services. No deployment pipeline. Write code, run it, done.
+
+**It is collaborative.** Multiple teachers can edit the same sheet simultaneously. Permissions are granular. Version history is automatic.
+
+**It is a data source.** Apps Script can read a Sheet and create Google Docs, Forms, calendar events, emails, and Drive folders. The Sheet becomes a control panel, not just a spreadsheet.
+
+## What People Get Wrong
+
+The mistake is thinking of Sheets as a spreadsheet application. Stop comparing it to Excel. Start comparing it to a lightweight database with a visual interface and a built-in automation layer.
+
+When you design a Sheet with:
+- Row 1 as headers (always)
+- One row per record
+- Consistent data types per column
+- Data validation on key fields
+- Named ranges for script access
+
+You have built a database that a script can read, process, and act on. That is infrastructure.
+
+## The Alternatives (and Why They Are Wrong for Teachers)
+
+| Tool | Problem for Teachers |
+|------|---------------------|
+| Airtable | Free tier is limited. Paid plans are expensive. School IT may not approve it. |
+| Notion | Great for notes, not great as a data source for automation. |
+| SQL databases | Requires hosting, deployment, and maintenance teachers should not manage. |
+| Excel | No scripting engine. Not cloud-native. File-based, not collaborative. |
+
+Google Sheets has one critical advantage over all of these: it is already approved, already available, and already understood. The best tool is the one your system will actually use.
+
+## The Pattern
+
+The pattern that makes Sheets powerful is simple:
+
+1. Design the Sheet as a data source (not a visual layout)
+2. Write Apps Script that reads the data
+3. The script creates, updates, or communicates based on that data
+4. The Sheet becomes the single source of truth
+
+Every automation in this course follows this pattern. The question bank that generates quizzes. The unit list that generates folders. The contact list that sends emails. It all starts with a well-designed Sheet.
+
+## The Honest Limitation
+
+Google Sheets breaks down at scale. If you have 100,000 rows or need real-time queries or complex relational data, use a real database. But teachers do not have 100,000 rows. They have 50 units, 200 quiz questions, and 150 student contacts.
+
+At that scale, Sheets is not a compromise. It is the right tool.

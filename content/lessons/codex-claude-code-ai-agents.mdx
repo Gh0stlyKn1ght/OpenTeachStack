@@ -1,0 +1,248 @@
+---
+title: "AI Coding Agents for Teachers"
+module: "future-ai-coding-agents"
+type: "lecture"
+order: 16
+week: 11
+duration: "50 minutes"
+level: "Advanced"
+summary: "AI coding agents like Codex and Claude Code can build tools for your classroom — if you know how to direct them safely and review what they produce."
+outcomes:
+  - Explain what AI coding agents are and how they differ from chatbots.
+  - Identify practical use cases for AI coding agents in education.
+  - Recognize what AI coding agents cannot do reliably.
+  - Write safe, specific instructions for code generation.
+  - Review generated code and diffs for correctness.
+  - Know when to stop and ask for help.
+tags:
+  - ai
+  - coding
+  - automation
+  - apps-script
+  - advanced
+draft: true
+---
+
+# AI Coding Agents for Teachers
+
+You have already used AI to draft lesson plans and generate quiz questions. AI coding agents are different. They do not just write text — they write code, create files, build tools, and modify existing projects.
+
+Tools like OpenAI Codex and Claude Code can take a natural-language instruction and produce working software. For teachers, this means you can potentially build things you could never build alone: a custom grading calculator, an Apps Script automation, a curriculum website, a data dashboard.
+
+But "potentially" is doing a lot of work in that sentence.
+
+## What AI Coding Agents Are
+
+A chatbot generates text in a conversation window. An AI coding agent goes further:
+
+- It reads your existing files and code
+- It writes new code or modifies existing code
+- It can create, rename, and organize files
+- It can run commands and check whether the code works
+- It operates more like a junior developer than a text generator
+
+**Key examples:**
+
+| Tool | What It Does |
+|------|-------------|
+| **Claude Code** | Reads your project, writes and edits code, runs tests, works in your terminal |
+| **OpenAI Codex** | Cloud-based agent that reads repositories, writes code, creates pull requests |
+| **GitHub Copilot** | Autocompletes code as you type in an editor |
+| **Cursor / Windsurf** | AI-powered code editors that generate and modify code in context |
+
+These tools range from autocomplete helpers (Copilot) to autonomous agents that can carry out multi-step tasks (Codex, Claude Code). This lesson focuses on the agent category — tools that can do complex work independently.
+
+## What They Can Help Teachers With
+
+Practical use cases where AI coding agents are genuinely useful for educators:
+
+### Google Apps Script Automation
+
+You learned about Apps Script earlier in this course. AI coding agents can write Apps Script for you:
+
+- Generate documents from spreadsheet rows
+- Create quiz question banks from a template
+- Send automated email reminders
+- Build custom menus in Google Sheets
+- Organize Google Drive folders programmatically
+
+### Simple Web Tools
+
+- A course syllabus page or curriculum hub
+- A class resource directory
+- A student-facing FAQ page
+- A simple interactive tool (flashcard app, timer, checklist)
+
+### Data Processing
+
+- Scripts to clean and format roster data
+- Grade calculation tools
+- Attendance tracking automations
+- Report generators
+
+<TeacherNote>
+The sweet spot for teacher use of AI coding agents is small, self-contained tasks with clear inputs and outputs. "Write an Apps Script that creates a Google Doc for each row in this spreadsheet" is a good task. "Build me a complete learning management system" is not.
+</TeacherNote>
+
+## What They Cannot Do Reliably
+
+Be honest about the limits. AI coding agents fail in predictable ways:
+
+- **Complex multi-system integrations** — Connecting your LMS to your grading system to your email to your calendar is too many moving parts. The agent will produce code that looks right but breaks in subtle ways.
+- **Security-sensitive operations** — Never let an AI agent handle student data, authentication systems, or anything with access to sensitive information without expert review.
+- **Large-scale projects** — Agents work best on tasks that take a human developer 30 minutes to 2 hours. Anything bigger requires an architecture a non-developer cannot verify.
+- **Pixel-perfect design** — AI can generate functional layouts but struggles with precise visual design.
+- **Understanding your specific context** — The agent does not know your school's systems, your district's policies, or your students' needs. You must provide that context.
+- **Guaranteed correctness** — Generated code can contain bugs, logic errors, and edge cases the agent did not consider. It can also silently do the wrong thing while appearing to work.
+
+<RealityCheck>
+AI coding agents are powerful but not magic. They produce code that works most of the time, for the cases you tested, under the conditions you described. "Most of the time" is not good enough for anything involving student grades, personal data, or high-stakes decisions. Always test thoroughly and have a fallback plan.
+</RealityCheck>
+
+## Safety Rules
+
+These are not suggestions. These are rules.
+
+### Rule 1: Never Give Access to Sensitive Data
+
+Do not point an AI coding agent at spreadsheets containing student names, grades, IDs, emails, or any personally identifiable information during the development process. Use dummy data. Test with fake names and fake grades. Only connect real data after you have verified the code works correctly.
+
+### Rule 2: Understand What You Are Authorizing
+
+AI coding agents ask for permissions — access to your file system, your terminal, your Google account. Read what you are granting. If a tool asks for permissions that seem excessive for the task, stop and reconsider.
+
+### Rule 3: Review Every Change
+
+When an agent modifies your code, it produces a "diff" — a record of what changed. Read it. Every line. If you do not understand a change, ask the agent to explain it. If the explanation does not make sense, do not accept the change.
+
+### Rule 4: Work on Copies
+
+Never let an agent modify your only copy of anything. Work on duplicates. Use version control (Git). Keep backups. If something goes wrong, you need to be able to revert.
+
+### Rule 5: Test Before You Trust
+
+After the agent produces code:
+1. Run it with test data first
+2. Check the output against what you expected
+3. Test edge cases (empty inputs, very long inputs, special characters)
+4. Only then use it with real data
+
+### Rule 6: Know When to Stop
+
+If you have been going back and forth with an agent for more than an hour on the same task and it is still not working, stop. The task may be too complex for the agent, too complex for you to verify, or both. Ask a colleague, post in a forum, or hire a developer for the specific task.
+
+## Giving Good Instructions to Agents
+
+The same prompting principles from earlier in this course apply, but with code-specific additions:
+
+**Describe the input and output explicitly:**
+
+```
+Write a Google Apps Script function that:
+- Reads data from a Google Sheet named "Roster" 
+- The sheet has columns: Student Name (A), Email (B), Grade (C)
+- For each row, creates a Google Doc from a template
+- The template has placeholders: {{STUDENT_NAME}} and {{GRADE}}
+- Saves each generated doc in a folder called "Report Cards"
+- Logs the name of each created document
+```
+
+**Specify what you do NOT want:**
+
+```
+Do not delete any existing files. 
+Do not modify the original spreadsheet.
+Do not send any emails.
+Do not access any sheet other than "Roster."
+```
+
+**Ask for explanation:**
+
+```
+After writing the code, explain what each function does 
+in plain English. I am not a developer — I need to understand 
+what this code is doing before I run it.
+```
+
+**Start small:**
+
+Do not ask for a complete system in one prompt. Start with the smallest useful piece:
+
+```
+First, just write a function that reads the first row of 
+the spreadsheet and logs the student name and grade to the 
+console. I want to verify this works before we add more.
+```
+
+Then build up incrementally. Each step should produce something you can test.
+
+## Reading Diffs
+
+When an AI coding agent modifies code, it shows you a diff. Learning to read diffs is essential.
+
+```diff
+- function gradeCalc(score) {
+-   return score * 100;
++ function gradeCalc(score, total) {
++   if (total === 0) return 0;
++   return (score / total) * 100;
+  }
+```
+
+- Lines starting with `-` were removed
+- Lines starting with `+` were added
+- Lines with no prefix were unchanged
+
+In this example, the agent changed the function to accept two parameters instead of one and added a check for division by zero. Both changes make sense. You should verify by asking: "Does this match what I wanted? Is the logic correct?"
+
+If a diff contains changes you did not ask for, that is a red flag. Ask why the agent made those changes before accepting them.
+
+## Protecting Your Authored Content
+
+AI coding agents can read and modify your files. If you are using one to work on a project that contains your original curriculum, lesson plans, or creative work, be aware:
+
+- **Do not let the agent rewrite your content.** If you ask an agent to update a website template, make sure it is not also rewriting your lesson text.
+- **Use version control.** Git lets you see exactly what changed and revert anything you do not want.
+- **Separate content from code.** Keep your written curriculum in content files separate from the code that displays it. This way, an agent working on the code is less likely to touch your writing.
+- **Back up before starting.** Copy your project folder before letting an agent make changes.
+
+<ReflectionPrompt>
+Think about one repetitive task in your teaching workflow that involves technology — generating documents, formatting data, sending communications. Could an AI coding agent automate it? What information would you need to provide? What could go wrong?
+</ReflectionPrompt>
+
+## A Realistic Workflow
+
+Here is how a teacher might use an AI coding agent for a real task:
+
+1. **Identify the task.** "I need a script that creates individual progress report docs from my gradebook spreadsheet."
+2. **Prepare test data.** Create a copy of your spreadsheet with 5 rows of fake student data.
+3. **Write a clear instruction.** Include input format, output format, and constraints.
+4. **Start small.** Ask the agent to read and log the data first. Verify it works.
+5. **Build incrementally.** Add document creation. Then template filling. Then folder organization. Test each step.
+6. **Review every diff.** Read what changed. Ask for explanations when needed.
+7. **Test with edge cases.** What happens with an empty row? A missing grade? A very long name?
+8. **Deploy carefully.** Run with real data only after thorough testing. Monitor the first run.
+
+## Recommended Resources to Curate
+
+- Official documentation for the AI coding tool you use (Claude Code docs, Codex docs, Copilot docs)
+- Google Apps Script official documentation for verifying generated code
+- Git basics tutorials for version control (essential before using any coding agent)
+- Your district's data privacy policy for understanding what data can be processed by AI tools
+- Stack Overflow and Google Apps Script community forums for troubleshooting
+
+<BuildTask>
+Complete a small AI-assisted coding task:
+
+1. Identify one small automation you need (e.g., generating docs from a spreadsheet, formatting data, creating a custom menu in Sheets)
+2. Create a test spreadsheet with 5 rows of fake data
+3. Write a detailed instruction following the prompting structure in this lesson
+4. Use an AI coding agent to generate the code
+5. Review the generated code — identify at least one line you do not fully understand and ask the agent to explain it
+6. Test the code with your fake data
+7. Document what worked, what did not, and what you would do differently
+
+Do NOT use real student data for this exercise.
+
+Estimated time: 45 minutes
+</BuildTask>

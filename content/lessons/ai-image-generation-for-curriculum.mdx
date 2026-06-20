@@ -1,0 +1,203 @@
+---
+title: "AI Image Generation for Curriculum"
+module: "future-ai-media"
+type: "lecture"
+order: 12
+week: 8
+duration: "45 minutes"
+level: "Intermediate"
+summary: "AI-generated images can enhance curriculum materials — but only when used deliberately, ethically, and with clear awareness of their limitations."
+outcomes:
+  - Identify when AI-generated images are appropriate for curriculum materials.
+  - Write effective image generation prompts with consistent style.
+  - Maintain visual consistency across a course.
+  - Evaluate AI images for accuracy and ethical concerns.
+  - Recognize when AI images should not be used.
+tags:
+  - ai
+  - images
+  - visual-design
+  - curriculum
+  - ethics
+draft: true
+---
+
+# AI Image Generation for Curriculum
+
+Teachers need visuals. Slides need images. Worksheets need diagrams. Course sites need graphics. And most teachers resort to the same three options: clip art, Google Image Search (ignoring copyright), or spending an hour in Canva.
+
+AI image generation offers a fourth option. Tools like DALL-E, Midjourney, Adobe Firefly, and others can generate custom images from text descriptions. For curriculum materials, this can be genuinely useful — but only if you understand what these tools do well, what they do poorly, and where the ethical lines are.
+
+## When AI Images Help
+
+AI-generated images are most useful for:
+
+- **Conceptual illustrations** — Abstract ideas that are hard to photograph (e.g., "the internet as a network of connected nodes")
+- **Course branding** — Consistent visual identity across slides, handouts, and a course site
+- **Decorative graphics** — Headers, dividers, background images for slides
+- **Scenario illustrations** — Images depicting situations for discussion prompts or case studies
+- **Posters and infographic backgrounds** — Visual elements that support text-based content
+- **Placeholder visuals** — When you need an image to fill a layout while you finalize content
+
+## When NOT to Use AI Images
+
+This is the more important list:
+
+- **Factual diagrams** — AI cannot reliably generate accurate diagrams of cells, circuits, anatomical structures, chemical bonds, or geographic maps. These require verified, source-accurate visuals. Use textbook diagrams, official sources, or create them manually.
+- **Text in images** — AI image generators consistently misspell words, add random characters, and produce unreadable text. Never rely on AI to render text inside an image.
+- **Photographs of real people or events** — AI-generated "photos" of people can perpetuate stereotypes, create unrealistic representations, and raise ethical questions. Historical images should be sourced from archives, not generated.
+- **Charts and graphs** — Use a spreadsheet or data visualization tool. AI cannot generate accurate data representations.
+- **Images requiring precision** — Anything where accuracy matters (anatomical diagrams, wiring schematics, mathematical figures) should not be AI-generated.
+
+<RealityCheck>
+AI image generators do not understand the content of what they create. They generate visual patterns that look right but may be wrong. A diagram of a plant cell might have the chloroplasts in the wrong place. A map might have rivers running the wrong direction. Never use AI-generated images where accuracy matters without verifying against a reliable source.
+</RealityCheck>
+
+## Prompt Structure for Images
+
+Image prompts work differently from text prompts. You describe what you want to see, not what you want the AI to write.
+
+**The structure:**
+
+```
+[Subject] + [Style] + [Composition] + [Color/Mood] + [Technical details]
+```
+
+### Example 1: Course Header Image
+
+```
+A flat-design illustration of a teacher's desk with a laptop, 
+notebook, coffee cup, and a small plant. Clean lines, minimal 
+detail, blue and white color palette. No text. Wide aspect ratio 
+suitable for a website header.
+```
+
+### Example 2: Conceptual Illustration
+
+```
+An isometric illustration showing the concept of DNS resolution. 
+A small computer on the left sends a request through three 
+intermediate servers to reach a website server on the right. 
+Simple geometric shapes, soft pastel colors, no text labels, 
+clean white background. Flat design style.
+```
+
+### Example 3: Discussion Prompt Image
+
+```
+A watercolor-style illustration of a diverse group of students 
+sitting in a circle having a discussion. Warm, inviting colors. 
+No specific faces or identifiable features. Soft, abstract style. 
+Square format.
+```
+
+### Example 4: Slide Background
+
+```
+An abstract geometric background with subtle circuit-board-like 
+patterns. Dark navy blue with thin light blue lines. Very low 
+contrast so text can be placed on top. No text, no focal point. 
+16:9 aspect ratio for presentation slides.
+```
+
+## Creating Consistent Visual Style
+
+A course with random visual styles looks unprofessional. Slides with a watercolor image next to a photorealistic image next to a cartoon look chaotic.
+
+**How to maintain consistency:**
+
+1. **Choose one style and stick with it.** Flat design, isometric, watercolor, line art — pick one for the entire course.
+2. **Define a color palette.** Specify the same 2-3 colors in every image prompt.
+3. **Use the same technical parameters.** Same aspect ratio, same background style, same level of detail.
+4. **Create a style reference prompt.** Write one master prompt that defines your visual style, and append it to every image request.
+
+**Style reference prompt example:**
+
+```
+Style guide for all images in this course:
+- Flat design illustration style
+- Color palette: navy blue (#1a365d), sky blue (#63b3ed), 
+  white (#ffffff), light gray (#e2e8f0)
+- Clean lines, minimal detail, no gradients
+- White or light gray backgrounds
+- No text in images
+- No photorealistic elements
+- Geometric, modern aesthetic
+```
+
+Paste this at the end of every image prompt to maintain consistency.
+
+<TeacherNote>
+Save your style reference prompt in your Prompt Library document. When you need a new image for any material in the course, paste the style reference after your specific request. This is faster than trying to remember your style choices each time, and it produces more consistent results.
+</TeacherNote>
+
+## Editing and Iterating
+
+The first image you generate is rarely the final one. Expect to iterate.
+
+**Iteration strategies:**
+
+- **Be more specific.** If the composition is wrong, add spatial details: "on the left side," "in the foreground," "centered."
+- **Subtract elements.** If the image is too busy, specify what to exclude: "no people," "no text," "simple background."
+- **Adjust style intensity.** "More minimal" or "more detailed" can shift the output significantly.
+- **Generate variations.** Most tools let you generate 3-4 options from the same prompt. Pick the best starting point and refine.
+- **Post-process.** Use basic image editing (crop, resize, adjust brightness) to finalize. You do not need Photoshop — Canva, Google Slides, or even Preview/Photos will handle basic edits.
+
+**When to stop iterating:**
+
+If you have spent more than 15 minutes trying to get one image right, consider whether you actually need a custom image or whether a simpler alternative (solid color background, icon, or no image) would work better.
+
+## Copyright and Ethics
+
+AI-generated images raise real questions. Be aware of them.
+
+**Copyright status:**
+
+- In the United States, the Copyright Office has ruled that AI-generated images (with no human authorship beyond the prompt) are generally not copyrightable. This is evolving law.
+- Images generated by AI tools are typically governed by the tool's terms of service. Some tools grant you commercial rights; others do not. Read the terms.
+- If you use AI images in published curriculum, be transparent about it. State that images were AI-generated.
+
+**Ethical considerations:**
+
+- **Representation.** AI models are trained on existing images, which contain biases. Generated images of people may reinforce stereotypes about race, gender, age, and ability. Review every image of a person critically.
+- **Deepfakes and deception.** Never generate images intended to look like real photographs of real events. Never generate images of real people without their consent.
+- **Student work.** If students are submitting visual art as an assignment, clarify whether AI-generated images are acceptable. This is a policy decision, not a technology decision.
+- **Transparency.** When AI-generated images appear in your curriculum materials, consider noting it. Model the transparency you want from students.
+
+<ReflectionPrompt>
+Look at the visual materials in a course you currently teach. How many images did you find through Google Image Search without checking the license? How many are clip art that look dated? How many add genuine instructional value versus decoration? Be honest.
+</ReflectionPrompt>
+
+## A Practical Workflow
+
+Here is a realistic workflow for adding AI images to curriculum materials:
+
+1. **Identify the need.** Do not generate images for the sake of it. Ask: "Does this slide or page actually need an image? What purpose will it serve?"
+2. **Write the prompt.** Use the structure: subject, style, composition, color, technical details. Append your style reference.
+3. **Generate and select.** Create 3-4 options. Pick the best one.
+4. **Verify accuracy.** If the image depicts anything factual (a process, a structure, a concept), check it against a reliable source.
+5. **Edit if needed.** Crop, resize, adjust.
+6. **Place and test.** Put it in your material. View it as a student would. Does it help or distract?
+
+## Recommended Resources to Curate
+
+- Terms of service for the AI image tool you use (DALL-E, Midjourney, Adobe Firefly, etc.)
+- U.S. Copyright Office guidance on AI-generated works
+- Your district's policy on AI-generated content in educational materials
+- Creative Commons search for finding openly-licensed photographs and illustrations as alternatives
+- Your school's image consent policies for any images depicting students
+
+<BuildTask>
+Create a visual style guide for one of your courses:
+
+1. Choose a visual style (flat design, line art, watercolor, isometric, etc.)
+2. Define a 3-color palette with hex codes
+3. Write a style reference prompt you can reuse
+4. Generate 3 images using the style reference:
+   - A course header or banner image
+   - A conceptual illustration for a key topic
+   - A slide background
+5. Place all three in a test slide deck and evaluate visual consistency
+
+Estimated time: 30 minutes
+</BuildTask>

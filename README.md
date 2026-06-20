@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Open TeachStack
 
-## Getting Started
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue?style=flat-square)](LICENSE)
+[![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square)](CONTENT_LICENSE.md)
+[![Built with Next.js 16](https://img.shields.io/badge/Built%20with-Next.js%2016-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript 5.x](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
+[![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
+[![OTS-101: 10 Modules](https://img.shields.io/badge/OTS--101-10%20Modules-0969DA?style=flat-square)](#ots-101--open-teachstack-foundations)
 
-First, run the development server:
+**An open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows.**
+
+Open TeachStack is not one giant course. It is a pathway. The first course is:
+
+## OTS-101 — Open TeachStack Foundations
+
+**Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators**
+
+OTS-101 is a 10-module foundations course for teachers who want practical control over curriculum design without being forced into code, domains, GitHub, or publishing workflows on day one.
+
+## OTS-101 Scope
+
+| # | Module |
+|---|--------|
+| 01 | Teacher Builder Mindset |
+| 02 | Prompting for Teachers |
+| 03 | AI Literacy and Verification |
+| 04 | Standards to Learning Targets |
+| 05 | Course and Unit Architecture |
+| 06 | Resource Discovery and Open Resources |
+| 07 | Google Workspace Planning Systems |
+| 08 | Assessment, Rubrics, and Feedback |
+| 09 | Delivery Planning |
+| 10 | Mini-Unit Capstone |
+
+The OTS-101 capstone is a **mini-unit system**, not a full published course site.
+
+## Intentionally Out of Scope for OTS-101
+
+These topics belong in later pathway courses:
+
+- Apps Script implementation
+- GitHub workflows
+- Codex, Claude Code, and AI coding agents
+- Next.js and Docusaurus
+- DNS, domains, hosting, and live course-site publishing
+- AI image generation deep dives
+- OBS and full video production
+- full automation capstone
+
+## Pathway Model
+
+| Code | Course | Level | Status |
+|---|---|---:|---|
+| OTS-101 | Open TeachStack Foundations | Beginner | Build first |
+| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Future |
+| OTS-220 | Apps Script for Teacher Automation | Intermediate | Draft |
+| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Future |
+| OTS-260 | AI Media & Lesson Delivery | Intermediate | Future |
+| OTS-301 | Teacher Course Sites | Advanced | Future |
+| OTS-320 | AI Coding Agents for Educators | Advanced | Future |
+| OTS-399 | Capstone Studio | Advanced | Future |
+
+## Content Safety Rules
+
+- Do not overwrite authored lesson bodies with templates.
+- Do not regenerate lessons just to make them look uniform.
+- Do not delete advanced content; mark it future, draft, optional, or move it into the right pathway category.
+- Keep OTS-101 beginner-friendly and shippable.
+- Add safety checks to major artifacts: privacy, copyright/licensing, AI verification, standards alignment, accessibility, and revision logs.
+- Do not add fake resource citations or broken download links.
+
+## Quick Start
 
 ```bash
+git clone https://github.com/Gh0stlyKn1ght/OpenTeachStack.git
+cd OpenTeachStack
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4000](http://localhost:4000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Content:** MDX with next-mdx-remote
+- **Diagrams:** Mermaid
+- **Fonts:** Source Serif 4, Source Sans 3, JetBrains Mono
 
-## Learn More
+## Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+The next release priority is the OTS-101 template system:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Teacher Workflow Audit
+- Standards Unpacking Sheet
+- Mini-Unit Map
+- Lesson Template
+- Prompt Library
+- Resource Evaluation Sheet
+- AI Verification Checklist
+- Assessment/Rubric Template
+- Delivery Plan
+- Reflection and Revision Log
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+See [ROADMAP.md](ROADMAP.md) for phases.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Code:** [MIT License](LICENSE)
+- **Content:** [CC BY-NC-SA 4.0](CONTENT_LICENSE.md)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**JC Nevarez** — [nevarez.dev](https://nevarez.dev) — [jc@nevarez.dev](mailto:jc@nevarez.dev)
