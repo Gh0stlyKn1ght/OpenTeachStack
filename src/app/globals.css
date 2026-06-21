@@ -119,6 +119,225 @@ body::after {
   opacity: 0.08;
 }
 
+/* ── Course Book Layout ──────────────────────────────────────────────── */
+.book-shell {
+  display: grid;
+  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr) minmax(12rem, 17rem);
+  gap: 2rem;
+  width: min(100% - 2rem, 96rem);
+  margin: 0 auto;
+  padding: 2rem 0 5rem;
+}
+
+.book-sidebar,
+.book-notes {
+  min-width: 0;
+}
+
+.book-sidebar-mobile {
+  display: none;
+}
+
+.book-sidebar-inner,
+.book-notes-inner {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.book-sidebar-inner {
+  border-right: 1px solid var(--color-border);
+  padding-right: 1rem;
+}
+
+.book-notes-inner {
+  border-left: 1px solid var(--color-border);
+  padding-left: 1rem;
+}
+
+.book-canvas {
+  min-width: 0;
+  padding: 0 0.25rem;
+}
+
+.book-canvas > section {
+  margin-top: 3rem;
+}
+
+.book-canvas p,
+.book-canvas li {
+  max-width: 48rem;
+}
+
+.book-chapter-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+
+.book-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.book-callout {
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface-alt) 52%, transparent);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.book-kicker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.book-action,
+.book-action-secondary {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.book-action {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.book-action:hover {
+  color: var(--color-background);
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.book-action-secondary {
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+}
+
+.book-action-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.method-chain {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border: 1px solid var(--color-border);
+}
+
+.method-chain span {
+  border-right: 1px solid var(--color-border);
+  padding: 0.85rem 0.7rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
+.method-chain span:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 74rem) {
+  .book-shell {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100% - 1.5rem, 62rem);
+  }
+
+  .book-sidebar-inner {
+    display: none;
+  }
+
+  .book-sidebar-mobile {
+    display: block;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    padding: 1rem;
+  }
+
+  .book-sidebar-mobile summary {
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .book-sidebar-inner,
+  .book-notes-inner {
+    position: static;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  }
+
+  .book-sidebar {
+    order: -2;
+  }
+
+  .book-notes {
+    order: -1;
+  }
+
+  .book-chapter-header,
+  .book-spread {
+    grid-template-columns: 1fr;
+  }
+
+  .book-chapter-header {
+    display: block;
+  }
+
+  .book-chapter-header > div:last-child {
+    margin-top: 1rem;
+  }
+
+  .method-chain {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .method-chain span {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media print {
+  .book-sidebar,
+  .book-notes,
+  header,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  .book-shell {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  .book-canvas {
+    padding: 0;
+  }
+}
+
 /* ── Headings ─────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);

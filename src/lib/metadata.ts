@@ -373,7 +373,8 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Start", href: "/start" },
-  { label: "Courses", href: "/courses" },
+  { label: "Book", href: "/book" },
+  { label: "Skills", href: "/skills" },
   { label: "Pathway", href: "/pathway" },
   { label: "Library", href: "/library" },
   { label: "About", href: "/about" },

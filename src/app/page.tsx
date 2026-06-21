@@ -1,171 +1,195 @@
 import Link from "next/link";
-import HeroSection from "@/components/HeroSection";
-import ProductCarousel from "@/components/ProductCarousel";
-import OneDayWorkflow from "@/components/OneDayWorkflow";
-import StatsBar from "@/components/StatsBar";
-import PathwayCard from "@/components/PathwayCard";
+import EvidencePanel from "@/components/book/EvidencePanel";
+import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
 import GitHubIcon from "@/components/GitHubIcon";
+import { METHOD_STEPS } from "@/lib/book";
 import { PATHWAY_COURSES, REPOSITORY_URL } from "@/lib/metadata";
 
-const keyLinks = [
-  {
-    href: "/start",
-    title: "Start Here",
-    desc: "A plain-language entry point for teachers who want the workflow before the technical stack.",
-    badge: "Day 1",
-  },
-  {
-    href: "/course",
-    title: "OTS-101 Foundations",
-    desc: "The first course: prompts, standards, sources, assessment, delivery, and a mini-unit capstone.",
-    badge: "Course",
-  },
-  {
-    href: "/library",
-    title: "Library",
-    desc: "Prompts, templates, field notes, official sources, examples, safety checks, and licensing.",
-    badge: "Tools",
-  },
-  {
-    href: "/course/release",
-    title: "Release Packet",
-    desc: "The finish line for OTS-101, including checks and a sample robotics mini-unit.",
-    badge: "Ship",
-  },
-];
-
 export default function HomePage() {
-  const featuredCourses = PATHWAY_COURSES.slice(0, 4);
+  const pathwayPreview = PATHWAY_COURSES.slice(0, 6);
 
   return (
-    <>
-      <HeroSection />
-      <StatsBar />
-
-      <section className="mx-auto max-w-3xl px-6 py-16">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          The Promise
-        </p>
-        <h2 className="mb-5 font-serif text-3xl font-bold text-foreground">
-          Start with tomorrow. Build toward a system.
-        </h2>
-        <div className="prose-academic">
-          <p>
-            Teaching Teachers helps teachers turn scattered files, AI chats,
-            standards, templates, and classroom pressure into a curriculum
-            workflow they can actually control.
+    <div>
+      <section className="mx-auto grid min-h-[calc(100svh-4rem)] w-[min(100%-1.5rem,96rem)] grid-cols-1 gap-10 py-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-end">
+        <div>
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+            Teaching Teachers
           </p>
-          <p>
-            The first move is simple: gather sources, draft carefully, verify
-            the work, teach it, save it, and improve it after class.
+          <h1 className="max-w-5xl font-serif text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
+            A field guide for educators entering the tech world.
+          </h1>
+          <p className="mt-7 max-w-3xl text-lg leading-relaxed text-foreground/65">
+            Teachers are expected to use AI, websites, digital tools,
+            cybersecurity habits, and source-backed curriculum workflows
+            without being taught the system behind the work.
           </p>
-        </div>
-      </section>
 
-      <OneDayWorkflow />
-
-      <section className="content-visibility-auto mx-auto max-w-5xl px-6 py-16">
-        <div className="mb-8 max-w-2xl">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-            Pathway
-          </p>
-          <h2 className="mb-4 font-serif text-3xl font-bold text-foreground">
-            Learn the workflow first. Add the technical stack when it helps.
-          </h2>
-          <p className="text-sm leading-relaxed text-slate">
-            OTS-101 stays focused on the foundation. Later courses move into
-            Google Workspace, Apps Script, open publishing, GitHub, course
-            sites, cyber safety, and AI coding agents.
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {featuredCourses.map((course) => (
-            <PathwayCard key={course.code} course={course} />
-          ))}
-        </div>
-
-        <Link
-          href="/pathway"
-          className="mt-6 inline-flex text-sm font-semibold text-link no-underline hover:underline"
-        >
-          View the full pathway &rarr;
-        </Link>
-      </section>
-
-      <ProductCarousel />
-
-      <section className="content-visibility-auto mx-auto max-w-3xl px-6 py-16">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Explore
-        </p>
-        <h2 className="mb-8 font-serif text-3xl font-bold text-foreground">
-          Key Sections
-        </h2>
-
-        <div className="divide-y divide-border border-y border-border">
-          {keyLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex items-center justify-between gap-4 py-5 no-underline transition-colors hover:bg-surface-alt/30"
-            >
-              <div className="min-w-0">
-                <h3 className="mb-1 font-sans text-[0.95rem] font-semibold text-foreground transition-colors group-hover:text-link">
-                  {item.title}
-                </h3>
-                <p className="m-0 text-sm leading-relaxed text-foreground/50">
-                  {item.desc}
-                </p>
-              </div>
-              <span className="shrink-0 rounded-full border border-border px-3 py-1 font-mono text-xs text-foreground/35 transition-colors group-hover:border-accent/30 group-hover:text-accent">
-                {item.badge}
-              </span>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/book/ots-101" className="book-action">
+              Enter the course book
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-visibility-auto border-t border-border bg-surface-alt/20">
-        <div className="mx-auto max-w-3xl px-6 py-16">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-            Open Source
-          </p>
-          <h2 className="mb-5 font-serif text-3xl font-bold text-foreground">
-            Built in the open.
-          </h2>
-          <p className="mb-8 text-sm leading-relaxed text-slate">
-            Teaching Teachers is MIT licensed for code and CC BY-NC-SA 4.0 for
-            content. Use it, remix it for your classroom, and improve it over
-            time.
-          </p>
-
-          <div className="flex flex-wrap gap-3">
+            <Link href="/evidence" className="book-action-secondary">
+              See why it matters
+            </Link>
             <a
               href={REPOSITORY_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open GitHub repository"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground no-underline transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-sm border border-border text-foreground no-underline transition-colors hover:border-accent hover:text-accent"
             >
               <GitHubIcon className="h-5 w-5" title="" />
             </a>
-            <Link
-              href="/open-source"
-              className="inline-flex items-center rounded-md bg-foreground px-5 py-2.5 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
-            >
-              Open Source Details
+          </div>
+        </div>
+
+        <aside className="border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+            Book Index
+          </p>
+          <nav aria-label="Homepage book index">
+            <ol className="space-y-3">
+              {[
+                ["Foundations", "/book/ots-101"],
+                ["Transferable Skills", "/skills"],
+                ["Evidence Layer", "/evidence"],
+                ["Source Bank", "/library/source-bank"],
+                ["Release Packet", "/course/release"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="block border-b border-border py-2 text-lg text-foreground no-underline transition-colors hover:text-accent"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </aside>
+      </section>
+
+      <section className="border-y border-border bg-surface-alt/22">
+        <div className="mx-auto w-[min(100%-1.5rem,96rem)] py-12">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+            Signature Method
+          </p>
+          <div className="method-chain">
+            {METHOD_STEPS.map((step) => (
+              <span key={step}>{step}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-10 py-16 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+        <div>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+            The Real Problem
+          </p>
+          <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+            Teachers need systems, not another pile of tools.
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-foreground/62">
+            Teaching Teachers starts with the work teachers already do:
+            planning, prompting, checking sources, aligning standards, building
+            assessments, organizing files, publishing resources, and improving
+            curriculum after class.
+          </p>
+          <Link href="/book" className="mt-6 inline-flex text-sm font-semibold text-link no-underline hover:underline">
+            Open Book Mode
+          </Link>
+        </div>
+
+        <div>
+          <TransferableSkillsMap />
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-surface-alt/18">
+        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-10 py-16 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+          <div>
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Evidence Preview
+            </p>
+            <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+              Data belongs here, but only when it has sources.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-foreground/62">
+              The evidence layer is built for charts and rationale, but it is
+              intentionally source-first. No fake statistics. No decorative
+              graphs pretending to prove something.
+            </p>
+          </div>
+          <EvidencePanel />
+        </div>
+      </section>
+
+      <section className="mx-auto w-[min(100%-1.5rem,96rem)] py-16">
+        <div className="mb-8 max-w-3xl">
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+            Pathway Preview
+          </p>
+          <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+            From foundations to teacher-owned technical systems.
+          </h2>
+        </div>
+
+        <ol className="divide-y divide-border border-y border-border">
+          {pathwayPreview.map((course) => (
+            <li key={course.code}>
+              <Link
+                href={course.code === "OTS-101" ? "/book/ots-101" : "/pathway"}
+                className="grid gap-4 py-5 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
+              >
+                <span className="font-mono text-sm text-accent">
+                  {course.code}
+                </span>
+                <span>
+                  <strong className="block text-foreground">
+                    {course.title}
+                  </strong>
+                  <span className="mt-1 block text-sm leading-relaxed text-foreground/55">
+                    {course.purpose}
+                  </span>
+                </span>
+                <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
+                  {course.status}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="border-t border-border bg-surface-alt/20">
+        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-8 py-14 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Open Source
+            </p>
+            <h2 className="m-0 border-none font-serif text-3xl font-bold text-foreground">
+              Built in the open. Maintained like a field manual.
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
+              Teaching Teachers is MIT licensed for code and CC BY-NC-SA 4.0
+              for content. The source bank, course book, and release packet are
+              designed to improve over time.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Link href="/library" className="book-action-secondary">
+              Open Library
             </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center rounded-md border border-border px-5 py-2.5 text-sm font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
-            >
-              About the Author
+            <Link href="/open-source" className="book-action-secondary">
+              License Details
             </Link>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
