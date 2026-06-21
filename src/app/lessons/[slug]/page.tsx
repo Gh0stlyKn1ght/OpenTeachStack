@@ -13,6 +13,7 @@ import ReflectionPrompt from "@/components/ReflectionPrompt";
 import TeacherNote from "@/components/TeacherNote";
 import RealityCheck from "@/components/RealityCheck";
 import BuildTask from "@/components/BuildTask";
+import { lessonVisuals } from "@/lib/visualAssets";
 
 const mdxComponents = {
   pre: MDXPre,
@@ -60,6 +61,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
   }
 
   const { frontmatter, content } = lesson;
+  const visual = lessonVisuals[slug];
 
   // Calculate previous/next
   const allLessons = getAllContent("lessons");
@@ -93,6 +95,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
         }}
         previous={previous}
         next={next}
+        imageSrc={visual?.src}
+        imageAlt={visual?.alt}
       >
         <MDXRemote
           source={content}

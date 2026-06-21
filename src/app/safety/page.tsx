@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Safety Rules for Teachers — Open TeachStack",
+  title: "AI Safety Rules for Teachers — Teaching Teachers",
   description:
     "Non-negotiable guidelines for using AI tools in curriculum work. Covers student data, standards verification, citation accuracy, code review, and responsible AI usage.",
 };
@@ -565,3 +565,4 @@ export default function SafetyPage() {
     </div>
   );
 }
+

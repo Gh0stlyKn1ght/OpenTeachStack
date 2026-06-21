@@ -6,9 +6,9 @@ import {
 } from "@/components/OfficialSources";
 
 export const metadata: Metadata = {
-  title: "Official Sources — Open TeachStack",
+  title: "Official Sources — Teaching Teachers",
   description:
-    "Official documentation and source inventory for Open TeachStack courses, apps, and software-facing lessons.",
+    "Official documentation and source inventory for Teaching Teachers courses, apps, and software-facing lessons.",
 };
 
 export default function SourcesPage() {
@@ -23,7 +23,7 @@ export default function SourcesPage() {
         </h1>
         <p className="max-w-2xl leading-relaxed text-foreground/60">
           This is the source-of-truth list for software, platforms,
-          documentation, and technical references used across Open TeachStack.
+          documentation, and technical references used across Teaching Teachers.
           Lessons can use tutorials as supplements, but software behavior
           should be checked against official documentation first.
         </p>
@@ -71,3 +71,4 @@ export default function SourcesPage() {
     </div>
   );
 }
+

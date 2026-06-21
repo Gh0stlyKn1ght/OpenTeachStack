@@ -296,8 +296,12 @@ export const FOUNDATION_TEMPLATES: FoundationTemplate[] = [
         fields: [
           "Resource title",
           "URL or source",
+          "Source Bank status",
           "Creator/publisher",
           "License or terms",
+          "Audience",
+          "Cost/account notes",
+          "Privacy or age note",
           "Why this source is credible",
           "How it supports the target",
           "Use decision",
@@ -305,8 +309,12 @@ export const FOUNDATION_TEMPLATES: FoundationTemplate[] = [
         example: [
           "Ultrasonic sensor guide",
           "Official kit documentation",
+          "Not in Source Bank; direct link needs verification",
           "Robot kit publisher",
           "Classroom use permitted by district purchase",
+          "Students and teachers",
+          "District purchase; no separate student account",
+          "Use district-approved accounts and do not upload student data",
           "Primary documentation for the hardware students use",
           "Supports Lesson 1 sensor vocabulary",
           "Use with teacher summary",
@@ -439,6 +447,7 @@ export const FOUNDATION_TEMPLATES: FoundationTemplate[] = [
         title: "Trusted Source Bank",
         fields: [
           "Official documentation",
+          "Teaching Teachers Source Bank item",
           "State standards",
           "University or OER source",
           "Video source",
@@ -447,6 +456,7 @@ export const FOUNDATION_TEMPLATES: FoundationTemplate[] = [
         ],
         example: [
           "Robot kit documentation or manufacturer guide",
+          "Raspberry Pi Foundation Teach or Microsoft MakeCode, if it fits the lesson",
           "NJ computer science / design thinking standard link",
           "NASA robotics education page or university robotics explainer",
           "Short YouTube video placeholder to verify before class",
@@ -595,7 +605,7 @@ export function renderTemplateMarkdown(template: FoundationTemplate) {
 
   return `# ${template.title}
 
-**Open TeachStack module:** ${template.module}
+**Teaching Teachers module:** ${template.module}
 **Suggested format:** ${template.format}
 **Purpose:** ${template.purpose}
 **Skill measured:** ${template.skillMeasured}
@@ -625,3 +635,4 @@ ${exampleSections}
 - Document meaningful revisions so the template becomes part of a reusable curriculum system.
 `;
 }
+

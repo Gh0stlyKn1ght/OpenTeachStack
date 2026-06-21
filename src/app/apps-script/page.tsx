@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Apps Script Labs — Open TeachStack Pathway",
+  title: "Apps Script Labs — Teaching Teachers Pathway",
   description:
-    "Draft future Google Apps Script labs for the Open TeachStack pathway. Apps Script is not required in OTS-101 Foundations.",
+    "Draft future Google Apps Script labs for the Teaching Teachers pathway. Apps Script is not required in OTS-101 Foundations.",
 };
 
 export default function AppsScriptPage() {
@@ -213,7 +213,7 @@ export default function AppsScriptPage() {
             &mdash; Code review practices for AI-generated scripts.
           </li>
           <li>
-            <Link href="/resources">Open TeachStack Resource Library</Link>{" "}
+            <Link href="/resources">Teaching Teachers Resource Library</Link>{" "}
             &mdash; Curated tools and references for the full course.
           </li>
         </ul>
@@ -221,3 +221,4 @@ export default function AppsScriptPage() {
     </div>
   );
 }
+

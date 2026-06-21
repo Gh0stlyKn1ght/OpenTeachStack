@@ -3,9 +3,9 @@ import GitHubIcon from "@/components/GitHubIcon";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Contribute — Open TeachStack",
+  title: "Contribute — Teaching Teachers",
   description:
-    "How to contribute to Open TeachStack: types of contributions, GitHub workflow, content guidelines, and code standards.",
+    "How to contribute to Teaching Teachers: types of contributions, GitHub workflow, content guidelines, and code standards.",
 };
 
 export default function ContributePage() {
@@ -17,7 +17,7 @@ export default function ContributePage() {
           How to Contribute
         </h1>
         <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Open TeachStack is a community project. Contributions from
+          Teaching Teachers is a community project. Contributions from
           educators, developers, designers, and anyone passionate about
           open education are welcome and valued.
         </p>
@@ -104,7 +104,7 @@ export default function ContributePage() {
         {/* ── GitHub Workflow ────────────────────────────────────────── */}
         <h2>How to Submit Changes</h2>
         <p>
-          Open TeachStack follows a standard open-source contribution
+          Teaching Teachers follows a standard open-source contribution
           workflow through the public repository. GitHub basics
           belong in the future OTS-240 Open Resources & GitHub for Educators
           course.
@@ -165,7 +165,7 @@ export default function ContributePage() {
         {/* ── Content Guidelines ────────────────────────────────────── */}
         <h2>Content Guidelines</h2>
         <p>
-          Open TeachStack has a specific voice and structure. When writing
+          Teaching Teachers has a specific voice and structure. When writing
           or editing content, please follow these guidelines:
         </p>
 
@@ -312,7 +312,7 @@ export default function ContributePage() {
         {/* ── Licensing of Contributions ─────────────────────────────── */}
         <h2>Licensing of Contributions</h2>
         <p>
-          By submitting a contribution to Open TeachStack, you agree that
+          By submitting a contribution to Teaching Teachers, you agree that
           your work will be licensed under the project&rsquo;s existing
           licenses:
         </p>
@@ -367,3 +367,4 @@ export default function ContributePage() {
     </div>
   );
 }
+

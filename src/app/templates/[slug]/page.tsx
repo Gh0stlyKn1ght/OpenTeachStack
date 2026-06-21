@@ -21,11 +21,11 @@ export async function generateMetadata({
   const template = getFoundationTemplate(slug);
 
   if (!template) {
-    return { title: "Template Not Found — Open TeachStack" };
+    return { title: "Template Not Found — Teaching Teachers" };
   }
 
   return {
-    title: `${template.title} — Open TeachStack Templates`,
+    title: `${template.title} — Teaching Teachers Templates`,
     description: template.purpose,
   };
 }
@@ -183,3 +183,4 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
     </div>
   );
 }
+

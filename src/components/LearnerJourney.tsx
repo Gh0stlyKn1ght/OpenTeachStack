@@ -13,7 +13,7 @@ const steps = [
 
 export default function LearnerJourney() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-20">
+    <section className="content-visibility-auto mx-auto max-w-5xl px-6 py-20">
       <div className="mb-8 max-w-2xl">
         <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.15em] text-accent">
           Learner Journey
@@ -22,7 +22,7 @@ export default function LearnerJourney() {
           From non-tech teacher to curriculum systems builder
         </h2>
         <p className="text-sm leading-relaxed text-slate">
-          Open TeachStack moves teachers through progressive confidence levels:
+          Teaching Teachers moves teachers through progressive confidence levels:
           organize first, verify next, then automate and publish when the
           foundation is real.
         </p>
@@ -59,3 +59,4 @@ export default function LearnerJourney() {
     </section>
   );
 }
+

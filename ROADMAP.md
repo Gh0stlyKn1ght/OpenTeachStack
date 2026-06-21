@@ -2,15 +2,19 @@
 
 ## Current Status: v0.1 — Pathway Reframe
 
-Open TeachStack has been reframed from one overloaded OTS-101 course into an open-source pathway. OTS-101 is now the required foundations course.
+Teaching Teachers has been reframed from one overloaded OTS-101 course into an open-source pathway. OTS-101 is now the required foundations course.
 
 ## v0.2 — OTS-101 Foundations Complete
 
-- [ ] Finish all 10 foundations modules
-- [ ] Keep advanced content marked as future/draft pathway material
-- [ ] Complete the mini-unit capstone workflow
-- [ ] Thread safety checks into every major artifact
+- [x] Finish all 10 foundations modules
+- [x] Keep advanced content marked as future/draft pathway material
+- [x] Complete the mini-unit capstone workflow
+- [x] Thread safety checks into every major artifact
 - [x] Add peer review and self-audit guidance
+- [x] Add OTS-101 release packet
+- [x] Add sample mini-unit artifact set
+- [x] Add Source Bank as the shared verified-link system
+- [x] Thread Source Bank evidence into Module 06, Module 09, capstone, audit, release packet, and templates
 
 ## v0.3 — v1 Template System
 
@@ -31,12 +35,14 @@ All v1 templates are available as site pages and Markdown downloads. Do not add 
 
 ## v0.4 — Foundations Polish
 
-- [ ] Accessibility audit (WCAG 2.1 AA target)
-- [ ] Mobile navigation pass
 - [ ] Search functionality
 - [ ] Reading progress indicator
+- [ ] Mobile navigation pass
+- [x] Accessibility release check completed
+- [ ] Formal browser accessibility audit (WCAG 2.1 AA target)
 - [ ] PDF/export strategy for syllabus and templates
 - [ ] Social metadata for core pages
+- [x] Source Bank update workflow documentation for contributors
 
 ## v0.5 — Pathway Course Extraction
 
@@ -44,18 +50,20 @@ All v1 templates are available as site pages and Markdown downloads. Do not add 
 - [ ] OTS-220 Apps Script course outline from existing draft labs
 - [ ] OTS-240 Open Resources & GitHub outline
 - [ ] OTS-260 AI Media & Lesson Delivery outline
+- [ ] OTS-280 Cyber Safety for Educators outline
 - [ ] OTS-301 Teacher Course Sites outline
 - [ ] OTS-320 AI Coding Agents outline
 - [ ] OTS-399 Capstone Studio outline
 
 ## v1.0 — Foundations Release
 
-- [ ] OTS-101 content reviewed and finalized
+- [x] OTS-101 curriculum-manager audit completed
+- [x] OTS-101 final release readiness approved after traceability, rubric, accessibility, and maintenance checks
 - [x] All v1 templates available as site pages or downloadable files
 - [x] No broken template/download links
-- [ ] Lint and build pass
-- [ ] Content safety rules documented for contributors
-- [ ] Release announcement focused on OTS-101 Foundations
+- [x] Lint and build pass
+- [x] Content safety rules documented for contributors
+- [x] Release announcement focused on OTS-101 Foundations
 
 ## Future Ideas
 
@@ -64,3 +72,4 @@ All v1 templates are available as site pages and Markdown downloads. Do not add 
 - Community examples of mini-unit capstones
 - GitHub Discussions after the foundations course is stable
 - Certification or micro-credential pathway after advanced tracks exist
+

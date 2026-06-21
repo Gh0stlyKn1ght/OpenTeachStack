@@ -26,7 +26,7 @@ export interface AppSource {
 export const officialDocSources: CourseSourceGroup[] = [
   {
     course: "OTS-101",
-    title: "Open TeachStack Foundations",
+    title: "Teaching Teachers Foundations",
     sources: [
       {
         label: "OpenAI Prompt Engineering Guide",
@@ -151,11 +151,6 @@ export const officialDocSources: CourseSourceGroup[] = [
         url: "https://creativecommons.org/cc-licenses/",
         use: "Open licensing and attribution decisions.",
       },
-      {
-        label: "OER Commons",
-        url: "https://www.oercommons.org/",
-        use: "OER discovery; verify individual resource licenses before reuse.",
-      },
     ],
   },
   {
@@ -186,6 +181,32 @@ export const officialDocSources: CourseSourceGroup[] = [
         label: "Unsplash License Help",
         url: "https://help.unsplash.com/en/collections/1463188-unsplash-license",
         use: "Photo license and attribution questions.",
+      },
+    ],
+  },
+  {
+    course: "OTS-280",
+    title: "Cyber Safety for Educators",
+    sources: [
+      {
+        label: "FTC Phishing Guidance",
+        url: "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams",
+        use: "Recognizing phishing, protecting accounts, responding to suspicious messages, and reporting scams.",
+      },
+      {
+        label: "NIST Small Business Cybersecurity Corner",
+        url: "https://www.nist.gov/itl/smallbusinesscyber",
+        use: "Plain-language cybersecurity planning references that transfer well to teacher and small-program workflows.",
+      },
+      {
+        label: "NIST Digital Identity Guidelines",
+        url: "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        use: "Authenticator, password, MFA, and account-security reference for deeper course notes.",
+      },
+      {
+        label: "GitHub Secret Scanning Documentation",
+        url: "https://docs.github.com/en/code-security/how-tos/secure-your-secrets",
+        use: "Secret exposure and public repository safety checks for teachers using GitHub.",
       },
     ],
   },
@@ -261,7 +282,7 @@ export const officialDocSources: CourseSourceGroup[] = [
     title: "Capstone Studio",
     sources: [
       {
-        label: "Open TeachStack Pathway Sources",
+        label: "Teaching Teachers Pathway Sources",
         url: "/resources",
         use: "Use the official docs from each completed pathway course; do not rely on AI output as a source.",
       },
@@ -492,3 +513,4 @@ export const appSources: AppSource[] = [
     color: "#0f0f14",
   },
 ];
+

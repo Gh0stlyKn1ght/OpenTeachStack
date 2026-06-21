@@ -20,7 +20,7 @@ const after = [
 
 export default function BeforeAfterGrid() {
   return (
-    <section className="border-y border-border bg-surface-alt/30">
+    <section className="content-visibility-auto border-y border-border bg-surface-alt/30">
       <div className="mx-auto grid max-w-5xl gap-6 px-6 py-20 md:grid-cols-2">
         <div className="lab-card p-6" style={{ "--card-accent": "var(--color-orange)" } as CSSProperties}>
           <p className="mb-2 font-mono text-xs font-bold uppercase tracking-widest text-[var(--color-orange)]">

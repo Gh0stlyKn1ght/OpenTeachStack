@@ -3,7 +3,7 @@ import { MODULES } from "@/lib/metadata";
 
 export default function ModuleIndex() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-12">
+    <section className="content-visibility-auto mx-auto max-w-3xl px-6 py-12">
       <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
         Course Modules
       </h2>

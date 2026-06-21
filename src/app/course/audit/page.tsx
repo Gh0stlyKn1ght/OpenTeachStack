@@ -4,7 +4,7 @@ import { MODULES } from "@/lib/metadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
 export const metadata: Metadata = {
-  title: "OTS-101 Course Audit — Open TeachStack",
+  title: "OTS-101 Course Audit — Teaching Teachers",
   description:
     "Self-audit and peer-review checklist for the OTS-101 Foundations mini-unit capstone, including source use, safety checks, templates, and classroom readiness.",
 };
@@ -22,6 +22,7 @@ const auditSections = [
     title: "Sources",
     checks: [
       "Software behavior is checked against official documentation first.",
+      "Tools, course platforms, and learning resources are checked against the Source Bank or marked as direct links needing verification.",
       "Standards are linked to the official state, district, or standards-body source.",
       "Borrowed resources include title, creator or publisher, URL, license or terms, and date reviewed.",
       "AI-generated citations are verified or removed.",
@@ -155,7 +156,8 @@ export default function CourseAuditPage() {
                 post, or AI-generated answer.
               </p>
               <div className="flex flex-col gap-2 pt-2">
-                <Link href="/resources">Official Sources</Link>
+                <Link href="/library/source-bank">Source Bank</Link>
+                <Link href="/sources">Official Sources</Link>
                 <Link href="/templates">Template Library</Link>
                 <Link href="/safety">Safety Guide</Link>
               </div>
@@ -166,3 +168,4 @@ export default function CourseAuditPage() {
     </div>
   );
 }
+

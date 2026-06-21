@@ -3,9 +3,9 @@ import GitHubIcon from "@/components/GitHubIcon";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "License — Open TeachStack",
+  title: "License — Teaching Teachers",
   description:
-    "License details for Open TeachStack: MIT for code, CC BY-NC-SA 4.0 for content.",
+    "License details for Teaching Teachers: MIT for code, CC BY-NC-SA 4.0 for content.",
 };
 
 export default function LicensePage() {
@@ -17,7 +17,7 @@ export default function LicensePage() {
           License
         </h1>
         <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Open TeachStack uses a dual-license model. Code and content are
+          Teaching Teachers uses a dual-license model. Code and content are
           licensed separately to allow maximum flexibility for both
           developers and educators.
         </p>
@@ -141,7 +141,7 @@ export default function LicensePage() {
         {/* ── How to Attribute ───────────────────────────────────────── */}
         <h2>How to Attribute</h2>
         <p>
-          When using or adapting content from Open TeachStack, please
+          When using or adapting content from Teaching Teachers, please
           include an attribution similar to the following:
         </p>
 
@@ -149,11 +149,11 @@ export default function LicensePage() {
           <p>
             Based on{" "}
             <a
-              href="https://openteachstack.dev"
+              href="https://teachingteachers.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open TeachStack
+              Teaching Teachers
             </a>{" "}
             by {AUTHOR.name}, licensed under{" "}
             <a
@@ -228,7 +228,7 @@ export default function LicensePage() {
         <h3>You cannot:</h3>
         <ul>
           <li>
-            Sell Open TeachStack content or derivatives commercially (e.g.,
+            Sell Teaching Teachers content or derivatives commercially (e.g.,
             as a paid course on a marketplace).
           </li>
           <li>
@@ -252,3 +252,4 @@ export default function LicensePage() {
     </div>
   );
 }
+

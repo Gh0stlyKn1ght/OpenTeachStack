@@ -6,26 +6,28 @@ const columns = [
   {
     title: "Navigation",
     links: [
-      { label: "Course", href: "/course" },
+      { label: "Start", href: "/start" },
+      { label: "Courses", href: "/courses" },
       { label: "Pathway", href: "/pathway" },
-      { label: "Syllabus", href: "/syllabus" },
-      { label: "Field Notes", href: "/field-notes" },
+      { label: "Library", href: "/library" },
+      { label: "Examples", href: "/examples" },
       { label: "About", href: "/about" },
     ],
   },
   {
-    title: "Resources",
+    title: "Library",
     links: [
       { label: "Prompt Library", href: "/prompts" },
-      { label: "Resources", href: "/resources" },
-      { label: "Course Audit", href: "/course/audit" },
+      { label: "Templates", href: "/templates" },
       { label: "Safety Guide", href: "/safety" },
+      { label: "Official Sources", href: "/sources" },
+      { label: "Field Notes", href: "/field-notes" },
     ],
   },
   {
     title: "Open Source",
     links: [
-      { label: "Website", href: "https://openteachstack.dev" },
+      { label: "Website", href: "https://teachingteachers.dev" },
       { label: "GitHub", href: REPOSITORY_URL },
       { label: "Contribute", href: "/open-source" },
       { label: "License", href: "/license" },
@@ -80,7 +82,7 @@ export function Footer() {
         <div className="mt-10 pt-6 border-t border-border">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-foreground/40">
-              &copy; {year} Open TeachStack &middot; OTS-101
+              &copy; {year} Teaching Teachers &middot; OTS-101
             </p>
             <p className="text-xs text-foreground/40">
               Code{" "}
@@ -119,3 +121,4 @@ export function Footer() {
     </footer>
   );
 }
+

@@ -6,7 +6,7 @@ import { COURSE_TITLE } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: `Labs — ${COURSE_TITLE}`,
   description:
-    "Hands-on labs for the Open TeachStack course. Build real tools and systems for your classroom.",
+    "Hands-on labs for the Teaching Teachers course. Build real tools and systems for your classroom.",
 };
 
 export default function LabsPage() {
@@ -90,3 +90,4 @@ export default function LabsPage() {
     </div>
   );
 }
+

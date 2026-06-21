@@ -68,17 +68,17 @@ The command center serves two audiences: you (the human) and your scripts (the a
 
 Every data tab should follow these rules:
 
-1. **Row 1 is headers.** Always. No merged cells. No decorative rows above the data.
-2. **One row = one record.** Each row is a lesson, a resource, a question — one thing.
-3. **Consistent data types.** A column should contain only one type: text, number, date, or URL.
-4. **Use data validation.** Dropdowns for status fields, difficulty levels, content types.
-5. **No blank rows in the middle.** Scripts break on gaps.
+- **Row 1 is headers.** Always. No merged cells. No decorative rows above the data.
+- **One row = one record.** Each row is a lesson, a resource, a question — one thing.
+- **Consistent data types.** A column should contain only one type: text, number, date, or URL.
+- **Use data validation.** Dropdowns for status fields, difficulty levels, content types.
+- **No blank rows in the middle.** Scripts break on gaps.
 
 ### Example: Lessons Tab
 
 | Unit | Lesson | Type | Duration | Level | Status | Link |
 |------|--------|------|----------|-------|--------|------|
-| Foundations | What Open TeachStack Is | Lecture | 30 min | Beginner | Complete | [link] |
+| Foundations | What Teaching Teachers Is | Lecture | 30 min | Beginner | Complete | [link] |
 | Foundations | The Teacher as Builder | Lecture | 25 min | Beginner | Complete | [link] |
 | Digital Home | What Is a Domain? | Lecture | 45 min | Beginner | Draft | [link] |
 | Digital Home | DNS Explained | Lecture | 40 min | Beginner | Draft | [link] |
@@ -97,9 +97,9 @@ You do not need to build a complete command center before starting the course. B
 
 For Apps Script to read your data reliably, use named ranges:
 
-1. Select your data range (including headers)
-2. Click **Data** → **Named ranges**
-3. Give it a clear name: `LessonsData`, `QuestionBankData`
+- Select your data range (including headers)
+- Click **Data** → **Named ranges**
+- Give it a clear name: `LessonsData`, `QuestionBankData`
 
 Named ranges mean your scripts reference `LessonsData` instead of `Sheet1!A1:G50`. When you add rows, update the named range — the script does not change.
 
@@ -110,10 +110,11 @@ The command center pattern is the single most impactful thing in this course. It
 <BuildTask>
 Create a new Google Sheet called "Course Command Center."
 
-1. Create a "Lessons" tab with columns: Unit, Lesson, Type, Duration, Level, Status, Link
-2. Add 5 rows of data from a course you teach
-3. Add data validation for the Status column: Draft, In Progress, Complete
-4. Add data validation for the Type column: Lecture, Lab, Assessment, Activity
+- Create a "Lessons" tab with columns: Unit, Lesson, Type, Duration, Level, Status, Link
+- Add 5 rows of data from a course you teach
+- Add data validation for the Status column: Draft, In Progress, Complete
+- Add data validation for the Type column: Lecture, Lab, Assessment, Activity
 
 Estimated time: 20 minutes
 </BuildTask>
+

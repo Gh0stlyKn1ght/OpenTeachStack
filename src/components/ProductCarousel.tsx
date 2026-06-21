@@ -1,15 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import GitHubIcon from "./GitHubIcon";
-import { appSources } from "@/lib/officialSources";
+import { appCarouselSources } from "@/lib/appCarouselSources";
+import type { CSSProperties } from "react";
 
-type Product = (typeof appSources)[number];
+type Product = (typeof appCarouselSources)[number];
 
-const row1 = appSources.slice(0, 10);
-const row2 = appSources.slice(10, 20);
-const cardStep = 208;
-
+const row1 = appCarouselSources.slice(0, 10);
+const row2 = appCarouselSources.slice(10, 20);
 function ProductCard({ product }: { product: Product }) {
   return (
     <a
@@ -94,34 +90,23 @@ function InfiniteRow({
     <div className="overflow-hidden relative">
       <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-      <motion.div
-        className="flex"
-        animate={{
-          x:
-            direction === "left"
-              ? [0, -(items.length * cardStep)]
-              : [-(items.length * cardStep), 0],
-        }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: speed,
-            ease: "linear",
-          },
-        }}
+      <div
+        className={`product-marquee flex ${
+          direction === "right" ? "product-marquee-reverse" : ""
+        }`}
+        style={{ "--marquee-duration": `${speed}s` } as CSSProperties}
       >
         {doubled.map((product, i) => (
           <ProductCard key={`${product.name}-${i}`} product={product} />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
 
 export default function ProductCarousel() {
   return (
-    <section className="py-20 overflow-hidden">
+    <section className="content-visibility-auto py-20 overflow-hidden">
       <div className="mx-auto max-w-3xl px-6 mb-12 text-center">
         <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
           Apps Teachers Need to Understand
@@ -134,7 +119,7 @@ export default function ProductCarousel() {
       </div>
 
       <div className="md:hidden">
-        <ProductGrid items={appSources} />
+        <ProductGrid items={appCarouselSources} />
       </div>
 
       <div className="hidden space-y-6 md:block">

@@ -14,10 +14,10 @@ export function AcademicHeader() {
           className="group no-underline"
         >
           <span className="block font-serif text-lg font-bold tracking-normal text-foreground transition-colors group-hover:text-accent">
-            Open TeachStack
+            Teaching Teachers
           </span>
           <span className="hidden text-[0.68rem] font-mono uppercase tracking-widest text-foreground/40 sm:block">
-            Open-source systems for modern teaching.
+            Willing to learn for the future.
           </span>
         </Link>
 
@@ -43,8 +43,8 @@ export function AcademicHeader() {
             href={REPOSITORY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open TeachStack on GitHub"
-            title="Open TeachStack on GitHub"
+            aria-label="Teaching Teachers on GitHub"
+            title="Teaching Teachers on GitHub"
             className="hidden h-9 w-9 items-center justify-center rounded-sm border border-border text-foreground/65 no-underline transition-colors hover:border-accent hover:text-foreground sm:inline-flex"
           >
             <GitHubIcon className="h-4 w-4" title="" />
@@ -56,3 +56,4 @@ export function AcademicHeader() {
     </header>
   );
 }
+

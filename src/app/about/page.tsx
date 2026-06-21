@@ -4,9 +4,9 @@ import Link from "next/link";
 import { AUTHOR, LICENSE } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "About JC Nevarez — Open TeachStack",
+  title: "About JC Nevarez — Teaching Teachers",
   description:
-    "About JC Nevarez, the educator and builder behind Open TeachStack.",
+    "About JC Nevarez, the educator and builder behind Teaching Teachers.",
 };
 
 export default function AboutPage() {
@@ -43,25 +43,37 @@ export default function AboutPage() {
       <div className="prose-academic mx-auto max-w-3xl">
         <h2>About the Author</h2>
         <p>
+          I built <strong>Teaching Teachers</strong> because I needed it myself.
+        </p>
+        <p>
           My name is <strong>JC Nevarez</strong>, and I am a computer science,
           robotics, engineering, and cybersecurity educator based in New Jersey.
+          I was building robotics, AI, cybersecurity, engineering, and
+          technology courses while also figuring out the tools behind the work:
+          Google Workspace, prompts, standards, resources, websites,
+          automation, and AI.
         </p>
         <p>
-          I did not come into teaching through a traditional straight-line
-          path. My background includes cybersecurity, technology, mechanics,
+          Most professional development does not teach that part. We are handed
+          platforms, templates, logins, and expectations, but not the system
+          behind the work. So I started documenting the system.
+        </p>
+        <p>
+          I did not come into teaching through a traditional straight-line path.
+          My background includes cybersecurity, technology, mechanics,
           warehouse work, robotics, curriculum building, and years of learning
           systems the hard way. That experience shaped how I teach: practical
-          first, theory with purpose, and always connected to something
-          students or teachers can actually build.
+          first, theory with purpose, and always connected to something students
+          or teachers can actually build.
         </p>
         <p>
-          I created <strong>Open TeachStack</strong> because I kept seeing the
+          I created <strong>Teaching Teachers</strong> because I kept seeing the
           same problem: teachers are expected to design modern curriculum, use
           AI responsibly, manage digital resources, create assessments, align
           to standards, and deliver engaging lessons, but very few are ever
           taught the technical systems behind that work.
         </p>
-        <p>Open TeachStack is my answer to that gap.</p>
+        <p>Teaching Teachers is my answer to that gap.</p>
         <p>
           This project is built for educators who want more control over their
           curriculum, tools, resources, and professional workflow. It focuses on
@@ -81,7 +93,7 @@ export default function AboutPage() {
         <p>This is not a generic ed-tech course.</p>
         <p>This is a field guide for teacher independence.</p>
         <p>
-          I built Open TeachStack from my own experience designing robotics,
+          I built Teaching Teachers from my own experience designing robotics,
           AI, cybersecurity, engineering, and technology courses while learning
           the tools, mistakes, and workflows that most professional development
           never explains. My goal is to make that knowledge usable for other
@@ -89,12 +101,12 @@ export default function AboutPage() {
           without waiting for a perfect system to be handed to them.
         </p>
         <p>
-          Open TeachStack is open-source, practical, and intentionally built
+          Teaching Teachers is open-source, practical, and intentionally built
           from the classroom outward.
         </p>
 
-        <h2>Why I Built Open TeachStack</h2>
-        <p>I built Open TeachStack because I needed it myself.</p>
+        <h2>Why I Built Teaching Teachers</h2>
+        <p>I built Teaching Teachers because I needed it myself.</p>
         <p>
           As a teacher building courses in robotics, AI, cybersecurity,
           engineering, drones, and technology, I had to learn far more than
@@ -108,7 +120,7 @@ export default function AboutPage() {
           We are handed platforms, templates, logins, and expectations, but not
           the system behind the work.
         </p>
-        <p>Open TeachStack is my attempt to document that system.</p>
+        <p>Teaching Teachers is my attempt to document that system.</p>
         <p>
           It is for educators who want to build better courses, use AI without
           losing their own voice, understand standards without turning them into
@@ -130,7 +142,7 @@ export default function AboutPage() {
 
         <h2>Contact</h2>
         <p>
-          Open TeachStack is created and maintained by{" "}
+          Teaching Teachers is created and maintained by{" "}
           <a href={AUTHOR.url} target="_blank" rel="noopener noreferrer">
             {AUTHOR.name}
           </a>
@@ -169,3 +181,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

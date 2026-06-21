@@ -3,9 +3,9 @@ import TemplateCard from "@/components/TemplateCard";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
 export const metadata: Metadata = {
-  title: "Template Library — Open TeachStack",
+  title: "Template Library — Teaching Teachers",
   description:
-    "Available v1 templates for Open TeachStack Foundations, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
+    "Available v1 templates for Teaching Teachers Foundations, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
 };
 
 const futureTemplates = [
@@ -30,6 +30,27 @@ const futureTemplates = [
     format: "Google Doc",
     tags: ["future", "course-sites", "OTS-301"],
   },
+  {
+    title: "Teacher Website Security Audit",
+    description:
+      "A defensive checklist for reviewing public teacher sites, course hubs, portfolios, club sites, forms, embeds, downloads, and contact exposure.",
+    format: "Google Doc",
+    tags: ["future", "cyber-safety", "OTS-280"],
+  },
+  {
+    title: "Public Repo Exposure Checklist",
+    description:
+      "A GitHub safety checklist for secrets, student data, screenshots, metadata, README exposure, domain notes, and pre-publish review.",
+    format: "Google Doc",
+    tags: ["future", "cyber-safety", "OTS-280"],
+  },
+  {
+    title: "Account Hygiene and MFA Checklist",
+    description:
+      "A teacher-facing account inventory for password manager adoption, MFA status, recovery settings, and priority account cleanup.",
+    format: "Google Sheet",
+    tags: ["future", "cyber-safety", "OTS-280"],
+  },
 ];
 
 export default function TemplatesPage() {
@@ -40,7 +61,7 @@ export default function TemplatesPage() {
           Template Library
         </h1>
         <p className="max-w-2xl leading-relaxed text-foreground/60">
-          The v1 Open TeachStack Foundations templates are available as site
+          The v1 Teaching Teachers Foundations templates are available as site
           pages first. Each one includes a blank version, an example version,
           evidence of completion, safety checks, and a Markdown download.
         </p>
@@ -106,3 +127,4 @@ export default function TemplatesPage() {
     </div>
   );
 }
+

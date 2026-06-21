@@ -10,9 +10,9 @@ import {
 } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Syllabus — Open TeachStack Foundations",
+  title: "Syllabus — Teaching Teachers Foundations",
   description:
-    "Syllabus for OTS-101: Open TeachStack Foundations, a 10-module course on prompting, standards, resource literacy, and curriculum systems.",
+    "Syllabus for OTS-101: Teaching Teachers Foundations, a 10-module course on prompting, standards, resource literacy, and curriculum systems.",
 };
 
 export default function SyllabusPage() {
@@ -39,14 +39,14 @@ export default function SyllabusPage() {
       <div className="prose-academic">
         <h2>Course Description</h2>
         <p>
-          Open TeachStack Foundations ({COURSE_CODE}) is the required
-          beginner course in the Open TeachStack pathway. It teaches educators
+          Teaching Teachers Foundations ({COURSE_CODE}) is the required
+          beginner course in the Teaching Teachers pathway. It teaches educators
           how to use AI responsibly, unpack standards, evaluate resources,
           build practical planning systems, design assessments, and prepare a
           small curriculum sequence for real classroom delivery.
         </p>
         <p>
-          The broader Open TeachStack project includes later courses in Google
+          The broader Teaching Teachers project includes later courses in Google
           Workspace systems, Apps Script automation, GitHub, AI media, course
           sites, and AI coding agents. OTS-101 previews those possibilities
           but does not require them.
@@ -78,7 +78,7 @@ export default function SyllabusPage() {
         </ul>
 
         <h2>Learning Outcomes</h2>
-        <ol>
+        <ul>
           <li>Explain the difference between collecting tools and building systems.</li>
           <li>Write structured prompts and revise AI output in teacher voice.</li>
           <li>Verify AI output for accuracy, bias, privacy, citations, and standards claims.</li>
@@ -89,7 +89,87 @@ export default function SyllabusPage() {
           <li>Draft assessments, rubrics, and feedback loops tied to learning targets.</li>
           <li>Plan classroom delivery with student-facing directions and backup routines.</li>
           <li>Assemble and revise a complete mini-unit capstone.</li>
-        </ol>
+        </ul>
+
+        <h2>Outcome Traceability</h2>
+        <p>
+          OTS-101 does not claim alignment to one state standard set. Teachers
+          bring their own state, district, or subject-area standards into the
+          mini-unit. This table shows how the course outcomes trace to module
+          work and capstone evidence.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Course Outcome</th>
+              <th>Module Evidence</th>
+              <th>Capstone Evidence</th>
+              <th>Reviewer Check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Build systems instead of collecting tools.</td>
+              <td>Teacher workflow audit</td>
+              <td>Priority workflow problem and improvement plan</td>
+              <td>The problem is specific enough to improve.</td>
+            </tr>
+            <tr>
+              <td>Prompt responsibly and preserve teacher voice.</td>
+              <td>Reusable prompt library</td>
+              <td>Prompt log with revision notes</td>
+              <td>AI output is revised, not pasted untouched.</td>
+            </tr>
+            <tr>
+              <td>Verify AI output and source claims.</td>
+              <td>AI verification checklist</td>
+              <td>Accepted, changed, and rejected AI output notes</td>
+              <td>Claims, citations, and answer keys are checked.</td>
+            </tr>
+            <tr>
+              <td>Unpack standards into learning targets.</td>
+              <td>Standards unpacking sheet</td>
+              <td>Three standards or outcomes with target and evidence</td>
+              <td>Each target uses observable learner action.</td>
+            </tr>
+            <tr>
+              <td>Design a coherent mini-unit architecture.</td>
+              <td>Mini-unit map and lesson template</td>
+              <td>3 to 5 lesson sequence</td>
+              <td>Lessons build instead of sitting as isolated activities.</td>
+            </tr>
+            <tr>
+              <td>Evaluate resources for credibility and use.</td>
+              <td>Resource evaluation sheet</td>
+              <td>Five reviewed resources with license or terms notes</td>
+              <td>Software and platform links use official docs first.</td>
+            </tr>
+            <tr>
+              <td>Use Google Workspace as planning infrastructure.</td>
+              <td>Workspace planning map</td>
+              <td>Artifact storage and update plan</td>
+              <td>The system is usable without automation.</td>
+            </tr>
+            <tr>
+              <td>Assess the intended learning target.</td>
+              <td>Assessment/rubric draft</td>
+              <td>One task with observable rubric criteria</td>
+              <td>The assessment measures the target, not effort alone.</td>
+            </tr>
+            <tr>
+              <td>Prepare classroom delivery.</td>
+              <td>Delivery plan</td>
+              <td>Student directions, timing, feedback, and backup plan</td>
+              <td>A teacher can teach it without a private explanation.</td>
+            </tr>
+            <tr>
+              <td>Revise and archive the work.</td>
+              <td>Reflection and revision log</td>
+              <td>Revision history and next-step notes</td>
+              <td>The teacher can explain what changed and why.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Pacing Guide</h2>
         <p>
@@ -171,7 +251,7 @@ export default function SyllabusPage() {
           The capstone is a small curriculum system, not a full published
           course site. Required artifacts:
         </p>
-        <ol>
+        <ul>
           <li>Teacher workflow audit</li>
           <li>Standards unpacking sheet</li>
           <li>Mini-unit map</li>
@@ -185,7 +265,7 @@ export default function SyllabusPage() {
           <li>Accessibility/privacy/copyright checklist</li>
           <li>Delivery plan</li>
           <li>Reflection and revision log</li>
-        </ol>
+        </ul>
 
         <h2>Safety Thread</h2>
         <p>
@@ -223,3 +303,4 @@ export default function SyllabusPage() {
     </div>
   );
 }
+

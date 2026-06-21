@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "open-teachstack-theme";
+const STORAGE_KEY = "teaching-teachers-theme";
 
 function getInitialTheme() {
   if (typeof window === "undefined") return "light";

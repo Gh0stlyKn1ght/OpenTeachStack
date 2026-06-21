@@ -22,6 +22,8 @@ interface LessonLayoutProps {
   children: ReactNode;
   previous?: NavLink;
   next?: NavLink;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export default function LessonLayout({
@@ -29,6 +31,8 @@ export default function LessonLayout({
   children,
   previous,
   next,
+  imageSrc,
+  imageAlt,
 }: LessonLayoutProps) {
   const { title, module: moduleName, duration, level, outcomes } = frontmatter;
 
@@ -39,6 +43,8 @@ export default function LessonLayout({
         moduleId={moduleName}
         duration={duration}
         level={level}
+        imageSrc={imageSrc}
+        imageAlt={imageAlt}
       />
 
       <BuildBox moduleId={moduleName} />

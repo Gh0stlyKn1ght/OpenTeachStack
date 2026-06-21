@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { COURSE_CODE, MODULES } from "@/lib/metadata";
 import TechConfidenceBadge from "./TechConfidenceBadge";
 
@@ -6,6 +7,8 @@ interface LessonHeroProps {
   moduleId?: string;
   duration?: string;
   level?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export default function LessonHero({
@@ -13,13 +16,29 @@ export default function LessonHero({
   moduleId,
   duration,
   level,
+  imageSrc,
+  imageAlt = "",
 }: LessonHeroProps) {
   const courseModule = MODULES.find((item) => item.id === moduleId);
 
   return (
     <header className="mb-8 overflow-hidden rounded-xl border border-border bg-surface">
+      {imageSrc && (
+        <div className="relative aspect-[16/9] border-b border-border bg-background">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(min-width: 1024px) 672px, calc(100vw - 48px)"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+        </div>
+      )}
       <div className="relative p-6 sm:p-8">
-        <div className="hero-grid absolute inset-0 opacity-60" aria-hidden="true" />
+        {!imageSrc && (
+          <div className="hero-grid absolute inset-0 opacity-60" aria-hidden="true" />
+        )}
         <div className="relative">
           <p className="mb-3 font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">
             {COURSE_CODE}

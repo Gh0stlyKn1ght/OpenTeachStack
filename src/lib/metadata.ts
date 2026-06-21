@@ -1,10 +1,10 @@
 export const COURSE_CODE = "OTS-101";
-export const COURSE_TITLE = "Open TeachStack Foundations";
+export const COURSE_TITLE = "Teaching Teachers Foundations";
 export const COURSE_SUBTITLE =
   "Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators";
 export const COURSE_THESIS =
-  "Open TeachStack is an open-source pathway for AI, automation, and curriculum systems for educators. OTS-101 is the required foundations course.";
-export const SITE_URL = "https://openteachstack.dev";
+  "Teaching Teachers is an open-source pathway for educators willing to learn for the future. OTS-101 is the required foundations course.";
+export const SITE_URL = "https://teachingteachers.dev";
 export const REPOSITORY_URL =
   "https://github.com/Gh0stlyKn1ght/OpenTeachStack";
 
@@ -66,7 +66,7 @@ export const MODULES: CourseModule[] = [
     number: "01",
     title: "Teacher Builder Mindset",
     description:
-      "What Open TeachStack is, why teachers need practical system ownership, and how to build workflows instead of collecting tools.",
+      "What Teaching Teachers is, why teachers need practical system ownership, and how to build workflows instead of collecting tools.",
     slug: "01-teacher-builder-mindset",
     essentialQuestion:
       "What separates a teacher who collects tools from a teacher who builds systems?",
@@ -228,7 +228,7 @@ export interface PathwayCourse {
 export const PATHWAY_COURSES: PathwayCourse[] = [
   {
     code: "OTS-101",
-    title: "Open TeachStack Foundations",
+    title: "Teaching Teachers Foundations",
     level: "Beginner",
     status: "Build first",
     purpose:
@@ -304,6 +304,22 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     ],
   },
   {
+    code: "OTS-280",
+    title: "Cyber Safety for Educators",
+    level: "Intermediate",
+    status: "Future",
+    purpose:
+      "Teach identity hygiene, account safety, public profile audits, website safety, repo exposure checks, and basic incident response for public-facing educators.",
+    prerequisites: "OTS-101 or equivalent comfort with basic digital workflows.",
+    majorArtifacts: [
+      "Personal risk map",
+      "MFA checklist",
+      "Identity separation map",
+      "Website security audit",
+      "Incident response plan",
+    ],
+  },
+  {
     code: "OTS-301",
     title: "Teacher Course Sites",
     level: "Advanced",
@@ -356,13 +372,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Course", href: "/course" },
+  { label: "Start", href: "/start" },
+  { label: "Courses", href: "/courses" },
   { label: "Pathway", href: "/pathway" },
-  { label: "Syllabus", href: "/syllabus" },
-  { label: "Prompts", href: "/prompts" },
-  { label: "Field Notes", href: "/field-notes" },
-  { label: "Resources", href: "/resources" },
-  { label: "Safety", href: "/safety" },
-  { label: "Open Source", href: "/open-source" },
+  { label: "Library", href: "/library" },
   { label: "About", href: "/about" },
 ];
+

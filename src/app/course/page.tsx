@@ -4,9 +4,9 @@ import CourseMeta from "@/components/CourseMeta";
 import ModuleIndex from "@/components/ModuleIndex";
 
 export const metadata: Metadata = {
-  title: "OTS-101 Foundations — Open TeachStack",
+  title: "OTS-101 Foundations — Teaching Teachers",
   description:
-    "Overview of OTS-101: Open TeachStack Foundations, a 10-module beginner course on prompting, standards, resource literacy, and curriculum systems.",
+    "Overview of OTS-101: Teaching Teachers Foundations, a 10-module beginner course on prompting, standards, resource literacy, and curriculum systems.",
 };
 
 export default function CoursePage() {
@@ -18,10 +18,10 @@ export default function CoursePage() {
           OTS-101 Foundations
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-4">
-          Open TeachStack Foundations
+          Teaching Teachers Foundations
         </h1>
         <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          OTS-101 is the required foundations course in the Open TeachStack
+          OTS-101 is the required foundations course in the Teaching Teachers
           pathway. It teaches educators how to prompt responsibly, unpack
           standards, evaluate resources, plan with Google Workspace, design
           assessments, and assemble a practical mini-unit system.
@@ -60,6 +60,15 @@ export default function CoursePage() {
               scope, sources, alignment, AI safety, accessibility, and
               classroom readiness.
             </p>
+            <p>
+              When you are ready to finish, use the{" "}
+              <Link href="/course/release">OTS-101 Release Packet</Link> and
+              compare your work against the{" "}
+              <Link href="/examples/robotics-mini-unit">
+                sample robotics mini-unit
+              </Link>
+              .
+            </p>
           </section>
 
           {/* Module listing */}
@@ -76,3 +85,4 @@ export default function CoursePage() {
     </div>
   );
 }
+

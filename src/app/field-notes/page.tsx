@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Field Notes — Open TeachStack",
+  title: "Field Notes — Teaching Teachers",
   description:
-    "Essays, reflections, and observations from the development of Open TeachStack.",
+    "Essays, reflections, and observations from the development of Teaching Teachers.",
 };
 
 export default function FieldNotesPage() {
@@ -77,3 +77,4 @@ export default function FieldNotesPage() {
     </div>
   );
 }
+

@@ -6,7 +6,7 @@ import { MODULES, COURSE_TITLE } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: `Lessons — ${COURSE_TITLE}`,
   description:
-    "Browse all lessons in the Open TeachStack course, organized by module.",
+    "Browse all lessons in the Teaching Teachers course, organized by module.",
 };
 
 export default function LessonsPage() {
@@ -109,3 +109,4 @@ export default function LessonsPage() {
     </div>
   );
 }
+

@@ -30,32 +30,32 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Open TeachStack — Curriculum Systems for Educators",
-  description: "AI, automation, and curriculum systems for educators.",
+  title: "Teaching Teachers — Curriculum Systems for Educators",
+  description: "Willing to learn for the future.",
   keywords: [
     "teacher technology",
     "curriculum development",
     "open source education",
-    "open teachstack",
+    "teaching teachers",
     "curriculum systems",
     "AI for teachers",
     "standards alignment",
     "OER",
     "education technology",
   ],
-  authors: [{ name: "Open TeachStack" }],
+  authors: [{ name: "Teaching Teachers" }],
   openGraph: {
-    title: "Open TeachStack — Curriculum Systems for Educators",
-    description: "AI, automation, and curriculum systems for educators.",
+    title: "Teaching Teachers — Curriculum Systems for Educators",
+    description: "Willing to learn for the future.",
     url: SITE_URL,
-    siteName: "Open TeachStack",
+    siteName: "Teaching Teachers",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Open TeachStack",
-    description: "AI, automation, and curriculum systems for educators.",
+    title: "Teaching Teachers",
+    description: "Willing to learn for the future.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
 try {
-  var storedTheme = localStorage.getItem("open-teachstack-theme");
+  var storedTheme = localStorage.getItem("teaching-teachers-theme");
   var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
     document.documentElement.classList.add("dark");
@@ -93,3 +93,4 @@ try {
     </html>
   );
 }
+

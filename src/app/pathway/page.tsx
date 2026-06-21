@@ -3,9 +3,9 @@ import Link from "next/link";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Pathway — Open TeachStack",
+  title: "Pathway — Teaching Teachers",
   description:
-    "Open TeachStack pathway overview, including OTS-101 Foundations and future courses in Google Workspace, Apps Script, GitHub, media, course sites, coding agents, and capstone studio.",
+    "Teaching Teachers pathway overview, including OTS-101 Foundations and future courses in Google Workspace, Apps Script, GitHub, media, course sites, coding agents, and capstone studio.",
 };
 
 export default function PathwayPage() {
@@ -13,13 +13,13 @@ export default function PathwayPage() {
     <div className="mx-auto max-w-5xl px-6 py-12">
       <header className="mb-10 max-w-3xl">
         <span className="mb-4 inline-block rounded border border-accent/30 px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-widest text-accent">
-          Open TeachStack Pathway
+          Teaching Teachers Pathway
         </span>
         <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
           One foundations course, then specialized tracks.
         </h1>
         <p className="max-w-2xl leading-relaxed text-foreground/60">
-          Open TeachStack is an open-source pathway for educators building
+          Teaching Teachers is an open-source pathway for educators building
           curriculum systems with AI, automation, open resources, Google
           Workspace, and modern publishing workflows. OTS-101 is the required
           beginner course. Everything more technical moves into later pathway
@@ -90,3 +90,4 @@ export default function PathwayPage() {
     </div>
   );
 }
+

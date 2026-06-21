@@ -1,58 +1,26 @@
-"use client";
+import { MODULES } from "@/lib/metadata";
+import { FOUNDATION_TEMPLATES } from "@/lib/templates";
+import { sourceBankResources } from "@/lib/sourceBank";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+const ACTIVE_LESSON_COUNT = 17;
 
 interface StatProps {
   value: number;
   suffix: string;
   label: string;
-  delay: number;
 }
 
-function AnimatedStat({ value, suffix, label, delay }: StatProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const timer = setTimeout(() => {
-      const duration = 1500;
-      const steps = 40;
-      const increment = value / steps;
-      let current = 0;
-      const interval = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setCount(value);
-          clearInterval(interval);
-        } else {
-          setCount(Math.floor(current));
-        }
-      }, duration / steps);
-      return () => clearInterval(interval);
-    }, delay * 1000);
-    return () => clearTimeout(timer);
-  }, [isInView, value, delay]);
-
+function Stat({ value, suffix, label }: StatProps) {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="text-center"
-    >
+    <div className="text-center">
       <div className="font-serif text-4xl sm:text-5xl font-bold text-accent mb-2">
-        {count}
+        {value}
         {suffix}
       </div>
       <div className="text-sm text-foreground/50 font-sans uppercase tracking-wider">
         {label}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -60,10 +28,10 @@ export default function StatsBar() {
   return (
     <section className="border-y border-border bg-surface-alt/50 py-16">
       <div className="mx-auto max-w-4xl px-6 grid grid-cols-2 sm:grid-cols-4 gap-8">
-        <AnimatedStat value={13} suffix="" label="Modules" delay={0} />
-        <AnimatedStat value={30} suffix="+" label="Lessons" delay={0.1} />
-        <AnimatedStat value={16} suffix="" label="Pro Tools" delay={0.2} />
-        <AnimatedStat value={14} suffix="" label="Prompt Templates" delay={0.3} />
+        <Stat value={MODULES.length} suffix="" label="Modules" />
+        <Stat value={ACTIVE_LESSON_COUNT} suffix="" label="Lessons" />
+        <Stat value={sourceBankResources.length} suffix="" label="Verified Links" />
+        <Stat value={FOUNDATION_TEMPLATES.length} suffix="" label="Templates" />
       </div>
     </section>
   );

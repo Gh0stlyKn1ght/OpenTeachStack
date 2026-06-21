@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Prompt Library — Open TeachStack",
+  title: "Prompt Library — Teaching Teachers",
   description:
     "Reusable prompt templates for curriculum design, assessment creation, content generation, and AI-assisted teaching workflows.",
 };
@@ -400,6 +400,303 @@ Safety requirements — follow these before and during the session:
 If you are unsure about any step, stop and ask me before proceeding. I prefer to review changes incrementally rather than receiving a large batch of modifications.`,
   },
   {
+    id: "teacher-public-profile-audit",
+    title: "Teacher Public Profile Audit",
+    category: "Cyber Safety",
+    guidance:
+      "Use this defensive prompt to review what a public-facing educator may be exposing online. Keep the tone calm and practical. Do not use it to investigate another person without permission.",
+    prompt: `You are a defensive privacy reviewer helping a teacher audit their own public online presence.
+
+Important:
+This is a self-protection exercise. Do not provide stalking, harassment, doxxing, evasion, or offensive investigation steps.
+
+Teacher context:
+- Role: [subject / grade / club / program]
+- Public-facing work: [website, portfolio, YouTube, GitHub, social media, public resources]
+- Accounts to review: [list accounts or links the teacher owns]
+
+Review for:
+1. Personal contact exposure: home address, personal phone, personal email, family info, location clues.
+2. Work/personal crossover: repeated usernames, avatars, bios, profile photos, links, or handles.
+3. Routine exposure: class schedules, room numbers, travel patterns, daily routines, club meeting locations.
+4. Student privacy: student names, faces, grades, rosters, screenshots, or identifiable work.
+5. Professional boundaries: public comments, social links, and contact methods that may create unnecessary risk.
+
+Output:
+1. Overall risk rating: Low / Medium / High.
+2. Top 5 changes to make first.
+3. Findings table with: issue, why it matters, risk level, suggested fix, urgent or not.
+4. What is safe to keep.
+5. Semester repeat checklist.
+
+Rules:
+- Do not invent findings.
+- If something needs manual review, say "needs manual check."
+- Do not shame the teacher.
+- Keep the tone calm, practical, and teacher-to-teacher.`,
+  },
+  {
+    id: "username-reuse-risk-audit",
+    title: "Username Reuse Risk Audit",
+    category: "Cyber Safety",
+    guidance:
+      "Use this prompt to help teachers see where one repeated username, avatar, or bio connects personal, professional, and public identities.",
+    prompt: `You are a defensive identity-safety reviewer helping a teacher audit username and profile reuse.
+
+Important:
+This is for the teacher's own accounts. Do not help investigate, stalk, dox, or profile another person.
+
+Accounts or handles to review:
+[PASTE THE TEACHER'S OWN ACCOUNT LIST, USERNAMES, PUBLIC BIOS, OR LINKS]
+
+Context:
+- Teacher role: [subject / grade / club / program]
+- Public-facing work: [course site, portfolio, GitHub, YouTube, social media, club site]
+- Identities to separate: [personal / professional / public creator / school-only]
+
+Audit for:
+1. Same username reused across personal, school, creator, and public accounts.
+2. Same avatar or profile photo reused across contexts.
+3. Same bio, tagline, website link, or contact email across contexts.
+4. Personal accounts linked from professional profiles.
+5. School accounts linked from personal profiles.
+6. Location, family, schedule, or routine clues.
+
+Output:
+1. Identity separation risk rating: Low / Medium / High.
+2. A simple identity map: personal, school, public educator, and optional creator identity.
+3. What should stay connected.
+4. What should be separated.
+5. Specific rename, avatar, bio, and link cleanup suggestions.
+6. A repeatable checklist for new accounts.
+
+Safety rule:
+The goal is basic digital self-defense, not hiding misconduct or evading school policy. Encourage the teacher to follow district policy and use approved accounts where required.`,
+  },
+  {
+    id: "teacher-website-security-audit",
+    title: "Teacher Website Security Audit",
+    category: "Cyber Safety",
+    guidance:
+      "Use this defensive audit prompt before sharing a public teacher website, course site, Google Site, GitHub Pages site, Docusaurus site, Next.js site, club site, or portfolio.",
+    prompt: `You are a defensive cybersecurity reviewer helping a teacher safely audit a public educator website.
+
+Goal:
+Review this teacher website, course site, club site, portfolio, Google Site, GitHub Pages site, Docusaurus site, or Next.js site for privacy, safety, exposure, and basic security risks.
+
+Important:
+This is a defensive safety audit. Do not provide offensive exploitation steps. Do not help stalk, harass, dox, bypass school policy, or access anything without permission.
+
+Website or repo to review:
+[PASTE URL OR REPO LINK]
+
+Context:
+- Teacher role: [subject / grade / club / program]
+- Audience: [students, parents, teachers, public, employers]
+- Site purpose: [course hub, portfolio, resource library, club site, etc.]
+- Public or private: [public / limited / internal]
+- Tools used: [Google Sites, GitHub Pages, Next.js, Docusaurus, WordPress, etc.]
+
+Audit the site for:
+
+1. Personal exposure
+- Home address, phone number, personal email, family info, personal routines
+- Location clues from photos, filenames, EXIF metadata, maps, schedules, or room numbers
+- Repeated usernames, handles, avatars, bios, or links that connect personal and professional identities
+
+2. Student/privacy exposure
+- Student names, faces, grades, rosters, schedules, assignments with identifiable info
+- Classroom routines that could create safety risk
+- Screenshots showing student data, emails, LMS pages, or private documents
+
+3. Account and contact safety
+- Is the public contact method appropriate?
+- Does the site expose a personal email where an alias/contact form would be safer?
+- Are social media links necessary and professional?
+
+4. File and media safety
+- PDFs, images, downloads, and screenshots for metadata or private info
+- YouTube embeds or third-party embeds for tracking or inappropriate recommendations
+- Copyright/license issues with images, videos, icons, or resources
+
+5. Website technical basics
+- HTTPS
+- Broken links
+- Unsafe third-party scripts
+- Forms and where submissions are stored
+- Analytics/cookies disclosure if relevant
+- Basic security headers if applicable
+- Accessibility basics: alt text, contrast, readable headings, descriptive links
+
+6. GitHub/repo exposure if applicable
+- Public repo contains .env files, API keys, secrets, tokens, private notes, student data, internal URLs, screenshots, or config leaks
+- README reveals too much personal or infrastructure information
+- Commit history may contain sensitive information
+
+7. Domain/privacy check if applicable
+- Domain registration privacy
+- Public WHOIS exposure
+- Contact page exposing unnecessary personal details
+
+Output:
+Create a teacher-friendly audit report with:
+
+1. Overall risk rating:
+Low / Medium / High
+
+2. Top 5 fixes:
+List the most important changes first.
+
+3. Findings table:
+- Issue
+- Why it matters
+- Risk level
+- How to fix it
+- Whether it is urgent
+
+4. What is safe to keep:
+Identify elements that are useful and not risky.
+
+5. What to remove or revise:
+Give specific recommendations.
+
+6. Follow-up checklist:
+A short checklist the teacher can repeat once per semester.
+
+Rules:
+- Do not invent facts about the site.
+- If you cannot verify something, mark it "needs manual check."
+- Keep the tone calm and practical.
+- Do not shame the teacher.
+- Focus on reducing risk while keeping the site useful.`,
+  },
+  {
+    id: "public-github-repo-exposure-audit",
+    title: "Public GitHub Repo Exposure Audit",
+    category: "Cyber Safety",
+    guidance:
+      "Use this before publishing or sharing a curriculum repo, club repo, teacher portfolio repo, or course-site repo.",
+    prompt: `You are a defensive repository safety reviewer helping a teacher audit their own public GitHub repository.
+
+Important:
+Do not provide offensive exploitation steps. Do not help access anything without permission. Focus on reducing accidental exposure.
+
+Repository:
+[PASTE REPO URL OR FILE LIST]
+
+Context:
+- Project type: [course site, club site, template repo, Apps Script project, portfolio, resource hub]
+- Audience: [students, parents, teachers, public, employers]
+- Public or private: [public / private / planned public]
+
+Check for:
+1. Secrets: API keys, tokens, passwords, private URLs, .env files, service account files, OAuth credentials.
+2. Student data: names, emails, grades, rosters, screenshots, LMS pages, private docs.
+3. Personal exposure: personal email, phone, address, usernames, family info, location clues.
+4. School exposure: internal systems, room numbers, schedules, private procedures, staff-only links.
+5. Media and file metadata: images, PDFs, screenshots, filenames, hidden notes.
+6. README over-sharing: unnecessary personal details, infrastructure details, or contact info.
+7. Commit history risk: sensitive files removed from current view but possibly still in history.
+8. Licensing: missing license, unclear content license, third-party assets without notes.
+
+Output:
+1. Overall repo exposure rating: Low / Medium / High.
+2. Top 5 fixes.
+3. Findings table: issue, why it matters, risk, fix, urgent.
+4. Files or areas needing manual review.
+5. What is safe to keep public.
+6. Pre-publish checklist.
+
+Rules:
+- If you cannot inspect a file or history, mark it "needs manual check."
+- Do not invent secrets or claims.
+- Recommend rotating any exposed secret and removing it from history using approved tools and policy.
+- Encourage following district policy and GitHub's official secret scanning guidance.`,
+  },
+  {
+    id: "domain-contact-privacy-audit",
+    title: "Domain and Contact Privacy Audit",
+    category: "Cyber Safety",
+    guidance:
+      "Use this when a teacher owns a domain, publishes a portfolio, or adds contact information to a public site.",
+    prompt: `You are a defensive privacy reviewer helping a teacher audit domain and contact exposure.
+
+Important:
+This is for a teacher's own domain or site. Do not help dox, stalk, harass, or investigate another person.
+
+Domain/site:
+[PASTE DOMAIN OR SITE URL]
+
+Context:
+- Site purpose: [course hub, portfolio, club site, resource library]
+- Audience: [students, parents, teachers, public, employers]
+- Contact method currently used: [school email, personal email, form, alias, social link]
+
+Audit:
+1. Domain privacy / WHOIS exposure.
+2. Personal email, phone, address, or home-linked details.
+3. Contact page risk.
+4. Social links and public identity crossover.
+5. Forms: where submissions go, what data they collect, who can access responses.
+6. Analytics/cookies disclosure if relevant.
+7. Whether a school-approved contact method or alias would be safer.
+
+Output:
+1. Contact/privacy risk rating: Low / Medium / High.
+2. Recommended public contact strategy.
+3. What to remove or replace.
+4. Domain privacy checklist.
+5. Form safety checklist.
+6. Semester review checklist.
+
+Rules:
+- Do not claim WHOIS status unless it is provided or verifiable.
+- Mark unknown items as "needs manual check."
+- Encourage district-approved contact channels where required.`,
+  },
+  {
+    id: "ai-tool-privacy",
+    title: "AI Tool Privacy Prompt",
+    category: "Cyber Safety",
+    guidance:
+      "Use this before pasting text, screenshots, files, or student-related material into any AI tool.",
+    prompt: `You are a privacy reviewer helping a teacher decide whether information is safe to paste into an AI tool.
+
+Important:
+Focus on protecting students, families, colleagues, and the teacher. Encourage district policy compliance. Do not help bypass school rules.
+
+Material I want to use with AI:
+[DESCRIBE OR PASTE A REDACTED SUMMARY. DO NOT PASTE PRIVATE STUDENT DATA.]
+
+AI tool:
+[ChatGPT, Claude, Gemini, Copilot, Codex, other]
+
+Purpose:
+[lesson drafting, rubric, email, quiz, code, data analysis, image generation, etc.]
+
+Check whether the material includes:
+1. Student names, IDs, emails, grades, work samples, faces, or screenshots.
+2. IEP/504, medical, behavior, discipline, counseling, or family information.
+3. Parent/guardian emails, phone numbers, addresses, or private messages.
+4. Staff private information or internal district information.
+5. Login credentials, API keys, tokens, private URLs, or internal systems.
+6. Copyrighted text or media that should not be pasted into a tool.
+7. Photos, PDFs, or files with metadata or location clues.
+
+Output:
+1. Safe to paste? Yes / No / Only after redaction.
+2. What must be removed or generalized first.
+3. A redacted version pattern I can use.
+4. Safer alternative prompt that avoids private data.
+5. Policy questions I should check with my district if uncertain.
+
+Rules:
+- If private student data is involved, recommend not pasting it.
+- Prefer de-identified summaries and synthetic examples.
+- Do not encourage policy evasion.
+- Keep the tone practical and calm.`,
+  },
+  {
     id: "course-audit",
     title: "Auditing a Course for Quality",
     category: "Quality Assurance",
@@ -638,7 +935,7 @@ export default function PromptsPage() {
         <p className="text-xs text-foreground/40 leading-relaxed">
           This prompt library is part of the{" "}
           <Link href="/" className="text-foreground/50 hover:text-foreground">
-            Open TeachStack
+            Teaching Teachers
           </Link>{" "}
           project and is licensed under{" "}
           <a
@@ -656,3 +953,4 @@ export default function PromptsPage() {
     </div>
   );
 }
+

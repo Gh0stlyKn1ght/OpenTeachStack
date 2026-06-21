@@ -23,7 +23,7 @@ You may not apply legal terms or technological measures that legally restrict ot
 
 When using content from this course, include attribution like:
 
-> "What Is a Domain?" from Open TeachStack (OTS-101) by JC Nevarez, licensed under CC BY-NC-SA 4.0. Original: https://openteachstack.dev/lessons/what-is-a-domain
+> "What Is a Domain?" from Teaching Teachers (OTS-101) by JC Nevarez, licensed under CC BY-NC-SA 4.0. Original: https://teachingteachers.dev/lessons/what-is-a-domain
 
 ## Full License Text
 
@@ -32,3 +32,4 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 ## Code License
 
 The code (HTML, CSS, JavaScript, TypeScript, configuration files) is separately licensed under the MIT License. See [LICENSE](LICENSE).
+
