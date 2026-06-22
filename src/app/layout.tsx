@@ -1,39 +1,14 @@
 import type { Metadata } from "next";
-import {
-  Atkinson_Hyperlegible,
-  Source_Serif_4,
-  JetBrains_Mono,
-} from "next/font/google";
 import { AcademicHeader } from "@/components/AcademicHeader";
 import { Footer } from "@/components/Footer";
 import { createPageMetadata, rootMetadataBase } from "@/lib/siteMetadata";
-import "nextra-theme-docs/style.css";
 import "./globals.css";
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const atkinson = Atkinson_Hyperlegible({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: rootMetadataBase,
   ...createPageMetadata({
     title: "Teaching Teachers — Curriculum Systems for Educators",
-    description: "Willing to learn for the future.",
+    description: "A field guide for educators entering the tech world.",
     path: "/",
   }),
   keywords: [
@@ -59,7 +34,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${sourceSerif.variable} ${atkinson.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <head>

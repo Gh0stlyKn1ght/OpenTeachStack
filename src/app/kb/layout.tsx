@@ -1,21 +1,7 @@
 import Link from "next/link";
 import BookSearchInput from "@/components/book/BookSearchInput";
 import { getKnowledgeBaseSearchRecords } from "@/lib/search";
-
-const categories = [
-  ["Start Here", "/kb/start-here/what-this-knowledge-base-is"],
-  ["AI & Prompting", "/kb/ai-prompting/prompt-anatomy"],
-  ["Lesson Building", "/kb/lesson-building/build-a-one-day-lesson-site"],
-  ["Standards & Curriculum", "/kb/standards-curriculum/turn-standards-into-learning-targets"],
-  ["Google Workspace", "/kb/google-workspace/organize-a-course-folder"],
-  ["Cyber Safety", "/kb/cyber-safety/avoid-username-reuse"],
-  ["Course Websites", "/kb/course-websites/embed-youtube-video"],
-  ["Open Resources", "/kb/open-resources"],
-  ["Tools & Platforms", "/kb/tools-platforms/free-tools-for-teachers-and-students"],
-  ["AI Coding Agents", "/kb/ai-coding-agents/use-codex-without-overwriting-content"],
-  ["Troubleshooting", "/kb/troubleshooting"],
-  ["Playbooks", "/kb/playbooks/source-prompt-build-verify-teach-archive-improve"],
-];
+import { getKnowledgeBaseCategories } from "@/lib/knowledgeBase";
 
 const relatedResources = [
   ["Courses", "/courses"],
@@ -31,6 +17,7 @@ export default async function KnowledgeBaseLayout({
   children: React.ReactNode;
 }) {
   const searchRecords = getKnowledgeBaseSearchRecords();
+  const categories = getKnowledgeBaseCategories();
 
   return (
     <div className="kb-docs-shell">
@@ -46,17 +33,17 @@ export default async function KnowledgeBaseLayout({
         <details className="kb-docs-mobile-nav">
           <summary>Categories</summary>
           <nav>
-            {categories.map(([label, href]) => (
-              <Link key={href} href={href}>
-                {label}
+            {categories.map((category) => (
+              <Link key={category.href} href={category.href}>
+                {category.label}
               </Link>
             ))}
           </nav>
         </details>
         <nav className="kb-docs-category-list">
-          {categories.map(([label, href]) => (
-            <Link key={href} href={href}>
-              {label}
+          {categories.map((category) => (
+            <Link key={category.href} href={category.href}>
+              {category.label}
             </Link>
           ))}
         </nav>

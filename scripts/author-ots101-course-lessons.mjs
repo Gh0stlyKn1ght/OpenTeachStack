@@ -2,6 +2,10 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
 
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const dryRun = args.includes("--dry-run");
+
 const root = process.cwd();
 const courseSlug = "ots-101";
 const courseRoot = join(root, "content", "courses", courseSlug);
@@ -306,8 +310,14 @@ for (const chapter of modules) {
 
     const raw = readFileSync(filePath, "utf8");
     const parsed = matter(raw);
-    if (parsed.data.migrationStatus === "authored") {
+    if (!force && parsed.data.migrationStatus !== "scaffolded") {
       skipped++;
+      continue;
+    }
+
+    if (dryRun) {
+      console.log(`[dry-run] WRITE: ${relativePath}`);
+      updated++;
       continue;
     }
 
@@ -320,7 +330,18 @@ for (const chapter of modules) {
 
 const courseJsonPath = join(courseRoot, "course.json");
 const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
-courseJson.migrationStatus = "authored";
-writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
+if (force || courseJson.migrationStatus !== "authored") {
+  if (dryRun) {
+    console.log(`[dry-run] WRITE: course.json`);
+  } else {
+    courseJson.migrationStatus = "authored";
+    writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
+  }
+}
 
-console.log(`Authored ${updated} OTS-101 section files; preserved ${skipped} existing authored files.`);
+const mode = dryRun ? "[DRY RUN] " : "";
+console.log(`${mode}Authored ${updated} OTS-101 section files; preserved ${skipped} existing authored files.${force ? " (--force)" : ""}`);
+if (!dryRun && skipped > 0 && !force) {
+  console.log(`${skipped} non-authored or non-scaffolded files were preserved. Use --force to overwrite.`);
+}
+

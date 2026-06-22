@@ -35,7 +35,7 @@ export default function HeroSection() {
         <p
           className="hero-reveal hero-reveal-delay-2 font-serif text-xl sm:text-2xl text-foreground/80 leading-relaxed max-w-2xl mb-4"
         >
-          Willing to learn for the future.
+          A field guide for educators entering the tech world.
         </p>
 
         <p

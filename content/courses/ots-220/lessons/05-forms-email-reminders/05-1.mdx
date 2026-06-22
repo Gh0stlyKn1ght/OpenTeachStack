@@ -1,40 +1,61 @@
 ---
-course: "OTS-220"
-courseSlug: "ots-220"
-chapter: "Forms, Email, and Reminders"
-chapterSlug: "05-forms-email-reminders"
-sectionNumber: "05.1"
-sectionSlug: "05-1"
-title: "Forms and Responses"
-type: "section"
-duration: "20 minutes"
-artifact: "Reminder workflow"
-canonicalRoute: "/book/ots-220/05-forms-email-reminders/05-1"
-sourceRegistry: "src/lib/courseStructures.ts"
-sourceLessonSlug: ""
-sourceLessonTitle: ""
-migrationStatus: "scaffolded"
+course: OTS-220
+courseSlug: ots-220
+chapter: 'Forms, Email, and Reminders'
+chapterSlug: 05-forms-email-reminders
+sectionNumber: 05.1
+sectionSlug: 05-1
+title: Forms and Responses
+type: section
+duration: 20 minutes
+artifact: Reminder workflow
+canonicalRoute: /book/ots-220/05-forms-email-reminders/05-1
+sourceRegistry: src/lib/courseStructures.ts
+sourceLessonSlug: ''
+sourceLessonTitle: ''
+migrationStatus: authored
 ---
-
 # Forms and Responses
 
-This is the course-owned source file for **OTS-220 / Forms, Email, and Reminders / 05.1**.
+## Core Idea
 
-## Authoring Status
+Forms, Email, and Reminders is about using Forms and email safely while preserving clear audit trails and consent boundaries.. In this section, **Forms and Responses** turns that automation goal into a safe, teacher-owned move that can be repeated and reviewed.
 
-- Migration status: scaffolded
-- Canonical route: `/book/ots-220/05-forms-email-reminders/05-1`
-- Current registry source: `src/lib/courseStructures.ts`
-- Related global lesson: none mapped yet
+The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
 
-## Section Purpose
+## Do This
 
-Use this file for the permanent lesson body when OTS-220 moves from registry-driven rendering to course-folder rendering.
+- Name the classroom workflow issue connected to Forms and Responses.
+- Use this section to apply the chapter logic to one real classroom workflow..
+- Record the decision tied to when reminders are useful, who is notified, and what privacy notices are needed..
+- Save evidence in support of the chapter artifact: Reminder workflow.
+- Add one rollback or stop condition before publishing or sharing anything externally.
 
-## Authoring Checklist
+## Evidence of Completion
 
-- [ ] Replace scaffold text with authored lesson content.
-- [ ] Add source notes or references needed for this section.
-- [ ] Add artifacts, labs, templates, or assets in this course folder when needed.
-- [ ] Confirm privacy, accessibility, and safety review.
-- [ ] Verify the canonical route after reader migration.
+- a short decision note or script check exists for Forms and Responses.
+- The work explicitly connects to Reminder workflow and one teacher context.
+- A source or platform behavior note is attached where needed.
+- A safety note is included for any data, email, or file-write action.
+
+## Source and Template References
+
+Use Source Bank-backed references as the official evidence for behavior claims:
+
+- [Source 1: Form Service](https://developers.google.com/apps-script/reference/forms)
+- [Source 2: Mail Service](https://developers.google.com/apps-script/reference/mail/mail-app)
+
+- Template artifact: [Reminder workflow template](/content/courses/ots-220/templates/reminder-automation-safety-checklist.md)
+
+## Verification Checks
+
+- Do not include student-identifiable data, credentials, or private school details.
+- Check for the chapter risk: sending incomplete, too frequent, or private information through automation..
+- Run a preview or copy-test before any live classroom or student workflow use.
+- Use official docs for behavior, permissions, and quota expectations.
+- Keep instructions readable for the next teacher who inherits the script or workflow.
+- the change is useful, safe, and reversible.
+
+## Reflection
+
+What is one thing in this section that made the automation safer, simpler, or easier to hand off, and what would you still refuse to automate?

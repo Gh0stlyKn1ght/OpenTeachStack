@@ -115,13 +115,13 @@ export default function ContributePage() {
           <li>
             <strong>Fork the repository.</strong> Open{" "}
             <a
-              href={REPOSITORY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5"
+            href={REPOSITORY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5"
             >
               <GitHubIcon className="h-4 w-4" title="" />
-              Gh0stlyKn1ght/OpenTeachStack
+              Gh0stlyKn1ght/Teacher-techops
             </a>
             , then click the &ldquo;Fork&rdquo; button to create your own copy.
           </li>

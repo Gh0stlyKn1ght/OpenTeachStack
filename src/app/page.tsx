@@ -57,33 +57,67 @@ export default function HomePage() {
             </a>
           </div>
         </div>
+      </section>
 
-        <aside className="border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-            Book Index
-          </p>
-          <nav aria-label="Homepage book index">
-            <ol className="space-y-3">
-              {[
-                ["Foundations", "/book/ots-101"],
-                ["Knowledge Base", "/kb"],
-                ["Transferable Skills", "/skills"],
-                ["Evidence Layer", "/evidence"],
-                ["Source Bank", "/library/source-bank"],
-                ["Release Packet", "/course/release"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="block border-b border-border py-2 text-lg text-foreground no-underline transition-colors hover:text-accent"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </aside>
+      <section className="border-y border-border bg-surface-alt/18">
+        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-4 py-12 md:grid-cols-3">
+          <article className="rounded-sm border border-border bg-background p-5">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Courses
+            </p>
+            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+              Learn in order.
+            </h2>
+            <p className="mb-4 text-sm text-foreground/62">
+              Start with OTS-101, then continue through the pathway in sequence
+              when you are ready.
+            </p>
+            <Link
+              href="/courses"
+              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
+            >
+              Explore the Course Track
+            </Link>
+          </article>
+
+          <article className="rounded-sm border border-border bg-background p-5">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Knowledge Base
+            </p>
+            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+              Solve today&apos;s challenge.
+            </h2>
+            <p className="mb-4 text-sm text-foreground/62">
+              Quick workflows for prompts, troubleshooting, safety, tools, and
+              lessons without taking the full course route.
+            </p>
+            <Link
+              href="/kb"
+              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
+            >
+              Open the Field Manual
+            </Link>
+          </article>
+
+          <article className="rounded-sm border border-border bg-background p-5">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Library
+            </p>
+            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+              Copy the artifact.
+            </h2>
+            <p className="mb-4 text-sm text-foreground/62">
+              Templates, source bank entries, prompts, and downloadable assets for
+              immediate reuse.
+            </p>
+            <Link
+              href="/library"
+              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
+            >
+              Open the Library
+            </Link>
+          </article>
+        </div>
       </section>
 
       <section className="border-y border-border bg-surface-alt/18">

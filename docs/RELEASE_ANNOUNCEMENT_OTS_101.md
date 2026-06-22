@@ -42,7 +42,7 @@ Teaching Teachers is for teachers who want more control over their curriculum sy
 Start here:
 
 - Site: https://teachingteachers.dev
-- Repository: https://github.com/Gh0stlyKn1ght/OpenTeachStack
+- Repository: https://github.com/Gh0stlyKn1ght/Teacher-techops
 - Course: `/course`
 - Source Bank: `/library/source-bank`
 - Templates: `/templates`

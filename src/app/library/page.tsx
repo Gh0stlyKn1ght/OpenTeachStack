@@ -67,7 +67,7 @@ const libraryItems = [
 
 export default function LibraryPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
+    <div className="mx-auto w-[min(100%-1.5rem,96rem)] px-3 py-12">
       <header className="mb-10 max-w-3xl">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
           Library

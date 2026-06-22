@@ -59,7 +59,7 @@ This pass did not rewrite lesson bodies. It focused on the safest high-impact su
 
 Before direction:
 
-> Willing to learn for the future.
+> A field guide for educators entering the tech world.
 
 After direction:
 

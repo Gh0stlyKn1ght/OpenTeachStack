@@ -1,40 +1,61 @@
 ---
-course: "OTS-220"
-courseSlug: "ots-220"
-chapter: "Teacher Automation Toolkit"
-chapterSlug: "06-teacher-automation-toolkit"
-sectionNumber: "06.1"
-sectionSlug: "06-1"
-title: "Script Review Checklist"
-type: "section"
-duration: "20 minutes"
-artifact: "Automation toolkit"
-canonicalRoute: "/book/ots-220/06-teacher-automation-toolkit/06-1"
-sourceRegistry: "src/lib/courseStructures.ts"
-sourceLessonSlug: ""
-sourceLessonTitle: ""
-migrationStatus: "scaffolded"
+course: OTS-220
+courseSlug: ots-220
+chapter: Teacher Automation Toolkit
+chapterSlug: 06-teacher-automation-toolkit
+sectionNumber: 06.1
+sectionSlug: 06-1
+title: Script Review Checklist
+type: section
+duration: 20 minutes
+artifact: Automation toolkit
+canonicalRoute: /book/ots-220/06-teacher-automation-toolkit/06-1
+sourceRegistry: src/lib/courseStructures.ts
+sourceLessonSlug: ''
+sourceLessonTitle: ''
+migrationStatus: authored
 ---
-
 # Script Review Checklist
 
-This is the course-owned source file for **OTS-220 / Teacher Automation Toolkit / 06.1**.
+## Core Idea
 
-## Authoring Status
+Teacher Automation Toolkit is about assembling a minimal, documented toolkit that another teacher can inspect and run safely.. In this section, **Script Review Checklist** turns that automation goal into a safe, teacher-owned move that can be repeated and reviewed.
 
-- Migration status: scaffolded
-- Canonical route: `/book/ots-220/06-teacher-automation-toolkit/06-1`
-- Current registry source: `src/lib/courseStructures.ts`
-- Related global lesson: none mapped yet
+The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
 
-## Section Purpose
+## Do This
 
-Use this file for the permanent lesson body when OTS-220 moves from registry-driven rendering to course-folder rendering.
+- Name the classroom workflow issue connected to Script Review Checklist.
+- Use this section to apply the chapter logic to one real classroom workflow..
+- Record the decision tied to what artifacts belong in the toolkit and how handoff happens after one cycle..
+- Save evidence in support of the chapter artifact: Automation toolkit.
+- Add one rollback or stop condition before publishing or sharing anything externally.
 
-## Authoring Checklist
+## Evidence of Completion
 
-- [ ] Replace scaffold text with authored lesson content.
-- [ ] Add source notes or references needed for this section.
-- [ ] Add artifacts, labs, templates, or assets in this course folder when needed.
-- [ ] Confirm privacy, accessibility, and safety review.
-- [ ] Verify the canonical route after reader migration.
+- a short decision note or script check exists for Script Review Checklist.
+- The work explicitly connects to Automation toolkit and one teacher context.
+- A source or platform behavior note is attached where needed.
+- A safety note is included for any data, email, or file-write action.
+
+## Source and Template References
+
+Use Source Bank-backed references as the official evidence for behavior claims:
+
+- [Source 1: Properties and Logging](https://developers.google.com/apps-script/guides/services/authorization)
+- [Source 2: Apps Script Guides](https://developers.google.com/apps-script/guides)
+
+- Template artifact: [Automation toolkit template](/content/courses/ots-220/templates/automation-toolkit-release-checklist.md)
+
+## Verification Checks
+
+- Do not include student-identifiable data, credentials, or private school details.
+- Check for the chapter risk: shipping a complex script bundle that no one can maintain or trust..
+- Run a preview or copy-test before any live classroom or student workflow use.
+- Use official docs for behavior, permissions, and quota expectations.
+- Keep instructions readable for the next teacher who inherits the script or workflow.
+- the change is useful, safe, and reversible.
+
+## Reflection
+
+What is one thing in this section that made the automation safer, simpler, or easier to hand off, and what would you still refuse to automate?

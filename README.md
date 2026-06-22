@@ -6,11 +6,11 @@
 [![TypeScript 5.x](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
-[![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Teaching%20Teachers-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/Teacher-techops)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/Teacher-techops/pulls)
 [![OTS-101: 10 Chapters](https://img.shields.io/badge/OTS--101-10%20Chapters-0969DA?style=flat-square)](#ots-101--teaching-teachers-foundations)
 
-**Willing to learn for the future.**
+**A field guide for educators entering the tech world.**
 
 Teaching Teachers is an open-source pathway for educators building curriculum
 systems with AI, open resources, Google Workspace, and practical classroom
@@ -126,8 +126,8 @@ Reviewer and maintenance docs:
 ## Quick Start
 
 ```bash
-git clone https://github.com/Gh0stlyKn1ght/OpenTeachStack.git
-cd OpenTeachStack
+git clone https://github.com/Gh0stlyKn1ght/Teacher-techops.git
+cd Teacher-techops
 npm install
 npm run dev
 ```
@@ -145,14 +145,16 @@ Open [http://localhost:4000](http://localhost:4000) to view the site.
 
 ## Roadmap
 
-The current release priority is the OTS-101 public release pass:
+v1.0 shipped — OTS-101 through OTS-399 are authored, reader-migrated, and passing
+lint/build/route checks. The current priority is **v1.1 Platform Consolidation**:
 
-- keep advanced pathway material marked future/draft
-- maintain the Source Bank as the shared link system
-- keep templates, source checks, safety checks, and capstone evidence aligned
-- keep the formal browser accessibility audit and polish queue moving after first release
+- Add overwrite protection to scaffold and author scripts
+- Add machine-verifiable build report (`docs/BUILD_VERIFICATION.md`)
+- Resolve the Nextra/custom KB architecture split
+- Clean up brand identity (Teaching Teachers vs OpenTeachStack vs OTS)
+- Unify design language across courses, KB, and library
 
-See [ROADMAP.md](ROADMAP.md) for phases.
+See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.
 
 ## License
 
@@ -162,4 +164,3 @@ See [ROADMAP.md](ROADMAP.md) for phases.
 ## Author
 
 **JC Nevarez** — [nevarez.dev](https://nevarez.dev) — [jc@nevarez.dev](mailto:jc@nevarez.dev)
-

@@ -2,6 +2,10 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
 
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const dryRun = args.includes("--dry-run");
+
 const root = process.cwd();
 const courseSlug = "ots-260";
 const courseRoot = join(root, "content", "courses", courseSlug);
@@ -125,22 +129,35 @@ What is one media choice from this section that makes the lesson easier to teach
 const courseJsonPath = join(courseRoot, "course.json");
 const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
 let updated = 0;
+let skipped = 0;
 
 for (const chapter of courseJson.chapters) {
   for (let index = 0; index < chapter.lessonCount; index++) {
     const sectionSlug = `${chapter.number}-${index}`;
-    const filePath = join(courseRoot, "lessons", chapter.slug, `${sectionSlug}.mdx`);
+    const relativePath = `lessons/${chapter.slug}/${sectionSlug}.mdx`;
+    const filePath = join(courseRoot, relativePath);
     if (!existsSync(filePath)) {
       throw new Error(`Missing OTS-260 course lesson file: ${chapter.slug}/${sectionSlug}.mdx`);
     }
 
     const parsed = matter(readFileSync(filePath, "utf8"));
+    if (!force && parsed.data.migrationStatus !== "scaffolded") {
+      skipped++;
+      continue;
+    }
+
     const section = {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
       artifact: parsed.data.artifact,
     };
+
+    if (dryRun) {
+      console.log(`[dry-run] WRITE: ${relativePath}`);
+      updated++;
+      continue;
+    }
 
     parsed.data.migrationStatus = "authored";
     parsed.content = bodyFor(chapter, section);
@@ -149,7 +166,18 @@ for (const chapter of courseJson.chapters) {
   }
 }
 
-courseJson.migrationStatus = "authored";
-writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
+if (force || courseJson.migrationStatus !== "authored") {
+  if (dryRun) {
+    console.log(`[dry-run] WRITE: course.json`);
+  } else {
+    courseJson.migrationStatus = "authored";
+    writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
+  }
+}
 
-console.log(`Authored ${updated} OTS-260 section files.`);
+const mode = dryRun ? "[DRY RUN] " : "";
+console.log(`${mode}Authored ${updated} OTS-260 section files; preserved ${skipped} existing authored files.${force ? " (--force)" : ""}`);
+if (!dryRun && skipped > 0 && !force) {
+  console.log(`${skipped} non-authored or non-scaffolded files were preserved. Use --force to overwrite.`);
+}
+

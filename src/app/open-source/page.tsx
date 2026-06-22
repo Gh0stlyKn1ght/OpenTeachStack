@@ -162,7 +162,7 @@ export default function OpenSourcePage() {
             className="inline-flex items-center gap-1.5"
           >
             <GitHubIcon className="h-4 w-4" title="" />
-            Gh0stlyKn1ght/OpenTeachStack
+            Gh0stlyKn1ght/Teacher-techops
           </a>
           .
         </p>

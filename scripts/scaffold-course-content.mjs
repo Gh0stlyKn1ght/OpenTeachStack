@@ -1,29 +1,60 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const dryRun = args.includes("--dry-run");
+
 const root = process.cwd();
-const generatedDate = "2026-06-22";
+const generatedDate = new Date().toISOString().slice(0, 10);
+
+let written = 0;
+let skipped = 0;
+let copied = 0;
 
 function read(relativePath) {
   return readFileSync(join(root, relativePath), "utf8");
 }
 
 function ensureDir(relativePath) {
+  if (dryRun) return;
   mkdirSync(join(root, relativePath), { recursive: true });
 }
 
 function write(relativePath, content) {
   const absolutePath = join(root, relativePath);
+  if (!force && existsSync(absolutePath)) {
+    if (dryRun) console.log(`[dry-run] SKIP (exists): ${relativePath}`);
+    else skipped++;
+    return;
+  }
+  if (dryRun) {
+    console.log(`[dry-run] WRITE: ${relativePath}`);
+    written++;
+    return;
+  }
   mkdirSync(dirname(absolutePath), { recursive: true });
   writeFileSync(absolutePath, content);
+  written++;
 }
 
 function copyIfChanged(sourceRelativePath, targetRelativePath) {
   const source = join(root, sourceRelativePath);
   if (!existsSync(source)) return;
   const target = join(root, targetRelativePath);
+  if (!force && existsSync(target)) {
+    if (dryRun) console.log(`[dry-run] SKIP (exists): ${targetRelativePath}`);
+    else skipped++;
+    return;
+  }
+  if (dryRun) {
+    console.log(`[dry-run] COPY: ${sourceRelativePath} -> ${targetRelativePath}`);
+    copied++;
+    return;
+  }
   mkdirSync(dirname(target), { recursive: true });
   copyFileSync(source, target);
+  copied++;
 }
 
 function getQuotedStrings(value) {
@@ -296,8 +327,12 @@ function copyKnownLabs(course) {
   return copied;
 }
 
+const GENERATED_HEADER = `<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->`;
+const GENERATION_SOURCE = "scaffold";
+
 function buildCourseReadme(course) {
-  return `# ${course.code} ${course.title}
+  return `${GENERATED_HEADER}
+# ${course.code} ${course.title}
 
 Status: migration scaffold
 
@@ -323,7 +358,8 @@ Keep the current app routes working until this course folder becomes the reader 
 }
 
 function buildDirectoryReadme(course, directory, description) {
-  return `# ${course.code} ${directory}
+  return `${GENERATED_HEADER}
+# ${course.code} ${directory}
 
 ${description}
 
@@ -334,6 +370,7 @@ This directory belongs to \`${course.slug}\` and should travel with the course d
 function buildCourseJson(course, copiedDocs, copiedAssets, copiedLabs) {
   return `${JSON.stringify(
     {
+      generationSource: GENERATION_SOURCE,
       code: course.code,
       slug: course.slug,
       title: course.title,
@@ -366,7 +403,8 @@ function buildSectionMdx(course, chapter, section) {
     ? readFrontmatterTitle(`content/lessons/${sourceLessonSlug}.mdx`)
     : undefined;
 
-  return `---
+  return `{/* AUTO-GENERATED SCAFFOLD — replace this file with authored content. Do not re-run scaffold without --force. */}
+---
 course: ${yamlString(course.code)}
 courseSlug: ${yamlString(course.slug)}
 chapter: ${yamlString(chapter.title)}
@@ -382,6 +420,7 @@ sourceRegistry: ${yamlString(course.sourceRegistry)}
 sourceLessonSlug: ${yamlString(sourceLessonSlug ?? "")}
 sourceLessonTitle: ${yamlString(sourceLessonTitle ?? "")}
 migrationStatus: "scaffolded"
+generationSource: ${yamlString(GENERATION_SOURCE)}
 ---
 
 # ${section.title}
@@ -451,11 +490,15 @@ const courses = [parseOts101(), ...parseGenericCourses(), parseOts280()].sort((a
 
 write(
   "content/courses/README.md",
-  `# Course-Owned Content\n\nDate: ${generatedDate}\n\nThis directory is the migration-ready home for course-owned lessons, labs, assets, docs, templates, and references.\n\nCurrent courses:\n\n${courses.map((course) => `- [${course.code} ${course.title}](./${course.slug}/README.md)`).join("\n")}\n\nCurrent app routes still read from their existing registries. Move one reader at a time and verify route parity before deleting global content.\n`,
+  `${GENERATED_HEADER}\n# Course-Owned Content\n\nDate: ${generatedDate}\n\nThis directory is the migration-ready home for course-owned lessons, labs, assets, docs, templates, and references.\n\nCurrent courses:\n\n${courses.map((course) => `- [${course.code} ${course.title}](./${course.slug}/README.md)`).join("\n")}\n\nCurrent app routes still read from their existing registries. Move one reader at a time and verify route parity before deleting global content.\n`,
 );
 
 for (const course of courses) {
   scaffoldCourse(course);
 }
 
-console.log(`Scaffolded ${courses.length} course folders in content/courses.`);
+const mode = dryRun ? "[DRY RUN] " : "";
+console.log(`${mode}Scaffolded ${courses.length} courses — wrote ${written}, skipped ${skipped} existing, copied ${copied}.${force ? " (--force)" : ""}`);
+if (!dryRun && skipped > 0) {
+  console.log(`${skipped} existing files were preserved. Use --force to overwrite.`);
+}

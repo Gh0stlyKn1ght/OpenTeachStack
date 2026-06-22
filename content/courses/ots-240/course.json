@@ -6,7 +6,7 @@
   "canonicalRoute": "/book/ots-240",
   "sourceRegistry": "src/lib/courseStructures.ts",
   "generatedAt": "2026-06-22",
-  "migrationStatus": "scaffolded",
+  "migrationStatus": "authored",
   "chapters": [
     {
       "number": "01",

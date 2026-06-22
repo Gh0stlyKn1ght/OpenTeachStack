@@ -3,10 +3,10 @@ export const COURSE_TITLE = "Teaching Teachers Foundations";
 export const COURSE_SUBTITLE =
   "Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators";
 export const COURSE_THESIS =
-  "Teaching Teachers is an open-source pathway for educators willing to learn for the future. OTS-101 is the required foundations course.";
+  "Teaching Teachers is an open-source pathway for educators building practical, future-ready curriculum systems. OTS-101 is the required foundations course.";
 export const SITE_URL = "https://teachingteachers.dev";
 export const REPOSITORY_URL =
-  "https://github.com/Gh0stlyKn1ght/OpenTeachStack";
+  "https://github.com/Gh0stlyKn1ght/Teacher-techops";
 
 export interface AuthorInfo {
   name: string;

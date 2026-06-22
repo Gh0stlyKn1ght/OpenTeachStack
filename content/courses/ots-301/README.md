@@ -1,6 +1,6 @@
 # OTS-301 Teacher Course Sites
 
-Status: migration scaffold
+Status: migration authored
 
 Canonical route: `/book/ots-301`
 

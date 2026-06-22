@@ -3,6 +3,7 @@ import BookChapterHeader from "@/components/book/BookChapterHeader";
 import BookShell from "@/components/book/BookShell";
 import CourseSkillMatrix from "@/components/book/CourseSkillMatrix";
 import EvidencePanel from "@/components/book/EvidencePanel";
+import StandardsAssessmentMatrix from "@/components/book/StandardsAssessmentMatrix";
 import SourcePanel from "@/components/book/SourcePanel";
 
 export const metadata: Metadata = {
@@ -37,6 +38,11 @@ export default function EvidencePage() {
       <section>
         <h2>Course-to-Skill Coverage</h2>
         <CourseSkillMatrix />
+      </section>
+
+      <section>
+        <h2>OTS-101 Standards-to-Assessment Traceability</h2>
+        <StandardsAssessmentMatrix />
       </section>
     </BookShell>
   );

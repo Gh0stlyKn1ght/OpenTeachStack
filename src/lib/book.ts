@@ -1,4 +1,5 @@
 import { MODULES, PATHWAY_COURSES } from "./metadata";
+import { officialDocSources } from "./officialSources";
 
 export interface SkillNode {
   skill: string;
@@ -10,7 +11,19 @@ export interface EvidenceTopic {
   title: string;
   claim: string;
   sourceNote: string;
+  evidenceSource?: { label: string; url: string }[];
+  lastVerified: string;
+  metricLabel?: string;
+  metricValue?: string;
   relatedPath: string;
+}
+
+export interface StandardsAssessmentTraceRow {
+  module: string;
+  standards: string;
+  assessmentArtifact: string;
+  evidenceRoute: string;
+  sourceReference: string;
 }
 
 export interface ChapterSection {
@@ -309,6 +322,10 @@ export const TRANSFERABLE_SKILLS: SkillNode[] = [
   },
 ];
 
+const OTS_101_SOURCES = officialDocSources.find((course) => course.course === "OTS-101")?.sources ?? [];
+const OTS_201_SOURCES = officialDocSources.find((course) => course.course === "OTS-201")?.sources ?? [];
+export const EVIDENCE_LAST_VERIFIED = "2026-06-22";
+
 export const EVIDENCE_TOPICS: EvidenceTopic[] = [
   {
     title: "Teacher workflow load",
@@ -316,6 +333,13 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
       "Teaching work includes repeated planning, assessment, communication, source review, and file-management tasks that benefit from reusable systems.",
     sourceNote:
       "Use the source bank for official documentation and research-backed references before adding quantitative claims.",
+    evidenceSource: [
+      ...OTS_101_SOURCES.slice(0, 3),
+      ...OTS_201_SOURCES.slice(0, 2),
+    ],
+    lastVerified: EVIDENCE_LAST_VERIFIED,
+    metricLabel: "Source-backed references",
+    metricValue: `${Math.max(OTS_101_SOURCES.length, 1)}`,
     relatedPath: "/library/source-bank",
   },
   {
@@ -324,7 +348,14 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
       "Educators need practical AI habits: prompt design, verification, privacy review, and documented revision decisions.",
     sourceNote:
       "Ground claims in official AI guidance and classroom policy sources; avoid invented adoption statistics.",
-    relatedPath: "/sources",
+    evidenceSource: OTS_101_SOURCES.slice(0, 2).map((source) => ({
+      label: source.label,
+      url: source.url,
+    })),
+    lastVerified: EVIDENCE_LAST_VERIFIED,
+    metricLabel: "AI references linked",
+    metricValue: "3",
+    relatedPath: "/library/source-bank",
   },
   {
     title: "Cyber safety",
@@ -332,6 +363,16 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
       "Public-facing educators need account hygiene, identity separation, profile review, and safe publishing routines.",
     sourceNote:
       "Use official security guidance and the Teaching Teachers cyber safety materials as the local baseline.",
+    evidenceSource: [
+      { label: "NIST Digital Identity Guidelines", url: "https://pages.nist.gov/800-63-4/sp800-63b.html" },
+      {
+        label: "FTC anti-phishing guidance",
+        url: "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams",
+      },
+    ],
+    lastVerified: EVIDENCE_LAST_VERIFIED,
+    metricLabel: "Safety source links",
+    metricValue: "2",
     relatedPath: "/safety",
   },
   {
@@ -340,7 +381,58 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
       "Prompting, documentation, source evaluation, accessibility, automation logic, and web publishing transfer beyond one platform.",
     sourceNote:
       "Treat this as a skills map, not a labor-market claim, until external data is cited.",
+    evidenceSource: [
+      {
+        label: "Standards-to-targets chapter",
+        url: "/book/ots-101/04-standards-to-learning-targets",
+      },
+      {
+        label: "Assessment rubric template",
+        url: "/templates/assessment-rubric-template",
+      },
+    ],
+    lastVerified: EVIDENCE_LAST_VERIFIED,
+    metricLabel: "Pathway courses tracked",
+    metricValue: "9",
     relatedPath: "/skills",
+  },
+];
+
+export const OTS_101_STANDARDS_ASSESSMENT_MATRIX: StandardsAssessmentTraceRow[] = [
+  {
+    module: "04 — Standards to Learning Targets",
+    standards:
+      "Standard intent is translated into measurable learner outcomes and aligned lesson evidence.",
+    assessmentArtifact: "Standards unpacking sheet",
+    evidenceRoute: "/templates/standards-unpacking-sheet",
+    sourceReference:
+      "Use official standard references from the source bank + OTS-101 chapter route",
+  },
+  {
+    module: "08 — Assessment, Rubrics, and Feedback",
+    standards:
+      "Learning targets from earlier modules are scored with observable criteria and feedback loops.",
+    assessmentArtifact: "Assessment and rubric draft",
+    evidenceRoute: "/templates/assessment-rubric-template",
+    sourceReference:
+      "Use official sources and prompt/verification notes from OTS-101 section bodies.",
+  },
+  {
+    module: "09 — Delivery Planning",
+    standards:
+      "Standards-aligned lessons map to student-facing workflows, pacing, and backup plans.",
+    assessmentArtifact: "Delivery plan",
+    evidenceRoute: "/templates/delivery-plan",
+    sourceReference:
+      "Link chapter 09 outcomes to chapter 10 capstone artifact validation steps.",
+  },
+  {
+    module: "10 — Mini-Unit Capstone",
+    standards:
+      "Mini-unit evidence shows standards, artifacts, and assessment evidence are connected before release.",
+    assessmentArtifact: "Verified mini-unit capstone",
+    evidenceRoute: "/book/ots-101/10-mini-unit-capstone",
+    sourceReference: "Course-level evidence matrix + source bank verification notes.",
   },
 ];
 

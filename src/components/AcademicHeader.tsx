@@ -17,7 +17,7 @@ export function AcademicHeader() {
             Teaching Teachers
           </span>
           <span className="hidden text-[0.68rem] font-mono uppercase tracking-widest text-foreground/40 sm:block">
-            Willing to learn for the future.
+            A field guide for educators entering the tech world.
           </span>
         </Link>
 

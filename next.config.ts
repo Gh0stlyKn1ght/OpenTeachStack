@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
-import nextra from "nextra";
+import createMDX from "@next/mdx";
 
-const withNextra = nextra({
-  contentDirBasePath: "/__nextra-content",
+const withMDX = createMDX({
+  extension: /\.mdx$/,
 });
 
 const nextConfig: NextConfig = {
@@ -26,4 +26,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextra(nextConfig);
+export default withMDX(nextConfig);

@@ -1,8 +1,9 @@
 # Roadmap
 
-## Current Status: v0.1 — Pathway Reframe
+## Current Status: v2.0 — Full Pathway Release
 
-Teaching Teachers has been reframed from one overloaded OTS-101 course into an open-source pathway. OTS-101 is now the required foundations course.
+All nine pathway courses are authored, reader-migrated, and passing lint/build/route checks.
+Roadmap currently has no blocked required items in v0.6, v1.1, v1.2, v1.3, v1.4, v1.5, or v2.0.
 
 ## v0.2 — OTS-101 Foundations Complete
 
@@ -57,34 +58,15 @@ All v1 templates are available as site pages and Markdown downloads. Do not add 
 
 ## v0.6 — Pathway Course Authoring
 
-Done means for every authored course tranche:
+Done means for every course tranche:
 
-- [ ] Authored content is visible in book routes
-- [ ] Templates or artifacts are listed or added
-- [ ] Source Bank references are attached or queued
-- [ ] Privacy, accessibility, and safety review is complete
-- [ ] `npm run lint` passes
-- [ ] `npm run build` passes
-- [ ] Representative route probes return `200`
-
-### Course Content Packaging
-
-- [x] Course-owned folders created under `content/courses/{courseSlug}`
-- [x] Each course folder includes `course.json`, `lessons`, `labs`, `assets`, `docs`, `templates`, and `references`
-- [x] Section-level lesson files scaffolded inside each course folder
-- [x] Existing OTS-220 labs copied into the OTS-220 course folder
-- [x] Existing OTS-101 image assets copied into the OTS-101 course folder
-- [x] Existing course docs copied into matching course folders
-- [x] `npm run check:content-layout` added and passing
-
-### OTS-101 Course-Owned Reader Migration
-
-- [x] OTS-101 section files authored in `content/courses/ots-101/lessons`
-- [x] OTS-101 section route reads course-owned MDX instead of global lesson bodies
-- [x] Generic section fallback removed from visible OTS-101 section routes
-- [x] `npm run author:ots101` added for controlled course-local authoring refreshes
-- [x] `npm run check:ots101-reader` added and passing
-- [x] Representative OTS-101 route probes return `200` without fallback text
+- [x] Authored content is visible in book routes
+- [x] Templates or artifacts are listed or added
+- [x] Source Bank references are attached or queued
+- [x] Privacy, accessibility, and safety review is complete
+- [x] `npm run lint` passes
+- [x] `npm run build` passes
+- [x] Representative route probes return `200`
 
 ### OTS-280 Cyber Safety for Educators
 
@@ -103,15 +85,6 @@ Done means for every authored course tranche:
 - [x] Escalation notes added for district IT, administration, and law enforcement boundaries
 - [x] Privacy review completed for every example
 
-Course-owned reader migration:
-
-- [x] OTS-280 section files authored in `content/courses/ots-280/lessons`
-- [x] OTS-280 section route reads course-owned MDX instead of `src/lib/cyberSafety.ts` section body rendering
-- [x] Registry/fallback rendering removed from visible OTS-280 section routes
-- [x] `npm run author:ots280` added for controlled course-local authoring refreshes
-- [x] `npm run check:ots280-reader` added and passing
-- [x] Representative OTS-280 route probes return `200` without fallback text
-
 ### OTS-260 AI Media and Lesson Delivery
 
 - [x] Chapter 01 Media With Purpose authored sections
@@ -124,15 +97,6 @@ Course-owned reader migration:
 - [x] Accessibility checklist added for alt text, captions, transcripts, and readable slides
 - [x] OBS, image-tool terms, and copyright references attached or queued
 - [x] Projector and mobile readability pass completed
-
-Course-owned reader migration:
-
-- [x] OTS-260 section files authored in `content/courses/ots-260/lessons`
-- [x] OTS-260 section route reads course-owned MDX instead of generic `src/lib/courseStructures.ts` section body rendering
-- [x] Registry/fallback rendering removed from visible OTS-260 section routes
-- [x] `npm run author:ots260` added for controlled course-local authoring refreshes
-- [x] `npm run check:ots260-reader` added and passing
-- [x] Representative OTS-260 route probes return `200` without fallback text
 
 ### OTS-301 Teacher Course Sites
 
@@ -160,16 +124,6 @@ Course-owned reader migration:
 - [x] Fake-data testing protocol added
 - [x] Codex, Claude Code, VS Code, GitHub, and Apps Script references attached or queued
 
-Done means evidence:
-
-- [x] Authored content is visible in book routes
-- [x] Templates or artifacts are listed or added
-- [x] Source Bank references are attached or queued
-- [x] Privacy, accessibility, and safety review is complete
-- [x] `npm run lint` passes
-- [x] `npm run build` passes
-- [x] Representative route probes return `200`
-
 ### OTS-399 Capstone Studio
 
 - [x] Chapter 01 Capstone Scope authored sections
@@ -184,15 +138,14 @@ Done means evidence:
 - [x] Final release checklist added
 - [x] Full pathway traceability check completed
 
-Done means evidence:
+### OTS-101 course-owned reader migration completed (v0.5 artifact preserved)
 
-- [x] Authored content is visible in book routes
-- [x] Templates or artifacts are listed or added
-- [x] Source Bank references are attached or queued
-- [x] Privacy, accessibility, and safety review is complete
-- [x] `npm run lint` passes
-- [x] `npm run build` passes
-- [x] Representative route probes return `200`
+- [x] OTS-101 section files authored in `content/courses/ots-101/lessons`
+- [x] OTS-101 route reads course-owned MDX instead of fallback lesson bodies
+- [x] Generic fallback removed from visible OTS-101 section routes
+- [x] `npm run author:ots101` added for controlled course-local authoring refreshes
+- [x] `npm run check:ots101-reader` added and passing
+- [x] Representative OTS-101 route probes return `200` without fallback text
 
 ## v1.0 — Foundations Release
 
@@ -204,10 +157,104 @@ Done means evidence:
 - [x] Content safety rules documented for contributors
 - [x] Release announcement focused on OTS-101 Foundations
 
+## v1.1 — Platform Consolidation (current)
+
+Priority: stabilize the platform identity before adding new content.
+
+### P0 — Content Safety
+
+- [x] Add no-overwrite guard to `scaffold:courses` — skip files that already exist by default
+- [x] Add no-overwrite guard to `author:ots101`, `author:ots260`, `author:ots280` scripts
+- [x] Add `--force` flag to scaffold/author scripts for intentional overwrites only
+- [x] Add `--dry-run` flag that prints planned writes without touching disk
+- [x] Add generated-file headers to scaffolded files so authored vs generated is clear
+
+### P0 — Build Verification
+
+- [x] Add `docs/BUILD_VERIFICATION.md` with date, commit SHA, lint result, build result, route probe result, known failures
+- [x] Add `npm run verify:release` script that generates `BUILD_VERIFICATION.md` from actual outputs
+- [x] Run and commit first verified release report
+
+### P0 — KB Architecture Decision
+
+- [x] Decide: Nextra-owned `/kb` or custom-owned `/kb` (not both halfway)
+- [x] If custom: remove `nextra` and `nextra-theme-docs` from dependencies, remove `withNextra` wrapper
+- [ ] If Nextra: migrate KB sidebar/search to Nextra `_meta` conventions, remove custom KB shell
+- [x] Document the decision in `docs/KB_ARCHITECTURE.md`
+
+### P1 — Brand Cleanup
+
+- [x] Decide whether to keep `OTS-###` course codes or migrate to `TT-###`
+- [x] Update GitHub repo badge in README from `OpenTeachStack` to match chosen brand
+- [x] Audit all README/doc references — resolve "Teaching Teachers" vs "OpenTeachStack" vs "Open Teacher Stack"
+- [x] Replace tagline "Willing to learn for the future" with a stronger line (candidate: "A field guide for educators entering the tech world")
+- [x] Update `Quick Start` clone URL if/when repo is renamed
+
+### P1 — UI Consistency
+
+- [x] Define one design language across courses, KB, and library (Field Manual style)
+- [x] Ensure `/book` and `/kb` share visual tokens — typography, spacing, sidebar patterns
+- [x] Remove or heavily theme Nextra default CSS so it does not conflict with custom styles
+- [x] Add homepage split: Courses (learn in order), Knowledge Base (solve today), Library (copy the artifact)
+
+### P1 — KB Maintainability
+
+- [x] Generate KB sidebar categories from filesystem or frontmatter instead of hardcoded array in `kb/layout.tsx`
+- [x] Derive `getKnowledgeBaseSearchRecords()` from filesystem/frontmatter scan instead of manual list
+
+## v1.2 — Evidence and Data Layer
+
+- [x] Build transferable skills map with source-backed claims
+- [x] Add `/evidence` page with real cited data (not placeholder graphs)
+- [x] Add "last verified" metadata to EvidencePanel components
+- [x] Add standards-to-assessment traceability matrix for OTS-101
+
+## v1.3 — OTS-201 Full Authoring
+
+- [x] Author OTS-201 Google Workspace Systems chapters from existing outline
+- [x] Course-owned reader migration for OTS-201
+- [x] Templates and Source Bank references attached
+- [x] Privacy, accessibility, and safety review
+- [x] Lint checks pass
+- [x] Build passes (via webpack build path; release verification now uses successful `npm run build`)
+- [x] Route probes passing
+
+## v1.4 — OTS-220 Full Authoring
+
+- [x] Author OTS-220 Apps Script chapters from existing outline and draft labs
+- [x] Course-owned reader migration for OTS-220
+- [x] Templates and Source Bank references attached
+- [x] Privacy, accessibility, and safety review
+- [x] Lint checks pass
+- [x] Build passes (via webpack build path; release verification now uses successful `npm run build`)
+- [x] Route probes returning `200` for representative OTS-220 routes
+
+## v1.5 — OTS-240 Full Authoring
+
+- [x] Author OTS-240 Open Resources & GitHub chapters from existing outline
+- [x] Course-owned reader migration for OTS-240
+- [x] Templates and Source Bank references attached
+- [x] Privacy, accessibility, and safety review
+- [x] Build passes (via webpack build path; release verification now uses successful `npm run build`)
+- [x] Lint checks pass
+- [x] Representative route probes returning `200`
+
+## v2.0 — Full Pathway Release
+
+- [x] All nine pathway courses fully authored and reader-migrated
+- [x] Transferable skills evidence page live with cited sources
+- [x] Homepage clearly routes users to Courses, Knowledge Base, and Library
+- [x] Build verification report committed and current
+- [x] Brand identity resolved — one name, one tagline, consistent badges
+- [x] Community contribution guide published
+- [x] Release announcement for full pathway
+
 ## Future Ideas
 
-- Video companion series for each foundations module
+- Video companion series for each course
 - Downloadable Google Docs/Sheets template pack
 - Community examples of mini-unit capstones
-- GitHub Discussions after the foundations course is stable
-- Certification or micro-credential pathway after advanced tracks exist
+- GitHub Discussions after pathway is stable
+- Certification or micro-credential pathway
+- PDF/print export for full course books
+- Contributor leaderboard or showcase page

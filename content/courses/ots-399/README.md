@@ -1,6 +1,6 @@
 # OTS-399 Capstone Studio
 
-Status: migration scaffold
+Status: migration complete
 
 Canonical route: `/book/ots-399`
 
@@ -19,4 +19,4 @@ This folder is the course-owned content package for OTS-399. It is designed so t
 
 ## Migration Rule
 
-Keep the current app routes working until this course folder becomes the reader source. Do not delete global lesson or lab files until route parity, search, build, and representative probes pass.
+Reader source is now course-owned for OTS-399 sections via the dedicated route scaffold under `src/app/book/ots-399`.
