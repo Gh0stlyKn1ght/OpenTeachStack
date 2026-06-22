@@ -1,0 +1,59 @@
+{
+  "code": "OTS-240",
+  "slug": "ots-240",
+  "title": "Open Resources and GitHub for Educators",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-240",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "scaffolded",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-open-resource-mindset",
+      "title": "Open Resource Mindset",
+      "buildArtifact": "Open resource decision log",
+      "lessonCount": 5
+    },
+    {
+      "number": "02",
+      "slug": "02-github-foundations",
+      "title": "GitHub Foundations for Teachers",
+      "buildArtifact": "Repository orientation notes",
+      "lessonCount": 5
+    },
+    {
+      "number": "03",
+      "slug": "03-writing-readmes",
+      "title": "Writing Useful READMEs",
+      "buildArtifact": "Course README",
+      "lessonCount": 5
+    },
+    {
+      "number": "04",
+      "slug": "04-contribution-review",
+      "title": "Contribution and Review Workflows",
+      "buildArtifact": "Contribution checklist",
+      "lessonCount": 5
+    },
+    {
+      "number": "05",
+      "slug": "05-publishing-attribution",
+      "title": "Publishing and Attribution",
+      "buildArtifact": "Attribution and license file",
+      "lessonCount": 5
+    },
+    {
+      "number": "06",
+      "slug": "06-open-curriculum-repository",
+      "title": "Open Curriculum Repository",
+      "buildArtifact": "Open curriculum repository",
+      "lessonCount": 5
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_240_COURSE_OUTLINE.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": []
+}

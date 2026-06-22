@@ -9,9 +9,13 @@ export const metadata: Metadata = {
 };
 
 const ots101Links = [
-  { label: "Overview", href: "/course" },
+  { label: "Book", href: "/book/ots-101" },
   { label: "Syllabus", href: "/syllabus" },
-  { label: "Modules", href: "/course" },
+  { label: "Chapters", href: "/book/ots-101" },
+  { label: "Knowledge Base", href: "/kb" },
+  { label: "Prompt Anatomy", href: "/kb/ai-prompting/prompt-anatomy" },
+  { label: "Verify AI Output", href: "/kb/ai-prompting/verify-ai-output" },
+  { label: "One-Day Lesson Site", href: "/kb/lesson-building/build-a-one-day-lesson-site" },
   { label: "Templates", href: "/templates" },
   { label: "Prompts", href: "/prompts" },
   { label: "Safety Checks", href: "/safety" },
@@ -68,7 +72,7 @@ export default function CoursesPage() {
           ))}
         </div>
         <Link
-          href="/course"
+          href="/book/ots-101"
           className="inline-flex rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
         >
           Open OTS-101 Foundations
@@ -81,7 +85,10 @@ export default function CoursesPage() {
         </h2>
         <div className="divide-y divide-border border-y border-border">
           {futureCourses.map((course) => {
-            const courseHref = course.code === "OTS-280" ? "/courses/ots-280" : null;
+            const courseHref =
+              course.code === "OTS-280"
+                ? "/book/ots-280"
+                : `/book/${course.code.toLowerCase()}`;
 
             return (
             <article key={course.code} className="py-5">
@@ -89,18 +96,12 @@ export default function CoursesPage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {course.code}
                 </span>
-                {courseHref ? (
-                  <Link
-                    href={courseHref}
-                    className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
-                  >
-                    {course.title}
-                  </Link>
-                ) : (
-                  <h3 className="font-serif text-lg font-bold text-foreground">
-                    {course.title}
-                  </h3>
-                )}
+                <Link
+                  href={courseHref}
+                  className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
+                >
+                  {course.title}
+                </Link>
                 <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground/55">
                   {course.status}
                 </span>
@@ -119,4 +120,3 @@ export default function CoursesPage() {
     </div>
   );
 }
-

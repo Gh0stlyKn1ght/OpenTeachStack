@@ -3,6 +3,7 @@ import BuildBox from './BuildBox';
 import LessonHero from './LessonHero';
 import OutcomeList from './OutcomeList';
 import PreviousNext from './PreviousNext';
+import ReadingProgress from './ReadingProgress';
 
 interface NavLink {
   title: string;
@@ -38,6 +39,8 @@ export default function LessonLayout({
 
   return (
     <article className="mx-auto max-w-2xl px-6 py-12">
+      <ReadingProgress />
+
       <LessonHero
         title={title}
         moduleId={moduleName}

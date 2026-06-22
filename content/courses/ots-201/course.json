@@ -1,0 +1,59 @@
+{
+  "code": "OTS-201",
+  "slug": "ots-201",
+  "title": "Google Workspace Systems for Teachers",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-201",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "scaffolded",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-workspace-system-mindset",
+      "title": "Workspace System Mindset",
+      "buildArtifact": "Workspace workflow audit",
+      "lessonCount": 6
+    },
+    {
+      "number": "02",
+      "slug": "02-drive-architecture",
+      "title": "Drive Architecture",
+      "buildArtifact": "Drive architecture map",
+      "lessonCount": 6
+    },
+    {
+      "number": "03",
+      "slug": "03-docs-slides-delivery",
+      "title": "Docs and Slides as Reusable Delivery Systems",
+      "buildArtifact": "Reusable Docs/Slides template set",
+      "lessonCount": 6
+    },
+    {
+      "number": "04",
+      "slug": "04-sheets-curriculum-trackers",
+      "title": "Sheets as Curriculum Trackers",
+      "buildArtifact": "Curriculum tracker sheet",
+      "lessonCount": 6
+    },
+    {
+      "number": "05",
+      "slug": "05-forms-calendar-operations",
+      "title": "Forms and Calendar for Classroom Operations",
+      "buildArtifact": "Operations workflow map",
+      "lessonCount": 6
+    },
+    {
+      "number": "06",
+      "slug": "06-workspace-command-center",
+      "title": "Workspace Command Center",
+      "buildArtifact": "Workspace command center",
+      "lessonCount": 6
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_201_COURSE_OUTLINE.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": []
+}

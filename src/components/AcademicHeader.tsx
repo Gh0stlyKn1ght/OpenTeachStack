@@ -50,7 +50,7 @@ export function AcademicHeader() {
             <GitHubIcon className="h-4 w-4" title="" />
           </a>
           <ThemeToggle />
-          <MobileNav navLinks={NAV_ITEMS} />
+          <MobileNav navLinks={NAV_ITEMS} repositoryUrl={REPOSITORY_URL} />
         </div>
       </div>
     </header>

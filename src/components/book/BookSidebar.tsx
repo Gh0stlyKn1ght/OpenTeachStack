@@ -1,12 +1,24 @@
 import Link from "next/link";
 import BookSearchInput from "./BookSearchInput";
-import { BOOK_CHAPTERS } from "@/lib/book";
+import {
+  BOOK_CHAPTERS,
+  BOOK_COURSE_CODE,
+  getSectionHref,
+  getSectionSlug,
+} from "@/lib/book";
+import { getOts101SearchRecords } from "@/lib/search";
 
 interface BookSidebarProps {
   activeSlug?: string;
+  activeSectionSlug?: string;
 }
 
-export default function BookSidebar({ activeSlug }: BookSidebarProps) {
+export default function BookSidebar({
+  activeSlug,
+  activeSectionSlug,
+}: BookSidebarProps) {
+  const searchRecords = getOts101SearchRecords();
+
   const renderChapterList = () => (
     <ol className="space-y-1">
       {BOOK_CHAPTERS.map((chapter) => {
@@ -25,8 +37,29 @@ export default function BookSidebar({ activeSlug }: BookSidebarProps) {
               <span className="font-mono text-xs">{chapter.number}</span>
               <span className="text-sm leading-snug">{chapter.title}</span>
             </Link>
-        </li>
-      );
+            {isActive && chapter.sections.length > 0 && (
+              <ol className="mt-1 space-y-1 border-l border-border/80 pl-4">
+                {chapter.sections.map((section) => (
+                  <li key={section.number}>
+                    <Link
+                      href={getSectionHref(chapter, section)}
+                      className={`grid grid-cols-[2.6rem_1fr] gap-2 rounded-sm px-2 py-1.5 text-[0.78rem] leading-snug no-underline transition-colors hover:bg-surface-alt hover:text-foreground ${
+                        activeSectionSlug === getSectionSlug(section)
+                          ? "bg-surface-alt text-foreground"
+                          : "text-foreground/55"
+                      }`}
+                    >
+                      <span className="font-mono text-[0.68rem] text-accent/75">
+                        {section.number}
+                      </span>
+                      <span>{section.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </li>
+        );
       })}
     </ol>
   );
@@ -42,11 +75,11 @@ export default function BookSidebar({ activeSlug }: BookSidebarProps) {
             href="/book/ots-101"
             className="font-serif text-xl font-bold text-foreground no-underline hover:text-accent"
           >
-            OTS-101
+            {BOOK_COURSE_CODE}
           </Link>
         </div>
 
-        <BookSearchInput />
+        <BookSearchInput records={searchRecords} />
 
         <nav className="mt-6" aria-label="OTS-101 chapter index">
           {renderChapterList()}
@@ -56,7 +89,7 @@ export default function BookSidebar({ activeSlug }: BookSidebarProps) {
       <details className="book-sidebar-mobile">
         <summary>Course index</summary>
         <div className="mt-4">
-          <BookSearchInput />
+          <BookSearchInput records={searchRecords} />
           <nav className="mt-4" aria-label="OTS-101 mobile chapter index">
             {renderChapterList()}
           </nav>

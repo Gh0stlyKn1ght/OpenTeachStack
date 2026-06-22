@@ -7,13 +7,19 @@ import {
   verificationLabels,
   type VerificationStatus,
 } from "@/lib/sourceBank";
+import { createPageMetadata } from "@/lib/siteMetadata";
 import { pageVisuals } from "@/lib/visualAssets";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Free Tools, Course Platforms, and Learning Resources — Teaching Teachers",
   description:
     "A verified source bank of free and education-friendly tools, platforms, curricula, and official links for teachers and students.",
-};
+  path: "/library/source-bank",
+  image: {
+    url: pageVisuals.sourceBank.src,
+    alt: pageVisuals.sourceBank.alt,
+  },
+});
 
 const statusTone: Record<VerificationStatus, string> = {
   "verified-active": "border-green/30 bg-green/10 text-green",

@@ -38,7 +38,7 @@ export default function PathwayPage() {
           required foundations outcomes.
         </p>
         <Link
-          href="/course"
+          href="/book/ots-101"
           className="inline-flex rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
         >
           View OTS-101 Foundations
@@ -56,9 +56,18 @@ export default function PathwayPage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {course.code}
                 </span>
-                <h3 className="font-serif text-xl font-bold text-foreground">
+                <Link
+                  href={
+                    course.code === "OTS-101"
+                      ? "/book/ots-101"
+                      : course.code === "OTS-280"
+                        ? "/book/ots-280"
+                        : `/book/${course.code.toLowerCase()}`
+                  }
+                  className="font-serif text-xl font-bold text-foreground no-underline hover:text-link"
+                >
                   {course.title}
-                </h3>
+                </Link>
                 <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground/55">
                   {course.status}
                 </span>

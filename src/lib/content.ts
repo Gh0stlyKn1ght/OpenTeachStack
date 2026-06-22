@@ -45,6 +45,19 @@ export interface ContentItem {
   };
 }
 
+export interface CourseLessonItem extends ContentItem {
+  frontmatter: ContentFrontmatter & {
+    course: string;
+    courseSlug: string;
+    chapter: string;
+    chapterSlug: string;
+    sectionNumber: string;
+    sectionSlug: string;
+    canonicalRoute: string;
+    migrationStatus: "scaffolded" | "authored";
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -115,6 +128,27 @@ export function getContentBySlug(
 ): ContentItem {
   const filePath = path.join(contentDir(type), `${slug}.mdx`);
   return parseFile(filePath, slug);
+}
+
+export function getCourseLessonBySlugs(
+  courseSlug: string,
+  chapterSlug: string,
+  sectionSlug: string,
+): CourseLessonItem | undefined {
+  const filePath = path.join(
+    CONTENT_ROOT,
+    "courses",
+    courseSlug,
+    "lessons",
+    chapterSlug,
+    `${sectionSlug}.mdx`,
+  );
+
+  if (!fs.existsSync(filePath)) {
+    return undefined;
+  }
+
+  return parseFile(filePath, sectionSlug) as CourseLessonItem;
 }
 
 /**

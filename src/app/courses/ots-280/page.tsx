@@ -75,7 +75,7 @@ export default function CyberSafetyCoursePage() {
 
       <section>
         <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
-          Course Modules
+          Course Chapters
         </h2>
         <div className="divide-y divide-border border-y border-border">
           {CYBER_SAFETY_MODULES.map((module) => (
@@ -127,6 +127,22 @@ export default function CyberSafetyCoursePage() {
         </div>
       </section>
 
+      <section className="mt-10 rounded-md border border-accent/30 bg-surface p-5">
+        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+          Open the Course Book
+        </h2>
+        <p className="mb-4 text-sm leading-relaxed text-slate">
+          Read OTS-280 in book mode with chapter navigation, section pages,
+          and build artifacts.
+        </p>
+        <Link
+          href="/book/ots-280"
+          className="inline-flex rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
+        >
+          Enter OTS-280 Book Mode
+        </Link>
+      </section>
+
       <section className="mt-10 rounded-md border border-border bg-surface-alt/40 p-5">
         <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
           Related Library Items
@@ -155,4 +171,3 @@ export default function CyberSafetyCoursePage() {
     </div>
   );
 }
-

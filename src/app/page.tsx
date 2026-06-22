@@ -1,12 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import EvidencePanel from "@/components/book/EvidencePanel";
+import BookSearchInput from "@/components/book/BookSearchInput";
 import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
 import GitHubIcon from "@/components/GitHubIcon";
 import { METHOD_STEPS } from "@/lib/book";
 import { PATHWAY_COURSES, REPOSITORY_URL } from "@/lib/metadata";
+import { getKnowledgeBaseSearchRecords } from "@/lib/search";
+import { createPageMetadata } from "@/lib/siteMetadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Teaching Teachers — Curriculum Systems for Educators",
+  description:
+    "An open-source field guide for teachers building source-backed curriculum systems, AI workflows, course books, templates, and classroom-ready artifacts.",
+  path: "/",
+});
 
 export default function HomePage() {
   const pathwayPreview = PATHWAY_COURSES.slice(0, 6);
+  const knowledgeBaseSearchRecords = getKnowledgeBaseSearchRecords();
 
   return (
     <div>
@@ -25,6 +37,9 @@ export default function HomePage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/kb" className="book-action">
+              Search the knowledge base
+            </Link>
             <Link href="/book/ots-101" className="book-action">
               Enter the course book
             </Link>
@@ -51,6 +66,7 @@ export default function HomePage() {
             <ol className="space-y-3">
               {[
                 ["Foundations", "/book/ots-101"],
+                ["Knowledge Base", "/kb"],
                 ["Transferable Skills", "/skills"],
                 ["Evidence Layer", "/evidence"],
                 ["Source Bank", "/library/source-bank"],
@@ -68,6 +84,35 @@ export default function HomePage() {
             </ol>
           </nav>
         </aside>
+      </section>
+
+      <section className="border-y border-border bg-surface-alt/18">
+        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-8 py-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(20rem,0.72fr)] lg:items-center">
+          <div>
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+              Knowledge Base
+            </p>
+            <h2 className="mt-0 max-w-3xl font-serif text-4xl font-bold text-foreground">
+              Search the field manual when you need the next useful move.
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/62">
+              Look up prompts, checklists, cyber safety notes, course website
+              steps, free tools, templates, and troubleshooting guides without
+              entering a full course first.
+            </p>
+            <Link href="/kb" className="mt-6 inline-flex text-sm font-semibold text-link no-underline hover:underline">
+              Open the Knowledge Base
+            </Link>
+          </div>
+
+          <div>
+            <BookSearchInput
+              records={knowledgeBaseSearchRecords}
+              label="Search knowledge base"
+              placeholder="Prompt, checklist, workflow..."
+            />
+          </div>
+        </div>
       </section>
 
       <section className="border-y border-border bg-surface-alt/22">

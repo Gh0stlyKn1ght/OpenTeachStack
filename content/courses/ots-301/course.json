@@ -1,0 +1,63 @@
+{
+  "code": "OTS-301",
+  "slug": "ots-301",
+  "title": "Teacher Course Sites",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-301",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "scaffolded",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-course-site-strategy",
+      "title": "Course Site Strategy",
+      "buildArtifact": "Course site plan",
+      "lessonCount": 5
+    },
+    {
+      "number": "02",
+      "slug": "02-web-basics",
+      "title": "Web Basics for Teachers",
+      "buildArtifact": "Web concepts map",
+      "lessonCount": 5
+    },
+    {
+      "number": "03",
+      "slug": "03-course-hub-structure",
+      "title": "Course Hub Structure",
+      "buildArtifact": "Course hub sitemap",
+      "lessonCount": 5
+    },
+    {
+      "number": "04",
+      "slug": "04-accessibility-safety",
+      "title": "Accessibility and Safety",
+      "buildArtifact": "Publishing safety checklist",
+      "lessonCount": 5
+    },
+    {
+      "number": "05",
+      "slug": "05-deployment-maintenance",
+      "title": "Deployment and Maintenance",
+      "buildArtifact": "Maintenance plan",
+      "lessonCount": 5
+    },
+    {
+      "number": "06",
+      "slug": "06-published-course-hub",
+      "title": "Published Course Hub",
+      "buildArtifact": "Published course hub",
+      "lessonCount": 5
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_301_COURSE_HUB_SITEMAP_TEMPLATE.md",
+    "docs/OTS_301_COURSE_OUTLINE.md",
+    "docs/OTS_301_LIVE_SITE_REVIEW.md",
+    "docs/OTS_301_SAFE_DOMAIN_EXAMPLES.md",
+    "docs/OTS_301_SOURCE_REFERENCES.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": []
+}

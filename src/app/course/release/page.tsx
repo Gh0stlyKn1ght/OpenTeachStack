@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MODULES } from "@/lib/metadata";
+import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 import { pageVisuals } from "@/lib/visualAssets";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "OTS-101 Release Packet — Teaching Teachers",
   description:
     "Final release packet for OTS-101 Foundations, including module builds, capstone evidence, safety checks, and next steps.",
-};
+  path: "/course/release",
+  image: {
+    url: pageVisuals.releasePacket.src,
+    alt: pageVisuals.releasePacket.alt,
+  },
+});
 
 const releaseChecks = [
   "Every module has a clear build artifact.",
@@ -86,7 +92,7 @@ export default function Ots101ReleasePage() {
 
       <section className="mb-10">
         <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
-          Module Build Trail
+          Chapter Build Trail
         </h2>
         <div className="divide-y divide-border border-y border-border">
           {MODULES.map((module) => (
@@ -96,7 +102,7 @@ export default function Ots101ReleasePage() {
                   {module.number}
                 </span>
                 <Link
-                  href={`/course/${module.slug}`}
+                  href={`/book/ots-101/${module.slug}`}
                   className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
                 >
                   {module.title}

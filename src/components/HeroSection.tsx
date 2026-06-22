@@ -58,7 +58,7 @@ export default function HeroSection() {
           </Link>
 
           <Link
-            href="/course"
+            href="/book/ots-101"
             className="inline-flex items-center px-8 py-3.5 text-sm font-semibold rounded-lg no-underline border border-border text-foreground/70 hover:border-accent hover:text-accent transition-all duration-300 hover:-translate-y-0.5"
           >
             Start OTS-101
@@ -87,7 +87,7 @@ export default function HeroSection() {
         <div
           className="hero-reveal hero-reveal-delay-5 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-mono text-foreground/45 uppercase tracking-wider"
         >
-          <span>10 Modules</span>
+          <span>10 Chapters</span>
           <span className="hidden sm:inline text-foreground/15">|</span>
           <span>Self-Paced</span>
           <span className="hidden sm:inline text-foreground/15">|</span>

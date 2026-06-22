@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PrintPageButton from "@/components/PrintPageButton";
 import {
   FOUNDATION_TEMPLATES,
   getFoundationTemplate,
@@ -42,6 +43,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
     <div className="mx-auto max-w-4xl px-6 py-12">
       <Link
         href="/templates"
+        data-print-hide
         className="mb-8 inline-flex text-sm font-semibold text-link no-underline hover:underline"
       >
         &larr; Template Library
@@ -62,12 +64,15 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
         <p className="max-w-2xl leading-relaxed text-foreground/60">
           {template.purpose}
         </p>
-        <Link
-          href={`/templates/${template.slug}/download`}
-          className="mt-5 inline-flex rounded-sm border border-border px-3 py-2 font-mono text-xs font-semibold uppercase tracking-wider text-slate no-underline transition-colors hover:border-accent/40 hover:text-link"
-        >
-          Download Markdown
-        </Link>
+        <div className="mt-5 flex flex-wrap items-center gap-3" data-print-hide>
+          <Link
+            href={`/templates/${template.slug}/download`}
+            className="inline-flex rounded-sm border border-border px-3 py-2 font-mono text-xs font-semibold uppercase tracking-wider text-slate no-underline transition-colors hover:border-accent/40 hover:text-link"
+          >
+            Download Markdown
+          </Link>
+          <PrintPageButton />
+        </div>
       </header>
 
       <section className="mb-10 grid gap-4 md:grid-cols-2">

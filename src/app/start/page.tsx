@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Start Here If You Are Not Technical — Teaching Teachers",
   description:
     "A plain-language starting point for non-technical teachers using Teaching Teachers.",
-};
+  path: "/start",
+});
 
 const firstMoves = [
   "Pick one course or unit that is currently messy.",
@@ -90,7 +92,7 @@ export default function StartPage() {
 
       <div className="flex flex-wrap gap-3">
         <Link
-          href="/course"
+          href="/book/ots-101"
           className="inline-flex rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background no-underline hover:opacity-90"
         >
           Start OTS-101

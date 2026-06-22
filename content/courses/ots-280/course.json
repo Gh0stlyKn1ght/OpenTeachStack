@@ -1,0 +1,90 @@
+{
+  "code": "OTS-280",
+  "slug": "ots-280",
+  "title": "Cyber Safety for Educators",
+  "owner": "dedicated",
+  "canonicalRoute": "/book/ots-280",
+  "sourceRegistry": "src/lib/cyberSafety.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "authored",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-teacher-threat-model",
+      "title": "Teacher Threat Model",
+      "buildArtifact": "Teacher personal risk map",
+      "lessonCount": 6
+    },
+    {
+      "number": "02",
+      "slug": "02-account-hygiene-mfa",
+      "title": "Account Hygiene and MFA",
+      "buildArtifact": "Password manager and MFA checklist",
+      "lessonCount": 7
+    },
+    {
+      "number": "03",
+      "slug": "03-usernames-identity-separation",
+      "title": "Usernames and Identity Separation",
+      "buildArtifact": "Public/private identity map",
+      "lessonCount": 6
+    },
+    {
+      "number": "04",
+      "slug": "04-email-phishing-impersonation",
+      "title": "Email, Phishing, and Impersonation",
+      "buildArtifact": "Phishing response checklist",
+      "lessonCount": 7
+    },
+    {
+      "number": "05",
+      "slug": "05-social-media-doxxing",
+      "title": "Social Media and Doxxing Risk",
+      "buildArtifact": "Public profile audit",
+      "lessonCount": 7
+    },
+    {
+      "number": "06",
+      "slug": "06-vpns-wifi-location",
+      "title": "VPNs, Wi-Fi, and Location Privacy",
+      "buildArtifact": "Connection safety checklist",
+      "lessonCount": 6
+    },
+    {
+      "number": "07",
+      "slug": "07-browser-device-file-safety",
+      "title": "Browser, Device, and File Safety",
+      "buildArtifact": "Device and browser hardening checklist",
+      "lessonCount": 6
+    },
+    {
+      "number": "08",
+      "slug": "08-website-safety",
+      "title": "Website Safety for Teacher Sites",
+      "buildArtifact": "Teacher website security audit",
+      "lessonCount": 6
+    },
+    {
+      "number": "09",
+      "slug": "09-github-domains-repos",
+      "title": "GitHub, Domains, and Public Repos",
+      "buildArtifact": "Public repo and domain exposure check",
+      "lessonCount": 6
+    },
+    {
+      "number": "10",
+      "slug": "10-incident-response",
+      "title": "Incident Response for Teachers",
+      "buildArtifact": "What to do if something happens plan",
+      "lessonCount": 6
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_280_COURSE_OUTLINE.md",
+    "docs/OTS_280_PRIVACY_REVIEW.md",
+    "docs/OTS_280_PRIVATE_USE_TEMPLATES.md",
+    "docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": []
+}

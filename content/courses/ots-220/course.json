@@ -1,0 +1,65 @@
+{
+  "code": "OTS-220",
+  "slug": "ots-220",
+  "title": "Apps Script for Teacher Automation",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-220",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "scaffolded",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-automation-mindset",
+      "title": "Automation Mindset",
+      "buildArtifact": "Automation candidate list",
+      "lessonCount": 5
+    },
+    {
+      "number": "02",
+      "slug": "02-apps-script-basics",
+      "title": "Apps Script Basics",
+      "buildArtifact": "First script notes",
+      "lessonCount": 6
+    },
+    {
+      "number": "03",
+      "slug": "03-folder-file-generators",
+      "title": "Folder and File Generators",
+      "buildArtifact": "Folder generator",
+      "lessonCount": 5
+    },
+    {
+      "number": "04",
+      "slug": "04-docs-from-sheet-rows",
+      "title": "Docs from Sheet Rows",
+      "buildArtifact": "Doc generator",
+      "lessonCount": 5
+    },
+    {
+      "number": "05",
+      "slug": "05-forms-email-reminders",
+      "title": "Forms, Email, and Reminders",
+      "buildArtifact": "Reminder workflow",
+      "lessonCount": 5
+    },
+    {
+      "number": "06",
+      "slug": "06-teacher-automation-toolkit",
+      "title": "Teacher Automation Toolkit",
+      "buildArtifact": "Automation toolkit",
+      "lessonCount": 5
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_220_COURSE_OUTLINE.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": [
+    "your-first-apps-script-custom-menu",
+    "generate-unit-folders-with-apps-script",
+    "generate-docs-from-sheet-rows",
+    "create-google-form-quizzes-from-sheet",
+    "send-reminder-emails-from-sheet"
+  ]
+}

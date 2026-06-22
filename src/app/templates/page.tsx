@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import TemplateCard from "@/components/TemplateCard";
+import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Template Library — Teaching Teachers",
   description:
     "Available v1 templates for Teaching Teachers Foundations, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
-};
+  path: "/templates",
+});
 
 const futureTemplates = [
   {

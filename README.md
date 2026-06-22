@@ -8,7 +8,7 @@
 [![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
 [![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
-[![OTS-101: 10 Modules](https://img.shields.io/badge/OTS--101-10%20Modules-0969DA?style=flat-square)](#ots-101--teaching-teachers-foundations)
+[![OTS-101: 10 Chapters](https://img.shields.io/badge/OTS--101-10%20Chapters-0969DA?style=flat-square)](#ots-101--teaching-teachers-foundations)
 
 **Willing to learn for the future.**
 
@@ -16,9 +16,12 @@ Teaching Teachers is an open-source pathway for educators building curriculum
 systems with AI, open resources, Google Workspace, and practical classroom
 workflows.
 
-Teaching Teachers is not one giant course. It is a pathway. The first course is:
+Teaching Teachers is not one giant course. It is a course path. The first course is:
 
 **OTS-101 — Teaching Teachers Foundations**
+
+`OTS` stands for **Open Teacher Stack**. Keep course codes in the `OTS-###`
+format across the project.
 
 The signature workflow is:
 
@@ -32,19 +35,20 @@ improve it after class.
 
 **Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators**
 
-OTS-101 is a 10-module foundations course for teachers who want practical control over curriculum design without being forced into code, domains, GitHub, or publishing workflows on day one.
+OTS-101 is a 10-chapter foundations course for teachers who want practical control over curriculum design without being forced into code, domains, GitHub, or publishing workflows on day one.
 
 Current OTS-101 release shape:
 
-- 10 foundations modules
-- 17 active lessons
-- 11 foundation templates with Markdown downloads
+- 10 foundations chapters
+- 89 chapter section pages
+- 17 active section/source pages
+- 11 foundation artifact templates with Markdown downloads
 - 31 verified Source Bank links
 - mini-unit capstone, course audit, release packet, and sample robotics mini-unit
 
 ## OTS-101 Scope
 
-| # | Module |
+| # | Chapter |
 |---|--------|
 | 01 | Teacher Builder Mindset |
 | 02 | Prompting for Teachers |
@@ -61,7 +65,7 @@ The OTS-101 capstone is a **mini-unit system**, not a full published course site
 
 ## Intentionally Out of Scope for OTS-101
 
-These topics belong in later pathway courses:
+These topics belong in later course path courses:
 
 - Apps Script implementation
 - GitHub workflows
@@ -72,7 +76,7 @@ These topics belong in later pathway courses:
 - OBS and full video production
 - full automation capstone
 
-## Pathway Model
+## Course Path Model
 
 | Code | Course | Level | Status |
 |---|---|---:|---|
@@ -105,7 +109,8 @@ Start with the site's **Start Here If You Are Not Technical** page, then move in
 Useful course entry points:
 
 - `/start` — non-technical starting path
-- `/course` — OTS-101 module index
+- `/book/ots-101` — OTS-101 course book
+- `/course` — compatibility redirect to the OTS-101 course book
 - `/library/source-bank` — verified links and official resources
 - `/templates` — OTS-101 artifact templates
 - `/course/audit` — mini-unit self-audit

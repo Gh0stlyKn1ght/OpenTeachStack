@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MODULES } from "@/lib/metadata";
+import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "OTS-101 Course Audit — Teaching Teachers",
   description:
     "Self-audit and peer-review checklist for the OTS-101 Foundations mini-unit capstone, including source use, safety checks, templates, and classroom readiness.",
-};
+  path: "/course/audit",
+});
 
 const auditSections = [
   {
@@ -92,17 +94,17 @@ export default function CourseAuditPage() {
 
       <section className="mb-10">
         <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
-          Module Evidence Trail
+          Chapter Evidence Trail
         </h2>
         <div className="divide-y divide-border border-y border-border">
           {MODULES.map((module) => (
             <article key={module.slug} className="py-4">
               <div className="mb-2 flex flex-wrap items-baseline gap-3">
                 <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
-                  Module {module.number}
+                  Chapter {module.number}
                 </span>
                 <Link
-                  href={`/course/${module.slug}`}
+                  href={`/book/ots-101/${module.slug}`}
                   className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
                 >
                   {module.buildArtifact}

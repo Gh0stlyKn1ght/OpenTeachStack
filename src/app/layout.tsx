@@ -6,7 +6,8 @@ import {
 } from "next/font/google";
 import { AcademicHeader } from "@/components/AcademicHeader";
 import { Footer } from "@/components/Footer";
-import { SITE_URL } from "@/lib/metadata";
+import { createPageMetadata, rootMetadataBase } from "@/lib/siteMetadata";
+import "nextra-theme-docs/style.css";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -29,9 +30,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Teaching Teachers — Curriculum Systems for Educators",
-  description: "Willing to learn for the future.",
+  metadataBase: rootMetadataBase,
+  ...createPageMetadata({
+    title: "Teaching Teachers — Curriculum Systems for Educators",
+    description: "Willing to learn for the future.",
+    path: "/",
+  }),
   keywords: [
     "teacher technology",
     "curriculum development",
@@ -44,19 +48,6 @@ export const metadata: Metadata = {
     "education technology",
   ],
   authors: [{ name: "Teaching Teachers" }],
-  openGraph: {
-    title: "Teaching Teachers — Curriculum Systems for Educators",
-    description: "Willing to learn for the future.",
-    url: SITE_URL,
-    siteName: "Teaching Teachers",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Teaching Teachers",
-    description: "Willing to learn for the future.",
-  },
 };
 
 export default function RootLayout({
@@ -67,6 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${sourceSerif.variable} ${atkinson.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >

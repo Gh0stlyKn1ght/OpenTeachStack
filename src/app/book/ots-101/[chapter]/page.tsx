@@ -7,7 +7,12 @@ import BookShell from "@/components/book/BookShell";
 import ChapterNav from "@/components/book/ChapterNav";
 import ChapterProgress from "@/components/book/ChapterProgress";
 import SourcePanel from "@/components/book/SourcePanel";
-import { BOOK_CHAPTERS, getChapterBySlug } from "@/lib/book";
+import {
+  BOOK_CHAPTERS,
+  BOOK_COURSE_CODE,
+  getChapterBySlug,
+  getSectionHref,
+} from "@/lib/book";
 
 type ChapterPageProps = {
   params: Promise<{ chapter: string }>;
@@ -30,7 +35,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${chapter.number}. ${chapter.title} — OTS-101`,
+    title: `${chapter.number}. ${chapter.title} — ${BOOK_COURSE_CODE}`,
     description: chapter.description,
   };
 }
@@ -52,7 +57,6 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         { label: "Duration", value: chapter.duration },
         { label: "Difficulty", value: chapter.difficulty },
         { label: "Artifact", value: chapter.buildArtifact },
-        { label: "Original module", value: "Course page", href: chapter.sourceHref },
       ]}
       skills={chapter.transferableSkills}
     >
@@ -64,6 +68,39 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       />
 
       <ChapterProgress current={currentIndex + 1} total={BOOK_CHAPTERS.length} />
+
+      <section>
+        <h2>Chapter Sections</h2>
+        <ol className="divide-y divide-border border-y border-border">
+          {chapter.sections.map((section) => (
+            <li
+              key={section.number}
+              id={`section-${section.number.replace(".", "-")}`}
+              className="grid gap-3 py-4 md:grid-cols-[4.5rem_1fr_8rem]"
+            >
+              <span className="font-mono text-sm text-accent">
+                {section.number}
+              </span>
+              <span>
+                <Link
+                  href={getSectionHref(chapter, section)}
+                  className="block font-semibold text-foreground no-underline hover:text-accent"
+                >
+                  {section.title}
+                </Link>
+                {section.artifact && (
+                  <span className="mt-1 block text-sm text-foreground/55">
+                    Artifact: {section.artifact}
+                  </span>
+                )}
+              </span>
+              <span className="font-mono text-[0.68rem] uppercase tracking-wider text-foreground/40">
+                {section.type} · {section.duration}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <section className="book-spread">
         <div>
@@ -103,12 +140,6 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
       </section>
 
       <SourcePanel />
-
-      <section>
-        <Link href={chapter.sourceHref} className="book-action-secondary">
-          Open the original course module
-        </Link>
-      </section>
 
       <ChapterNav slug={chapter.slug} />
     </BookShell>

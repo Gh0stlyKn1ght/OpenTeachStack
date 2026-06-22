@@ -7,6 +7,15 @@
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "eslint",
+    "check:routes": "node scripts/check-route-contract.mjs",
+    "check:content-layout": "node scripts/check-course-content-layout.mjs",
+    "check:ots101-reader": "node scripts/check-ots101-course-reader.mjs",
+    "check:ots260-reader": "node scripts/check-ots260-course-reader.mjs",
+    "check:ots280-reader": "node scripts/check-ots280-course-reader.mjs",
+    "scaffold:courses": "node scripts/scaffold-course-content.mjs",
+    "author:ots101": "node scripts/author-ots101-course-lessons.mjs",
+    "author:ots260": "node scripts/author-ots260-course-lessons.mjs",
+    "author:ots280": "node scripts/author-ots280-course-lessons.mjs",
     "check:source-bank": "node scripts/check-source-bank-links.mjs"
   },
   "dependencies": {
@@ -17,6 +26,8 @@
     "mermaid": "^11.15.0",
     "next": "16.2.9",
     "next-mdx-remote": "^6.0.0",
+    "nextra": "^4.6.1",
+    "nextra-theme-docs": "^4.6.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "reading-time": "^1.5.0",
@@ -37,4 +48,3 @@
     "typescript": "^5"
   }
 }
-

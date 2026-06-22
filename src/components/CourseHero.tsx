@@ -33,7 +33,7 @@ export default function CourseHero() {
       {/* CTAs */}
       <div className="flex flex-wrap items-center gap-4 mb-8">
         <Link
-          href="/course"
+          href="/book/ots-101"
           className="inline-flex items-center px-5 py-2.5 text-sm font-medium border border-foreground text-foreground no-underline rounded hover:bg-foreground hover:text-background transition-colors"
         >
           Begin OTS-101
@@ -48,7 +48,7 @@ export default function CourseHero() {
 
       {/* Metadata line */}
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-foreground/45 tracking-wide uppercase">
-        <span>{MODULES.length} Modules</span>
+        <span>{MODULES.length} Chapters</span>
         <span className="hidden sm:inline text-foreground/20">&middot;</span>
         <span>Format: Self-paced</span>
         <span className="hidden sm:inline text-foreground/20">&middot;</span>

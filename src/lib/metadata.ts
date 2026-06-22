@@ -307,7 +307,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-280",
     title: "Cyber Safety for Educators",
     level: "Intermediate",
-    status: "Future",
+    status: "Draft",
     purpose:
       "Teach identity hygiene, account safety, public profile audits, website safety, repo exposure checks, and basic incident response for public-facing educators.",
     prerequisites: "OTS-101 or equivalent comfort with basic digital workflows.",
@@ -373,10 +373,8 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Start", href: "/start" },
-  { label: "Book", href: "/book" },
-  { label: "Skills", href: "/skills" },
-  { label: "Pathway", href: "/pathway" },
+  { label: "Courses", href: "/courses" },
+  { label: "Knowledge Base", href: "/kb" },
   { label: "Library", href: "/library" },
   { label: "About", href: "/about" },
 ];
-

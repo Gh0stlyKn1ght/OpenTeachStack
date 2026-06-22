@@ -5,17 +5,17 @@ export default function ModuleIndex() {
   return (
     <section className="content-visibility-auto mx-auto max-w-3xl px-6 py-12">
       <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
-        Course Modules
+        Course Chapters
       </h2>
       <p className="text-sm text-foreground/50 mb-8">
-        {MODULES.length} modules &middot; Resource-guided curriculum
+        {MODULES.length} chapters &middot; Resource-guided curriculum
       </p>
 
       <ol className="space-y-0 divide-y divide-border border-t border-border">
         {MODULES.map((mod) => (
           <li key={mod.slug}>
             <Link
-              href={`/course/${mod.slug}`}
+              href={`/book/ots-101/${mod.slug}`}
               className="group flex gap-5 py-5 no-underline transition-colors hover:bg-surface-alt/50"
             >
               <span className="shrink-0 w-8 text-right font-mono text-sm font-medium text-accent/70 pt-0.5">

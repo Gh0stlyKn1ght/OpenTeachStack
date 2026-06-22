@@ -1,0 +1,63 @@
+{
+  "code": "OTS-260",
+  "slug": "ots-260",
+  "title": "AI Media and Lesson Delivery",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-260",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-22",
+  "migrationStatus": "authored",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-media-with-purpose",
+      "title": "Media With Purpose",
+      "buildArtifact": "Media purpose map",
+      "lessonCount": 5
+    },
+    {
+      "number": "02",
+      "slug": "02-ai-image-workflows",
+      "title": "AI Image Workflows",
+      "buildArtifact": "Image prompt and review log",
+      "lessonCount": 5
+    },
+    {
+      "number": "03",
+      "slug": "03-diagrams-visual-explanations",
+      "title": "Diagrams and Visual Explanations",
+      "buildArtifact": "Diagram set",
+      "lessonCount": 5
+    },
+    {
+      "number": "04",
+      "slug": "04-slides-delivery-routines",
+      "title": "Slides and Delivery Routines",
+      "buildArtifact": "Delivery deck",
+      "lessonCount": 5
+    },
+    {
+      "number": "05",
+      "slug": "05-short-video-screen-recording",
+      "title": "Short Video and Screen Recording",
+      "buildArtifact": "Short video plan",
+      "lessonCount": 5
+    },
+    {
+      "number": "06",
+      "slug": "06-accessible-media-packet",
+      "title": "Accessible Lesson Media Packet",
+      "buildArtifact": "Accessible lesson media packet",
+      "lessonCount": 5
+    }
+  ],
+  "copiedDocs": [
+    "docs/OTS_260_ACCESSIBILITY_CHECKLIST.md",
+    "docs/OTS_260_COURSE_OUTLINE.md",
+    "docs/OTS_260_READABILITY_PASS.md",
+    "docs/OTS_260_SOURCE_REFERENCES.md",
+    "docs/OTS_260_VISUAL_STYLE_GUIDE_TEMPLATE.md"
+  ],
+  "copiedAssets": [],
+  "copiedLabs": []
+}

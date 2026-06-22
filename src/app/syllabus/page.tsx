@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PrintPageButton from "@/components/PrintPageButton";
 import {
   COURSE_CODE,
   COURSE_TITLE,
@@ -8,12 +9,14 @@ import {
   LICENSE,
   MODULES,
 } from "@/lib/metadata";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Syllabus — Teaching Teachers Foundations",
   description:
-    "Syllabus for OTS-101: Teaching Teachers Foundations, a 10-module course on prompting, standards, resource literacy, and curriculum systems.",
-};
+    "Syllabus for OTS-101: Teaching Teachers Foundations, a 10-chapter course on prompting, standards, resource literacy, and curriculum systems.",
+  path: "/syllabus",
+});
 
 export default function SyllabusPage() {
   return (
@@ -32,6 +35,9 @@ export default function SyllabusPage() {
           Instructor: {AUTHOR.name} &middot;{" "}
           <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
         </p>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
       </header>
 
       <hr className="mb-10 border-t border-border" />

@@ -1,0 +1,50 @@
+export const metadata = {
+  title: "Use Codex Without Overwriting Content",
+  description: "A safety workflow for agent-assisted edits in teacher-owned projects.",
+}
+
+# Use Codex without overwriting content
+
+## The real problem
+
+Coding agents can change many files quickly, including authored course content that should not be rewritten.
+
+## Quick answer
+
+Give Codex a narrow task, explicit safety rules, file boundaries, and verification commands.
+
+## When to use this
+
+Use this before asking an agent to edit a course site, lesson repository, template library, or public resource.
+
+## Workflow
+
+1. State what must not be changed.
+2. Name the exact route, file, or feature.
+3. Require a diff-aware implementation.
+4. Ask for lint/build evidence.
+5. Review changed files before publishing.
+
+## What to verify
+
+Check the diff, routes, build output, and any authored lesson text touched by the agent.
+
+## Common mistakes
+
+- Asking for a broad redesign.
+- Forgetting to protect existing course bodies.
+- Publishing without reading the diff.
+
+## Related course chapters
+
+- OTS-320 Chapter 01: Agent Safety Mindset
+- OTS-320 Chapter 04: Testing and Verification
+
+## Related prompts/templates/tools
+
+- Safe agent prompt
+- Diff review checklist
+
+## Next action
+
+Write one agent request that includes a "do not change" section.

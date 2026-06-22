@@ -1,23 +1,47 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import GitHubIcon from "./GitHubIcon";
 
 export default function MobileNav({
   navLinks,
+  repositoryUrl,
 }: {
   navLinks: { label: string; href: string }[];
+  repositoryUrl: string;
 }) {
   const [open, setOpen] = useState(false);
+  const menuId = useId();
+  const pathname = usePathname();
   const toggle = useCallback(() => setOpen((prev) => !prev), []);
   const close = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        close();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [close, open]);
 
   return (
     <>
       <button
+        type="button"
         onClick={toggle}
-        className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-foreground/70 transition-colors hover:border-accent/50 hover:text-foreground lg:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
+        aria-controls={menuId}
         aria-expanded={open}
       >
         {open ? (
@@ -55,19 +79,35 @@ export default function MobileNav({
       </button>
 
       {open && (
-        <nav className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border z-50 shadow-sm">
-          <ul className="flex flex-col px-6 py-4 gap-1">
+        <nav
+          id={menuId}
+          className="absolute left-0 right-0 top-full z-50 border-b border-border bg-background shadow-sm lg:hidden"
+          aria-label="Mobile navigation"
+        >
+          <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={close}
-                  className="block py-2 text-sm font-sans text-foreground/70 hover:text-foreground no-underline transition-colors"
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className="block rounded-sm border border-transparent px-3 py-3 text-sm font-semibold text-foreground/70 no-underline transition-colors hover:border-border hover:bg-surface-alt/45 hover:text-foreground aria-[current=page]:border-accent/35 aria-[current=page]:bg-accent/10 aria-[current=page]:text-foreground"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
+            <li className="mt-2 border-t border-border pt-3">
+              <a
+                href={repositoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-sm border border-border px-3 py-3 text-sm font-semibold text-foreground/70 no-underline transition-colors hover:border-accent/50 hover:text-foreground"
+              >
+                <GitHubIcon className="h-4 w-4" title="" />
+                GitHub
+              </a>
+            </li>
           </ul>
         </nav>
       )}
