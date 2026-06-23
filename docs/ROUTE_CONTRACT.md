@@ -41,8 +41,10 @@ This file is the route and slug source of truth for course-book work. Do not add
 Run this after route, search, roadmap, or course registry changes:
 
 ```bash
-npm run check:routes
-npm run check:content-layout
+npm run test
+npm run verify:release
 ```
 
-The check fails if canonical course ownership drifts, if reserved dedicated slugs are added to the generic registry, or if stale TT-prefixed guidance returns.
+`npm run test` is the non-mutating local gate: typecheck, lint, route contract, content layout, scaffold-fallback protection, content-authoring overwrite protection, source-bank link validation, and every course-reader migration check. `npm run verify:release` adds the production build and route smoke, then writes `docs/BUILD_VERIFICATION.md`.
+
+The release verifier runs lint, build, route-contract checks, content-layout checks, scaffold-fallback protection, content-authoring overwrite protection, source-bank link validation, and production route smoke. The route-contract check fails if canonical course ownership drifts, if reserved dedicated slugs are added to the generic registry, if stale hard-coded generic course route files return, or if stale TT-prefixed guidance returns. The scaffold-fallback guard fails if removed generated section fallbacks or duplicate book-shell imports return to runtime code. The content-authoring safety guard fails if course authoring scripts lose their `--force` gates or no-overwrite checks for existing authored content. The production smoke starts the app on a temporary local port, derives course-book routes from `PATHWAY_COURSES`, and probes representative public routes for HTTP 200 responses.

@@ -73,7 +73,7 @@ export default function BookSidebar({
           </p>
           <Link
             href="/book/ots-101"
-            className="font-serif text-xl font-bold text-foreground no-underline hover:text-accent"
+            className="font-heading text-xl font-bold text-foreground no-underline hover:text-accent"
           >
             {BOOK_COURSE_CODE}
           </Link>
@@ -98,3 +98,4 @@ export default function BookSidebar({
     </aside>
   );
 }
+

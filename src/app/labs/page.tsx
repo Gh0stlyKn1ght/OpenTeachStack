@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllContent } from "@/lib/content";
 import { COURSE_TITLE } from "@/lib/metadata";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: `Labs — ${COURSE_TITLE}`,
@@ -13,19 +16,21 @@ export default function LabsPage() {
   const labs = getAllContent("labs");
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-12">
-        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-          {COURSE_TITLE}
-        </p>
-        <h1 className="font-serif text-3xl font-bold text-foreground md:text-4xl">
-          Labs
-        </h1>
-        <p className="mt-3 text-base text-slate font-sans">
-          Hands-on projects where you build real tools and systems for your
-          classroom.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow={COURSE_TITLE}
+      title="Labs"
+      subtitle="Hands-on projects where you build real tools and systems for your classroom."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Labs", value: String(labs.length) },
+        { label: "Mode", value: "Hands-on workshops" },
+        { label: "Status", value: "Compatibility archive" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       <ul className="space-y-4">
         {labs.map((lab) => (
@@ -46,7 +51,7 @@ export default function LabsPage() {
                       </span>
                     )}
                   </div>
-                  <h2 className="font-serif text-lg font-semibold text-foreground group-hover:text-link transition-colors">
+                  <h2 className="font-heading text-lg font-semibold text-foreground group-hover:text-link transition-colors">
                     {lab.frontmatter.title}
                   </h2>
                   {lab.frontmatter.summary && (
@@ -87,7 +92,9 @@ export default function LabsPage() {
           </li>
         )}
       </ul>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

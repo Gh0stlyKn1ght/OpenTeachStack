@@ -1,40 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { getAllContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Apps Script Labs — Teaching Teachers Pathway",
   description:
-    "Draft future Google Apps Script labs for the Teaching Teachers pathway. Apps Script is not required in OTS-101 Foundations.",
+    "Supplemental Google Apps Script labs for the Teaching Teachers pathway. Apps Script belongs in OTS-220 and is not required in OTS-101 Foundations.",
 };
 
 export default function AppsScriptPage() {
   const labs = getAllContent("labs");
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ───────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <span className="inline-block text-xs font-mono font-medium tracking-widest uppercase text-accent border border-accent/30 rounded px-2.5 py-1 mb-4">
-          OTS-220 Draft
-        </span>
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          Apps Script Labs
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Google Apps Script is a JavaScript-based platform built into Google
-          Workspace. For teachers, it transforms spreadsheets, documents, and
-          forms from static tools into programmable systems. These labs
-          introduce Apps Script through practical classroom problems&mdash;no
-          prior coding experience required. These labs are preserved as draft
-          future pathway material and are not required in OTS-101 Foundations.
-        </p>
-      </header>
-
-      <hr className="border-t border-border mb-10" />
+    <FieldGuidePage
+      eyebrow="OTS-220 Lab Shelf"
+      title="Apps Script Labs"
+      subtitle="Google Apps Script turns spreadsheets, documents, and forms from static tools into programmable classroom systems. These labs support the released OTS-220 track and are not required in OTS-101 Foundations."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Track", value: "OTS-220" },
+        { label: "Platform", value: "Google Workspace" },
+        { label: "Labs", value: String(labs.length) },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       {/* ── Why Apps Script ──────────────────────────────────────────── */}
-      <section className="prose-academic mb-10">
+      <section className="prose-academic">
         <h2>Why Apps Script for Teachers</h2>
         <p>
           Most classroom automation tools require subscriptions, third-party
@@ -45,26 +43,23 @@ export default function AppsScriptPage() {
           afternoon.
         </p>
         <p>
-          The labs below are planned for OTS-220: Apps Script for Teacher
-          Automation. OTS-101 should only preview the idea of automation and
-          keep its capstone focused on the mini-unit system.
+          The labs below support OTS-220: Apps Script for Teacher Automation.
+          OTS-101 should only preview the idea of automation and keep its
+          capstone focused on the mini-unit system.
         </p>
         <p>
-          This future pathway course connects to several other parts of the project.
-          The{" "}
+          This course connects to several other parts of the project. The{" "}
           <Link href="/prompts">Prompt Library</Link> includes a dedicated
           prompt for generating Apps Script code with safety guidelines. The{" "}
           <Link href="/safety">Safety Guide</Link> covers code review
-          practices for AI-generated scripts. OTS-320 will later teach how to
-          use AI coding agents safely.
+          practices for AI-generated scripts. OTS-320 extends that review habit
+          into AI coding-agent work.
         </p>
       </section>
 
-      <hr className="border-t border-border mb-10" />
-
       {/* ── Available Labs ───────────────────────────────────────────── */}
-      <section className="mb-12">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
+      <section>
+        <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
           Available Labs
         </h2>
 
@@ -108,11 +103,9 @@ export default function AppsScriptPage() {
         )}
       </section>
 
-      <hr className="border-t border-border mb-10" />
-
       {/* ── Code Examples Reference ──────────────────────────────────── */}
-      <section className="mb-12">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
+      <section>
+        <h2 className="font-heading text-2xl font-bold text-foreground mb-2">
           Code Examples
         </h2>
         <p className="text-sm text-foreground/50 mb-6">
@@ -218,7 +211,9 @@ export default function AppsScriptPage() {
           </li>
         </ul>
       </section>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

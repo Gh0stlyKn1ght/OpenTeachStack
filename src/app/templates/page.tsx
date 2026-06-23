@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import TemplateCard from "@/components/TemplateCard";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -10,7 +13,7 @@ export const metadata: Metadata = createPageMetadata({
   path: "/templates",
 });
 
-const futureTemplates = [
+const plannedTemplateTargets = [
   {
     title: "Course Command Center",
     description:
@@ -57,22 +60,24 @@ const futureTemplates = [
 
 export default function TemplatesPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-10">
-        <h1 className="mb-3 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Template Library
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          The v1 Teaching Teachers Foundations templates are available as site
-          pages first. Each one includes a blank version, an example version,
-          evidence of completion, safety checks, and a Markdown download.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Teacher Artifact Shelf"
+      title="Template Library"
+      subtitle="The v1 Teaching Teachers Foundations templates are available as site pages first. Each one includes a blank version, an example version, evidence of completion, safety checks, and a Markdown download."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Released", value: String(FOUNDATION_TEMPLATES.length) },
+        { label: "Planned", value: String(plannedTemplateTargets.length) },
+        { label: "Course", value: "OTS-101" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <hr className="mb-10 border-t border-border" />
-
-      <section className="mb-10">
-        <h2 className="mb-1 font-serif text-xl font-bold text-foreground">
+      <section>
+        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
           Available Foundations Templates
         </h2>
         <p className="mb-4 text-sm text-foreground/50">
@@ -92,29 +97,27 @@ export default function TemplatesPage() {
         ))}
       </section>
 
-      <hr className="mb-10 border-t border-border" />
-
       <section>
-        <h2 className="mb-1 font-serif text-xl font-bold text-foreground">
-          Future Pathway Templates
+        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
+          Planned Google-Format Template Targets
         </h2>
         <p className="mb-4 text-sm text-foreground/50">
-          Useful later, but intentionally out of scope for the first
-          foundations release.
+          These are useful pathway artifacts, but they stay marked as planned
+          until real Google Docs or Sheets files exist.
         </p>
-        {futureTemplates.map((template) => (
+        {plannedTemplateTargets.map((template) => (
           <TemplateCard
             key={template.title}
             title={template.title}
             description={template.description}
             format={template.format}
-            status="Future"
+            status="Planned"
             tags={template.tags}
           />
         ))}
       </section>
 
-      <aside className="mt-10 border-t border-border pt-6">
+      <aside className="border-t border-border pt-6">
         <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-foreground/40">
           Template Safety Rules
         </h3>
@@ -126,7 +129,9 @@ export default function TemplatesPage() {
           </p>
         </div>
       </aside>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

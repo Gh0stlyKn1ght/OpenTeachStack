@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Examples — Teaching Teachers",
@@ -9,20 +12,21 @@ export const metadata: Metadata = {
 
 export default function ExamplesPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-10">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Examples
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Proof beats explanation.
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-slate">
-          Templates help. Examples convince. These samples show what an
-          OTS-101 mini-unit package can look like when it is small, sourced,
-          teachable, and ready to improve.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Examples"
+      title="Proof beats explanation."
+      subtitle="Templates help. Examples convince. These samples show what an OTS-101 mini-unit package can look like when it is small, sourced, teachable, and ready to improve."
+      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      meta={[
+        { label: "Course", value: "OTS-101" },
+        { label: "Artifact", value: "Mini-unit package" },
+        { label: "Mode", value: "Example shelf" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       <Link
         href="/examples/robotics-mini-unit"
@@ -31,7 +35,7 @@ export default function ExamplesPage() {
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-accent">
           Sample Mini-Unit
         </p>
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Intro Robotics: What Is a Robot?
         </h2>
         <p className="m-0 text-sm leading-relaxed text-slate">
@@ -40,7 +44,9 @@ export default function ExamplesPage() {
           and revision log.
         </p>
       </Link>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

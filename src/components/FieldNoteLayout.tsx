@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import PreviousNext from './PreviousNext';
+import PrintPageButton from './PrintPageButton';
 
 interface NavLink {
   title: string;
@@ -36,7 +37,7 @@ export default function FieldNoteLayout({
         <p className="mb-3 font-mono text-xs uppercase tracking-widest text-slate">
           Field Note
         </p>
-        <h1 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
+        <h1 className="font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
           {title}
         </h1>
 
@@ -78,6 +79,9 @@ export default function FieldNoteLayout({
         )}
 
         <hr className="mt-6 border-border" />
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
       </header>
 
       {/* Essay content */}
@@ -88,3 +92,4 @@ export default function FieldNoteLayout({
     </article>
   );
 }
+

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllContent } from "@/lib/content";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Field Notes — Teaching Teachers",
@@ -12,20 +15,21 @@ export default function FieldNotesPage() {
   const notes = getAllContent("field-notes");
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ───────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          Field Notes
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Essays, reflections, and observations from the field. These are not
-          lessons or tutorials&mdash;they are working notes on the ideas,
-          decisions, and discoveries that shaped this course.
-        </p>
-      </header>
-
-      <hr className="border-t border-border mb-10" />
+    <FieldGuidePage
+      eyebrow="Project Field Notes"
+      title="Field Notes"
+      subtitle="Essays, reflections, and observations from the field. These are working notes on the ideas, decisions, and discoveries that shaped this course."
+      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      meta={[
+        { label: "Notes", value: String(notes.length) },
+        { label: "Mode", value: "Reflection" },
+        { label: "Best voice", value: "Teacher-builder" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       {/* ── Notes list ───────────────────────────────────────────────── */}
       {notes.length > 0 ? (
@@ -49,7 +53,7 @@ export default function FieldNotesPage() {
                   <span>{note.readingTime.text}</span>
                 </div>
 
-                <h2 className="font-serif text-lg font-semibold text-foreground mb-2 border-none mt-0 pb-0">
+                <h2 className="font-heading text-lg font-semibold text-foreground mb-2 border-none mt-0 pb-0">
                   <Link
                     href={`/field-notes/${note.slug}`}
                     className="no-underline hover:text-link transition-colors"
@@ -74,7 +78,9 @@ export default function FieldNotesPage() {
           </p>
         </div>
       )}
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

@@ -80,15 +80,15 @@ These topics belong in later course path courses:
 
 | Code | Course | Level | Status |
 |---|---|---:|---|
-| OTS-101 | Teaching Teachers Foundations | Beginner | Build first |
-| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Future |
-| OTS-220 | Apps Script for Teacher Automation | Intermediate | Draft |
-| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Future |
-| OTS-260 | AI Media & Lesson Delivery | Intermediate | Future |
-| OTS-280 | Cyber Safety for Educators | Intermediate | Future |
-| OTS-301 | Teacher Course Sites | Advanced | Future |
-| OTS-320 | AI Coding Agents for Educators | Advanced | Future |
-| OTS-399 | Capstone Studio | Advanced | Future |
+| OTS-101 | Teaching Teachers Foundations | Beginner | Released |
+| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Released |
+| OTS-220 | Apps Script for Teacher Automation | Intermediate | Released |
+| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Released |
+| OTS-260 | AI Media & Lesson Delivery | Intermediate | Released |
+| OTS-280 | Cyber Safety for Educators | Intermediate | Released |
+| OTS-301 | Teacher Course Sites | Advanced | Released |
+| OTS-320 | AI Coding Agents for Educators | Advanced | Released |
+| OTS-399 | Capstone Studio | Advanced | Released |
 
 ## Content Safety Rules
 
@@ -141,18 +141,18 @@ Open [http://localhost:4000](http://localhost:4000) to view the site.
 - **Styling:** Tailwind CSS v4
 - **Content:** MDX with next-mdx-remote
 - **Diagrams:** Mermaid
-- **Fonts:** Source Serif 4, Source Sans 3, JetBrains Mono
+- **Fonts:** IBM Plex Sans, Source Sans 3, IBM Plex Mono
 
 ## Roadmap
 
-v1.0 shipped — OTS-101 through OTS-399 are authored, reader-migrated, and passing
-lint/build/route checks. The current priority is **v1.1 Platform Consolidation**:
+v2.0 shipped — OTS-101 through OTS-399 are authored, reader-migrated, and passing
+lint/build/route checks. The current maintenance priority is release hygiene:
 
-- Add overwrite protection to scaffold and author scripts
-- Add machine-verifiable build report (`docs/BUILD_VERIFICATION.md`)
-- Resolve the Nextra/custom KB architecture split
-- Clean up brand identity (Teaching Teachers vs OpenTeachStack vs OTS)
-- Unify design language across courses, KB, and library
+- Keep `docs/BUILD_VERIFICATION.md` current with `npm run verify:release`
+- Preserve the canonical `/book/{course}` route contract
+- Keep README, roadmap, course metadata, and live navigation in sync
+- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, and course-reader migration checks.
+- Add future improvements only when the real artifact or workflow exists
 
 See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.
 

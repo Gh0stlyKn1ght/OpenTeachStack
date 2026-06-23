@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
+import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -10,20 +13,21 @@ export const metadata: Metadata = {
 
 export default function ContributePage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ───────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          How to Contribute
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Teaching Teachers is a community project. Contributions from
-          educators, developers, designers, and anyone passionate about
-          open education are welcome and valued.
-        </p>
-      </header>
-
-      <hr className="border-t border-border mb-10" />
+    <FieldGuidePage
+      eyebrow="Project Commons"
+      title="How to Contribute"
+      subtitle="Teaching Teachers is a community project. Contributions from educators, developers, designers, and anyone passionate about open education are welcome and valued."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Repository", value: "GitHub" },
+        { label: "Code license", value: LICENSE.code.name },
+        { label: "Content license", value: LICENSE.content.spdx },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       <div className="prose-academic">
         {/* ── Types of Contributions ─────────────────────────────────── */}
@@ -364,7 +368,9 @@ export default function ContributePage() {
           no bad questions.
         </p>
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

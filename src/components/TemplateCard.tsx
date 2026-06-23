@@ -4,7 +4,7 @@ interface TemplateCardProps {
   downloadUrl?: string;
   viewUrl?: string;
   format: 'Google Sheet' | 'Google Doc' | 'Google Slides' | 'PDF' | string;
-  status?: "Available" | "Draft" | "Coming in v1" | "Future";
+  status?: "Available" | "Draft" | "Coming in v1" | "Planned";
   tags?: string[];
 }
 
@@ -22,7 +22,7 @@ export default function TemplateCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2 flex-wrap mb-2">
-            <span className="font-serif font-semibold text-sm text-foreground">
+            <span className="font-heading font-semibold text-sm text-foreground">
               {title}
             </span>
             <span className="rounded-sm bg-accent/15 px-1.5 py-0.5 text-[0.65rem] font-mono uppercase tracking-wider text-accent">
@@ -78,3 +78,4 @@ export default function TemplateCard({
     </div>
   );
 }
+

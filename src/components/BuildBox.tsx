@@ -11,7 +11,7 @@ export default function BuildBox({ moduleId }: { moduleId?: string }) {
       <p className="mb-2 font-mono text-xs font-bold uppercase tracking-widest text-green">
         You will build
       </p>
-      <h2 className="mb-2 border-none font-serif text-xl font-bold text-foreground">
+      <h2 className="mb-2 border-none font-heading text-xl font-bold text-foreground">
         {courseModule.buildArtifact}
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-slate">{courseModule.evidence}</p>
@@ -29,3 +29,4 @@ export default function BuildBox({ moduleId }: { moduleId?: string }) {
     </section>
   );
 }
+

@@ -75,7 +75,7 @@ export default function CyberSafetySidebar({
           </p>
           <Link
             href="/book/ots-280"
-            className="font-serif text-xl font-bold text-foreground no-underline hover:text-accent"
+            className="font-heading text-xl font-bold text-foreground no-underline hover:text-accent"
           >
             {CYBER_COURSE_CODE}
           </Link>
@@ -100,3 +100,4 @@ export default function CyberSafetySidebar({
     </aside>
   );
 }
+

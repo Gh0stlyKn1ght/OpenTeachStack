@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
+import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -11,22 +14,22 @@ export const metadata: Metadata = {
 
 export default function OpenSourcePage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ───────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          Open Source
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Teaching Teachers is built in the open. The code, content, and
-          templates that make up this project are freely available for
-          educators to use, study, modify, and share.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Project Commons"
+      title="Open Source"
+      subtitle="Teaching Teachers is built in the open. The code, content, and templates that make up this project are freely available for educators to use, study, modify, and share."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Code", value: LICENSE.code.name },
+        { label: "Content", value: LICENSE.content.spdx },
+        { label: "Repository", value: "GitHub" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <hr className="border-t border-border mb-10" />
-
-      {/* ── Philosophy ───────────────────────────────────────────────── */}
       <div className="prose-academic">
         <h2>Why Open Source</h2>
         <p>
@@ -204,7 +207,9 @@ export default function OpenSourcePage() {
           original copyright notice and license text in your distribution.
         </p>
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

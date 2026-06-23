@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllContent } from "@/lib/content";
 import { MODULES, COURSE_TITLE } from "@/lib/metadata";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: `Lessons — ${COURSE_TITLE}`,
@@ -23,18 +26,21 @@ export default function LessonsPage() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-12">
-        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-          {COURSE_TITLE}
-        </p>
-        <h1 className="font-serif text-3xl font-bold text-foreground md:text-4xl">
-          Lessons
-        </h1>
-        <p className="mt-3 text-base text-slate font-sans">
-          All lectures and readings across the course, organized by module.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow={COURSE_TITLE}
+      title="Lessons"
+      subtitle="All legacy lectures and readings across the foundations course, organized by module. New course-book sections live under /book."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Legacy lessons", value: String(lessons.length) },
+        { label: "Primary reader", value: "/book/ots-101" },
+        { label: "Status", value: "Compatibility archive" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       <div className="space-y-12">
         {MODULES.map((mod) => {
@@ -43,7 +49,7 @@ export default function LessonsPage() {
 
           return (
             <section key={mod.slug}>
-              <h2 className="mb-1 font-serif text-lg font-semibold text-foreground">
+              <h2 className="mb-1 font-heading text-lg font-semibold text-foreground">
                 <span className="font-mono text-sm text-accent mr-2">
                   {mod.number}.
                 </span>
@@ -62,7 +68,7 @@ export default function LessonsPage() {
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0">
-                          <h3 className="font-serif text-base font-semibold text-foreground group-hover:text-link transition-colors">
+                          <h3 className="font-heading text-base font-semibold text-foreground group-hover:text-link transition-colors">
                             {lesson.frontmatter.title}
                           </h3>
                           {lesson.frontmatter.summary && (
@@ -106,7 +112,9 @@ export default function LessonsPage() {
           );
         })}
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

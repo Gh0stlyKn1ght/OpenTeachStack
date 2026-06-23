@@ -1,8 +1,8 @@
 # Build Verification
 
-Date: 2026-06-22T17:04:08.563Z
+Date: 2026-06-23T19:26:06.306Z
 
-Commit SHA: cb6ed5ffcd2c56f989d34269ca805d4c5d8802fc
+Commit SHA: 2e0b3589979cbad36b993af08f864b93d46ca884
 
 ## Result
 
@@ -15,6 +15,11 @@ Overall release verification: PASS
 | PASS | npm run lint | > teachingteachers@0.1.0 lint |
 | PASS | npm run build | > teachingteachers@0.1.0 build |
 | PASS | npm run check:routes | > teachingteachers@0.1.0 check:routes |
+| PASS | npm run check:content-layout | > teachingteachers@0.1.0 check:content-layout |
+| PASS | npm run check:no-scaffold-fallback | > teachingteachers@0.1.0 check:no-scaffold-fallback |
+| PASS | npm run check:content-authoring-safety | > teachingteachers@0.1.0 check:content-authoring-safety |
+| PASS | npm run check:source-bank | > teachingteachers@0.1.0 check:source-bank |
+| PASS | production route smoke | Route smoke passed on port 51302: /=200, /courses=200, /pathway=200, /apps-script=200, /templates=200, /library=200, /book=200, /book/ots-101=200, /book/ots-201=200, /book/ots-220=200, /book/ots-240=200, /book/ots-260=200, /book/ots-280=200, /book/ots-301=200, /book/ots-320=200, /book/ots-399=200, /courses/ots-280=200, /kb=200, /library/source-bank=200, /evidence=200 |
 
 ## Known Failures
 

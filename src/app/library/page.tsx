@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Library — Teaching Teachers",
@@ -31,7 +34,7 @@ const libraryItems = [
   {
     title: "OTS-280 Cyber Safety",
     href: "/courses/ots-280",
-    desc: "A future safety track for identity hygiene, account protection, website audits, public repos, and incident response.",
+    desc: "A released safety track for identity hygiene, account protection, website audits, public repos, and incident response.",
   },
   {
     title: "Field Notes",
@@ -67,19 +70,21 @@ const libraryItems = [
 
 export default function LibraryPage() {
   return (
-    <div className="mx-auto w-[min(100%-1.5rem,96rem)] px-3 py-12">
-      <header className="mb-10 max-w-3xl">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Library
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          The support shelf for the pathway.
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          Prompts, templates, safety checks, field notes, sources, and licensing
-          matter. They just should not all fight for space in the top nav.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Library"
+      title="The support shelf for the pathway."
+      subtitle="Prompts, templates, safety checks, field notes, sources, and licensing matter. They just should not all fight for space in the top nav."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Items", value: String(libraryItems.length) },
+        { label: "Mode", value: "Artifact shelf" },
+        { label: "Primary source", value: "Source Bank" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
       <div className="grid gap-4 md:grid-cols-2">
         {libraryItems.map((item) => (
@@ -88,7 +93,7 @@ export default function LibraryPage() {
             href={item.href}
             className="rounded-md border border-border bg-surface p-5 no-underline transition-colors hover:border-accent/50"
           >
-            <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+            <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
               {item.title}
             </h2>
             <p className="m-0 text-sm leading-relaxed text-slate">
@@ -97,7 +102,9 @@ export default function LibraryPage() {
           </Link>
         ))}
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

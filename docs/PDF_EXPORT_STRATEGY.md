@@ -17,7 +17,7 @@ Do not add fake Google Docs, Google Sheets, DOCX, or PDF download links unless t
 | Syllabus | Browser print / Save as PDF | Site page at `/syllabus` | Active |
 | Template library | Individual template pages and Markdown downloads | `src/lib/templates.ts` | Active |
 | Template detail page | Browser print / Save as PDF plus Markdown download | `/templates/[slug]/download` | Active |
-| Course-book chapters | Browser print / Save as PDF | Book route pages | Active |
+| Course-book pages and chapters | Browser print / Save as PDF | Book route pages | Active |
 
 ## Implementation Notes
 
@@ -25,6 +25,7 @@ Do not add fake Google Docs, Google Sheets, DOCX, or PDF download links unless t
 - `src/app/syllabus/page.tsx` exposes a print/PDF action near the syllabus header.
 - `src/app/templates/[slug]/page.tsx` exposes both Markdown download and print/PDF actions.
 - `src/app/templates/[slug]/download/route.ts` returns static Markdown from `renderTemplateMarkdown`.
+- `src/components/book/BookChapterHeader.tsx` exposes the same print/PDF action across course-book entry, chapter, and section pages.
 - `src/app/globals.css` contains print styles that remove navigation, footer, buttons, and `[data-print-hide]` elements from printed output.
 
 ## Why This Strategy

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import {
   OfficialCourseSources,
   SoftwareSourceInventory,
@@ -13,24 +16,24 @@ export const metadata: Metadata = {
 
 export default function SourcesPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-10">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Source Audit
-        </p>
-        <h1 className="mb-3 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Official Sources
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          This is the source-of-truth list for software, platforms,
-          documentation, and technical references used across Teaching Teachers.
-          Lessons can use tutorials as supplements, but software behavior
-          should be checked against official documentation first.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Source Audit"
+      title="Official Sources"
+      subtitle="This is the source-of-truth list for software, platforms, documentation, and technical references used across Teaching Teachers. Lessons can use tutorials as supplements, but software behavior should be checked against official documentation first."
+      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      meta={[
+        { label: "Rule", value: "Official docs first" },
+        { label: "AI role", value: "Draft after source" },
+        { label: "Scope", value: "Courses and software" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <section className="mb-10 rounded-md border border-border bg-surface p-4">
-        <h2 className="mb-2 font-serif text-lg font-bold text-foreground">
+      <section className="rounded-md border border-border bg-surface p-4">
+        <h2 className="mb-2 font-heading text-lg font-bold text-foreground">
           Course Writing Rule
         </h2>
         <p className="text-sm leading-relaxed text-slate">
@@ -47,8 +50,8 @@ export default function SourcesPage() {
         </Link>
       </section>
 
-      <section className="mb-12">
-        <h2 className="mb-1 font-serif text-xl font-bold text-foreground">
+      <section>
+        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
           Official Documentation by Pathway Course
         </h2>
         <p className="mb-4 text-sm text-foreground/50">
@@ -59,7 +62,7 @@ export default function SourcesPage() {
       </section>
 
       <section>
-        <h2 className="mb-1 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
           App and Software Inventory
         </h2>
         <p className="mb-4 text-sm text-foreground/50">
@@ -68,7 +71,9 @@ export default function SourcesPage() {
         </p>
         <SoftwareSourceInventory />
       </section>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

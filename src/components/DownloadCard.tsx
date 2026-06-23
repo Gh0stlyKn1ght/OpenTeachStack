@@ -35,7 +35,7 @@ export default function DownloadCard({
         <div className="flex items-baseline gap-2 flex-wrap">
           <a
             href={fileUrl}
-            className="font-serif font-semibold text-foreground hover:text-link transition-colors text-sm"
+            className="font-heading font-semibold text-foreground hover:text-link transition-colors text-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,3 +52,4 @@ export default function DownloadCard({
     </div>
   );
 }
+

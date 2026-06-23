@@ -18,7 +18,7 @@ export default function LearnerJourney() {
         <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.15em] text-accent">
           Learner Journey
         </span>
-        <h2 className="mb-3 font-serif text-3xl font-bold text-foreground">
+        <h2 className="mb-3 font-heading text-3xl font-bold text-foreground">
           From non-tech teacher to curriculum systems builder
         </h2>
         <p className="text-sm leading-relaxed text-slate">
@@ -59,4 +59,5 @@ export default function LearnerJourney() {
     </section>
   );
 }
+
 

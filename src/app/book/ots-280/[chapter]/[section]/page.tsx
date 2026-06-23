@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import BookChapterHeader from "@/components/book/BookChapterHeader";
-import CyberSafetyBookShell from "@/components/book/CyberSafetyBookShell";
-import CyberSafetySectionNav from "@/components/book/CyberSafetySectionNav";
+import CyberSafetySidebar from "@/components/book/CyberSafetySidebar";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import BuildTask from "@/components/BuildTask";
 import MDXPre from "@/components/MDXPre";
 import MermaidBlock from "@/components/MermaidBlock";
@@ -77,26 +78,53 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
   }
 
   return (
-    <CyberSafetyBookShell
-      activeSlug={record.chapter.slug}
-      activeSectionSlug={record.sectionSlug}
-      notes={[
-        { label: "Course", value: CYBER_COURSE_CODE, href: "/book/ots-280" },
-        { label: "Chapter", value: record.chapter.title, href: record.chapter.href },
+    <FieldGuidePage
+      eyebrow={`${CYBER_COURSE_CODE} / Chapter ${record.chapter.number} / Section ${record.section.number}`}
+      title={record.section.title}
+      subtitle={record.chapter.problem}
+      breadcrumbs={[
+        { label: "Book", href: "/book" },
+        { label: CYBER_COURSE_CODE, href: "/book/ots-280" },
+        { label: record.chapter.title, href: record.chapter.href },
+      ]}
+      meta={[
+        { label: "Course", value: CYBER_COURSE_CODE },
+        { label: "Chapter", value: record.chapter.title },
         { label: "Type", value: record.section.type },
         { label: "Duration", value: record.section.duration },
         { label: "Source", value: "Course-owned MDX" },
+        { label: "Print", value: "Full book PDF" },
       ]}
-      skills={record.chapter.transferableSkills}
+      sidebar={
+        <CyberSafetySidebar
+          activeSlug={record.chapter.slug}
+          activeSectionSlug={record.sectionSlug}
+        />
+      }
+      footer={
+        <ArticleFooterNav
+          previous={
+            previous
+              ? {
+                  href: previous.href,
+                  label: "Previous section",
+                  title: `${previous.section.number}. ${previous.section.title}`,
+                }
+              : undefined
+          }
+          next={
+            next
+              ? {
+                  href: next.href,
+                  label: "Next section",
+                  title: `${next.section.number}. ${next.section.title}`,
+                }
+              : undefined
+          }
+        />
+      }
     >
-      <BookChapterHeader
-        eyebrow={`Chapter ${record.chapter.number} / Section ${record.section.number}`}
-        title={record.section.title}
-        subtitle={record.chapter.problem}
-        chapterNumber={record.chapter.number}
-      />
-
-      <section>
+      <ArticleBody>
         <div className="prose-academic">
           <MDXRemote
             source={courseLesson.content}
@@ -104,9 +132,9 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
             components={mdxComponents}
           />
         </div>
-      </section>
-
-      <CyberSafetySectionNav previous={previous} next={next} />
-    </CyberSafetyBookShell>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
+

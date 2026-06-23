@@ -75,7 +75,7 @@ export default function CourseStructureSidebar({
           </p>
           <Link
             href={`/book/${course.slug}`}
-            className="font-serif text-xl font-bold text-foreground no-underline hover:text-accent"
+            className="font-heading text-xl font-bold text-foreground no-underline hover:text-accent"
           >
             {course.code}
           </Link>
@@ -100,3 +100,4 @@ export default function CourseStructureSidebar({
     </aside>
   );
 }
+

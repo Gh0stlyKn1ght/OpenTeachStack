@@ -4,6 +4,7 @@ import EvidencePanel from "@/components/book/EvidencePanel";
 import BookSearchInput from "@/components/book/BookSearchInput";
 import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
 import GitHubIcon from "@/components/GitHubIcon";
+import PrintPageButton from "@/components/PrintPageButton";
 import { METHOD_STEPS } from "@/lib/book";
 import { PATHWAY_COURSES, REPOSITORY_URL } from "@/lib/metadata";
 import { getKnowledgeBaseSearchRecords } from "@/lib/search";
@@ -19,6 +20,11 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   const pathwayPreview = PATHWAY_COURSES.slice(0, 6);
   const knowledgeBaseSearchRecords = getKnowledgeBaseSearchRecords();
+  const getCourseHref = (code: string) => {
+    if (code === "OTS-101") return "/book/ots-101";
+    if (code === "OTS-280") return "/book/ots-280";
+    return `/book/${code.toLowerCase()}`;
+  };
 
   return (
     <div>
@@ -27,7 +33,7 @@ export default function HomePage() {
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
             Teaching Teachers
           </p>
-          <h1 className="max-w-5xl font-serif text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-5xl font-heading text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
             A field guide for educators entering the tech world.
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-relaxed text-foreground/65">
@@ -56,6 +62,9 @@ export default function HomePage() {
               <GitHubIcon className="h-5 w-5" title="" />
             </a>
           </div>
+          <div className="mt-6" data-print-hide>
+            <PrintPageButton />
+          </div>
         </div>
       </section>
 
@@ -65,7 +74,7 @@ export default function HomePage() {
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Courses
             </p>
-            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
               Learn in order.
             </h2>
             <p className="mb-4 text-sm text-foreground/62">
@@ -84,7 +93,7 @@ export default function HomePage() {
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Knowledge Base
             </p>
-            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
               Solve today&apos;s challenge.
             </h2>
             <p className="mb-4 text-sm text-foreground/62">
@@ -103,7 +112,7 @@ export default function HomePage() {
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Library
             </p>
-            <h2 className="mt-0 font-serif text-2xl font-bold text-foreground">
+            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
               Copy the artifact.
             </h2>
             <p className="mb-4 text-sm text-foreground/62">
@@ -126,7 +135,7 @@ export default function HomePage() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Knowledge Base
             </p>
-            <h2 className="mt-0 max-w-3xl font-serif text-4xl font-bold text-foreground">
+            <h2 className="mt-0 max-w-3xl font-heading text-4xl font-bold text-foreground">
               Search the field manual when you need the next useful move.
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/62">
@@ -167,7 +176,7 @@ export default function HomePage() {
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
             The Real Problem
           </p>
-          <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+          <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
             Teachers need systems, not another pile of tools.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground/62">
@@ -192,7 +201,7 @@ export default function HomePage() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Evidence Preview
             </p>
-            <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+            <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
               Data belongs here, but only when it has sources.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-foreground/62">
@@ -210,7 +219,7 @@ export default function HomePage() {
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
             Pathway Preview
           </p>
-          <h2 className="mt-0 font-serif text-4xl font-bold text-foreground">
+          <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
             From foundations to teacher-owned technical systems.
           </h2>
         </div>
@@ -219,7 +228,7 @@ export default function HomePage() {
           {pathwayPreview.map((course) => (
             <li key={course.code}>
               <Link
-                href={course.code === "OTS-101" ? "/book/ots-101" : "/pathway"}
+                href={getCourseHref(course.code)}
                 className="grid gap-4 py-5 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
               >
                 <span className="font-mono text-sm text-accent">
@@ -248,7 +257,7 @@ export default function HomePage() {
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
               Open Source
             </p>
-            <h2 className="m-0 border-none font-serif text-3xl font-bold text-foreground">
+            <h2 className="m-0 border-none font-heading text-3xl font-bold text-foreground">
               Built in the open. Maintained like a field manual.
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
@@ -271,4 +280,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 

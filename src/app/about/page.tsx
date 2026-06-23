@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -11,21 +14,17 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-12 grid gap-8 md:grid-cols-[minmax(0,1fr)_320px] md:items-end">
-        <div>
-          <span className="mb-4 inline-block rounded border border-accent/30 px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-widest text-accent">
-            About the Author
-          </span>
-          <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-            JC Nevarez
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-foreground/65">
-            Computer science, robotics, engineering, and cybersecurity educator
-            based in New Jersey.
-          </p>
-        </div>
-
+    <FieldGuidePage
+      eyebrow="About the Author"
+      title="JC Nevarez"
+      subtitle="Computer science, robotics, engineering, and cybersecurity educator based in New Jersey."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Role", value: AUTHOR.role },
+        { label: "Project", value: "Teaching Teachers" },
+        { label: "License", value: LICENSE.content.spdx },
+      ]}
+      sidebar={
         <figure className="overflow-hidden rounded-md border border-border bg-surface">
           <Image
             src="/aboutme.jpg"
@@ -36,11 +35,14 @@ export default function AboutPage() {
             className="aspect-[4/5] h-auto w-full object-cover object-[50%_38%]"
           />
         </figure>
-      </header>
+      }
+    >
+      <ArticleBody>
+        <div className="mt-5" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <hr className="mb-10 border-t border-border" />
-
-      <div className="prose-academic mx-auto max-w-3xl">
+        <div className="prose-academic">
         <h2>About the Author</h2>
         <p>
           I built <strong>Teaching Teachers</strong> because I needed it myself.
@@ -177,8 +179,10 @@ export default function AboutPage() {
           </a>
           . <Link href="/license">Full license details &rarr;</Link>
         </p>
-      </div>
-    </div>
+        </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

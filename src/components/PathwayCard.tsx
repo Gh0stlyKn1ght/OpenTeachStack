@@ -44,7 +44,7 @@ export default function PathwayCard({ course }: { course: PathwayCourse }) {
           <p className="mb-1 font-mono text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>
             {course.code}
           </p>
-          <h3 className="m-0 font-serif text-xl font-bold text-foreground">
+          <h3 className="m-0 font-heading text-xl font-bold text-foreground">
             {course.title}
           </h3>
         </div>
@@ -77,3 +77,4 @@ export default function PathwayCard({ course }: { course: PathwayCourse }) {
     </article>
   );
 }
+

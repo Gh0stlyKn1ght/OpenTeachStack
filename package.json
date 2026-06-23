@@ -7,6 +7,8 @@
     "build": "next build --webpack",
     "start": "next start -p 4000",
     "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "npm run typecheck && npm run lint && npm run check:routes && npm run check:content-layout && npm run check:no-scaffold-fallback && npm run check:content-authoring-safety && npm run check:source-bank && npm run check:ots101-reader && npm run check:ots201-reader && npm run check:ots220-reader && npm run check:ots240-reader && npm run check:ots260-reader && npm run check:ots280-reader && npm run check:ots301-reader && npm run check:ots320-reader && npm run check:ots399-reader",
     "check:routes": "node scripts/check-route-contract.mjs",
     "check:content-layout": "node scripts/check-course-content-layout.mjs",
     "check:ots101-reader": "node scripts/check-ots101-course-reader.mjs",
@@ -29,7 +31,9 @@
     "author:ots301": "node scripts/author-ots301-course-lessons.mjs",
     "author:ots320": "node scripts/author-ots320-course-lessons.mjs",
     "author:ots399": "node scripts/author-ots399-course-lessons.mjs",
-    "check:source-bank": "node scripts/check-source-bank-links.mjs"
+    "check:source-bank": "node scripts/check-source-bank-links.mjs",
+    "check:no-scaffold-fallback": "node scripts/check-no-scaffold-fallback.mjs",
+    "check:content-authoring-safety": "node scripts/check-content-authoring-safety.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

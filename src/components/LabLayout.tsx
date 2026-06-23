@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import PreviousNext from './PreviousNext';
+import PrintPageButton from './PrintPageButton';
 
 interface NavLink {
   title: string;
@@ -44,7 +45,7 @@ export default function LabLayout({
           </span>
         </div>
 
-        <h1 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
+        <h1 className="font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
           {title}
         </h1>
 
@@ -76,12 +77,16 @@ export default function LabLayout({
             </span>
           )}
         </div>
+
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
       </header>
 
       {/* What You'll Build */}
       {outcomes && outcomes.length > 0 && (
         <section className="my-8 rounded-md border border-border bg-surface-alt/40 p-5">
-          <h3 className="mb-3 font-serif text-sm font-semibold uppercase tracking-widest text-foreground/70">
+          <h3 className="mb-3 font-heading text-sm font-semibold uppercase tracking-widest text-foreground/70">
             What You&apos;ll Build
           </h3>
           <ul className="list-none space-y-2 pl-0">
@@ -108,3 +113,4 @@ export default function LabLayout({
     </article>
   );
 }
+

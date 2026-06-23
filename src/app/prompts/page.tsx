@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Prompt Library — Teaching Teachers",
@@ -799,23 +802,19 @@ export default function PromptsPage() {
   const categories = Object.keys(grouped);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ─────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          Prompt Library
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Reusable prompt templates for curriculum design, assessment
-          creation, and content generation. Each prompt is structured for
-          direct use with Claude, ChatGPT, or any capable AI assistant.
-          Copy, paste, fill in the bracketed variables, and revise the
-          output.
-        </p>
-      </header>
-
-      <hr className="border-t border-border mb-10" />
-
+    <FieldGuidePage
+      eyebrow="Prompt Library"
+      title="Reusable prompts for safer curriculum work."
+      subtitle="Prompt templates for curriculum design, assessment creation, content generation, and AI-assisted teaching workflows. Copy, paste, fill in the bracketed variables, and revise the output before using it with students."
+      meta={[
+        { label: "Templates", value: String(PROMPTS.length) },
+        { label: "Categories", value: String(categories.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
+      <ArticleBody>
       {/* ── How to Use ─────────────────────────────────────────────── */}
       <section className="prose-academic mb-10">
         <h2>How to Use This Library</h2>
@@ -853,7 +852,7 @@ export default function PromptsPage() {
 
       {/* ── Table of Contents ──────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-xl font-bold text-foreground mb-4">
+        <h2 className="font-heading text-xl font-bold text-foreground mb-4">
           Contents
         </h2>
         <nav>
@@ -878,13 +877,13 @@ export default function PromptsPage() {
       {/* ── Prompts by Category ────────────────────────────────────── */}
       {categories.map((category) => (
         <section key={category} className="mb-12">
-          <h2 className="font-serif text-xl font-bold text-foreground mb-6">
+          <h2 className="font-heading text-xl font-bold text-foreground mb-6">
             {category}
           </h2>
 
           {grouped[category].map((p) => (
             <article key={p.id} id={p.id} className="mb-10 scroll-mt-8">
-              <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
                 {p.title}
               </h3>
               <p className="text-sm text-foreground/60 leading-relaxed mb-4">
@@ -950,7 +949,9 @@ export default function PromptsPage() {
           non-commercial educational purposes with attribution.
         </p>
       </aside>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

@@ -4,6 +4,7 @@
 
 All nine pathway courses are authored, reader-migrated, and passing lint/build/route checks.
 Roadmap currently has no blocked required items in v0.6, v1.1, v1.2, v1.3, v1.4, v1.5, or v2.0.
+Full-course browser print/PDF exports are available at `/book/print/[course]` for every structured pathway course.
 
 ## v0.2 — OTS-101 Foundations Complete
 
@@ -157,7 +158,7 @@ Done means for every course tranche:
 - [x] Content safety rules documented for contributors
 - [x] Release announcement focused on OTS-101 Foundations
 
-## v1.1 — Platform Consolidation (current)
+## v1.1 — Platform Consolidation
 
 Priority: stabilize the platform identity before adding new content.
 
@@ -179,7 +180,7 @@ Priority: stabilize the platform identity before adding new content.
 
 - [x] Decide: Nextra-owned `/kb` or custom-owned `/kb` (not both halfway)
 - [x] If custom: remove `nextra` and `nextra-theme-docs` from dependencies, remove `withNextra` wrapper
-- [ ] If Nextra: migrate KB sidebar/search to Nextra `_meta` conventions, remove custom KB shell
+- [x] Nextra path closed as not applicable after choosing custom `/kb`; continue KB work on the custom stack
 - [x] Document the decision in `docs/KB_ARCHITECTURE.md`
 
 ### P1 — Brand Cleanup
@@ -248,6 +249,7 @@ Priority: stabilize the platform identity before adding new content.
 - [x] Brand identity resolved — one name, one tagline, consistent badges
 - [x] Community contribution guide published
 - [x] Release announcement for full pathway
+- [x] Full-course browser print/PDF export route published for structured course books
 
 ## Future Ideas
 
@@ -256,5 +258,4 @@ Priority: stabilize the platform identity before adding new content.
 - Community examples of mini-unit capstones
 - GitHub Discussions after pathway is stable
 - Certification or micro-credential pathway
-- PDF/print export for full course books
 - Contributor leaderboard or showcase page

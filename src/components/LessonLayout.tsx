@@ -4,6 +4,7 @@ import LessonHero from './LessonHero';
 import OutcomeList from './OutcomeList';
 import PreviousNext from './PreviousNext';
 import ReadingProgress from './ReadingProgress';
+import PrintPageButton from './PrintPageButton';
 
 interface NavLink {
   title: string;
@@ -51,6 +52,10 @@ export default function LessonLayout({
       />
 
       <BuildBox moduleId={moduleName} />
+
+      <div className="mb-6" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       {/* Learning Outcomes */}
       {outcomes && outcomes.length > 0 && <OutcomeList outcomes={outcomes} />}

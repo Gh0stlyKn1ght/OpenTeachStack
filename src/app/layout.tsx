@@ -1,8 +1,30 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Source_Sans_3 } from "next/font/google";
 import { AcademicHeader } from "@/components/AcademicHeader";
 import { Footer } from "@/components/Footer";
 import { createPageMetadata, rootMetadataBase } from "@/lib/siteMetadata";
 import "./globals.css";
+
+const headingFont = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-ibm-plex-sans",
+});
+
+const bodyFont = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-source-sans",
+});
+
+const monoFont = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-ibm-plex-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: rootMetadataBase,
@@ -34,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className="h-full antialiased"
+      className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

@@ -1,17 +1,35 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ArtifactCard from "@/components/book/ArtifactCard";
-import BookChapterHeader from "@/components/book/BookChapterHeader";
-import CourseStructureBookShell from "@/components/book/CourseStructureBookShell";
-import CourseStructureSectionNav from "@/components/book/CourseStructureSectionNav";
-import SourcePanel from "@/components/book/SourcePanel";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import CourseStructureSidebar from "@/components/book/CourseStructureSidebar";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import BuildTask from "@/components/BuildTask";
+import MDXPre from "@/components/MDXPre";
+import MermaidBlock from "@/components/MermaidBlock";
+import RealityCheck from "@/components/RealityCheck";
+import ReflectionPrompt from "@/components/ReflectionPrompt";
+import TeacherNote from "@/components/TeacherNote";
+import VideoEmbed from "@/components/VideoEmbed";
+import { getCourseLessonBySlugs } from "@/lib/content";
 import {
   COURSE_STRUCTURES,
   getAdjacentCourseSections,
   getAllCourseSectionRecords,
-  getCourseSectionContent,
   getCourseSectionRecord,
 } from "@/lib/courseStructures";
+import { mdxOptions } from "@/lib/mdx";
+
+const mdxComponents = {
+  pre: MDXPre,
+  MermaidBlock,
+  VideoEmbed,
+  ReflectionPrompt,
+  TeacherNote,
+  RealityCheck,
+  BuildTask,
+};
 
 type SectionPageProps = {
   params: Promise<{ course: string; chapter: string; section: string }>;
@@ -52,78 +70,75 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
   }
 
   const { previous, next } = getAdjacentCourseSections(record);
-  const content = getCourseSectionContent(record);
+  const courseLesson = getCourseLessonBySlugs(
+    record.course.slug,
+    record.chapter.slug,
+    record.sectionSlug,
+  );
+
+  if (courseLesson?.frontmatter.migrationStatus !== "authored") {
+    notFound();
+  }
 
   return (
-    <CourseStructureBookShell
-      course={record.course}
-      activeChapterSlug={record.chapter.slug}
-      activeSectionSlug={record.sectionSlug}
-      notes={[
-        { label: "Course", value: record.course.code, href: `/book/${record.course.slug}` },
-        { label: "Chapter", value: record.chapter.title, href: `/book/${record.course.slug}/${record.chapter.slug}` },
+    <FieldGuidePage
+      eyebrow={`${record.course.code} / Chapter ${record.chapter.number} / Section ${record.section.number}`}
+      title={record.section.title}
+      subtitle={record.chapter.problem}
+      breadcrumbs={[
+        { label: "Book", href: "/book" },
+        { label: record.course.code, href: `/book/${record.course.slug}` },
+        {
+          label: record.chapter.title,
+          href: `/book/${record.course.slug}/${record.chapter.slug}`,
+        },
+      ]}
+      meta={[
+        { label: "Course", value: record.course.code },
+        { label: "Chapter", value: record.chapter.number },
         { label: "Type", value: record.section.type },
         { label: "Duration", value: record.section.duration },
+        { label: "Source", value: "Course-owned MDX" },
       ]}
-      skills={record.chapter.skills}
-    >
-      <BookChapterHeader
-        eyebrow={`Chapter ${record.chapter.number} / Section ${record.section.number}`}
-        title={record.section.title}
-        subtitle={record.chapter.problem}
-        chapterNumber={record.chapter.number}
-      />
-
-      <section className="book-spread">
-        <div>
-          <h2>Core Idea</h2>
-          {content.coreIdea.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-        <ArtifactCard
-          title={record.section.artifact ?? record.chapter.buildArtifact}
-          description={`Use this section to move toward the chapter artifact: ${record.chapter.buildArtifact}.`}
+      sidebar={
+        <CourseStructureSidebar
+          course={record.course}
+          activeChapterSlug={record.chapter.slug}
+          activeSectionSlug={record.sectionSlug}
         />
-      </section>
-
-      <section>
-        <h2>Do This</h2>
-        <ul>
-          {content.doThis.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h2>Evidence of Completion</h2>
-        <ul>
-          {content.evidence.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section>
-        <h2>Verification Check</h2>
-        <ul>
-          {content.verification.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      {content.reflection ? (
-        <section>
-          <h2>Reflection Prompt</h2>
-          <p>{content.reflection}</p>
-        </section>
-      ) : null}
-
-      <SourcePanel />
-
-      <CourseStructureSectionNav previous={previous} next={next} />
-    </CourseStructureBookShell>
+      }
+      footer={
+        <ArticleFooterNav
+          previous={
+            previous
+              ? {
+                  href: previous.href,
+                  label: "Previous section",
+                  title: `${previous.section.number}. ${previous.section.title}`,
+                }
+              : undefined
+          }
+          next={
+            next
+              ? {
+                  href: next.href,
+                  label: "Next section",
+                  title: `${next.section.number}. ${next.section.title}`,
+                }
+              : undefined
+          }
+        />
+      }
+    >
+      <ArticleBody>
+        <div className="prose-academic">
+          <MDXRemote
+            source={courseLesson.content}
+            options={mdxOptions}
+            components={mdxComponents}
+          />
+        </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }

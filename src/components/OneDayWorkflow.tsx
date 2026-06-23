@@ -33,7 +33,7 @@ export default function OneDayWorkflow() {
           <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.15em] text-accent">
             Signature Workflow
           </span>
-          <h2 className="mb-4 font-serif text-3xl font-bold text-foreground">
+          <h2 className="mb-4 font-heading text-3xl font-bold text-foreground">
             The One-Day Lesson Site Workflow
           </h2>
           <p className="text-sm leading-relaxed text-slate">
@@ -65,4 +65,5 @@ export default function OneDayWorkflow() {
     </section>
   );
 }
+
 

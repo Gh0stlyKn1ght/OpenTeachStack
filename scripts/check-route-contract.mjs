@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
@@ -66,6 +66,21 @@ for (const course of genericCourses) {
 for (const code of genericCourseCodes) {
   if (!seenGenericCodes.has(code)) {
     fail(`${code} is a generic course but is missing from COURSE_STRUCTURES.`);
+  }
+}
+
+for (const code of genericCourseCodes) {
+  const slug = expectedCourseSlugs.get(code);
+  const forbiddenRouteFiles = [
+    `src/app/book/${slug}/page.tsx`,
+    `src/app/book/${slug}/[chapter]/page.tsx`,
+    `src/app/book/${slug}/[chapter]/[section]/page.tsx`,
+  ];
+
+  for (const routeFile of forbiddenRouteFiles) {
+    if (existsSync(join(root, routeFile))) {
+      fail(`${code} must use generic /book/[course] routes; remove ${routeFile}.`);
+    }
   }
 }
 

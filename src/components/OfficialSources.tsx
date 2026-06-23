@@ -38,7 +38,7 @@ export function OfficialCourseSources() {
             <span className="font-mono text-sm font-semibold text-accent">
               {course.course}
             </span>
-            <h3 className="font-serif text-lg font-bold text-foreground">
+            <h3 className="font-heading text-lg font-bold text-foreground">
               {course.title}
             </h3>
           </div>
@@ -68,7 +68,7 @@ export function SoftwareSourceInventory() {
         >
           <div>
             <div className="mb-1 flex flex-wrap items-center gap-2">
-              <span className="font-serif text-base font-bold text-foreground">
+              <span className="font-heading text-base font-bold text-foreground">
                 {app.name}
               </span>
               <span className="rounded-sm bg-surface-alt px-1.5 py-0.5 font-mono text-[0.65rem] uppercase text-slate">
@@ -92,3 +92,4 @@ export function SoftwareSourceInventory() {
     </div>
   );
 }
+

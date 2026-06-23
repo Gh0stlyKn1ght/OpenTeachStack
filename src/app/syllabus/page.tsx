@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 import {
   COURSE_CODE,
@@ -20,27 +22,25 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function SyllabusPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-10 text-center">
-        <span className="mb-4 inline-block rounded border border-accent/30 px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-widest text-accent">
-          {COURSE_CODE}
-        </span>
-        <h1 className="mb-2 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          {COURSE_TITLE}
-        </h1>
-        <p className="mb-4 font-serif text-lg text-foreground/60">
-          {COURSE_SUBTITLE}
-        </p>
-        <p className="text-sm text-foreground/45">
-          Instructor: {AUTHOR.name} &middot;{" "}
-          <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
-        </p>
+    <FieldGuidePage
+      eyebrow={`${COURSE_CODE} Syllabus`}
+      title={COURSE_TITLE}
+      subtitle={COURSE_SUBTITLE}
+      breadcrumbs={[
+        { label: "Book", href: "/book" },
+        { label: COURSE_CODE, href: "/book/ots-101" },
+      ]}
+      meta={[
+        { label: "Instructor", value: AUTHOR.name },
+        { label: "Course", value: COURSE_CODE },
+        { label: "Pacing", value: "10 or 16 weeks" },
+        { label: "License", value: LICENSE.content.spdx },
+      ]}
+    >
+      <ArticleBody>
         <div className="mt-6" data-print-hide>
           <PrintPageButton />
         </div>
-      </header>
-
-      <hr className="mb-10 border-t border-border" />
 
       <div className="prose-academic">
         <h2>Course Description</h2>
@@ -306,7 +306,9 @@ export default function SyllabusPage() {
           .
         </p>
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

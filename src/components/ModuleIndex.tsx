@@ -4,7 +4,7 @@ import { MODULES } from "@/lib/metadata";
 export default function ModuleIndex() {
   return (
     <section className="content-visibility-auto mx-auto max-w-3xl px-6 py-12">
-      <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
+      <h2 className="font-heading text-2xl font-bold text-foreground mb-2">
         Course Chapters
       </h2>
       <p className="text-sm text-foreground/50 mb-8">
@@ -29,7 +29,7 @@ export default function ModuleIndex() {
                 <p className="text-sm text-foreground/55 mt-1.5 mb-0 leading-relaxed">
                   {mod.description}
                 </p>
-                <p className="text-xs font-serif italic text-foreground/40 mt-1 mb-0">
+                <p className="text-xs text-foreground/45 mt-1 mb-0">
                   {mod.essentialQuestion}
                 </p>
                 <p className="mt-3 mb-0 text-xs font-mono uppercase tracking-wider text-foreground/40">
@@ -46,3 +46,4 @@ export default function ModuleIndex() {
     </section>
   );
 }
+

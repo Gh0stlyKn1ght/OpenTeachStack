@@ -108,7 +108,7 @@ export default function ProductCarousel() {
   return (
     <section className="content-visibility-auto py-20 overflow-hidden">
       <div className="mx-auto max-w-3xl px-6 mb-12 text-center">
-        <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
+        <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
           Apps Teachers Need to Understand
         </h2>
         <p className="text-foreground/60 max-w-xl mx-auto">
@@ -129,3 +129,4 @@ export default function ProductCarousel() {
     </section>
   );
 }
+

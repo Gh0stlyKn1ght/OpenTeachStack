@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { CYBER_SAFETY_MODULES } from "@/lib/cyberSafety";
 
 export const metadata: Metadata = {
   title: "OTS-280 Cyber Safety for Educators — Teaching Teachers",
   description:
-    "Future Teaching Teachers pathway course on identity, privacy, accounts, and website safety for teachers.",
+    "Teaching Teachers pathway course on identity, privacy, accounts, and website safety for teachers.",
 };
 
 const artifacts = [
@@ -25,26 +27,21 @@ const artifacts = [
 
 export default function CyberSafetyCoursePage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          OTS-280 Future Pathway Course
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Cyber Safety for Educators
-        </h1>
-        <p className="mb-4 text-lg leading-relaxed text-foreground/65">
-          Identity, Privacy, Accounts, and Website Safety for Teachers
-        </p>
-        <p className="max-w-2xl leading-relaxed text-slate">
-          You are a teacher in a public-facing job. You deserve basic digital
-          self-defense. This course is not about paranoia or hacker cosplay. It
-          is basic maintenance for being an educator online.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="OTS-280 Released Pathway Course"
+      title="Cyber Safety for Educators"
+      subtitle="Identity, privacy, accounts, and website safety for teachers. This course is basic maintenance for being an educator online."
+      meta={[
+        { label: "Artifacts", value: String(artifacts.length) },
+        { label: "Chapters", value: String(CYBER_SAFETY_MODULES.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Where This Fits
         </h2>
         <p className="mb-3 text-sm leading-relaxed text-slate">
@@ -60,7 +57,7 @@ export default function CyberSafetyCoursePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Required Artifacts
         </h2>
         <ul className="grid gap-2 pl-0 sm:grid-cols-2">
@@ -74,7 +71,7 @@ export default function CyberSafetyCoursePage() {
       </section>
 
       <section>
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Course Chapters
         </h2>
         <div className="divide-y divide-border border-y border-border">
@@ -84,7 +81,7 @@ export default function CyberSafetyCoursePage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {module.number}
                 </span>
-                <h3 className="font-serif text-xl font-bold text-foreground">
+                <h3 className="font-heading text-xl font-bold text-foreground">
                   {module.title}
                 </h3>
               </div>
@@ -128,7 +125,7 @@ export default function CyberSafetyCoursePage() {
       </section>
 
       <section className="mt-10 rounded-md border border-accent/30 bg-surface p-5">
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Open the Course Book
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
@@ -144,7 +141,7 @@ export default function CyberSafetyCoursePage() {
       </section>
 
       <section className="mt-10 rounded-md border border-border bg-surface-alt/40 p-5">
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Related Library Items
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -168,6 +165,7 @@ export default function CyberSafetyCoursePage() {
           </Link>
         </div>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+

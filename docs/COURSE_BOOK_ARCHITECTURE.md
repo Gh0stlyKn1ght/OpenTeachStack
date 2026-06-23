@@ -113,7 +113,7 @@ content/
 - Prefer course-owned folders before moving readers.
 - Preserve source links, attribution, safety notes, and teacher voice.
 - Keep advanced material out of OTS-101 unless it is clearly marked as future, optional, or a preview.
-- Run `npm run check:content-layout` after course-folder changes.
+- Run `npm run check:content-layout` after course-folder changes when you want a quick structural check.
 - Run `npm run scaffold:courses` only when intentionally refreshing scaffolds from the current registries.
 
 ## Next Build Steps
@@ -122,5 +122,5 @@ content/
 2. Replace scaffold section files with authored course-local lesson bodies.
 3. Keep copied docs, labs, assets, templates, and references inside each course folder.
 4. Add examples and non-examples to the highest-priority sections.
-5. Run `npm run check:routes`, `npm run check:content-layout`, `npm run lint`, and `npm run build`.
-6. Run representative route probes before deleting or retiring global content files.
+5. Run `npm run check:content-layout` for a quick structural check after content-folder changes.
+6. Run `npm run test` for the non-mutating local gate, then `npm run verify:release`; local testing covers typecheck, lint, route contracts, content layout, scaffold-fallback protection, content-authoring overwrite protection, source-bank links, and every course-reader migration check before release verification runs production build and route smoke probes.

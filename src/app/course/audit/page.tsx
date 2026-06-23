@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { MODULES } from "@/lib/metadata";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -61,24 +63,21 @@ const auditSections = [
 
 export default function CourseAuditPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <span className="mb-4 inline-block rounded border border-accent/30 px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-widest text-accent">
-          OTS-101 Audit
-        </span>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Mini-Unit Capstone Self-Audit
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          Use this checklist before sharing an OTS-101 capstone with students,
-          colleagues, or the open-source project. The goal is not perfection.
-          The goal is a curriculum system that is coherent, sourced,
-          teachable, and safe.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="OTS-101 Audit"
+      title="Mini-Unit Capstone Self-Audit"
+      subtitle="Use this checklist before sharing an OTS-101 capstone with students, colleagues, or the open-source project. The goal is a curriculum system that is coherent, sourced, teachable, and safe."
+      meta={[
+        { label: "Scope", value: "OTS-101 capstone" },
+        { label: "Templates", value: String(FOUNDATION_TEMPLATES.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-3 border-none font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-3 border-none font-heading text-xl font-bold text-foreground">
           Required Templates
         </h2>
         <ul className="grid gap-2 text-sm text-slate sm:grid-cols-2">
@@ -93,7 +92,7 @@ export default function CourseAuditPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Chapter Evidence Trail
         </h2>
         <div className="divide-y divide-border border-y border-border">
@@ -105,7 +104,7 @@ export default function CourseAuditPage() {
                 </span>
                 <Link
                   href={`/book/ots-101/${module.slug}`}
-                  className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
+                  className="font-heading text-lg font-bold text-foreground no-underline hover:text-link"
                 >
                   {module.buildArtifact}
                 </Link>
@@ -122,7 +121,7 @@ export default function CourseAuditPage() {
         <main className="space-y-8">
           {auditSections.map((section) => (
             <section key={section.title}>
-              <h2 className="mb-3 font-serif text-2xl font-bold text-foreground">
+              <h2 className="mb-3 font-heading text-2xl font-bold text-foreground">
                 {section.title}
               </h2>
               <ul className="space-y-3">
@@ -167,7 +166,8 @@ export default function CourseAuditPage() {
           </div>
         </aside>
       </div>
-    </div>
+    </FieldGuidePage>
   );
 }
+
 

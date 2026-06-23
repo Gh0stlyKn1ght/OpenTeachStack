@@ -44,7 +44,7 @@ export default function LessonHero({
             {COURSE_CODE}
             {courseModule ? ` · Module ${courseModule.number} · ${courseModule.title}` : ""}
           </p>
-          <h1 className="mb-4 font-serif text-3xl font-extrabold leading-tight text-foreground md:text-4xl">
+          <h1 className="mb-4 font-heading text-3xl font-extrabold leading-tight text-foreground md:text-4xl">
             {title}
           </h1>
           {courseModule && (
@@ -70,3 +70,4 @@ export default function LessonHero({
     </header>
   );
 }
+

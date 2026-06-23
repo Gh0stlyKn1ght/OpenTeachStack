@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { MODULES } from "@/lib/metadata";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -46,35 +48,32 @@ const finalPackage = [
 
 export default function Ots101ReleasePage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 grid gap-6 lg:grid-cols-[1fr_360px] lg:items-center">
-        <div className="max-w-3xl">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-            OTS-101 Release Packet
-          </p>
-          <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-            Teaching Teachers Foundations is ready when the work can be taught.
-          </h1>
-          <p className="max-w-2xl leading-relaxed text-slate">
-            This is the final check for OTS-101. The goal is not a perfect
-            platform. The goal is a coherent, source-backed mini-unit system a
-            teacher can explain, teach, revise, and own.
-          </p>
-        </div>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-border bg-surface">
-          <Image
-            src={pageVisuals.releasePacket.src}
-            alt={pageVisuals.releasePacket.alt}
-            fill
-            priority
-            sizes="(min-width: 1024px) 360px, calc(100vw - 48px)"
-            className="object-cover"
-          />
-        </div>
-      </header>
+    <FieldGuidePage
+      eyebrow="OTS-101 Release Packet"
+      title="Teaching Teachers Foundations is ready when the work can be taught."
+      subtitle="This is the final check for OTS-101: a coherent, source-backed mini-unit system a teacher can explain, teach, revise, and own."
+      meta={[
+        { label: "Checks", value: String(releaseChecks.length) },
+        { label: "Package items", value: String(finalPackage.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
+
+      <div className="relative mb-10 aspect-[16/10] overflow-hidden rounded-md border border-border bg-surface">
+        <Image
+          src={pageVisuals.releasePacket.src}
+          alt={pageVisuals.releasePacket.alt}
+          fill
+          priority
+          sizes="(min-width: 1024px) 760px, calc(100vw - 48px)"
+          className="object-cover"
+        />
+      </div>
 
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Release Checks
         </h2>
         <ul className="space-y-3">
@@ -91,7 +90,7 @@ export default function Ots101ReleasePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Chapter Build Trail
         </h2>
         <div className="divide-y divide-border border-y border-border">
@@ -103,7 +102,7 @@ export default function Ots101ReleasePage() {
                 </span>
                 <Link
                   href={`/book/ots-101/${module.slug}`}
-                  className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
+                  className="font-heading text-lg font-bold text-foreground no-underline hover:text-link"
                 >
                   {module.title}
                 </Link>
@@ -121,7 +120,7 @@ export default function Ots101ReleasePage() {
 
       <section className="mb-10 grid gap-6 lg:grid-cols-2">
         <div className="rounded-md border border-border bg-surface p-5">
-          <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+          <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
             Final Student-Ready Package
           </h2>
           <ul className="space-y-2 pl-0">
@@ -135,7 +134,7 @@ export default function Ots101ReleasePage() {
         </div>
 
         <div className="rounded-md border border-border bg-surface p-5">
-          <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+          <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
             Required Templates
           </h2>
           <ul className="space-y-2 pl-0">
@@ -151,7 +150,7 @@ export default function Ots101ReleasePage() {
       </section>
 
       <section className="rounded-md border border-border bg-surface-alt/40 p-5">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Final Reality Check
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
@@ -181,7 +180,8 @@ export default function Ots101ReleasePage() {
           </Link>
         </div>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+
 

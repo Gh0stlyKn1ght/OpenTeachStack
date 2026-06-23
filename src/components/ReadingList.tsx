@@ -12,7 +12,7 @@ interface ReadingListProps {
 export default function ReadingList({ items }: ReadingListProps) {
   return (
     <section className="my-8">
-      <h3 className="font-serif text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">
+      <h3 className="font-heading text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">
         Reading List
       </h3>
       <ol className="list-none space-y-4 pl-0">
@@ -50,3 +50,4 @@ export default function ReadingList({ items }: ReadingListProps) {
     </section>
   );
 }
+

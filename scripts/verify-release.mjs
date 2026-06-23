@@ -1,5 +1,5 @@
-import { execSync } from "node:child_process";
-import { existsSync, writeFileSync } from "node:fs";
+import { execFileSync, execSync, spawn } from "node:child_process";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
@@ -9,6 +9,32 @@ const checks = [
   { label: "npm run lint", cmd: "npm run lint" },
   { label: "npm run build", cmd: "npm run build" },
   { label: "npm run check:routes", cmd: "npm run check:routes" },
+  { label: "npm run check:content-layout", cmd: "npm run check:content-layout" },
+  {
+    label: "npm run check:no-scaffold-fallback",
+    cmd: "npm run check:no-scaffold-fallback",
+  },
+  {
+    label: "npm run check:content-authoring-safety",
+    cmd: "npm run check:content-authoring-safety",
+  },
+  { label: "npm run check:source-bank", cmd: "npm run check:source-bank" },
+  { label: "production route smoke", run: runProductionRouteSmoke },
+];
+
+const smokeRoutes = [
+  "/",
+  "/courses",
+  "/pathway",
+  "/apps-script",
+  "/templates",
+  "/library",
+  "/book",
+  ...getReleasedCourseBookRoutes(),
+  "/courses/ots-280",
+  "/kb",
+  "/library/source-bank",
+  "/evidence",
 ];
 
 const rows = [];
@@ -19,7 +45,9 @@ function runCheck(check) {
   let status = "pass";
   let output = "";
   try {
-    output = execSync(check.cmd, { encoding: "utf8", stdio: "pipe" });
+    output = check.run
+      ? check.run()
+      : execSync(check.cmd, { encoding: "utf8", stdio: "pipe" });
   } catch (error) {
     status = "fail";
     overallPass = false;
@@ -37,6 +65,139 @@ function runCheck(check) {
   });
 
   return { status, output };
+}
+
+function runProductionRouteSmoke() {
+  const port = getFreePort();
+  const server = startNextServer(port);
+
+  try {
+    waitForServer(port, server);
+
+    const results = smokeRoutes.map((route) => {
+      const statusCode = requestStatusCode(port, route);
+      if (statusCode !== 200) {
+        throw new Error(`${route} returned HTTP ${statusCode}`);
+      }
+      return `${route}=200`;
+    });
+
+    return `Route smoke passed on port ${port}: ${results.join(", ")}`;
+  } finally {
+    stopServer(server);
+  }
+}
+
+function getReleasedCourseBookRoutes() {
+  const metadataPath = join(root, "src", "lib", "metadata.ts");
+  const metadata = readFileSync(metadataPath, "utf8");
+  const codes = [
+    ...metadata.matchAll(/code:\s*"(?<code>OTS-\d{3})"/g),
+  ].map((match) => match.groups?.code).filter(Boolean);
+
+  if (codes.length === 0) {
+    throw new Error("Could not find PATHWAY_COURSES codes for route smoke.");
+  }
+
+  return [...new Set(codes)].map((code) => `/book/${code.toLowerCase()}`);
+}
+
+function getFreePort() {
+  const script = `
+    const { createServer } = require("node:net");
+    const server = createServer();
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      console.log(address.port);
+      server.close();
+    });
+  `;
+  const port = Number(execFileSync(process.execPath, ["-e", script], {
+    encoding: "utf8",
+    stdio: "pipe",
+  }).trim());
+
+  if (!port) {
+    throw new Error("Could not allocate a localhost port for route smoke.");
+  }
+
+  return port;
+}
+
+function startNextServer(port) {
+  const nextBin = join(root, "node_modules", "next", "dist", "bin", "next");
+  const child = spawn(process.execPath, [nextBin, "start", "-p", String(port)], {
+    cwd: root,
+    env: {
+      ...process.env,
+      NEXT_TELEMETRY_DISABLED: "1",
+    },
+    stdio: ["ignore", "pipe", "pipe"],
+    windowsHide: true,
+  });
+
+  const output = [];
+  child.stdout.on("data", (chunk) => output.push(chunk.toString()));
+  child.stderr.on("data", (chunk) => output.push(chunk.toString()));
+
+  return { child, output, port };
+}
+
+function waitForServer(port, server) {
+  const deadline = Date.now() + 20_000;
+  let lastError = "";
+
+  while (Date.now() < deadline) {
+    if (server.child.exitCode !== null) {
+      throw new Error(
+        `next start exited before route smoke. ${server.output.join("").trim()}`,
+      );
+    }
+
+    try {
+      const statusCode = requestStatusCode(port, "/");
+      if (statusCode === 200) return;
+      lastError = `HTTP ${statusCode}`;
+    } catch (error) {
+      lastError = error.message;
+    }
+
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 250);
+  }
+
+  throw new Error(`Timed out waiting for next start on port ${port}: ${lastError}`);
+}
+
+function requestStatusCode(port, route) {
+  const url = new URL(route, `http://127.0.0.1:${port}`);
+
+  const script = `
+    const http = require("node:http");
+    const req = http.get(${JSON.stringify(url.href)}, (res) => {
+      res.resume();
+      res.on("end", () => {
+        console.log(res.statusCode);
+      });
+    });
+    req.setTimeout(10000, () => {
+      req.destroy(new Error("request timeout"));
+    });
+    req.on("error", (error) => {
+      console.error(error.message);
+      process.exit(1);
+    });
+  `;
+
+  return Number(execFileSync(process.execPath, ["-e", script], {
+    encoding: "utf8",
+    stdio: "pipe",
+  }).trim());
+}
+
+function stopServer(server) {
+  if (server.child.exitCode === null) {
+    server.child.kill();
+  }
 }
 
 function getSummaryLine(status, output) {

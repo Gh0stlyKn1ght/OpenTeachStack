@@ -16,12 +16,12 @@ export default function CourseHero() {
       </span>
 
       {/* Title */}
-      <h1 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-normal text-foreground leading-tight mb-4">
+      <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-normal text-foreground leading-tight mb-4">
         {COURSE_TITLE}
       </h1>
 
       {/* Subtitle */}
-      <p className="font-serif text-lg sm:text-xl text-foreground/70 leading-relaxed mb-6">
+      <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed mb-6">
         {COURSE_SUBTITLE}
       </p>
 
@@ -60,3 +60,4 @@ export default function CourseHero() {
     </section>
   );
 }
+

@@ -4,27 +4,53 @@ import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "teaching-teachers-theme";
 
-function getInitialTheme() {
-  if (typeof window === "undefined") return "light";
+function getPreferredTheme() {
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "dark" || stored === "light") return stored;
+  if (document.documentElement.classList.contains("dark")) return "dark";
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">(
-    () => getInitialTheme() as "light" | "dark",
-  );
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [hasMounted, setHasMounted] = useState(false);
+  const label = !hasMounted
+    ? "Theme settings loading"
+    : theme === "dark"
+      ? "Switch to light mode"
+      : "Switch to dark mode";
+  const title = !hasMounted
+    ? "Theme"
+    : theme === "dark"
+      ? "Light mode"
+      : "Dark mode";
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
+    const frame = window.requestAnimationFrame(() => {
+      setTheme(getPreferredTheme());
+      setHasMounted(true);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    if (hasMounted) {
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    }
+  }, [hasMounted, theme]);
 
   function toggleTheme() {
-    const nextTheme = theme === "dark" ? "light" : "dark";
+    const currentTheme = hasMounted
+      ? theme
+      : document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
+    setHasMounted(true);
     window.localStorage.setItem(STORAGE_KEY, nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
   }
@@ -34,8 +60,8 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface text-foreground/70 transition-colors hover:border-accent/50 hover:text-foreground"
-      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      title={theme === "dark" ? "Light mode" : "Dark mode"}
+      aria-label={label}
+      title={title}
     >
       {theme === "dark" ? (
         <svg

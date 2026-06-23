@@ -58,7 +58,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
             {template.format}
           </span>
         </div>
-        <h1 className="mb-3 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
+        <h1 className="mb-3 font-heading text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
           {template.title}
         </h1>
         <p className="max-w-2xl leading-relaxed text-foreground/60">
@@ -77,7 +77,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
 
       <section className="mb-10 grid gap-4 md:grid-cols-2">
         <div className="rounded-md border border-border bg-surface p-4">
-          <h2 className="mb-2 font-serif text-lg font-bold text-foreground">
+          <h2 className="mb-2 font-heading text-lg font-bold text-foreground">
             Beginner Version
           </h2>
           <p className="text-sm leading-relaxed text-slate">
@@ -85,7 +85,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
           </p>
         </div>
         <div className="rounded-md border border-border bg-surface p-4">
-          <h2 className="mb-2 font-serif text-lg font-bold text-foreground">
+          <h2 className="mb-2 font-heading text-lg font-bold text-foreground">
             Advanced Version
           </h2>
           <p className="text-sm leading-relaxed text-slate">
@@ -95,7 +95,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
       </section>
 
       <section className="mb-10 rounded-md border border-border bg-surface p-4">
-        <h2 className="mb-2 font-serif text-lg font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-lg font-bold text-foreground">
           Evidence of Completion
         </h2>
         <p className="text-sm leading-relaxed text-slate">
@@ -105,7 +105,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <section>
-          <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+          <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
             Blank Version
           </h2>
           <div className="space-y-5">
@@ -114,7 +114,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
                 key={`blank-${section.title}`}
                 className="rounded-md border border-border bg-background p-4"
               >
-                <h3 className="mb-2 font-serif text-lg font-semibold text-foreground">
+                <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
                   {section.title}
                 </h3>
                 {section.prompt && (
@@ -142,7 +142,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
         </section>
 
         <section>
-          <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+          <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
             Example Version
           </h2>
           <div className="space-y-5">
@@ -151,7 +151,7 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
                 key={`example-${section.title}`}
                 className="rounded-md border border-border bg-surface p-4"
               >
-                <h3 className="mb-2 font-serif text-lg font-semibold text-foreground">
+                <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
                   {section.title}
                 </h3>
                 {section.fields && section.example && (
@@ -188,4 +188,5 @@ export default async function TemplatePage({ params }: TemplatePageProps) {
     </div>
   );
 }
+
 

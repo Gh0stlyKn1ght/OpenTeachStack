@@ -24,7 +24,7 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <h1 className="hero-reveal hero-reveal-delay-1 mb-6 font-serif text-5xl font-extrabold leading-[1.1] tracking-normal text-foreground sm:text-6xl md:text-7xl">
+        <h1 className="hero-reveal hero-reveal-delay-1 mb-6 font-heading text-5xl font-extrabold leading-[1.1] tracking-normal text-foreground sm:text-6xl md:text-7xl">
           Teaching{" "}
           <span className="relative">
             <span className="relative z-10">Teachers</span>
@@ -33,7 +33,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="hero-reveal hero-reveal-delay-2 font-serif text-xl sm:text-2xl text-foreground/80 leading-relaxed max-w-2xl mb-4"
+          className="hero-reveal hero-reveal-delay-2 text-xl sm:text-2xl text-foreground/80 leading-relaxed max-w-2xl mb-4"
         >
           A field guide for educators entering the tech world.
         </p>
@@ -120,4 +120,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
 

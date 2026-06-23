@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "AI Safety Rules for Teachers — Teaching Teachers",
@@ -9,22 +12,19 @@ export const metadata: Metadata = {
 
 export default function SafetyPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      {/* ── Header ───────────────────────────────────────────────────── */}
-      <header className="mb-10">
-        <h1 className="font-serif text-3xl sm:text-4xl font-extrabold tracking-normal text-foreground mb-3">
-          AI Safety Rules for Teachers
-        </h1>
-        <p className="text-foreground/60 leading-relaxed max-w-2xl">
-          Non-negotiable guidelines for using AI tools in curriculum work.
-          These rules apply every time you use ChatGPT, Claude, AI image
-          generators, Codex, Claude Code, or any other AI assistant in your
-          professional practice.
-        </p>
-      </header>
-
-      <hr className="border-t border-border mb-10" />
-
+    <FieldGuidePage
+      eyebrow="Safety"
+      title="AI Safety Rules for Teachers"
+      subtitle="Non-negotiable guidelines for using AI tools in curriculum work. These rules apply every time you use ChatGPT, Claude, AI image generators, Codex, Claude Code, or any other AI assistant in your professional practice."
+      meta={[
+        { label: "Use", value: "Before every AI-assisted classroom workflow" },
+        { label: "Focus", value: "Privacy, verification, copyright, and data loss prevention" },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
+      <ArticleBody>
       {/* ── Why Safety Rules ─────────────────────────────────────────── */}
       <section className="prose-academic mb-10">
         <h2>Why These Rules Exist</h2>
@@ -48,13 +48,13 @@ export default function SafetyPage() {
 
       {/* ── The Rules ────────────────────────────────────────────────── */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-8">
+        <h2 className="font-heading text-2xl font-bold text-foreground mb-8">
           The Rules
         </h2>
 
         {/* Rule 1 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             1. Do not paste private student data into AI tools
           </h3>
           <div className="prose-academic">
@@ -84,7 +84,7 @@ export default function SafetyPage() {
 
         {/* Rule 2 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             2. Do not trust AI standards alignment without checking
           </h3>
           <div className="prose-academic">
@@ -115,7 +115,7 @@ export default function SafetyPage() {
 
         {/* Rule 3 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             3. Do not use AI-generated citations unless verified
           </h3>
           <div className="prose-academic">
@@ -144,7 +144,7 @@ export default function SafetyPage() {
 
         {/* Rule 4 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             4. Do not overwrite authored course content with AI templates
           </h3>
           <div className="prose-academic">
@@ -172,7 +172,7 @@ export default function SafetyPage() {
 
         {/* Rule 5 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             5. Do not publish copyrighted materials without permission
           </h3>
           <div className="prose-academic">
@@ -201,7 +201,7 @@ export default function SafetyPage() {
 
         {/* Rule 6 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             6. Do not rely on AI images for factual diagrams without
             verification
           </h3>
@@ -232,7 +232,7 @@ export default function SafetyPage() {
 
         {/* Rule 7 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             7. Always review code generated by AI agents
           </h3>
           <div className="prose-academic">
@@ -263,7 +263,7 @@ export default function SafetyPage() {
 
         {/* Rule 8 */}
         <article className="mb-10">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
             8. Always use version control before large edits
           </h3>
           <div className="prose-academic">
@@ -294,7 +294,7 @@ export default function SafetyPage() {
 
       {/* ── When AI Goes Wrong ───────────────────────────────────────── */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
+        <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
           When AI Goes Wrong
         </h2>
         <div className="prose-academic">
@@ -402,7 +402,7 @@ export default function SafetyPage() {
 
       {/* ── Verification Checklist ───────────────────────────────────── */}
       <section className="mb-12">
-        <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
+        <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
           Verification Checklist
         </h2>
         <div className="prose-academic">
@@ -562,7 +562,9 @@ export default function SafetyPage() {
           </li>
         </ul>
       </aside>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

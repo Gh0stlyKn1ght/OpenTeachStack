@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Sample Robotics Mini-Unit — Teaching Teachers",
@@ -70,23 +72,21 @@ const sourceChecks = [
 
 export default function RoboticsMiniUnitExamplePage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          OTS-101 Sample Mini-Unit
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Intro Robotics: What Is a Robot?
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-slate">
-          This is not a perfect unit. It is a finished-enough example: clear
-          target, trusted sources, one lesson sequence, one assessment, safety
-          checks, and a revision path.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="OTS-101 Sample Mini-Unit"
+      title="Intro Robotics: What Is a Robot?"
+      subtitle="A finished-enough example: clear target, trusted sources, one lesson sequence, one assessment, safety checks, and a revision path."
+      meta={[
+        { label: "Artifacts", value: String(artifactSections.length) },
+        { label: "Source checks", value: String(sourceChecks.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Student-Friendly Learning Target
         </h2>
         <p className="m-0 text-sm leading-relaxed text-slate">
@@ -96,7 +96,7 @@ export default function RoboticsMiniUnitExamplePage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Artifact Package
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -118,7 +118,7 @@ export default function RoboticsMiniUnitExamplePage() {
 
       <section className="mb-10 grid gap-6 lg:grid-cols-2">
         <div className="rounded-md border border-border bg-surface p-5">
-          <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+          <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
             Source Checks
           </h2>
           <ul className="space-y-2 pl-0">
@@ -132,7 +132,7 @@ export default function RoboticsMiniUnitExamplePage() {
         </div>
 
         <div className="rounded-md border border-border bg-surface p-5">
-          <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+          <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
             Reality Check
           </h2>
           <p className="m-0 text-sm leading-relaxed text-slate">
@@ -144,7 +144,7 @@ export default function RoboticsMiniUnitExamplePage() {
       </section>
 
       <section className="rounded-md border border-border bg-surface-alt/40 p-5">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Build This Today
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
@@ -172,7 +172,8 @@ export default function RoboticsMiniUnitExamplePage() {
           </Link>
         </div>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+
 

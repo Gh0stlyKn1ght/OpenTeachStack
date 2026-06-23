@@ -13,7 +13,7 @@ interface StatProps {
 function Stat({ value, suffix, label }: StatProps) {
   return (
     <div className="text-center">
-      <div className="font-serif text-4xl sm:text-5xl font-bold text-accent mb-2">
+      <div className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-2">
         {value}
         {suffix}
       </div>
@@ -36,3 +36,4 @@ export default function StatsBar() {
     </section>
   );
 }
+

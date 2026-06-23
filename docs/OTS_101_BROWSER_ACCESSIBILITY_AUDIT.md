@@ -19,7 +19,7 @@ The remaining follow-up is to add a repeatable CI accessibility scan with axe or
 | Check | Result | Notes |
 | --- | --- | --- |
 | `npm run lint` | Pass | ESLint completed without errors. |
-| `npm run build` | Pass | Production build completed successfully. Nextra warned about untracked KB MDX files missing Git timestamps. |
+| `npm run build` | Pass | Production build completed successfully. |
 | `npm run start` route probe | Pass | Release build served every audited route with HTTP 200 while the server was held open in the shell. |
 | In-app browser automation | Blocked | Browser bridge failed during setup with missing sandbox metadata. |
 | Edge headless fallback | Blocked | Local Edge launched but returned no DOM or screenshot artifact in this shell. |

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
+import PrintPageButton from "@/components/PrintPageButton";
 import {
   getSourceBankByCategory,
   sourceBankResources,
@@ -40,25 +43,17 @@ export default function SourceBankPage() {
   const grouped = getSourceBankByCategory();
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12">
-      <header className="mb-10 grid gap-6 lg:grid-cols-[1fr_360px] lg:items-center">
-        <div className="max-w-3xl">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-            The Source Bank
-          </p>
-          <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-            Free tools, course platforms, and learning resources.
-          </h1>
-          <div className="prose-academic">
-            <p>
-              Here is the real problem: teachers and students get handed random
-              links. Teaching Teachers keeps a source bank instead. Use official
-              sources first, check what is free, check what needs accounts, and
-              do not put students into tools without reading the privacy and age
-              requirements.
-            </p>
-          </div>
-        </div>
+    <FieldGuidePage
+      eyebrow="The Source Bank"
+      title="Free tools, course platforms, and learning resources."
+      subtitle="Teaching Teachers keeps a source bank instead of handing teachers random links. Use official sources first, check what is free, check what needs accounts, and read the privacy and age requirements before assigning platforms."
+      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      meta={[
+        { label: "Resources", value: String(sourceBankResources.length) },
+        { label: "Source rule", value: "Official links first" },
+        { label: "Safety rule", value: "Check privacy and age terms" },
+      ]}
+      sidebar={
         <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-border bg-surface">
           <Image
             src={pageVisuals.sourceBank.src}
@@ -69,14 +64,19 @@ export default function SourceBankPage() {
             className="object-cover"
           />
         </div>
-      </header>
+      }
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <section className="mb-10 grid gap-4 rounded-md border border-border bg-surface-alt/30 p-5 md:grid-cols-3">
+      <section className="grid gap-4 rounded-md border border-border bg-surface-alt/30 p-5 md:grid-cols-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-wider text-foreground/40">
             Resources
           </p>
-          <p className="mt-1 font-serif text-3xl font-bold text-foreground">
+          <p className="mt-1 font-heading text-3xl font-bold text-foreground">
             {sourceBankResources.length}
           </p>
         </div>
@@ -99,8 +99,8 @@ export default function SourceBankPage() {
         </div>
       </section>
 
-      <nav className="mb-12 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-4 font-serif text-xl font-bold text-foreground">
+      <nav className="rounded-md border border-border bg-surface p-5">
+        <h2 className="mb-4 font-heading text-xl font-bold text-foreground">
           Categories
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -128,7 +128,7 @@ export default function SourceBankPage() {
                 <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-accent">
                   {group.resources.length} resources
                 </p>
-                <h2 className="font-serif text-2xl font-bold text-foreground">
+                <h2 className="font-heading text-2xl font-bold text-foreground">
                   {group.category}
                 </h2>
               </div>
@@ -146,7 +146,7 @@ export default function SourceBankPage() {
                         href={resource.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-serif text-xl font-bold text-foreground no-underline transition-colors hover:text-link"
+                        className="inline-flex items-center gap-2 font-heading text-xl font-bold text-foreground no-underline transition-colors hover:text-link"
                       >
                         {isGitHubUrl(resource.officialUrl) && (
                           <GitHubIcon className="h-4 w-4" title="" />
@@ -230,7 +230,9 @@ export default function SourceBankPage() {
           </section>
         ))}
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

@@ -1,41 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Pathway — Teaching Teachers",
   description:
-    "Teaching Teachers pathway overview, including OTS-101 Foundations and future courses in Google Workspace, Apps Script, GitHub, media, course sites, coding agents, and capstone studio.",
+    "Teaching Teachers pathway overview, including released courses in foundations, Google Workspace, Apps Script, GitHub, media, cyber safety, course sites, coding agents, and capstone studio.",
 };
 
 export default function PathwayPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <span className="mb-4 inline-block rounded border border-accent/30 px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-widest text-accent">
-          Teaching Teachers Pathway
-        </span>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          One foundations course, then specialized tracks.
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          Teaching Teachers is an open-source pathway for educators building
-          curriculum systems with AI, automation, open resources, Google
-          Workspace, and modern publishing workflows. OTS-101 is the required
-          beginner course. Everything more technical moves into later pathway
-          courses.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Teaching Teachers Pathway"
+      title="One foundations course, then specialized tracks."
+      subtitle="Teaching Teachers is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows."
+      meta={[
+        { label: "Start", value: "OTS-101 Foundations" },
+        { label: "Tracks", value: String(PATHWAY_COURSES.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-12 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Start Here
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-foreground/60">
-          The first release should make OTS-101 smaller, clearer, and more
-          shippable. Apps Script, GitHub, domains, AI coding agents, and live
-          publishing remain part of the larger vision, but they are not
-          required foundations outcomes.
+          OTS-101 keeps the first step small: a verified mini-unit system with
+          sources, prompts, assessment, delivery, and revision evidence. Apps
+          Script, GitHub, domains, AI coding agents, and live publishing are
+          released as specialized tracks, but they are not required foundations
+          outcomes.
         </p>
         <Link
           href="/book/ots-101"
@@ -46,7 +45,7 @@ export default function PathwayPage() {
       </section>
 
       <section>
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
           Pathway Courses
         </h2>
         <div className="divide-y divide-border border-y border-border">
@@ -64,7 +63,7 @@ export default function PathwayPage() {
                         ? "/book/ots-280"
                         : `/book/${course.code.toLowerCase()}`
                   }
-                  className="font-serif text-xl font-bold text-foreground no-underline hover:text-link"
+                  className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
                 >
                   {course.title}
                 </Link>
@@ -96,7 +95,8 @@ export default function PathwayPage() {
           ))}
         </div>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+
 

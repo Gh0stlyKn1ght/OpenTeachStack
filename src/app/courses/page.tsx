@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -25,30 +27,28 @@ const ots101Links = [
 ];
 
 export default function CoursesPage() {
-  const [foundations, ...futureCourses] = PATHWAY_COURSES;
+  const [foundations, ...releasedTracks] = PATHWAY_COURSES;
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Courses
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Start with OTS-101. Let the technical tracks wait their turn.
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          Teaching Teachers is a pathway, but the first move is simple: build a
-          usable mini-unit system before you chase code, domains, GitHub, or
-          automation.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Courses"
+      title="Start with OTS-101. Let the technical tracks wait their turn."
+      subtitle="Teaching Teachers is a pathway, but the first move is simple: build a usable mini-unit system before you chase code, domains, GitHub, or automation."
+      meta={[
+        { label: "Foundation", value: foundations.code },
+        { label: "Released tracks", value: String(releasedTracks.length) },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-12 rounded-md border border-border bg-surface p-5">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="font-mono text-sm font-semibold text-accent">
             {foundations.code}
           </span>
-          <h2 className="font-serif text-2xl font-bold text-foreground">
+          <h2 className="font-heading text-2xl font-bold text-foreground">
             {foundations.title}
           </h2>
           <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground/55">
@@ -80,11 +80,11 @@ export default function CoursesPage() {
       </section>
 
       <section>
-        <h2 className="mb-4 font-serif text-2xl font-bold text-foreground">
-          Later Pathway Courses
+        <h2 className="mb-4 font-heading text-2xl font-bold text-foreground">
+          Released Pathway Tracks
         </h2>
         <div className="divide-y divide-border border-y border-border">
-          {futureCourses.map((course) => {
+          {releasedTracks.map((course) => {
             const courseHref =
               course.code === "OTS-280"
                 ? "/book/ots-280"
@@ -98,7 +98,7 @@ export default function CoursesPage() {
                 </span>
                 <Link
                   href={courseHref}
-                  className="font-serif text-lg font-bold text-foreground no-underline hover:text-link"
+                  className="font-heading text-lg font-bold text-foreground no-underline hover:text-link"
                 >
                   {course.title}
                 </Link>
@@ -117,6 +117,7 @@ export default function CoursesPage() {
           })}
         </div>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+

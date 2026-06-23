@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/siteMetadata";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Start Here If You Are Not Technical — Teaching Teachers",
@@ -19,21 +22,23 @@ const firstMoves = [
 
 export default function StartPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-10">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Start Here
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Start Here If You Are Not Technical
-        </h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-foreground/65">
-          You do not need to become a developer on day one. You do not need
-          GitHub, DNS, a public website, or an automation script to start.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Start Here"
+      title="Start Here If You Are Not Technical"
+      subtitle="You do not need to become a developer on day one. You do not need GitHub, DNS, a public website, or an automation script to start."
+      breadcrumbs={[{ label: "Book", href: "/book" }]}
+      meta={[
+        { label: "Audience", value: "Non-technical teachers" },
+        { label: "First course", value: "OTS-101" },
+        { label: "Mode", value: "Plain-language start" },
+      ]}
+    >
+      <ArticleBody>
+        <div className="mt-6" data-print-hide>
+          <PrintPageButton />
+        </div>
 
-      <section className="prose-academic mb-10">
+      <section className="prose-academic">
         <h2>Here is the real problem</h2>
         <p>
           Most teachers are not struggling because they lack another app. They
@@ -48,8 +53,8 @@ export default function StartPage() {
         </p>
       </section>
 
-      <section className="mb-10 rounded-md border border-border bg-surface p-5">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+      <section className="rounded-md border border-border bg-surface p-5">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Your first moves
         </h2>
         <ol className="space-y-3 pl-0">
@@ -64,7 +69,7 @@ export default function StartPage() {
         </ol>
       </section>
 
-      <section className="prose-academic mb-10">
+      <section className="prose-academic">
         <h2>You do not need this site&apos;s tech stack to start</h2>
         <p>
           The official Teaching Teachers site is built with Next.js because it is
@@ -79,8 +84,8 @@ export default function StartPage() {
         </p>
       </section>
 
-      <section className="mb-10 rounded-md border border-border bg-surface-alt/40 p-5">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+      <section className="rounded-md border border-border bg-surface-alt/40 p-5">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Reality check
         </h2>
         <p className="m-0 text-sm leading-relaxed text-slate">
@@ -104,7 +109,9 @@ export default function StartPage() {
           Open Templates
         </Link>
       </div>
-    </div>
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
 

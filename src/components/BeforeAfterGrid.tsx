@@ -26,7 +26,7 @@ export default function BeforeAfterGrid() {
           <p className="mb-2 font-mono text-xs font-bold uppercase tracking-widest text-[var(--color-orange)]">
             Before
           </p>
-          <h2 className="mb-5 font-serif text-2xl font-bold text-foreground">
+          <h2 className="mb-5 font-heading text-2xl font-bold text-foreground">
             Teaching work feels scattered
           </h2>
           <ul className="space-y-3 pl-0">
@@ -42,7 +42,7 @@ export default function BeforeAfterGrid() {
           <p className="mb-2 font-mono text-xs font-bold uppercase tracking-widest text-[var(--color-green)]">
             After
           </p>
-          <h2 className="mb-5 font-serif text-2xl font-bold text-foreground">
+          <h2 className="mb-5 font-heading text-2xl font-bold text-foreground">
             Teaching work becomes a system
           </h2>
           <ul className="space-y-3 pl-0">
@@ -58,3 +58,4 @@ export default function BeforeAfterGrid() {
     </section>
   );
 }
+

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
+import PrintPageButton from "@/components/PrintPageButton";
 import GitHubIcon from "@/components/GitHubIcon";
 import { REPOSITORY_URL } from "@/lib/metadata";
 
@@ -63,21 +65,18 @@ const officialFirstRules = [
 
 export default function ResourcesPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <header className="mb-10 max-w-3xl">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-          Resource Library
-        </p>
-        <h1 className="mb-4 font-serif text-3xl font-extrabold tracking-normal text-foreground sm:text-4xl">
-          Start with sources. Build with reusable tools.
-        </h1>
-        <p className="max-w-2xl leading-relaxed text-foreground/60">
-          This page is the lightweight index for Teaching Teachers resources. Use
-          it to jump to official documentation, prompts, templates, safety
-          guidance, examples, and field notes without loading every inventory on
-          one route.
-        </p>
-      </header>
+    <FieldGuidePage
+      eyebrow="Resource Library"
+      title="Start with sources. Build with reusable tools."
+      subtitle="A lightweight index for official documentation, prompts, templates, safety guidance, examples, and field notes without loading every inventory on one route."
+      meta={[
+        { label: "Hubs", value: String(resourceHubs.length) },
+        { label: "Rule", value: "Official sources first" },
+      ]}
+    >
+      <div className="mb-8" data-print-hide>
+        <PrintPageButton />
+      </div>
 
       <section className="mb-12 grid gap-4 md:grid-cols-2">
         {resourceHubs.map((item) => (
@@ -87,7 +86,7 @@ export default function ResourcesPage() {
             className="rounded-md border border-border bg-surface p-5 no-underline transition-colors hover:border-accent/50"
           >
             <div className="mb-3 flex items-center justify-between gap-4">
-              <h2 className="m-0 font-serif text-xl font-bold text-foreground">
+              <h2 className="m-0 font-heading text-xl font-bold text-foreground">
                 {item.title}
               </h2>
               <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.68rem] uppercase tracking-wider text-foreground/50">
@@ -103,7 +102,7 @@ export default function ResourcesPage() {
 
       <section className="mb-12 grid gap-6 rounded-md border border-border bg-surface-alt/30 p-5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
         <div>
-          <h2 className="mb-2 font-serif text-xl font-bold text-foreground">
+          <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
             Official-first resource rule
           </h2>
           <ul className="space-y-2 pl-0">
@@ -125,7 +124,7 @@ export default function ResourcesPage() {
       </section>
 
       <section className="border-t border-border pt-8">
-        <h2 className="mb-3 font-serif text-xl font-bold text-foreground">
+        <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
           Project Repository
         </h2>
         <p className="mb-4 max-w-2xl text-sm leading-relaxed text-slate">
@@ -142,7 +141,8 @@ export default function ResourcesPage() {
           Open repository
         </a>
       </section>
-    </div>
+    </FieldGuidePage>
   );
 }
+
 

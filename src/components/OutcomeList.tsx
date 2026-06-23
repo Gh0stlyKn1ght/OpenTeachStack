@@ -10,7 +10,7 @@ export default function OutcomeList({ outcomes }: OutcomeListProps) {
       <p className="mb-1 font-mono text-[0.68rem] font-bold uppercase tracking-widest text-blue">
         Foundation Checkpoint
       </p>
-      <h3 className="mb-3 border-none font-serif text-lg font-bold text-foreground">
+      <h3 className="mb-3 border-none font-heading text-lg font-bold text-foreground">
         Learning Outcomes
       </h3>
       <ol className="list-none space-y-2 pl-0">
@@ -29,3 +29,4 @@ export default function OutcomeList({ outcomes }: OutcomeListProps) {
     </section>
   );
 }
+

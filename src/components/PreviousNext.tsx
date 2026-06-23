@@ -28,7 +28,7 @@ export default function PreviousNext({ previous, next }: PreviousNextProps) {
             <span className="block text-[0.65rem] font-mono uppercase tracking-widest text-slate">
               Previous
             </span>
-            <span className="block text-sm font-serif font-semibold text-foreground truncate">
+            <span className="block text-sm font-heading font-semibold text-foreground truncate">
               {previous.title}
             </span>
           </span>
@@ -46,7 +46,7 @@ export default function PreviousNext({ previous, next }: PreviousNextProps) {
             <span className="block text-[0.65rem] font-mono uppercase tracking-widest text-slate">
               Next
             </span>
-            <span className="block text-sm font-serif font-semibold text-foreground truncate">
+            <span className="block text-sm font-heading font-semibold text-foreground truncate">
               {next.title}
             </span>
           </span>
@@ -60,3 +60,4 @@ export default function PreviousNext({ previous, next }: PreviousNextProps) {
     </nav>
   );
 }
+

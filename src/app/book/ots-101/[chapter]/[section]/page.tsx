@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import BookChapterHeader from "@/components/book/BookChapterHeader";
-import BookShell from "@/components/book/BookShell";
-import SectionNav from "@/components/book/SectionNav";
+import BookSidebar from "@/components/book/BookSidebar";
 import SourcePanel from "@/components/book/SourcePanel";
+import ArticleBody from "@/components/field-guide/ArticleBody";
+import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
+import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import BuildTask from "@/components/BuildTask";
 import MDXPre from "@/components/MDXPre";
 import MermaidBlock from "@/components/MermaidBlock";
@@ -84,29 +85,53 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   return (
-    <BookShell
-      activeSlug={record.chapter.slug}
-      activeSectionSlug={record.sectionSlug}
-      notes={[
+    <FieldGuidePage
+      eyebrow={`${BOOK_COURSE_CODE} / Chapter ${record.chapter.number} / Section ${record.section.number}`}
+      title={record.section.title}
+      subtitle={record.chapter.problem}
+      breadcrumbs={[
+        { label: "Book", href: "/book" },
+        { label: BOOK_COURSE_CODE, href: "/book/ots-101" },
+        { label: record.chapter.title, href: record.chapter.href },
+      ]}
+      meta={[
         { label: "Course", value: BOOK_COURSE_CODE },
-        { label: "Chapter", value: record.chapter.title, href: record.chapter.href },
+        { label: "Chapter", value: record.chapter.title },
         { label: "Type", value: record.section.type },
         { label: "Duration", value: record.section.duration },
         { label: "Source", value: "Course-owned MDX" },
-        ...(relatedLessonHref
-          ? [{ label: "Related lesson", value: "Open standalone page", href: relatedLessonHref }]
-          : []),
+        { label: "Print", value: "Full book PDF" },
       ]}
-      skills={record.chapter.transferableSkills}
+      sidebar={
+        <BookSidebar
+          activeSlug={record.chapter.slug}
+          activeSectionSlug={record.sectionSlug}
+        />
+      }
+      footer={
+        <ArticleFooterNav
+          previous={
+            previous
+              ? {
+                  href: previous.href,
+                  label: "Previous section",
+                  title: `${previous.section.number}. ${previous.section.title}`,
+                }
+              : undefined
+          }
+          next={
+            next
+              ? {
+                  href: next.href,
+                  label: "Next section",
+                  title: `${next.section.number}. ${next.section.title}`,
+                }
+              : undefined
+          }
+        />
+      }
     >
-      <BookChapterHeader
-        eyebrow={`Chapter ${record.chapter.number} / Section ${record.section.number}`}
-        title={record.section.title}
-        subtitle={record.chapter.problem}
-        chapterNumber={record.chapter.number}
-      />
-
-      <section>
+      <ArticleBody>
         <div className="prose-academic">
           <MDXRemote
             source={courseLesson.content}
@@ -114,19 +139,19 @@ export default async function SectionPage({ params }: SectionPageProps) {
             components={mdxComponents}
           />
         </div>
-      </section>
 
-      {relatedLessonHref ? (
-        <section>
-          <Link href={relatedLessonHref} className="book-action-secondary">
-            Open standalone lesson page
-          </Link>
-        </section>
-      ) : null}
+        {relatedLessonHref ? (
+          <section>
+            <Link href={relatedLessonHref} className="book-action-secondary">
+              Open standalone lesson page
+            </Link>
+          </section>
+        ) : null}
 
-      <SourcePanel />
-
-      <SectionNav previous={previous} next={next} />
-    </BookShell>
+        <SourcePanel />
+      </ArticleBody>
+    </FieldGuidePage>
   );
 }
+
+
