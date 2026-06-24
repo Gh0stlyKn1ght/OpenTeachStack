@@ -6,9 +6,9 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Start Here If You Are Not Technical — Teaching Teachers",
+  title: "Start Here If You Are Not Technical — OpenTeachStack",
   description:
-    "A plain-language starting point for non-technical teachers using Teaching Teachers.",
+    "A plain-language starting point for non-technical teachers using OpenTeachStack.",
   path: "/start",
 });
 
@@ -47,7 +47,7 @@ export default function StartPage() {
           assessments rebuilt from memory.
         </p>
         <p>
-          Teaching Teachers starts smaller than the tech stack. One course. One
+          OpenTeachStack starts smaller than the tech stack. One course. One
           unit. One workflow. Build the system before you buy another
           subscription.
         </p>
@@ -72,7 +72,7 @@ export default function StartPage() {
       <section className="prose-academic">
         <h2>You do not need this site&apos;s tech stack to start</h2>
         <p>
-          The official Teaching Teachers site is built with Next.js because it is
+          The official OpenTeachStack site is built with Next.js because it is
           an open-source project. That does not mean OTS-101 expects you to
           build with Next.js.
         </p>
@@ -98,12 +98,12 @@ export default function StartPage() {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/book/ots-101"
-          className="inline-flex rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background no-underline hover:opacity-90"
+          className="inline-flex rounded-lg bg-[var(--color-text)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] no-underline hover:opacity-90"
         >
           Start OTS-101
         </Link>
         <Link
-          href="/templates"
+          href="/kb/templates"
           className="inline-flex rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
         >
           Open Templates

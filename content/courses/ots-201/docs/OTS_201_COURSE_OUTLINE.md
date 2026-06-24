@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: draft outline
+Status: release-ready outline
 
 Course path: Modern Teacher Systems
 
@@ -54,8 +54,8 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 
 ## Next Content Tasks
 
-1. Replace generated section shells with authored chapter introductions.
+1. Keep authored chapter introductions aligned with the book route and release checks.
 2. Add example Drive architecture maps.
 3. Add a blank Workspace command center template only after its fields are stable.
 4. Add official Google documentation links through the Source Bank workflow.
-5. Run a browser keyboard and print/PDF pass once authored sections exist.
+5. Re-run browser keyboard and print/PDF checks after major course-reader or layout changes.

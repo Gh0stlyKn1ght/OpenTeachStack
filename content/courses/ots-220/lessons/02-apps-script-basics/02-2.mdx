@@ -17,45 +17,69 @@ migrationStatus: authored
 ---
 # Functions, Logs, and Errors
 
-## Core Idea
+## Why This Matters
 
-Apps Script Basics is about learning Apps Script behavior with clear authorization, logging, and failure-handling habits.. In this section, **Functions, Logs, and Errors** turns that automation goal into a safe, teacher-owned move that can be repeated and reviewed.
+A teacher learning small Apps Script automations safely needs more than a tool list or a checklist. The goal in **Apps Script Basics** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
 
-The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
+For **Functions, Logs, and Errors**, the practical pressure is simple: automating a confusing process before the trigger, input, output, owner, and failure path are clear. This page turns that pressure into a visible update to **First script notes**.
 
-## Do This
+## Classroom Scenario
 
-- Name the classroom workflow issue connected to Functions, Logs, and Errors.
-- Use this section to apply the chapter logic to one real classroom workflow..
-- Record the decision tied to how scripts connect to actual workflow boundaries and review points..
-- Save evidence in support of the chapter artifact: First script notes.
-- Add one rollback or stop condition before publishing or sharing anything externally.
+Use this situation as the working example: a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files. By the end, the work should support this habit: test with fake data, inspect the output, and keep a rollback path.
 
-## Evidence of Completion
+In this scenario, the learner should be able to point to:
 
-- a short decision note or script check exists for Functions, Logs, and Errors.
-- The work explicitly connects to First script notes and one teacher context.
-- A source or platform behavior note is attached where needed.
-- A safety note is included for any data, email, or file-write action.
+- what the teacher prepares before students see the work,
+- what students will read, build, submit, or discuss,
+- what evidence shows the work is ready,
+- what gets revised after the first use.
 
-## Source and Template References
+## Key Idea
 
-Use Source Bank-backed references as the official evidence for behavior claims:
+Automation is ready only after the manual routine is clear, fake-data tests pass, logs are readable, and rollback is possible.
 
-- [Source 1: Apps Script Services](https://developers.google.com/apps-script/guides/services)
-- [Source 2: Triggers and Authorization](https://developers.google.com/apps-script/guides/triggers)
+Watch for this mistake: Running a script on live class data before proving what it creates, skips, changes, and can undo.
 
-- Template artifact: [First script notes template](/content/courses/ots-220/templates/custom-menu-template.md)
+## What You Will Do
 
-## Verification Checks
+Make this page concrete by writing three small decisions:
 
-- Do not include student-identifiable data, credentials, or private school details.
-- Check for the chapter risk: running scripts without test boundaries, rollback strategy, or readable error handling..
-- Run a preview or copy-test before any live classroom or student workflow use.
-- Use official docs for behavior, permissions, and quota expectations.
-- Keep instructions readable for the next teacher who inherits the script or workflow.
-- the change is useful, safe, and reversible.
+- Before class, connect functions logs and errors to one setup decision in the first script notes: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
+- During class, connect functions logs and errors to one student action in sandbox folders, fake student rows, copied docs, forms responses, reminders, and logs: what learners read, build, submit, discuss, or revise while working through a fake-data automation that creates unit folders from a sheet row, writes a log entry, and can be deleted without touching real class files.
+- After class, review functions logs and errors through the apps script basics lens: what evidence proves the move worked, which mistake to avoid (running a script on live class data before proving what it creates, skips, changes, and can undo), and what revision supports test with fake data, inspect the output, and keep a rollback path.
+
+## Build the Artifact
+
+Use **Functions, Logs, and Errors** to make one classroom decision visible inside **First script notes**.
+
+Add this to your artifact:
+
+- Classroom context: sandbox folders, fake student rows, copied Docs, Forms responses, reminders, and logs; a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files.
+- Artifact entry: In **First script notes**, add the decision for **Functions, Logs, and Errors** with the student-facing evidence and the review owner.
+- Example entry: Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+- Review check: Check the entry against official Apps Script documentation, Google Workspace limits, local email policy, and fake-data test notes, then write what should change after the first classroom use.
+- Peer review check: A colleague should be able to open the apps script basics artifact, understand the decision behind **Functions, Logs, and Errors**, and know the next action without extra explanation.
+
+## What Good Work Looks Like
+
+A strong **functions logs and errors** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+
+For this lesson, a strong entry might say:
+
+> Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+
+That level of detail is enough to review. It is also small enough to revise after one classroom use.
+
+## Quality Check
+
+Before moving on, confirm:
+
+- Your artifact entry is stored in **First script notes** rather than kept as a private reminder.
+- The student-facing task or evidence is named in plain language.
+- The review step names a source, safety, privacy, accessibility, or maintenance check.
+- The common mistake is avoided: Running a script on live class data before proving what it creates, skips, changes, and can undo.
+- The next classroom use or revision is obvious.
 
 ## Reflection
 
-What is one thing in this section that made the automation safer, simpler, or easier to hand off, and what would you still refuse to automate?
+What would a busy teacher misunderstand if they only saw your **First script notes** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.

@@ -1,25 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import EvidencePanel from "@/components/book/EvidencePanel";
-import BookSearchInput from "@/components/book/BookSearchInput";
-import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
-import GitHubIcon from "@/components/GitHubIcon";
-import PrintPageButton from "@/components/PrintPageButton";
-import { METHOD_STEPS } from "@/lib/book";
-import { PATHWAY_COURSES, REPOSITORY_URL } from "@/lib/metadata";
-import { getKnowledgeBaseSearchRecords } from "@/lib/search";
+import { PATHWAY_COURSES } from "@/lib/metadata";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Teaching Teachers — Curriculum Systems for Educators",
+  title: "OpenTeachStack — Course Pathway for Educators",
   description:
-    "An open-source field guide for teachers building source-backed curriculum systems, AI workflows, course books, templates, and classroom-ready artifacts.",
+    "OpenTeachStack is a course pathway and field guide for educators entering the tech world.",
   path: "/",
 });
 
 export default function HomePage() {
-  const pathwayPreview = PATHWAY_COURSES.slice(0, 6);
-  const knowledgeBaseSearchRecords = getKnowledgeBaseSearchRecords();
   const getCourseHref = (code: string) => {
     if (code === "OTS-101") return "/book/ots-101";
     if (code === "OTS-280") return "/book/ots-280";
@@ -27,254 +18,148 @@ export default function HomePage() {
   };
 
   return (
-    <div>
-      <section className="mx-auto grid min-h-[calc(100svh-4rem)] w-[min(100%-1.5rem,96rem)] grid-cols-1 gap-10 py-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-end">
-        <div>
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
-            Teaching Teachers
-          </p>
-          <h1 className="max-w-5xl font-heading text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl">
-            A field guide for educators entering the tech world.
-          </h1>
-          <p className="mt-7 max-w-3xl text-lg leading-relaxed text-foreground/65">
-            Teachers are expected to use AI, websites, digital tools,
-            cybersecurity habits, and source-backed curriculum workflows
-            without being taught the system behind the work.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/kb" className="book-action">
-              Search the knowledge base
-            </Link>
+    <div className="mx-auto w-[min(100%-1.5rem,78rem)] py-10">
+      <section className="border-b border-border pb-8">
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+          Course Pathway
+        </p>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div>
+            <h1 className="max-w-5xl font-heading text-5xl font-extrabold leading-[1.05] text-foreground sm:text-6xl">
+              OpenTeachStack Pathway
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-foreground/68">
+              A sequenced field guide for educators entering the tech world.
+              Start with foundations, then move into the teacher technology
+              system you need next.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
+              Start with OTS-101. Use the Knowledge Base when you need prompts,
+              templates, source checks, safety guidance, or quick workflows.
+            </p>
+            <p className="mt-4 max-w-3xl rounded-sm border border-accent/30 bg-surface-alt/35 px-4 py-3 text-sm leading-relaxed text-foreground/66">
+              Video walkthroughs and additional supporting content are coming
+              soon. The course book and Knowledge Base are the current source
+              of truth while the media layer is built out.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link href="/book/ots-101" className="book-action">
-              Enter the course book
+              Start OTS-101
             </Link>
-            <Link href="/evidence" className="book-action-secondary">
-              See why it matters
+            <Link href="/kb" className="book-action-secondary">
+              Open Knowledge Base
             </Link>
-            <a
-              href={REPOSITORY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open GitHub repository"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-sm border border-border text-foreground no-underline transition-colors hover:border-accent hover:text-accent"
-            >
-              <GitHubIcon className="h-5 w-5" title="" />
-            </a>
-          </div>
-          <div className="mt-6" data-print-hide>
-            <PrintPageButton />
           </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface-alt/18">
-        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-4 py-12 md:grid-cols-3">
-          <article className="rounded-sm border border-border bg-background p-5">
-            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Courses
-            </p>
-            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
-              Learn in order.
-            </h2>
-            <p className="mb-4 text-sm text-foreground/62">
-              Start with OTS-101, then continue through the pathway in sequence
-              when you are ready.
-            </p>
-            <Link
-              href="/courses"
-              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
-            >
-              Explore the Course Track
-            </Link>
-          </article>
-
-          <article className="rounded-sm border border-border bg-background p-5">
-            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Knowledge Base
-            </p>
-            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
-              Solve today&apos;s challenge.
-            </h2>
-            <p className="mb-4 text-sm text-foreground/62">
-              Quick workflows for prompts, troubleshooting, safety, tools, and
-              lessons without taking the full course route.
-            </p>
-            <Link
-              href="/kb"
-              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
-            >
-              Open the Field Manual
-            </Link>
-          </article>
-
-          <article className="rounded-sm border border-border bg-background p-5">
-            <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Library
-            </p>
-            <h2 className="mt-0 font-heading text-2xl font-bold text-foreground">
-              Copy the artifact.
-            </h2>
-            <p className="mb-4 text-sm text-foreground/62">
-              Templates, source bank entries, prompts, and downloadable assets for
-              immediate reuse.
-            </p>
-            <Link
-              href="/library"
-              className="inline-flex text-sm font-semibold text-link no-underline hover:underline"
-            >
-              Open the Library
-            </Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-surface-alt/18">
-        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-8 py-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(20rem,0.72fr)] lg:items-center">
-          <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Knowledge Base
-            </p>
-            <h2 className="mt-0 max-w-3xl font-heading text-4xl font-bold text-foreground">
-              Search the field manual when you need the next useful move.
-            </h2>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/62">
-              Look up prompts, checklists, cyber safety notes, course website
-              steps, free tools, templates, and troubleshooting guides without
-              entering a full course first.
-            </p>
-            <Link href="/kb" className="mt-6 inline-flex text-sm font-semibold text-link no-underline hover:underline">
-              Open the Knowledge Base
-            </Link>
-          </div>
-
-          <div>
-            <BookSearchInput
-              records={knowledgeBaseSearchRecords}
-              label="Search knowledge base"
-              placeholder="Prompt, checklist, workflow..."
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-surface-alt/22">
-        <div className="mx-auto w-[min(100%-1.5rem,96rem)] py-12">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-            Signature Method
+      <section className="py-10" aria-labelledby="course-pathway-heading">
+        <div className="mb-6">
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.16em] text-accent">
+            Courses
           </p>
-          <div className="method-chain">
-            {METHOD_STEPS.map((step) => (
-              <span key={step}>{step}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-10 py-16 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-        <div>
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-            The Real Problem
-          </p>
-          <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
-            Teachers need systems, not another pile of tools.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-foreground/62">
-            Teaching Teachers starts with the work teachers already do:
-            planning, prompting, checking sources, aligning standards, building
-            assessments, organizing files, publishing resources, and improving
-            curriculum after class.
-          </p>
-          <Link href="/book" className="mt-6 inline-flex text-sm font-semibold text-link no-underline hover:underline">
-            Open Book Mode
-          </Link>
-        </div>
-
-        <div>
-          <TransferableSkillsMap />
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-surface-alt/18">
-        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-10 py-16 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-          <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Evidence Preview
-            </p>
-            <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
-              Data belongs here, but only when it has sources.
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-foreground/62">
-              The evidence layer is built for charts and rationale, but it is
-              intentionally source-first. No fake statistics. No decorative
-              graphs pretending to prove something.
-            </p>
-          </div>
-          <EvidencePanel />
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(100%-1.5rem,96rem)] py-16">
-        <div className="mb-8 max-w-3xl">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-            Pathway Preview
-          </p>
-          <h2 className="mt-0 font-heading text-4xl font-bold text-foreground">
-            From foundations to teacher-owned technical systems.
+          <h2
+            id="course-pathway-heading"
+            className="m-0 font-heading text-3xl font-bold text-foreground"
+          >
+            Choose your next teacher technology system.
           </h2>
         </div>
 
-        <ol className="divide-y divide-border border-y border-border">
-          {pathwayPreview.map((course) => (
-            <li key={course.code}>
-              <Link
-                href={getCourseHref(course.code)}
-                className="grid gap-4 py-5 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
-              >
-                <span className="font-mono text-sm text-accent">
-                  {course.code}
-                </span>
-                <span>
-                  <strong className="block text-foreground">
-                    {course.title}
-                  </strong>
-                  <span className="mt-1 block text-sm leading-relaxed text-foreground/55">
-                    {course.purpose}
-                  </span>
-                </span>
-                <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                  {course.status}
-                </span>
-              </Link>
-            </li>
-          ))}
+        <ol className="border-y border-border">
+          {PATHWAY_COURSES.map((course, index) => {
+            const courseHref = getCourseHref(course.code);
+            const sequence = String(index + 1).padStart(2, "0");
+            const isFirstCourse = course.code === "OTS-101";
+
+            return (
+              <li key={course.code} className="list-none">
+                <article className="grid gap-4 border-b border-border py-6 last:border-b-0 sm:grid-cols-[4rem_minmax(0,1fr)]">
+                  <div className="font-mono text-lg font-semibold text-accent sm:pt-1">
+                    {sequence}
+                  </div>
+                  <div className="border-l border-border pl-5">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span className="font-mono text-sm font-semibold text-accent">
+                        {course.code}
+                      </span>
+                      <h3 className="m-0 font-heading text-xl font-bold text-foreground">
+                        {course.title}
+                      </h3>
+                    </div>
+                    <p className="mb-4 mt-2 max-w-3xl text-sm leading-relaxed text-foreground/66">
+                      {course.purpose}
+                    </p>
+                    <div className="mb-3 flex flex-wrap gap-x-3 gap-y-1 text-sm text-foreground/58">
+                      <span>Level: {course.level}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Status: {course.status}</span>
+                    </div>
+                    <p className="mb-4 max-w-3xl text-sm leading-relaxed text-foreground/70">
+                      <span className="font-mono uppercase tracking-wider text-foreground/38">
+                        Outcome:
+                      </span>{" "}
+                      {course.majorArtifacts.join(", ")}
+                    </p>
+                    <Link
+                      href={courseHref}
+                      className={
+                        isFirstCourse ? "book-action" : "book-action-secondary"
+                      }
+                    >
+                      {isFirstCourse ? "Start here" : "Open course"}
+                    </Link>
+                  </div>
+                </article>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
-      <section className="border-t border-border bg-surface-alt/20">
-        <div className="mx-auto grid w-[min(100%-1.5rem,96rem)] gap-8 py-14 md:grid-cols-[1fr_auto] md:items-center">
+      <section
+        className="border-t border-border py-8"
+        aria-labelledby="support-heading"
+      >
+        <div className="grid gap-6 md:grid-cols-[14rem_1fr] md:items-start">
           <div>
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-              Open Source
+              Support
             </p>
-            <h2 className="m-0 border-none font-heading text-3xl font-bold text-foreground">
-              Built in the open. Maintained like a field manual.
+            <h2
+              id="support-heading"
+              className="m-0 font-heading text-2xl font-bold text-foreground"
+            >
+              Field manual modes
             </h2>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
-              Teaching Teachers is MIT licensed for code and CC BY-NC-SA 4.0
-              for content. The source bank, course book, and release packet are
-              designed to improve over time.
-            </p>
           </div>
-
-          <div className="flex flex-wrap gap-3">
-            <Link href="/library" className="book-action-secondary">
-              Open Library
-            </Link>
-            <Link href="/open-source" className="book-action-secondary">
-              License Details
-            </Link>
-          </div>
+          <ul className="grid gap-3 p-0 sm:grid-cols-2">
+            <li className="list-none border-l-2 border-accent pl-4">
+              <Link
+                href="/kb"
+                className="font-semibold text-link no-underline hover:underline"
+              >
+                Knowledge Base
+              </Link>
+              <p className="mb-0 mt-1 text-sm text-foreground/58">
+                Find prompts, templates, source checks, safety guidance,
+                examples, tools, and reusable workflows.
+              </p>
+            </li>
+            <li className="list-none border-l-2 border-accent pl-4">
+              <Link
+                href="/kb/library"
+                className="font-semibold text-link no-underline hover:underline"
+              >
+                Support Library
+              </Link>
+              <p className="mb-0 mt-1 text-sm text-foreground/58">
+                The old Library now lives inside the Knowledge Base as the
+                support shelf.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </div>

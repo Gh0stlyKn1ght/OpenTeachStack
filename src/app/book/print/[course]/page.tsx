@@ -93,7 +93,7 @@ function getPrintableCourse(courseSlug: string): PrintableCourse | undefined {
     return {
       code: BOOK_COURSE_CODE,
       slug: courseSlug,
-      title: "Foundations for Teacher TechOps",
+      title: "OpenTeachStack Foundations",
       level: "Foundation",
       coursePath: BOOK_COURSE_PATH,
       prerequisite: "None",
@@ -173,11 +173,11 @@ export async function generateMetadata({
   const course = getPrintableCourse(courseSlug);
 
   if (!course) {
-    return { title: "Course Not Found — Teaching Teachers" };
+    return { title: "Course Not Found — OpenTeachStack" };
   }
 
   return {
-    title: `${course.code} Full Course PDF — Teaching Teachers`,
+    title: `${course.code} Full Course PDF — OpenTeachStack`,
     description: `Printable full-course book export for ${course.title}.`,
   };
 }

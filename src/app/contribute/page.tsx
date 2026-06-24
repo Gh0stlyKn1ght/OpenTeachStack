@@ -6,9 +6,9 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Contribute — Teaching Teachers",
+  title: "Contribute — OpenTeachStack",
   description:
-    "How to contribute to Teaching Teachers: types of contributions, GitHub workflow, content guidelines, and code standards.",
+    "How to contribute to OpenTeachStack: types of contributions, GitHub workflow, content guidelines, and code standards.",
 };
 
 export default function ContributePage() {
@@ -16,7 +16,7 @@ export default function ContributePage() {
     <FieldGuidePage
       eyebrow="Project Commons"
       title="How to Contribute"
-      subtitle="Teaching Teachers is a community project. Contributions from educators, developers, designers, and anyone passionate about open education are welcome and valued."
+      subtitle="OpenTeachStack is a community project. Contributions from educators, developers, designers, and anyone passionate about open education are welcome and valued."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Repository", value: "GitHub" },
@@ -108,7 +108,7 @@ export default function ContributePage() {
         {/* ── GitHub Workflow ────────────────────────────────────────── */}
         <h2>How to Submit Changes</h2>
         <p>
-          Teaching Teachers follows a standard open-source contribution
+          OpenTeachStack follows a standard open-source contribution
           workflow through the public repository. GitHub basics
           belong in the future OTS-240 Open Resources & GitHub for Educators
           course.
@@ -125,7 +125,7 @@ export default function ContributePage() {
             className="inline-flex items-center gap-1.5"
             >
               <GitHubIcon className="h-4 w-4" title="" />
-              Gh0stlyKn1ght/Teacher-techops
+              Gh0stlyKn1ght/OpenTeachStack
             </a>
             , then click the &ldquo;Fork&rdquo; button to create your own copy.
           </li>
@@ -169,7 +169,7 @@ export default function ContributePage() {
         {/* ── Content Guidelines ────────────────────────────────────── */}
         <h2>Content Guidelines</h2>
         <p>
-          Teaching Teachers has a specific voice and structure. When writing
+          OpenTeachStack has a specific voice and structure. When writing
           or editing content, please follow these guidelines:
         </p>
 
@@ -316,7 +316,7 @@ export default function ContributePage() {
         {/* ── Licensing of Contributions ─────────────────────────────── */}
         <h2>Licensing of Contributions</h2>
         <p>
-          By submitting a contribution to Teaching Teachers, you agree that
+          By submitting a contribution to OpenTeachStack, you agree that
           your work will be licensed under the project&rsquo;s existing
           licenses:
         </p>
@@ -364,8 +364,14 @@ export default function ContributePage() {
             GitHub issue
           </a>{" "}
           or reach out to{" "}
-          <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>. There are
-          no bad questions.
+          <a
+            href={AUTHOR.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JC Nevarez on LinkedIn
+          </a>
+          . There are no bad questions.
         </p>
       </div>
       </ArticleBody>

@@ -14,10 +14,10 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 import { pageVisuals } from "@/lib/visualAssets";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Free Tools, Course Platforms, and Learning Resources — Teaching Teachers",
+  title: "Free Tools, Course Platforms, and Learning Resources — OpenTeachStack",
   description:
     "A verified source bank of free and education-friendly tools, platforms, curricula, and official links for teachers and students.",
-  path: "/library/source-bank",
+  path: "/kb/source-bank",
   image: {
     url: pageVisuals.sourceBank.src,
     alt: pageVisuals.sourceBank.alt,
@@ -46,8 +46,8 @@ export default function SourceBankPage() {
     <FieldGuidePage
       eyebrow="The Source Bank"
       title="Free tools, course platforms, and learning resources."
-      subtitle="Teaching Teachers keeps a source bank instead of handing teachers random links. Use official sources first, check what is free, check what needs accounts, and read the privacy and age requirements before assigning platforms."
-      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      subtitle="OpenTeachStack keeps a source bank instead of handing teachers random links. Use official sources first, check what is free, check what needs accounts, and read the privacy and age requirements before assigning platforms."
+      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
       meta={[
         { label: "Resources", value: String(sourceBankResources.length) },
         { label: "Source rule", value: "Official links first" },

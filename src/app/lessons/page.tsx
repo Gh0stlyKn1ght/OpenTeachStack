@@ -9,7 +9,7 @@ import PrintPageButton from "@/components/PrintPageButton";
 export const metadata: Metadata = {
   title: `Lessons — ${COURSE_TITLE}`,
   description:
-    "Browse all lessons in the Teaching Teachers course, organized by module.",
+    "Browse all lessons in the OpenTeachStack course, organized by module.",
 };
 
 export default function LessonsPage() {

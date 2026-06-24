@@ -28,7 +28,7 @@ export async function generateMetadata({
   const chapter = getCyberChapterBySlug(slug);
 
   if (!chapter) {
-    return { title: "Chapter Not Found — Teaching Teachers" };
+    return { title: "Chapter Not Found — OpenTeachStack" };
   }
 
   return {

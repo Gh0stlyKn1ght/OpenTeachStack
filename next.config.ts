@@ -6,6 +6,7 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["10.5.0.2", "127.0.0.1", "localhost"],
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {
     unoptimized: true,

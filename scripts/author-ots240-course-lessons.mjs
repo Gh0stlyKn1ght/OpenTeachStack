@@ -313,26 +313,26 @@ for (const chapter of courseJson.chapters) {
       continue;
     }
 
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "generated";
     parsed.content = bodyFor(chapter, section);
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
     updated++;
   }
 }
 
-if (force || courseJson.migrationStatus !== "authored") {
+if (force || courseJson.migrationStatus !== "generated") {
   if (dryRun) {
     console.log("[dry-run] WRITE: course.json");
   } else {
-    courseJson.migrationStatus = "authored";
+    courseJson.migrationStatus = "generated";
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
   }
 }
 
 const mode = dryRun ? "[DRY RUN] " : "";
 console.log(
-  `${mode}Authored OTS-240 section files: ${updated}; preserved ${skipped} existing authored files.${force ? " (--force)" : ""}`,
+  `${mode}Generated OTS-240 section files: ${updated}; preserved ${skipped} existing generated files.${force ? " (--force)" : ""}`,
 );
 if (!dryRun && skipped > 0 && !force) {
-  console.log(`${skipped} non-authored or non-scaffolded files were preserved. Use --force to overwrite.`);
+  console.log(`${skipped} non-generated or non-scaffolded files were preserved. Use --force to overwrite.`);
 }

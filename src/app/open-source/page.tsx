@@ -7,9 +7,9 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Open Source — Teaching Teachers",
+  title: "Open Source — OpenTeachStack",
   description:
-    "Teaching Teachers is open source. Learn about the project's licensing, contribution guidelines, and philosophy.",
+    "OpenTeachStack is open source. Learn about the project's licensing, contribution guidelines, and philosophy.",
 };
 
 export default function OpenSourcePage() {
@@ -17,7 +17,7 @@ export default function OpenSourcePage() {
     <FieldGuidePage
       eyebrow="Project Commons"
       title="Open Source"
-      subtitle="Teaching Teachers is built in the open. The code, content, and templates that make up this project are freely available for educators to use, study, modify, and share."
+      subtitle="OpenTeachStack is built in the open. The code, content, and templates that make up this project are freely available for educators to use, study, modify, and share."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Code", value: LICENSE.code.name },
@@ -57,7 +57,7 @@ export default function OpenSourcePage() {
         {/* ── Licensing ──────────────────────────────────────────────── */}
         <h2>Licensing</h2>
         <p>
-          Teaching Teachers uses a dual-license model that separates code from
+          OpenTeachStack uses a dual-license model that separates code from
           content:
         </p>
 
@@ -101,7 +101,7 @@ export default function OpenSourcePage() {
         <ul>
           <li>
             <strong>Attribution</strong> &mdash; You must give appropriate
-            credit to {AUTHOR.name} and Teaching Teachers, provide a link to
+            credit to {AUTHOR.name} and OpenTeachStack, provide a link to
             the license, and indicate if changes were made.
           </li>
           <li>
@@ -140,7 +140,7 @@ export default function OpenSourcePage() {
               className="inline-flex items-center gap-1.5"
             >
               <GitHubIcon className="h-4 w-4" title="" />
-              Teaching Teachers repository
+              OpenTeachStack repository
             </a>
             .
           </li>
@@ -165,7 +165,7 @@ export default function OpenSourcePage() {
             className="inline-flex items-center gap-1.5"
           >
             <GitHubIcon className="h-4 w-4" title="" />
-            Gh0stlyKn1ght/Teacher-techops
+            Gh0stlyKn1ght/OpenTeachStack
           </a>
           .
         </p>
@@ -178,18 +178,18 @@ export default function OpenSourcePage() {
         {/* ── Attribution ────────────────────────────────────────────── */}
         <h2>Attribution Requirements</h2>
         <p>
-          If you use or adapt content from Teaching Teachers, please include
+          If you use or adapt content from OpenTeachStack, please include
           the following attribution:
         </p>
         <blockquote>
           <p>
             Based on{" "}
             <a
-              href="https://teachingteachers.dev"
+              href="https://openteachstack.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Teaching Teachers
+              OpenTeachStack
             </a>{" "}
             by {AUTHOR.name}, licensed under{" "}
             <a

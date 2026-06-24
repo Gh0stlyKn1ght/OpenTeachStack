@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "teaching-teachers-theme";
+const STORAGE_KEY = "openteachstack-theme";
 
 function getPreferredTheme() {
   const stored = window.localStorage.getItem(STORAGE_KEY);

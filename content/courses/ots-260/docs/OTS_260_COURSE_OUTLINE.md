@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: draft outline from existing AI media and delivery lessons
+Status: release-ready outline
 
 Course path: Modern Teacher Systems
 
@@ -14,9 +14,9 @@ Media improves instruction only when it clarifies the learning path. Images, sli
 
 OTS-260 should help teachers build a small media packet for one lesson without turning the work into decoration, production theater, or unverified visuals.
 
-## Source Draft Lessons
+## Course Source Lessons
 
-This outline is extracted from existing delivery and media lesson files:
+This outline is backed by course-owned delivery and media lesson files:
 
 - `content/lessons/delivery-planning-foundations.mdx`
 - `content/lessons/one-day-lesson-site-workflow.mdx`
@@ -41,14 +41,14 @@ The final artifact should include:
 
 ## Chapter Outline
 
-| Chapter | Focus | Existing draft sources | Build artifact |
+| Chapter | Focus | Source material | Build artifact |
 | --- | --- | --- | --- |
 | 01. Media With Purpose | Decide whether a visual, slide, diagram, or video actually helps the lesson. | `delivery-planning-foundations.mdx`, `one-day-lesson-site-workflow.mdx` | Media purpose map |
 | 02. AI Image Workflows | Prompt, generate, review, and document AI visuals without using them as factual diagrams. | `ai-image-generation-for-curriculum.mdx` | Image prompt and review log |
 | 03. Diagrams and Visual Explanations | Use diagrams when precision and structure matter more than atmosphere. | `one-day-lesson-site-workflow.mdx`, Source Bank workflow docs | Diagram set |
 | 04. Slides and Delivery Routines | Build slides as signposts for pacing, transitions, and student-facing directions. | `video-delivery-and-presentation.mdx`, `delivery-planning-foundations.mdx` | Delivery deck |
 | 05. Short Video and Screen Recording | Plan short recordings that help absent or stuck students without overproducing. | `video-delivery-and-presentation.mdx` | Short video plan |
-| 06. Accessible Lesson Media Packet | Assemble media, source notes, alternatives, and revision evidence. | All OTS-260 draft lessons | Accessible lesson media packet |
+| 06. Accessible Lesson Media Packet | Assemble media, source notes, alternatives, and revision evidence. | OTS-260 course lessons and templates | Accessible lesson media packet |
 
 ## Safety Rules
 

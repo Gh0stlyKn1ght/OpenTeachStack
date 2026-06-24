@@ -3,9 +3,9 @@ import { redirect } from "next/navigation";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "OTS-101 Course Book — Teaching Teachers",
+  title: "OTS-101 Course Book — OpenTeachStack",
   description:
-    "Start the OTS-101 Teaching Teachers Foundations course book.",
+    "Start the OTS-101 foundations course book.",
   path: "/course",
 });
 

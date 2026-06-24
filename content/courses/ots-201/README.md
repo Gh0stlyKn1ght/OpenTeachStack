@@ -1,12 +1,12 @@
 # OTS-201 Google Workspace Systems for Teachers
 
-Status: migration scaffold
+Status: release-ready course-owned content
 
 Canonical route: `/book/ots-201`
 
-Source registry: `src/lib/courseStructures.ts`
+Reader source: `src/lib/courseStructures.ts`
 
-This folder is the course-owned content package for OTS-201. It is designed so the course can be migrated, exported, or maintained without hunting through global content folders.
+This folder is the course-owned content package for OTS-201. It contains learner-facing lesson source, course artifacts, review notes, and release materials for the book route.
 
 ## Folders
 
@@ -17,6 +17,6 @@ This folder is the course-owned content package for OTS-201. It is designed so t
 - `templates/` - course-specific artifact templates
 - `references/` - source queues, citation notes, and platform documentation notes
 
-## Migration Rule
+## Maintenance Rule
 
-Keep the current app routes working until this course folder becomes the reader source. Do not delete global lesson or lab files until route parity, search, build, and representative probes pass.
+Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.

@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: draft outline from existing course-site and domain lessons
+Status: release-ready outline
 
 Course path: Modern Teacher Systems
 
@@ -14,9 +14,9 @@ A teacher course site should be a durable, navigable home for curriculum. It sho
 
 OTS-301 should turn one-day lesson pages and course materials into a teacher-owned hub with web basics, domain literacy, accessibility checks, and publishing maintenance.
 
-## Source Draft Lessons
+## Course Source Lessons
 
-This outline is extracted from existing course-site and publishing lesson files:
+This outline is backed by course-owned course-site and publishing lesson files:
 
 - `content/lessons/one-day-lesson-site-workflow.mdx`
 - `content/field-notes/how-i-built-one-day-lesson-sites.mdx`
@@ -42,14 +42,14 @@ The final artifact should include:
 
 ## Chapter Outline
 
-| Chapter | Focus | Existing draft sources | Build artifact |
+| Chapter | Focus | Source material | Build artifact |
 | --- | --- | --- | --- |
 | 01. Course Site Strategy | Define audience, use cases, scope, and the smallest useful public hub. | `one-day-lesson-site-workflow.mdx`, `how-i-built-one-day-lesson-sites.mdx` | Course site plan |
 | 02. Web Basics for Teachers | Explain pages, files, HTML, CSS, domains, DNS, hosting, and static sites. | `what-is-a-domain.mdx`, `dns-explained-for-teachers.mdx`, `buying-a-domain-safely.mdx` | Web concepts map |
 | 03. Course Hub Structure | Plan homepage, course pages, resources, source notes, and update paths. | `one-day-lesson-site-workflow.mdx`, `publishing-your-curriculum-hub.mdx` | Course hub sitemap |
 | 04. Accessibility and Safety | Review readability, links, privacy, public files, embeds, and student data exposure. | `delivery-planning-foundations.mdx`, OTS-280 safety model | Publishing safety checklist |
 | 05. Deployment and Maintenance | Use GitHub Pages, Vercel, domains, HTTPS, updates, and broken-link checks responsibly. | `publishing-your-curriculum-hub.mdx`, domain lessons | Maintenance plan |
-| 06. Published Course Hub | Assemble, review, publish, and document a maintainable teacher-owned course site. | All OTS-301 draft lessons | Published course hub |
+| 06. Published Course Hub | Assemble, review, publish, and document a maintainable teacher-owned course site. | OTS-301 course lessons and templates | Published course hub |
 
 ## Safety Rules
 

@@ -5,7 +5,7 @@ chapter: Teacher Automation Toolkit
 chapterSlug: 06-teacher-automation-toolkit
 sectionNumber: 06.3
 sectionSlug: 06-3
-title: 'Final Build: Automation Toolkit'
+title: Automation Toolkit
 type: studio
 duration: 60 minutes
 artifact: Automation toolkit
@@ -15,47 +15,71 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-# Final Build: Automation Toolkit
+# Automation Toolkit
 
-## Core Idea
+## Why This Matters
 
-Teacher Automation Toolkit is about assembling a minimal, documented toolkit that another teacher can inspect and run safely.. In this section, **Final Build: Automation Toolkit** turns that automation goal into a safe, teacher-owned move that can be repeated and reviewed.
+A teacher learning small Apps Script automations safely needs more than a tool list or a checklist. The goal in **Teacher Automation Toolkit** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
 
-The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
+For **Automation Toolkit**, the practical pressure is simple: automating a confusing process before the trigger, input, output, owner, and failure path are clear. This page turns that pressure into a visible update to **Automation toolkit**.
 
-## Do This
+## Classroom Scenario
 
-- Name the classroom workflow issue connected to Final Build: Automation Toolkit.
-- Use this section to build or revise the Automation toolkit.
-- Record the decision tied to what artifacts belong in the toolkit and how handoff happens after one cycle..
-- Save evidence in support of the chapter artifact: Automation toolkit.
-- Add one rollback or stop condition before publishing or sharing anything externally.
+Use this situation as the working example: a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files. By the end, the work should support this habit: test with fake data, inspect the output, and keep a rollback path.
 
-## Evidence of Completion
+In this scenario, the learner should be able to point to:
 
-- Automation toolkit exists for Final Build: Automation Toolkit.
-- The work explicitly connects to Automation toolkit and one teacher context.
-- A source or platform behavior note is attached where needed.
-- A safety note is included for any data, email, or file-write action.
+- what the teacher prepares before students see the work,
+- what students will read, build, submit, or discuss,
+- what evidence shows the work is ready,
+- what gets revised after the first use.
 
-## Source and Template References
+## Key Idea
 
-Use Source Bank-backed references as the official evidence for behavior claims:
+Automation is ready only after the manual routine is clear, fake-data tests pass, logs are readable, and rollback is possible.
 
-- [Source 1: Properties and Logging](https://developers.google.com/apps-script/guides/services/authorization)
-- [Source 2: Apps Script Guides](https://developers.google.com/apps-script/guides)
+Watch for this mistake: Running a script on live class data before proving what it creates, skips, changes, and can undo.
 
-- Template artifact: [Automation toolkit template](/content/courses/ots-220/templates/automation-toolkit-release-checklist.md)
+## What You Will Do
 
-## Verification Checks
+Make this page concrete by writing three small decisions:
 
-- Do not include student-identifiable data, credentials, or private school details.
-- Check for the chapter risk: shipping a complex script bundle that no one can maintain or trust..
-- Run a preview or copy-test before any live classroom or student workflow use.
-- Use official docs for behavior, permissions, and quota expectations.
-- Keep instructions readable for the next teacher who inherits the script or workflow.
-- the output is auditable and can be removed without harming existing workflow.
+- Before class, connect automation toolkit to one setup decision in the automation toolkit: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
+- During class, connect automation toolkit to one student action in sandbox folders, fake student rows, copied docs, forms responses, reminders, and logs: what learners read, build, submit, discuss, or revise while working through a fake-data automation that creates unit folders from a sheet row, writes a log entry, and can be deleted without touching real class files.
+- After class, review automation toolkit through the teacher automation toolkit lens: what evidence proves the move worked, which mistake to avoid (running a script on live class data before proving what it creates, skips, changes, and can undo), and what revision supports test with fake data, inspect the output, and keep a rollback path.
+
+## Build the Artifact
+
+Use **Automation Toolkit** to make one classroom decision visible inside **Automation toolkit**.
+
+Add this to your artifact:
+
+- Classroom context: sandbox folders, fake student rows, copied Docs, Forms responses, reminders, and logs; a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files.
+- Artifact entry: In **Automation toolkit**, add the decision for **Automation Toolkit** with the student-facing evidence and the review owner.
+- Example entry: Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+- Review check: Check the entry against official Apps Script documentation, Google Workspace limits, local email policy, and fake-data test notes, then write what should change after the first classroom use.
+- Peer review check: A colleague should be able to open the teacher automation toolkit artifact, understand the decision behind **Automation Toolkit**, and know the next action without extra explanation.
+
+## What Good Work Looks Like
+
+A strong **automation toolkit** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+
+For this lesson, a strong entry might say:
+
+> Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+
+That level of detail is enough to review. It is also small enough to revise after one classroom use.
+
+## Quality Check
+
+Before moving on, confirm:
+
+- Your artifact entry is stored in **Automation toolkit** rather than kept as a private reminder.
+- The student-facing task or evidence is named in plain language.
+- The review step names a source, safety, privacy, accessibility, or maintenance check.
+- The common mistake is avoided: Running a script on live class data before proving what it creates, skips, changes, and can undo.
+- The next classroom use or revision is obvious.
 
 ## Reflection
 
-What is one thing in this section that made the automation safer, simpler, or easier to hand off, and what would you still refuse to automate?
+What would a busy teacher misunderstand if they only saw your **Automation toolkit** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.

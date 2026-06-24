@@ -282,7 +282,7 @@ export const officialDocSources: CourseSourceGroup[] = [
     title: "Capstone Studio",
     sources: [
       {
-        label: "Teaching Teachers Pathway Sources",
+        label: "OpenTeachStack Pathway Sources",
         url: "/resources",
         use: "Use the official docs from each completed pathway course; do not rely on AI output as a source.",
       },

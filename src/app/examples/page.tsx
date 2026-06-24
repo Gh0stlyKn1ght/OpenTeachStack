@@ -5,9 +5,9 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "Examples — Teaching Teachers",
+  title: "Examples — OpenTeachStack",
   description:
-    "Example Teaching Teachers artifacts and mini-units that show what finished work can look like.",
+    "Example OpenTeachStack artifacts and mini-units that show what finished work can look like.",
 };
 
 export default function ExamplesPage() {
@@ -16,7 +16,7 @@ export default function ExamplesPage() {
       eyebrow="Examples"
       title="Proof beats explanation."
       subtitle="Templates help. Examples convince. These samples show what an OTS-101 mini-unit package can look like when it is small, sourced, teachable, and ready to improve."
-      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
       meta={[
         { label: "Course", value: "OTS-101" },
         { label: "Artifact", value: "Mini-unit package" },

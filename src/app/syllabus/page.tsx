@@ -14,7 +14,7 @@ import {
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Syllabus — Teaching Teachers Foundations",
+  title: "Syllabus — OpenTeachStack Foundations",
   description:
     "Syllabus for OTS-101: Teaching Teachers Foundations, a 10-chapter course on prompting, standards, resource literacy, and curriculum systems.",
   path: "/syllabus",
@@ -46,13 +46,13 @@ export default function SyllabusPage() {
         <h2>Course Description</h2>
         <p>
           Teaching Teachers Foundations ({COURSE_CODE}) is the required
-          beginner course in the Teaching Teachers pathway. It teaches educators
+          beginner course in the OpenTeachStack pathway. It teaches educators
           how to use AI responsibly, unpack standards, evaluate resources,
           build practical planning systems, design assessments, and prepare a
           small curriculum sequence for real classroom delivery.
         </p>
         <p>
-          The broader Teaching Teachers project includes later courses in Google
+          The broader OpenTeachStack project includes later courses in Google
           Workspace systems, Apps Script automation, GitHub, AI media, course
           sites, and AI coding agents. OTS-101 previews those possibilities
           but does not require them.
@@ -277,8 +277,8 @@ export default function SyllabusPage() {
         <p>
           Every major artifact must include privacy, copyright/licensing, AI
           verification, standards alignment, accessibility, and revision-log
-          checks. See the <Link href="/safety">Safety Guide</Link> and{" "}
-          <Link href="/templates">Template Library</Link>.
+          checks. See the <Link href="/kb/safety">Safety Guide</Link> and{" "}
+          <Link href="/kb/templates">Template Library</Link>.
         </p>
 
         <h2>Pathway Continuation</h2>

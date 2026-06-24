@@ -12,7 +12,7 @@ export default function SourcePanel() {
         source to support them.
       </p>
       <Link
-        href="/library/source-bank"
+        href="/kb/source-bank"
         className="mt-4 inline-flex text-sm font-semibold text-link no-underline hover:underline"
       >
         Review the source bank

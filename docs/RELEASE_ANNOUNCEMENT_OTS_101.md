@@ -1,8 +1,8 @@
 # OTS-101 Release Announcement
 
-Teaching Teachers Foundations is ready for its first public release.
+OTS-101: Teaching Teachers Foundations is ready for its first public release.
 
-OTS-101 is the starting course for Teaching Teachers: a practical, open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows.
+OTS-101 is the starting course for OpenTeachStack: a practical, open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows.
 
 This first course stays intentionally focused. It does not ask teachers to learn GitHub, buy a domain, publish a website, write Apps Script, or use AI coding agents on day one.
 
@@ -37,14 +37,14 @@ The core method is:
 
 Source -> Prompt -> Build -> Verify -> Teach -> Archive -> Improve
 
-Teaching Teachers is for teachers who want more control over their curriculum systems without waiting for a perfect platform to be handed to them.
+OpenTeachStack is for teachers who want more control over their curriculum systems without waiting for a perfect platform to be handed to them.
 
 Start here:
 
-- Site: https://teachingteachers.dev
-- Repository: https://github.com/Gh0stlyKn1ght/Teacher-techops
-- Course: `/course`
-- Source Bank: `/library/source-bank`
+- Site: https://openteachstack.dev
+- Repository: https://github.com/Gh0stlyKn1ght/OpenTeachStack
+- Course: `/book/ots-101`
+- Source Bank: `/kb/source-bank`
 - Templates: `/templates`
 - Release Packet: `/course/release`
 

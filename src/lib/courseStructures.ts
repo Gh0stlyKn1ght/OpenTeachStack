@@ -446,7 +446,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
       chapter("02", "Curriculum System Assembly", "curriculum-system-assembly", "A final system must connect lessons, resources, assessment, delivery, and revision.", "How do you assemble the curriculum pieces into one system?", "System map", ["systems design", "curriculum architecture"], [
         section("02.0", "Chapter Overview", "overview", "10 minutes"),
         section("02.1", "Required Curriculum Components"),
-        section("02.2", "Artifact Links and Handoff Notes"),
+        section("02.2", "Artifact Links and Reviewer Notes"),
         section("02.3", "Build Task: System Map", "artifact", "40 minutes", "System map"),
         section("02.4", "Chapter Checkpoint", "checkpoint", "10 minutes"),
       ]),

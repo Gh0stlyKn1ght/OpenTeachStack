@@ -9,9 +9,9 @@ import { COURSE_STRUCTURES } from "@/lib/courseStructures";
 import { COURSE_SUBTITLE, COURSE_THESIS } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Course Book — Teaching Teachers",
+  title: "Course Book — OpenTeachStack",
   description:
-    "Enter the Teaching Teachers course book: a field-manual interface for educator technology, AI, sources, and curriculum systems.",
+    "Enter the OpenTeachStack course book: a field-manual interface for educator technology, AI, sources, and curriculum systems.",
 };
 
 export default function BookPage() {
@@ -22,7 +22,7 @@ export default function BookPage() {
 
   return (
     <FieldGuidePage
-      eyebrow="Teaching Teachers Book Mode"
+      eyebrow="OpenTeachStack Book Mode"
       title="A course book for teachers becoming builders."
       subtitle={COURSE_THESIS}
       meta={[
@@ -37,7 +37,7 @@ export default function BookPage() {
           <div>
             <h2>The Field Manual</h2>
             <p>
-              Teaching Teachers is organized as a digital course book, not a
+              OpenTeachStack is organized as a digital course book, not a
               locked dashboard. The goal is to help educators understand the
               system behind modern teaching work: sources, AI, standards,
               verification, digital tools, delivery, and revision.

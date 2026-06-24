@@ -6,9 +6,9 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "Field Notes — Teaching Teachers",
+  title: "Field Notes — OpenTeachStack",
   description:
-    "Essays, reflections, and observations from the development of Teaching Teachers.",
+    "Essays, reflections, and observations from the development of OpenTeachStack.",
 };
 
 export default function FieldNotesPage() {
@@ -19,7 +19,7 @@ export default function FieldNotesPage() {
       eyebrow="Project Field Notes"
       title="Field Notes"
       subtitle="Essays, reflections, and observations from the field. These are working notes on the ideas, decisions, and discoveries that shaped this course."
-      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
       meta={[
         { label: "Notes", value: String(notes.length) },
         { label: "Mode", value: "Reflection" },

@@ -5,6 +5,7 @@ const meta = {
   "lesson-building": "Lesson Building",
   "standards-curriculum": "Standards & Curriculum",
   "google-workspace": "Google Workspace",
+  library: "Library",
   "cyber-safety": "Cyber Safety",
   "course-websites": "Course Websites",
   "open-resources": "Open Resources",

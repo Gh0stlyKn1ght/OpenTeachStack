@@ -42,7 +42,7 @@ export default function HeroSection() {
           className="hero-reveal hero-reveal-delay-3 text-base text-foreground/65 max-w-xl mb-10 leading-relaxed"
         >
           Most teachers are handed platforms, files, templates, logins, and
-          expectations. They are not handed a system. Teaching Teachers teaches
+          expectations. They are not handed a system. OpenTeachStack teaches
           you how to build one without becoming a developer on day one.
         </p>
 
@@ -51,7 +51,7 @@ export default function HeroSection() {
         >
           <Link
             href="/start"
-            className="group relative inline-flex items-center px-8 py-3.5 text-sm font-semibold rounded-lg no-underline overflow-hidden transition-all duration-300 bg-foreground text-background hover:shadow-xl hover:shadow-foreground/10 hover:-translate-y-0.5"
+            className="group relative inline-flex items-center overflow-hidden rounded-lg bg-[var(--color-text)] px-8 py-3.5 text-sm font-semibold text-[var(--color-bg)] no-underline transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-foreground/10"
           >
             <span className="relative z-10">Start Here</span>
             <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-300 group-hover:translate-x-0" />
@@ -77,7 +77,7 @@ export default function HeroSection() {
             </svg>
           </Link>
           <Link
-            href="/templates"
+            href="/kb/templates"
             className="inline-flex items-center px-8 py-3.5 text-sm font-semibold rounded-lg no-underline border border-border bg-surface/70 text-foreground/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-purple hover:text-purple"
           >
             Explore Templates

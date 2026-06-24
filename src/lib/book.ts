@@ -340,7 +340,7 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
     lastVerified: EVIDENCE_LAST_VERIFIED,
     metricLabel: "Source-backed references",
     metricValue: `${Math.max(OTS_101_SOURCES.length, 1)}`,
-    relatedPath: "/library/source-bank",
+    relatedPath: "/kb/source-bank",
   },
   {
     title: "AI literacy",
@@ -355,14 +355,14 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
     lastVerified: EVIDENCE_LAST_VERIFIED,
     metricLabel: "AI references linked",
     metricValue: "3",
-    relatedPath: "/library/source-bank",
+    relatedPath: "/kb/source-bank",
   },
   {
     title: "Cyber safety",
     claim:
       "Public-facing educators need account hygiene, identity separation, profile review, and safe publishing routines.",
     sourceNote:
-      "Use official security guidance and the Teaching Teachers cyber safety materials as the local baseline.",
+      "Use official security guidance and the OpenTeachStack cyber safety materials as the local baseline.",
     evidenceSource: [
       { label: "NIST Digital Identity Guidelines", url: "https://pages.nist.gov/800-63-4/sp800-63b.html" },
       {

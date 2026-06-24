@@ -9,9 +9,9 @@ import {
 } from "@/components/OfficialSources";
 
 export const metadata: Metadata = {
-  title: "Official Sources — Teaching Teachers",
+  title: "Official Sources — OpenTeachStack",
   description:
-    "Official documentation and source inventory for Teaching Teachers courses, apps, and software-facing lessons.",
+    "Official documentation and source inventory for OpenTeachStack courses, apps, and software-facing lessons.",
 };
 
 export default function SourcesPage() {
@@ -19,8 +19,8 @@ export default function SourcesPage() {
     <FieldGuidePage
       eyebrow="Source Audit"
       title="Official Sources"
-      subtitle="This is the source-of-truth list for software, platforms, documentation, and technical references used across Teaching Teachers. Lessons can use tutorials as supplements, but software behavior should be checked against official documentation first."
-      breadcrumbs={[{ label: "Library", href: "/library" }]}
+      subtitle="This is the source-of-truth list for software, platforms, documentation, and technical references used across OpenTeachStack. Lessons can use tutorials as supplements, but software behavior should be checked against official documentation first."
+      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
       meta={[
         { label: "Rule", value: "Official docs first" },
         { label: "AI role", value: "Draft after source" },
@@ -43,7 +43,7 @@ export default function SourcesPage() {
           summarize, draft, or compare sources after the source link is known.
         </p>
         <Link
-          href="/resources"
+          href="/kb/resources"
           className="mt-4 inline-flex text-sm font-semibold text-link no-underline hover:underline"
         >
           Open the full resource library

@@ -9,7 +9,7 @@ import PrintPageButton from "@/components/PrintPageButton";
 export const metadata: Metadata = {
   title: `Labs — ${COURSE_TITLE}`,
   description:
-    "Hands-on labs for the Teaching Teachers course. Build real tools and systems for your classroom.",
+    "Hands-on labs for the OpenTeachStack course. Build real tools and systems for your classroom.",
 };
 
 export default function LabsPage() {

@@ -22,7 +22,7 @@ export default function LearnerJourney() {
           From non-tech teacher to curriculum systems builder
         </h2>
         <p className="text-sm leading-relaxed text-slate">
-          Teaching Teachers moves teachers through progressive confidence levels:
+          OpenTeachStack moves teachers through progressive confidence levels:
           organize first, verify next, then automate and publish when the
           foundation is real.
         </p>

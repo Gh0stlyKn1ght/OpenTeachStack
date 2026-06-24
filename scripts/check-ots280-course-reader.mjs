@@ -1,9 +1,17 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import {
+  findGenericAuthoringFragments,
+  GENERATED_STATUSES,
+  KNOWN_CONTENT_STATUSES,
+  RELEASE_CONTENT_STATUSES,
+} from "./lib/content-fingerprints.mjs";
 
 const root = process.cwd();
 const courseRoot = join(root, "content", "courses", "ots-280");
+let generatedCount = 0;
+let releaseReadyCount = 0;
 const forbiddenFragments = [
   "This is the course-owned source file",
   "Use this file for the permanent lesson body",
@@ -40,8 +48,8 @@ if (!existsSync(courseJsonPath)) {
   fail("content/courses/ots-280/course.json is missing.");
 } else {
   const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
-  if (courseJson.migrationStatus !== "authored") {
-    fail(`course.json migrationStatus is ${courseJson.migrationStatus}, expected authored.`);
+  if (!KNOWN_CONTENT_STATUSES.has(courseJson.migrationStatus)) {
+    fail(`course.json migrationStatus is ${courseJson.migrationStatus}, expected a known content status.`);
   }
 }
 
@@ -66,16 +74,32 @@ if (!existsSync(lessonRoot)) {
     const parsed = matter(raw);
     const relative = filePath.replace(`${courseRoot}\\`, "").replaceAll("\\", "/");
 
-    if (parsed.data.migrationStatus !== "authored") {
-      fail(`${relative} is not authored.`);
+    const status = parsed.data.migrationStatus;
+    if (!KNOWN_CONTENT_STATUSES.has(status)) {
+      fail(`${relative} has unknown migrationStatus: ${status}.`);
+    }
+
+    if (GENERATED_STATUSES.has(status)) {
+      generatedCount++;
+    }
+
+    if (RELEASE_CONTENT_STATUSES.has(status)) {
+      releaseReadyCount++;
     }
 
     if (!parsed.data.canonicalRoute?.startsWith("/book/ots-280/")) {
       fail(`${relative} has invalid canonical route.`);
     }
 
-    if (parsed.content.trim().length < 700) {
+    if (RELEASE_CONTENT_STATUSES.has(status) && parsed.content.trim().length < 700) {
       fail(`${relative} content is too short to be a real section body.`);
+    }
+
+    const genericFragments = findGenericAuthoringFragments(parsed.content);
+    if (RELEASE_CONTENT_STATUSES.has(status) && genericFragments.length > 0) {
+      fail(
+        `${relative} is ${status} but contains generic author-script fingerprints: ${genericFragments.join("; ")}`,
+      );
     }
 
     for (const fragment of forbiddenFragments) {
@@ -90,4 +114,6 @@ if (process.exitCode) {
   process.exit(process.exitCode);
 }
 
-console.log("OTS-280 course reader migration check passed.");
+console.log(
+  `OTS-280 course reader migration check passed. Release-ready lessons: ${releaseReadyCount}; generated/scaffolded lessons: ${generatedCount}.`,
+);

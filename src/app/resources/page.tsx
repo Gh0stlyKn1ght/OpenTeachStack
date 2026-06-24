@@ -6,15 +6,15 @@ import GitHubIcon from "@/components/GitHubIcon";
 import { REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Resource Library — Teaching Teachers",
+  title: "Resource Library — OpenTeachStack",
   description:
-    "A lightweight index of official documentation, tools, templates, prompts, and source lists for Teaching Teachers.",
+    "A lightweight index of official documentation, tools, templates, prompts, and source lists for OpenTeachStack.",
 };
 
 const resourceHubs = [
   {
     title: "Source Bank",
-    href: "/library/source-bank",
+    href: "/kb/source-bank",
     desc: "Verified free and education-friendly tools, course platforms, learning resources, account notes, and safety cautions.",
     badge: "Bank",
   },
@@ -116,8 +116,8 @@ export default function ResourcesPage() {
         </div>
 
         <Link
-          href="/sources"
-          className="inline-flex rounded-md bg-foreground px-5 py-2.5 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
+          href="/kb/resources"
+          className="inline-flex rounded-md bg-[var(--color-text)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
           Open Sources
         </Link>

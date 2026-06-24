@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: draft outline from existing open-resource lessons
+Status: release-ready outline
 
 Course path: Modern Teacher Systems
 
@@ -14,9 +14,9 @@ Open curriculum is only useful when another teacher can understand what it is, w
 
 OTS-240 should make GitHub practical for educators without turning the course into a programming class. Teachers should leave with a small public repository that has version history, source notes, a readable README, an appropriate license, and a review workflow they can maintain.
 
-## Source Draft Lessons
+## Course Source Lessons
 
-This outline is extracted from the existing open-resource and GitHub lesson files:
+This outline is backed by course-owned open-resource and GitHub lesson files:
 
 - `content/lessons/resource-discovery-and-evaluation.mdx`
 - `content/lessons/open-source-vs-free.mdx`
@@ -40,14 +40,14 @@ The final artifact should include:
 
 ## Chapter Outline
 
-| Chapter | Focus | Existing draft sources | Build artifact |
+| Chapter | Focus | Source material | Build artifact |
 | --- | --- | --- | --- |
 | 01. Open Resource Mindset | Distinguish free, open, licensed, and merely available materials. | `resource-discovery-and-evaluation.mdx`, `open-source-vs-free.mdx`, `creative-commons-for-teachers.mdx` | Open resource decision log |
 | 02. GitHub Foundations for Teachers | Introduce repositories, files, commits, branches, and the web editor as teacher workflows. | `github-for-teachers.mdx` | Curriculum repo |
 | 03. Writing Useful READMEs | Turn the README into trustworthy teacher-facing documentation. | `github-for-teachers.mdx`, Source Bank workflow docs | Course README |
 | 04. Contribution and Review Workflows | Use issues, pull requests, checklists, and small reviews to protect curriculum quality. | `github-for-teachers.mdx`, GitHub Docs | Contribution checklist and review log |
 | 05. Publishing and Attribution | Attach source notes, license decisions, attribution lines, and publishing boundaries. | `creative-commons-for-teachers.mdx`, `publishing-your-curriculum-hub.mdx` | Attribution and license file |
-| 06. Open Curriculum Repository | Assemble the full repository with docs, source notes, contribution rules, and maintenance habits. | All OTS-240 draft lessons | Open curriculum repository |
+| 06. Open Curriculum Repository | Assemble the full repository with docs, source notes, contribution rules, and maintenance habits. | OTS-240 course lessons and templates | Open curriculum repository |
 
 ## Safety Rules
 
@@ -68,8 +68,8 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 
 ## Next Content Tasks
 
-1. Replace generated section shells with authored open-resource and GitHub lessons.
+1. Keep authored open-resource and GitHub lessons aligned with the book route and release checks.
 2. Add a repository README template after the required fields stabilize.
 3. Add an attribution and license file template that matches the Source Bank workflow.
 4. Add official GitHub Docs and Creative Commons references to relevant section source panels.
-5. Run a browser keyboard and public-link privacy pass once authored sections exist.
+5. Re-run browser keyboard and public-link privacy checks after major route, repository, or publishing changes.

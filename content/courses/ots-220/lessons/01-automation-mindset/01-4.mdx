@@ -5,7 +5,7 @@ chapter: Automation Mindset
 chapterSlug: 01-automation-mindset
 sectionNumber: 01.4
 sectionSlug: 01-4
-title: Chapter Checkpoint
+title: checkpoint review
 type: checkpoint
 duration: 10 minutes
 artifact: Automation candidate list
@@ -15,49 +15,71 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-# Chapter Checkpoint
+# checkpoint review
 
-## Core Idea
+## Why This Matters
 
-Automation Mindset is about choosing safe, repeatable automations for workflows where teacher time and consistency matter.. In this section, **Chapter Checkpoint** turns that automation goal into a safe, teacher-owned move that can be repeated and reviewed.
+A teacher learning small Apps Script automations safely needs more than a tool list or a checklist. The goal in **Automation Mindset** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
 
-The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
+For **checkpoint review**, the practical pressure is simple: automating a confusing process before the trigger, input, output, owner, and failure path are clear. This page turns that pressure into a visible update to **Automation candidate list**.
 
-## Do This
+## Classroom Scenario
 
-- Name the classroom workflow issue connected to Chapter Checkpoint.
-- Use this section to review the chapter artifact and define one maintenance step..
-- Record the decision tied to which tasks are worth automating first and what should stay manual..
-- Save evidence in support of the chapter artifact: Automation candidate list.
-- Add one rollback or stop condition before publishing or sharing anything externally.
+Use this situation as the working example: a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files. By the end, the work should support this habit: test with fake data, inspect the output, and keep a rollback path.
 
-## Evidence of Completion
+In this scenario, the learner should be able to point to:
 
-- a checkpoint note exists for Chapter Checkpoint.
-- The work explicitly connects to Automation candidate list and one teacher context.
-- A source or platform behavior note is attached where needed.
-- A safety note is included for any data, email, or file-write action.
+- what the teacher prepares before students see the work,
+- what students will read, build, submit, or discuss,
+- what evidence shows the work is ready,
+- what gets revised after the first use.
 
-## Source and Template References
+## Key Idea
 
-Use Source Bank-backed references as the official evidence for behavior claims:
+Automation is ready only after the manual routine is clear, fake-data tests pass, logs are readable, and rollback is possible.
 
-- [Source 1: Google Apps Script Guide](https://developers.google.com/apps-script/guides)
-- [Source 2: Apps Script Best Practices](https://developers.google.com/apps-script/guides/support/best-practices)
-- [Source 3: Google Workspace Safety](https://developers.google.com/workspace/security)
-- [Source 4: Privacy and Security Principles](https://developers.google.com/workspace/admin/security/security-center)
+Watch for this mistake: Running a script on live class data before proving what it creates, skips, changes, and can undo.
 
-- Template artifact: [Automation candidate list template](/content/courses/ots-220/templates/automation-candidate-template.md)
+## What You Will Do
 
-## Verification Checks
+Make this page concrete by writing three small decisions:
 
-- Do not include student-identifiable data, credentials, or private school details.
-- Check for the chapter risk: building automation for brittle or unsafe workflows before the process itself is clear..
-- Run a preview or copy-test before any live classroom or student workflow use.
-- Use official docs for behavior, permissions, and quota expectations.
-- Keep instructions readable for the next teacher who inherits the script or workflow.
-- the checkpoint decision is explicit and actionable.
+- Before class, connect checkpoint review to one setup decision in the automation candidate list: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
+- During class, connect checkpoint review to one student action in sandbox folders, fake student rows, copied docs, forms responses, reminders, and logs: what learners read, build, submit, discuss, or revise while working through a fake-data automation that creates unit folders from a sheet row, writes a log entry, and can be deleted without touching real class files.
+- After class, review checkpoint review through the automation mindset lens: what evidence proves the move worked, which mistake to avoid (running a script on live class data before proving what it creates, skips, changes, and can undo), and what revision supports test with fake data, inspect the output, and keep a rollback path.
+
+## Build the Artifact
+
+Inspect **Automation candidate list** and mark what is ready, what needs revision, and what must be checked against sources, safety, privacy, or accessibility before use.
+
+Add this to your artifact:
+
+- Classroom context: sandbox folders, fake student rows, copied Docs, Forms responses, reminders, and logs; a fake-data automation that creates unit folders from a Sheet row, writes a log entry, and can be deleted without touching real class files.
+- Artifact entry: In **Automation candidate list**, add the decision for **checkpoint review** with the student-facing evidence and the review owner.
+- Example entry: Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+- Review check: Check the entry against official Apps Script documentation, Google Workspace limits, local email policy, and fake-data test notes, then write what should change after the first classroom use.
+- Peer review check: A colleague should be able to open the automation mindset artifact, understand the decision behind **checkpoint review**, and know the next action without extra explanation.
+
+## What Good Work Looks Like
+
+A strong **checkpoint review** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+
+For this lesson, a strong entry might say:
+
+> Test log: Fake row Unit 03 / Sample Student A created one folder, one copied Doc, and one log row; no email sent during sandbox test.
+
+That level of detail is enough to review. It is also small enough to revise after one classroom use.
+
+## Quality Check
+
+Before moving on, confirm:
+
+- Your artifact entry is stored in **Automation candidate list** rather than kept as a private reminder.
+- The student-facing task or evidence is named in plain language.
+- The review step names a source, safety, privacy, accessibility, or maintenance check.
+- The checkpoint distinguishes ready, revise, and blocked items.
+- The next revision has an owner and a realistic date or trigger.
 
 ## Reflection
 
-What is one thing in this section that made the automation safer, simpler, or easier to hand off, and what would you still refuse to automate?
+What would a busy teacher misunderstand if they only saw your **Automation candidate list** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.

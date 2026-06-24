@@ -1,11 +1,12 @@
-# Teaching Teachers Course Book Architecture
+# OpenTeachStack Course Book Architecture
 
 Date: 2026-06-21
 
-Teaching Teachers should feel like a course book, not a short professional development outline.
+OpenTeachStack should feel like a course book, not a short professional development outline.
 
-Course codes use `OTS-###` because `OTS` stands for **Open Teacher Stack**.
-Do not rename course codes to `TT-###`.
+OpenTeachStack is the course pathway. Course codes use
+`OTS-###` because `OTS` stands for **Open Teacher Stack**. Do not rename course
+codes to `TT-###`.
 
 The preferred hierarchy is:
 
@@ -123,4 +124,4 @@ content/
 3. Keep copied docs, labs, assets, templates, and references inside each course folder.
 4. Add examples and non-examples to the highest-priority sections.
 5. Run `npm run check:content-layout` for a quick structural check after content-folder changes.
-6. Run `npm run test` for the non-mutating local gate, then `npm run verify:release`; local testing covers typecheck, lint, route contracts, content layout, scaffold-fallback protection, content-authoring overwrite protection, source-bank links, and every course-reader migration check before release verification runs production build and route smoke probes.
+6. Run `npm run test` for the non-mutating local gate, then `npm run verify:release`; local testing covers typecheck, lint, route contracts, content layout, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, source-bank links, and every course-reader migration check before release verification runs production build and route smoke probes.

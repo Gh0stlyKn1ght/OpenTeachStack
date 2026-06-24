@@ -138,7 +138,7 @@ function parseFirstSentence(raw: string): string {
     return line;
   }
 
-  return "Teaching Teachers knowledge base article.";
+  return "OpenTeachStack knowledge base article.";
 }
 
 function parseTitleFromBody(raw: string): string | undefined {

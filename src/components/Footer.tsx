@@ -1,36 +1,36 @@
 import Link from "next/link";
 import GitHubIcon from "./GitHubIcon";
-import { REPOSITORY_URL } from "@/lib/metadata";
+import LinkedInIcon from "./LinkedInIcon";
+import { AUTHOR, REPOSITORY_URL } from "@/lib/metadata";
 
 const columns = [
   {
     title: "Navigation",
     links: [
-      { label: "Start", href: "/start" },
-      { label: "Courses", href: "/courses" },
+      { label: "Start", href: "/book/ots-101" },
       { label: "Pathway", href: "/pathway" },
-      { label: "Library", href: "/library" },
-      { label: "Examples", href: "/examples" },
+      { label: "Knowledge Base", href: "/kb" },
       { label: "About", href: "/about" },
     ],
   },
   {
-    title: "Library",
+    title: "Knowledge Base",
     links: [
-      { label: "Prompt Library", href: "/prompts" },
-      { label: "Templates", href: "/templates" },
-      { label: "Safety Guide", href: "/safety" },
-      { label: "Official Sources", href: "/sources" },
-      { label: "Field Notes", href: "/field-notes" },
+      { label: "Library", href: "/kb/library" },
+      { label: "Prompts", href: "/kb/prompts" },
+      { label: "Templates", href: "/kb/templates" },
+      { label: "Source Bank", href: "/kb/source-bank" },
+      { label: "Safety", href: "/kb/safety" },
     ],
   },
   {
-    title: "Open Source",
+    title: "Project",
     links: [
-      { label: "Website", href: "https://teachingteachers.dev" },
       { label: "GitHub", href: REPOSITORY_URL },
-      { label: "Contribute", href: "/open-source" },
+      { label: "LinkedIn", href: AUTHOR.linkedinUrl },
       { label: "License", href: "/license" },
+      { label: "Privacy/Safety", href: "/kb/safety" },
+      { label: "Contact", href: "/about" },
     ],
   },
 ];
@@ -61,6 +61,9 @@ export function Footer() {
                         {link.href.includes("github.com") && (
                           <GitHubIcon className="h-3.5 w-3.5" title="" />
                         )}
+                        {link.href.includes("linkedin.com") && (
+                          <LinkedInIcon className="h-3.5 w-3.5" title="" />
+                        )}
                         {link.label}
                       </a>
                     ) : (
@@ -82,7 +85,7 @@ export function Footer() {
         <div className="mt-10 pt-6 border-t border-border">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-foreground/40">
-              &copy; {year} Teaching Teachers &middot; OTS-101
+              &copy; {year} OpenTeachStack &middot; openteachstack.dev
             </p>
             <p className="text-xs text-foreground/40">
               Code{" "}
@@ -104,17 +107,28 @@ export function Footer() {
                 CC BY-NC-SA 4.0
               </a>
             </p>
-            <p className="text-xs text-foreground/40">
-              Built with{" "}
+            <div className="flex items-center gap-2">
               <a
-                href="https://nextjs.org"
+                href={REPOSITORY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/50 hover:text-foreground no-underline transition-colors"
+                aria-label="OpenTeachStack on GitHub"
+                title="OpenTeachStack on GitHub"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-border text-foreground/50 no-underline transition-colors hover:border-accent hover:text-foreground"
               >
-                Next.js
+                <GitHubIcon className="h-4 w-4" title="" />
               </a>
-            </p>
+              <a
+                href={AUTHOR.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="JC Nevarez on LinkedIn"
+                title="JC Nevarez on LinkedIn"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-border text-foreground/50 no-underline transition-colors hover:border-accent hover:text-foreground"
+              >
+                <LinkedInIcon className="h-4 w-4" title="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

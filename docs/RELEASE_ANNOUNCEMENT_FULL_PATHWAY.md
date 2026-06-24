@@ -1,6 +1,6 @@
-# Teaching Teachers Full Pathway Release
+# OpenTeachStack Full Pathway Release
 
-The full Teaching Teachers pathway is now live in authored form.
+The full OpenTeachStack pathway is now live in authored form.
 
 This milestone moves beyond OTS-101 foundations and includes all nine pathway courses:
 
@@ -20,7 +20,7 @@ teaching use:
 
 - Course-owned lesson content under `content/courses/{course}`
 - Course-specific templates, artifacts, references, and reusable checklists
-- Evidence and traceability surfaces (`/evidence`, `/skills`, `/library/source-bank`)
+- Evidence and traceability surfaces (`/evidence`, `/skills`, `/kb/source-bank`)
 - Verified route checks and linting as part of release reporting
 
 Repository-wide evidence is tracked in:

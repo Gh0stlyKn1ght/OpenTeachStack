@@ -3,23 +3,38 @@ export const COURSE_TITLE = "Teaching Teachers Foundations";
 export const COURSE_SUBTITLE =
   "Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators";
 export const COURSE_THESIS =
-  "Teaching Teachers is an open-source pathway for educators building practical, future-ready curriculum systems. OTS-101 is the required foundations course.";
-export const SITE_URL = "https://teachingteachers.dev";
+  "OpenTeachStack is an open-source pathway for educators building practical, future-ready curriculum systems. OTS-101 is the required foundations course.";
+export const SITE_URL = "https://openteachstack.dev";
 export const REPOSITORY_URL =
-  "https://github.com/Gh0stlyKn1ght/Teacher-techops";
+  "https://github.com/Gh0stlyKn1ght/OpenTeachStack";
 
 export interface AuthorInfo {
   name: string;
-  email: string;
-  url: string;
+  linkedinUrl: string;
   role: string;
+  projects: {
+    name: string;
+    url: string;
+    description: string;
+  }[];
 }
 
 export const AUTHOR: AuthorInfo = {
   name: "JC Nevarez",
-  email: "jc@nevarez.dev",
-  url: "https://nevarez.dev",
+  linkedinUrl: "https://www.linkedin.com/in/gh0stly/",
   role: "Course Author & Developer",
+  projects: [
+    {
+      name: "Robotnix",
+      url: "https://robotnix.dev",
+      description: "Robotics, engineering, and classroom build systems.",
+    },
+    {
+      name: "Team 2180",
+      url: "https://team2180.dev",
+      description: "Team 2180 robotics program resources and public work.",
+    },
+  ],
 };
 
 export interface LicenseInfo {
@@ -66,7 +81,7 @@ export const MODULES: CourseModule[] = [
     number: "01",
     title: "Teacher Builder Mindset",
     description:
-      "What Teaching Teachers is, why teachers need practical system ownership, and how to build workflows instead of collecting tools.",
+      "What OpenTeachStack is, why teachers need practical system ownership, and how to build workflows instead of collecting tools.",
     slug: "01-teacher-builder-mindset",
     essentialQuestion:
       "What separates a teacher who collects tools from a teacher who builds systems?",
@@ -372,9 +387,8 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Start", href: "/start" },
-  { label: "Courses", href: "/courses" },
+  { label: "Start", href: "/book/ots-101" },
+  { label: "Pathway", href: "/pathway" },
   { label: "Knowledge Base", href: "/kb" },
-  { label: "Library", href: "/library" },
   { label: "About", href: "/about" },
 ];

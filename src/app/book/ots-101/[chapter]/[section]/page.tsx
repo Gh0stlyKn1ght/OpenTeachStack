@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import BookSidebar from "@/components/book/BookSidebar";
-import SourcePanel from "@/components/book/SourcePanel";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
@@ -52,7 +50,7 @@ export async function generateMetadata({
 
   if (!record) {
     return {
-      title: "Section Not Found — Teaching Teachers",
+      title: "Section Not Found — OpenTeachStack",
     };
   }
 
@@ -71,18 +69,19 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   const { previous, next } = getAdjacentBookSections(record);
-  const relatedLessonHref = record.relatedLessonSlug
-    ? `/lessons/${record.relatedLessonSlug}`
-    : undefined;
   const courseLesson = getCourseLessonBySlugs(
     "ots-101",
     record.chapter.slug,
     record.sectionSlug,
   );
 
-  if (courseLesson?.frontmatter.migrationStatus !== "authored") {
+  if (!courseLesson) {
     notFound();
   }
+
+  const migrationStatus = courseLesson.frontmatter.migrationStatus;
+  const isReleaseReady =
+    migrationStatus === "authored" || migrationStatus === "reviewed";
 
   return (
     <FieldGuidePage
@@ -132,6 +131,13 @@ export default async function SectionPage({ params }: SectionPageProps) {
       }
     >
       <ArticleBody>
+        {!isReleaseReady ? (
+          <div className="course-section-status">
+            This lesson is in teacher review. It still needs
+            classroom-specific revision before it should be treated as
+            release-ready course content.
+          </div>
+        ) : null}
         <div className="prose-academic">
           <MDXRemote
             source={courseLesson.content}
@@ -140,15 +146,6 @@ export default async function SectionPage({ params }: SectionPageProps) {
           />
         </div>
 
-        {relatedLessonHref ? (
-          <section>
-            <Link href={relatedLessonHref} className="book-action-secondary">
-              Open standalone lesson page
-            </Link>
-          </section>
-        ) : null}
-
-        <SourcePanel />
       </ArticleBody>
     </FieldGuidePage>
   );

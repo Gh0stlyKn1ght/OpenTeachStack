@@ -218,7 +218,7 @@ function bodyFor(chapter, section) {
     `${mode.evidence}`,
     `Teacher-oriented explanation is clear enough for a colleague to recreate or review.`,
     `The section connects to the chapter artifact and course outcome.`,
-    `A privacy and safety note is attached for any generated content or synthetic data use.`,
+    `Privacy and safety notes name any generated content, synthetic data, and review boundary.`,
     `A revision action is recorded for one follow-up step.`,
   ];
 
@@ -248,7 +248,7 @@ ${evidence.map((item) => `- ${item}`).join("\n")}
 
 ## Source and Template References
 
-Use official references before making platform, tooling, or workflow claims:
+Check official references before publishing platform, tooling, or workflow claims:
 
 ${sourceList || "- Source references are queued for this section."}
 
@@ -298,26 +298,26 @@ for (const chapter of courseJson.chapters) {
       continue;
     }
 
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "generated";
     parsed.content = bodyFor(chapter, section);
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
     updated++;
   }
 }
 
-if (force || courseJson.migrationStatus !== "authored") {
+if (force || courseJson.migrationStatus !== "generated") {
   if (dryRun) {
     console.log("[dry-run] WRITE: course.json");
   } else {
-    courseJson.migrationStatus = "authored";
+    courseJson.migrationStatus = "generated";
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
   }
 }
 
 const mode = dryRun ? "[DRY RUN] " : "";
 console.log(
-  `${mode}Authored OTS-320 section files: ${updated}; preserved ${skipped} existing authored files.${force ? " (--force)" : ""}`,
+  `${mode}Generated OTS-320 section files: ${updated}; preserved ${skipped} existing generated files.${force ? " (--force)" : ""}`,
 );
 if (!dryRun && skipped > 0 && !force) {
-  console.log(`${skipped} non-authored or non-scaffolded files were preserved. Use --force to overwrite.`);
+  console.log(`${skipped} non-generated or non-scaffolded files were preserved. Use --force to overwrite.`);
 }

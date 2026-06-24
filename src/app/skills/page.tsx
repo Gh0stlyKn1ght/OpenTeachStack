@@ -6,9 +6,9 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "Transferable Skills — Teaching Teachers",
+  title: "Transferable Skills — OpenTeachStack",
   description:
-    "A map of transferable educator technology skills across the Teaching Teachers pathway.",
+    "A map of transferable educator technology skills across the OpenTeachStack pathway.",
 };
 
 export default function SkillsPage() {
@@ -16,7 +16,7 @@ export default function SkillsPage() {
     <FieldGuidePage
       eyebrow="Transferable Skills Map"
       title="The tools change. The habits transfer."
-      subtitle="Teaching Teachers connects course work to durable skills: source evaluation, documentation, AI literacy, automation thinking, cyber safety, and web publishing."
+      subtitle="OpenTeachStack connects course work to durable skills: source evaluation, documentation, AI literacy, automation thinking, cyber safety, and web publishing."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "View", value: "Skills map" },

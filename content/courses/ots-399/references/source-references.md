@@ -12,7 +12,7 @@ OTS-399 uses completed pathway evidence instead of introducing a new source stac
 - OTS-280 Cyber Safety docs for privacy, identity, account, public profile, and incident boundaries.
 - OTS-301 Teacher Course Sites docs for publishing, accessibility, domains, links, and maintenance.
 - OTS-320 AI Coding Agents docs for prompt, diff, fake-data testing, and reviewed agent build evidence.
-- Teaching Teachers Source Bank: `/library/source-bank`.
+- OpenTeachStack Source Bank: `/kb/source-bank`.
 
 ## Course Use
 

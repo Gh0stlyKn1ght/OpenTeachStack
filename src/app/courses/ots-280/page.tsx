@@ -5,9 +5,9 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { CYBER_SAFETY_MODULES } from "@/lib/cyberSafety";
 
 export const metadata: Metadata = {
-  title: "OTS-280 Cyber Safety for Educators — Teaching Teachers",
+  title: "OTS-280 Cyber Safety for Educators — OpenTeachStack",
   description:
-    "Teaching Teachers pathway course on identity, privacy, accounts, and website safety for teachers.",
+    "OpenTeachStack pathway course on identity, privacy, accounts, and website safety for teachers.",
 };
 
 const artifacts = [
@@ -134,7 +134,7 @@ export default function CyberSafetyCoursePage() {
         </p>
         <Link
           href="/book/ots-280"
-          className="inline-flex rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
+          className="inline-flex rounded-md bg-[var(--color-text)] px-4 py-2 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
           Enter OTS-280 Book Mode
         </Link>
@@ -146,19 +146,19 @@ export default function CyberSafetyCoursePage() {
         </h2>
         <div className="flex flex-wrap gap-2">
           <Link
-            href="/prompts#teacher-website-security-audit"
+            href="/kb/prompts"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
             Website Audit Prompt
           </Link>
           <Link
-            href="/sources"
+            href="/kb/resources"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
             Official Sources
           </Link>
           <Link
-            href="/field-notes/teachers-need-digital-self-defense"
+            href="/kb/field-notes"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
             Field Note

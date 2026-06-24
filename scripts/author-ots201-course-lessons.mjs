@@ -153,11 +153,11 @@ function bodyFor(chapter, section) {
   const templatePath = templateLinksByChapter[chapter.slug];
 
   const doThis = uniqueList([
-    `Identify the concrete teacher problem connected to ${section.title}.`,
+    `Name the workspace friction this section helps a teacher resolve in ${section.title}.`,
     `Use this section to ${mode.action}.`,
-    `Attach a short source note and route decision to either "review", "revise", or "hold".`,
+    `Add a source note and mark the route decision as "review", "revise", or "hold".`,
     `Connect this section to your workspace context: a course, unit, template, or routine route.`,
-    `Record what a colleague could inspect next to understand your decision.`,
+    `Write the next review cue a colleague should use to follow the workspace decision.`,
   ]);
 
   const evidence = uniqueList([
@@ -191,7 +191,7 @@ function bodyFor(chapter, section) {
 
 ## Core Idea
 
-${chapter.title} is about ${guide.focus}. In this section, **${section.title}** turns this architecture focus into one practical teacher move.
+${chapter.title} is about ${guide.focus}. This lesson asks the teacher to turn **${section.title}** into a visible workspace decision, example, and review cue.
 
 ${chapter.title} should stay safe, repeatable, and handoff-ready. The goal is to make each workflow visible, maintainable, and privacy-aware before it becomes a habit.
 
@@ -261,24 +261,24 @@ for (const [chapterSlug, chapter] of chapterMap.entries()) {
       continue;
     }
 
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "generated";
     parsed.content = bodyFor(chapter, section);
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
     updated++;
   }
 }
 
-if (force || courseJson.migrationStatus !== "authored") {
+if (force || courseJson.migrationStatus !== "generated") {
   if (dryRun) {
     console.log("[dry-run] WRITE: course.json");
   } else {
-    courseJson.migrationStatus = "authored";
+    courseJson.migrationStatus = "generated";
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
   }
 }
 
 const mode = dryRun ? "[DRY RUN] " : "";
-console.log(`${mode}Authored OTS-201 section files: ${updated}; preserved ${skipped} existing authored files.${force ? " (--force)" : ""}`);
+console.log(`${mode}Generated OTS-201 section files: ${updated}; preserved ${skipped} existing generated files.${force ? " (--force)" : ""}`);
 if (!dryRun && skipped > 0 && !force) {
   console.log(`${skipped} non-scaffolded files were preserved. Use --force to overwrite.`);
 }

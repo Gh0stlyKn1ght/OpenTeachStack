@@ -1,8 +1,9 @@
 import Link from "next/link";
 import GitHubIcon from "./GitHubIcon";
+import LinkedInIcon from "./LinkedInIcon";
 import MobileNav from "./MobileNav";
 import ThemeToggle from "./ThemeToggle";
-import { NAV_ITEMS, REPOSITORY_URL } from "@/lib/metadata";
+import { AUTHOR, NAV_ITEMS, REPOSITORY_URL } from "@/lib/metadata";
 
 export function AcademicHeader() {
   return (
@@ -14,10 +15,10 @@ export function AcademicHeader() {
           className="group no-underline"
         >
           <span className="block font-heading text-lg font-bold tracking-normal text-foreground transition-colors group-hover:text-accent">
-            Teaching Teachers
+            openteachstack.dev
           </span>
           <span className="hidden text-[0.68rem] font-mono uppercase tracking-widest text-foreground/40 sm:block">
-            A field guide for educators entering the tech world.
+            For educators entering the tech world.
           </span>
         </Link>
 
@@ -43,11 +44,21 @@ export function AcademicHeader() {
             href={REPOSITORY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Teaching Teachers on GitHub"
-            title="Teaching Teachers on GitHub"
+            aria-label="OpenTeachStack on GitHub"
+            title="OpenTeachStack on GitHub"
             className="hidden h-9 w-9 items-center justify-center rounded-sm border border-border text-foreground/65 no-underline transition-colors hover:border-accent hover:text-foreground sm:inline-flex"
           >
             <GitHubIcon className="h-4 w-4" title="" />
+          </a>
+          <a
+            href={AUTHOR.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="JC Nevarez on LinkedIn"
+            title="JC Nevarez on LinkedIn"
+            className="hidden h-9 w-9 items-center justify-center rounded-sm border border-border text-foreground/65 no-underline transition-colors hover:border-accent hover:text-foreground sm:inline-flex"
+          >
+            <LinkedInIcon className="h-4 w-4" title="" />
           </a>
           <ThemeToggle />
           <MobileNav navLinks={NAV_ITEMS} repositoryUrl={REPOSITORY_URL} />

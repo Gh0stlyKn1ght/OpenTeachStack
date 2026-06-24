@@ -12,7 +12,7 @@ import {
 } from "@/lib/cyberSafety";
 
 export const metadata: Metadata = {
-  title: `${CYBER_COURSE_CODE} Course Book — Teaching Teachers`,
+  title: `${CYBER_COURSE_CODE} Course Book — OpenTeachStack`,
   description:
     "OTS-280 book-style table of contents for Cyber Safety for Educators.",
 };

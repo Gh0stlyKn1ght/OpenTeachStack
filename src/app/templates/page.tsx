@@ -7,9 +7,9 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Template Library — Teaching Teachers",
+  title: "Template Library — OpenTeachStack",
   description:
-    "Available v1 templates for Teaching Teachers Foundations, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
+    "Available OTS-101 foundations templates, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
   path: "/templates",
 });
 
@@ -63,7 +63,7 @@ export default function TemplatesPage() {
     <FieldGuidePage
       eyebrow="Teacher Artifact Shelf"
       title="Template Library"
-      subtitle="The v1 Teaching Teachers Foundations templates are available as site pages first. Each one includes a blank version, an example version, evidence of completion, safety checks, and a Markdown download."
+      subtitle="The OTS-101 foundations templates are available as site pages first. Each one includes a blank version, an example version, evidence of completion, safety checks, and a Markdown download."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Released", value: String(FOUNDATION_TEMPLATES.length) },

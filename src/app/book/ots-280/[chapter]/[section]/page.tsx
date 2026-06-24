@@ -49,7 +49,7 @@ export async function generateMetadata({
   const record = getCyberSectionBySlugs(chapter, section);
 
   if (!record) {
-    return { title: "Section Not Found — Teaching Teachers" };
+    return { title: "Section Not Found — OpenTeachStack" };
   }
 
   return {
@@ -73,9 +73,13 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
     record.sectionSlug,
   );
 
-  if (courseLesson?.frontmatter.migrationStatus !== "authored") {
+  if (!courseLesson) {
     notFound();
   }
+
+  const migrationStatus = courseLesson.frontmatter.migrationStatus;
+  const isReleaseReady =
+    migrationStatus === "authored" || migrationStatus === "reviewed";
 
   return (
     <FieldGuidePage
@@ -125,6 +129,13 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
       }
     >
       <ArticleBody>
+        {!isReleaseReady ? (
+          <div className="course-section-status">
+            This lesson is in teacher review. It still needs
+            classroom-specific revision before it should be treated as
+            release-ready course content.
+          </div>
+        ) : null}
         <div className="prose-academic">
           <MDXRemote
             source={courseLesson.content}

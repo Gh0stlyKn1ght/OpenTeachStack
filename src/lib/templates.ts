@@ -447,7 +447,7 @@ export const FOUNDATION_TEMPLATES: FoundationTemplate[] = [
         title: "Trusted Source Bank",
         fields: [
           "Official documentation",
-          "Teaching Teachers Source Bank item",
+          "OpenTeachStack Source Bank item",
           "State standards",
           "University or OER source",
           "Video source",
@@ -605,7 +605,7 @@ export function renderTemplateMarkdown(template: FoundationTemplate) {
 
   return `# ${template.title}
 
-**Teaching Teachers module:** ${template.module}
+**OpenTeachStack module:** ${template.module}
 **Suggested format:** ${template.format}
 **Purpose:** ${template.purpose}
 **Skill measured:** ${template.skillMeasured}

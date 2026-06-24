@@ -33,7 +33,7 @@ The remaining follow-up is to add a repeatable CI accessibility scan with axe or
 | `/course` | 200 | 1 | 2 | 3 | 3 | 2 | 102 | Present |
 | `/syllabus` | 200 | 1 | 1 | 1 | 2 | 0 | 31 | Present |
 | `/templates` | 200 | 1 | 1 | 1 | 2 | 0 | 47 | Present |
-| `/library/source-bank` | 200 | 1 | 1 | 2 | 2 | 0 | 68 | Present |
+| `/kb/source-bank` | 200 | 1 | 1 | 2 | 2 | 0 | 68 | Present |
 | `/course/audit` | 200 | 1 | 2 | 1 | 2 | 0 | 50 | Present |
 | `/course/release` | 200 | 1 | 1 | 1 | 2 | 0 | 49 | Present |
 | `/book/ots-101` | 200 | 1 | 2 | 3 | 3 | 2 | 102 | Present |

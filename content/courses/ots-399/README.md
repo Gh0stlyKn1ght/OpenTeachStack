@@ -1,12 +1,12 @@
 # OTS-399 Capstone Studio
 
-Status: migration complete
+Status: release-ready course-owned content
 
 Canonical route: `/book/ots-399`
 
-Source registry: `src/lib/courseStructures.ts`
+Reader source: `src/lib/courseStructures.ts`
 
-This folder is the course-owned content package for OTS-399. It is designed so the course can be migrated, exported, or maintained without hunting through global content folders.
+This folder is the course-owned content package for OTS-399. It contains learner-facing lesson source, course artifacts, review notes, and release materials for the book route.
 
 ## Folders
 
@@ -17,6 +17,6 @@ This folder is the course-owned content package for OTS-399. It is designed so t
 - `templates/` - course-specific artifact templates
 - `references/` - source queues, citation notes, and platform documentation notes
 
-## Migration Rule
+## Maintenance Rule
 
-Reader source is now course-owned for OTS-399 sections via the dedicated route scaffold under `src/app/book/ots-399`.
+Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.

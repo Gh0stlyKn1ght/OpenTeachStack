@@ -1,6 +1,6 @@
 # Source Bank Maintenance Workflow
 
-The Source Bank is the shared link system for Teaching Teachers. It should stay boring, checked, and useful. A random list of links is not enough.
+The Source Bank is the shared link system for OpenTeachStack. It should stay boring, checked, and useful. A random list of links is not enough.
 
 ## Source Of Truth
 
@@ -10,7 +10,7 @@ Primary data file:
 
 Public page:
 
-- `/library/source-bank`
+- `/kb/source-bank`
 
 Link check script:
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "./metadata";
 
-const SITE_NAME = "Teaching Teachers";
+const SITE_NAME = "OpenTeachStack";
 const DEFAULT_IMAGE = {
   url: "/images/teaching-teachers-hero.png",
-  alt: "Teaching Teachers curriculum systems field guide for educators",
+  alt: "OpenTeachStack curriculum systems field guide for educators",
 };
 
 interface PageMetadataOptions {

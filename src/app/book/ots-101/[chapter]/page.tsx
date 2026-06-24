@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import ArtifactCard from "@/components/book/ArtifactCard";
 import BookSidebar from "@/components/book/BookSidebar";
 import ChapterProgress from "@/components/book/ChapterProgress";
-import SourcePanel from "@/components/book/SourcePanel";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
@@ -31,7 +30,7 @@ export async function generateMetadata({
 
   if (!chapter) {
     return {
-      title: "Chapter Not Found — Teaching Teachers",
+      title: "Chapter Not Found — OpenTeachStack",
     };
   }
 
@@ -168,7 +167,6 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
           </ul>
         </section>
 
-        <SourcePanel />
       </ArticleBody>
     </FieldGuidePage>
   );

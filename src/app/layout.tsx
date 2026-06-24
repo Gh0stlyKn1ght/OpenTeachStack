@@ -29,7 +29,7 @@ const monoFont = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: rootMetadataBase,
   ...createPageMetadata({
-    title: "Teaching Teachers — Curriculum Systems for Educators",
+    title: "OpenTeachStack — Curriculum Systems for Educators",
     description: "A field guide for educators entering the tech world.",
     path: "/",
   }),
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     "teacher technology",
     "curriculum development",
     "open source education",
-    "teaching teachers",
+    "OpenTeachStack",
     "curriculum systems",
     "AI for teachers",
     "standards alignment",
     "OER",
     "education technology",
   ],
-  authors: [{ name: "Teaching Teachers" }],
+  authors: [{ name: "OpenTeachStack" }],
 };
 
 export default function RootLayout({
@@ -64,7 +64,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
 try {
-  var storedTheme = localStorage.getItem("teaching-teachers-theme");
+  var storedTheme = localStorage.getItem("openteachstack-theme");
   var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
     document.documentElement.classList.add("dark");

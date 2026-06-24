@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import ArtifactCard from "@/components/book/ArtifactCard";
 import CourseStructureSidebar from "@/components/book/CourseStructureSidebar";
 import CourseStructureTOC from "@/components/book/CourseStructureTOC";
@@ -23,11 +24,11 @@ export async function generateMetadata({
   const course = getCourseStructure(courseSlug);
 
   if (!course) {
-    return { title: "Course Not Found — Teaching Teachers" };
+    return { title: "Course Not Found — OpenTeachStack" };
   }
 
   return {
-    title: `${course.code} Course Book — Teaching Teachers`,
+    title: `${course.code} Course Book — OpenTeachStack`,
     description: course.thesis,
   };
 }
@@ -100,6 +101,18 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
               />
             ))}
           </div>
+        </section>
+
+        <section className="border-l-2 border-accent pl-5">
+          <h2>Prompt Support</h2>
+          <p>
+            Use the Prompt Library when you need a teacher-facing starting
+            point for planning, verification, safety checks, documentation, or
+            artifact revision.
+          </p>
+          <Link href="/kb/prompts" className="book-action-secondary">
+            Open Prompt Library
+          </Link>
         </section>
       </ArticleBody>
     </FieldGuidePage>

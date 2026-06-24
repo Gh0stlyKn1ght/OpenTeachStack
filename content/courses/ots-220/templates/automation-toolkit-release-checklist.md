@@ -4,7 +4,7 @@
 - Permission model documented:
 - Test cases recorded:
 - Fake-data proof logs stored:
-- Handoff notes written:
+- Reviewer notes written:
 - Known limitations documented:
 - Review decision:
   - [ ] Ready

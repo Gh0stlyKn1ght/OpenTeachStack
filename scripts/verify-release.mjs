@@ -18,22 +18,42 @@ const checks = [
     label: "npm run check:content-authoring-safety",
     cmd: "npm run check:content-authoring-safety",
   },
+  {
+    label: "npm run check:learner-facing-content",
+    cmd: "npm run check:learner-facing-content",
+  },
+  {
+    label: "npm run check:course-learner-sense",
+    cmd: "npm run check:course-learner-sense",
+  },
+  {
+    label: "npm run check:content-uniqueness",
+    cmd: "npm run check:content-uniqueness",
+  },
+  {
+    label: "npm run check:release-readiness",
+    cmd: "npm run check:release-readiness",
+  },
   { label: "npm run check:source-bank", cmd: "npm run check:source-bank" },
+  {
+    label: "npm run check:rendered-course-lessons",
+    cmd: "npm run check:rendered-course-lessons",
+  },
   { label: "production route smoke", run: runProductionRouteSmoke },
 ];
 
 const smokeRoutes = [
   "/",
-  "/courses",
   "/pathway",
   "/apps-script",
   "/templates",
-  "/library",
+  "/kb/library",
   "/book",
   ...getReleasedCourseBookRoutes(),
   "/courses/ots-280",
   "/kb",
-  "/library/source-bank",
+  "/kb/source-bank",
+  "/prompts",
   "/evidence",
 ];
 
@@ -173,7 +193,15 @@ function requestStatusCode(port, route) {
 
   const script = `
     const http = require("node:http");
-    const req = http.get(${JSON.stringify(url.href)}, (res) => {
+    const startUrl = ${JSON.stringify(url.href)};
+    function request(url, redirects = 0) {
+      const req = http.get(url, (res) => {
+        if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location && redirects < 5) {
+          res.resume();
+          const nextUrl = new URL(res.headers.location, url).href;
+          request(nextUrl, redirects + 1);
+          return;
+        }
       res.resume();
       res.on("end", () => {
         console.log(res.statusCode);
@@ -186,6 +214,8 @@ function requestStatusCode(port, route) {
       console.error(error.message);
       process.exit(1);
     });
+    }
+    request(startUrl);
   `;
 
   return Number(execFileSync(process.execPath, ["-e", script], {

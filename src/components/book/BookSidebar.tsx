@@ -30,7 +30,7 @@ export default function BookSidebar({
               href={chapter.href}
               className={`grid grid-cols-[2rem_1fr] gap-3 rounded-sm px-2 py-2 no-underline transition-colors ${
                 isActive
-                  ? "bg-accent text-background"
+                  ? "course-nav-active"
                   : "text-foreground/68 hover:bg-surface-alt hover:text-foreground"
               }`}
             >
@@ -45,11 +45,11 @@ export default function BookSidebar({
                       href={getSectionHref(chapter, section)}
                       className={`grid grid-cols-[2.6rem_1fr] gap-2 rounded-sm px-2 py-1.5 text-[0.78rem] leading-snug no-underline transition-colors hover:bg-surface-alt hover:text-foreground ${
                         activeSectionSlug === getSectionSlug(section)
-                          ? "bg-surface-alt text-foreground"
+                          ? "course-section-active"
                           : "text-foreground/55"
                       }`}
                     >
-                      <span className="font-mono text-[0.68rem] text-accent/75">
+                      <span className="font-mono text-[0.68rem]">
                         {section.number}
                       </span>
                       <span>{section.title}</span>

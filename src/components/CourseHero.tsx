@@ -34,7 +34,7 @@ export default function CourseHero() {
       <div className="flex flex-wrap items-center gap-4 mb-8">
         <Link
           href="/book/ots-101"
-          className="inline-flex items-center px-5 py-2.5 text-sm font-medium border border-foreground text-foreground no-underline rounded hover:bg-foreground hover:text-background transition-colors"
+          className="inline-flex items-center rounded border border-foreground px-5 py-2.5 text-sm font-medium text-foreground no-underline transition-colors hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
         >
           Begin OTS-101
         </Link>

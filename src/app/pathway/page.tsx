@@ -5,17 +5,17 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "Pathway — Teaching Teachers",
+  title: "Pathway — OpenTeachStack",
   description:
-    "Teaching Teachers pathway overview, including released courses in foundations, Google Workspace, Apps Script, GitHub, media, cyber safety, course sites, coding agents, and capstone studio.",
+    "OpenTeachStack pathway overview, including released courses in foundations, Google Workspace, Apps Script, GitHub, media, cyber safety, course sites, coding agents, and capstone studio.",
 };
 
 export default function PathwayPage() {
   return (
     <FieldGuidePage
-      eyebrow="Teaching Teachers Pathway"
+      eyebrow="OpenTeachStack Pathway"
       title="One foundations course, then specialized tracks."
-      subtitle="Teaching Teachers is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows."
+      subtitle="OpenTeachStack is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows."
       meta={[
         { label: "Start", value: "OTS-101 Foundations" },
         { label: "Tracks", value: String(PATHWAY_COURSES.length) },
@@ -38,7 +38,7 @@ export default function PathwayPage() {
         </p>
         <Link
           href="/book/ots-101"
-          className="inline-flex rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background no-underline transition-opacity hover:opacity-90"
+          className="inline-flex rounded-md bg-[var(--color-text)] px-4 py-2 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
           View OTS-101 Foundations
         </Link>

@@ -40,9 +40,21 @@ for (const script of authorScripts) {
     fail(`${relativePath}: expected section file writes were not found.`);
   }
 
-  if (!/courseJson\.migrationStatus\s*!==\s*"authored"/.test(source)) {
+  if (/parsed\.data\.migrationStatus\s*=\s*"authored"/.test(source)) {
     fail(
-      `${relativePath}: missing guard that avoids rewriting authored course.json unless --force is used.`,
+      `${relativePath}: generated section bodies must not be marked migrationStatus authored.`,
+    );
+  }
+
+  if (!/parsed\.data\.migrationStatus\s*=\s*"generated"/.test(source)) {
+    fail(
+      `${relativePath}: generated section bodies must be marked migrationStatus generated.`,
+    );
+  }
+
+  if (!/courseJson\.migrationStatus\s*!==\s*"generated"/.test(source)) {
+    fail(
+      `${relativePath}: missing guard that avoids rewriting generated course.json unless --force is used.`,
     );
   }
 }

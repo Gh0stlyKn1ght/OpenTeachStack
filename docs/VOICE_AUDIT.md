@@ -1,10 +1,10 @@
-# Teaching Teachers Voice Audit
+# OpenTeachStack Voice Audit
 
 Date: 2026-06-20
 
 ## Summary
 
-Teaching Teachers has the right structure: a pathway, not one overloaded course. The next improvement is voice and experience. The site should sound less like polished professional development and more like a field-tested teacher-builder system.
+OpenTeachStack has the right structure: a pathway, not one overloaded course. The next improvement is voice and experience. The site should sound less like polished professional development and more like a field-tested teacher-builder system.
 
 Core direction:
 

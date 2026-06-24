@@ -38,7 +38,7 @@ Release status: pass with follow-up polish
 
 ## Required Follow-Up After Launch
 
-- Run a browser-based keyboard pass on `/`, `/start`, `/course`, `/syllabus`, `/templates`, `/library/source-bank`, `/course/audit`, and `/course/release`.
+- Run a browser-based keyboard pass on `/`, `/start`, `/course`, `/syllabus`, `/templates`, `/kb/source-bank`, `/course/audit`, and `/course/release`.
 - Run an automated contrast/a11y scan when the next UI polish tranche starts.
 - Add one completed accessible capstone example after the first real classroom or peer-review pilot.
 - Add captions/transcripts to any future media companion materials before publishing them.

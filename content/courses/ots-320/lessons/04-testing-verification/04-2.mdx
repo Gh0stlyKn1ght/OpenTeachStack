@@ -17,46 +17,69 @@ migrationStatus: authored
 ---
 # Manual QA and Accessibility Checks
 
-## Core Idea
+## Why This Matters
 
-Testing and Verification is about verification habits that prove generated work is useful, safe, and reversible. In this section, **Manual QA and Accessibility Checks** turns that idea into a practical, teacher-owned process that stays reviewable and reversible.
+A teacher using coding agents while protecting authored curriculum needs more than a tool list or a checklist. The goal in **Testing and Verification** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
 
-The chapter decision is focused and specific: which checks should always happen before sharing, classroom use, or publication
+For **Manual QA and Accessibility Checks**, the practical pressure is simple: letting an agent rewrite authored curriculum, accepting a passing build as the only review, or testing with real student data. This page turns that pressure into a visible update to **Test checklist**.
 
-## Do This
+## Classroom Scenario
 
-- Interpret Manual QA and Accessibility Checks in context: verification habits that prove generated work is useful, safe, and reversible
-- Use this section to apply the chapter intent using one concrete workflow and one explicit constraint.
-- Link the result to Test checklist with ownership, dates, and review notes.
-- Attach source notes before any platform or workflow claims go public.
-- Decide what can be public, what stays private, and what is queued.
+Use this situation as the working example: an agent-assisted printable rubric page where the prompt names allowed files, blocked files, acceptance criteria, tests, and teacher review steps. By the end, the work should support this habit: scope the task, review the diff, test with fake data, and keep teacher judgment in control.
 
-## Evidence of Completion
+In this scenario, the learner should be able to point to:
 
-- a visible evidence line connected to the chapter artifact.
-- Teacher-oriented explanation is clear enough for a colleague to recreate or review.
-- The section connects to the chapter artifact and course outcome.
-- A privacy and safety note is attached for any generated content or synthetic data use.
-- A revision action is recorded for one follow-up step.
+- what the teacher prepares before students see the work,
+- what students will read, build, submit, or discuss,
+- what evidence shows the work is ready,
+- what gets revised after the first use.
 
-## Source and Template References
+## Key Idea
 
-Use official references before making platform, tooling, or workflow claims:
+An agent can draft changes, but the teacher owns scope, review, testing, acceptance, and rollback.
 
-- [Source 1: Next.js linting](https://nextjs.org/docs/app/building-your-application/configuring/eslint)
-- [Source 2: Next.js build docs](https://nextjs.org/docs/app/building-your-application/deploying)
-- [Source 3: Route testing and status checks](https://nextjs.org/docs/app/api-reference/functions/use-router)
+Watch for this mistake: Letting an agent rewrite curriculum content or accepting code because the build passed once.
 
-- Course template: [Test checklist template](/content/courses/ots-320/templates/fake-data-testing-protocol.md)
+## What You Will Do
 
-## Accessibility, Privacy, and Safety Review
+Make this page concrete by writing three small decisions:
 
-- Apply the chapter caution: calling generated behavior complete without lint, route, accessibility, or rollback checks.
-- work remains inspectable and teacher-owned.
-- Use fake or synthetic examples only when this section involves student-like data.
-- Run at least one check against version control or test output before reuse.
-- Record source, route, and rollback decisions before publication.
+- Before class, connect manual qa and accessibility checks to one setup decision in the test checklist: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
+- During class, connect manual qa and accessibility checks to one student action in branches, prompts, diffs, tests, fake data, screenshots, rollback notes, and small classroom tools: what learners read, build, submit, discuss, or revise while working through an agent-assisted printable rubric page where the prompt names allowed files, blocked files, acceptance criteria, tests, and teacher review steps.
+- After class, review manual qa and accessibility checks through the testing and verification lens: what evidence proves the move worked, which mistake to avoid (letting an agent rewrite curriculum content or accepting code because the build passed once), and what revision supports scope the task, review the diff, test with fake data, and keep teacher judgment in control.
+
+## Build the Artifact
+
+Use **Manual QA and Accessibility Checks** to make one classroom decision visible inside **Test checklist**.
+
+Add this to your artifact:
+
+- Classroom context: branches, prompts, diffs, tests, fake data, screenshots, rollback notes, and small classroom tools; an agent-assisted printable rubric page where the prompt names allowed files, blocked files, acceptance criteria, tests, and teacher review steps.
+- Artifact entry: In **Test checklist**, add the decision for **Manual QA and Accessibility Checks** with the student-facing evidence and the review owner.
+- Example entry: Agent entry: Allowed files are rubric page and style module; blocked files are lesson MDX; acceptance requires diff review, route smoke, and fake-data check.
+- Review check: Check the entry against tool documentation, repository diffs, route checks, accessibility review, and fake-data test records, then write what should change after the first classroom use.
+- Peer review check: A colleague should be able to open the testing and verification artifact, understand the decision behind **Manual QA and Accessibility Checks**, and know the next action without extra explanation.
+
+## What Good Work Looks Like
+
+A strong **manual qa and accessibility checks** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+
+For this lesson, a strong entry might say:
+
+> Agent entry: Allowed files are rubric page and style module; blocked files are lesson MDX; acceptance requires diff review, route smoke, and fake-data check.
+
+That level of detail is enough to review. It is also small enough to revise after one classroom use.
+
+## Quality Check
+
+Before moving on, confirm:
+
+- Your artifact entry is stored in **Test checklist** rather than kept as a private reminder.
+- The student-facing task or evidence is named in plain language.
+- The review step names a source, safety, privacy, accessibility, or maintenance check.
+- The common mistake is avoided: Letting an agent rewrite curriculum content or accepting code because the build passed once.
+- The next classroom use or revision is obvious.
 
 ## Reflection
 
-What is one concrete safety or review outcome from this section that improves teacher confidence in the next agent-assisted step?
+What would a busy teacher misunderstand if they only saw your **Test checklist** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.

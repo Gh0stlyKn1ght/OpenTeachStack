@@ -4,7 +4,7 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "Sample Robotics Mini-Unit — Teaching Teachers",
+  title: "Sample Robotics Mini-Unit — OpenTeachStack",
   description:
     "A complete OTS-101 sample mini-unit package for an intro robotics lesson on what makes something a robot.",
 };

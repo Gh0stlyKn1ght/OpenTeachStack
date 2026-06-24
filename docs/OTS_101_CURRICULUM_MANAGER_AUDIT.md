@@ -30,7 +30,7 @@ Overall readiness score: 8.4 / 10
 | Activity quality | 7 | Build tasks are practical and artifact-based. | Templates and lesson build prompts | Add more examples of finished artifacts. |
 | Assessment quality | 7 | Capstone, peer review, and artifact checks exist. | Capstone and audit page | Add more explicit evidence expectations. |
 | Rubric quality | 7 | Capstone rubric now has performance levels, but needs classroom trial feedback. | Capstone rubric | Revalidate after pilot use. |
-| Resource quality | 8 | Source Bank is a major strength. | `src/lib/sourceBank.ts` and `/library/source-bank` | Keep verification workflow current. |
+| Resource quality | 8 | Source Bank is a major strength. | `src/lib/sourceBank.ts` and `/kb/source-bank` | Keep verification workflow current. |
 | Accessibility | 7 | Accessibility is present in the release check, capstone checklist, and delivery expectations. | Syllabus, audit, capstone checks, accessibility release check | Run formal browser audit after launch. |
 | Differentiation | 6 | Beginner orientation exists, but accommodations and extensions are light. | Syllabus and templates | Add support/extension examples. |
 | Safety/privacy/copyright | 8 | Strong throughline, especially AI verification, Source Bank, and licensing checks. | Safety guide, capstone, templates | Add lesson-level reminders where thin. |

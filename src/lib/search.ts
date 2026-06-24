@@ -145,7 +145,7 @@ export function getKnowledgeBaseSearchRecords(): SearchRecord[] {
     })),
     ...sourceBankResources.map((resource) => ({
       title: resource.name,
-      href: "/library/source-bank",
+      href: "/kb/source-bank",
       eyebrow: resource.category,
       description: resource.bestUse,
       keywords: [

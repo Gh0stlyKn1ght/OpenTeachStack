@@ -21,29 +21,31 @@
   --color-pink: #8c4351;
   --color-selection-bg: #34548a33;
   --color-selection-text: #0f0f14;
+  --color-on-accent: #fbf7ef;
 }
 
 /* ── Dark Mode ────────────────────────────────────────────────────────── */
 .dark {
-  --color-bg: #1a1b2c;
-  --color-text: #a9b1dc;
-  --color-accent: #7aa2f7;
-  --color-link: #7dcfff;
-  --color-slate: #787c99;
-  --color-border: #414868;
-  --color-surface: #24283b;
-  --color-surface-alt: #28344a;
-  --color-code-bg: #16161e;
-  --color-heading: #c0caf5;
-  --color-blue: #7aa2f7;
-  --color-cyan: #7dcfff;
-  --color-green: #73daca;
-  --color-amber: #e0af68;
-  --color-orange: #ff9e64;
-  --color-purple: #bb9af7;
-  --color-pink: #f7768e;
-  --color-selection-bg: #28344a;
-  --color-selection-text: #c0caf5;
+  --color-bg: #101419;
+  --color-text: #d8d2c4;
+  --color-accent: #d6a85f;
+  --color-link: #8fb7d8;
+  --color-slate: #9b9488;
+  --color-border: #2d333a;
+  --color-surface: #171c22;
+  --color-surface-alt: #20262d;
+  --color-code-bg: #0b0f14;
+  --color-heading: #f1e6d0;
+  --color-blue: #8fb7d8;
+  --color-cyan: #83c5be;
+  --color-green: #9abf88;
+  --color-amber: #d6a85f;
+  --color-orange: #d08b5b;
+  --color-purple: #b49bd8;
+  --color-pink: #d28ca0;
+  --color-selection-bg: #d6a85f33;
+  --color-selection-text: #f1e6d0;
+  --color-on-accent: #101419;
 }
 
 /* ── Tailwind v4 Theme Tokens ─────────────────────────────────────────── */
@@ -119,7 +121,7 @@ body::after {
 }
 
 .dark body::after {
-  opacity: 0.08;
+  opacity: 0.025;
 }
 
 .reading-progress {
@@ -140,16 +142,7 @@ body::after {
   pointer-events: none;
 }
 
-/* ── Course Book Layout ──────────────────────────────────────────────── */
-.book-shell {
-  display: grid;
-  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr) minmax(12rem, 17rem);
-  gap: 2rem;
-  width: min(100% - 2rem, 96rem);
-  margin: 0 auto;
-  padding: 2rem 0 5rem;
-}
-
+/* ── Active Course Book Helpers ──────────────────────────────────────── */
 .book-sidebar,
 .book-notes {
   min-width: 0;
@@ -173,20 +166,6 @@ body::after {
 .book-notes-inner {
   border-left: 1px solid var(--color-border);
   padding-left: 1rem;
-}
-
-.book-canvas {
-  min-width: 0;
-  padding: 0 0.25rem;
-}
-
-.book-canvas > section {
-  margin-top: 3rem;
-}
-
-.book-canvas p,
-.book-canvas li {
-  max-width: 48rem;
 }
 
 .book-chapter-header {
@@ -233,19 +212,19 @@ body::after {
 }
 
 .book-action {
-  background: var(--color-foreground);
-  color: var(--color-background);
+  background: var(--color-text);
+  color: var(--color-bg);
 }
 
 .book-action:hover {
-  color: var(--color-background);
+  color: var(--color-bg);
   opacity: 0.9;
   text-decoration: none;
 }
 
 .book-action-secondary {
   border: 1px solid var(--color-border);
-  color: var(--color-foreground);
+  color: var(--color-text);
 }
 
 .book-action-secondary:hover {
@@ -254,47 +233,39 @@ body::after {
   text-decoration: none;
 }
 
-.method-chain {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+.course-nav-active {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.course-nav-active span,
+.course-nav-active:hover {
+  color: var(--color-on-accent);
+}
+
+.course-section-active {
+  background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface));
+  color: var(--color-text);
+}
+
+.course-section-active span {
+  color: var(--color-text);
+}
+
+.course-section-status {
+  display: inline-flex;
   border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  background: color-mix(in srgb, var(--color-surface-alt) 50%, transparent);
+  padding: 0.75rem 0.9rem;
+  color: color-mix(in srgb, var(--color-text) 76%, transparent);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
-.method-chain span {
-  border-right: 1px solid var(--color-border);
-  padding: 0.85rem 0.7rem;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-foreground);
-}
-
-.method-chain span:last-child {
-  border-right: 0;
-}
-
-/* ── Knowledge Base Field Manual ─────────────────────────────────────── */
+/* ── Knowledge Base Field Guide Alignment ────────────────────────────── */
 .kb-docs-shell {
-  display: grid;
-  grid-template-columns: minmax(13rem, 16rem) minmax(0, 48rem) minmax(11rem, 15rem);
-  gap: 2rem;
-  width: min(100% - 2rem, 96rem);
-  margin: 0 auto;
-  padding: 2rem 0 5rem;
-}
-
-.kb-docs-sidebar,
-.kb-docs-related {
-  min-width: 0;
-}
-
-.kb-docs-sidebar,
-.kb-docs-related {
-  position: sticky;
-  top: 5.5rem;
-  align-self: start;
+  width: min(100% - 2rem, 88rem);
 }
 
 .kb-docs-title {
@@ -308,7 +279,8 @@ body::after {
 }
 
 .kb-docs-sidebar {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+  padding-right: 1rem;
 }
 
 .kb-docs-search {
@@ -340,14 +312,14 @@ body::after {
 
 .kb-docs-category-list,
 .kb-docs-mobile-nav nav,
-.kb-docs-related nav {
+.kb-docs-related-list {
   display: grid;
   gap: 0.25rem;
 }
 
 .kb-docs-category-list a,
 .kb-docs-mobile-nav a,
-.kb-docs-related a {
+.kb-docs-related-list a {
   border-left: 2px solid transparent;
   color: color-mix(in srgb, var(--color-foreground) 72%, transparent);
   padding: 0.45rem 0.65rem;
@@ -358,7 +330,7 @@ body::after {
 
 .kb-docs-category-list a:hover,
 .kb-docs-mobile-nav a:hover,
-.kb-docs-related a:hover {
+.kb-docs-related-list a:hover {
   border-left-color: var(--color-accent);
   color: var(--color-foreground);
   background: color-mix(in srgb, var(--color-surface-alt) 48%, transparent);
@@ -384,8 +356,8 @@ body::after {
 
 .kb-docs-content {
   min-width: 0;
-  border-inline: 1px solid color-mix(in srgb, var(--color-border) 76%, transparent);
-  padding: 0 2rem 2rem;
+  max-width: 46rem;
+  padding-bottom: 2rem;
 }
 
 .kb-docs-content > :first-child {
@@ -402,24 +374,18 @@ body::after {
 }
 
 .kb-docs-related {
-  border-left: 1px solid var(--color-border);
-  padding-left: 1rem;
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
 }
 
-.kb-docs-related p,
 .kb-docs-kicker {
-  margin-top: 0;
+  margin: 0 0 0.6rem;
 }
 
 @media (max-width: 78rem) {
   .kb-docs-shell {
-    grid-template-columns: minmax(0, 1fr);
     width: min(100% - 1.5rem, 62rem);
-  }
-
-  .kb-docs-sidebar,
-  .kb-docs-related {
-    position: static;
   }
 
   .kb-docs-category-list {
@@ -431,22 +397,20 @@ body::after {
   }
 
   .kb-docs-content {
-    border-inline: 0;
     padding-inline: 0;
   }
 
+  .kb-docs-sidebar {
+    border-right: 0;
+    padding-right: 0;
+  }
+
   .kb-docs-related {
-    border: 1px solid var(--color-border);
-    padding: 1rem;
+    border-top: 1px solid var(--color-border);
   }
 }
 
 @media (max-width: 74rem) {
-  .book-shell {
-    grid-template-columns: minmax(0, 1fr);
-    width: min(100% - 1.5rem, 62rem);
-  }
-
   .book-sidebar-inner {
     display: none;
   }
@@ -496,13 +460,6 @@ body::after {
     margin-top: 1rem;
   }
 
-  .method-chain {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .method-chain span {
-    border-bottom: 1px solid var(--color-border);
-  }
 }
 
 @media print {
@@ -514,15 +471,6 @@ body::after {
     display: none !important;
   }
 
-  .book-shell {
-    display: block;
-    width: 100%;
-    padding: 0;
-  }
-
-  .book-canvas {
-    padding: 0;
-  }
 }
 
 .full-course-print {
@@ -576,6 +524,21 @@ body::after {
   width: min(100% - 2rem, 88rem);
 }
 
+.field-guide-shell-sidebar-right {
+  grid-template-columns: minmax(0, 46rem) minmax(13rem, 17rem);
+  gap: 1.5rem;
+  width: min(100% - 2rem, 76rem);
+}
+
+.field-guide-shell-sidebar-right .field-guide-sidebar {
+  grid-column: 2;
+}
+
+.field-guide-shell-sidebar-right .field-guide-article {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .field-guide-sidebar {
   position: sticky;
   top: 5.5rem;
@@ -598,6 +561,20 @@ body::after {
 .field-guide-article {
   max-width: 46rem;
   min-width: 0;
+}
+
+.about-author-portrait {
+  width: min(100%, 16rem);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  opacity: 0.94;
+}
+
+.about-author-portrait img {
+  display: block;
 }
 
 .field-guide-breadcrumbs {
@@ -826,8 +803,19 @@ body::after {
     width: min(100% - 1.5rem, 48rem);
   }
 
+  .field-guide-shell-sidebar-right .field-guide-sidebar,
+  .field-guide-shell-sidebar-right .field-guide-article {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .field-guide-sidebar {
     position: static;
+  }
+
+  .about-author-portrait {
+    width: min(100%, 18rem);
+    margin: 0 auto 2rem;
   }
 
   .field-guide-sidebar .book-sidebar-inner {
@@ -923,6 +911,51 @@ a {
 
 a:hover {
   text-decoration-color: var(--color-link);
+}
+
+a.book-action,
+a.book-action:visited {
+  background: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+a.book-action:hover {
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+a.book-action-secondary,
+a.book-action-secondary:visited {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.book-action-secondary:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a.course-nav-active,
+a.course-nav-active:visited,
+a.course-nav-active:hover {
+  color: var(--color-on-accent);
+  text-decoration: none;
+}
+
+a.course-nav-active span {
+  color: var(--color-on-accent);
+}
+
+a.course-section-active,
+a.course-section-active:visited,
+a.course-section-active:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.course-section-active span {
+  color: var(--color-text);
 }
 
 /* ── Code ─────────────────────────────────────────────────────────────── */

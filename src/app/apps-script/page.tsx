@@ -6,9 +6,9 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { getAllContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Apps Script Labs — Teaching Teachers Pathway",
+  title: "Apps Script Labs — OpenTeachStack Pathway",
   description:
-    "Supplemental Google Apps Script labs for the Teaching Teachers pathway. Apps Script belongs in OTS-220 and is not required in OTS-101 Foundations.",
+    "Supplemental Google Apps Script labs for the OpenTeachStack pathway. Apps Script belongs in OTS-220 and is not required in OTS-101 Foundations.",
 };
 
 export default function AppsScriptPage() {
@@ -49,9 +49,9 @@ export default function AppsScriptPage() {
         </p>
         <p>
           This course connects to several other parts of the project. The{" "}
-          <Link href="/prompts">Prompt Library</Link> includes a dedicated
+          <Link href="/kb/prompts">Prompt Library</Link> includes a dedicated
           prompt for generating Apps Script code with safety guidelines. The{" "}
-          <Link href="/safety">Safety Guide</Link> covers code review
+          <Link href="/kb/safety">Safety Guide</Link> covers code review
           practices for AI-generated scripts. OTS-320 extends that review habit
           into AI coding-agent work.
         </p>
@@ -195,18 +195,18 @@ export default function AppsScriptPage() {
             &mdash; Google&rsquo;s curated collection of starter projects.
           </li>
           <li>
-            <Link href="/prompts#apps-script-code">
+            <Link href="/kb/prompts">
               Apps Script Prompt Template
             </Link>{" "}
             &mdash; A structured prompt for generating Apps Script code with
             AI assistance.
           </li>
           <li>
-            <Link href="/safety">AI Safety Rules for Teachers</Link>{" "}
+            <Link href="/kb/safety">AI Safety Rules for Teachers</Link>{" "}
             &mdash; Code review practices for AI-generated scripts.
           </li>
           <li>
-            <Link href="/resources">Teaching Teachers Resource Library</Link>{" "}
+            <Link href="/kb/resources">OpenTeachStack Resource Library</Link>{" "}
             &mdash; Curated tools and references for the full course.
           </li>
         </ul>

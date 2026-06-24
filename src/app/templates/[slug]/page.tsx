@@ -22,11 +22,11 @@ export async function generateMetadata({
   const template = getFoundationTemplate(slug);
 
   if (!template) {
-    return { title: "Template Not Found — Teaching Teachers" };
+    return { title: "Template Not Found — OpenTeachStack" };
   }
 
   return {
-    title: `${template.title} — Teaching Teachers Templates`,
+    title: `${template.title} — OpenTeachStack Templates`,
     description: template.purpose,
   };
 }

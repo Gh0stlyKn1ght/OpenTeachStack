@@ -3,29 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "About JC Nevarez — Teaching Teachers",
+  title: "About JC Nevarez — OpenTeachStack",
   description:
-    "About JC Nevarez, the educator and builder behind Teaching Teachers.",
+    "About JC Nevarez, the educator and builder behind OpenTeachStack.",
 };
 
 export default function AboutPage() {
   return (
     <FieldGuidePage
-      eyebrow="About the Author"
+      eyebrow="Author Note"
       title="JC Nevarez"
       subtitle="Computer science, robotics, engineering, and cybersecurity educator based in New Jersey."
-      breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Role", value: AUTHOR.role },
-        { label: "Project", value: "Teaching Teachers" },
+        { label: "Project", value: "OpenTeachStack" },
         { label: "License", value: LICENSE.content.spdx },
       ]}
+      sidebarPosition="right"
       sidebar={
-        <figure className="overflow-hidden rounded-md border border-border bg-surface">
+        <figure className="about-author-portrait">
           <Image
             src="/aboutme.jpg"
             alt="Black and white portrait of JC Nevarez"
@@ -38,14 +37,10 @@ export default function AboutPage() {
       }
     >
       <ArticleBody>
-        <div className="mt-5" data-print-hide>
-          <PrintPageButton />
-        </div>
-
         <div className="prose-academic">
         <h2>About the Author</h2>
         <p>
-          I built <strong>Teaching Teachers</strong> because I needed it myself.
+          I built <strong>OpenTeachStack</strong> because I needed it myself.
         </p>
         <p>
           My name is <strong>JC Nevarez</strong>, and I am a computer science,
@@ -69,13 +64,13 @@ export default function AboutPage() {
           or teachers can actually build.
         </p>
         <p>
-          I created <strong>Teaching Teachers</strong> because I kept seeing the
+          I created <strong>OpenTeachStack</strong> because I kept seeing the
           same problem: teachers are expected to design modern curriculum, use
           AI responsibly, manage digital resources, create assessments, align
           to standards, and deliver engaging lessons, but very few are ever
           taught the technical systems behind that work.
         </p>
-        <p>Teaching Teachers is my answer to that gap.</p>
+        <p>OpenTeachStack is my answer to that gap.</p>
         <p>
           This project is built for educators who want more control over their
           curriculum, tools, resources, and professional workflow. It focuses on
@@ -95,7 +90,7 @@ export default function AboutPage() {
         <p>This is not a generic ed-tech course.</p>
         <p>This is a field guide for teacher independence.</p>
         <p>
-          I built Teaching Teachers from my own experience designing robotics,
+          I built OpenTeachStack from my own experience designing robotics,
           AI, cybersecurity, engineering, and technology courses while learning
           the tools, mistakes, and workflows that most professional development
           never explains. My goal is to make that knowledge usable for other
@@ -103,12 +98,32 @@ export default function AboutPage() {
           without waiting for a perfect system to be handed to them.
         </p>
         <p>
-          Teaching Teachers is open-source, practical, and intentionally built
+          OpenTeachStack is open-source, practical, and intentionally built
           from the classroom outward.
         </p>
+        <p>
+          Video walkthroughs and additional companion content are coming soon.
+          The written course book is the foundation; the media layer will grow
+          around it as the project matures.
+        </p>
 
-        <h2>Why I Built Teaching Teachers</h2>
-        <p>I built Teaching Teachers because I needed it myself.</p>
+        <h2>Other Projects</h2>
+        <p>
+          OpenTeachStack connects to other classroom and build work I maintain:
+        </p>
+        <ul>
+          {AUTHOR.projects.map((project) => (
+            <li key={project.url}>
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                {project.name}
+              </a>
+              : {project.description}
+            </li>
+          ))}
+        </ul>
+
+        <h2>Why I Built OpenTeachStack</h2>
+        <p>I built OpenTeachStack because I needed it myself.</p>
         <p>
           As a teacher building courses in robotics, AI, cybersecurity,
           engineering, drones, and technology, I had to learn far more than
@@ -122,7 +137,7 @@ export default function AboutPage() {
           We are handed platforms, templates, logins, and expectations, but not
           the system behind the work.
         </p>
-        <p>Teaching Teachers is my attempt to document that system.</p>
+        <p>OpenTeachStack is my attempt to document that system.</p>
         <p>
           It is for educators who want to build better courses, use AI without
           losing their own voice, understand standards without turning them into
@@ -144,21 +159,25 @@ export default function AboutPage() {
 
         <h2>Contact</h2>
         <p>
-          Teaching Teachers is created and maintained by{" "}
-          <a href={AUTHOR.url} target="_blank" rel="noopener noreferrer">
+          OpenTeachStack is created and maintained by{" "}
+          <a
+            href={AUTHOR.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {AUTHOR.name}
           </a>
           , {AUTHOR.role}.
         </p>
         <ul>
           <li>
-            <strong>Email:</strong>{" "}
-            <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
-          </li>
-          <li>
-            <strong>Website:</strong>{" "}
-            <a href={AUTHOR.url} target="_blank" rel="noopener noreferrer">
-              {AUTHOR.url}
+            <strong>LinkedIn:</strong>{" "}
+            <a
+              href={AUTHOR.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/gh0stly
             </a>
           </li>
         </ul>

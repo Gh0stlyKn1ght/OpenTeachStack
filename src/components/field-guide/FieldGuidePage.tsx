@@ -16,6 +16,7 @@ interface FieldGuidePageProps {
   }[];
   breadcrumbs?: BreadcrumbLink[];
   sidebar?: React.ReactNode;
+  sidebarPosition?: "left" | "right";
   children: React.ReactNode;
   footer?: React.ReactNode;
 }
@@ -27,12 +28,17 @@ export default function FieldGuidePage({
   meta = [],
   breadcrumbs = [],
   sidebar,
+  sidebarPosition = "left",
   children,
   footer,
 }: FieldGuidePageProps) {
+  const shellClassName = sidebar
+    ? `field-guide-shell field-guide-shell-with-sidebar field-guide-shell-sidebar-${sidebarPosition}`
+    : "field-guide-shell";
+
   return (
     <main className="field-guide-page">
-      <div className={sidebar ? "field-guide-shell field-guide-shell-with-sidebar" : "field-guide-shell"}>
+      <div className={shellClassName}>
         {sidebar ? <div className="field-guide-sidebar">{sidebar}</div> : null}
         <article className="field-guide-article">
           {breadcrumbs.length > 0 ? (

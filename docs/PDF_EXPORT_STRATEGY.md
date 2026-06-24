@@ -6,7 +6,7 @@ Scope: OTS-101 syllabus, template library, template detail pages, and future cou
 
 ## Decision
 
-Teaching Teachers will use browser print-to-PDF as the first PDF path and Markdown downloads as the canonical editable template export.
+OpenTeachStack will use browser print-to-PDF as the first PDF path and Markdown downloads as the canonical editable template export.
 
 Do not add fake Google Docs, Google Sheets, DOCX, or PDF download links unless the generated files exist in the repo or are produced by a verified route.
 

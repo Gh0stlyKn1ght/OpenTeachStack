@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ArtifactCard from "@/components/book/ArtifactCard";
 import BookSidebar from "@/components/book/BookSidebar";
 import CourseTOC from "@/components/book/CourseTOC";
@@ -11,9 +12,9 @@ import { BOOK_CHAPTERS, BOOK_COURSE_CODE, BOOK_COURSE_PATH } from "@/lib/book";
 import { COURSE_CODE, COURSE_SUBTITLE, COURSE_THESIS, COURSE_TITLE } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: `${BOOK_COURSE_CODE} Course Book — Teaching Teachers`,
+  title: `${BOOK_COURSE_CODE} Course Book — OpenTeachStack`,
   description:
-    `${BOOK_COURSE_CODE} book-style table of contents for Teaching Teachers Foundations.`,
+    `${BOOK_COURSE_CODE} book-style table of contents for the OpenTeachStack foundations course.`,
 };
 
 export default function Ots101BookPage() {
@@ -83,6 +84,19 @@ export default function Ots101BookPage() {
               />
             ))}
           </div>
+        </section>
+
+        <section className="border-l-2 border-accent pl-5">
+          <h2>Prompt Support</h2>
+          <p>
+            OTS-101 includes prompt-library work, but prompts are never final
+            artifacts by themselves. Copy a prompt, add your context, verify the
+            output, revise it in teacher voice, and save the result with the
+            matching course artifact.
+          </p>
+          <Link href="/kb/prompts" className="book-action-secondary">
+            Open Prompt Library
+          </Link>
         </section>
 
         <section>

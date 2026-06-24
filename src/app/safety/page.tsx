@@ -5,7 +5,7 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "AI Safety Rules for Teachers — Teaching Teachers",
+  title: "AI Safety Rules for Teachers — OpenTeachStack",
   description:
     "Non-negotiable guidelines for using AI tools in curriculum work. Covers student data, standards verification, citation accuracy, code review, and responsible AI usage.",
 };
@@ -107,7 +107,7 @@ export default function SafetyPage() {
               open while reviewing AI output. Cross-reference every standard
               code and description the AI produces. Use the &ldquo;Aligning
               Lessons to Standards&rdquo; prompt in the{" "}
-              <Link href="/prompts">Prompt Library</Link> as a verification
+              <Link href="/kb/prompts">Prompt Library</Link> as a verification
               step, not a substitute for reading the actual standards.
             </p>
           </div>
@@ -539,7 +539,7 @@ export default function SafetyPage() {
         <ul className="space-y-1 text-sm">
           <li>
             <Link
-              href="/prompts"
+              href="/kb/prompts"
               className="text-link no-underline hover:underline"
             >
               Prompt Library
@@ -551,7 +551,7 @@ export default function SafetyPage() {
           </li>
           <li>
             <Link
-              href="/resources"
+              href="/kb/resources"
               className="text-link no-underline hover:underline"
             >
               Resource Library

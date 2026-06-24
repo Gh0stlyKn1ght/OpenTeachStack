@@ -270,7 +270,7 @@ function bodyFor(chapter, section, guide) {
 
 ## Core Idea
 
-${chapter.title} emphasizes **${guide.decision}**. In this section, **${section.title}** applies that intent to one concrete teacher-owned action with visibility for peers and future maintenance.
+${chapter.title} emphasizes **${guide.decision}**. This lesson turns **${section.title}** into a capstone evidence item that peers can inspect and maintain later.
 
 ## Do This
 
@@ -282,7 +282,7 @@ ${evidence.map((item) => `- ${item}`).join("\n")}
 
 ## Source and Template References
 
-Use official references before making platform, workflow, or release claims:
+Check references before publishing platform, workflow, or release claims:
 
 ${sourceList}
 
@@ -360,17 +360,17 @@ for (const chapter of courseJson.chapters ?? []) {
       continue;
     }
 
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "generated";
     parsed.content = bodyFor(chapter, section, chapterGuide);
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
   }
 }
 
-if (force || courseJson.migrationStatus !== "authored") {
+if (force || courseJson.migrationStatus !== "generated") {
   if (dryRun) {
     console.log("[dry-run] WRITE: course.json");
   } else {
-    courseJson.migrationStatus = "authored";
+    courseJson.migrationStatus = "generated";
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
   }
 }
@@ -378,5 +378,5 @@ if (force || courseJson.migrationStatus !== "authored") {
 if (dryRun) {
   console.log("[dry-run] OTS-399 authoring complete (no files written).");
 } else {
-  console.log("Authored OTS-399 section files and updated migration status.");
+  console.log("Generated OTS-399 section files and updated migration status.");
 }

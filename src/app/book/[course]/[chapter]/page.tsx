@@ -34,7 +34,7 @@ export async function generateMetadata({
   const record = getCourseChapter(courseSlug, chapterSlug);
 
   if (!record) {
-    return { title: "Chapter Not Found — Teaching Teachers" };
+    return { title: "Chapter Not Found — OpenTeachStack" };
   }
 
   return {

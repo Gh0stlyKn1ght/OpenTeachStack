@@ -14,9 +14,9 @@ The pathway capstone should prove that a teacher can assemble a curriculum syste
 
 OTS-399 should not reward size for its own sake. The finished system should be small enough to understand, complete enough to teach or publish, and documented enough for another educator to review.
 
-## Source Draft Material
+## Course Source Material
 
-This outline is extracted from the existing foundations capstone and pathway course outlines:
+This outline is backed by the foundations capstone and pathway course outlines:
 
 - `content/lessons/capstone-build-your-mini-course.mdx`
 - `docs/OTS_201_COURSE_OUTLINE.md`
@@ -45,7 +45,7 @@ The final artifact should include:
 
 ## Chapter Outline
 
-| Chapter | Focus | Existing draft sources | Build artifact |
+| Chapter | Focus | Source material | Build artifact |
 | --- | --- | --- | --- |
 | 01. Capstone Scope | Choose a right-sized teaching need and define the evidence required. | `capstone-build-your-mini-course.mdx` | Capstone proposal |
 | 02. Curriculum System Assembly | Connect lessons, resources, assessment, delivery, templates, and revision history. | OTS-101 capstone, OTS-201 outline | System map |
@@ -72,7 +72,7 @@ The authored course is represented in `src/lib/courseStructures.ts` and rendered
 
 ## Next Content Tasks
 
-1. Continue replacing course-owned scaffold `.mdx` files with long-form lesson bodies when the reader migrates from registry guides to course-local MDX.
+1. Keep course-owned lesson bodies aligned with the shared book route and release checks.
 2. Keep the capstone proposal, artifact index, technical evidence log, peer review protocol, and final release checklist inside `content/courses/ots-399/templates/`.
 3. Keep source references and pathway traceability notes inside the OTS-399 course folder.
 4. Use the final release checklist before calling an individual capstone project complete.

@@ -8,9 +8,9 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
-  title: "Evidence — Teaching Teachers",
+  title: "Evidence — OpenTeachStack",
   description:
-    "Evidence and source-backed rationale for the Teaching Teachers pathway.",
+    "Evidence and source-backed rationale for the OpenTeachStack pathway.",
 };
 
 export default function EvidencePage() {

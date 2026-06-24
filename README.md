@@ -1,4 +1,4 @@
-# Teaching Teachers
+# OpenTeachStack
 
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-blue?style=flat-square)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square)](CONTENT_LICENSE.md)
@@ -6,17 +6,17 @@
 [![TypeScript 5.x](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Teaching%20Teachers-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/Teacher-techops)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/Teacher-techops/pulls)
+[![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
 [![OTS-101: 10 Chapters](https://img.shields.io/badge/OTS--101-10%20Chapters-0969DA?style=flat-square)](#ots-101--teaching-teachers-foundations)
 
 **A field guide for educators entering the tech world.**
 
-Teaching Teachers is an open-source pathway for educators building curriculum
+OpenTeachStack is an open-source pathway for educators building curriculum
 systems with AI, open resources, Google Workspace, and practical classroom
 workflows.
 
-Teaching Teachers is not one giant course. It is a course path. The first course is:
+OpenTeachStack is not one giant course. It is a course path. The first course is:
 
 **OTS-101 — Teaching Teachers Foundations**
 
@@ -111,7 +111,7 @@ Useful course entry points:
 - `/start` — non-technical starting path
 - `/book/ots-101` — OTS-101 course book
 - `/course` — compatibility redirect to the OTS-101 course book
-- `/library/source-bank` — verified links and official resources
+- `/kb/source-bank` — verified links and official resources
 - `/templates` — OTS-101 artifact templates
 - `/course/audit` — mini-unit self-audit
 - `/course/release` — release packet and final checks
@@ -126,8 +126,8 @@ Reviewer and maintenance docs:
 ## Quick Start
 
 ```bash
-git clone https://github.com/Gh0stlyKn1ght/Teacher-techops.git
-cd Teacher-techops
+git clone https://github.com/Gh0stlyKn1ght/OpenTeachStack.git
+cd OpenTeachStack
 npm install
 npm run dev
 ```
@@ -151,7 +151,7 @@ lint/build/route checks. The current maintenance priority is release hygiene:
 - Keep `docs/BUILD_VERIFICATION.md` current with `npm run verify:release`
 - Preserve the canonical `/book/{course}` route contract
 - Keep README, roadmap, course metadata, and live navigation in sync
-- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, and course-reader migration checks.
+- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, and course-reader migration checks.
 - Add future improvements only when the real artifact or workflow exists
 
 See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.
@@ -163,4 +163,11 @@ See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.
 
 ## Author
 
-**JC Nevarez** — [nevarez.dev](https://nevarez.dev) — [jc@nevarez.dev](mailto:jc@nevarez.dev)
+**JC Nevarez** — [LinkedIn](https://www.linkedin.com/in/gh0stly/)
+
+Related projects:
+
+- [robotnix.dev](https://robotnix.dev)
+- [team2180.dev](https://team2180.dev)
+
+Video walkthroughs and additional companion content are coming soon.

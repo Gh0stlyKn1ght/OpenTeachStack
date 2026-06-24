@@ -38,7 +38,7 @@ export default function OneDayWorkflow() {
           </h2>
           <p className="text-sm leading-relaxed text-slate">
             Sometimes tomorrow&apos;s lesson has to exist before tomorrow morning.
-            This is the Teaching Teachers survival loop: Source -&gt; Prompt -&gt;
+            This is the OpenTeachStack survival loop: Source -&gt; Prompt -&gt;
             Build -&gt; Verify -&gt; Teach -&gt; Archive -&gt; Improve.
           </p>
         </div>

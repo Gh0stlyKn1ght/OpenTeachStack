@@ -6,9 +6,9 @@ import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "License — Teaching Teachers",
+  title: "License — OpenTeachStack",
   description:
-    "License details for Teaching Teachers: MIT for code, CC BY-NC-SA 4.0 for content.",
+    "License details for OpenTeachStack: MIT for code, CC BY-NC-SA 4.0 for content.",
 };
 
 export default function LicensePage() {
@@ -16,7 +16,7 @@ export default function LicensePage() {
     <FieldGuidePage
       eyebrow="Project Terms"
       title="License"
-      subtitle="Teaching Teachers uses a dual-license model. Code and content are licensed separately to allow maximum flexibility for both developers and educators."
+      subtitle="OpenTeachStack uses a dual-license model. Code and content are licensed separately to allow maximum flexibility for both developers and educators."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Code", value: LICENSE.code.name },
@@ -145,7 +145,7 @@ export default function LicensePage() {
         {/* ── How to Attribute ───────────────────────────────────────── */}
         <h2>How to Attribute</h2>
         <p>
-          When using or adapting content from Teaching Teachers, please
+          When using or adapting content from OpenTeachStack, please
           include an attribution similar to the following:
         </p>
 
@@ -153,11 +153,11 @@ export default function LicensePage() {
           <p>
             Based on{" "}
             <a
-              href="https://teachingteachers.dev"
+              href="https://openteachstack.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Teaching Teachers
+              OpenTeachStack
             </a>{" "}
             by {AUTHOR.name}, licensed under{" "}
             <a
@@ -219,7 +219,7 @@ export default function LicensePage() {
               className="inline-flex items-center gap-1.5"
             >
               <GitHubIcon className="h-4 w-4" title="" />
-              Gh0stlyKn1ght/Teacher-techops
+              Gh0stlyKn1ght/OpenTeachStack
             </a>
             .
           </li>
@@ -232,7 +232,7 @@ export default function LicensePage() {
         <h3>You cannot:</h3>
         <ul>
           <li>
-            Sell Teaching Teachers content or derivatives commercially (e.g.,
+            Sell OpenTeachStack content or derivatives commercially (e.g.,
             as a paid course on a marketplace).
           </li>
           <li>
@@ -250,7 +250,14 @@ export default function LicensePage() {
         <p>
           If you have questions about licensing, attribution, or permitted
           use, please contact{" "}
-          <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+          <a
+            href={AUTHOR.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JC Nevarez on LinkedIn
+          </a>
+          .
         </p>
       </div>
       </ArticleBody>

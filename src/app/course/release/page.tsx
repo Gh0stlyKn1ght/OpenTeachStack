@@ -9,7 +9,7 @@ import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 import { pageVisuals } from "@/lib/visualAssets";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "OTS-101 Release Packet — Teaching Teachers",
+  title: "OTS-101 Release Packet — OpenTeachStack",
   description:
     "Final release packet for OTS-101 Foundations, including module builds, capstone evidence, safety checks, and next steps.",
   path: "/course/release",
@@ -167,7 +167,7 @@ export default function Ots101ReleasePage() {
             Run the Course Audit
           </Link>
           <Link
-            href="/library/source-bank"
+            href="/kb/source-bank"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
             Open Source Bank

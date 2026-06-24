@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "OTS-101 Course Audit — Teaching Teachers",
+  title: "OTS-101 Course Audit — OpenTeachStack",
   description:
     "Self-audit and peer-review checklist for the OTS-101 Foundations mini-unit capstone, including source use, safety checks, templates, and classroom readiness.",
   path: "/course/audit",
@@ -157,10 +157,10 @@ export default function CourseAuditPage() {
                 post, or AI-generated answer.
               </p>
               <div className="flex flex-col gap-2 pt-2">
-                <Link href="/library/source-bank">Source Bank</Link>
-                <Link href="/sources">Official Sources</Link>
-                <Link href="/templates">Template Library</Link>
-                <Link href="/safety">Safety Guide</Link>
+                <Link href="/kb/source-bank">Source Bank</Link>
+                <Link href="/kb/resources">Official Sources</Link>
+                <Link href="/kb/templates">Template Library</Link>
+                <Link href="/kb/safety">Safety Guide</Link>
               </div>
             </div>
           </div>
