@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { MODULES } from "@/lib/metadata";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -57,10 +56,6 @@ export default function Ots101ReleasePage() {
         { label: "Package items", value: String(finalPackage.length) },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
-
       <div className="relative mb-10 aspect-[16/10] overflow-hidden rounded-md border border-border bg-surface">
         <Image
           src={pageVisuals.releasePacket.src}

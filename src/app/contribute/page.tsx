@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
-import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -25,10 +24,6 @@ export default function ContributePage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       <div className="prose-academic">
         {/* ── Types of Contributions ─────────────────────────────────── */}
         <h2>Types of Contributions</h2>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { MODULES } from "@/lib/metadata";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -72,10 +71,6 @@ export default function CourseAuditPage() {
         { label: "Templates", value: String(FOUNDATION_TEMPLATES.length) },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
-
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
         <h2 className="mb-3 border-none font-heading text-xl font-bold text-foreground">
           Required Templates

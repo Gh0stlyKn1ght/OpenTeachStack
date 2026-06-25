@@ -5,7 +5,6 @@ import StandardsAssessmentMatrix from "@/components/book/StandardsAssessmentMatr
 import SourcePanel from "@/components/book/SourcePanel";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Evidence — OpenTeachStack",
@@ -18,7 +17,7 @@ export default function EvidencePage() {
     <FieldGuidePage
       eyebrow="Evidence Layer"
       title="Why this pathway matters."
-      subtitle="This page is the place for source-backed rationale, charts, and data. The first version avoids fake numbers and points every claim back to source maintenance."
+      subtitle="Source-backed rationale, charts, and data for the pathway. The first version avoids fake numbers and points every claim back to source maintenance."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Rule", value: "No invented data" },
@@ -27,10 +26,6 @@ export default function EvidencePage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-5" data-print-hide>
-          <PrintPageButton />
-        </div>
-
         <SourcePanel />
 
         <section>

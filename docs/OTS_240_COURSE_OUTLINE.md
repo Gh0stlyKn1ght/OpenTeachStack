@@ -68,7 +68,7 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 
 ## Next Content Tasks
 
-1. Replace generated section shells with authored open-resource and GitHub lessons.
+1. Continue enriching open-resource and GitHub lessons with beginner-friendly examples.
 2. Add a repository README template after the required fields stabilize.
 3. Add an attribution and license file template that matches the Source Bank workflow.
 4. Add official GitHub Docs and Creative Commons references to relevant section source panels.

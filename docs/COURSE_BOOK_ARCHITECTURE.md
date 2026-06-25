@@ -58,9 +58,9 @@ Each chapter should eventually contain:
 
 ## Current Implementation
 
-The current repo keeps authored MDX content in the existing `content/lessons` and `content/labs` folders for compatibility.
+The current repo keeps legacy authored MDX content in `content/lessons` and `content/labs` for compatibility while the course books read from course-owned content under `content/courses/{courseSlug}`.
 
-Course-owned migration scaffolds now live in `content/courses/{courseSlug}`. Each course folder carries its own `course.json`, `lessons/`, `labs/`, `assets/`, `docs/`, `templates/`, and `references/` directories so a course can be exported or migrated without hunting through global buckets.
+Each course folder carries its own `course.json`, `lessons/`, `labs/`, `assets/`, `docs/`, `templates/`, and `references/` directories so a course can be exported, reviewed, or improved without hunting through global buckets.
 
 The Book Mode layer adds the deeper course-book model through metadata in `src/lib/book.ts`:
 
@@ -71,7 +71,7 @@ The Book Mode layer adds the deeper course-book model through metadata in `src/l
 - `CHAPTER_SKILLS`
 - `TRANSFERABLE_SKILLS`
 
-This lets `/book/ots-101` and `/book/ots-101/[chapter]` render chapter sections before the full content-file migration is complete.
+This lets `/book/ots-101` and `/book/ots-101/[chapter]` render chapter sections from the course-owned structure.
 
 The current Book Mode route also renders section pages at:
 
@@ -79,7 +79,7 @@ The current Book Mode route also renders section pages at:
 /book/ots-101/[chapter]/[section]
 ```
 
-These section pages are generated from metadata first. Existing authored MDX pages are linked as related readings when they map cleanly to a section.
+These section pages render the course-owned MDX lesson bodies. Existing legacy MDX pages may still be linked as related readings when they map cleanly to a section.
 
 ## Course-Owned File Structure
 
@@ -105,23 +105,22 @@ content/
 │     └─ references/
 ```
 
-## Migration Rules
+## Content Rules
 
 - Do not delete authored content.
-- Do not overwrite existing lesson bodies with generated templates.
+- Do not overwrite existing lesson bodies with template output.
 - Do not break old routes without redirects or compatibility wrappers.
 - Keep `/course` and `/lessons` available until the book routes fully replace them.
 - Prefer course-owned folders before moving readers.
 - Preserve source links, attribution, safety notes, and teacher voice.
 - Keep advanced material out of OTS-101 unless it is clearly marked as future, optional, or a preview.
 - Run `npm run check:content-layout` after course-folder changes when you want a quick structural check.
-- Run `npm run scaffold:courses` only when intentionally refreshing scaffolds from the current registries.
+- Run course-generation scripts only when intentionally refreshing course-owned drafts, and keep the no-overwrite safety checks in place.
 
 ## Next Build Steps
 
-1. Move one course reader at a time from registry metadata to `content/courses/{courseSlug}`.
-2. Replace scaffold section files with authored course-local lesson bodies.
+1. Keep course readers pointed at `content/courses/{courseSlug}`.
+2. Continue enriching lesson bodies with classroom examples, non-examples, filled artifacts, and review checkpoints.
 3. Keep copied docs, labs, assets, templates, and references inside each course folder.
-4. Add examples and non-examples to the highest-priority sections.
-5. Run `npm run check:content-layout` for a quick structural check after content-folder changes.
-6. Run `npm run test` for the non-mutating local gate, then `npm run verify:release`; local testing covers typecheck, lint, route contracts, content layout, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, source-bank links, and every course-reader migration check before release verification runs production build and route smoke probes.
+4. Run `npm run check:content-layout` for a quick structural check after content-folder changes.
+5. Run `npm run test` for the non-mutating local gate, then `npm run verify:release`; local testing covers typecheck, lint, route contracts, content layout, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, source-bank links, and every course-reader migration check before release verification runs production build and route smoke probes.

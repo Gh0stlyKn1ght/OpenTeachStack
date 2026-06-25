@@ -4,7 +4,6 @@ import { getAllContent } from "@/lib/content";
 import { MODULES, COURSE_TITLE } from "@/lib/metadata";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: `Lessons — ${COURSE_TITLE}`,
@@ -38,80 +37,76 @@ export default function LessonsPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
+        <div className="space-y-12">
+          {MODULES.map((mod) => {
+            const moduleLessons = lessonsByModuleId.get(mod.id);
+            if (!moduleLessons || moduleLessons.length === 0) return null;
 
-      <div className="space-y-12">
-        {MODULES.map((mod) => {
-          const moduleLessons = lessonsByModuleId.get(mod.id);
-          if (!moduleLessons || moduleLessons.length === 0) return null;
+            return (
+              <section key={mod.slug}>
+                <h2 className="mb-1 font-heading text-lg font-semibold text-foreground">
+                  <span className="font-mono text-sm text-accent mr-2">
+                    {mod.number}.
+                  </span>
+                  {mod.title}
+                </h2>
+                <p className="mb-4 text-sm text-slate font-sans">
+                  {mod.description}
+                </p>
 
-          return (
-            <section key={mod.slug}>
-              <h2 className="mb-1 font-heading text-lg font-semibold text-foreground">
-                <span className="font-mono text-sm text-accent mr-2">
-                  {mod.number}.
-                </span>
-                {mod.title}
-              </h2>
-              <p className="mb-4 text-sm text-slate font-sans">
-                {mod.description}
-              </p>
-
-              <ul className="space-y-3">
-                {moduleLessons.map((lesson) => (
-                  <li key={lesson.slug}>
-                    <Link
-                      href={`/lessons/${lesson.slug}`}
-                      className="group block rounded-md border border-border p-4 transition-colors hover:border-accent/40 hover:bg-surface-alt/30"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="min-w-0">
-                          <h3 className="font-heading text-base font-semibold text-foreground group-hover:text-link transition-colors">
-                            {lesson.frontmatter.title}
-                          </h3>
-                          {lesson.frontmatter.summary && (
-                            <p className="mt-1 text-sm text-slate font-sans line-clamp-2">
-                              {lesson.frontmatter.summary}
-                            </p>
-                          )}
+                <ul className="space-y-3">
+                  {moduleLessons.map((lesson) => (
+                    <li key={lesson.slug}>
+                      <Link
+                        href={`/lessons/${lesson.slug}`}
+                        className="group block rounded-md border border-border p-4 transition-colors hover:border-accent/40 hover:bg-surface-alt/30"
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="min-w-0">
+                            <h3 className="font-heading text-base font-semibold text-foreground group-hover:text-link transition-colors">
+                              {lesson.frontmatter.title}
+                            </h3>
+                            {lesson.frontmatter.summary && (
+                              <p className="mt-1 text-sm text-slate font-sans line-clamp-2">
+                                {lesson.frontmatter.summary}
+                              </p>
+                            )}
+                          </div>
+                          <div className="flex flex-shrink-0 items-center gap-2">
+                            {lesson.frontmatter.type && (
+                              <span
+                                className={`rounded-sm px-2 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-widest ${
+                                  lesson.frontmatter.type === "lab"
+                                    ? "bg-accent/15 text-accent"
+                                    : "bg-link/10 text-link"
+                                }`}
+                              >
+                                {lesson.frontmatter.type === "lab"
+                                  ? "Lab"
+                                  : "Lecture"}
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <div className="flex flex-shrink-0 items-center gap-2">
-                          {lesson.frontmatter.type && (
-                            <span
-                              className={`rounded-sm px-2 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-widest ${
-                                lesson.frontmatter.type === "lab"
-                                  ? "bg-accent/15 text-accent"
-                                  : "bg-link/10 text-link"
-                              }`}
-                            >
-                              {lesson.frontmatter.type === "lab"
-                                ? "Lab"
-                                : "Lecture"}
+
+                        <div className="mt-2 flex items-center gap-3 text-xs font-mono text-slate">
+                          {lesson.frontmatter.duration && (
+                            <span>{lesson.frontmatter.duration}</span>
+                          )}
+                          {lesson.frontmatter.level && (
+                            <span className="rounded-sm bg-surface-alt px-1.5 py-0.5 uppercase tracking-wider">
+                              {lesson.frontmatter.level}
                             </span>
                           )}
                         </div>
-                      </div>
-
-                      <div className="mt-2 flex items-center gap-3 text-xs font-mono text-slate">
-                        {lesson.frontmatter.duration && (
-                          <span>{lesson.frontmatter.duration}</span>
-                        )}
-                        {lesson.frontmatter.level && (
-                          <span className="rounded-sm bg-surface-alt px-1.5 py-0.5 uppercase tracking-wider">
-                            {lesson.frontmatter.level}
-                          </span>
-                        )}
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-      </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+        </div>
       </ArticleBody>
     </FieldGuidePage>
   );

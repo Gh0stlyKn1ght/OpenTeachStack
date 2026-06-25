@@ -72,7 +72,7 @@ The authored course is represented in `src/lib/courseStructures.ts` and rendered
 
 ## Next Content Tasks
 
-1. Continue replacing course-owned scaffold `.mdx` files with long-form lesson bodies when the reader migrates from registry guides to course-local MDX.
+1. Continue enriching course-owned `.mdx` lesson bodies with completed capstone artifacts, review notes, and release examples.
 2. Keep the capstone proposal, artifact index, technical evidence log, peer review protocol, and final release checklist inside `content/courses/ots-399/templates/`.
 3. Keep source references and pathway traceability notes inside the OTS-399 course folder.
 4. Use the final release checklist before calling an individual capstone project complete.

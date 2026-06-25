@@ -6,7 +6,7 @@ const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
 
 const expectedCourseFrames = {
-  "ots-101": "A teacher building a first reusable mini-unit needs more than",
+  "ots-101": "A teacher building a first reusable mini-unit needs a system another educator can inspect",
   "ots-201": "A workspace system works",
   "ots-220": "Automation is ready",
   "ots-240": "Open work needs",

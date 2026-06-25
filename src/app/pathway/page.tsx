@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -21,10 +20,6 @@ export default function PathwayPage() {
         { label: "Tracks", value: String(PATHWAY_COURSES.length) },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
-
       <section className="mb-12 rounded-md border border-border bg-surface p-5">
         <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Start Here

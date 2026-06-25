@@ -57,6 +57,18 @@ const forbiddenPatterns = [
     message: "generation status language is visible",
   },
   {
+    pattern: /This page turns that pressure into a visible update/i,
+    message: "self-referential generated page phrasing is visible",
+  },
+  {
+    pattern: /Make this page concrete by writing three small decisions/i,
+    message: "self-referential generated page task is visible",
+  },
+  {
+    pattern: /^# (chapter plan|checkpoint review)$/m,
+    message: "overview or checkpoint title is not title-cased",
+  },
+  {
     pattern: /\b(migration scaffold|status:\s*scaffolded|this section is scaffolded|scaffold status)\b/i,
     message: "scaffold status language is visible",
   },
@@ -79,6 +91,26 @@ const forbiddenPatterns = [
   {
     pattern: /\bAdd a [a-z0-9 -]+ line to the capstone index\b/i,
     message: "awkward generated capstone-index wording is visible",
+  },
+  {
+    pattern: /\blesson work\b/i,
+    message: "generic generated lesson-work phrasing is visible",
+  },
+  {
+    pattern: /\bworking item\b/i,
+    message: "generic generated working-item phrasing is visible",
+  },
+  {
+    pattern: /\bthe item supports\b/i,
+    message: "generic generated item-support phrasing is visible",
+  },
+  {
+    pattern: /\bkeep the notes tied to\b/i,
+    message: "internal note-scoping guidance is visible",
+  },
+  {
+    pattern: /\bthe selected item from this set\b/i,
+    message: "generic generated selection-table phrasing is visible",
   },
   {
     pattern: /\bWrite the agent boundary for [a-z0-9 -]+ in practical terms\b/i,

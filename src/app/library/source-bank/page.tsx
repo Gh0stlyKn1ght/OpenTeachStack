@@ -3,7 +3,6 @@ import Image from "next/image";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
-import PrintPageButton from "@/components/PrintPageButton";
 import {
   getSourceBankByCategory,
   sourceBankResources,
@@ -67,10 +66,6 @@ export default function SourceBankPage() {
       }
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       <section className="grid gap-4 rounded-md border border-border bg-surface-alt/30 p-5 md:grid-cols-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-wider text-foreground/40">

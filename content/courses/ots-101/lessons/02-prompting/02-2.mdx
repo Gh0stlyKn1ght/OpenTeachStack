@@ -11,75 +11,80 @@ duration: 20 minutes
 artifact: Reusable prompt library
 canonicalRoute: /book/ots-101/02-prompting/02-2
 sourceRegistry: src/lib/book.ts
-sourceLessonSlug: prompting-for-teachers
-sourceLessonTitle: Prompting for Teachers
+sourceLessonSlug: ''
+sourceLessonTitle: ''
 migrationStatus: authored
 ---
 # Prompt Anatomy
 
 ## Why This Matters
 
-A teacher building a first reusable mini-unit needs more than a tool list or a checklist. The goal in **Prompting for Teachers** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
+A teacher building a first reusable mini-unit needs a system another educator can inspect. Prompt anatomy gives you a way to inspect AI-assisted work instead of guessing why a response was useful or useless.
 
-For **Prompt Anatomy**, the practical pressure is simple: accepting a polished lesson draft before the sources, student task, assessment evidence, and classroom routine are inspectable. This page turns that pressure into a visible update to **Reusable prompt library**.
+When a prompt has missing parts, the AI fills gaps with assumptions. Sometimes those assumptions are harmless. Sometimes they create fake alignment, vague student tasks, inaccessible directions, or confident errors.
 
-## Classroom Scenario
+## The Six Parts
 
-Use this situation as the working example: an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection. By the end, the work should support this habit: source-backed planning, plain-language decisions, and visible revision notes.
+Use this anatomy for most teacher prompts:
 
-In this scenario, the learner should be able to point to:
+| Part | Purpose | Example |
+| --- | --- | --- |
+| Role | Sets the lens | Act as a middle school technology curriculum assistant |
+| Context | Names the class situation | Grade 8 robotics, 45 minutes, sensor kits |
+| Task | Names the output | Draft student directions |
+| Source | Anchors claims | Use the learning target and teacher notes below |
+| Constraints | Controls shape and safety | Use plain language, no private student data |
+| Review criteria | Tells what to check | Include a checklist for units, timing, and evidence |
 
-- what the teacher prepares before students see the work,
-- what students will read, build, submit, or discuss,
-- what evidence shows the work is ready,
-- what gets revised after the first use.
+Not every prompt needs a long paragraph, but every classroom-ready prompt needs enough anatomy to protect the work.
 
-## Key Idea
+## Annotated Example
 
-Prompt anatomy is the checklist inside a single request. The teacher names the audience, task, source material, output format, constraints, and verification rule before asking for help.
+> **Role:** Act as a curriculum assistant for a middle school robotics teacher.
+> **Context:** Students are learning how ultrasonic sensors report distance in centimeters. They have 45 minutes and work in teams of three.
+> **Task:** Draft student-facing directions for collecting five readings and choosing a robot stop threshold.
+> **Source:** Use this learning target: "I can use sensor data to justify a design decision."
+> **Constraints:** Use grade 8 language, include a small data table, and do not invent standards or citations.
+> **Review criteria:** End with a teacher checklist for setup safety, units, timing, and evidence of learning.
 
-Watch for this mistake: Writing a vague request and hoping the tool guesses the grade level, materials, output format, and verification rule.
+This prompt gives enough structure that the teacher can judge the response against the original request.
 
-## What You Will Do
+## Practice
 
-Make this page concrete by writing three small decisions:
+Choose a weak prompt and diagnose the missing parts.
 
-- Before class, connect prompt anatomy to one setup decision in the reusable prompt library: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
-- During class, connect prompt anatomy to one student action in middle school robotics and technology: what learners read, build, submit, discuss, or revise while working through an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- After class, review prompt anatomy through the prompting for teachers lens: what evidence proves the move worked, which mistake to avoid (writing a vague request and hoping the tool guesses the grade level, materials, output format, and verification rule), and what revision supports source-backed planning, plain-language decisions, and visible revision notes.
+Weak prompt:
 
-## Build the Artifact
+> Make a quiz about sensors.
 
-Use **Prompt Anatomy** to make one classroom decision visible inside **Reusable prompt library**.
+Diagnosis:
 
-Add this to your artifact:
+- Role missing
+- Grade and time missing
+- Source missing
+- Question types missing
+- Student evidence unclear
+- Review criteria missing
 
-- Classroom context: middle school robotics and technology; an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- Artifact entry: In **Reusable prompt library**, add the decision for **Prompt Anatomy** with the student-facing evidence and the review owner.
-- Example entry: Prompt anatomy entry: Audience grade 8; task write sensor table directions; source class mini-unit notes; output six numbered steps; constraint no invented claims; verification teacher checks datasheet and safety setup.
-- Review check: Check the entry against standards, official documentation, source notes, privacy checks, and accessibility checks, then write what should change after the first classroom use.
-- Peer review check: A colleague should be able to open the prompting for teachers artifact, understand the decision behind **Prompt Anatomy**, and know the next action without extra explanation.
+Rewritten prompt:
 
-## What Good Work Looks Like
+> Act as a grade 8 robotics assessment assistant. Create a five-question check for understanding about ultrasonic sensor readings. Use the learning target "I can use sensor data to justify a design decision." Include three multiple-choice questions, one short data-table interpretation, and one short written justification. Mark the answer key as teacher-only and include a note about what misconception each question checks.
 
-A strong **prompt anatomy** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+## Add To The Prompt Library
 
-For this lesson, a strong entry might say:
+Add a prompt-anatomy checklist to the top of your **Reusable prompt library**:
 
-> Prompt anatomy entry: Audience grade 8; task write sensor table directions; source class mini-unit notes; output six numbered steps; constraint no invented claims; verification teacher checks datasheet and safety setup.
-
-That level of detail is enough to review. It is also small enough to revise after one classroom use.
+- Role
+- Context
+- Task
+- Source
+- Constraints
+- Review criteria
 
 ## Quality Check
 
-Before moving on, confirm:
-
-- Your artifact entry is stored in **Reusable prompt library** rather than kept as a private reminder.
-- The student-facing task or evidence is named in plain language.
-- The review step names a source, safety, privacy, accessibility, or maintenance check.
-- The common mistake is avoided: Writing a vague request and hoping the tool guesses the grade level, materials, output format, and verification rule.
-- The next classroom use or revision is obvious.
+Your prompt is ready to test when a colleague can identify all six parts without asking you what you meant.
 
 ## Reflection
 
-What would a busy teacher misunderstand if they only saw your **Reusable prompt library** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.
+Which part do you most often leave out when you are moving quickly?

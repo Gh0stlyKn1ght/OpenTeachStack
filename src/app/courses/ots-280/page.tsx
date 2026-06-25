@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { CYBER_SAFETY_MODULES } from "@/lib/cyberSafety";
 
 export const metadata: Metadata = {
@@ -36,10 +35,6 @@ export default function CyberSafetyCoursePage() {
         { label: "Chapters", value: String(CYBER_SAFETY_MODULES.length) },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
-
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
         <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
           Where This Fits

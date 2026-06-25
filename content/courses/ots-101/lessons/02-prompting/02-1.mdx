@@ -11,75 +11,68 @@ duration: 15 minutes
 artifact: Reusable prompt library
 canonicalRoute: /book/ots-101/02-prompting/02-1
 sourceRegistry: src/lib/book.ts
-sourceLessonSlug: prompting-for-teachers
-sourceLessonTitle: Prompting for Teachers
+sourceLessonSlug: ''
+sourceLessonTitle: ''
 migrationStatus: authored
 ---
 # What Prompting Actually Is
 
 ## Why This Matters
 
-A teacher building a first reusable mini-unit needs more than a tool list or a checklist. The goal in **Prompting for Teachers** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
+A teacher building a first reusable mini-unit needs a system another educator can inspect. Prompting is part of that system when it records the request that shaped a draft, the limits placed on the tool, and the review the teacher performed afterward.
 
-For **What Prompting Actually Is**, the practical pressure is simple: accepting a polished lesson draft before the sources, student task, assessment evidence, and classroom routine are inspectable. This page turns that pressure into a visible update to **Reusable prompt library**.
+Prompting is not magic phrasing. It is structured communication. A useful prompt tells an AI tool what job to do and what job not to do.
 
-## Classroom Scenario
+## A Prompt Is A Work Order
 
-Use this situation as the working example: an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection. By the end, the work should support this habit: source-backed planning, plain-language decisions, and visible revision notes.
+When you give a contractor a work order, you do not say, "Fix the room." You name the room, the problem, the materials, the deadline, and the inspection rule.
 
-In this scenario, the learner should be able to point to:
+Prompting works the same way. A teacher prompt should usually name:
 
-- what the teacher prepares before students see the work,
-- what students will read, build, submit, or discuss,
-- what evidence shows the work is ready,
-- what gets revised after the first use.
+- role: what perspective the tool should use,
+- context: grade, course, unit, time, materials,
+- task: what output you need,
+- source: what information should anchor the response,
+- constraints: reading level, format, length, safety limits,
+- review: what the teacher will check before use.
 
-## Key Idea
+## Weak And Strong Versions
 
-A useful prompt is a work order, not a wish. It names the learner, task, source material, output format, constraints, review criteria, and what the teacher will verify.
+Weak:
 
-Watch for this mistake: Asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule.
+> Make a robotics lesson.
 
-## What You Will Do
+Stronger:
 
-Make this page concrete by writing three small decisions:
+> Act as a middle school technology curriculum assistant. Draft student-facing directions for a 45-minute ultrasonic sensor activity. Students will collect five distance readings in centimeters, identify one reading that may be unreliable, choose a robot stop threshold, and write a two-sentence justification. Use plain grade 8 language. Do not invent standards or cite sources. Include a teacher verification checklist at the end.
 
-- Before class, connect what prompting actually is to one setup decision in the reusable prompt library: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
-- During class, connect what prompting actually is to one student action in middle school robotics and technology: what learners read, build, submit, discuss, or revise while working through an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- After class, review what prompting actually is through the prompting for teachers lens: what evidence proves the move worked, which mistake to avoid (asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule), and what revision supports source-backed planning, plain-language decisions, and visible revision notes.
+The stronger prompt gives the tool a job, but it also protects the teacher's job. The teacher still checks accuracy, tone, safety, alignment, and feasibility.
 
-## Build the Artifact
+## Practice
 
-Use **What Prompting Actually Is** to make one classroom decision visible inside **Reusable prompt library**.
+Take one prompt you have used or might use. Rewrite it as a work order.
 
-Add this to your artifact:
+Use this frame:
 
-- Classroom context: middle school robotics and technology; an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- Artifact entry: In **Reusable prompt library**, add the decision for **What Prompting Actually Is** with the student-facing evidence and the review owner.
-- Example entry: Prompt entry: Draft student directions for a 45-minute sensor data table. Use grade 8 language, include three readings, one reliability question, and a note that the teacher checks setup safety before class.
-- Review check: Check the entry against standards, official documentation, source notes, privacy checks, and accessibility checks, then write what should change after the first classroom use.
-- Peer review check: A colleague should be able to open the prompting for teachers artifact, understand the decision behind **What Prompting Actually Is**, and know the next action without extra explanation.
+- Role: Act as ...
+- Context: My class is ...
+- Task: Create ...
+- Source: Use only ...
+- Constraints: Keep it ...
+- Review: Include ...
 
-## What Good Work Looks Like
+## Add To The Prompt Library
 
-A strong **what prompting actually is** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+Add your rewritten prompt to the **Reusable prompt library**. Include a note explaining when to use it and when not to use it.
 
-For this lesson, a strong entry might say:
+Example limit:
 
-> Prompt entry: Draft student directions for a 45-minute sensor data table. Use grade 8 language, include three readings, one reliability question, and a note that the teacher checks setup safety before class.
-
-That level of detail is enough to review. It is also small enough to revise after one classroom use.
+> Do not use this prompt with real student names, behavior details, IEP information, grades, or private family context.
 
 ## Quality Check
 
-Before moving on, confirm:
-
-- Your artifact entry is stored in **Reusable prompt library** rather than kept as a private reminder.
-- The student-facing task or evidence is named in plain language.
-- The review step names a source, safety, privacy, accessibility, or maintenance check.
-- The common mistake is avoided: Asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule.
-- The next classroom use or revision is obvious.
+Your prompt is useful if another teacher can see what the AI was asked to do, what information it was allowed to use, and what the teacher must verify.
 
 ## Reflection
 
-What would a busy teacher misunderstand if they only saw your **Reusable prompt library** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.
+What decision should never be handed to the AI tool in the workflow you are building?

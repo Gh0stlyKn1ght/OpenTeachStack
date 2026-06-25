@@ -69,7 +69,7 @@ The authored course is represented in `src/lib/courseStructures.ts` and rendered
 
 ## Next Content Tasks
 
-1. Continue replacing course-owned scaffold `.mdx` files with long-form lesson bodies when the reader migrates from registry guides to course-local MDX.
+1. Continue enriching course-owned `.mdx` lesson bodies with concrete agent prompts, diffs, tests, and teacher approval examples.
 2. Keep the safe agent prompt template, diff review checklist, and fake-data testing protocol inside `content/courses/ots-320/templates/`.
 3. Keep Codex, Claude Code, VS Code, GitHub, and Apps Script references attached or queued in `content/courses/ots-320/references/source-references.md`.
 4. Run example builds only with non-sensitive fake data.

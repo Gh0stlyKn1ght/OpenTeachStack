@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import GitHubIcon from "@/components/GitHubIcon";
 import { REPOSITORY_URL } from "@/lib/metadata";
 
@@ -68,16 +67,12 @@ export default function ResourcesPage() {
     <FieldGuidePage
       eyebrow="Resource Library"
       title="Start with sources. Build with reusable tools."
-      subtitle="A lightweight index for official documentation, prompts, templates, safety guidance, examples, and field notes without loading every inventory on one route."
+      subtitle="A lightweight index for official documentation, prompts, templates, safety guidance, examples, and field notes without crowding the teacher workflow."
       meta={[
         { label: "Hubs", value: String(resourceHubs.length) },
         { label: "Rule", value: "Official sources first" },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
-
       <section className="mb-12 grid gap-4 md:grid-cols-2">
         {resourceHubs.map((item) => (
           <Link

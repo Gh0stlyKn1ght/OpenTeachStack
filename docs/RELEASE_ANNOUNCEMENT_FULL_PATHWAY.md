@@ -41,7 +41,7 @@ If you are coming to this as a new pathway teacher, start with:
 - OTS-101: `/book/ots-101`
 - Course cards and pathways: `/`
 - Knowledge Base: `/kb`
-- Course library: `/library`
+- Knowledge Base library: `/kb/library`
 
 The pathway follows the same safety and quality rhythm throughout:
 

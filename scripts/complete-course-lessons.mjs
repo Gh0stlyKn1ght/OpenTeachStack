@@ -313,8 +313,8 @@ function learnerTopic(title) {
     .replace(/\bHandoff Notes\b/i, "Reviewer Notes")
     .trim();
 
-  if (/^chapter overview$/i.test(text)) return "chapter plan";
-  if (/^chapter checkpoint$/i.test(text)) return "checkpoint review";
+  if (/^(chapter overview|chapter plan)$/i.test(text)) return "Chapter Plan";
+  if (/^(chapter checkpoint|checkpoint review)$/i.test(text)) return "Checkpoint Review";
 
   return text;
 }
@@ -446,7 +446,7 @@ function bodyFor(parsed, courseJson) {
 
 ${sentence(profile.learner)} needs more than a tool list or a checklist. The goal in **${chapter}** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
 
-For **${displayTitle}**, the practical pressure is simple: ${profile.risk}. This page turns that pressure into a visible update to **${artifact}**.
+For **${displayTitle}**, the practical pressure is simple: ${profile.risk}. This lesson turns that pressure into a visible update to **${artifact}**.
 
 ## Classroom Scenario
 
@@ -467,7 +467,7 @@ Watch for this mistake: ${model.mistake}
 
 ## What You Will Do
 
-Make this page concrete by writing three small decisions:
+Make the work concrete by writing three small decisions:
 
 ${moves.map((move) => `- ${move}`).join("\n")}
 

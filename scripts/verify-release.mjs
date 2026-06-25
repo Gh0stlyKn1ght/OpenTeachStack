@@ -55,6 +55,8 @@ const smokeRoutes = [
   "/kb/source-bank",
   "/prompts",
   "/evidence",
+  "/robots.txt",
+  "/sitemap.xml",
 ];
 
 const rows = [];

@@ -3,7 +3,6 @@ import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import GitHubIcon from "@/components/GitHubIcon";
-import PrintPageButton from "@/components/PrintPageButton";
 import { AUTHOR, LICENSE, REPOSITORY_URL } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -26,10 +25,6 @@ export default function OpenSourcePage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       <div className="prose-academic">
         <h2>Why Open Source</h2>
         <p>

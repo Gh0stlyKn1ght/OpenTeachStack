@@ -2,6 +2,11 @@
 
 Date: 2026-06-24
 
+Status: Historical pre-remediation snapshot. Use this audit to understand the
+original learner-facing issues; use `docs/STUDENT_LEARNER_FACING_AUDIT.md`,
+`docs/COURSE_LEARNER_FACING_REVIEW.md`, and the current verification commands
+for the active release state.
+
 Audit stance: educator learner, curriculum reviewer, and instructional coach. This first pass checks whether the courses teach a real teacher enough to complete the promised artifact, not just whether routes render.
 
 Scope audited:

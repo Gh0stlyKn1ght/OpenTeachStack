@@ -3,7 +3,6 @@ import Link from "next/link";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Start Here If You Are Not Technical — OpenTeachStack",
@@ -34,10 +33,6 @@ export default function StartPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       <section className="prose-academic">
         <h2>Here is the real problem</h2>
         <p>

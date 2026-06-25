@@ -74,7 +74,7 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 ## Next Content Tasks
 
 1. Map each existing draft lab to its corresponding OTS-220 chapter or section.
-2. Replace generated route shells with authored MDX where the draft lab is ready.
+2. Keep course-owned MDX lessons connected to the draft labs as they mature.
 3. Add an Apps Script safety checklist template only after final fields are stable.
 4. Add official Apps Script docs and samples to relevant section source panels.
 5. Add a no-live-data test protocol for every code-running lab.

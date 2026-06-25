@@ -54,7 +54,7 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 
 ## Next Content Tasks
 
-1. Replace generated section shells with authored chapter introductions.
+1. Continue enriching chapter introductions with concrete teacher scenarios.
 2. Add example Drive architecture maps.
 3. Add a blank Workspace command center template only after its fields are stable.
 4. Add official Google documentation links through the Source Bank workflow.

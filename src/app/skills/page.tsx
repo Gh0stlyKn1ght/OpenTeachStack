@@ -3,7 +3,6 @@ import CourseSkillMatrix from "@/components/book/CourseSkillMatrix";
 import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "Transferable Skills — OpenTeachStack",
@@ -25,10 +24,6 @@ export default function SkillsPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-5" data-print-hide>
-          <PrintPageButton />
-        </div>
-
         <section>
           <h2>Skill Network</h2>
           <TransferableSkillsMap />

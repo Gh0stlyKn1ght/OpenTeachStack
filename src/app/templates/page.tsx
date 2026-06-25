@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import TemplateCard from "@/components/TemplateCard";
 import { createPageMetadata } from "@/lib/siteMetadata";
 import { FOUNDATION_TEMPLATES } from "@/lib/templates";
@@ -72,63 +71,59 @@ export default function TemplatesPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
-      <section>
-        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
-          Available Foundations Templates
-        </h2>
-        <p className="mb-4 text-sm text-foreground/50">
-          These templates support the OTS-101 mini-unit capstone.
-        </p>
-        {FOUNDATION_TEMPLATES.map((template) => (
-          <TemplateCard
-            key={template.slug}
-            title={template.title}
-            description={template.purpose}
-            format={template.format}
-            status="Available"
-            viewUrl={`/templates/${template.slug}`}
-            downloadUrl={`/templates/${template.slug}/download`}
-            tags={template.tags}
-          />
-        ))}
-      </section>
-
-      <section>
-        <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
-          Planned Google-Format Template Targets
-        </h2>
-        <p className="mb-4 text-sm text-foreground/50">
-          These are useful pathway artifacts, but they stay marked as planned
-          until real Google Docs or Sheets files exist.
-        </p>
-        {plannedTemplateTargets.map((template) => (
-          <TemplateCard
-            key={template.title}
-            title={template.title}
-            description={template.description}
-            format={template.format}
-            status="Planned"
-            tags={template.tags}
-          />
-        ))}
-      </section>
-
-      <aside className="border-t border-border pt-6">
-        <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-foreground/40">
-          Template Safety Rules
-        </h3>
-        <div className="prose-academic text-sm">
-          <p>
-            Every v1 template includes privacy, copyright/licensing, AI
-            verification, standards alignment, accessibility, and revision-log
-            checks. Broken download links should not be added.
+        <section>
+          <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
+            Available Foundations Templates
+          </h2>
+          <p className="mb-4 text-sm text-foreground/50">
+            These templates support the OTS-101 mini-unit capstone.
           </p>
-        </div>
-      </aside>
+          {FOUNDATION_TEMPLATES.map((template) => (
+            <TemplateCard
+              key={template.slug}
+              title={template.title}
+              description={template.purpose}
+              format={template.format}
+              status="Available"
+              viewUrl={`/templates/${template.slug}`}
+              downloadUrl={`/templates/${template.slug}/download`}
+              tags={template.tags}
+            />
+          ))}
+        </section>
+
+        <section>
+          <h2 className="mb-1 font-heading text-xl font-bold text-foreground">
+            Planned Google-Format Template Targets
+          </h2>
+          <p className="mb-4 text-sm text-foreground/50">
+            These are useful pathway artifacts, but they stay marked as planned
+            until real Google Docs or Sheets files exist.
+          </p>
+          {plannedTemplateTargets.map((template) => (
+            <TemplateCard
+              key={template.title}
+              title={template.title}
+              description={template.description}
+              format={template.format}
+              status="Planned"
+              tags={template.tags}
+            />
+          ))}
+        </section>
+
+        <aside className="border-t border-border pt-6">
+          <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-widest text-foreground/40">
+            Template Safety Rules
+          </h3>
+          <div className="prose-academic text-sm">
+            <p>
+              Every v1 template includes privacy, copyright/licensing, AI
+              verification, standards alignment, accessibility, and revision-log
+              checks. Broken download links should not be added.
+            </p>
+          </div>
+        </aside>
       </ArticleBody>
     </FieldGuidePage>
   );

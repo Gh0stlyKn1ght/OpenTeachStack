@@ -19,67 +19,83 @@ migrationStatus: authored
 
 ## Why This Matters
 
-A teacher team making Google Workspace reliable for weekly planning needs more than a tool list or a checklist. The goal in **Drive Architecture** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
+Most Drive confusion is time confusion. A file may be useful, but is it the current version, last year's version, a draft for next term, or a shared team template?
 
-For **Folders by Course, Unit, and Year**, the practical pressure is simple: building one more folder or tracker without deciding who updates it, when it closes, and how old versions leave the active workspace. This page turns that pressure into a visible update to **Drive architecture map**.
+A workspace system works when folder names reveal course, unit, and year without relying on memory.
 
-## Classroom Scenario
+## Core Idea
 
-Use this situation as the working example: a ninth grade technology team maintaining a current-unit folder, shared tracker, response sheet, delivery deck, and command center. By the end, the work should support this habit: clear ownership, predictable file locations, and closeout routines.
+Use names that show scope and time.
 
-In this scenario, the learner should be able to point to:
+Good Drive names do not need to be clever. They need to sort, scan, and prevent old material from looking current.
 
-- what the teacher prepares before students see the work,
-- what students will read, build, submit, or discuss,
-- what evidence shows the work is ready,
-- what gets revised after the first use.
+## Model Naming Pattern
 
-## Key Idea
+| Level | Pattern | Example |
+| --- | --- | --- |
+| Course root | `Course - Year` | `Robotics - 2026` |
+| Unit folder | `Unit ## - Topic - STATUS` | `Unit 03 - Sensors - ACTIVE` |
+| Student-facing folder | `Student Links - Unit ##` | `Student Links - Unit 03` |
+| Teacher planning | `Teacher Planning - Unit ##` | `Teacher Planning - Unit 03` |
+| Evidence folder | `Evidence - Unit ##` | `Evidence - Unit 03` |
+| Archive | `Archive - Year or Term` | `Archive - 2025 and Earlier` |
 
-A workspace system works when another teacher can find current files, understand ownership, close the loop after class, and avoid exposing private materials.
+Status labels should be plain:
 
-Watch for this mistake: Leaving the newest copy, answer key, and student responses mixed together in a shared folder.
+| Label | Meaning |
+| --- | --- |
+| `ACTIVE` | Use this now. |
+| `READY` | Prepared, not yet taught. |
+| `REVISE` | Keep, but update before reuse. |
+| `CLOSED` | Finished for students. |
+| `ARCHIVE` | Stored for reference only. |
 
-## What You Will Do
+## Classroom Example
 
-Make this page concrete by writing three small decisions:
+Maya replaces this unclear folder set:
 
-- Before class, connect folders by course unit and year to one setup decision in the drive architecture map: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
-- During class, connect folders by course unit and year to one student action in shared drive, docs, slides, forms, sheets, and calendar routines: what learners read, build, submit, discuss, or revise while working through a ninth grade technology team maintaining a current-unit folder, shared tracker, response sheet, delivery deck, and command center.
-- After class, review folders by course unit and year through the drive architecture lens: what evidence proves the move worked, which mistake to avoid (leaving the newest copy, answer key, and student responses mixed together in a shared folder), and what revision supports clear ownership, predictable file locations, and closeout routines.
+| Old folder | Problem |
+| --- | --- |
+| `Robotics Stuff` | No course year, status, or role. |
+| `New Sensors` | Could be draft or active. |
+| `Copy of Unit 3` | No one knows why the copy exists. |
 
-## Build the Artifact
+With this structure:
 
-Use **Folders by Course, Unit, and Year** to make one classroom decision visible inside **Drive architecture map**.
+```text
+Robotics - 2026
+  00 Course Admin
+  01 Team Shared Templates
+  Unit 03 - Sensors - ACTIVE
+    Student Links - Unit 03
+    Teacher Planning - Unit 03
+    Evidence - Unit 03
+  Archive - 2025 and Earlier
+```
 
-Add this to your artifact:
+## Build The Artifact
 
-- Classroom context: shared Drive, Docs, Slides, Forms, Sheets, and Calendar routines; a ninth grade technology team maintaining a current-unit folder, shared tracker, response sheet, delivery deck, and command center.
-- Artifact entry: In **Drive architecture map**, add the decision for **Folders by Course, Unit, and Year** with the student-facing evidence and the review owner.
-- Example entry: Workspace entry: Unit 03 active folder contains current slides, handout, response sheet, and exit ticket; archived versions move out after Friday review.
-- Review check: Check the entry against Google Workspace help pages, local sharing policy, accessibility checks, and file ownership decisions, then write what should change after the first classroom use.
-- Peer review check: A colleague should be able to open the drive architecture artifact, understand the decision behind **Folders by Course, Unit, and Year**, and know the next action without extra explanation.
+Add course, unit, and year decisions to your **Drive architecture map**.
 
-## What Good Work Looks Like
+| Decision | Your entry |
+| --- | --- |
+| Course root name |  |
+| Current unit folder name |  |
+| Status labels you will use |  |
+| Student-facing folder name |  |
+| Teacher planning folder name |  |
+| Evidence folder name |  |
+| Archive folder name |  |
 
-A strong **folders by course unit and year** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
+## Verification Checklist
 
-For this lesson, a strong entry might say:
-
-> Workspace entry: Unit 03 active folder contains current slides, handout, response sheet, and exit ticket; archived versions move out after Friday review.
-
-That level of detail is enough to review. It is also small enough to revise after one classroom use.
-
-## Quality Check
-
-Before moving on, confirm:
-
-- Your artifact entry is stored in **Drive architecture map** rather than kept as a private reminder.
-- The student-facing task or evidence is named in plain language.
-- The review step names a source, safety, privacy, accessibility, or maintenance check.
-- The common mistake is avoided: Leaving the newest copy, answer key, and student responses mixed together in a shared folder.
-- The next classroom use or revision is obvious.
+- Folder names show course, unit, and year where needed.
+- Current work uses a visible status label.
+- Draft, closed, and archived material cannot be mistaken for active teaching.
+- Student-facing files have their own clear location.
+- Evidence is not mixed with teacher drafts.
+- The naming pattern is simple enough to repeat next unit.
 
 ## Reflection
 
-What would a busy teacher misunderstand if they only saw your **Drive architecture map** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.
+Which existing folder name hides time or status? Rewrite the name before moving any files.

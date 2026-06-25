@@ -19,67 +19,41 @@ migrationStatus: authored
 
 ## Why This Matters
 
-A teacher building a first reusable mini-unit needs more than a tool list or a checklist. The goal in **Prompting for Teachers** is to make a classroom system that can be used, inspected, revised, and handed to another educator without needing a meeting first.
+A teacher building a first reusable mini-unit needs a system another educator can inspect. Rubrics and quizzes are high-risk AI tasks because they can look official while measuring the wrong thing.
 
-For **Prompting for Rubrics and Quizzes**, the practical pressure is simple: accepting a polished lesson draft before the sources, student task, assessment evidence, and classroom routine are inspectable. This page turns that pressure into a visible update to **Reusable prompt library**.
+Assessment prompts must begin with the evidence of learning. If students are supposed to justify a threshold with sensor data, the assessment should not only ask vocabulary questions.
 
-## Classroom Scenario
+## Rubric Prompt
 
-Use this situation as the working example: an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection. By the end, the work should support this habit: source-backed planning, plain-language decisions, and visible revision notes.
+Use this when students create a product:
 
-In this scenario, the learner should be able to point to:
+> Act as an assessment assistant. Create a four-level rubric for [student product]. The learning target is [target]. Criteria must be observable in student work. Include three criteria: accuracy, evidence use, and clarity. Use student-friendly language. Do not add criteria that are not visible in the product. End with a teacher review note.
 
-- what the teacher prepares before students see the work,
-- what students will read, build, submit, or discuss,
-- what evidence shows the work is ready,
-- what gets revised after the first use.
+Robotics example:
 
-## Key Idea
+> Create a four-level rubric for a two-sentence threshold justification. The learning target is "I can use sensor data to justify a design decision." Criteria must be observable: sensor data used, threshold decision explained, and units clear.
 
-A useful prompt is a work order, not a wish. It names the learner, task, source material, output format, constraints, review criteria, and what the teacher will verify.
+## Quiz Prompt
 
-Watch for this mistake: Asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule.
+Use this when checking understanding:
 
-## What You Will Do
+> Create a five-question check for understanding on [concept]. Include the correct answer, the misconception each question checks, and one reteach note. Do not include trick questions or facts not provided by the teacher.
 
-Make this page concrete by writing three small decisions:
+## Teacher Review
 
-- Before class, connect prompting for rubrics and quizzes to one setup decision in the reusable prompt library: what the teacher prepares, where it lives, and which source or safety check keeps it honest.
-- During class, connect prompting for rubrics and quizzes to one student action in middle school robotics and technology: what learners read, build, submit, discuss, or revise while working through an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- After class, review prompting for rubrics and quizzes through the prompting for teachers lens: what evidence proves the move worked, which mistake to avoid (asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule), and what revision supports source-backed planning, plain-language decisions, and visible revision notes.
+Check every generated assessment for:
 
-## Build the Artifact
+- alignment to the learning target,
+- observable evidence,
+- student-friendly language,
+- answer-key accuracy,
+- bias or confusing wording,
+- whether private student data is absent.
 
-Use **Prompting for Rubrics and Quizzes** to make one classroom decision visible inside **Reusable prompt library**.
+## Add To The Prompt Library
 
-Add this to your artifact:
-
-- Classroom context: middle school robotics and technology; an ultrasonic sensor mini-unit where students collect readings, explain uncertainty, revise a threshold, and submit a short design reflection.
-- Artifact entry: In **Reusable prompt library**, add the decision for **Prompting for Rubrics and Quizzes** with the student-facing evidence and the review owner.
-- Example entry: Prompt entry: Draft student directions for a 45-minute sensor data table. Use grade 8 language, include three readings, one reliability question, and a note that the teacher checks setup safety before class.
-- Review check: Check the entry against standards, official documentation, source notes, privacy checks, and accessibility checks, then write what should change after the first classroom use.
-- Peer review check: A colleague should be able to open the prompting for teachers artifact, understand the decision behind **Prompting for Rubrics and Quizzes**, and know the next action without extra explanation.
-
-## What Good Work Looks Like
-
-A strong **prompting for rubrics and quizzes** entry is concrete enough that another teacher can inspect it. It names the class context, the artifact location, the student product, the source or safety check, and the revision trigger.
-
-For this lesson, a strong entry might say:
-
-> Prompt entry: Draft student directions for a 45-minute sensor data table. Use grade 8 language, include three readings, one reliability question, and a note that the teacher checks setup safety before class.
-
-That level of detail is enough to review. It is also small enough to revise after one classroom use.
-
-## Quality Check
-
-Before moving on, confirm:
-
-- Your artifact entry is stored in **Reusable prompt library** rather than kept as a private reminder.
-- The student-facing task or evidence is named in plain language.
-- The review step names a source, safety, privacy, accessibility, or maintenance check.
-- The common mistake is avoided: Asking for a complete lesson without giving the standard, materials, student product, time limit, or review rule.
-- The next classroom use or revision is obvious.
+Add one rubric prompt and one quiz prompt. Include the rule: "The teacher verifies every answer and criterion before use."
 
 ## Reflection
 
-What would a busy teacher misunderstand if they only saw your **Reusable prompt library** entry and not your explanation? Revise the entry until the classroom task, evidence, review step, and next improvement are visible.
+What is one assessment task where AI could help draft language but should not decide what counts as mastery?

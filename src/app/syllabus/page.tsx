@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import {
   COURSE_CODE,
   COURSE_TITLE,
@@ -38,10 +37,6 @@ export default function SyllabusPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       <div className="prose-academic">
         <h2>Course Description</h2>
         <p>

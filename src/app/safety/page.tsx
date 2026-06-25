@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 
 export const metadata: Metadata = {
   title: "AI Safety Rules for Teachers — OpenTeachStack",
@@ -21,9 +20,6 @@ export default function SafetyPage() {
         { label: "Focus", value: "Privacy, verification, copyright, and data loss prevention" },
       ]}
     >
-      <div className="mb-8" data-print-hide>
-        <PrintPageButton />
-      </div>
       <ArticleBody>
       {/* ── Why Safety Rules ─────────────────────────────────────────── */}
       <section className="prose-academic mb-10">

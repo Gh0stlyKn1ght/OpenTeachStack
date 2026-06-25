@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import PromptLibraryClient from "@/components/prompts/PromptLibraryClient";
 import {
   getPromptArtifacts,
@@ -32,10 +31,6 @@ export default function PromptsPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
         <section className="prose-academic mb-8">
           <h2>Before You Copy</h2>
           <p>
@@ -62,7 +57,7 @@ export default function PromptsPage() {
 
         <aside className="mt-10 border-t border-border pt-6">
           <p className="text-sm leading-relaxed text-foreground/55">
-            Need a full course route instead of a prompt? Start at{" "}
+            Need a full course instead of a prompt? Start at{" "}
             <Link href="/book/ots-101">OTS-101</Link> or return to the{" "}
             <Link href="/kb/library">Knowledge Base Library</Link>.
           </p>

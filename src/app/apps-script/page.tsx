@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import PrintPageButton from "@/components/PrintPageButton";
 import { getAllContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -27,10 +26,6 @@ export default function AppsScriptPage() {
       ]}
     >
       <ArticleBody>
-        <div className="mt-6" data-print-hide>
-          <PrintPageButton />
-        </div>
-
       {/* ── Why Apps Script ──────────────────────────────────────────── */}
       <section className="prose-academic">
         <h2>Why Apps Script for Teachers</h2>
