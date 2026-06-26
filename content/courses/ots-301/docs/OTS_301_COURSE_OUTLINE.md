@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Modern Teacher Systems
 
@@ -74,3 +74,4 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 3. Domain and DNS examples use reserved placeholder domains in `docs/OTS_301_SAFE_DOMAIN_EXAMPLES.md`.
 4. MDN, CommonMark, GitHub Pages, Vercel, Cloudflare Pages, DNS, IANA, and W3C accessibility references are attached or queued in `docs/OTS_301_SOURCE_REFERENCES.md`.
 5. Live-site privacy, accessibility, and broken-link review is documented in `docs/OTS_301_LIVE_SITE_REVIEW.md`.
+

@@ -58,6 +58,50 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
   const previous = course.chapters[currentIndex - 1];
   const next = course.chapters[currentIndex + 1];
 
+  if (course.status === "Coming Soon") {
+    return (
+      <FieldGuidePage
+        eyebrow={`${course.code} Coming Soon`}
+        title={course.title}
+        subtitle="This chapter is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+        breadcrumbs={[
+          { label: "Book", href: "/book" },
+          { label: course.code, href: `/book/${course.slug}` },
+        ]}
+        meta={[
+          { label: "Course", value: course.code },
+          { label: "Status", value: "Coming Soon" },
+          { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        ]}
+      >
+        <ArticleBody>
+          <section className="book-spread">
+            <div>
+              <h2>Chapter locked</h2>
+              <p>
+                This course still has structure, but its lesson experience is
+                closed on purpose. We are not letting course-shaped outlines
+                masquerade as authored course content.
+              </p>
+              <p>
+                OTS-101 is the active rebuild. Once it is right, this course
+                can be opened and authored for real.
+              </p>
+            </div>
+            <ArtifactCard
+              title="Coming Soon"
+              description="No chapter table of contents or section links are published for frozen courses."
+            />
+          </section>
+
+          <Link href="/book/ots-101" className="book-action">
+            Return to OTS-101
+          </Link>
+        </ArticleBody>
+      </FieldGuidePage>
+    );
+  }
+
   return (
     <FieldGuidePage
       eyebrow={`${course.code} / Chapter ${chapter.number}`}

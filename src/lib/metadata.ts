@@ -1,9 +1,9 @@
 export const COURSE_CODE = "OTS-101";
-export const COURSE_TITLE = "Teaching Teachers Foundations";
+export const COURSE_TITLE = "AI Course Content Foundations for Teachers";
 export const COURSE_SUBTITLE =
-  "Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators";
+  "Use AI to build student-facing lessons, assignments, rubrics, verification checks, and publishable course packets.";
 export const COURSE_THESIS =
-  "OpenTeachStack is an open-source pathway for educators building practical, future-ready curriculum systems. OTS-101 is the required foundations course.";
+  "OpenTeachStack helps teachers create student-facing course content with AI while keeping teacher judgment, verification, safety, accessibility, and revision in the loop.";
 export const SITE_URL = "https://openteachstack.dev";
 export const REPOSITORY_URL =
   "https://github.com/Gh0stlyKn1ght/OpenTeachStack";
@@ -77,156 +77,148 @@ export interface CourseModule {
 
 export const MODULES: CourseModule[] = [
   {
-    id: "teacher-builder-mindset",
+    id: "curriculum-vs-course-content",
     number: "01",
-    title: "Teacher Builder Mindset",
+    title: "Curriculum vs Course Content",
     description:
-      "What OpenTeachStack is, why teachers need practical system ownership, and how to build workflows instead of collecting tools.",
-    slug: "01-teacher-builder-mindset",
+      "Separate curriculum, student-facing course content, instructional materials, platforms, and the course content system teachers actually maintain.",
+    slug: "01-curriculum-vs-course-content",
     essentialQuestion:
-      "What separates a teacher who collects tools from a teacher who builds systems?",
-    buildArtifact: "Teacher workflow audit",
+      "What are teachers actually building when they use AI for course work?",
+    buildArtifact: "Course content inventory",
     evidence:
-      "A short diagnosis of current tools, repeated tasks, pain points, and one workflow worth improving.",
-    templateSlugs: ["teacher-workflow-audit"],
-  },
-  {
-    id: "prompting",
-    number: "02",
-    title: "Prompting for Teachers",
-    description:
-      "Prompting as a professional workflow skill for lessons, rubrics, quizzes, differentiation, and teacher voice preservation.",
-    slug: "02-prompting",
-    essentialQuestion:
-      "How do you give AI the right instructions to get curriculum-quality output?",
-    buildArtifact: "Reusable prompt library",
-    evidence:
-      "Five useful prompts with purpose, context, output notes, revision decisions, and reuse guidance.",
-    templateSlugs: ["prompt-library"],
-  },
-  {
-    id: "ai-literacy-verification",
-    number: "03",
-    title: "AI Literacy and Verification",
-    description:
-      "Using AI as a curriculum assistant while checking accuracy, bias, standards claims, citations, privacy, and teacher voice.",
-    slug: "03-ai-literacy-verification",
-    essentialQuestion:
-      "How do you use AI without handing it professional judgment?",
-    buildArtifact: "AI verification checklist",
-    evidence:
-      "A documented review of one AI-assisted artifact showing what was accepted, changed, rejected, and why.",
-    templateSlugs: ["ai-verification-checklist"],
-  },
-  {
-    id: "standards-targets",
-    number: "04",
-    title: "Standards to Learning Targets",
-    description:
-      "Reading, unpacking, and aligning state standards to specific learning targets, assessments, and unit decisions.",
-    slug: "04-standards-to-learning-targets",
-    essentialQuestion:
-      "How do you turn a standards document into teachable learning targets?",
-    buildArtifact: "Standards unpacking sheet",
-    evidence:
-      "Three standards or outcomes unpacked into verbs, learning targets, assessment evidence, and lesson connections.",
-    templateSlugs: ["standards-unpacking-sheet"],
-  },
-  {
-    id: "course-unit-architecture",
-    number: "05",
-    title: "Course and Unit Architecture",
-    description:
-      "Designing coherent units and lesson sequences with essential questions, objectives, practice, assessment, and reflection.",
-    slug: "05-course-and-unit-architecture",
-    essentialQuestion:
-      "What structure turns a pile of lesson ideas into a coherent unit?",
-    buildArtifact: "Mini-unit map and lesson template",
-    evidence:
-      "A 3 to 5 lesson sequence plus one reusable lesson structure for the first lesson in the mini-unit.",
-    templateSlugs: ["mini-unit-map", "lesson-template"],
-  },
-  {
-    id: "open-resources",
-    number: "06",
-    title: "Resource Discovery and Open Resources",
-    description:
-      "Finding, evaluating, citing, and remixing trustworthy resources, OER, Creative Commons works, and official documentation.",
-    slug: "06-resource-discovery-open-resources",
-    essentialQuestion:
-      "How do you find resources worth trusting, adapting, and sharing?",
-    buildArtifact: "Resource evaluation sheet",
-    evidence:
-      "At least five reviewed resources with source links, license or terms notes, credibility judgment, and use decision.",
-    templateSlugs: ["resource-evaluation-sheet"],
-  },
-  {
-    id: "google-workspace-planning",
-    number: "07",
-    title: "Google Workspace Planning Systems",
-    description:
-      "Using Drive, Docs, Sheets, Forms, Slides, and Calendar as a practical planning system before introducing automation.",
-    slug: "07-google-workspace-planning-systems",
-    essentialQuestion:
-      "How can familiar Google tools become curriculum infrastructure?",
-    buildArtifact: "Workspace planning map",
-    evidence:
-      "A Drive, Docs, Sheets, Forms, or Slides organization plan that shows where the mini-unit artifacts will live.",
-    templateSlugs: ["mini-unit-map", "lesson-template", "resource-evaluation-sheet"],
-  },
-  {
-    id: "assessment-feedback",
-    number: "08",
-    title: "Assessment, Rubrics, and Feedback",
-    description:
-      "Designing valid checks for understanding, rubrics, feedback loops, and assessment evidence aligned to learning targets.",
-    slug: "08-assessment-rubrics-feedback",
-    essentialQuestion:
-      "How do you know students learned what the unit claims to teach?",
-    buildArtifact: "Assessment and rubric draft",
-    evidence:
-      "One assessment task tied to a learning target, with observable rubric criteria and a feedback opportunity.",
-    templateSlugs: ["assessment-rubric-template"],
-  },
-  {
-    id: "delivery-planning",
-    number: "09",
-    title: "Delivery Planning",
-    description:
-      "Turning a designed mini-unit into classroom routines, student-facing directions, pacing plans, and feedback cycles.",
-    slug: "09-delivery-planning",
-    essentialQuestion:
-      "How do you make the curriculum usable in a real classroom?",
-    buildArtifact: "Delivery plan",
-    evidence:
-      "Student-facing directions, pacing, materials, one check for understanding, one feedback moment, one backup plan, and one source-backed one-day lesson workflow.",
-    templateSlugs: ["delivery-plan", "one-day-lesson-site-planner"],
-  },
-  {
-    id: "mini-unit-capstone",
-    number: "10",
-    title: "Mini-Unit Capstone",
-    description:
-      "Build a practical mini-unit system with standards, lessons, resources, assessment, verification, and revision evidence.",
-    slug: "10-mini-unit-capstone",
-    essentialQuestion:
-      "Can you build a small curriculum system that is coherent, verifiable, and ready to teach?",
-    buildArtifact: "Verified mini-unit capstone",
-    evidence:
-      "A complete mini-unit package with source checks, assessment evidence, delivery planning, and revision history.",
+      "A labeled inventory that separates learning plan, student-facing content, instructional materials, platform links, and revision needs.",
     templateSlugs: [
-      "teacher-workflow-audit",
-      "standards-unpacking-sheet",
-      "mini-unit-map",
-      "lesson-template",
-      "prompt-library",
-      "resource-evaluation-sheet",
-      "ai-verification-checklist",
-      "assessment-rubric-template",
-      "delivery-plan",
-      "one-day-lesson-site-planner",
-      "reflection-revision-log",
+      "course-content-inventory",
+      "curriculum-course-content-map",
+      "course-truth-audit",
     ],
+  },
+  {
+    id: "standards-goals-to-lessons",
+    number: "02",
+    title: "From Standards or Goals to Lessons",
+    description:
+      "Turn standards, district goals, or messy teaching ideas into student-friendly outcomes and a teachable lesson sequence.",
+    slug: "02-standards-goals-to-lessons",
+    essentialQuestion:
+      "How do you move from a goal or standard to content students can use?",
+    buildArtifact: "Learning target and lesson map",
+    evidence:
+      "A learning target map that shows target, student-facing language, lesson sequence, evidence, and AI support notes.",
+    templateSlugs: ["learning-target-lesson-map"],
+  },
+  {
+    id: "prompting-without-garbage",
+    number: "03",
+    title: "Prompting AI Without Generic Garbage",
+    description:
+      "Prompt AI with source, context, task, format, examples, non-examples, and checks so output can be revised into teacher voice.",
+    slug: "03-prompting-without-garbage",
+    essentialQuestion:
+      "How do teachers keep AI output from turning into generic lesson filler?",
+    buildArtifact: "Reusable course-content prompt",
+    evidence:
+      "One reusable prompt with source material, classroom context, output format, verification rules, and teacher revision notes.",
+    templateSlugs: ["ai-course-content-prompt"],
+  },
+  {
+    id: "verify-ai-before-students",
+    number: "04",
+    title: "Verifying AI Before Students See It",
+    description:
+      "Check AI output for accuracy, source quality, age fit, bias, privacy, copyright, accessibility, and classroom use.",
+    slug: "04-verify-ai-before-students",
+    essentialQuestion:
+      "What must be true before AI-assisted content reaches students?",
+    buildArtifact: "AI output verification checklist",
+    evidence:
+      "A documented verification pass showing accepted, revised, rejected, and still-uncertain content decisions.",
+    templateSlugs: ["ai-output-verification-checklist"],
+  },
+  {
+    id: "student-facing-lessons",
+    number: "05",
+    title: "Building Real Student-Facing Lessons",
+    description:
+      "Build lesson pages with clear directions, examples, checks, submission expectations, and enough context for students to start.",
+    slug: "05-student-facing-lessons",
+    essentialQuestion:
+      "Can students use the lesson without the teacher re-explaining the page?",
+    buildArtifact: "Student-facing lesson page",
+    evidence:
+      "One student-facing lesson page with target, directions, example, check for understanding, submission expectation, and accessibility pass.",
+    templateSlugs: ["student-facing-lesson-page"],
+  },
+  {
+    id: "assignments-labs-rubrics-feedback",
+    number: "06",
+    title: "Assignments, Labs, Rubrics, and Feedback",
+    description:
+      "Turn lessons into assessable tasks, practice labs, rubrics, feedback routines, and evidence students can act on.",
+    slug: "06-assignments-labs-rubrics-feedback",
+    essentialQuestion:
+      "Does the assessment prove the target instead of just collecting work?",
+    buildArtifact: "Assignment and rubric packet",
+    evidence:
+      "One assignment or lab with rubric criteria, feedback routine, student submission instructions, and revision opportunity.",
+    templateSlugs: ["assignment-rubric-packet"],
+  },
+  {
+    id: "organizing-course-content-system",
+    number: "07",
+    title: "Organizing the Course Content System",
+    description:
+      "Organize folders, files, names, versions, links, templates, archives, and revision logs so the course can survive reuse.",
+    slug: "07-organizing-course-content-system",
+    essentialQuestion:
+      "Could another teacher find, understand, and update the course materials?",
+    buildArtifact: "Course content folder map",
+    evidence:
+      "A folder and naming map with live/draft/archive rules, link ownership, version notes, and revision log location.",
+    templateSlugs: ["course-content-folder-map", "revision-log"],
+  },
+  {
+    id: "safety-accessibility-copyright-source-quality",
+    number: "08",
+    title: "Safety, Accessibility, Copyright, and Source Quality",
+    description:
+      "Review student privacy, fake classroom data, source quality, copyright, licenses, accessibility, and media/document usability.",
+    slug: "08-safety-accessibility-copyright-source-quality",
+    essentialQuestion:
+      "What must be fixed before teacher-built content is shared?",
+    buildArtifact: "Content safety review",
+    evidence:
+      "A safety review that identifies privacy, accessibility, copyright, source, and classroom-use decisions before release.",
+    templateSlugs: ["content-safety-review"],
+  },
+  {
+    id: "publishing-to-platform",
+    number: "09",
+    title: "Publishing to a Platform",
+    description:
+      "Move course content into an LMS, Teachable, Google Classroom, website, or course hub without confusing the platform for the course.",
+    slug: "09-publishing-to-platform",
+    essentialQuestion:
+      "Can students find the right next action in the published space?",
+    buildArtifact: "Publishing checklist",
+    evidence:
+      "A publishing checklist that separates public, classroom-only, teacher-only, and draft materials with navigation and link checks.",
+    templateSlugs: ["publishing-checklist"],
+  },
+  {
+    id: "mini-course-content-packet",
+    number: "10",
+    title: "Capstone: Build a Mini Course Content Packet",
+    description:
+      "Assemble a small course content packet with lessons, assignment, rubric, sources, verification, publishing notes, and revision evidence.",
+    slug: "10-mini-course-content-packet",
+    essentialQuestion:
+      "Is this mini course packet teachable, verifiable, safe, and reusable?",
+    buildArtifact: "Mini course content packet",
+    evidence:
+      "A complete mini course content packet with verified student-facing content, assessment, safety review, publishing checklist, and revision log.",
+    templateSlugs: ["mini-course-content-packet"],
   },
 ];
 
@@ -234,7 +226,7 @@ export interface PathwayCourse {
   code: string;
   title: string;
   level: string;
-  status: "Released";
+  status: "Live" | "Draft" | "Coming Soon";
   purpose: string;
   prerequisites: string;
   majorArtifacts: string[];
@@ -243,11 +235,11 @@ export interface PathwayCourse {
 export const PATHWAY_COURSES: PathwayCourse[] = [
   {
     code: "OTS-101",
-    title: "Teaching Teachers Foundations",
+    title: "AI Course Content Foundations for Teachers",
     level: "Beginner",
-    status: "Released",
+    status: "Draft",
     purpose:
-      "Teach the core mindset, prompting, standards workflow, resource literacy, planning systems, assessment, and delivery habits.",
+      "Teach teachers how to use AI to create student-facing lessons, assignments, rubrics, verification routines, and small course content packets.",
     prerequisites: "Basic Google Workspace familiarity.",
     majorArtifacts: [
       "Teacher workflow audit",
@@ -261,7 +253,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-201",
     title: "Google Workspace Systems for Teachers",
     level: "Beginner/Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Turn Drive, Docs, Sheets, Forms, Slides, and Calendar into durable classroom operating systems.",
     prerequisites: "OTS-101 or equivalent planning workflow.",
@@ -276,7 +268,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-220",
     title: "Apps Script for Teacher Automation",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Build safe Google Workspace automations for folders, documents, quizzes, and reminders.",
     prerequisites:
@@ -292,7 +284,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-240",
     title: "Open Resources & GitHub for Educators",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Teach OER publishing, licensing decisions, GitHub basics, and open-source contribution workflows.",
     prerequisites: "OTS-101 resource evaluation and licensing basics.",
@@ -307,7 +299,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-260",
     title: "AI Media & Lesson Delivery",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Create accessible visuals, slide systems, diagrams, short videos, and delivery routines.",
     prerequisites: "OTS-101 delivery plan.",
@@ -322,7 +314,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-280",
     title: "Cyber Safety for Educators",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Teach identity hygiene, account safety, public profile audits, website safety, repo exposure checks, and basic incident response for public-facing educators.",
     prerequisites: "OTS-101 or equivalent comfort with basic digital workflows.",
@@ -338,7 +330,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-301",
     title: "Teacher Course Sites",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Compare Google Sites, static HTML, GitHub Pages, Docusaurus, Next.js, domains, DNS, and hosting.",
     prerequisites: "OTS-101 plus comfort with files and web publishing concepts.",
@@ -353,7 +345,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-320",
     title: "AI Coding Agents for Educators",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Use Codex, Claude Code, and similar tools safely with version control, diffs, test plans, and content protection.",
     prerequisites: "OTS-240 or equivalent version-control basics.",
@@ -368,7 +360,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-399",
     title: "Capstone Studio",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     purpose:
       "Assemble the full pathway into a publishable curriculum system with automation, open resources, and delivery evidence.",
     prerequisites: "OTS-101 and at least two intermediate/advanced pathway courses.",
@@ -390,5 +382,9 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Start", href: "/book/ots-101" },
   { label: "Pathway", href: "/pathway" },
   { label: "Knowledge Base", href: "/kb" },
+  { label: "Blog", href: "/blog" },
+  { label: "Build Notes", href: "/build-notes" },
   { label: "About", href: "/about" },
 ];
+
+

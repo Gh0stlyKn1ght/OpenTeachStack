@@ -44,7 +44,7 @@ export default async function PromptDetailPage({ params }: PromptDetailPageProps
       title={prompt.title}
       subtitle={prompt.useCase}
       breadcrumbs={[
-        { label: "Knowledge Base Library", href: "/kb/library" },
+        { label: "Knowledge Base", href: "/kb" },
         { label: "Prompt Library", href: "/prompts" },
       ]}
       meta={[

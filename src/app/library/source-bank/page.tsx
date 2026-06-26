@@ -46,7 +46,7 @@ export default function SourceBankPage() {
       eyebrow="The Source Bank"
       title="Free tools, course platforms, and learning resources."
       subtitle="OpenTeachStack keeps a source bank instead of handing teachers random links. Use official sources first, check what is free, check what needs accounts, and read the privacy and age requirements before assigning platforms."
-      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base", href: "/kb" }]}
       meta={[
         { label: "Resources", value: String(sourceBankResources.length) },
         { label: "Source rule", value: "Official links first" },

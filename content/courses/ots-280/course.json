@@ -6,7 +6,7 @@
   "canonicalRoute": "/book/ots-280",
   "sourceRegistry": "src/lib/cyberSafety.ts",
   "generatedAt": "2026-06-22",
-  "migrationStatus": "authored",
+  "migrationStatus": "draft",
   "chapters": [
     {
       "number": "01",
@@ -87,5 +87,5 @@
   ],
   "copiedAssets": [],
   "copiedLabs": [],
-  "courseReadiness": "release"
+  "courseReadiness": "coming-soon"
 }

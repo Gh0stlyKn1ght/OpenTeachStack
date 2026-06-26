@@ -13,7 +13,19 @@ import ReflectionPrompt from "@/components/ReflectionPrompt";
 import TeacherNote from "@/components/TeacherNote";
 import RealityCheck from "@/components/RealityCheck";
 import BuildTask from "@/components/BuildTask";
-import { lessonVisuals } from "@/lib/visualAssets";
+import {
+  AICourseContentWorkflowVisual,
+  ChecklistBlock,
+  ComparisonBlock,
+  ConceptCard,
+  CourseTruthStackVisual,
+  FakeCourseTrapVisual,
+  FrameworkBlock,
+  SourceTruthExportVisual,
+  TakeawayStrip,
+  TiredTeacherTestVisual,
+  WorkflowBlock,
+} from "@/components/InstructionalBlocks";import { lessonVisuals } from "@/lib/visualAssets";
 
 const mdxComponents = {
   pre: MDXPre,
@@ -111,3 +123,4 @@ export default async function LessonPage({ params }: LessonPageProps) {
     </div>
   );
 }
+

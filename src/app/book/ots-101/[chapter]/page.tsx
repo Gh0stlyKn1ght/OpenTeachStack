@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ArtifactCard from "@/components/book/ArtifactCard";
 import BookSidebar from "@/components/book/BookSidebar";
 import ChapterProgress from "@/components/book/ChapterProgress";
 import ArticleBody from "@/components/field-guide/ArticleBody";
@@ -65,7 +64,6 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
         { label: "Duration", value: chapter.duration },
         { label: "Difficulty", value: chapter.difficulty },
         { label: "Artifact", value: chapter.buildArtifact },
-        { label: "Print", value: "Full book PDF" },
       ]}
       sidebar={<BookSidebar activeSlug={chapter.slug} />}
       footer={
@@ -128,43 +126,6 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
               </li>
             ))}
           </ol>
-        </section>
-
-        <section className="book-spread">
-          <div>
-            <h2>The Teacher Problem</h2>
-            <p>{chapter.problem}</p>
-          </div>
-          <ArtifactCard
-            title={chapter.buildArtifact}
-            description={chapter.evidence}
-          />
-        </section>
-
-        <section>
-          <h2>Learning Target</h2>
-          <p>{chapter.essentialQuestion}</p>
-        </section>
-
-        <section>
-          <h2>Build Path</h2>
-          <ul>
-            <li>Identify the classroom workflow problem this chapter addresses.</li>
-            <li>Use source-backed examples before drafting final teaching materials.</li>
-            <li>Build the chapter artifact in a reusable format.</li>
-            <li>Verify claims, privacy choices, and classroom readiness.</li>
-            <li>Archive the artifact so it can improve after teaching.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Safety and Verification Checks</h2>
-          <ul>
-            <li>Do not paste private student data into AI tools.</li>
-            <li>Check official documentation when software instructions matter.</li>
-            <li>Record what changed between the AI draft and the teacher-approved version.</li>
-            <li>Use the source bank before adding external references.</li>
-          </ul>
         </section>
 
       </ArticleBody>

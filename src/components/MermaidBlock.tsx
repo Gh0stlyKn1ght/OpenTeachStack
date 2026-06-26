@@ -115,13 +115,12 @@ export default function MermaidBlock({ chart, caption }: MermaidBlockProps) {
     });
   }, [renderDiagram]);
 
-  // Re-render when dark mode changes
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
         if (
-          mutation.type === 'attributes' &&
-          mutation.attributeName === 'class'
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
         ) {
           renderDiagram();
         }
@@ -136,13 +135,15 @@ export default function MermaidBlock({ chart, caption }: MermaidBlockProps) {
     <figure className="my-8">
       <div
         ref={containerRef}
-        className="flex justify-center rounded-md border border-border bg-surface p-6 overflow-x-auto"
+        className="rounded-md border border-border bg-surface p-4 md:p-6"
       >
         {renderState.status === "rendered" ? (
-          <div
-            className="min-w-full [&_svg]:mx-auto [&_svg]:h-auto [&_svg]:max-w-full"
-            dangerouslySetInnerHTML={{ __html: renderState.svg }}
-          />
+          <div className="overflow-x-auto rounded-sm bg-background/40 p-3">
+            <div
+              className="mermaid-svg"
+              dangerouslySetInnerHTML={{ __html: renderState.svg }}
+            />
+          </div>
         ) : renderState.status === "failed" ? (
           <div className="w-full text-left">
             <p className="mb-3 text-sm font-mono text-red-600 dark:text-red-400">

@@ -16,7 +16,7 @@ const columns = [
   {
     title: "Knowledge Base",
     links: [
-      { label: "Library", href: "/kb/library" },
+      { label: "Start", href: "/kb" },
       { label: "Prompts", href: "/kb/prompts" },
       { label: "Templates", href: "/kb/templates" },
       { label: "Source Bank", href: "/kb/source-bank" },
@@ -29,7 +29,7 @@ const columns = [
       { label: "GitHub", href: REPOSITORY_URL },
       { label: "LinkedIn", href: AUTHOR.linkedinUrl },
       { label: "License", href: "/license" },
-      { label: "Privacy/Safety", href: "/kb/safety" },
+      { label: "Privacy/Safety", href: "/safety" },
       { label: "Contact", href: "/about" },
     ],
   },

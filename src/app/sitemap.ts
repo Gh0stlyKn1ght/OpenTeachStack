@@ -41,7 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/examples/robotics-mini-unit", 0.7),
     entry("/field-notes", 0.7),
     entry("/kb", 0.9, "weekly"),
-    entry("/kb/library", 0.8),
     entry("/kb/source-bank", 0.8, "weekly"),
     entry("/labs", 0.7),
     entry("/lessons", 0.7),
@@ -74,10 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kb/field-notes",
     "/kb/google-workspace/organize-a-course-folder",
     "/kb/lesson-building/build-a-one-day-lesson-site",
-    "/kb/library/free-tools-for-teachers-and-students",
-    "/kb/library/prompt-library",
-    "/kb/library/template-library",
-    "/kb/open-resources",
     "/kb/playbooks/audit-a-teacher-website",
     "/kb/playbooks/build-a-one-day-lesson-site",
     "/kb/playbooks/source-prompt-build-verify-teach-archive-improve",
@@ -89,7 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kb/start-here/what-this-knowledge-base-is",
     "/kb/templates",
     "/kb/tools-platforms/free-tools-for-teachers-and-students",
-    "/kb/troubleshooting",
   ].map((path) => entry(path, 0.6));
 
   const pathwayCourseRoutes = PATHWAY_COURSES.map((course) =>

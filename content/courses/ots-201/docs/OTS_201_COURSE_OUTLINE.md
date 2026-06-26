@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Modern Teacher Systems
 
@@ -59,3 +59,4 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 3. Add a blank Workspace command center template only after its fields are stable.
 4. Add official Google documentation links through the Source Bank workflow.
 5. Re-run browser keyboard and print/PDF checks after major course-reader or layout changes.
+

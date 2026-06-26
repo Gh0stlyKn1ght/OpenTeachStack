@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Cyber Safety for Educators
 
@@ -75,3 +75,4 @@ The outline is represented in `src/lib/cyberSafety.ts` and rendered through the 
 3. FTC, NIST, GitHub secret scanning, and platform references are attached or queued in `docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md`.
 4. Escalation notes for district IT, administration, platform support, and law enforcement boundaries are documented in `docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md`.
 5. The current authored examples passed privacy review in `docs/OTS_280_PRIVACY_REVIEW.md`.
+

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function LibraryRedirectPage() {
-  redirect("/kb/library");
+  redirect("/kb");
 }

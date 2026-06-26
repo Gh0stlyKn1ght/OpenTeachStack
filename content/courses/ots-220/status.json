@@ -1,0 +1,12 @@
+{
+  "status": "planned",
+  "sourceOfTruth": "content/courses/ots-220",
+  "exportTargets": [
+    "teachable"
+  ],
+  "hasRealLessons": false,
+  "hasTemplates": true,
+  "hasSamplePacket": false,
+  "humanReviewed": false,
+  "notes": "Coming Soon. Frozen until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+}

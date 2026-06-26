@@ -17,6 +17,7 @@ const requiredCourses = [
 const requiredEntries = [
   "README.md",
   "course.json",
+  "status.json",
   "lessons",
   "labs",
   "assets",
@@ -24,6 +25,8 @@ const requiredEntries = [
   "templates",
   "references",
 ];
+const strictReadiness = new Set(["release", "public-beta", "teachable-ready"]);
+const noLessonReadiness = new Set(["coming-soon", "planned"]);
 
 function fail(message) {
   console.error(`Course content layout violation: ${message}`);
@@ -70,6 +73,9 @@ if (!existsSync(courseRoot)) {
         fail(`${course}/course.json has invalid canonical route ${courseJson.canonicalRoute}.`);
       }
 
+      const courseReadiness = courseJson.courseReadiness ?? "internal";
+      const requiresCompleteLessons = strictReadiness.has(courseReadiness);
+
       for (const chapter of courseJson.chapters ?? []) {
         if (!chapter.lessonCount || chapter.lessonCount < 1) {
           fail(`${course}/${chapter.slug} has no manifest lesson count.`);
@@ -77,7 +83,7 @@ if (!existsSync(courseRoot)) {
 
         const chapterLessonPath = join(base, "lessons", chapter.slug);
         const chapterLessonFiles = walkFiles(chapterLessonPath, (file) => file.endsWith(".mdx"));
-        if (chapterLessonFiles.length !== chapter.lessonCount) {
+        if (requiresCompleteLessons && chapterLessonFiles.length !== chapter.lessonCount) {
           fail(
             `${course}/${chapter.slug} has ${chapterLessonFiles.length} lesson files but manifest expects ${chapter.lessonCount}.`,
           );
@@ -86,7 +92,12 @@ if (!existsSync(courseRoot)) {
     }
 
     const lessonFiles = walkFiles(join(base, "lessons"), (file) => file.endsWith(".mdx"));
-    if (lessonFiles.length === 0) {
+    if (lessonFiles.length === 0 && existsSync(join(base, "course.json"))) {
+      const courseJson = JSON.parse(readFileSync(join(base, "course.json"), "utf8"));
+      if (!noLessonReadiness.has(courseJson.courseReadiness ?? "internal")) {
+        fail(`${course} has no course-owned lesson files.`);
+      }
+    } else if (lessonFiles.length === 0) {
       fail(`${course} has no course-owned lesson files.`);
     }
   }

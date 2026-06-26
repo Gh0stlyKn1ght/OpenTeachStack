@@ -23,7 +23,7 @@ export default function PromptsPage() {
       eyebrow="Prompt Library"
       title="Prompts teachers can copy, verify, revise, and save."
       subtitle="These prompts are starting points for course artifacts, not final answers. Use them to plan curriculum, build classroom materials, check AI output, and document decisions across the OpenTeachStack pathway."
-      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base", href: "/kb" }]}
       meta={[
         { label: "Prompts", value: String(TEACHER_PROMPTS.length) },
         { label: "Categories", value: String(getPromptCategories().length) },
@@ -59,7 +59,7 @@ export default function PromptsPage() {
           <p className="text-sm leading-relaxed text-foreground/55">
             Need a full course instead of a prompt? Start at{" "}
             <Link href="/book/ots-101">OTS-101</Link> or return to the{" "}
-            <Link href="/kb/library">Knowledge Base Library</Link>.
+            <Link href="/kb">Knowledge Base</Link>.
           </p>
         </aside>
       </ArticleBody>

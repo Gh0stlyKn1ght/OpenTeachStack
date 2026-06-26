@@ -473,35 +473,6 @@ body::after {
 
 }
 
-.full-course-print {
-  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
-}
-
-.full-course-toc > ol {
-  columns: 2;
-  column-gap: 2rem;
-}
-
-.full-course-toc li {
-  break-inside: avoid;
-}
-
-.full-course-chapter {
-  margin-top: 4rem;
-  break-before: page;
-}
-
-.full-course-section {
-  margin-top: 2.5rem;
-  break-inside: avoid-page;
-}
-
-@media (max-width: 48rem) {
-  .full-course-toc > ol {
-    columns: 1;
-  }
-}
-
 /* ── Field Guide Document System ─────────────────────────────────────── */
 .field-guide-page {
   min-height: 100%;
@@ -668,6 +639,76 @@ body::after {
 
 .field-guide-meta dd {
   margin: 0;
+}
+
+.article-byline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.4rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 76%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 76%, transparent);
+  padding: 0.85rem 0;
+}
+
+.article-byline-author {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 0.75rem;
+}
+
+.article-byline-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: 50% 38%;
+  filter: grayscale(1);
+}
+
+.article-byline-author p {
+  margin: 0;
+  color: var(--color-foreground);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-byline-author span {
+  display: block;
+  margin-top: 0.15rem;
+  color: color-mix(in srgb, var(--color-foreground) 56%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.article-share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--color-border) 86%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+  color: color-mix(in srgb, var(--color-foreground) 62%, transparent);
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.article-share-button:hover {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface));
+  color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 .field-guide-body {
@@ -1159,8 +1200,432 @@ a:focus-visible {
   padding-left: 1.625rem;
 }
 
+.prose-academic ul {
+  list-style: disc;
+}
+
+.prose-academic ol {
+  list-style: decimal;
+}
+
 .prose-academic li {
   margin-bottom: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+/* ── Concept card flows ──────────────────────────────────────────────── */
+.concept-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1.75rem 0;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.65rem;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 42%),
+    color-mix(in srgb, var(--color-surface-alt) 36%, transparent);
+}
+
+.concept-card {
+  position: relative;
+  min-height: 9.5rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-bg) 76%, transparent);
+}
+
+.concept-card::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -0.72rem;
+  z-index: 1;
+  width: 1.45rem;
+  height: 1.45rem;
+  transform: translateY(-50%);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.35rem;
+  text-align: center;
+}
+
+.concept-card:nth-child(3n)::after,
+.concept-card:last-child::after {
+  display: none;
+}
+
+.concept-card span {
+  display: inline-flex;
+  margin-bottom: 0.7rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.concept-card strong {
+  display: block;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+
+.concept-card p {
+  margin: 0.55rem 0 0;
+  color: color-mix(in srgb, var(--color-foreground) 68%, transparent);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 58rem) {
+  .concept-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .concept-card:nth-child(3n)::after {
+    display: block;
+  }
+
+  .concept-card:nth-child(2n)::after,
+  .concept-card:last-child::after {
+    display: none;
+  }
+}
+
+@media (max-width: 36rem) {
+  .concept-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-card::after {
+    content: "↓";
+    top: auto;
+    right: 50%;
+    bottom: -0.72rem;
+    transform: translateX(50%);
+  }
+
+  .concept-card:nth-child(2n)::after,
+  .concept-card:nth-child(3n)::after {
+    display: block;
+  }
+
+  .concept-card:last-child::after {
+    display: none;
+  }
+}
+
+/* ── Instructional visual blocks ─────────────────────────────────────── */
+.instructional-block {
+  --block-accent: var(--color-blue);
+  margin: 2rem 0;
+  border: 1px solid color-mix(in srgb, var(--block-accent) 34%, var(--color-border));
+  border-radius: 1rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--block-accent) 14%, transparent), transparent 34%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--block-accent) 12%, transparent), transparent 36%),
+    color-mix(in srgb, var(--color-surface) 88%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-on-accent) 18%, transparent),
+    0 20px 52px color-mix(in srgb, var(--block-accent) 10%, transparent);
+}
+
+.instructional-block-blue { --block-accent: var(--color-blue); }
+.instructional-block-green { --block-accent: var(--color-green); }
+.instructional-block-amber { --block-accent: var(--color-amber); }
+.instructional-block-orange { --block-accent: var(--color-orange); }
+.instructional-block-pink { --block-accent: var(--color-pink); }
+.instructional-block-purple { --block-accent: var(--color-purple); }
+
+.instructional-block-header {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.35rem 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--block-accent) 28%, var(--color-border));
+}
+
+.instructional-block-header span {
+  width: fit-content;
+  border: 1px solid color-mix(in srgb, var(--block-accent) 42%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--block-accent) 12%, transparent);
+  color: var(--block-accent);
+  padding: 0.22rem 0.62rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.instructional-block-header h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: var(--color-heading);
+  font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+  line-height: 1.08;
+}
+
+.instructional-block-header p {
+  max-width: 48rem;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.instructional-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.instructional-card {
+  --card-accent: var(--block-accent);
+  min-height: 10rem;
+  border: 1px solid color-mix(in srgb, var(--card-accent) 28%, var(--color-border));
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background:
+    linear-gradient(150deg, color-mix(in srgb, var(--card-accent) 10%, transparent), transparent 42%),
+    color-mix(in srgb, var(--color-surface-alt) 46%, var(--color-surface));
+}
+
+.instructional-card-blue { --card-accent: var(--color-blue); }
+.instructional-card-green { --card-accent: var(--color-green); }
+.instructional-card-amber { --card-accent: var(--color-amber); }
+.instructional-card-orange { --card-accent: var(--color-orange); }
+.instructional-card-pink { --card-accent: var(--color-pink); }
+.instructional-card-purple { --card-accent: var(--color-purple); }
+
+.instructional-card-kicker {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.instructional-card-kicker span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  background: var(--card-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.instructional-card-kicker strong {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.18;
+}
+
+.instructional-card-body,
+.instructional-card-body p {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-foreground) 72%, transparent);
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
+.instructional-card-example {
+  margin-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--card-accent) 24%, var(--color-border));
+  padding-top: 0.75rem;
+  color: color-mix(in srgb, var(--color-foreground) 64%, transparent);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.takeaway-stack {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.takeaway-strip {
+  --strip-accent: var(--color-amber);
+  grid-column: 1 / -1;
+  border: 1px solid color-mix(in srgb, var(--strip-accent) 36%, var(--color-border));
+  border-left: 4px solid var(--strip-accent);
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--strip-accent) 10%, var(--color-surface));
+  padding: 0.85rem 1rem;
+  color: color-mix(in srgb, var(--color-foreground) 78%, transparent);
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.takeaway-strip-amber { --strip-accent: var(--color-amber); }
+.takeaway-strip-purple { --strip-accent: var(--color-purple); }
+
+.comparison-grid,
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.comparison-panel,
+.workflow-step-card {
+  border: 1px solid color-mix(in srgb, var(--block-accent) 30%, var(--color-border));
+  border-radius: 0.85rem;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--color-surface-alt) 46%, var(--color-surface));
+}
+
+.comparison-panel h3 {
+  margin: 0 0 0.7rem;
+  color: var(--color-heading);
+  font-size: 1.08rem;
+}
+
+.comparison-panel ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.comparison-panel li {
+  color: color-mix(in srgb, var(--color-foreground) 74%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.workflow-step-card {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.workflow-step-card span {
+  width: fit-content;
+  border-bottom: 2px solid var(--block-accent);
+  color: var(--block-accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.workflow-step-card p {
+  margin: 0;
+  color: color-mix(in srgb, var(--color-foreground) 76%, transparent);
+  font-size: 0.96rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.visual-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visual-checklist li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  min-height: 4rem;
+  border: 1px solid color-mix(in srgb, var(--block-accent) 30%, var(--color-border));
+  border-radius: 0.75rem;
+  padding: 0.85rem;
+  background: color-mix(in srgb, var(--color-surface-alt) 42%, var(--color-surface));
+  color: color-mix(in srgb, var(--color-foreground) 76%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.38;
+}
+
+.visual-checklist span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: var(--block-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+@media (max-width: 58rem) {
+  .instructional-card-grid,
+  .workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42rem) {
+  .instructional-block {
+    border-radius: 0.8rem;
+    padding: 0.85rem;
+  }
+
+  .instructional-card-grid,
+  .comparison-grid,
+  .workflow-grid,
+  .visual-checklist {
+    grid-template-columns: 1fr;
+  }
+}
+/* ── Mermaid diagrams ───────────────────────────────────────────────── */
+.mermaid-svg {
+  display: block;
+  min-width: min(52rem, calc(100vw - 4rem));
+}
+
+.mermaid-svg svg {
+  display: block;
+  width: max-content;
+  min-width: 52rem;
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mermaid-svg text,
+.mermaid-svg foreignObject,
+.mermaid-svg .nodeLabel,
+.mermaid-svg .edgeLabel {
+  font-size: 15px !important;
+  line-height: 1.35;
+}
+
+@media (max-width: 48rem) {
+  .mermaid-svg,
+  .mermaid-svg svg {
+    min-width: 42rem;
+  }
 }
 
 /* ── Academic Tech Lab Utilities ─────────────────────────────────────── */
@@ -1415,4 +1880,7 @@ a:focus-visible {
     margin: 2cm;
   }
 }
+
+
+
 

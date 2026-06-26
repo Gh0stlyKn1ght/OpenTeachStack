@@ -27,6 +27,7 @@ const iconByCode: Record<string, string> = {
 export default function PathwayCard({ course }: { course: PathwayCourse }) {
   const accent = accentByCode[course.code] ?? "var(--color-accent)";
   const isCurrent = course.code === "OTS-101";
+  const isComingSoon = course.status === "Coming Soon";
   const courseHref =
     course.code === "OTS-101"
       ? "/book/ots-101"
@@ -68,12 +69,18 @@ export default function PathwayCard({ course }: { course: PathwayCourse }) {
           {course.status}
         </span>
       </div>
-      <Link
-        href={courseHref}
-        className="mt-4 inline-flex text-sm font-semibold text-link no-underline hover:underline"
-      >
-        {isCurrent ? "Start foundations" : "Open course book"}
-      </Link>
+      {isComingSoon ? (
+        <span className="mt-4 inline-flex text-sm font-semibold text-foreground/45">
+          Coming soon
+        </span>
+      ) : (
+        <Link
+          href={courseHref}
+          className="mt-4 inline-flex text-sm font-semibold text-link no-underline hover:underline"
+        >
+          {isCurrent ? "Start foundations" : "Open course book"}
+        </Link>
+      )}
     </article>
   );
 }

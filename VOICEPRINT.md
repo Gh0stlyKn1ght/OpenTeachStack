@@ -1,5 +1,9 @@
 # OpenTeachStack Voiceprint
 
+Short Codex trigger phrase:
+
+> You are a teacher-facing course writer first and a repo engineer second. Build one real course. Mark everything else honestly.
+
 OpenTeachStack should sound like it was built by a teacher who had to create real course systems while already teaching.
 
 This is not corporate ed-tech branding. This is not consultant language.
@@ -27,6 +31,9 @@ The reader should feel:
 ## Core Beliefs
 
 - A lesson is not finished just because it has headings.
+- A route is not a lesson.
+- A generated MDX file is not proof of course content.
+- A passing build is not proof that the course teaches.
 - Student-facing content is not automatically curriculum.
 - OpenTeachStack builds curriculum systems: learning goals, sequence, evidence, and revision routines connected to student-facing material.
 - AI output is draft material, not authority.
@@ -87,6 +94,21 @@ Every lesson should answer:
 7. What privacy, safety, accessibility, or copyright boundary matters here?
 8. When should this be reviewed again?
 
+## Required Lesson Shape
+
+Use this structure unless the existing route requires a different heading shape:
+
+1. The Teacher Problem
+2. The Idea
+3. Classroom Scenario
+4. Weak Version
+5. Better Version
+6. Build Step
+7. Quality Check
+8. Safety / Accessibility / Source Note
+9. Reflection
+10. Capstone Connection
+
 ## Required Lesson Ingredients
 
 - one real classroom pressure point
@@ -98,6 +120,17 @@ Every lesson should answer:
 - one safety/accessibility reminder where relevant
 - one artifact connection
 - one reflection question tied to the artifact
+
+## Visual Explanation Pattern
+
+Use visuals like a teacher would use a whiteboard or a good slide: only when they make the idea easier to understand.
+
+- Use step cards for process flows.
+- Use tab/category cards for sorting concepts, comparing containers, or separating what looks complete from what is actually needed.
+- Use tables for audits, rubrics, inventories, and checklist-style decisions.
+- Use Mermaid only for diagrams that need graph relationships and remain readable in the lesson view.
+
+Avoid tiny flowcharts, decorative diagrams, and visual polish that hides weak teaching.
 
 ## AI Usage Boundary
 
@@ -124,6 +157,25 @@ If it only explains a concept, it is not ready.
 If it only points to a tool, it is not ready.
 If it helps a teacher build, verify, teach, and revise something real, it is ready.
 
+## Forbidden Scaffold Behavior
+
+Do not create lesson files that only contain headings, generic objectives, vague why-this-matters paragraphs, swapped topic names, placeholder examples, generic reflection prompts, route-satisfying filler, boilerplate artifact language, or teacher-facing instructions masquerading as finished lesson content.
+
+Do not write lessons by copying a template and replacing the topic name.
+
+Do not mark content authored, complete, release-ready, or learner-facing unless the body actually teaches.
+
+Do not restore fake content just to make tests pass.
+
+Do not prioritize route coverage over instructional truth.
+
 ## OpenTeachStack One-Sentence Voice
 
 OpenTeachStack helps teachers turn messy curriculum pressure into organized course content systems that are teachable, verifiable, safe, and reusable.
+
+## Formatting Is Instruction
+
+Formatting is part of the teaching system. A page should show what matters, what comes first, what the mistake is, what the better version looks like, what action to take, what evidence to produce, and what to check before moving on.
+
+Use headings, short paragraphs, numbered steps, bullets, tables, blockquotes, checklists, and code blocks when they make the lesson easier to teach. Do not use formatting as fake polish.
+

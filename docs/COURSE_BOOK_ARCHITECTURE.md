@@ -1,6 +1,6 @@
 # OpenTeachStack Course Book Architecture
 
-Date: 2026-06-21
+Date: 2026-06-26
 
 OpenTeachStack should feel like a course book, not a short professional development outline.
 
@@ -27,20 +27,20 @@ Course Path -> Course -> Chapter -> Section -> Workshop / Artifact / Checkpoint
 
 Internal legacy names may remain temporarily when changing them would break existing routes, scripts, or content frontmatter.
 
-## OTS-101 Structure
+## Current OTS-101 Structure
 
-OTS-101 Foundations uses 10 chapters:
+OTS-101 is now **AI Course Content Foundations for Teachers** and uses 10 chapters:
 
-- Chapter 01: Teacher Builder Mindset
-- Chapter 02: Prompting for Teachers
-- Chapter 03: AI Literacy and Verification
-- Chapter 04: Standards to Learning Targets
-- Chapter 05: Course and Unit Architecture
-- Chapter 06: Resource Discovery and Open Resources
-- Chapter 07: Google Workspace Planning Systems
-- Chapter 08: Assessment, Rubrics, and Feedback
-- Chapter 09: Delivery Planning
-- Chapter 10: Mini-Unit Capstone
+- Chapter 01: Curriculum vs Course Content
+- Chapter 02: From Standards or Goals to Lessons
+- Chapter 03: Prompting AI Without Generic Garbage
+- Chapter 04: Verifying AI Before Students See It
+- Chapter 05: Building Real Student-Facing Lessons
+- Chapter 06: Assignments, Labs, Rubrics, and Feedback
+- Chapter 07: Organizing the Course Content System
+- Chapter 08: Safety, Accessibility, Copyright, and Source Quality
+- Chapter 09: Publishing to a Platform
+- Chapter 10: Capstone: Build a Mini Course Content Packet
 
 Each chapter should eventually contain:
 
@@ -60,7 +60,9 @@ Each chapter should eventually contain:
 
 The current repo keeps legacy authored MDX content in `content/lessons` and `content/labs` for compatibility while the course books read from course-owned content under `content/courses/{courseSlug}`.
 
-Each course folder carries its own `course.json`, `lessons/`, `labs/`, `assets/`, `docs/`, `templates/`, and `references/` directories so a course can be exported, reviewed, or improved without hunting through global buckets.
+Each course folder carries its own `course.json`, `status.json`, `lessons/`, `labs/`, `assets/`, `docs/`, `templates/`, `references/`, and `exports/` directories so a course can be exported, reviewed, or improved without hunting through global buckets.
+
+Root-level `teachable/` is legacy export support only. It is not a course-authoring root.
 
 The Book Mode layer adds the deeper course-book model through metadata in `src/lib/book.ts`:
 
@@ -91,6 +93,7 @@ content/
 │  └─ ots-101/
 │     ├─ README.md
 │     ├─ course.json
+│     ├─ status.json
 │     ├─ lessons/
 │     │  ├─ 01-teacher-builder-mindset/
 │     │  │  ├─ README.md
@@ -102,13 +105,19 @@ content/
 │     ├─ assets/
 │     ├─ docs/
 │     ├─ templates/
-│     └─ references/
+│     ├─ references/
+│     └─ exports/
+│        └─ teachable/
 ```
+
+For the future chapter-first target, see `docs/COURSE_FOLDER_STANDARD.md`.
 
 ## Content Rules
 
 - Do not delete authored content.
 - Do not overwrite existing lesson bodies with template output.
+- Do not treat Teachable export files as course source content.
+- Do not mark a course live because it has a Teachable folder.
 - Do not break old routes without redirects or compatibility wrappers.
 - Keep `/course` and `/lessons` available until the book routes fully replace them.
 - Prefer course-owned folders before moving readers.

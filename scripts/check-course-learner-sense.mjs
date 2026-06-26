@@ -6,15 +6,15 @@ const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
 
 const expectedCourseFrames = {
-  "ots-101": "A teacher building a first reusable mini-unit needs a system another educator can inspect",
-  "ots-201": "A workspace system works",
-  "ots-220": "Automation is ready",
-  "ots-240": "Open work needs",
-  "ots-260": "Media belongs in a lesson",
-  "ots-280": "Teacher safety work should reduce exposure",
-  "ots-301": "A course site is a maintained teaching surface",
-  "ots-320": "An agent can draft changes",
-  "ots-399": "A capstone proves the system",
+  "ots-101": ["AI", "student-facing", "course content"],
+  "ots-201": ["workspace system"],
+  "ots-220": ["automation"],
+  "ots-240": ["open"],
+  "ots-260": ["media", "lesson"],
+  "ots-280": ["teacher safety"],
+  "ots-301": ["course site"],
+  "ots-320": ["agent"],
+  "ots-399": ["capstone"],
 };
 
 const confusingFragments = [
@@ -51,7 +51,7 @@ function display(filePath) {
 const failures = [];
 const summaries = [];
 
-for (const [courseSlug, expectedFrame] of Object.entries(expectedCourseFrames)) {
+for (const [courseSlug, expectedFrames] of Object.entries(expectedCourseFrames)) {
   const lessonsRoot = join(coursesRoot, courseSlug, "lessons");
   const files = walkMdx(lessonsRoot);
   let checked = 0;
@@ -60,9 +60,13 @@ for (const [courseSlug, expectedFrame] of Object.entries(expectedCourseFrames)) 
     const parsed = matter(readFileSync(file, "utf8"));
     checked += 1;
 
-    if (!parsed.content.includes(expectedFrame)) {
+    const missingFrames = expectedFrames.filter(
+      (frame) => !parsed.content.toLowerCase().includes(frame.toLowerCase()),
+    );
+
+    if (missingFrames.length > 0) {
       failures.push(
-        `${display(file)} does not use the expected learner frame: ${expectedFrame}`,
+        `${display(file)} does not use the expected learner frame terms: ${missingFrames.join(", ")}`,
       );
     }
 

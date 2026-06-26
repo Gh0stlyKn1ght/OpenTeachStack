@@ -1,6 +1,6 @@
 # OTS-101 Teaching Teachers Foundations
 
-Status: release-ready course-owned content
+Status: Draft active rebuild - not live yet.
 
 Canonical route: `/book/ots-101`
 
@@ -20,3 +20,4 @@ This folder is the course-owned content package for OTS-101. It contains learner
 ## Maintenance Rule
 
 Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.
+

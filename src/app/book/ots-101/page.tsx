@@ -31,9 +31,8 @@ export default function Ots101BookPage() {
         { label: "Course", value: BOOK_COURSE_CODE },
         { label: "Legacy code", value: COURSE_CODE },
         { label: "Level", value: "Beginner" },
-        { label: "Final artifact", value: "Verified mini-unit system" },
+        { label: "Final artifact", value: "Mini course content packet" },
         { label: "Source bank", value: "Verified links" },
-        { label: "Print", value: "Full book PDF" },
       ]}
       sidebar={<BookSidebar />}
       footer={
@@ -52,23 +51,24 @@ export default function Ots101BookPage() {
             <h2>Course Thesis</h2>
             <p>{COURSE_SUBTITLE}</p>
             <p>
-              {BOOK_COURSE_CODE} is the starting point for teachers who want
-              more control over curriculum systems, AI use, sources, templates,
-              assessment, delivery, and revision.
+              {BOOK_COURSE_CODE} is the active rebuild course for teachers who
+              want to use AI to create student-facing course content without
+              surrendering verification, safety, accessibility, or teacher
+              judgment.
             </p>
           </div>
           <ArtifactCard
-            title="Verified mini-unit system"
-            description="The course finishes with a compact curriculum package: standards, sources, prompts, assessment, delivery plan, and revision evidence."
+            title="Mini course content packet"
+            description="The course finishes with a small, usable packet: lesson page, assignment, rubric, sources, verification notes, publishing checklist, and revision log."
           />
         </section>
 
         <section>
           <h2>Chapter Table of Contents</h2>
           <p className="mb-6 max-w-3xl text-sm leading-relaxed text-foreground/58">
-            The old module outline is now treated as a chapter structure. Each
-            chapter contains readable sections, build tasks, and checkpoints so
-            the course feels like a real book instead of a short packet.
+            OTS-101 is being rebuilt one real chapter at a time. Missing
+            lessons are intentionally unavailable until they have real
+            teacher-facing bodies.
           </p>
           <CourseTOC />
         </section>

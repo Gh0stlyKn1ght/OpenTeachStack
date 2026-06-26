@@ -1,0 +1,82 @@
+---
+course: OTS-101
+courseSlug: ots-101
+chapter: Curriculum vs Course Content
+chapterSlug: 01-curriculum-vs-course-content
+sectionNumber: 01.4
+sectionSlug: 01-4
+title: "Build Artifact: Course Content Inventory"
+type: artifact
+duration: 30 minutes
+artifact: Course content inventory
+canonicalRoute: /book/ots-101/01-curriculum-vs-course-content/01-4
+sourceRegistry: src/lib/book.ts
+sourceLessonSlug: ''
+sourceLessonTitle: ''
+migrationStatus: authored
+---
+## The teacher problem
+
+Before AI can help improve a course, the teacher needs to know what already exists and what job each piece does.
+
+Without an inventory, AI may rewrite the wrong thing.
+
+It may polish an export file when the source lesson is missing. It may revise teacher notes as if they were student directions. It may make a quiz sound better without fixing the target.
+
+## The artifact
+
+Build a course content inventory for one small unit or mini-course.
+
+The inventory does not need to be pretty.
+
+It needs to tell the truth.
+
+Use this table:
+
+| Item | Category | Audience | Location | Status | AI help needed | Verification needed | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |
+
+## Example output
+
+For a robotics safety mini-unit, one row might look like this:
+
+| Item | Category | Audience | Location | Status | AI help needed | Verification needed | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Startup checklist | Student-facing course content | Students | Drive/source folder | usable but wordy | simplify language | verify safety wording | revise checklist |
+
+A weak inventory says:
+
+> Robotics safety files: notes, quiz, slides, checklist.
+
+A stronger inventory names audience, status, and next action.
+
+## Build step
+
+1. Choose one course, unit, or mini-unit.
+2. List at least eight items connected to it.
+3. Assign each item a category: curriculum, student-facing content, instructional material, platform/export, source, draft, archive, or unclear.
+4. Assign each item an audience: students, teacher, public, classroom-only, or private.
+5. Mark the status: keep, revise, verify, archive, missing, or blocked.
+6. Add one next action for the most important student-facing item.
+
+## Quality check
+
+- [ ] Every item has a category.
+- [ ] Every item has an audience.
+- [ ] Student-facing pieces are visible.
+- [ ] Teacher-only pieces are not mixed into student content.
+- [ ] Export/platform copies are labeled as exports.
+- [ ] At least one missing or weak piece is named honestly.
+
+## Boundary note
+
+Use fake student names and fictional links in any example inventory.
+
+If your real inventory includes private documents, summarize the type of item instead of pasting sensitive content into AI.
+
+## Capstone connection
+
+This inventory becomes the first evidence page in your final mini course content packet.
+
+It should prove that your course has a source of truth before you publish to Google Classroom, Canvas, Teachable, a website, or any other platform.

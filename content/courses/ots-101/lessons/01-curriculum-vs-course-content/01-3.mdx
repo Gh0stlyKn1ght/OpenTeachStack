@@ -1,0 +1,130 @@
+---
+course: OTS-101
+courseSlug: ots-101
+chapter: Curriculum vs Course Content
+chapterSlug: 01-curriculum-vs-course-content
+sectionNumber: 01.3
+sectionSlug: 01-3
+title: Why a Folder Full of Files Is Not a Course
+type: section
+duration: 15 minutes
+artifact: Course content inventory
+canonicalRoute: /book/ots-101/01-curriculum-vs-course-content/01-3
+sourceRegistry: src/lib/book.ts
+sourceLessonSlug: ''
+sourceLessonTitle: ''
+migrationStatus: authored
+---
+## What happened
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+A folder can look like a course before the course exists.
+
+This is the fake course trap.
+
+AI makes the trap easier to fall into because it can generate convincing course-shaped assets very quickly.
+
+```txt
+course-description.md
+lesson-outline.csv
+quiz-plan.md
+downloads-index.md
+video-notes.md
+final-project.md
+```
+
+That folder looks productive.
+
+It may still be missing the lesson students actually use.
+
+## What looked fine
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+The folder has familiar course objects.
+
+A description sounds official. An outline gives sequence. A quiz plan feels like assessment. A final project gives the course an ending.
+
+But those pieces can be packaging support instead of teaching content.
+
+<FakeCourseTrapVisual />
+
+## What was actually broken
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+Ms. Rivera is building a robotics safety mini-unit.
+
+She asks AI for a complete online course package. The output includes a polished course description, a five-part outline, a quiz plan, a downloads list, and a final project.
+
+When she opens the files, she notices what is missing:
+
+- no student-facing lesson page
+- no worked example of a safe startup decision
+- no practice scenario
+- no safety verification note
+- no rubric tied to the target
+- no revision note after teaching
+
+The folder is organized.
+
+The course is not teachable yet.
+
+## Root cause
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+The prompt asked for the container before the course source existed.
+
+Weak prompt:
+
+> Make me a complete Teachable course about safe robot startup and shutdown.
+
+Better prompt:
+
+> Help me audit whether I have a real course source before creating any platform export. Check for learning target, student-facing lesson, worked example, weak example, practice task, assessment evidence, safety verification, accessibility check, and revision note. Mark missing pieces as missing instead of inventing a fake-complete course.
+
+## The fix
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+Run a course truth check before packaging.
+
+| Course truth check | Status | Teacher decision |
+| --- | --- | --- |
+| Learning target | present | Keep and refine. |
+| Student-facing lesson | missing | Draft before export. |
+| Worked example | missing | Add one safe startup example. |
+| Practice task | weak | Revise into student evidence. |
+| Assessment evidence | weak | Align to the target. |
+| Safety verification | required | Check local procedure. |
+| Export package | not ready | Wait. |
+
+## Rule we keep
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+Export last.
+
+Source first.
+
+A real course source includes the target, lesson, examples, task, assessment evidence, verification notes, safety/accessibility review, and revision log.
+
+The platform package comes after that.
+
+## Teacher takeaway
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+Before trusting any generated course folder, ask:
+
+- What does the learner do?
+- What example shows the work?
+- What weak version should they avoid?
+- What evidence proves the target?
+- What must the teacher verify?
+- What belongs in the source course?
+- What belongs only in the export package?
+
+If the only thing you can point to is a folder, outline, quiz plan, or platform shell, the course is not ready.

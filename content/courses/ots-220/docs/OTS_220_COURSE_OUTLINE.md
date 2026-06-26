@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Modern Teacher Systems
 
@@ -78,3 +78,4 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 3. Add an Apps Script safety checklist template only after final fields are stable.
 4. Add official Apps Script docs and samples to relevant section source panels.
 5. Add a no-live-data test protocol for every code-running lab.
+

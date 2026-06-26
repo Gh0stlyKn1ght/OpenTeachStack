@@ -1,0 +1,15 @@
+{
+  "status": "draft",
+  "sourceOfTruth": "content/courses/ots-101",
+  "exportTargets": [
+    "teachable"
+  ],
+  "hasRealLessons": true,
+  "hasTemplates": true,
+  "hasSamplePacket": true,
+  "humanReviewed": false,
+  "authoredChapterRange": "01-10",
+  "lessonBodyPass": "complete draft authoring pass",
+  "releaseReadiness": "not release-ready until human review, visual/readability pass, and validation gates run",
+  "notes": "Active draft rebuild. Chapters 01-10 have real lesson bodies in the active OTS-101 course structure. Course still needs human review before it should be treated as live."
+}

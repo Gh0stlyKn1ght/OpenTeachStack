@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
 import { AcademicHeader } from "@/components/AcademicHeader";
 import { Footer } from "@/components/Footer";
 import { createPageMetadata, rootMetadataBase } from "@/lib/siteMetadata";
@@ -59,8 +60,10 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <Script
+          id="openteachstack-theme"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
 try {
@@ -73,8 +76,6 @@ try {
             `,
           }}
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <AcademicHeader />
         <main className="flex-1">{children}</main>
         <Footer />

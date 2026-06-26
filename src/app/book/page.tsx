@@ -60,9 +60,9 @@ export default function BookPage() {
         <section>
           <h2>Enter {BOOK_COURSE_CODE}</h2>
           <p>
-            Start with the foundations course. It turns scattered teacher work
-            into a repeatable curriculum workflow and ends with a verified
-            mini-unit system.
+            Start with the active rebuild course. It teaches teachers how to
+            use AI to create student-facing course content without publishing
+            fake lessons, unsafe materials, or unverified resources.
           </p>
           <Link href="/book/ots-101" className="book-action">
             Open the OTS-101 course book
@@ -71,6 +71,11 @@ export default function BookPage() {
 
         <section>
           <h2>Course Books</h2>
+          <p>
+            OTS-101 is the only active course rebuild. Every other pathway
+            course is marked Coming Soon until OTS-101 proves the content
+            model with real, teacher-useful lessons.
+          </p>
           <div className="divide-y divide-border border-y border-border">
             <Link
               href="/book/ots-101"
@@ -79,41 +84,39 @@ export default function BookPage() {
               <span className="font-mono text-sm text-accent">OTS-101</span>
               <span>
                 <strong className="block text-foreground">
-                  Teaching Teachers Foundations
+                  AI Course Content Foundations for Teachers
                 </strong>
                 <span className="mt-1 block text-sm text-foreground/55">
-                  Prompting, standards, source verification, assessment,
-                  delivery, and mini-unit systems.
+                  Course content modeling, AI prompting, verification,
+                  student-facing lesson design, publishing, and revision.
                 </span>
               </span>
               <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                Released
+                Draft
               </span>
             </Link>
             {pathwayCourses.map((course) => (
-            <Link
-              key={course.slug}
-              href={`/book/${course.slug}`}
-              className="grid gap-3 py-4 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
-            >
-              <span className="font-mono text-sm text-accent">
-                {course.code}
-              </span>
-              <span>
-                <strong className="block text-foreground">{course.title}</strong>
-                <span className="mt-1 block text-sm text-foreground/55">
-                  {course.thesis}
+              <div
+                key={course.slug}
+                className="grid gap-3 py-4 md:grid-cols-[6rem_1fr_8rem]"
+              >
+                <span className="font-mono text-sm text-accent">
+                  {course.code}
                 </span>
-              </span>
-              <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                {course.status}
-              </span>
-            </Link>
+                <span>
+                  <strong className="block text-foreground">
+                    {course.title}
+                  </strong>
+                  <span className="mt-1 block text-sm text-foreground/55">
+                    {course.thesis}
+                  </span>
+                </span>
+                <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
+                  Coming Soon
+                </span>
+              </div>
             ))}
-            <Link
-              href="/book/ots-280"
-              className="grid gap-3 py-4 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
-            >
+            <div className="grid gap-3 py-4 md:grid-cols-[6rem_1fr_8rem]">
               <span className="font-mono text-sm text-accent">OTS-280</span>
               <span>
                 <strong className="block text-foreground">
@@ -126,9 +129,9 @@ export default function BookPage() {
                 </span>
               </span>
               <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                Released
+                Coming Soon
               </span>
-            </Link>
+            </div>
           </div>
         </section>
 

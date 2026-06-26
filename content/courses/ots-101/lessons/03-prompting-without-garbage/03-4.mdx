@@ -1,0 +1,215 @@
+---
+title: "Build Artifact: Reusable Course-Content Prompt"
+description: "Create a prompt teachers can reuse to draft bounded course artifacts while keeping source, context, format, and verification visible."
+course: "ots-101"
+chapter: "Prompting AI Without Generic Garbage"
+order: 4
+type: "artifact"
+minutes: 35
+artifact: "Reusable course-content prompt"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-4"
+---
+
+# Build Artifact: Reusable Course-Content Prompt
+
+In this lesson, you will build a prompt you can reuse when asking AI to draft course content.
+
+The goal is not to create one perfect mega-prompt.
+
+The goal is to create a reusable structure that keeps AI from inventing the lesson behind your back.
+
+## What your artifact must do
+
+Your reusable prompt should help you ask for one bounded piece of course content at a time.
+
+Examples include:
+
+- student-facing directions
+- a practice activity
+- rubric criteria
+- feedback language
+- discussion questions
+- a short formative check
+- a lesson sequence outline
+- a parent or student explanation
+
+Do not use this prompt to outsource the entire course.
+
+Use it to draft one inspectable artifact that the teacher still owns.
+
+<FrameworkBlock title="Reusable prompt parts" eyebrow="Artifact blueprint">
+  <ConceptCard title="Source">
+    What approved material should AI use?
+  </ConceptCard>
+  <ConceptCard title="Context">
+    What classroom details should shape the draft?
+  </ConceptCard>
+  <ConceptCard title="Task">
+    What single artifact should AI produce?
+  </ConceptCard>
+  <ConceptCard title="Format">
+    What structure makes the output easy to review?
+  </ConceptCard>
+  <ConceptCard title="Examples">
+    What model and non-model should guide the style?
+  </ConceptCard>
+  <ConceptCard title="Checks">
+    What must be flagged for teacher review?
+  </ConceptCard>
+</FrameworkBlock>
+
+## Step 1: Name the source
+
+Write the source section first.
+
+Use this starter:
+
+```text
+Use the following source material as the ground truth. Do not invent standards, policies, tools, facts, or student data. If something is missing, list it in the teacher-check section instead of guessing.
+```
+
+Then add the actual source.
+
+If the source is long, summarize it first or paste the most relevant section.
+
+## Step 2: Add classroom context
+
+Use this starter:
+
+```text
+Context:
+- Course or grade:
+- Time available:
+- What students already know:
+- Tools or materials students can use:
+- Accessibility or language needs:
+- Constraints or things to avoid:
+```
+
+This is where the prompt becomes yours.
+
+A course prompt without context will drift toward generic advice.
+
+## Step 3: Write the task as one job
+
+Use this starter:
+
+```text
+Task:
+Draft [one specific course artifact] that helps students [practice, show, explain, build, revise, or reflect on] [learning target].
+```
+
+Examples:
+
+```text
+Draft three student-facing practice questions that help students support a claim with evidence from the source.
+```
+
+```text
+Draft one rubric row for explaining a troubleshooting process in plain language.
+```
+
+```text
+Draft a 15-minute activity sequence that helps students classify examples and non-examples before writing their own.
+```
+
+## Step 4: Control the format
+
+Use this starter:
+
+```text
+Format:
+Return the output as [table, numbered list, student handout draft, rubric row, slide outline, teacher script]. Include only the sections listed below:
+```
+
+Then list the sections you want.
+
+A good format prevents AI from giving you a giant blob of confident prose.
+
+## Step 5: Add examples and non-examples
+
+Use this starter:
+
+```text
+Example of acceptable output:
+[Paste short model]
+
+Non-example to avoid:
+[Paste short weak model]
+
+Preserve these features from the example:
+[Name the useful traits]
+
+Avoid these habits from the non-example:
+[Name the weak traits]
+```
+
+This is especially useful if the AI keeps writing in fake course language.
+
+## Step 6: Require a teacher-check section
+
+Use this starter:
+
+```text
+Teacher-check section:
+At the end, list anything I need to verify before students see the draft. Include possible accuracy issues, missing context, accessibility concerns, privacy concerns, and any assumptions you made.
+```
+
+This section is non-negotiable.
+
+If AI produces course content without naming what needs teacher review, it is acting more finished than it should.
+
+## Finished reusable prompt
+
+Copy this structure into your own notes and customize it for your course.
+
+```text
+Use the source material below as the ground truth. Do not invent standards, policies, tools, facts, student data, or requirements. If something is missing, list it in the teacher-check section instead of guessing.
+
+Context:
+- Course or grade:
+- Time available:
+- What students already know:
+- Tools or materials students can use:
+- Accessibility or language needs:
+- Constraints or things to avoid:
+
+Task:
+Draft [one specific course artifact] that helps students [specific learning move] connected to [learning target].
+
+Format:
+Return the output as [format]. Include these sections only:
+- [Section 1]
+- [Section 2]
+- [Section 3]
+- Teacher-check section
+
+Example of acceptable output:
+[Paste short model]
+
+Non-example to avoid:
+[Paste short weak model]
+
+Preserve these features from the example:
+[Name useful traits]
+
+Avoid these habits from the non-example:
+[Name weak traits]
+
+Source material:
+[Paste or summarize source]
+
+Teacher-check section:
+List anything I must verify before students see the draft. Include accuracy issues, missing context, accessibility concerns, privacy concerns, and assumptions.
+```
+
+## Save the artifact
+
+Save your reusable prompt somewhere you can find it before the next chapter.
+
+You will use it again when building student-facing lessons, assignments, rubrics, and course publishing materials.
+
+<TakeawayStrip tone="teacher">
+  A reusable prompt is not a shortcut around teacher judgment. It is a container that makes teacher judgment easier to apply.
+</TakeawayStrip>

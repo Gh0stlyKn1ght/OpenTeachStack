@@ -6,7 +6,19 @@ import ArticleBody from "@/components/field-guide/ArticleBody";
 import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import BuildTask from "@/components/BuildTask";
-import MDXPre from "@/components/MDXPre";
+import {
+  AICourseContentWorkflowVisual,
+  ChecklistBlock,
+  ComparisonBlock,
+  ConceptCard,
+  CourseTruthStackVisual,
+  FakeCourseTrapVisual,
+  FrameworkBlock,
+  SourceTruthExportVisual,
+  TakeawayStrip,
+  TiredTeacherTestVisual,
+  WorkflowBlock,
+} from "@/components/InstructionalBlocks";import MDXPre from "@/components/MDXPre";
 import MermaidBlock from "@/components/MermaidBlock";
 import RealityCheck from "@/components/RealityCheck";
 import ReflectionPrompt from "@/components/ReflectionPrompt";
@@ -70,17 +82,51 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
   }
 
   const { previous, next } = getAdjacentCourseSections(record);
+
+  if (record.course.status === "Coming Soon") {
+    return (
+      <FieldGuidePage
+        eyebrow={`${record.course.code} Coming Soon`}
+        title={record.course.title}
+        subtitle="This lesson is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+        breadcrumbs={[
+          { label: "Book", href: "/book" },
+          { label: record.course.code, href: `/book/${record.course.slug}` },
+        ]}
+        meta={[
+          { label: "Course", value: record.course.code },
+          { label: "Status", value: "Coming Soon" },
+          { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        ]}
+      >
+        <ArticleBody>
+          <section className="book-spread">
+            <div>
+              <h2>Lesson locked</h2>
+              <p>
+                This course is not open for reading yet. OpenTeachStack will
+                not publish missing, placeholder, or outline-only lesson pages
+                as if they were real instruction.
+              </p>
+              <p>
+                OTS-101 is the only course currently being rebuilt.
+              </p>
+            </div>
+            <div className="course-section-status">
+              Coming Soon. Frozen until OTS-101 is right.
+            </div>
+          </section>
+        </ArticleBody>
+      </FieldGuidePage>
+    );
+  }
+
   const courseLesson = getCourseLessonBySlugs(
     record.course.slug,
     record.chapter.slug,
     record.sectionSlug,
   );
-
-  if (!courseLesson) {
-    notFound();
-  }
-
-  const migrationStatus = courseLesson.frontmatter.migrationStatus;
+  const migrationStatus = courseLesson?.frontmatter.migrationStatus;
   const isReleaseReady =
     migrationStatus === "authored" || migrationStatus === "reviewed";
 
@@ -135,21 +181,30 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
       }
     >
       <ArticleBody>
-        {!isReleaseReady ? (
+        {!courseLesson ? (
+          <div className="course-section-status">
+            This lesson is intentionally unavailable. This course is Coming
+            Soon or in rebuild, and OpenTeachStack does not publish placeholder
+            MDX to make routes look complete.
+          </div>
+        ) : !isReleaseReady ? (
           <div className="course-section-status">
             This lesson is in teacher review. It still needs
             classroom-specific revision before it should be treated as
             release-ready course content.
           </div>
         ) : null}
-        <div className="prose-academic">
-          <MDXRemote
-            source={courseLesson.content}
-            options={mdxOptions}
-            components={mdxComponents}
-          />
-        </div>
+        {courseLesson ? (
+          <div className="prose-academic">
+            <MDXRemote
+              source={courseLesson.content}
+              options={mdxOptions}
+              components={mdxComponents}
+            />
+          </div>
+        ) : null}
       </ArticleBody>
     </FieldGuidePage>
   );
 }
+

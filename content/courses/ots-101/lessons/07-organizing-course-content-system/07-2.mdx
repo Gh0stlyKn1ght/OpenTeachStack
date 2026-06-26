@@ -1,0 +1,152 @@
+---
+title: "Design Folders That Show Status"
+description: "Create a simple folder structure that separates drafts, reviewed content, exports, archives, and supporting materials."
+course: "ots-101"
+chapter: "Organizing a Course Content System"
+order: 2
+type: "workflow"
+minutes: 20
+artifact: "Course content system map"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-101/07-organizing-course-content-system/07-2"
+---
+
+# Design Folders That Show Status
+
+> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+
+A folder structure should answer a question before anyone opens a file.
+
+The question is:
+
+> What is this file's job and status?
+
+If draft files, reviewed lessons, exports, and old versions all live together, the folder cannot help the teacher make decisions.
+
+## Use status folders
+
+Start with a simple structure.
+
+```text
+course-content/
+  source/
+  drafts/
+  student-ready/
+  exports/
+  archive/
+  teacher-notes/
+```
+
+This is not the only possible structure, but it shows the important separations.
+
+<FrameworkBlock title="Folder jobs" eyebrow="System design">
+  <ConceptCard title="source">
+    The maintained course source that should be edited first.
+  </ConceptCard>
+  <ConceptCard title="drafts">
+    AI-assisted or teacher-created work that still needs review.
+  </ConceptCard>
+  <ConceptCard title="student-ready">
+    Approved artifacts students can use.
+  </ConceptCard>
+  <ConceptCard title="exports">
+    Copies formatted for platforms, print, slides, or other delivery surfaces.
+  </ConceptCard>
+  <ConceptCard title="archive">
+    Old versions kept for record, not current teaching.
+  </ConceptCard>
+</FrameworkBlock>
+
+## Keep drafts away from student-ready content
+
+Drafts should not sit beside approved content with similar names.
+
+This is risky:
+
+```text
+lesson.md
+lesson-final.md
+lesson-new.md
+lesson-ai-revised.md
+lesson-use-this-one.md
+```
+
+That folder tells a future teacher almost nothing.
+
+A clearer structure is:
+
+```text
+source/
+  lesson-03-evidence-comparison.md
+
+drafts/
+  lesson-03-ai-draft-2026-06-26.md
+
+student-ready/
+  lesson-03-student-page.md
+
+exports/
+  canvas-lesson-03-2026-06-26.md
+```
+
+Now the folder location helps explain the file.
+
+## Make review visible
+
+A file can be well-written and still not reviewed.
+
+Use simple status labels:
+
+- draft
+- needs-review
+- approved
+- exported
+- archived
+
+Those labels can live in filenames, frontmatter, a checklist, or a tracking sheet.
+
+The point is visibility.
+
+## Keep teacher notes separate
+
+Teacher notes may include pacing reminders, answer keys, facilitation moves, and private context.
+
+They should not be mixed into student-ready materials by accident.
+
+Use a separate folder or clear label.
+
+```text
+teacher-notes/
+  lesson-03-facilitation-notes.md
+  lesson-03-answer-key.md
+```
+
+## Use ASCII maps for clarity
+
+A simple folder map is often clearer than a paragraph.
+
+Example:
+
+```text
+ots-101/
+  source/
+    chapter-01/
+    chapter-02/
+  drafts/
+    ai-drafts/
+    teacher-drafts/
+  student-ready/
+    lessons/
+    assignments/
+  exports/
+    lms/
+    print/
+    slides/
+  archive/
+```
+
+That map gives collaborators a mental model of the system.
+
+<TakeawayStrip tone="teacher">
+  A good folder structure does not just store files. It tells the teacher what can be trusted, what needs review, and what is only an export.
+</TakeawayStrip>

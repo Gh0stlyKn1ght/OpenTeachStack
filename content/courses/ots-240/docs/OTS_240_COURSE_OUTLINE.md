@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Modern Teacher Systems
 
@@ -73,3 +73,4 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 3. Add an attribution and license file template that matches the Source Bank workflow.
 4. Add official GitHub Docs and Creative Commons references to relevant section source panels.
 5. Re-run browser keyboard and public-link privacy checks after major route, repository, or publishing changes.
+

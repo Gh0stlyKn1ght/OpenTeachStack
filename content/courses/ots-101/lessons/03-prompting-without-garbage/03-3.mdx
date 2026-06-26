@@ -1,0 +1,109 @@
+---
+title: "Giving AI Examples and Non-Examples"
+description: "Use examples and non-examples to show AI what useful course content looks like and what kind of generic output to avoid."
+course: "ots-101"
+chapter: "Prompting AI Without Generic Garbage"
+order: 3
+type: "comparison"
+minutes: 20
+artifact: "Reusable course-content prompt"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-3"
+---
+
+# Giving AI Examples and Non-Examples
+
+AI responds better when it can see the difference between what you want and what you do not want.
+
+That is familiar teaching work.
+
+Teachers use examples and non-examples all the time. We show students a strong answer, a weak answer, and the reason one works better. The same move can improve AI drafting.
+
+## Why examples matter
+
+A prompt pattern gives AI structure.
+
+Examples give AI taste.
+
+They show the level of specificity, voice, length, format, and classroom realism you expect.
+
+A reusable course prompt should include at least one example of acceptable output and one non-example of output you want the AI to avoid.
+
+<FrameworkBlock title="Example vs non-example" eyebrow="Prompt calibration">
+  <ConceptCard title="Example">
+    A short model of the kind of output you would actually revise and use.
+  </ConceptCard>
+  <ConceptCard title="Non-example">
+    A short model of the generic, vague, inflated, or unsafe output you do not want.
+  </ConceptCard>
+  <ConceptCard title="Reason">
+    A plain explanation of why the example works and why the non-example fails.
+  </ConceptCard>
+</FrameworkBlock>
+
+## Example: useful student-facing direction
+
+Useful output sounds like something a student can act on.
+
+> Read the two short source excerpts. Choose one claim about school technology use. Underline one sentence from each excerpt that supports or challenges the claim. Then write three sentences explaining how the evidence changes your thinking.
+
+This works because students can see the materials, the action, the product, and the thinking move.
+
+## Non-example: generic student-facing direction
+
+Generic output often sounds polished but slippery.
+
+> Explore the topic of technology use and reflect on how it impacts your life. Discuss your thoughts with a partner and be ready to share.
+
+This is not useless in every situation, but it is too vague for course content that needs to be reused. It does not name the source, the evidence, the product, or the success criteria.
+
+## Add the reason, not just the sample
+
+Do not only paste examples into your prompt. Explain what the AI should learn from them.
+
+For example:
+
+```text
+Use the example style because it gives students a clear source, action, product, and evidence requirement.
+Avoid the non-example style because it uses broad verbs without naming what students should produce.
+```
+
+That explanation helps the AI transfer the pattern to new topics.
+
+## Keep examples short
+
+You do not need a full lesson as an example.
+
+One strong direction, one rubric row, one discussion prompt, or one feedback comment may be enough.
+
+Short examples are easier to reuse and less likely to drag the AI into copying the wrong details.
+
+## Use course-specific examples
+
+The best examples come from your own course.
+
+If you teach history, give an example using evidence from sources. If you teach math, give an example that shows the kind of reasoning students must display. If you teach CTE, give an example tied to tools, workflow, or safety checks.
+
+The more your example reflects the actual course, the less generic the AI output becomes.
+
+## Mini prompt section
+
+Add this to your reusable prompt:
+
+```text
+Example of acceptable output:
+[Paste a short model]
+
+Non-example to avoid:
+[Paste a weak or generic model]
+
+Why the example works:
+[Name the features the AI should preserve]
+
+Why the non-example fails:
+[Name the habits the AI should avoid]
+```
+
+<TakeawayStrip tone="teacher">
+  Examples teach the AI your standard. Non-examples teach it where the cliff edge is.
+</TakeawayStrip>

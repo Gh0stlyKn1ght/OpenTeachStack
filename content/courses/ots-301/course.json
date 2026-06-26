@@ -6,7 +6,7 @@
   "canonicalRoute": "/book/ots-301",
   "sourceRegistry": "src/lib/courseStructures.ts",
   "generatedAt": "2026-06-22",
-  "migrationStatus": "authored",
+  "migrationStatus": "draft",
   "chapters": [
     {
       "number": "01",
@@ -61,5 +61,5 @@
   ],
   "copiedAssets": [],
   "copiedLabs": [],
-  "courseReadiness": "release"
+  "courseReadiness": "coming-soon"
 }

@@ -53,6 +53,18 @@ const resourceHubs = [
     desc: "Practical notes from building curriculum systems under real classroom pressure.",
     badge: "Notes",
   },
+  {
+    title: "Build Notes",
+    href: "/blog",
+    desc: "Reviewed build logs and mistake notes from creating OpenTeachStack. AI drafts stay hidden until human review.",
+    badge: "Blog",
+  },
+  {
+    title: "JC's Blog",
+    href: "/blog",
+    desc: "Founder essays, teacher-builder reflections, and the human side of OpenTeachStack.",
+    badge: "Author",
+  },
 ];
 
 const officialFirstRules = [
@@ -139,5 +151,7 @@ export default function ResourcesPage() {
     </FieldGuidePage>
   );
 }
+
+
 
 

@@ -1,6 +1,6 @@
 # OTS-220 Apps Script for Teacher Automation
 
-Status: release-ready course-owned content
+Status: Coming Soon - frozen until OTS-101 is right.
 
 Canonical route: `/book/ots-220`
 
@@ -20,3 +20,4 @@ This folder is the course-owned content package for OTS-220. It contains learner
 ## Maintenance Rule
 
 Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.
+

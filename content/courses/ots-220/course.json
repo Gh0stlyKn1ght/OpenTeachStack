@@ -6,7 +6,7 @@
   "canonicalRoute": "/book/ots-220",
   "sourceRegistry": "src/lib/courseStructures.ts",
   "generatedAt": "2026-06-22",
-  "migrationStatus": "authored",
+  "migrationStatus": "draft",
   "chapters": [
     {
       "number": "01",
@@ -62,5 +62,5 @@
     "create-google-form-quizzes-from-sheet",
     "send-reminder-emails-from-sheet"
   ],
-  "courseReadiness": "release"
+  "courseReadiness": "coming-soon"
 }

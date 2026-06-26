@@ -19,7 +19,7 @@ export default function SourcesPage() {
       eyebrow="Source Audit"
       title="Official Sources"
       subtitle="This is the source-of-truth list for software, platforms, documentation, and technical references used across OpenTeachStack. Lessons can use tutorials as supplements, but software behavior should be checked against official documentation first."
-      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base", href: "/kb" }]}
       meta={[
         { label: "Rule", value: "Official docs first" },
         { label: "AI role", value: "Draft after source" },
@@ -42,7 +42,7 @@ export default function SourcesPage() {
             href="/kb/resources"
             className="mt-4 inline-flex text-sm font-semibold text-link no-underline hover:underline"
           >
-            Open the full resource library
+            Open the source bank
           </Link>
         </section>
 

@@ -50,18 +50,24 @@ export default function PathwayPage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {course.code}
                 </span>
-                <Link
-                  href={
-                    course.code === "OTS-101"
-                      ? "/book/ots-101"
-                      : course.code === "OTS-280"
-                        ? "/book/ots-280"
-                        : `/book/${course.code.toLowerCase()}`
-                  }
-                  className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
-                >
-                  {course.title}
-                </Link>
+                {course.status === "Coming Soon" ? (
+                  <span className="font-heading text-xl font-bold text-foreground/70">
+                    {course.title}
+                  </span>
+                ) : (
+                  <Link
+                    href={
+                      course.code === "OTS-101"
+                        ? "/book/ots-101"
+                        : course.code === "OTS-280"
+                          ? "/book/ots-280"
+                          : `/book/${course.code.toLowerCase()}`
+                    }
+                    className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
+                  >
+                    {course.title}
+                  </Link>
+                )}
                 <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground/55">
                   {course.status}
                 </span>

@@ -6,6 +6,19 @@ import ArticleBody from "@/components/field-guide/ArticleBody";
 import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import BuildTask from "@/components/BuildTask";
+import {
+  AICourseContentWorkflowVisual,
+  ChecklistBlock,
+  ComparisonBlock,
+  ConceptCard,
+  CourseTruthStackVisual,
+  FakeCourseTrapVisual,
+  FrameworkBlock,
+  SourceTruthExportVisual,
+  TakeawayStrip,
+  TiredTeacherTestVisual,
+  WorkflowBlock,
+} from "@/components/InstructionalBlocks";
 import MDXPre from "@/components/MDXPre";
 import MermaidBlock from "@/components/MermaidBlock";
 import RealityCheck from "@/components/RealityCheck";
@@ -29,6 +42,17 @@ const mdxComponents = {
   TeacherNote,
   RealityCheck,
   BuildTask,
+  FrameworkBlock,
+  ConceptCard,
+  TakeawayStrip,
+  ComparisonBlock,
+  WorkflowBlock,
+  ChecklistBlock,
+  FakeCourseTrapVisual,
+  SourceTruthExportVisual,
+  CourseTruthStackVisual,
+  AICourseContentWorkflowVisual,
+  TiredTeacherTestVisual,
 };
 
 type SectionPageProps = {
@@ -74,12 +98,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
     record.chapter.slug,
     record.sectionSlug,
   );
-
-  if (!courseLesson) {
-    notFound();
-  }
-
-  const migrationStatus = courseLesson.frontmatter.migrationStatus;
+  const migrationStatus = courseLesson?.frontmatter.migrationStatus;
   const isReleaseReady =
     migrationStatus === "authored" || migrationStatus === "reviewed";
 
@@ -99,7 +118,6 @@ export default async function SectionPage({ params }: SectionPageProps) {
         { label: "Type", value: record.section.type },
         { label: "Duration", value: record.section.duration },
         { label: "Source", value: "Course-owned MDX" },
-        { label: "Print", value: "Full book PDF" },
       ]}
       sidebar={
         <BookSidebar
@@ -131,20 +149,28 @@ export default async function SectionPage({ params }: SectionPageProps) {
       }
     >
       <ArticleBody>
-        {!isReleaseReady ? (
+        {!courseLesson ? (
+          <div className="course-section-status">
+            This lesson is intentionally unavailable while OTS-101 is being
+            rebuilt. OpenTeachStack does not publish placeholder MDX to make
+            routes look complete.
+          </div>
+        ) : !isReleaseReady ? (
           <div className="course-section-status">
             This lesson is in teacher review. It still needs
             classroom-specific revision before it should be treated as
             release-ready course content.
           </div>
         ) : null}
-        <div className="prose-academic">
-          <MDXRemote
-            source={courseLesson.content}
-            options={mdxOptions}
-            components={mdxComponents}
-          />
-        </div>
+        {courseLesson ? (
+          <div className="prose-academic">
+            <MDXRemote
+              source={courseLesson.content}
+              options={mdxOptions}
+              components={mdxComponents}
+            />
+          </div>
+        ) : null}
 
       </ArticleBody>
     </FieldGuidePage>

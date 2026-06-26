@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: release-ready outline
+Status: Coming Soon outline - frozen until OTS-101 is right.
 
 Course path: Modern Teacher Systems
 
@@ -74,3 +74,4 @@ The outline is represented in `src/lib/courseStructures.ts` and rendered through
 3. Accessibility checklist for alt text, captions, transcripts, and readable slides is documented in `docs/OTS_260_ACCESSIBILITY_CHECKLIST.md`.
 4. OBS, image-tool terms, copyright, Creative Commons, YouTube, Canva, and Unsplash references are attached or queued in `docs/OTS_260_SOURCE_REFERENCES.md`.
 5. Projector/mobile readability pass is documented in `docs/OTS_260_READABILITY_PASS.md`.
+

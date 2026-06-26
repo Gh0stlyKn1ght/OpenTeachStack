@@ -15,7 +15,7 @@ export default function ExamplesPage() {
       eyebrow="Examples"
       title="Proof beats explanation."
       subtitle="Templates help. Examples convince. These samples show what an OTS-101 mini-unit package can look like when it is small, sourced, teachable, and ready to improve."
-      breadcrumbs={[{ label: "Knowledge Base Library", href: "/kb/library" }]}
+      breadcrumbs={[{ label: "Knowledge Base", href: "/kb" }]}
       meta={[
         { label: "Course", value: "OTS-101" },
         { label: "Artifact", value: "Mini-unit package" },

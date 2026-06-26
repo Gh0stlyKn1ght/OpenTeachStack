@@ -13,6 +13,90 @@ const BOOK_UI_FILES = [
 
 const forbiddenPatterns = [
   {
+    pattern: /In OTS-\d{3}, this lesson matters because it turns a weak draft/i,
+    message: "fake generated course scaffold opener is visible",
+  },
+  {
+    pattern: /A clearer artifact in this chapter helps teachers spend less time fixing lesson hygiene/i,
+    message: "fake generated course scaffold justification is visible",
+  },
+  {
+    pattern: /A focused pass on \*\*/i,
+    message: "fake generated focused-pass scaffold is visible",
+  },
+  {
+    pattern: /helps the class move from vague direction to actionable quality/i,
+    message: "fake generated course scaffold language is visible",
+  },
+  {
+    pattern: /Great artifacts are not just complete; they are inspectable, reviewable, and reusable/i,
+    message: "fake generated artifact scaffold is visible",
+  },
+  {
+    pattern: /A common weak approach says: "Improve this section and make it cleaner\."/i,
+    message: "fake generated weak-example scaffold is visible",
+  },
+  {
+    pattern: /By next Friday, this team-owned artifact will show one learning objective/i,
+    message: "fake generated better-example scaffold is visible",
+  },
+  {
+    pattern: /Add one concrete classroom action tied to \*\*/i,
+    message: "fake generated teacher-action scaffold is visible",
+  },
+  {
+    pattern: /Use the fake student context: initials only, fictional class periods only, no real personal data/i,
+    message: "fake generated privacy scaffold is visible",
+  },
+  {
+    pattern: /Use one short classroom-safe example/i,
+    message: "authoring instruction is visible instead of lesson content",
+  },
+  {
+    pattern: /Choose one concrete classroom material/i,
+    message: "authoring instruction is visible instead of lesson content",
+  },
+  {
+    pattern: /This section helps teachers understand/i,
+    message: "generic generated lesson explanation is visible",
+  },
+  {
+    pattern: /The core idea is to make teaching artifacts visible/i,
+    message: "scaffold instruction is visible instead of lesson content",
+  },
+  {
+    pattern: /another educator can inspect it, reuse it, or challenge it/i,
+    message: "generic generated inspection scaffold is visible",
+  },
+  {
+    pattern: /the decision, the classroom use, the evidence, and the next review step/i,
+    message: "generic generated artifact scaffold is visible",
+  },
+  {
+    pattern: /created, revised, tested, credited, restricted, published, or archived/i,
+    message: "generic generated lifecycle scaffold is visible",
+  },
+  {
+    pattern: /The artifact should include labels, examples, status, review notes/i,
+    message: "scaffold instruction is visible instead of lesson content",
+  },
+  {
+    pattern: /The goal is not to make a perfect document in one pass/i,
+    message: "generic generated lesson caveat is visible",
+  },
+  {
+    pattern: /The artifact should include labels, evidence, and a maintenance trigger/i,
+    message: "scaffold instruction is visible instead of lesson content",
+  },
+  {
+    pattern: /Another educator can inspect it, reuse it, or challenge it/i,
+    message: "generic generated inspection scaffold is visible",
+  },
+  {
+    pattern: /The decision, the classroom use, the evidence, and the next review step/i,
+    message: "generic generated artifact scaffold is visible",
+  },
+  {
     pattern: /section-specific teaching notes/i,
     message: "internal section-note heading is visible to learners",
   },

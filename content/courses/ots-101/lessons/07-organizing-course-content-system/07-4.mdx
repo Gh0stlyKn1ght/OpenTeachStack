@@ -1,0 +1,175 @@
+---
+title: "Build Artifact: Course Content System Map"
+description: "Create a practical map for where course sources, drafts, student-ready content, exports, archives, and teacher notes live."
+course: "ots-101"
+chapter: "Organizing a Course Content System"
+order: 4
+type: "artifact"
+minutes: 35
+artifact: "Course content system map"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-101/07-organizing-course-content-system/07-4"
+---
+
+# Build Artifact: Course Content System Map
+
+In this lesson, you will build a course content system map.
+
+This map should be simple enough that another teacher could understand where things belong without a meeting.
+
+## What the map needs
+
+Your map should identify:
+
+- source of truth
+- draft location
+- student-ready location
+- export location
+- archive location
+- teacher-only notes location
+- review status method
+- naming pattern
+
+<FrameworkBlock title="System map sections" eyebrow="Artifact blueprint">
+  <ConceptCard title="Source">
+    Where the real maintained course content lives.
+  </ConceptCard>
+  <ConceptCard title="Drafts">
+    Where AI and teacher drafts wait for review.
+  </ConceptCard>
+  <ConceptCard title="Ready">
+    Where student-approved content is stored.
+  </ConceptCard>
+  <ConceptCard title="Exports">
+    Where LMS, print, slide, and website copies go.
+  </ConceptCard>
+  <ConceptCard title="Archive">
+    Where old versions are retired safely.
+  </ConceptCard>
+</FrameworkBlock>
+
+## Step 1: Name the source of truth
+
+Write one sentence.
+
+```text
+The source of truth for this course is:
+```
+
+Examples:
+
+```text
+The source of truth for this course is the source folder in the shared course drive.
+```
+
+```text
+The source of truth for this course is the Markdown lesson folder in the course repository.
+```
+
+```text
+The source of truth for this course is the teacher-approved curriculum document, not the LMS export.
+```
+
+## Step 2: Draw the folder map
+
+Use a simple ASCII map.
+
+```text
+course-content/
+  source/
+  drafts/
+  student-ready/
+  exports/
+  archive/
+  teacher-notes/
+```
+
+Customize it to match your context.
+
+## Step 3: Define each folder's rule
+
+Add one rule per folder.
+
+```text
+source/ = teacher-approved source files edited first
+drafts/ = AI or teacher drafts not ready for students
+student-ready/ = approved student-facing artifacts
+exports/ = platform-specific copies made from source or student-ready files
+archive/ = retired versions that should not be used as current content
+teacher-notes/ = private planning, answer keys, pacing, and facilitation notes
+```
+
+## Step 4: Add a naming pattern
+
+Choose one pattern and use it consistently.
+
+```text
+[course]-[lesson]-[artifact]-[topic]-[status]-[date-if-needed]
+```
+
+Example:
+
+```text
+ots101-lesson-05-student-page-evidence-comparison-approved.md
+```
+
+## Step 5: Add review status
+
+Choose how review status will be visible.
+
+Options:
+
+- folder location
+- filename status
+- frontmatter field
+- checklist row
+- spreadsheet tracker
+- review note at the top of the file
+
+Use more than one if the course is shared by a team.
+
+## Step 6: Add the update rule
+
+Write the rule that prevents source/export confusion.
+
+```text
+Update rule:
+Make content changes in the source first. Then update student-ready files and exports. Do not edit exports as the primary source unless the source is updated immediately after.
+```
+
+## Finished system map template
+
+```text
+Course Content System Map
+
+Source of truth:
+
+Folder map:
+course-content/
+  source/
+  drafts/
+  student-ready/
+  exports/
+  archive/
+  teacher-notes/
+
+Folder rules:
+source/ =
+drafts/ =
+student-ready/ =
+exports/ =
+archive/ =
+teacher-notes/ =
+
+Naming pattern:
+
+Review status method:
+
+Update rule:
+
+Open question or risk:
+```
+
+<TakeawayStrip tone="teacher">
+  A course content system map turns invisible workflow decisions into something a teacher, teammate, or future version of you can follow.
+</TakeawayStrip>

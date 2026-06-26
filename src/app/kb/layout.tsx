@@ -5,13 +5,10 @@ import { getKnowledgeBaseCategories } from "@/lib/knowledgeBase";
 
 const relatedResources = [
   ["Pathway", "/pathway"],
-  ["Library", "/kb/library"],
   ["Prompts", "/kb/prompts"],
   ["Templates", "/kb/templates"],
   ["Source Bank", "/kb/source-bank"],
-  ["Safety", "/kb/safety"],
-  ["Examples", "/kb/examples"],
-  ["Resources", "/kb/resources"],
+  ["Build Notes", "/build-notes"],
 ];
 
 export default async function KnowledgeBaseLayout({

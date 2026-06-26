@@ -86,7 +86,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-201",
     title: "Google Workspace Systems for Teachers",
     level: "Beginner/Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-101 or equivalent planning workflow",
     thesis:
@@ -148,7 +148,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-220",
     title: "Apps Script for Teacher Automation",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "Comfort with Google Sheets and willingness to read small scripts",
     thesis:
@@ -205,7 +205,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-240",
     title: "Open Resources and GitHub for Educators",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-101 resource evaluation and licensing basics",
     thesis:
@@ -261,7 +261,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-260",
     title: "AI Media and Lesson Delivery",
     level: "Intermediate",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-101 delivery plan",
     thesis:
@@ -317,7 +317,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-301",
     title: "Teacher Course Sites",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-101 plus comfort with files and web publishing concepts",
     thesis:
@@ -373,7 +373,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-320",
     title: "AI Coding Agents for Educators",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-240 or equivalent version-control basics",
     thesis:
@@ -429,7 +429,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-399",
     title: "Capstone Studio",
     level: "Advanced",
-    status: "Released",
+    status: "Coming Soon",
     coursePath: "Modern Teacher Systems",
     prerequisite: "OTS-101 and at least two intermediate or advanced pathway courses",
     thesis:

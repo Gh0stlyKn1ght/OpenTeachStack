@@ -63,186 +63,121 @@ export const METHOD_STEPS = [
 ];
 
 export const CHAPTER_PROBLEMS: Record<string, string> = {
-  "teacher-builder-mindset":
-    "Teachers are handed tools and expectations without a practical operating system for curriculum work.",
-  prompting:
-    "AI output gets messy when the teacher does not define role, context, sources, constraints, and revision rules.",
-  "ai-literacy-verification":
-    "AI can sound correct while inventing details, flattening teacher voice, or skipping privacy and source checks.",
-  "standards-targets":
-    "Standards documents are often treated as decoration instead of being translated into teachable targets.",
-  "course-unit-architecture":
-    "Lesson ideas become hard to teach when they are not connected by a coherent unit structure.",
-  "open-resources":
-    "Useful resources are scattered across the web, but teachers still need credibility, license, and citation decisions.",
-  "google-workspace-planning":
-    "Drive folders, Docs, Sheets, Forms, and Slides turn chaotic when they are not planned as one system.",
-  "assessment-feedback":
-    "Assessments lose power when they do not clearly connect to learning targets and feedback moments.",
-  "delivery-planning":
-    "Even strong curriculum fails when student directions, pacing, materials, and backup plans are not ready.",
-  "mini-unit-capstone":
-    "A useful mini-unit needs alignment, sources, assessment, delivery, verification, and revision evidence in one package.",
+  "curriculum-vs-course-content":
+    "Teachers are asked to make course content with AI before anyone names what counts as curriculum, content, material, or platform.",
+  "standards-goals-to-lessons":
+    "AI cannot rescue a lesson when the teacher has not named the learning target and evidence students must produce.",
+  "prompting-without-garbage":
+    "Generic prompts create generic lessons because the model has no classroom context, examples, constraints, or verification rules.",
+  "verify-ai-before-students":
+    "AI output can sound classroom-ready while inventing details, missing policy boundaries, or creating unsafe student-facing material.",
+  "student-facing-lessons":
+    "Students need usable directions, examples, checks, and submission expectations, not a polished page that still requires a live explanation.",
+  "assignments-labs-rubrics-feedback":
+    "Assessment falls apart when assignments, labs, rubrics, and feedback do not match the target students are supposed to prove.",
+  "organizing-course-content-system":
+    "Course content gets lost when files, links, versions, templates, and archives do not follow a shared system.",
+  "safety-accessibility-copyright-source-quality":
+    "Teacher-built content must be checked for privacy, accessibility, copyright, source quality, and classroom fit before release.",
+  "publishing-to-platform":
+    "A platform can host content, but it does not decide what should be public, private, student-facing, or teacher-only.",
+  "mini-course-content-packet":
+    "A mini course packet is only ready when the lessons, assignment, rubric, sources, safety review, publishing notes, and revision log hold together.",
 };
 
 export const CHAPTER_SKILLS: Record<string, string[]> = {
-  "teacher-builder-mindset": [
-    "systems thinking",
-    "workflow audit",
-    "documentation",
-  ],
-  prompting: ["AI literacy", "communication", "task design"],
-  "ai-literacy-verification": [
-    "source checking",
-    "risk review",
-    "professional judgment",
-  ],
-  "standards-targets": [
-    "curriculum alignment",
-    "assessment design",
-    "compliance literacy",
-  ],
-  "course-unit-architecture": [
-    "instructional design",
-    "sequence planning",
-    "artifact design",
-  ],
-  "open-resources": [
-    "information literacy",
-    "copyright awareness",
-    "resource evaluation",
-  ],
-  "google-workspace-planning": [
-    "data organization",
-    "workflow design",
-    "digital file systems",
-  ],
-  "assessment-feedback": [
-    "rubric design",
-    "feedback loops",
-    "evidence gathering",
-  ],
-  "delivery-planning": [
-    "classroom operations",
-    "student directions",
-    "contingency planning",
-  ],
-  "mini-unit-capstone": [
-    "portfolio assembly",
-    "revision habits",
-    "publishable curriculum",
-  ],
+  "curriculum-vs-course-content": ["content modeling", "AI boundaries", "course inventory"],
+  "standards-goals-to-lessons": ["learning targets", "sequence planning", "student-facing language"],
+  "prompting-without-garbage": ["prompt design", "example use", "teacher revision"],
+  "verify-ai-before-students": ["source checking", "privacy review", "professional judgment"],
+  "student-facing-lessons": ["lesson writing", "directions", "student usability"],
+  "assignments-labs-rubrics-feedback": ["assessment design", "rubrics", "feedback routines"],
+  "organizing-course-content-system": ["file systems", "versioning", "maintenance"],
+  "safety-accessibility-copyright-source-quality": ["accessibility", "copyright", "source quality"],
+  "publishing-to-platform": ["publishing", "navigation", "release checks"],
+  "mini-course-content-packet": ["packet assembly", "verification", "revision"],
 };
 
 export const CHAPTER_SECTIONS: Record<string, ChapterSection[]> = {
-  "teacher-builder-mindset": [
-    { number: "01.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "01.1", title: "Why Teachers Need Systems", type: "section", duration: "15 minutes" },
-    { number: "01.2", title: "Tools vs Workflows vs Systems", type: "section", duration: "15 minutes" },
-    { number: "01.3", title: "The Scattered Files Problem", type: "section", duration: "15 minutes" },
-    { number: "01.4", title: "Source -> Prompt -> Build -> Verify -> Teach -> Archive -> Improve", type: "section", duration: "20 minutes" },
-    { number: "01.5", title: "Build Task: Teacher Workflow Audit", type: "artifact", duration: "30 minutes", artifact: "Teacher workflow audit" },
-    { number: "01.6", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "curriculum-vs-course-content": [
+    { number: "01.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "01.1", title: "What Counts as Curriculum?", type: "section", duration: "15 minutes" },
+    { number: "01.2", title: "What Counts as Student-Facing Course Content?", type: "section", duration: "15 minutes" },
+    { number: "01.3", title: "Why a Folder Full of Files Is Not a Course", type: "section", duration: "15 minutes" },
+    { number: "01.4", title: "Build Artifact: Course Content Inventory", type: "artifact", duration: "30 minutes", artifact: "Course content inventory" },
+    { number: "01.5", title: "Checkpoint: Is This Content Teachable?", type: "checkpoint", duration: "10 minutes" },
   ],
-  prompting: [
-    { number: "02.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "02.1", title: "What Prompting Actually Is", type: "section", duration: "15 minutes" },
-    { number: "02.2", title: "Prompt Anatomy", type: "section", duration: "20 minutes" },
-    { number: "02.3", title: "Bad Prompts vs Useful Prompts", type: "section", duration: "20 minutes" },
-    { number: "02.4", title: "Prompting for Lesson Plans", type: "section", duration: "20 minutes" },
-    { number: "02.5", title: "Prompting for Rubrics and Quizzes", type: "section", duration: "20 minutes" },
-    { number: "02.6", title: "Prompting for Student-Facing Directions", type: "section", duration: "20 minutes" },
-    { number: "02.7", title: "Prompt Revision and Teacher Voice", type: "section", duration: "20 minutes" },
-    { number: "02.8", title: "Build Task: Prompt Library", type: "artifact", duration: "35 minutes", artifact: "Reusable prompt library" },
-    { number: "02.9", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "standards-goals-to-lessons": [
+    { number: "02.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "02.1", title: "Start With the Learning Target, Not the Tool", type: "section", duration: "15 minutes" },
+    { number: "02.2", title: "Turn Standards Into Student-Friendly Outcomes", type: "section", duration: "20 minutes" },
+    { number: "02.3", title: "Turn a Messy Idea Into a Teachable Sequence", type: "section", duration: "20 minutes" },
+    { number: "02.4", title: "Build Artifact: Learning Target and Lesson Map", type: "artifact", duration: "35 minutes", artifact: "Learning target and lesson map" },
+    { number: "02.5", title: "Checkpoint: Can a Student Understand What They Are Doing?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "ai-literacy-verification": [
-    { number: "03.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "03.1", title: "AI Can Draft, But It Cannot Own the Lesson", type: "section", duration: "15 minutes" },
-    { number: "03.2", title: "Hallucinations and Fake Confidence", type: "section", duration: "20 minutes" },
-    { number: "03.3", title: "Citation and Source Verification", type: "section", duration: "20 minutes" },
-    { number: "03.4", title: "Bias and Representation Checks", type: "section", duration: "20 minutes" },
-    { number: "03.5", title: "Student Privacy and AI Tools", type: "section", duration: "20 minutes" },
-    { number: "03.6", title: "What Not to Paste Into AI", type: "section", duration: "15 minutes" },
-    { number: "03.7", title: "AI Verification Checklist", type: "artifact", duration: "30 minutes", artifact: "AI verification checklist" },
-    { number: "03.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "prompting-without-garbage": [
+    { number: "03.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "03.1", title: "Why Generic Prompts Create Fake Lessons", type: "section", duration: "15 minutes" },
+    { number: "03.2", title: "The Source-Context-Task-Format-Check Prompt Pattern", type: "section", duration: "20 minutes" },
+    { number: "03.3", title: "Giving AI Examples and Non-Examples", type: "section", duration: "20 minutes" },
+    { number: "03.4", title: "Build Artifact: Reusable Course-Content Prompt", type: "artifact", duration: "35 minutes", artifact: "Reusable course-content prompt" },
+    { number: "03.5", title: "Checkpoint: Does the Output Sound Like Your Course?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "standards-targets": [
-    { number: "04.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "04.1", title: "Standards Are Not Lessons", type: "section", duration: "15 minutes" },
-    { number: "04.2", title: "Finding the Right Standards", type: "section", duration: "20 minutes" },
-    { number: "04.3", title: "Unpacking Verbs and Nouns", type: "section", duration: "20 minutes" },
-    { number: "04.4", title: "Turning Standards Into Learning Targets", type: "section", duration: "20 minutes" },
-    { number: "04.5", title: "Matching Evidence to Targets", type: "section", duration: "20 minutes" },
-    { number: "04.6", title: "Avoiding Fake Alignment", type: "section", duration: "15 minutes" },
-    { number: "04.7", title: "Standards Unpacking Sheet", type: "artifact", duration: "35 minutes", artifact: "Standards unpacking sheet" },
-    { number: "04.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "verify-ai-before-students": [
+    { number: "04.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "04.1", title: "AI Output Is Draft Material, Not Authority", type: "section", duration: "15 minutes" },
+    { number: "04.2", title: "Check Facts, Sources, and Citations", type: "section", duration: "20 minutes" },
+    { number: "04.3", title: "Check Student Safety, Privacy, and Age Requirements", type: "section", duration: "20 minutes" },
+    { number: "04.4", title: "Build Artifact: AI Output Verification Checklist", type: "artifact", duration: "30 minutes", artifact: "AI output verification checklist" },
+    { number: "04.5", title: "Checkpoint: Would You Defend This Content to a Reviewer?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "course-unit-architecture": [
-    { number: "05.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "05.1", title: "Course vs Unit vs Lesson vs Activity", type: "section", duration: "15 minutes" },
-    { number: "05.2", title: "Essential Questions", type: "section", duration: "15 minutes" },
-    { number: "05.3", title: "Lesson Sequence", type: "section", duration: "20 minutes" },
-    { number: "05.4", title: "Examples and Non-Examples", type: "section", duration: "20 minutes" },
-    { number: "05.5", title: "Checks for Understanding", type: "section", duration: "15 minutes" },
-    { number: "05.6", title: "Mini-Unit Mapping", type: "section", duration: "25 minutes" },
-    { number: "05.7", title: "3-5 Lesson Mini-Unit", type: "artifact", duration: "45 minutes", artifact: "Mini-unit map and lesson template" },
-    { number: "05.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "student-facing-lessons": [
+    { number: "05.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "05.1", title: "Anatomy of a Student-Facing Lesson Page", type: "section", duration: "20 minutes" },
+    { number: "05.2", title: "Directions, Examples, Checks, and Submissions", type: "section", duration: "20 minutes" },
+    { number: "05.3", title: "Common Mistake: Beautiful Page, Unclear Task", type: "section", duration: "15 minutes" },
+    { number: "05.4", title: "Build Artifact: Student-Facing Lesson Page", type: "artifact", duration: "40 minutes", artifact: "Student-facing lesson page" },
+    { number: "05.5", title: "Checkpoint: Can Students Start Without You Explaining Everything?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "open-resources": [
-    { number: "06.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "06.1", title: "Official Sources First", type: "section", duration: "15 minutes" },
-    { number: "06.2", title: "OER and Creative Commons", type: "section", duration: "20 minutes" },
-    { number: "06.3", title: "Free vs Open vs Allowed", type: "section", duration: "20 minutes" },
-    { number: "06.4", title: "YouTube, Images, and Attribution", type: "section", duration: "20 minutes" },
-    { number: "06.5", title: "Evaluating Source Quality", type: "section", duration: "20 minutes" },
-    { number: "06.6", title: "Building a Source Bank", type: "section", duration: "20 minutes" },
-    { number: "06.7", title: "Resource Evaluation Sheet", type: "artifact", duration: "35 minutes", artifact: "Resource evaluation sheet" },
-    { number: "06.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "assignments-labs-rubrics-feedback": [
+    { number: "06.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "06.1", title: "Turn a Lesson Into an Assignment", type: "section", duration: "20 minutes" },
+    { number: "06.2", title: "Build Labs and Practice Tasks", type: "section", duration: "20 minutes" },
+    { number: "06.3", title: "Rubrics That Match the Target", type: "section", duration: "20 minutes" },
+    { number: "06.4", title: "Build Artifact: Assignment and Rubric Packet", type: "artifact", duration: "40 minutes", artifact: "Assignment and rubric packet" },
+    { number: "06.5", title: "Checkpoint: Does the Assessment Prove the Target?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "google-workspace-planning": [
-    { number: "07.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "07.1", title: "Google Drive Is Not a System by Itself", type: "section", duration: "15 minutes" },
-    { number: "07.2", title: "Folder Architecture", type: "section", duration: "20 minutes" },
-    { number: "07.3", title: "Docs as Lesson Templates", type: "section", duration: "15 minutes" },
-    { number: "07.4", title: "Sheets as Curriculum Trackers", type: "section", duration: "20 minutes" },
-    { number: "07.5", title: "Forms as Checks for Understanding", type: "section", duration: "20 minutes" },
-    { number: "07.6", title: "Slides as Delivery Tools", type: "section", duration: "15 minutes" },
-    { number: "07.7", title: "Workspace Planning Map", type: "artifact", duration: "35 minutes", artifact: "Workspace planning map" },
-    { number: "07.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "organizing-course-content-system": [
+    { number: "07.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "07.1", title: "Why Folders Become Chaos", type: "section", duration: "15 minutes" },
+    { number: "07.2", title: "Course, Chapter, Lesson, Artifact Naming Rules", type: "section", duration: "20 minutes" },
+    { number: "07.3", title: "Versioning, Archives, and Revision Logs", type: "section", duration: "20 minutes" },
+    { number: "07.4", title: "Build Artifact: Course Content Folder Map", type: "artifact", duration: "35 minutes", artifact: "Course content folder map" },
+    { number: "07.5", title: "Checkpoint: Could Another Teacher Find and Update This?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "assessment-feedback": [
-    { number: "08.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "08.1", title: "Activities Are Not Always Assessments", type: "section", duration: "15 minutes" },
-    { number: "08.2", title: "Evidence of Learning", type: "section", duration: "20 minutes" },
-    { number: "08.3", title: "Formative Checks", type: "section", duration: "15 minutes" },
-    { number: "08.4", title: "Rubrics With Observable Criteria", type: "section", duration: "20 minutes" },
-    { number: "08.5", title: "Feedback Loops", type: "section", duration: "15 minutes" },
-    { number: "08.6", title: "Revision Opportunities", type: "section", duration: "15 minutes" },
-    { number: "08.7", title: "Assessment + Rubric Draft", type: "artifact", duration: "40 minutes", artifact: "Assessment and rubric draft" },
-    { number: "08.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "safety-accessibility-copyright-source-quality": [
+    { number: "08.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "08.1", title: "Student Privacy and Fake Classroom Data", type: "section", duration: "20 minutes" },
+    { number: "08.2", title: "Copyright, Licenses, and Open Resources", type: "section", duration: "20 minutes" },
+    { number: "08.3", title: "Accessibility Basics for Lessons, Slides, Media, and Documents", type: "section", duration: "20 minutes" },
+    { number: "08.4", title: "Build Artifact: Content Safety Review", type: "artifact", duration: "35 minutes", artifact: "Content safety review" },
+    { number: "08.5", title: "Checkpoint: What Must Be Fixed Before Release?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "delivery-planning": [
-    { number: "09.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "09.1", title: "A Good Lesson Still Needs Delivery", type: "section", duration: "15 minutes" },
-    { number: "09.2", title: "Student-Facing Directions", type: "section", duration: "20 minutes" },
-    { number: "09.3", title: "Timing and Classroom Flow", type: "section", duration: "20 minutes" },
-    { number: "09.4", title: "Videos, Images, and Embedded Resources", type: "section", duration: "20 minutes" },
-    { number: "09.5", title: "The One-Day Lesson Site Workflow", type: "workshop", duration: "30 minutes", artifact: "One-day lesson site plan" },
-    { number: "09.6", title: "Backup Plans When Tech Fails", type: "section", duration: "15 minutes" },
-    { number: "09.7", title: "Delivery Plan", type: "artifact", duration: "35 minutes", artifact: "Delivery plan" },
-    { number: "09.8", title: "Checkpoint Review", type: "checkpoint", duration: "10 minutes" },
+  "publishing-to-platform": [
+    { number: "09.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "09.1", title: "LMS, Website, Teachable, or Course Hub?", type: "section", duration: "20 minutes" },
+    { number: "09.2", title: "What Should Be Public, Private, or Classroom-Only?", type: "section", duration: "20 minutes" },
+    { number: "09.3", title: "Navigation, Student Flow, and Broken Links", type: "section", duration: "20 minutes" },
+    { number: "09.4", title: "Build Artifact: Publishing Checklist", type: "artifact", duration: "35 minutes", artifact: "Publishing checklist" },
+    { number: "09.5", title: "Checkpoint: Can Students Find the Next Action?", type: "checkpoint", duration: "10 minutes" },
   ],
-  "mini-unit-capstone": [
-    { number: "10.0", title: "Chapter Plan", type: "overview", duration: "10 minutes" },
-    { number: "10.1", title: "Assemble the Mini-Unit", type: "studio", duration: "30 minutes" },
-    { number: "10.2", title: "Verify Standards and Sources", type: "studio", duration: "25 minutes" },
-    { number: "10.3", title: "Check Privacy, Copyright, and Accessibility", type: "studio", duration: "25 minutes" },
-    { number: "10.4", title: "Peer Review", type: "studio", duration: "30 minutes" },
-    { number: "10.5", title: "Revision Log", type: "studio", duration: "20 minutes", artifact: "Reflection and revision log" },
-    { number: "10.6", title: "Present the Mini-Unit", type: "studio", duration: "20 minutes" },
-    { number: "10.7", title: "Final Reflection", type: "checkpoint", duration: "20 minutes" },
-    { number: "10.8", title: "Capstone Submission Checklist", type: "checkpoint", duration: "15 minutes" },
+  "mini-course-content-packet": [
+    { number: "10.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
+    { number: "10.1", title: "Choose the Mini-Course Scope", type: "studio", duration: "25 minutes" },
+    { number: "10.2", title: "Assemble Lessons, Assignment, Rubric, and Sources", type: "studio", duration: "35 minutes" },
+    { number: "10.3", title: "Verify and Revise the Packet", type: "studio", duration: "30 minutes" },
+    { number: "10.4", title: "Build Artifact: Mini Course Content Packet", type: "artifact", duration: "45 minutes", artifact: "Mini course content packet" },
+    { number: "10.5", title: "Final Review: Is This Teachable, Verifiable, Safe, and Reusable?", type: "checkpoint", duration: "20 minutes" },
   ],
 };
 
@@ -384,7 +319,7 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
     evidenceSource: [
       {
         label: "Standards-to-targets chapter",
-        url: "/book/ots-101/04-standards-to-learning-targets",
+        url: "/book/ots-101/02-standards-goals-to-lessons",
       },
       {
         label: "Assessment rubric template",
@@ -431,7 +366,7 @@ export const OTS_101_STANDARDS_ASSESSMENT_MATRIX: StandardsAssessmentTraceRow[] 
     standards:
       "Mini-unit evidence shows standards, artifacts, and assessment evidence are connected before release.",
     assessmentArtifact: "Verified mini-unit capstone",
-    evidenceRoute: "/book/ots-101/10-mini-unit-capstone",
+    evidenceRoute: "/book/ots-101/10-mini-course-content-packet",
     sourceReference: "Course-level evidence matrix + source bank verification notes.",
   },
 ];

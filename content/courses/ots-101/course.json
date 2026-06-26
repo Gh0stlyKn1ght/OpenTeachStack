@@ -1,110 +1,91 @@
 {
   "code": "OTS-101",
   "slug": "ots-101",
-  "title": "Teaching Teachers Foundations",
+  "title": "AI Course Content Foundations for Teachers",
   "owner": "dedicated",
   "canonicalRoute": "/book/ots-101",
   "sourceRegistry": "src/lib/book.ts",
-  "generatedAt": "2026-06-22",
-  "migrationStatus": "authored",
+  "generatedAt": "2026-06-26",
+  "migrationStatus": "draft",
+  "courseReadiness": "active-rebuild",
+  "coursePromise": "By the end, a teacher can use AI to help build a small student-facing course content packet that is teachable, verified, safe, accessible, and reusable.",
   "chapters": [
     {
       "number": "01",
-      "slug": "01-teacher-builder-mindset",
-      "title": "Teacher Builder Mindset",
-      "buildArtifact": "Teacher workflow audit",
-      "lessonCount": 7
+      "slug": "01-curriculum-vs-course-content",
+      "title": "Curriculum vs Course Content",
+      "buildArtifact": "Course content inventory",
+      "lessonCount": 6
     },
     {
       "number": "02",
-      "slug": "02-prompting",
-      "title": "Prompting for Teachers",
-      "buildArtifact": "Reusable prompt library",
-      "lessonCount": 10
+      "slug": "02-standards-goals-to-lessons",
+      "title": "From Standards or Goals to Lessons",
+      "buildArtifact": "Learning target and lesson map",
+      "lessonCount": 6
     },
     {
       "number": "03",
-      "slug": "03-ai-literacy-verification",
-      "title": "AI Literacy and Verification",
-      "buildArtifact": "AI verification checklist",
-      "lessonCount": 9
+      "slug": "03-prompting-without-garbage",
+      "title": "Prompting AI Without Generic Garbage",
+      "buildArtifact": "Reusable course-content prompt",
+      "lessonCount": 6
     },
     {
       "number": "04",
-      "slug": "04-standards-to-learning-targets",
-      "title": "Standards to Learning Targets",
-      "buildArtifact": "Standards unpacking sheet",
-      "lessonCount": 9
+      "slug": "04-verify-ai-before-students",
+      "title": "Verifying AI Before Students See It",
+      "buildArtifact": "AI output verification checklist",
+      "lessonCount": 6
     },
     {
       "number": "05",
-      "slug": "05-course-and-unit-architecture",
-      "title": "Course and Unit Architecture",
-      "buildArtifact": "Mini-unit map and lesson template",
-      "lessonCount": 9
+      "slug": "05-student-facing-lessons",
+      "title": "Building Real Student-Facing Lessons",
+      "buildArtifact": "Student-facing lesson page",
+      "lessonCount": 6
     },
     {
       "number": "06",
-      "slug": "06-resource-discovery-open-resources",
-      "title": "Resource Discovery and Open Resources",
-      "buildArtifact": "Resource evaluation sheet",
-      "lessonCount": 9
+      "slug": "06-assignments-labs-rubrics-feedback",
+      "title": "Assignments, Labs, Rubrics, and Feedback",
+      "buildArtifact": "Assignment and rubric packet",
+      "lessonCount": 6
     },
     {
       "number": "07",
-      "slug": "07-google-workspace-planning-systems",
-      "title": "Google Workspace Planning Systems",
-      "buildArtifact": "Workspace planning map",
-      "lessonCount": 9
+      "slug": "07-organizing-course-content-system",
+      "title": "Organizing the Course Content System",
+      "buildArtifact": "Course content folder map",
+      "lessonCount": 6
     },
     {
       "number": "08",
-      "slug": "08-assessment-rubrics-feedback",
-      "title": "Assessment, Rubrics, and Feedback",
-      "buildArtifact": "Assessment and rubric draft",
-      "lessonCount": 9
+      "slug": "08-safety-accessibility-copyright-source-quality",
+      "title": "Safety, Accessibility, Copyright, and Source Quality",
+      "buildArtifact": "Content safety review",
+      "lessonCount": 6
     },
     {
       "number": "09",
-      "slug": "09-delivery-planning",
-      "title": "Delivery Planning",
-      "buildArtifact": "Delivery plan",
-      "lessonCount": 9
+      "slug": "09-publishing-to-platform",
+      "title": "Publishing to a Platform",
+      "buildArtifact": "Publishing checklist",
+      "lessonCount": 6
     },
     {
       "number": "10",
-      "slug": "10-mini-unit-capstone",
-      "title": "Mini-Unit Capstone",
-      "buildArtifact": "Verified mini-unit capstone",
-      "lessonCount": 9
+      "slug": "10-mini-course-content-packet",
+      "title": "Capstone: Build a Mini Course Content Packet",
+      "buildArtifact": "Mini course content packet",
+      "lessonCount": 6
     }
   ],
-  "copiedDocs": [
-    "docs/OTS_101_ACCESSIBILITY_RELEASE_CHECK.md",
-    "docs/OTS_101_BROWSER_ACCESSIBILITY_AUDIT.md",
-    "docs/OTS_101_CURRICULUM_MANAGER_AUDIT.md"
-  ],
-  "copiedAssets": [
-    "assets/images/ai-as-curriculum-assistant.webp",
-    "assets/images/assessment-rubrics-and-feedback.webp",
-    "assets/images/building-courses-from-standards.webp",
-    "assets/images/capstone-build-your-mini-course.webp",
-    "assets/images/choosing-a-teacher-app-stack.webp",
-    "assets/images/course-architecture.webp",
-    "assets/images/creative-commons-for-teachers.webp",
-    "assets/images/delivery-planning-foundations.webp",
-    "assets/images/google-drive-folder-architecture.webp",
-    "assets/images/google-forms-as-quizzes.webp",
-    "assets/images/google-sheets-as-curriculum-database.webp",
-    "assets/images/one-day-lesson-site-workflow.webp",
-    "assets/images/open-source-vs-free.webp",
-    "assets/images/prompting-for-teachers.webp",
-    "assets/images/release-packet.webp",
-    "assets/images/resource-discovery-and-evaluation.webp",
-    "assets/images/source-bank.webp",
-    "assets/images/the-teacher-as-builder.webp",
-    "assets/images/what-teaching-teachers-is.webp"
-  ],
-  "copiedLabs": [],
-  "courseReadiness": "release"
+  "liveLessonPolicy": "Only lessons with real teacher-facing bodies should exist as MDX. Missing lessons are intentionally unavailable until authored.",
+  "samplePacket": {
+    "course": "Intro to Robotics Safety",
+    "audience": "high school robotics students",
+    "miniUnit": "Safe robot startup and shutdown",
+    "platform": "Google Classroom or course website"
+  }
 }

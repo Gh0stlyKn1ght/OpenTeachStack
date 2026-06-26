@@ -1,35 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import CyberSafetySidebar from "@/components/book/CyberSafetySidebar";
 import ArticleBody from "@/components/field-guide/ArticleBody";
-import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import BuildTask from "@/components/BuildTask";
-import MDXPre from "@/components/MDXPre";
-import MermaidBlock from "@/components/MermaidBlock";
-import RealityCheck from "@/components/RealityCheck";
-import ReflectionPrompt from "@/components/ReflectionPrompt";
-import TeacherNote from "@/components/TeacherNote";
-import VideoEmbed from "@/components/VideoEmbed";
-import { getCourseLessonBySlugs } from "@/lib/content";
-import { mdxOptions } from "@/lib/mdx";
 import {
   CYBER_COURSE_CODE,
-  getAdjacentCyberSections,
   getAllCyberSectionRecords,
   getCyberSectionBySlugs,
 } from "@/lib/cyberSafety";
-
-const mdxComponents = {
-  pre: MDXPre,
-  MermaidBlock,
-  VideoEmbed,
-  ReflectionPrompt,
-  TeacherNote,
-  RealityCheck,
-  BuildTask,
-};
 
 type SectionPageProps = {
   params: Promise<{ chapter: string; section: string }>;
@@ -66,83 +43,36 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
     notFound();
   }
 
-  const { previous, next } = getAdjacentCyberSections(record);
-  const courseLesson = getCourseLessonBySlugs(
-    "ots-280",
-    record.chapter.slug,
-    record.sectionSlug,
-  );
-
-  if (!courseLesson) {
-    notFound();
-  }
-
-  const migrationStatus = courseLesson.frontmatter.migrationStatus;
-  const isReleaseReady =
-    migrationStatus === "authored" || migrationStatus === "reviewed";
-
   return (
     <FieldGuidePage
-      eyebrow={`${CYBER_COURSE_CODE} / Chapter ${record.chapter.number} / Section ${record.section.number}`}
-      title={record.section.title}
-      subtitle={record.chapter.problem}
+      eyebrow={`${CYBER_COURSE_CODE} Coming Soon`}
+      title="Cyber Safety for Educators"
+      subtitle="This lesson is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
       breadcrumbs={[
         { label: "Book", href: "/book" },
         { label: CYBER_COURSE_CODE, href: "/book/ots-280" },
-        { label: record.chapter.title, href: record.chapter.href },
       ]}
       meta={[
         { label: "Course", value: CYBER_COURSE_CODE },
-        { label: "Chapter", value: record.chapter.title },
-        { label: "Type", value: record.section.type },
-        { label: "Duration", value: record.section.duration },
-        { label: "Source", value: "Course-owned MDX" },
-        { label: "Print", value: "Full book PDF" },
+        { label: "Status", value: "Coming Soon" },
+        { label: "Boundary", value: "Frozen until OTS-101 is right" },
       ]}
-      sidebar={
-        <CyberSafetySidebar
-          activeSlug={record.chapter.slug}
-          activeSectionSlug={record.sectionSlug}
-        />
-      }
-      footer={
-        <ArticleFooterNav
-          previous={
-            previous
-              ? {
-                  href: previous.href,
-                  label: "Previous section",
-                  title: `${previous.section.number}. ${previous.section.title}`,
-                }
-              : undefined
-          }
-          next={
-            next
-              ? {
-                  href: next.href,
-                  label: "Next section",
-                  title: `${next.section.number}. ${next.section.title}`,
-                }
-              : undefined
-          }
-        />
-      }
     >
       <ArticleBody>
-        {!isReleaseReady ? (
-          <div className="course-section-status">
-            This lesson is in teacher review. It still needs
-            classroom-specific revision before it should be treated as
-            release-ready course content.
+        <section className="book-spread">
+          <div>
+            <h2>Lesson locked</h2>
+            <p>
+              OTS-280 is Coming Soon. OpenTeachStack will not publish missing,
+              placeholder, or outline-only lesson pages as if they were real
+              instruction.
+            </p>
+            <p>OTS-101 is the only course currently being rebuilt.</p>
           </div>
-        ) : null}
-        <div className="prose-academic">
-          <MDXRemote
-            source={courseLesson.content}
-            options={mdxOptions}
-            components={mdxComponents}
-          />
-        </div>
+          <div className="course-section-status">
+            Coming Soon. Frozen until OTS-101 is right.
+          </div>
+        </section>
       </ArticleBody>
     </FieldGuidePage>
   );

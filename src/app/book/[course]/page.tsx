@@ -43,6 +43,47 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
 
   const firstChapter = course.chapters[0];
 
+  if (course.status === "Coming Soon") {
+    return (
+      <FieldGuidePage
+        eyebrow={`${course.code} Coming Soon`}
+        title={course.title}
+        subtitle="This course is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+        breadcrumbs={[{ label: "Book", href: "/book" }]}
+        meta={[
+          { label: "Course", value: course.code },
+          { label: "Status", value: "Coming Soon" },
+          { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        ]}
+      >
+        <ArticleBody>
+          <section className="book-spread">
+            <div>
+              <h2>Why this course is not open yet</h2>
+              <p>
+                OpenTeachStack is rebuilding one real course first. We are not
+                publishing placeholder chapter pages, fake lesson bodies, or
+                scaffolded course content just to make the pathway look full.
+              </p>
+              <p>
+                Finish OTS-101 first. After that course proves the content
+                model, this course can be rebuilt intentionally.
+              </p>
+            </div>
+            <ArtifactCard
+              title="Coming Soon"
+              description="This course stays frozen until OTS-101 has real, reviewed, teacher-useful lesson content."
+            />
+          </section>
+
+          <Link href="/book/ots-101" className="book-action">
+            Return to OTS-101
+          </Link>
+        </ArticleBody>
+      </FieldGuidePage>
+    );
+  }
+
   return (
     <FieldGuidePage
       eyebrow={`${course.code} Course Book`}

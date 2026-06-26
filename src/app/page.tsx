@@ -11,12 +11,6 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function HomePage() {
-  const getCourseHref = (code: string) => {
-    if (code === "OTS-101") return "/book/ots-101";
-    if (code === "OTS-280") return "/book/ots-280";
-    return `/book/${code.toLowerCase()}`;
-  };
-
   return (
     <div className="mx-auto w-[min(100%-1.5rem,78rem)] py-10">
       <section className="border-b border-border pb-8">
@@ -69,9 +63,9 @@ export default function HomePage() {
 
         <ol className="border-y border-border">
           {PATHWAY_COURSES.map((course, index) => {
-            const courseHref = getCourseHref(course.code);
             const sequence = String(index + 1).padStart(2, "0");
             const isFirstCourse = course.code === "OTS-101";
+            const isComingSoon = course.status === "Coming Soon";
 
             return (
               <li key={course.code} className="list-none">
@@ -102,14 +96,15 @@ export default function HomePage() {
                       </span>{" "}
                       {course.majorArtifacts.join(", ")}
                     </p>
-                    <Link
-                      href={courseHref}
-                      className={
-                        isFirstCourse ? "book-action" : "book-action-secondary"
-                      }
-                    >
-                      {isFirstCourse ? "Start here" : "Open course"}
-                    </Link>
+                    {isComingSoon ? (
+                      <span className="book-action-secondary cursor-not-allowed opacity-55">
+                        Coming soon
+                      </span>
+                    ) : (
+                      <Link href="/book/ots-101" className="book-action">
+                        {isFirstCourse ? "Start here" : "Open course"}
+                      </Link>
+                    )}
                   </div>
                 </article>
               </li>
@@ -149,14 +144,14 @@ export default function HomePage() {
             </li>
             <li className="list-none border-l-2 border-accent pl-4">
               <Link
-                href="/kb/library"
+                href="/kb/source-bank"
                 className="font-semibold text-link no-underline hover:underline"
               >
-                Support Library
+                Source Bank
               </Link>
               <p className="mb-0 mt-1 text-sm text-foreground/58">
-                The old Library now lives inside the Knowledge Base as the
-                support shelf.
+                Use verified sources, official docs, and resource notes before
+                placing links or claims in front of students.
               </p>
             </li>
           </ul>
