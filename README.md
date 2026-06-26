@@ -122,6 +122,8 @@ Reviewer and maintenance docs:
 - [OTS-101 Accessibility Release Check](docs/OTS_101_ACCESSIBILITY_RELEASE_CHECK.md)
 - [OTS-101 Release Announcement](docs/RELEASE_ANNOUNCEMENT_OTS_101.md)
 - [Source Bank Maintenance Workflow](docs/SOURCE_BANK_MAINTENANCE.md)
+- [Lesson Quality Rubric](docs/LESSON_QUALITY_RUBRIC.md)
+- [Content Depth Remediation Report](docs/CONTENT_DEPTH_REMEDIATION_REPORT.md)
 
 ## Quick Start
 

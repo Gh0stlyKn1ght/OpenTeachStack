@@ -1,114 +1,129 @@
-# Open TeachStack Voiceprint
+# OpenTeachStack Voiceprint
 
-Open TeachStack should sound like it was built by a real teacher who had to learn the system under pressure.
+OpenTeachStack should sound like it was built by a teacher who had to create real course systems while already teaching.
 
-This is not corporate ed-tech.
-This is not generic AI professional development.
-This is not a motivational toolkit.
+This is not corporate ed-tech branding. This is not consultant language.
+It is a practical teacher-builder guide for people under classroom deadlines.
 
-Open TeachStack is a field guide for teachers who want to build curriculum systems they can understand, verify, revise, and own.
+OpenTeachStack helps teachers turn messy standards, district expectations, AI drafts, broken links, and old folders into organized systems that are teachable, verifiable, safe, and reusable.
 
 ## Core Voice
 
-The voice is:
-
 - practical
-- human
-- direct
+- honest
 - teacher-to-teacher
-- slightly hackerish
-- builder-minded
-- honest about what breaks
-- clear enough for non-technical teachers
-- technical enough to be useful
+- systems-minded
+- safety-aware
+- calm under pressure
+- skeptical of fake polish
+- supportive without being soft
+- direct without being harsh
+- technical when needed, but never performative
 
-The writing should feel like:
+The reader should feel:
 
-> I learned this the hard way. Here is the system I wish someone gave me.
+> This was written by someone who has actually had to build the course, teach the lesson, organize files, explain the workflow, verify sources, and clean up the mess.
 
-## Core Belief
+## Core Beliefs
 
-Teachers are expected to build modern curriculum, use AI, manage digital resources, align standards, create assessments, and deliver engaging lessons.
+- A lesson is not finished just because it has headings.
+- Student-facing content is not automatically curriculum.
+- OpenTeachStack builds curriculum systems: learning goals, sequence, evidence, and revision routines connected to student-facing material.
+- AI output is draft material, not authority.
+- A tool is not a workflow.
+- A folder full of files is not a course.
+- A system is ready when another educator can understand purpose, evidence, safety boundary, and next revision step.
+- Verification matters because students should not inherit our shortcuts.
+- Privacy, accessibility, copyright, and source quality are not optional.
+- A useful artifact beats a beautiful empty page.
 
-Most teachers are never taught the technical workflows behind that work.
+## Required Language
 
-Open TeachStack exists to document those workflows.
+Use terms like:
 
-## Signature Method
+- course content system
+- student-facing content
+- teacher-built course materials
+- curriculum system
+- classroom-ready artifact
+- inspectable evidence
+- revision trigger
+- safety boundary
+- verify before students see it
+- practical classroom pressure
 
-Open TeachStack follows this pattern:
+Use this distinction:
 
-**Source -> Prompt -> Build -> Verify -> Teach -> Archive -> Improve**
+- Curriculum: goals, sequence, standards, assessments, and required evidence.
+- Course content: lessons, readings, labs, assignments, examples, and resources students use.
+- Instructional materials: slides, handouts, rubrics, templates, teacher notes, and checklists.
+- Course platform: LMS/site/book where material lives.
+- Curriculum system: the connected structure that holds curriculum, content, materials, delivery, and revision together.
 
-That means:
+## Tone Rules
 
-1. Start with the learning need.
-2. Gather trusted sources.
-3. Use AI or a coding assistant to structure the work.
-4. Build a simple artifact.
-5. Verify facts, standards, copyright, privacy, and accessibility.
-6. Teach it.
-7. Save it.
-8. Improve it after class.
-
-## Write Like This
-
-Use plain language.
-
-Say:
-
-- "Here is the real problem."
-- "This is where teachers get overwhelmed."
-- "Start small."
-- "Good enough to teach, then improve it."
-- "AI can draft. You still decide what reaches students."
-- "Do not chase the tool first."
-- "If you cannot verify it, do not teach it yet."
-- "Build the system before you buy another subscription."
-
-## Do Not Write Like This
+Write like a trusted teacher-builder.
 
 Avoid:
 
-- "leverage innovative tools"
-- "transform educational outcomes"
-- "empower educators"
-- "seamlessly integrate technology"
-- "robust pedagogical ecosystem"
-- "unlock student potential"
-- "revolutionize teaching"
-- "cutting-edge instructional framework"
+- district memo language
+- corporate training vendor copy
+- generic AI-assistant phrasing
+- motivational poster language
+- consultant-style buzzword density
 
-Replace those phrases with direct language.
+Prefer short, concrete sentences. Name the classroom problem first, then give the system.
 
-## Page Rhythm
+## Lesson Writing Pattern
 
-Most pages should follow this rhythm:
+Every lesson should answer:
 
-1. The real problem
-2. Why it matters
-3. The simple mental model
-4. The workflow
-5. What to build
-6. What to verify
-7. What to do next
+1. What real teacher problem does this solve?
+2. What is the actual concept?
+3. What does weak work look like?
+4. What does better work look like?
+5. What should the teacher do now?
+6. What evidence proves the work is usable?
+7. What privacy, safety, accessibility, or copyright boundary matters here?
+8. When should this be reviewed again?
 
-## Tone Boundaries
+## Required Lesson Ingredients
 
-Open TeachStack can be sharp, honest, and builder-minded.
+- one real classroom pressure point
+- one plain-language explanation
+- one concrete example
+- one non-example or common mistake
+- one action in 10 to 30 minutes
+- one quality check
+- one safety/accessibility reminder where relevant
+- one artifact connection
+- one reflection question tied to the artifact
 
-It should not sound mean, arrogant, reckless, or like hacker cosplay.
+## AI Usage Boundary
 
-The tone is:
+AI can draft and organize.
+AI must not:
 
-> calm confidence from someone who actually built the thing.
+- invent citations or policy claims
+- invent standards alignment
+- overwrite authored content without review
+- flatten every course into one template voice
+- decide instructional choices for teachers
+- publish student-facing content before verification
 
-## Human Rule
+The teacher owns the instructional decision.
 
-Every lesson should feel like a teacher could say it out loud.
+## Content Quality Standard
 
-If a sentence sounds like it came from a grant proposal, rewrite it.
+A lesson is ready when:
 
-If a paragraph sounds like AI filler, cut it.
+> A tired teacher can read it, understand why it matters, take one useful action, and produce evidence another educator can inspect.
 
-If a page does not help a teacher build something, verify something, or understand something better, fix it.
+If a lesson only sounds polished, it is not ready.
+If it only explains a concept, it is not ready.
+If it only points to a tool, it is not ready.
+If it helps a teacher build, verify, teach, and revise something real, it is ready.
+
+## OpenTeachStack One-Sentence Voice
+
+OpenTeachStack helps teachers turn messy curriculum pressure into organized course content systems that are teachable, verifiable, safe, and reusable.

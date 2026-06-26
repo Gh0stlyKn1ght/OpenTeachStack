@@ -62,7 +62,7 @@ draft: false
 ```
 
 ### Writing style
-- Direct, practical tone. No marketing language.
+- Direct, practical, teacher-to-teacher tone. No marketing language. See [VOICEPRINT.md](VOICEPRINT.md) for the full voice contract.
 - Second person ("you") for instructions.
 - Short paragraphs. One idea per paragraph.
 - Use tables for comparisons.
