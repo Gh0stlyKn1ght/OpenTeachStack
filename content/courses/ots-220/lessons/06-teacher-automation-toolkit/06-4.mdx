@@ -19,60 +19,48 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+This chapter is a launch-readiness decision point.
+Readiness is not about having lots of lines of code; it is about having predictable outcomes and clear recovery.
 
-In **Teacher Automation Toolkit**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Automation toolkit**.
+## Readiness Rubric
 
-## Core Idea
+- **Ready**
+  - Manifest, checklist, and runbook exist and are current.
+  - Emergency stop blocks sends immediately.
+  - Every reviewer-approved send is logged with reviewer and timestamp.
+  - No unplanned send path exists.
+- **Revise**
+  - Missing approval records or unclear stop mechanism.
+  - Functions write sensitive data into logs/notes.
+  - Send status transitions are inconsistent.
+- **Blocked**
+  - Missing consent check.
+  - No recovery path after failed sends.
 
-Run a checkpoint on the **Automation toolkit**. Mark what is ready, what needs revision, what is blocked, and what evidence supports that decision.
+## Required Evidence Pack
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+Capture these five artifacts before leaving 06:
 
-## Lesson Focus
-
-Because this is the checkpoint for teacher automation toolkit, the teacher reviews the artifact as a working system. The checkpoint looks for missing decisions, unclear ownership, weak evidence, and maintenance steps that would be forgotten during a busy week.
-
-In 06.4, focus on checkpoint review decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to automation toolkit, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect checkpoint review decisions back to teacher automation toolkit. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Checkpoint Review**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on checkpoint review decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Artifact | What to capture |
 | --- | --- |
-| Teaching purpose | This work supports checkpoint review decisions inside teacher automation toolkit. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what checkpoint review decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or automation toolkit review. |
+| Manifest | component list + owners + last reviewed date |
+| Checklist | function-level status for all script functions |
+| Runbook | emergency stop and update instructions |
+| Execution sample | at least one logged successful send |
+| Failure sample | at least one row marked `error` with reason |
 
-## Review The Work
+## Acceptance Check
 
-Update the **Automation toolkit** with one row or section for **Checkpoint Review**.
-
-| Field | Your note |
+| Check | Expected |
 | --- | --- |
-| Lesson focus | checkpoint review decisions |
-| Classroom context | Where teacher automation toolkit appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What checkpoint review decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Checkpoint status | What proves automation toolkit is ready or what blocks it |
-| Maintenance trigger | When the checkpoint review decisions decision should be checked again |
+| `STOP_AUTOMATION = TRUE` | Running batch throws a stop error |
+| One approved row | moves to `sent` |
+| One non-approved row | remains non-sent |
+| One failed send | status `error` and notes reason |
 
-## Quality Check
+## Final Reflection
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Write one paragraph answering:
+> If a parent asks how a reminder email was generated and sent, can you prove it with this toolkit?
 
-A reviewer should be able to find the checkpoint review decisions decision, inspect the automation toolkit evidence, and understand how it supports teacher automation toolkit.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+If the answer is not verifiable from the evidence pack, mark this chapter as `Revise`.

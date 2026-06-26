@@ -65,6 +65,34 @@ Update the **What to do if something happens plan** with one row or section for 
 | Artifact status | What proves incident response is ready or what blocks it |
 | Maintenance trigger | When the incident response decision should be checked again |
 
+## Completed Sample
+
+| Situation | First calm step | Evidence to capture | Who to contact | Follow-up |
+| --- | --- | --- | --- | --- |
+| Suspicious login alert | Change password from known-good device and confirm MFA. | Date, account, alert source, action taken. | District IT/help desk. | Review account recovery settings. |
+| Phishing click | Disconnect from task, report, and change affected password. | Message details and report confirmation if allowed. | District IT and supervisor if required. | Check sent mail, forwarding rules, and MFA. |
+| Public page exposes private link | Remove or restrict link. | Page URL, link description, fix date. | Site owner or web admin. | Recheck public page after update. |
+| Lost device | Follow district lost-device process immediately. | Device type, last known location, time noticed. | IT/security office. | Change passwords if advised. |
+
+## Incident Note Template
+
+| Field | Safe entry |
+| --- | --- |
+| Date/time noticed | `2026-09-15, 3:40 PM` |
+| What happened | Suspicious login alert on school account |
+| Immediate action | Changed password from known-good device; confirmed MFA |
+| Report path | District help desk ticket submitted |
+| Sensitive details excluded | No passwords, student records, private messages, or screenshots with personal data |
+| Next review | Check recovery settings and public profile within 24 hours |
+
+## Ready, Revise, Blocked
+
+| Status | Evidence | Next action |
+| --- | --- | --- |
+| Ready | Plan names first step, evidence, contact path, and follow-up without exposing secrets. | Store where teacher can find it quickly. |
+| Revise | Plan has contacts but no evidence or follow-up fields. | Add incident note template. |
+| Blocked | Plan depends on private passwords, unapproved reporting paths, or public speculation. | Remove unsafe details and confirm district process. |
+
 ## Quality Check
 
 Before moving on, test the work against this standard: the action lowers a named risk, avoids unnecessary data collection, and gives the teacher a calm next step.

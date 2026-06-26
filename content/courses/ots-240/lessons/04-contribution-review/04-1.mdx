@@ -5,7 +5,7 @@ chapter: Contribution and Review Workflows
 chapterSlug: 04-contribution-review
 sectionNumber: 04.1
 sectionSlug: 04-1
-title: 'Issues, Pull Requests, and Review'
+title: Issues, Pull Requests, and Review
 type: section
 duration: 20 minutes
 artifact: Contribution checklist
@@ -19,60 +19,24 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Open work needs when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Without review, open changes can silently replace lesson intent.
 
-In **Contribution and Review Workflows**, the work sits inside open curriculum publishing with GitHub, README files, licenses, attribution, and review routines. The risk is treating free-to-view material as automatically open, reusable, remixable, or safe to publish. This lesson narrows that risk into one visible update to **Contribution checklist**.
+## Small Workflow
 
-## Core Idea
+1. Open an issue with expected change and reason.
+2. Make changes in a named branch.
+3. Open PR with checklist links.
+4. Reviewer confirms license/privacy and marks approved.
 
-Make the decision readable to someone else. The artifact explains the purpose, the source of truth, the review routine, and how future revisions will be recorded.
+## Example PR Template
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```text
+## Change
+- what changed and why
 
-## Lesson Focus
-
-Because this is a focused section, the teacher isolates the issues pull requests decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
-
-In 04.1, focus on issues pull requests. Choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Connect it to contribution checklist, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect issues pull requests back to contribution workflows. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher is preparing a curriculum repository with a README, source notes, a license file, contribution guidance, and a release checklist.
-
-For **Issues, Pull Requests, and Review**, choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Keep the example small enough to review during the lesson and focused on issues pull requests.
-
-Example entry:
-
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports issues pull requests inside contribution workflows. |
-| Evidence | The teacher can point to source notes, license decisions, README sections, review comments, attribution records, and release status. |
-| Boundary | The teacher names what issues pull requests may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or contribution checklist review. |
-
-## Practice The Decision
-
-Update the **Contribution checklist** with one row or section for **Issues, Pull Requests, and Review**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | issues pull requests |
-| Classroom context | Where contribution workflows appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a repository file, README section, issue, pull request, source note, or license entry |
-| Teacher decision | What issues pull requests causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves contribution checklist is ready or what blocks it |
-| Maintenance trigger | When the issues pull requests decision should be checked again |
-
-## Quality Check
-
-Before moving on, test the work against this standard: a reviewer can see what may be reused, what must be credited, what changed, and how the repository will be maintained.
-
-A reviewer should be able to find the issues pull requests decision, inspect the contribution checklist evidence, and understand how it supports contribution workflows.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+## Review checklist
+- [ ] No student personal data
+- [ ] Files are scoped to lesson scope
+- [ ] Attribution file updated
+- [ ] Rollback is documented
+```

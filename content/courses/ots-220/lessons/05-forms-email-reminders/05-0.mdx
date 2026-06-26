@@ -19,60 +19,97 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Teachers often discover reminders too late because follow-up depends on memory, not a system.  
+In this chapter you build a **small, auditable reminder pipeline** so communication is predictable, not magical.
 
-In **Forms, Email, and Reminders**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Reminder workflow**.
+In **Forms, Email, and Reminders**, automation quality is visible when you can explain:
+
+- what triggers the email,
+- what input is allowed,
+- who approves each message,
+- how failures are handled,
+- how you roll back safely.
+
+This section defines the workflow before writing code.
+
+## Chapter Scenario
+
+Your team runs a robotics unit and uses a Form called **Checkpoint Submission Form**.
+
+Example process:
+- Student submits form when assignment is missing documentation.
+- A row appears in the response sheet.
+- Teacher later approves a reminder draft.
+- Script sends only approved, non-sensitive reminders.
+
+You will plan around three artifacts:
+- `Checkpoint_Form` (Google Form)
+- `ReminderQueue` (Sheet with approval state)
+- `Reminder_Template` (Doc or hardcoded template text in script comments)
 
 ## Core Idea
 
-Map the chapter before building. Choose one classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Then name the classroom purpose it serves and the evidence that will show whether the work is ready.
+You are designing a workflow that writes reminders to a staging sheet, not directly to email.  
+That single decision creates:
+- safer testing,
+- easier auditing,
+- and an explicit human-review gate.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Plan the Workflow
 
-## Lesson Focus
+Complete this design table before moving to 05.1.
 
-Because this is the opening plan for forms email reminders, the teacher names the sequence before creating files or artifacts. The plan separates what will be learned, what will be built, and what evidence will prove that the build is ready.
-
-In 05.0, focus on chapter planning decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to reminder workflow, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect chapter planning decisions back to forms email reminders. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Chapter Plan**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on chapter planning decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Question | Your choice |
 | --- | --- |
-| Teaching purpose | This work supports chapter planning decisions inside forms email reminders. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what chapter planning decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or reminder workflow review. |
+| Trigger source | Form submit to `Checkpoint_Form` |
+| Queue destination | `ReminderQueue` with status `needs_review` |
+| Approval owner | You (teacher) only |
+| Email limit gate | Send only rows with status `approved` |
+| Personal data handling | Store `studentAlias`, **never** store raw student email |
+| Backup/reset plan | Keep a copy of the trigger output sheet for one week |
+| Evidence to show for grading | One approved row, one withheld row, and execution log |
+| Review cadence | After each unit change or schedule change |
 
-## Plan The Work
+## Delivery Definition
 
-Update the **Reminder workflow** with one row or section for **Chapter Plan**.
+Your chapter is ready to continue only if:
+- You can explain why draft stage exists and where it lives,
+- At least one consent-safe sample row is prepared,
+- You know exactly who changes status from `needs_review` to `approved`.
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | chapter planning decisions |
-| Classroom context | Where forms email reminders appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What chapter planning decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves reminder workflow is ready or what blocks it |
-| Maintenance trigger | When the chapter planning decisions decision should be checked again |
+## Starter Artifact (Do Not Send Yet)
+
+```text
+Sheet: ReminderQueue
+Headers: requestId | studentAlias | guardianEmail | reminderType | item | dueDate | status | reviewedAt | reviewer | notes
+Example row:
+RQ-102 | Alex Q. | alex.guardian@example.edu | Missing lab log | Complete safety sheet | 2026-09-20 | needs_review |  |  | queued by form
+```
+
+`status` starts as `needs_review`. No automated send in this file; only queueing and review.
+
+## Quick Script Snippet
+
+```javascript
+function openReminderQueue() {
+  const reminderSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ReminderQueue");
+  if (!reminderSheet) {
+    throw new Error("ReminderQueue sheet is missing.");
+  }
+  Logger.log(`ReminderQueue rows: ${reminderSheet.getLastRow() - 1}`);
+}
+```
+
+If `ReminderQueue` is missing, run a manual check and pause the chapter before any reminder code is added.
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the chapter planning decisions decision, inspect the reminder workflow evidence, and understand how it supports forms email reminders.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+Before moving on to 05.1, verify:
+- `ReminderQueue` has the agreed headers.
+- At least one sample row has `needs_review`.
+- `openReminderQueue()` runs and logs row count.
+- No outbound email logic exists yet.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Write one sentence: "What risk changed when we added draft-only reminders, and what check catches it first?"

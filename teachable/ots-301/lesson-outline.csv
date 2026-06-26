@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-301","01","01-course-site-strategy","Course Site Strategy","15 min","build","Course site plan","Course site plan","release_ready"
+"OTS-301","02","02-web-basics","Web Basics for Teachers","15 min","build","Web concepts map","Web concepts map","release_ready"
+"OTS-301","03","03-course-hub-structure","Course Hub Structure","15 min","build","Course hub sitemap","Course hub sitemap","release_ready"
+"OTS-301","04","04-accessibility-safety","Accessibility and Safety","20 min","checkpoint","Publishing safety checklist","Publishing safety checklist","release_ready"
+"OTS-301","05","05-deployment-maintenance","Deployment and Maintenance","15 min","build","Maintenance plan","Maintenance plan","release_ready"
+"OTS-301","06","06-published-course-hub","Published Course Hub","20 min","checkpoint","Published course hub","Published course hub","release_ready"

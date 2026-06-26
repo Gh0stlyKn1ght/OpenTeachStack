@@ -19,60 +19,63 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Checkpointing turns a working script into a teacher-readable process.
+You should prove both behavior and intention before leaving the chapter.
 
-In **Forms, Email, and Reminders**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Reminder workflow**.
+## Core Review Rubric
 
-## Core Idea
+- **Ready**: clear approvals, queue flow, test evidence, and safe fallback behavior.
+- **Revise**: missing review boundary, inconsistent queue status handling, unclear logs.
+- **Blocked**: consent not enforced, non-reversible sends, secrets in script.
 
-Run a checkpoint on the **Reminder workflow**. Mark what is ready, what needs revision, what is blocked, and what evidence supports that decision.
+## Evidence Checklist
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+Create a one-page evidence snapshot for the chapter:
 
-## Lesson Focus
+1. `ReminderQueue` headers and sample rows
+2. One logged successful send
+3. One failed/errored send with reason
+4. At least one skipped non-approved row
+5. Rollback steps documented in lesson notes
 
-Because this is the checkpoint for forms email reminders, the teacher reviews the artifact as a working system. The checkpoint looks for missing decisions, unclear ownership, weak evidence, and maintenance steps that would be forgotten during a busy week.
+## Required Outputs
 
-In 05.4, focus on checkpoint review decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to reminder workflow, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+Capture and attach (or screenshot) for this checkpoint:
 
-Connect checkpoint review decisions back to forms email reminders. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Checkpoint Review**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on checkpoint review decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Output | Expected |
 | --- | --- |
-| Teaching purpose | This work supports checkpoint review decisions inside forms email reminders. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what checkpoint review decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or reminder workflow review. |
+| `getLastRow()` output | Shows at least 2 queue rows |
+| Form submit test | Row moves to `needs_review` or `approved` |
+| Manual review | Owner sets approved rows |
+| Email run log | Shows sent count and errors |
+| Permission audit | Apps Script auth dialog confirms minimal scopes |
 
-## Review The Work
+## Quick Classroom Test
 
-Update the **Reminder workflow** with one row or section for **Checkpoint Review**.
+Open a clean queue with one approved and one needs-review row.
 
-| Field | Your note |
+### Starting
+
+| requestId | status |
 | --- | --- |
-| Lesson focus | checkpoint review decisions |
-| Classroom context | Where forms email reminders appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What checkpoint review decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Checkpoint status | What proves reminder workflow is ready or what blocks it |
-| Maintenance trigger | When the checkpoint review decisions decision should be checked again |
+| RQ-A | approved |
+| RQ-B | needs_review |
 
-## Quality Check
+### After `runReminderBatch()`
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+| requestId | status |
+| --- | --- |
+| RQ-A | sent |
+| RQ-B | needs_review |
 
-A reviewer should be able to find the checkpoint review decisions decision, inspect the reminder workflow evidence, and understand how it supports forms email reminders.
+The chapter is not complete until both status transitions are explainable in one paragraph.
 
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+## Maintenance and Ownership
+
+- Next weekly check: verify queue logic and consent notes.
+- Owner rotates: each lesson team member should run one test and note result in shared doc.
+- If data schema changes, repeat 05.1 validation before enabling any send routine.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Write one decision statement: "Under what condition do we stop all reminder sends immediately, and who gets permission to restart?"

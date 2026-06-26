@@ -105,5 +105,6 @@
     "assets/images/the-teacher-as-builder.webp",
     "assets/images/what-teaching-teachers-is.webp"
   ],
-  "copiedLabs": []
+  "copiedLabs": [],
+  "courseReadiness": "release"
 }

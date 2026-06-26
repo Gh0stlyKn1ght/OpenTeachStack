@@ -1,0 +1,11 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-101","01","01-teacher-builder-mindset","Teacher Builder Mindset","15 min","overview","Teacher workflow audit","Teacher workflow audit","needs_review"
+"OTS-101","02","02-prompting","Prompting for Teachers","15 min","build","Reusable prompt library","Reusable prompt library","needs_review"
+"OTS-101","03","03-ai-literacy-verification","AI Literacy and Verification","15 min","build","AI verification checklist","AI verification checklist","needs_review"
+"OTS-101","04","04-standards-to-learning-targets","Standards to Learning Targets","15 min","build","Standards unpacking sheet","Standards unpacking sheet","needs_review"
+"OTS-101","05","05-course-and-unit-architecture","Course and Unit Architecture","15 min","build","Mini-unit map and lesson template","Mini-unit map and lesson template","needs_review"
+"OTS-101","06","06-resource-discovery-open-resources","Resource Discovery and Open Resources","15 min","build","Resource evaluation sheet","Resource evaluation sheet","needs_review"
+"OTS-101","07","07-google-workspace-planning-systems","Google Workspace Planning Systems","15 min","build","Workspace planning map","Workspace planning map","needs_review"
+"OTS-101","08","08-assessment-rubrics-feedback","Assessment, Rubrics, and Feedback","15 min","build","Assessment and rubric draft","Assessment and rubric draft","needs_review"
+"OTS-101","09","09-delivery-planning","Delivery Planning","15 min","build","Delivery plan","Delivery plan","needs_review"
+"OTS-101","10","10-mini-unit-capstone","Mini-Unit Capstone","15 min","build","Verified mini-unit capstone","Verified mini-unit capstone","needs_review"

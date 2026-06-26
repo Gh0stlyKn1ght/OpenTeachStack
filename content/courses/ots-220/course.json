@@ -61,5 +61,6 @@
     "generate-docs-from-sheet-rows",
     "create-google-form-quizzes-from-sheet",
     "send-reminder-emails-from-sheet"
-  ]
+  ],
+  "courseReadiness": "release"
 }

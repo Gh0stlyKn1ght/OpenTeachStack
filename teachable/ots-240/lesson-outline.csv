@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-240","01","01-open-resource-mindset","Open Resource Mindset","15 min","overview","Open resource decision log","Open resource decision log","release_ready"
+"OTS-240","02","02-github-foundations","GitHub Foundations for Teachers","15 min","build","Repository orientation notes","Repository orientation notes","release_ready"
+"OTS-240","03","03-writing-readmes","Writing Useful READMEs","15 min","build","Course README","Course README","release_ready"
+"OTS-240","04","04-contribution-review","Contribution and Review Workflows","15 min","build","Contribution checklist","Contribution checklist","release_ready"
+"OTS-240","05","05-publishing-attribution","Publishing and Attribution","15 min","build","Attribution and license file","Attribution and license file","release_ready"
+"OTS-240","06","06-open-curriculum-repository","Open Curriculum Repository","15 min","build","Open curriculum repository","Open curriculum repository","release_ready"

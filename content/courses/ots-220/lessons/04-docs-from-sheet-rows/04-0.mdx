@@ -19,60 +19,63 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Docs from Sheet Rows**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Doc generator**.
+When each lesson is generated from one clean row, the teacher reduces duplicate work and keeps evidence consistent. The risk is using mixed column names, wrong placeholders, or a wrong template file.
 
 ## Core Idea
 
-Map the chapter before building. Choose one classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Then name the classroom purpose it serves and the evidence that will show whether the work is ready.
+Set up one reliable mapping:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+- spreadsheet columns = placeholders
+- template markers = expected variables
+- generated docs = reviewed output
 
-## Lesson Focus
+## Classroom Situation
 
-Because this is the opening plan for docs sheet rows, the teacher names the sequence before creating files or artifacts. The plan separates what will be learned, what will be built, and what evidence will prove that the build is ready.
+For a robotics mini-unit, the team wants one setup doc per student group automatically generated from a Sheet row with:
 
-In 04.0, focus on chapter planning decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to doc generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+- `unitName`
+- `learningTarget`
+- `evidencePrompt`
+- `sectionName`
 
-Connect chapter planning decisions back to docs sheet rows. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+The script should produce predictable doc titles and content without changing live student folders.
 
-## Classroom Example
+## Required Artifact Entry
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+Before coding, add one row in **Doc generator** notes:
 
-For **Chapter Plan**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on chapter planning decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Field | Entry |
 | --- | --- |
-| Teaching purpose | This work supports chapter planning decisions inside docs sheet rows. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what chapter planning decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or doc generator review. |
+| Lesson focus | Sheet-driven doc generation |
+| Input source | sandbox Sheet row + sandbox template |
+| Expected output | one doc copy with mapped fields and status row |
+| Safety boundary | no live folders, no real student names |
+| Failure signal | missing field or placeholder mismatch throws explicit error |
+| Rollback | delete generated doc and rerun with fixed row |
 
-## Plan The Work
+## Starter Data
 
-Update the **Doc generator** with one row or section for **Chapter Plan**.
+Use this sample row while testing:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | chapter planning decisions |
-| Classroom context | Where docs sheet rows appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What chapter planning decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves doc generator is ready or what blocks it |
-| Maintenance trigger | When the chapter planning decisions decision should be checked again |
+| unitName | learningTarget | evidencePrompt | sectionName |
+| --- | --- | --- | --- |
+| Unit 03 - Sensor Lab | Justify a stop distance using data | Add one outlier note before final recommendation | Sample Robotics 8A |
+
+## Expected Log
+
+```json
+{
+  "level": "info",
+  "status": "doc-created",
+  "unitName": "Unit 03 - Sensor Lab",
+  "templateMarkerCount": 3
+}
+```
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Can a teammate:
 
-A reviewer should be able to find the chapter planning decisions decision, inspect the doc generator evidence, and understand how it supports docs sheet rows.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- read the row
+- map each column to template placeholders
+- see expected failure and rollback path before using live data?

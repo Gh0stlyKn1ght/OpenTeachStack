@@ -19,60 +19,71 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Docs from Sheet Rows**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Doc generator**.
+This is the classroom-ready action loop: run from a row, create docs, verify outputs, cleanup, and rerun.
 
 ## Core Idea
 
-Complete the workshop with sample or low-risk material first. Record the setup, result, error or review note, and what changed before using it with a live class.
+Build one function that calls:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+1. source validation
+2. doc copy
+3. placeholder fill
+4. logging
 
-## Lesson Focus
+## Workshop Script
 
-Because this is a workshop, the teacher works with a safe sample before touching live students, public files, or active course systems. The workshop records setup, result, error, revision, and the decision that follows.
+```javascript
+const TEMPLATE_DOC_ID = "SANDBOX_TEMPLATE_DOC_ID";
 
-In 04.3, focus on generate docs rows. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to doc generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+function runDocGeneratorWorkshop() {
+  const row = validateSourceRow(getSanitizedSourceRow());
+  const template = DriveApp.getFileById(TEMPLATE_DOC_ID);
+  const copy = template.makeCopy(`${row.unitName} - Setup`);
+  const doc = DocumentApp.openById(copy.getId());
 
-Connect generate docs rows back to docs sheet rows. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+  applyPlaceholdersToDoc(copy.getId(), row);
 
-## Classroom Example
+  const result = {
+    level: "info",
+    unitName: row.unitName,
+    sectionName: row.sectionName,
+    docId: copy.getId(),
+    status: "doc-generated",
+  };
+  Logger.log(JSON.stringify(result));
+  return result;
+}
+```
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Setup Notes
 
-For **Workshop: Generate Docs from Rows**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on generate docs rows.
+- Use sandbox template only.
+- Keep the output docs in sandbox root.
+- Use sample row only for this workshop.
 
-Example entry:
+## Expected Output
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports generate docs rows inside docs sheet rows. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what generate docs rows may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or doc generator review. |
+```json
+{
+  "level": "info",
+  "unitName": "Unit 03 - Sensor Lab",
+  "sectionName": "Sample Robotics 8A",
+  "status": "doc-generated"
+}
+```
 
-## Workshop Task
+## Failure and Recovery
 
-Update the **Doc generator** with one row or section for **Workshop: Generate Docs from Rows**.
+Common failure:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | generate docs rows |
-| Classroom context | Where docs sheet rows appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What generate docs rows causes you to keep, revise, test, publish, restrict, or remove |
-| Workshop evidence | What proves doc generator is ready or what blocks it |
-| Maintenance trigger | When the generate docs rows decision should be checked again |
+- `Unresolved placeholders` → fix template tokens first
+- `Missing required field(s)` → fix row then rerun
+
+After a failure:
+
+- delete partial copy if created
+- rerun with fixed row
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the generate docs rows decision, inspect the doc generator evidence, and understand how it supports docs sheet rows.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Can a teammate run the function and verify the generated doc contains all fields with no placeholders left?

@@ -21,14 +21,34 @@ export const GENERIC_AUTHORING_FRAGMENTS = [
 ];
 
 export const GENERATED_STATUSES = new Set(["generated", "scaffolded"]);
-export const RELEASE_CONTENT_STATUSES = new Set([
-  "authored",
-  "reviewed",
-]);
+
+// Authoring stages for lesson-level and course-level `migrationStatus`.
+// - scaffolded: route/file placeholder only.
+// - generated: raw generated content.
+// - remediated: generated content cleaned for learner-facing use.
+// - draft: human-started but incomplete.
+// - authored: human-authored and structurally complete.
+// - reviewed: authored content checked against a rubric.
+// - teachable-ready: reviewed content with exportability and artifact support.
 export const KNOWN_CONTENT_STATUSES = new Set([
   ...GENERATED_STATUSES,
-  ...RELEASE_CONTENT_STATUSES,
+  "remediated",
   "draft",
+  "authored",
+  "reviewed",
+  "teachable-ready",
+]);
+
+// Release behavior: authored content can be shown internally but only reviewed or better
+// should be treated as publicly releasable for learner surfaces.
+export const RELEASE_CONTENT_STATUSES = new Set(["authored", "reviewed", "teachable-ready"]);
+export const PUBLIC_RELEASE_STATUSES = new Set(["reviewed", "teachable-ready"]);
+
+// Course-level release targeting statuses used by route/readiness checks.
+export const RELEASE_COURSE_STATUSES = new Set([
+  "release",
+  "public-beta",
+  "teachable-ready",
 ]);
 
 export function findGenericAuthoringFragments(content) {

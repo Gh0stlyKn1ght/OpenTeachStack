@@ -19,60 +19,75 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Folder and File Generators**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Folder generator**.
+This workshop converts concept into a repeatable action: open a sheet, run one menu action, and verify the exact generated structure.
 
 ## Core Idea
 
-Complete the workshop with sample or low-risk material first. Record the setup, result, error or review note, and what changed before using it with a live class.
+Build a safe workflow:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+1. choose one sandbox row
+2. run generator
+3. verify logs and folders
+4. rollback if needed
 
-## Lesson Focus
+## Workshop Script
 
-Because this is a workshop, the teacher works with a safe sample before touching live students, public files, or active course systems. The workshop records setup, result, error, revision, and the decision that follows.
+```javascript
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("Teacher Automation")
+    .addItem("Generate unit folders", "runUnitFolderWorkshop")
+    .addToUi();
+}
 
-In 03.3, focus on generate unit folders. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to folder generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+function runUnitFolderWorkshop() {
+  const config = getSampleUnitConfig();
+  const folderName = buildUnitFolderName(config.unitName, config.sectionName);
+  const root = DriveApp.getFolderById(SANDBOX_ROOT_ID);
+  const unitFolderId = folderExists(root, folderName)?.getId() || root.createFolder(folderName).getId();
+  const unitFolder = DriveApp.getFolderById(unitFolderId);
+  const evidence = unitFolder.getFoldersByName("Evidence");
+  if (!evidence.hasNext()) unitFolder.createFolder("Evidence");
 
-Connect generate unit folders back to folder file generators. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+  const notes = unitFolder.createFolder("Setup Notes");
+  const result = {
+    level: "info",
+    unitName: config.unitName,
+    sectionName: config.sectionName,
+    unitFolderId,
+    notesFolderId: notes.getId(),
+    status: "workshop-complete",
+  };
+  Logger.log(JSON.stringify(result));
+  return result;
+}
+```
 
-## Classroom Example
+Note: this workshop keeps all writes inside sandbox by design.
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Expected Output
 
-For **Workshop: Generate Unit Folders**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on generate unit folders.
+```json
+{
+  "level": "info",
+  "status": "workshop-complete",
+  "unitName": "Unit 03 - Sensor Lab",
+  "sectionName": "Sample Robotics 8A"
+}
+```
 
-Example entry:
+## Failure Drill
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports generate unit folders inside folder file generators. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what generate unit folders may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or folder generator review. |
+If `notesFolderId` is undefined:
 
-## Workshop Task
-
-Update the **Folder generator** with one row or section for **Workshop: Generate Unit Folders**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | generate unit folders |
-| Classroom context | Where folder file generators appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What generate unit folders causes you to keep, revise, test, publish, restrict, or remove |
-| Workshop evidence | What proves folder generator is ready or what blocks it |
-| Maintenance trigger | When the generate unit folders decision should be checked again |
+- confirm the folder creation line executed
+- run the function again with a single clean root
+- delete malformed output first
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Run the action from the menu and verify:
 
-A reviewer should be able to find the generate unit folders decision, inspect the folder generator evidence, and understand how it supports folder file generators.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- menu appears and runs
+- output structure is complete
+- no production folder was changed

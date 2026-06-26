@@ -19,60 +19,116 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Forms, Email, and Reminders**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Reminder workflow**.
+Even a correct queue can hurt if it sends too many emails, at the wrong time, or to wrong addresses.
+This section adds a **safety rail layer** before actual sending.
 
 ## Core Idea
 
-Treat this as a boundary lesson. Name what should be shared, what should stay private, what must be checked, and who is responsible for the final decision.
+Your send phase needs:
+- address hygiene,
+- approval gate (`status === approved`),
+- simple throttling,
+- recoverable logging,
+- and a hard stop rule for suspected misuse.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Classroom Scenario
 
-## Lesson Focus
+Robotics teachers in your team review reminders before sending, but they still need to avoid:
+- spamming a guardian by duplicate sends,
+- hitting daily quota limits,
+- accidentally sending `needs_review` rows.
 
-Because this is a focused section, the teacher isolates the email safety rate limits decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+You will enforce these as code rules.
 
-In 05.2, focus on email safety rate limits. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to reminder workflow, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+## Safety Utilities
 
-Connect email safety rate limits back to forms email reminders. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+```javascript
+const QUEUE_STATUS_APPROVED = "approved";
+const RATE_LIMIT = 30; // max sends per execution for this lesson
 
-## Classroom Example
+function canSendReminderRow(row) {
+  if (row[5] !== QUEUE_STATUS_APPROVED) {
+    Logger.log(`Skip ${row[0]}: status=${row[5]}`);
+    return false;
+  }
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row[2])) {
+    Logger.log(`Skip ${row[0]}: invalid email=${row[2]}`);
+    return false;
+  }
 
-For **Email Safety and Rate Limits**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on email safety rate limits.
+  return true;
+}
 
-Example entry:
+function withBackoffRetry(fn, tries = 2) {
+  for (let attempt = 0; attempt <= tries; attempt++) {
+    try {
+      return fn();
+    } catch (err) {
+      if (attempt === tries) throw err;
+      const sleepMs = 500 * Math.pow(2, attempt);
+      Logger.log(`Retry ${attempt + 1} after ${sleepMs}ms`);
+      Utilities.sleep(sleepMs);
+    }
+  }
+}
+```
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports email safety rate limits inside forms email reminders. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what email safety rate limits may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or reminder workflow review. |
+## Rate-Limit Pattern
 
-## Practice The Decision
+Read queue rows and only send up to `RATE_LIMIT` per run.
 
-Update the **Reminder workflow** with one row or section for **Email Safety and Rate Limits**.
+```javascript
+function sendWithSafety(sheet, startRow) {
+  const data = sheet.getRange(startRow, 1, sheet.getLastRow() - startRow + 1, 9).getValues();
+  let sent = 0;
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | email safety rate limits |
-| Classroom context | Where forms email reminders appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What email safety rate limits causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves reminder workflow is ready or what blocks it |
-| Maintenance trigger | When the email safety rate limits decision should be checked again |
+  for (const row of data) {
+    if (sent >= RATE_LIMIT) {
+      Logger.log("Rate cap reached, leaving remaining rows for next run.");
+      break;
+    }
+    if (!canSendReminderRow(row)) continue;
+
+    withBackoffRetry(() => {
+      const email = row[2];
+      const subject = `Reminder: ${row[3]}`;
+      const body = `Hi ${row[1]}, a reminder for ${row[3]} is due ${row[4]}.`;
+      MailApp.sendEmail({
+        to: email,
+        subject,
+        body,
+      });
+    });
+
+    sent++;
+    Logger.log(`Sent reminder ${row[0]}`);
+  }
+}
+```
+
+## Expected Sample Data
+
+| requestId | studentAlias | guardianEmail | missingItem | dueDate | status |
+| --- | --- | --- | --- | --- | --- |
+| RQ-1 | ALEX-Q | alex.guardian@example.edu | Safety checklist | 2026-09-20 | approved |
+| RQ-2 | BLAKE-R | blake.guardian@example.edu | Lab rubric | 2026-09-22 | needs_review |
+
+- `RQ-2` is skipped because status is not `approved`.
+- Invalid email or missing approval stays in sheet; no send, no crash.
+
+## Privacy and Permission Notes
+
+- Never send reminders if rows contain direct student emails.
+- Keep `approved` transitions manual in your workflow.
+- Include a comment-only template in script docs: which fields are redacted from logs.
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the email safety rate limits decision, inspect the reminder workflow evidence, and understand how it supports forms email reminders.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+- A queue with 40 approved rows sends only first `RATE_LIMIT` for this run.
+- Duplicate send avoided by processing pointer or timestamp marking in revision.
+- At least one skipped row is written with reason in logs.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+What condition must fail before any email is sent, and who is responsible for flipping that condition?

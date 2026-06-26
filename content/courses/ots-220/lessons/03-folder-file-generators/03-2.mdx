@@ -19,60 +19,59 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Folder and File Generators**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Folder generator**.
+Duplicate folders and mixed naming destroy auditability. A safe generator should skip existing outputs when the exact same run exists, or replace only when explicitly reset.
 
 ## Core Idea
 
-Turn the lesson idea into an inspectable decision. Name the classroom use, the evidence, the review step, and the next revision trigger.
+Use deterministic naming and an idempotent check before creating.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```javascript
+function sanitizeFolderName(value) {
+  return value.toString().trim().replace(/[\\/:*?"<>|]/g, "-");
+}
 
-## Lesson Focus
+function buildUnitFolderName(unitName, sectionName) {
+  return `${sanitizeFolderName(unitName)} - ${sanitizeFolderName(sectionName)}`;
+}
 
-Because this is a focused section, the teacher isolates the naming idempotency decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+function folderExists(root, folderName) {
+  const found = root.getFoldersByName(folderName);
+  return found.hasNext() ? found.next() : null;
+}
+```
 
-In 03.2, focus on naming idempotency. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to folder generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+## Example Run
 
-Connect naming idempotency back to folder file generators. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+```javascript
+function buildOrReuseUnitFolder() {
+  const config = getSampleUnitConfig();
+  const unitName = buildUnitFolderName(config.unitName, config.sectionName);
+  const root = DriveApp.getFolderById(SANDBOX_ROOT_ID);
 
-## Classroom Example
+  const existing = folderExists(root, unitName);
+  if (existing) {
+    Logger.log(JSON.stringify({ level: "info", status: "reused", folderId: existing.getId() }));
+    return existing.getId();
+  }
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+  const created = root.createFolder(unitName);
+  Logger.log(JSON.stringify({ level: "info", status: "created", folderId: created.getId(), folderName: unitName }));
+  return created.getId();
+}
+```
 
-For **Naming and Idempotency**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on naming idempotency.
+## Failure and Recovery
 
-Example entry:
-
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports naming idempotency inside folder file generators. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what naming idempotency may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or folder generator review. |
-
-## Practice The Decision
-
-Update the **Folder generator** with one row or section for **Naming and Idempotency**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | naming idempotency |
-| Classroom context | Where folder file generators appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What naming idempotency causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves folder generator is ready or what blocks it |
-| Maintenance trigger | When the naming idempotency decision should be checked again |
+- If duplicate name appears unexpectedly:
+  - log and reuse explicit existing folder
+  - do not create a second copy in the same run
+- If naming has invalid chars:
+  - sanitize before `createFolder`
+- If root access fails:
+  - stop and update boundary notes
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the naming idempotency decision, inspect the folder generator evidence, and understand how it supports folder file generators.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+1. Same input twice returns the same folder ID (reused).
+2. Naming rules are documented in the lesson artifact.
+3. A rollback exists if the wrong folder is created.

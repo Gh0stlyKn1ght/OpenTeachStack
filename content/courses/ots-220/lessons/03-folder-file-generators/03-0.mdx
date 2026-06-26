@@ -19,60 +19,63 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Folder and File Generators**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Folder generator**.
+Folder generation is one of the highest-risk automations for teachers because it touches file systems and can create hidden duplicates. The classroom risk is reduced when folder naming, owner, and rollback logic are explicit before any student work is touched.
 
 ## Core Idea
 
-Map the chapter before building. Choose one classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Then name the classroom purpose it serves and the evidence that will show whether the work is ready.
+Treat this chapter as a contract between one lesson and one folder structure:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+- define a predictable folder path
+- define what inputs create it
+- define the expected output ids
+- define the stop condition when output is invalid
 
-## Lesson Focus
+## Classroom Situation
 
-Because this is the opening plan for folder file generators, the teacher names the sequence before creating files or artifacts. The plan separates what will be learned, what will be built, and what evidence will prove that the build is ready.
+A robotics teacher wants a repeatable setup for each mini-unit:
 
-In 03.0, focus on chapter planning decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to folder generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+- one unit folder
+- one subfolder for student evidence
+- one planning doc linked in a tracker row
 
-Connect chapter planning decisions back to folder file generators. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+At all times, a single lesson run must produce only the expected set of sandbox artifacts.
 
-## Classroom Example
+## Artifact Setup (First Script Notes)
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+Add one planning row before code:
 
-For **Chapter Plan**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on chapter planning decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Field | Robotics example |
 | --- | --- |
-| Teaching purpose | This work supports chapter planning decisions inside folder file generators. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what chapter planning decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or folder generator review. |
+| Lesson focus | Folder and File Generators |
+| Artifact source | `Unit Folder Setup` table |
+| Input row | `Unit 03 - Sensor Lab`, `Sample Robotics 8A`, `sample-teacher@example.edu` |
+| Target outputs | `Unit 03 - Sensor Lab / Evidence`, `Unit 03 - Sensor Lab / Plans`, `folder-generator-log` |
+| Safety boundary | Sandbox folder IDs only; no real student folders |
+| Rollback | Delete generated sandbox outputs before rerun |
+| Readiness trigger | All folder IDs logged and verified |
 
-## Plan The Work
+## Setup Code
 
-Update the **Folder generator** with one row or section for **Chapter Plan**.
+```javascript
+function getSampleUnitConfig() {
+  return {
+    unitName: "Unit 03 - Sensor Lab",
+    sectionName: "Sample Robotics 8A",
+    ownerEmail: "sample-teacher@example.edu",
+  };
+}
+```
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | chapter planning decisions |
-| Classroom context | Where folder file generators appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What chapter planning decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves folder generator is ready or what blocks it |
-| Maintenance trigger | When the chapter planning decisions decision should be checked again |
+## Expected First Output
+
+1. one folder group under sandbox root
+2. one setup doc link in logs
+3. one explicit "ready to launch" status
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Before leaving this section, confirm:
 
-A reviewer should be able to find the chapter planning decisions decision, inspect the folder generator evidence, and understand how it supports folder file generators.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- the naming pattern appears in the folder output
+- required output list is complete
+- rollback is documented in a way a teammate can execute

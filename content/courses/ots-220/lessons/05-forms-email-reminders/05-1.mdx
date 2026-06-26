@@ -19,60 +19,110 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Forms, Email, and Reminders**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Reminder workflow**.
+Form responses are only safe to automate if each response is normalized into a predictable reminder request.
+This section builds the first transform step: **form response → queue row**.
 
 ## Core Idea
 
-Turn the lesson idea into an inspectable decision. Name the classroom use, the evidence, the review step, and the next revision trigger.
+Treat every response as untrusted until it passes:
+- required fields check,
+- consent check,
+- sanitization check,
+- duplicate check.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+You are not sending email here. You are creating a stable `ReminderQueue` row that can be reviewed by a teacher.
 
-## Lesson Focus
+## Classroom Scenario
 
-Because this is a focused section, the teacher isolates the forms responses decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+Course: **Applied Robotics Unit 1**
 
-In 05.1, focus on forms responses. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to reminder workflow, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+Sample Form fields:
+- `StudentAlias`
+- `GuardianEmail`
+- `MissingItem`
+- `DueDate`
+- `Consent`
 
-Connect forms responses back to forms email reminders. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+### Sample raw form rows
 
-## Classroom Example
+| Timestamp | StudentAlias | GuardianEmail | MissingItem | DueDate | Consent |
+| --- | --- | --- | --- | --- | --- |
+| 2026-09-15 07:12 | ALEX-Q | alex.guardian@example.edu | Safety checklist | 2026-09-20 | yes |
+| 2026-09-15 07:20 | BLAKE-R |  | Rubric draft | 2026-09-22 | no |
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Workshop: Map Response to Queue
 
-For **Forms and Responses**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on forms responses.
+Use this function on form submit:
 
-Example entry:
+```javascript
+function onCheckpointFormSubmit(e) {
+  const row = e.namedValues;
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports forms responses inside forms email reminders. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what forms responses may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or reminder workflow review. |
+  const payload = {
+    requestId: `RQ-${Date.now()}`,
+    studentAlias: (row.StudentAlias?.[0] || "").trim(),
+    guardianEmail: normalizeEmail(row.GuardianEmail?.[0] || ""),
+    missingItem: (row.MissingItem?.[0] || "").trim(),
+    dueDate: row.DueDate?.[0] || "",
+    consent: String(row.Consent?.[0] || "no").toLowerCase() === "yes",
+    status: "needs_review",
+    notes: row.Notes?.[0] || ""
+  };
 
-## Practice The Decision
+  validateReminderPayload(payload);
+  appendReminder(payload);
+  Logger.log(`Queued request ${payload.requestId}`);
+}
 
-Update the **Reminder workflow** with one row or section for **Forms and Responses**.
+function normalizeEmail(value) {
+  return value.trim().toLowerCase();
+}
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | forms responses |
-| Classroom context | Where forms email reminders appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What forms responses causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves reminder workflow is ready or what blocks it |
-| Maintenance trigger | When the forms responses decision should be checked again |
+function validateReminderPayload(payload) {
+  if (!payload.studentAlias) throw new Error("Missing StudentAlias.");
+  if (!payload.consent) throw new Error("Consent not granted.");
+  if (!payload.guardianEmail.includes("@")) throw new Error("Invalid guardian email.");
+  if (!payload.missingItem) throw new Error("Missing reminder reason.");
+  if (!payload.dueDate) throw new Error("Missing due date.");
+}
+
+function appendReminder(payload) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ReminderQueue");
+  const row = [
+    payload.requestId,
+    payload.studentAlias,
+    payload.guardianEmail,
+    payload.missingItem,
+    payload.dueDate,
+    payload.status,
+    "",
+    "",
+    payload.notes
+  ];
+  sheet.appendRow(row);
+}
+```
+
+## Required Queue Columns
+
+`ReminderQueue` should have this header order:
+`requestId | studentAlias | guardianEmail | missingItem | dueDate | status | reviewedAt | reviewer | notes`
+
+Rows with missing consent stay out of queue by throwing an error in `validateReminderPayload`.
+
+## Error Cases to Expect
+
+- Form schema mismatch (renamed header): log and pause trigger.
+- Invalid email text: script throws, row not written.
+- Duplicate submissions: handle manually (or add a dedupe check in revision).
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the forms responses decision, inspect the reminder workflow evidence, and understand how it supports forms email reminders.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+- Trigger is installable and fires on form submit.
+- `ALEX-Q` row writes with `needs_review`.
+- `BLAKE-R` with consent `no` raises a consent error instead of queuing.
+- `ReminderQueue` row order matches headers exactly.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Which form field is the most fragile in your class setup, and how will you detect bad data before it reaches a reminder sender?

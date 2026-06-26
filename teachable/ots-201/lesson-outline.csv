@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-201","01","01-workspace-system-mindset","Workspace System Mindset","15 min","overview","Workspace workflow audit","Workspace workflow audit","release_ready"
+"OTS-201","02","02-drive-architecture","Drive Architecture","15 min","build","Drive architecture map","Drive architecture map","release_ready"
+"OTS-201","03","03-docs-slides-delivery","Docs and Slides as Reusable Delivery Systems","15 min","build","Reusable Docs/Slides template set","Reusable Docs/Slides template set","release_ready"
+"OTS-201","04","04-sheets-curriculum-trackers","Sheets as Curriculum Trackers","15 min","build","Curriculum tracker sheet","Curriculum tracker sheet","release_ready"
+"OTS-201","05","05-forms-calendar-operations","Forms and Calendar for Classroom Operations","15 min","build","Operations workflow map","Operations workflow map","release_ready"
+"OTS-201","06","06-workspace-command-center","Workspace Command Center","15 min","build","Workspace command center","Workspace command center","release_ready"

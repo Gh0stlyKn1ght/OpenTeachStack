@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-399","01","01-capstone-scope","Capstone Scope","15 min","capstone","Capstone proposal","Capstone proposal","needs_review"
+"OTS-399","02","02-curriculum-system-assembly","Curriculum System Assembly","15 min","build","System map","System map","needs_review"
+"OTS-399","03","03-automation-tool-evidence","Automation and Tool Evidence","15 min","build","Technical evidence log","Technical evidence log","needs_review"
+"OTS-399","04","04-publishing-safety-review","Publishing and Safety Review","20 min","checkpoint","Release safety review","Release safety review","needs_review"
+"OTS-399","05","05-presentation-peer-review","Presentation and Peer Review","20 min","checkpoint","Presentation and peer review log","Presentation and peer review log","needs_review"
+"OTS-399","06","06-published-curriculum-system","Published Curriculum System","20 min","checkpoint","Published curriculum system","Published curriculum system","needs_review"

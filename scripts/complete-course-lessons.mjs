@@ -520,7 +520,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
     if (!body) continue;
 
     parsed.data.title = learnerTopic(parsed.data.title);
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "remediated";
     const next = matter.stringify(body, parsed.data);
     if (next !== raw) {
       writeFileSync(filePath, next);
@@ -530,7 +530,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
   }
 
   if (courseChanged > 0) {
-    courseJson.migrationStatus = "authored";
+    courseJson.migrationStatus = "remediated";
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
     stats.set(courseSlug, courseChanged);
   }

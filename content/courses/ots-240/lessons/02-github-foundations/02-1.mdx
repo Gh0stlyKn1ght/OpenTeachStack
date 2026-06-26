@@ -5,7 +5,7 @@ chapter: GitHub Foundations for Teachers
 chapterSlug: 02-github-foundations
 sectionNumber: 02.1
 sectionSlug: 02-1
-title: 'Repos, Files, Commits, and Branches'
+title: Repos, Files, Commits, and Branches
 type: section
 duration: 20 minutes
 artifact: Repository orientation notes
@@ -19,60 +19,38 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Open work needs when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Version control is your safety net when curriculum changes are rushed.
+This lesson teaches the difference between `main` (stable) and `draft` (work-in-progress).
 
-In **GitHub Foundations for Teachers**, the work sits inside open curriculum publishing with GitHub, README files, licenses, attribution, and review routines. The risk is treating free-to-view material as automatically open, reusable, remixable, or safe to publish. This lesson narrows that risk into one visible update to **Repository orientation notes**.
+## Scenario
 
-## Core Idea
+You maintain a robotics module with:
+- weekly lesson updates,
+- recurring typo fixes,
+- teacher feedback on examples.
 
-Keep the technical move small enough to verify. Record the input, expected output, test case, observed result, and what the teacher should do if it fails.
+Use a dedicated branch for every edit batch.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Example Commands
 
-## Lesson Focus
+```bash
+# open an existing repo
+cd /tmp/robotics-open-course
+# create a branch for your weekly edits
+git checkout -b week-09-rev
 
-Because this is a focused section, the teacher isolates the repos files commits branches decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+git status
 
-In 02.1, focus on repos files commits branches. Choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Connect it to repository orientation notes, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+git add .
+git commit -m "course: ots-240 | add | weekly lesson metadata updates"
 
-Connect repos files commits branches back to github foundations teachers. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+git checkout main
+git merge week-09-rev
+```
 
-## Classroom Example
+## Commit Review
 
-Use this working situation: a teacher is preparing a curriculum repository with a README, source notes, a license file, contribution guidance, and a release checklist.
-
-For **Repos, Files, Commits, and Branches**, choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Keep the example small enough to review during the lesson and focused on repos files commits branches.
-
-Example entry:
-
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports repos files commits branches inside github foundations teachers. |
-| Evidence | The teacher can point to source notes, license decisions, README sections, review comments, attribution records, and release status. |
-| Boundary | The teacher names what repos files commits branches may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or repository orientation notes review. |
-
-## Practice The Decision
-
-Update the **Repository orientation notes** with one row or section for **Repos, Files, Commits, and Branches**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | repos files commits branches |
-| Classroom context | Where github foundations teachers appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a repository file, README section, issue, pull request, source note, or license entry |
-| Teacher decision | What repos files commits branches causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves repository orientation notes is ready or what blocks it |
-| Maintenance trigger | When the repos files commits branches decision should be checked again |
-
-## Quality Check
-
-Before moving on, test the work against this standard: a reviewer can see what may be reused, what must be credited, what changed, and how the repository will be maintained.
-
-A reviewer should be able to find the repos files commits branches decision, inspect the repository orientation notes evidence, and understand how it supports github foundations teachers.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Before commit, verify:
+- one purposeful change per commit,
+- no student identifiable data in tracked files,
+- branch name reflects intent.

@@ -19,56 +19,62 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Teachers often know where things are because they built the workspace themselves. That is useful until the course grows, a colleague needs access, a student link breaks, or old material starts competing with the current version.
+Alignment is only useful if teachers can act on it.
 
-A workspace system works when current materials, student-facing links, evidence locations, permissions, and maintenance routines are clear enough for another educator to inspect.
-
-In **Sheets Curriculum Trackers**, the work is to make Google Workspace decisions visible enough that another educator can understand the workflow, not just admire a tidy folder.
-
-This chapter treats Sheets as a decision tracker rather than a spreadsheet-shaped storage closet. Each row should help the teacher see what is ready, what is missing, and what needs review.
+For the robotics mini-unit, standards tracking must tell the teacher what evidence proves readiness, not just list labels.
 
 ## Core Idea
 
-Connect standards to lessons without creating fake alignment.
+Use three linked fields:
 
-The tracker should show why a lesson belongs to a standard and what evidence proves the target, not simply paste a standard code beside every activity.
+1. Standard or outcome phrase
+2. Lesson evidence target
+3. Evidence location
 
-## Classroom Example
+If evidence is missing, status must reflect that immediately.
 
-Use this working situation: a teacher is using Sheets to track unit status, standards, resources, assessments, and revision notes without burying curriculum decisions in separate documents.
+## Concrete Standard Mapping
 
-For a middle school robotics course, the teacher keeps one active unit folder, a student-facing directions Doc, a short launch deck, a response Sheet for exit tickets, and an archive folder for older versions. The system works only if the teacher can tell which file is current, who can edit it, where student evidence lands, and when cleanup happens.
+Add three rows to your tracker with clear alignment language:
 
-Example:
+| Unit | Lesson | Standard | Evidence requirement | Evidence location | Status |
+| --- | --- | --- | --- | --- | --- |
+| Unit 03 | Distance setup | Measurements and uncertainty | 5 readings, 1 threshold decision sentence | `Unit03/Responses` | Active |
+| Unit 03 | Threshold decision | Justification from data | Student justification entry + team reflection | `Unit03/Reflection` | Active |
+| Unit 04 | Path planning | Data-informed design choices | Design sketch + chosen stopping rule | `Unit04/Artifacts` | Draft |
 
-| Workspace decision | Classroom version |
-| --- | --- |
-| Current material | The active lesson Doc is linked from the unit tracker and command center. |
-| Student access | Students receive view-only directions and submit evidence through the named form or assignment link. |
-| Teacher evidence | Responses, revision notes, and assessment status have visible locations. |
-| Maintenance rule | After teaching, the teacher updates status, archives old files, and records the next revision. |
+## Artifact Work
 
-## Workspace Move
+Create a “alignment note” field in your template with this formula:
 
-Make the idea visible by updating the **Curriculum tracker sheet** with a real course or unit example.
+- If evidence location is blank, status cannot be `Active` or `Ready`.
+- If blocker is present, status cannot be `Ready`.
+- If review date is missing, status must be `Review needed`.
 
-Add or revise this entry:
+## Common Mistake
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | Tracking Standards and Lessons |
-| Workspace object | Folder, Doc, Slide deck, Sheet, Form, Calendar event, or command center section |
-| Classroom purpose | What teaching work this object supports |
-| Access and owner | Who can view, edit, maintain, or archive it |
-| Evidence or status | Where student work, teacher decisions, or readiness status will appear |
-| Artifact work | Add standard code, target, evidence, and alignment note fields for three lessons. |
+Do not treat standards list as a compliance exercise.
+
+A lesson is aligned only when evidence plus review condition appears in the row.
+
+## Practice Task
+
+For one active lesson, write:
+
+- the learner-facing evidence command
+- the exact scoring signal
+- one short rationale for `Active` status
 
 ## Quality Check
 
-Before moving on, test the entry with a busy-week question: could another teacher find the current material, use it with students, collect the evidence, and know what to update afterward?
+Can a teammate identify:
 
-If the answer depends on your memory, revise the artifact until the workflow is visible.
+- which standard this lesson supports
+- where proof for it is stored
+- what changes status from Review needed to Ready?
+
+If yes, this section is ready.
 
 ## Reflection
 
-What part of this workspace currently depends too much on one person's memory? Write the next change that would make it easier to hand off, repeat, or maintain.
+Which alignment field is still "best guess"? Tighten it to one verifiable evidence phrase.

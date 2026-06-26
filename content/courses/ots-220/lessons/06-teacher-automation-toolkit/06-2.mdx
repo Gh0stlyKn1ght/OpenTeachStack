@@ -19,60 +19,61 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Teacher Automation Toolkit**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Automation toolkit**.
+Most automations fail not from code bugs but from missing handoff.
+Someone else inherits a script, sees it works, and then can’t explain why it exists.
 
 ## Core Idea
 
-Make the decision readable to someone else. The artifact explains the purpose, the source of truth, the review routine, and how future revisions will be recorded.
+Treat documentation as an operating contract:
+- what it does,
+- when to run it,
+- what output to expect,
+- how to troubleshoot,
+- when not to run it.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Team Handoff Template
 
-## Lesson Focus
+Create a sheet named `AutomationRunbook` with:
 
-Because this is a focused section, the teacher isolates the documentation handoff decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
-
-In 06.2, focus on documentation handoff. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to automation toolkit, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect documentation handoff back to teacher automation toolkit. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Documentation and Handoff**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on documentation handoff.
-
-Example entry:
-
-| Decision | Classroom version |
+| Field | Value |
 | --- | --- |
-| Teaching purpose | This work supports documentation handoff inside teacher automation toolkit. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what documentation handoff may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or automation toolkit review. |
+| System purpose | Reminders from form responses with manual approval |
+| Primary owner | Your email alias |
+| Secondary owner | Backup teacher email alias |
+| Emergency stop | Set `STOP_AUTOMATION = TRUE` in `Config` sheet |
+| Last release | date + short commit note |
+| Known risks | no consent check means immediate pause |
 
-## Practice The Decision
+## Shareable Runbook Generator (Script)
 
-Update the **Automation toolkit** with one row or section for **Documentation and Handoff**.
+```javascript
+function writeHandoffNotes() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const runbook = ss.getSheetByName("AutomationRunbook") || ss.insertSheet("AutomationRunbook");
+  runbook.clear();
+  runbook.getRange("A1:B1").setValues([["Field", "Value"]]);
+  runbook.getRange("A2:B2").setValues([
+    ["System purpose", "Reminder workflow with form queue + manual approval"]
+  ]);
+  runbook.getRange("A3:B3").setValues([
+    ["Emergency stop", "Set STOP_AUTOMATION=true"]
+  ]);
+  runbook.getRange("A4:B4").setValues([
+    ["Owner", Session.getEffectiveUser().getEmail() || "manual-owner"]
+  ]);
+  runbook.getRange("A5:B5").setValues([["Last updated", new Date()]]);
+  Logger.log("Runbook updated");
+}
+```
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | documentation handoff |
-| Classroom context | Where teacher automation toolkit appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What documentation handoff causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves automation toolkit is ready or what blocks it |
-| Maintenance trigger | When the documentation handoff decision should be checked again |
+## Handoff Checklist for a New Steward
 
-## Quality Check
-
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the documentation handoff decision, inspect the automation toolkit evidence, and understand how it supports teacher automation toolkit.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+- open `AutomationManifest`,
+- confirm `STOP_AUTOMATION` switch behavior,
+- run `writeChecklistReport()`,
+- verify last two runs in `Execution Log`,
+- confirm at least one approved row can still become sent.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+What is the one field in your runbook that, if wrong, could cause the biggest classroom issue?

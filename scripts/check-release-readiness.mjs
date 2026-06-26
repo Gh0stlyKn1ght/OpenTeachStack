@@ -1,7 +1,11 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import matter from "gray-matter";
-import { GENERATED_STATUSES } from "./lib/content-fingerprints.mjs";
+import {
+  GENERATED_STATUSES,
+  PUBLIC_RELEASE_STATUSES,
+  RELEASE_COURSE_STATUSES,
+} from "./lib/content-fingerprints.mjs";
 
 const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
@@ -35,7 +39,11 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
   if (!existsSync(courseJsonPath)) continue;
 
   const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
-  const releasedCourse = courseJson.migrationStatus === "authored";
+  const courseReadiness = courseJson.courseReadiness ?? "internal";
+  const releasedCourse =
+    PUBLIC_RELEASE_STATUSES.has(courseJson.migrationStatus) ||
+    RELEASE_COURSE_STATUSES.has(courseReadiness);
+
   if (!releasedCourse) continue;
 
   const generatedLessons = [];
@@ -48,7 +56,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
 
   if (generatedLessons.length > 0) {
     fail(
-      `${courseSlug} is marked authored but still has generated/scaffolded lessons:\n${generatedLessons
+      `${courseSlug} is marked release-ready but still has generated/scaffolded lessons:\n${generatedLessons
         .slice(0, 20)
         .map((item) => `  - ${item}`)
         .join("\n")}${generatedLessons.length > 20 ? `\n  ...and ${generatedLessons.length - 20} more` : ""}`,

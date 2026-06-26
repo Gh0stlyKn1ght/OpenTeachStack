@@ -410,7 +410,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
     const parsed = matter(readFileSync(filePath, "utf8"));
     if (!shouldRemediate(parsed, courseSlug)) continue;
 
-    parsed.data.migrationStatus = "authored";
+    parsed.data.migrationStatus = "remediated";
     parsed.content = bodyFor(parsed, courseSlug);
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
     changed++;
@@ -421,7 +421,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
     const courseJsonPath = join(courseRoot, "course.json");
     if (existsSync(courseJsonPath)) {
       const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
-      courseJson.migrationStatus = "authored";
+      courseJson.migrationStatus = "remediated";
       writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
     }
     courseStats.set(courseSlug, courseChanged);

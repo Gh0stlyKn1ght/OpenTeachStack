@@ -19,60 +19,78 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Apps Script Basics**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Custom menu script**.
+Custom menus reduce accidental execution by making the action explicit and reviewable. In a class context, this is a practical safety win.
 
 ## Core Idea
 
-Complete the workshop with sample or low-risk material first. Record the setup, result, error or review note, and what changed before using it with a live class.
+Build one menu item that triggers the already safe sandbox routine from an explicit button and logs the action.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Workshop Build
 
-## Lesson Focus
+```javascript
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("Teacher Automation")
+    .addItem("Create sandbox unit workspace", "runSandboxMenuFlow")
+    .addToUi();
+}
 
-Because this is a workshop, the teacher works with a safe sample before touching live students, public files, or active course systems. The workshop records setup, result, error, revision, and the decision that follows.
+function getSampleSandboxRow() {
+  return {
+    unitName: "Unit 03 - Sensor Lab",
+    sectionName: "Sample Robotics 8A",
+    ownerEmail: "sample-teacher@example.edu",
+    dueDate: "2026-09-15",
+  };
+}
 
-In 02.4, focus on first custom menu. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to custom menu script, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+function runSandboxMenuFlow() {
+  runAuthorizationCheck(); // from 02.3
+  const row = getSampleSandboxRow();
+  const result = createUnitArtifactsSafe(row);
+  Logger.log(JSON.stringify({ level: "info", action: "menu-run", ...result }));
+  return result;
+}
+```
 
-Connect first custom menu back to apps script basics. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+## Setup Notes
 
-## Classroom Example
+- Open spreadsheet as sandbox editor.
+- Reload the sheet to see the new menu.
+- Click **Teacher Automation → Create sandbox unit workspace**.
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Expected Result
 
-For **Workshop: First Custom Menu**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on first custom menu.
+- `Teacher Automation` menu appears.
+- Menu action writes one folder and one document in sandbox.
+- Logger includes `action: "menu-run"` and pass-through IDs.
+- No email sending and no real students impacted.
 
-Example entry:
+## Failure and Recovery
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports first custom menu inside apps script basics. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what first custom menu may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or custom menu script review. |
+If menu is missing:
 
-## Workshop Task
+- confirm `onOpen` exists in this bound script project
+- reload spreadsheet and try once more
 
-Update the **Custom menu script** with one row or section for **Workshop: First Custom Menu**.
+If folder action fails:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | first custom menu |
-| Classroom context | Where apps script basics appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What first custom menu causes you to keep, revise, test, publish, restrict, or remove |
-| Workshop evidence | What proves custom menu script is ready or what blocks it |
-| Maintenance trigger | When the first custom menu decision should be checked again |
+- validate `runAuthorizationCheck` status
+- fix environment settings
+- rerun after clearing failed outputs
+
+## Permissions Reminder
+
+This custom menu step is safe only when:
+
+- only sandbox folder IDs are configured
+- no live mailing or grade data is used in the script
+- the acting teacher account owns the script test environment
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Run three checks:
 
-A reviewer should be able to find the first custom menu decision, inspect the custom menu script evidence, and understand how it supports apps script basics.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+1. Menu appears without errors.
+2. Logger shows a complete success payload.
+3. A failed run does not create a partial production artifact.

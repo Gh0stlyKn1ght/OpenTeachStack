@@ -19,60 +19,81 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Apps Script Basics**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **First script notes**.
+Most classroom failures in automation come from permissions confusion, not broken business logic. If you cannot explain who can run what, the script is not classroom-safe.
 
 ## Core Idea
 
-Treat this as a boundary lesson. Name what should be shared, what should stay private, what must be checked, and who is responsible for the final decision.
+Define and document permission boundaries before adding live actions:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+- which identity runs the script
+- which folders/files it may write
+- which sheet trigger is allowed
+- what is blocked in sandbox
 
-## Lesson Focus
+## Permission Guard Example
 
-Because this is a focused section, the teacher isolates the permissions authorization decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+```javascript
+function assertSandboxPermissions() {
+  const user = Session.getEffectiveUser().getEmail().toLowerCase();
+  if (!user.endsWith("@example.edu")) {
+    throw new Error("Use a sanctioned Workspace domain for sandbox testing.");
+  }
 
-In 02.3, focus on permissions authorization. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to first script notes, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+  const root = DriveApp.getFolderById("FOLDER_ROOT_SANDBOX_ID");
+  // Throws a readable permission failure if access is missing.
+  root.getName();
+}
+```
 
-Connect permissions authorization back to apps script basics. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+## Safe Runtime Check
 
-## Classroom Example
+```javascript
+function runAuthorizationCheck() {
+  try {
+    assertSandboxPermissions();
+    Logger.log(JSON.stringify({ level: "info", status: "authorized", step: "permission-check" }));
+    return { level: "info", status: "authorized", step: "permission-check" };
+  } catch (error) {
+    Logger.log(JSON.stringify({ level: "error", status: "blocked", message: error.message }));
+    throw new Error("Aborted: update script owner and sandbox folder access, then rerun.");
+  }
+}
+```
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Setup and Expected Behavior
 
-For **Permissions and Authorization**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on permissions authorization.
+1. Run `runAuthorizationCheck()`.
+2. If authorized, check log includes:
+   - `level: "info"`
+   - `status: "authorized"`
+3. If blocked, fix domain/permissions first and rerun before continuing with `createUnitArtifactsSafe`.
 
-Example entry:
+## Common Failure Example
 
-| Decision | Classroom version |
+`Exception: Unexpected error while getting the method or property getFolderById on object DriveApp.`
+
+Recovery:
+
+- confirm `FOLDER_ROOT_SANDBOX_ID` is typed correctly
+- confirm the script owner can access the folder
+- confirm the folder is a sandbox test container
+
+## Permission Record in Artifact
+
+Add in **First script notes**:
+
+| Field | Entry |
 | --- | --- |
-| Teaching purpose | This work supports permissions authorization inside apps script basics. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what permissions authorization may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or first script notes review. |
-
-## Practice The Decision
-
-Update the **First script notes** with one row or section for **Permissions and Authorization**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | permissions authorization |
-| Classroom context | Where apps script basics appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What permissions authorization causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves first script notes is ready or what blocks it |
-| Maintenance trigger | When the permissions authorization decision should be checked again |
+| Script owner | `sample-admin@example.edu` |
+| Folder boundary | `FOLDER_ROOT_SANDBOX_ID` only |
+| Allowed action | create folder + create doc |
+| Blocked action | send emails / edit shared class folders |
+| Failure recovery owner | course automation lead |
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Can a teammate read this section and know:
 
-A reviewer should be able to find the permissions authorization decision, inspect the first script notes evidence, and understand how it supports apps script basics.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- whether the script is safe to run on real class data
+- who owns permission errors
+- what action to take when auth fails

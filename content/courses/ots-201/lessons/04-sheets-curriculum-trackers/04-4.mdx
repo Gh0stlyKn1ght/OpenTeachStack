@@ -19,56 +19,56 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Teachers often know where things are because they built the workspace themselves. That is useful until the course grows, a colleague needs access, a student link breaks, or old material starts competing with the current version.
+The artifact checkpoint is the point where the sheet becomes a living operations system instead of a static list.
 
-A workspace system works when current materials, student-facing links, evidence locations, permissions, and maintenance routines are clear enough for another educator to inspect.
-
-In **Sheets Curriculum Trackers**, the work is to make Google Workspace decisions visible enough that another educator can understand the workflow, not just admire a tidy folder.
-
-This chapter treats Sheets as a decision tracker rather than a spreadsheet-shaped storage closet. Each row should help the teacher see what is ready, what is missing, and what needs review.
+For the robotics course, your tracker should tell a substitute exactly what to do and what is safe to leave untouched.
 
 ## Core Idea
 
-Build the tracker that lets a teacher scan the course status quickly.
+Build a recurring tracker table that answers substitute-readiness in one pass.
 
-The tracker should separate ready lessons from drafts, missing resources, unverified links, assessment gaps, and items that need peer review.
+Minimum required row categories:
 
-## Classroom Example
+- Active
+- Ready
+- Review needed
+- Revise
+- Archived
 
-Use this working situation: a teacher is using Sheets to track unit status, standards, resources, assessments, and revision notes without burying curriculum decisions in separate documents.
+## Artifact Build
 
-For a middle school robotics course, the teacher keeps one active unit folder, a student-facing directions Doc, a short launch deck, a response Sheet for exit tickets, and an archive folder for older versions. The system works only if the teacher can tell which file is current, who can edit it, where student evidence lands, and when cleanup happens.
+Create the tracker with these concrete columns:
 
-Example:
+| Unit | Lesson | Readiness status | Standard | Evidence destination | Owner | Substitution notes | Next review | Blocker |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Unit 03 | Sensor launch | Active | Measurement interpretation | `Unit03/Responses` | Maya | Use v1.1 Doc and deck | Fri 2:00 PM | None |
+| Unit 03 | Threshold decision | Ready | Data-based reasoning | `Unit03/Reflection` | Maya | No changes to Sheet headers | Fri 10:00 AM | None |
+| Unit 03 | Robot recap | Review needed | Communication of evidence | `Unit03/Reflection` | Jordan | Rework intro sentence examples | Wed 3:00 PM | Wording unclear |
+| Unit 04 | Path planning | Draft | Design constraints | Not yet set | Jordan | Add path plan links | Thu 4:00 PM | Link missing |
+| Unit 04 | Safety walkthrough | Revise | Safety and control | `Unit04/SafetyEvidence` | Maya | Add support script for units | Thu 4:30 PM | None |
+| Archive | Unit 02 baseline | Archived | Baseline alignment | Archive folder | Team | Keep read-only | N/A | None |
 
-| Workspace decision | Classroom version |
-| --- | --- |
-| Current material | The active lesson Doc is linked from the unit tracker and command center. |
-| Student access | Students receive view-only directions and submit evidence through the named form or assignment link. |
-| Teacher evidence | Responses, revision notes, and assessment status have visible locations. |
-| Maintenance rule | After teaching, the teacher updates status, archives old files, and records the next revision. |
+## Status Rules
 
-## Build The Artifact
-
-Build the **Curriculum tracker sheet** so the workspace decision can be inspected and reused.
-
-Add or revise this entry:
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | Curriculum Tracker |
-| Workspace object | Folder, Doc, Slide deck, Sheet, Form, Calendar event, or command center section |
-| Classroom purpose | What teaching work this object supports |
-| Access and owner | Who can view, edit, maintain, or archive it |
-| Evidence or status | Where student work, teacher decisions, or readiness status will appear |
-| Artifact work | Complete at least six tracker rows and use status values consistently. |
+| Status | Meaning | Required checks before launch |
+| --- | --- | --- |
+| Active | Teaching this week | Verified links, owner set, evidence path live |
+| Ready | Prepared but not yet launched | Readiness note and blocker field empty |
+| Review needed | Evidence or substitutions incomplete | Specific blocker and fix owner set |
+| Revise | Needs update before reuse | Planned change and next review date set |
+| Archived | Historical only | Removed from student navigation |
 
 ## Quality Check
 
-Before moving on, test the entry with a busy-week question: could another teacher find the current material, use it with students, collect the evidence, and know what to update afterward?
+Run this substitute test from your own sheet:
 
-If the answer depends on your memory, revise the artifact until the workflow is visible.
+1. Open one Active row.
+2. Find where to launch today’s lesson from one link.
+3. Find evidence destination without asking the teacher.
+4. Find what must be edited before next run.
+
+If any answer requires narrative memory, add that requirement as a table value.
 
 ## Reflection
 
-What part of this workspace currently depends too much on one person's memory? Write the next change that would make it easier to hand off, repeat, or maintain.
+Which status category needs tighter criteria in your current tracker? Tighten one status definition now.

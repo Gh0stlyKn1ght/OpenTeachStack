@@ -19,60 +19,37 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Checkpoint review confirms whether the generator is safe enough for substitute-ready use.
 
-In **Folder and File Generators**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Folder generator**.
+## Review Matrix
 
-## Core Idea
+Use one line per requirement:
 
-Run a checkpoint on the **Folder generator**. Mark what is ready, what needs revision, what is blocked, and what evidence supports that decision.
+| Area | Check | Result |
+| --- | --- | --- |
+| Idempotency | Same input returns existing folder or explicit create log | ready / revise |
+| Permission boundary | Uses sandbox root ID only | ready / revise |
+| Logging | success and error logs are structured | ready / revise |
+| Rollback | cleanup steps are written and tested | ready / revise |
+| Access control | owner/editor roles are clear | ready / revise |
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Required Artifact Evidence
 
-## Lesson Focus
+Record for this chapter:
 
-Because this is the checkpoint for folder file generators, the teacher reviews the artifact as a working system. The checkpoint looks for missing decisions, unclear ownership, weak evidence, and maintenance steps that would be forgotten during a busy week.
-
-In 03.4, focus on checkpoint review decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to folder generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect checkpoint review decisions back to folder file generators. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Checkpoint Review**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on checkpoint review decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Evidence | Value |
 | --- | --- |
-| Teaching purpose | This work supports checkpoint review decisions inside folder file generators. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what checkpoint review decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or folder generator review. |
+| Sample success log | JSON payload from workshop run |
+| Failure example | missing section -> required field error |
+| Fix action | rename/retry after cleanup |
+| Reviewer note | who can re-run and approve live rollout |
 
-## Review The Work
+## Decision
 
-Update the **Folder generator** with one row or section for **Checkpoint Review**.
+Before moving on, the chapter is ready only when:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | checkpoint review decisions |
-| Classroom context | Where folder file generators appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What checkpoint review decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Checkpoint status | What proves folder generator is ready or what blocks it |
-| Maintenance trigger | When the checkpoint review decisions decision should be checked again |
+- all matrix fields are `ready`
+- one rollback example is documented
+- permission and owner notes are complete
 
-## Quality Check
-
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the checkpoint review decisions decision, inspect the folder generator evidence, and understand how it supports folder file generators.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+If any field is missing, keep status `revise` and patch the note row before proceeding.

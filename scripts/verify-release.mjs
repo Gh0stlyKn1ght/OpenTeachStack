@@ -31,6 +31,10 @@ const checks = [
     cmd: "npm run check:content-uniqueness",
   },
   {
+    label: "npm run check:instructional-depth",
+    cmd: "npm run check:instructional-depth",
+  },
+  {
     label: "npm run check:release-readiness",
     cmd: "npm run check:release-readiness",
   },

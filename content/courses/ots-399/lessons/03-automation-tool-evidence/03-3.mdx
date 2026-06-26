@@ -65,6 +65,40 @@ Update the **Technical evidence log** with one row or section for **Technical Ev
 | Artifact status | What proves technical evidence log is ready or what blocks it |
 | Maintenance trigger | When the technical evidence log decision should be checked again |
 
+## Completed Sample
+
+| Evidence field | Completed example |
+| --- | --- |
+| Tool or automation | Folder generator for robotics mini-unit packet |
+| Classroom purpose | Create a sandbox copy of unit folders before publishing the capstone packet. |
+| Fake input | `unitName=Unit 03 - Lab Intro`, `sectionName=Sample Robotics 8A` |
+| Output evidence | Logger row shows `status=folder-created`, sandbox folder id, timestamp, and rollback note. |
+| Failure tested | Missing `sectionName` stops the script before a folder is created. |
+| Safety boundary | No real student data, live course folders, or guardian emails are used in the test. |
+| Reviewer decision | Revise: evidence log is strong, but the screenshot-free output note needs the exact rollback date. |
+| Maintenance trigger | Recheck when folder naming, permissions, or script owner changes. |
+
+## Technical Evidence Rows
+
+| Status | Evidence | Reviewer note | Next action |
+| --- | --- | --- | --- |
+| Ready | Fake-data test produces exactly one sandbox folder and one JSON Logger row. | Ready for peer review because the output can be repeated and rolled back. | Move the evidence row into the capstone artifact index. |
+| Revise | Logger output exists but does not include rollback instructions. | Add a one-line rollback note and date before release review. | Retest after updating the log format. |
+| Blocked | Test writes into a live course folder. | Public release is blocked until sandbox testing replaces live writes. | Remove live folder id, restore sandbox id, and rerun fake-data test. |
+
+## Evidence Log Format
+
+```json
+{
+  "status": "folder-created",
+  "unitName": "Unit 03 - Lab Intro",
+  "sectionName": "Sample Robotics 8A",
+  "folderId": "sandbox-folder-id",
+  "rollback": "Delete sandbox folder before retesting",
+  "reviewerDecision": "revise"
+}
+```
+
 ## Quality Check
 
 Before moving on, test the work against this standard: a reviewer can trace the teaching need, inspect each artifact, see the safety checks, and understand how the system will be maintained.

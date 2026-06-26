@@ -1,0 +1,11 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-280","01","01-teacher-threat-model","Teacher Threat Model","15 min","build","Teacher personal risk map","Teacher personal risk map","release_ready"
+"OTS-280","02","02-account-hygiene-mfa","Account Hygiene and MFA","15 min","build","Password manager and MFA checklist","Password manager and MFA checklist","release_ready"
+"OTS-280","03","03-usernames-identity-separation","Usernames and Identity Separation","15 min","build","Public/private identity map","Public/private identity map","release_ready"
+"OTS-280","04","04-email-phishing-impersonation","Email, Phishing, and Impersonation","15 min","build","Phishing response checklist","Phishing response checklist","release_ready"
+"OTS-280","05","05-social-media-doxxing","Social Media and Doxxing Risk","15 min","build","Public profile audit","Public profile audit","release_ready"
+"OTS-280","06","06-vpns-wifi-location","VPNs, Wi-Fi, and Location Privacy","15 min","build","Connection safety checklist","Connection safety checklist","release_ready"
+"OTS-280","07","07-browser-device-file-safety","Browser, Device, and File Safety","20 min","checkpoint","Device and browser hardening checklist","Device and browser hardening checklist","release_ready"
+"OTS-280","08","08-website-safety","Website Safety for Teacher Sites","20 min","checkpoint","Teacher website security audit","Teacher website security audit","release_ready"
+"OTS-280","09","09-github-domains-repos","GitHub, Domains, and Public Repos","15 min","build","Public repo and domain exposure check","Public repo and domain exposure check","release_ready"
+"OTS-280","10","10-incident-response","Incident Response for Teachers","15 min","build","What to do if something happens plan","What to do if something happens plan","release_ready"

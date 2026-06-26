@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-320","01","01-agent-safety-mindset","Agent Safety Mindset","15 min","overview","Agent safety checklist","Agent safety checklist","release_ready"
+"OTS-320","02","02-repo-branch-workflow","Repo and Branch Workflow","15 min","build","Branch workflow notes","Branch workflow notes","release_ready"
+"OTS-320","03","03-prompting-coding-agents","Prompting Coding Agents","15 min","build","Safe agent prompt","Safe agent prompt","release_ready"
+"OTS-320","04","04-testing-verification","Testing and Verification","15 min","build","Test checklist","Test checklist","release_ready"
+"OTS-320","05","05-building-teacher-tools","Building Teacher Tools","15 min","build","Small classroom tool","Small classroom tool","release_ready"
+"OTS-320","06","06-reviewed-agent-build","Reviewed Agent Build","15 min","build","Reviewed agent-built classroom tool","Reviewed agent-built classroom tool","release_ready"

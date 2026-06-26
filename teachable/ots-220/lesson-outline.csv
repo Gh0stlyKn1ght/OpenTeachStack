@@ -1,0 +1,7 @@
+course_code,chapter,lesson,title,duration,lesson_type,artifact,teachable_asset_needed,status
+"OTS-220","01","01-automation-mindset","Automation Mindset","15 min","overview","Automation candidate list","Automation candidate list","needs_review"
+"OTS-220","02","02-apps-script-basics","Apps Script Basics","15 min","build","First script notes","First script notes","needs_review"
+"OTS-220","03","03-folder-file-generators","Folder and File Generators","15 min","build","Folder generator","Folder generator","needs_review"
+"OTS-220","04","04-docs-from-sheet-rows","Docs from Sheet Rows","15 min","build","Doc generator","Doc generator","needs_review"
+"OTS-220","05","05-forms-email-reminders","Forms, Email, and Reminders","15 min","build","Reminder workflow","Reminder workflow","needs_review"
+"OTS-220","06","06-teacher-automation-toolkit","Teacher Automation Toolkit","15 min","build","Automation toolkit","Automation toolkit","needs_review"

@@ -19,60 +19,67 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Teacher Automation Toolkit**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Automation toolkit**.
+Before a script is trusted in class operations, another adult should be able to review it in under ten minutes and answer:
+- What does it do?
+- What can it change?
+- What can go wrong?
 
 ## Core Idea
 
-Make the decision readable to someone else. The artifact explains the purpose, the source of truth, the review routine, and how future revisions will be recorded.
+Your review checklist becomes a repeatable contract, not a personal preference.
+Every script function should answer:
+- trigger source,
+- input sources,
+- output destinations,
+- permission needs,
+- and explicit failure response.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Review Template
 
-## Lesson Focus
+Add this section to your `AutomationManifest`:
 
-Because this is a focused section, the teacher isolates the script checklist decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+| Function | Trigger | Inputs | Outputs | Risk | Safe stop |
+| --- | --- | --- | --- | --- | --- |
+| onCheckpointFormSubmit | Form submit | StudentAlias, GuardianEmail | ReminderQueue row | medium | stop form trigger |
+| runReminderBatch | time-based | ReminderQueue approved rows | sent email + status update | medium-high | set STOP_AUTOMATION=true |
 
-In 06.1, focus on script checklist. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to automation toolkit, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+## Example Checklist Function
 
-Connect script checklist back to teacher automation toolkit. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+```javascript
+const CHECKLIST = [
+  { fn: "onCheckpointFormSubmit", owner: "Teacher", status: "approved" },
+  { fn: "runReminderBatch", owner: "Teacher", status: "approved" },
+  { fn: "sendWithSafety", owner: "Teacher", status: "reviewed" }
+];
 
-## Classroom Example
+function writeChecklistReport() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("AutomationChecklist") ||
+    ss.insertSheet("AutomationChecklist");
+  sheet.clear();
+  sheet.appendRow(["timestamp", "function", "status", "reviewer", "notes"]);
+  const reviewer = Session.getActiveUser().getEmail() || "manual";
+  CHECKLIST.forEach((r) => sheet.appendRow([new Date(), r.fn, r.status, reviewer, "checked-in-" + Session.getActiveUser().getEmail()]));
+  Logger.log("Checklist recorded");
+}
+```
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Risk Review Questions
 
-For **Script Review Checklist**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on script checklist.
+- Does any function call `MailApp.sendEmail` outside the approved run?
+- Are there hard-coded emails or IDs in source that should be in properties?
+- Is there an opt-out/consent condition before any send logic?
+- Can you stop it immediately with one condition flag?
 
-Example entry:
+## Common Failure Modes
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports script checklist inside teacher automation toolkit. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what script checklist may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or automation toolkit review. |
-
-## Practice The Decision
-
-Update the **Automation toolkit** with one row or section for **Script Review Checklist**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | script checklist |
-| Classroom context | Where teacher automation toolkit appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What script checklist causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves automation toolkit is ready or what blocks it |
-| Maintenance trigger | When the script checklist decision should be checked again |
+- New script added without reviewer note.
+- Status transitions not logged (`needs_review`, `approved`, `sent`, `error`).
+- Trigger runs with stale or unexpected parameters.
+- Logs expose sensitive data.
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the script checklist decision, inspect the automation toolkit evidence, and understand how it supports teacher automation toolkit.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- Add/update one row per reviewed function in `AutomationChecklist`.
+- Confirm `status` values are only `approved`, `reviewed`, or `blocked`.
+- Confirm one script has a stop condition test documented in notes.

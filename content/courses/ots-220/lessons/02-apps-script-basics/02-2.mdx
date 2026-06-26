@@ -13,66 +13,116 @@ canonicalRoute: /book/ots-220/02-apps-script-basics/02-2
 sourceRegistry: src/lib/courseStructures.ts
 sourceLessonSlug: ''
 sourceLessonTitle: ''
-migrationStatus: authored
+migrationStatus: reviewed
 ---
 # Functions, Logs, and Errors
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Functions hide complexity only if they are explicit about inputs and outputs. Logs make outcomes visible. Error handling protects student-facing systems.
 
-In **Apps Script Basics**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **First script notes**.
+For this section, the function should create one sandbox folder and one setup doc from one row, and fail clearly when any contract check fails.
 
 ## Core Idea
 
-Keep the technical move small enough to verify. Record the input, expected output, test case, observed result, and what the teacher should do if it fails.
+Build three layers in one routine:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+- `buildUnitRequest` for input normalization and validation
+- `createUnitArtifacts` for object output
+- `createUnitArtifactsSafe` for guardrails and clear error logging
 
-## Lesson Focus
+## Concrete Code
 
-Because this is a focused section, the teacher isolates the functions logs errors decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+```javascript
+const SANDBOX_ROOT_ID = "FOLDER_ROOT_SANDBOX_ID";
 
-In 02.2, focus on functions logs errors. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to first script notes, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+function buildUnitRequest(values) {
+  const required = ["unitName", "sectionName", "ownerEmail", "dueDate"];
+  const missing = required.filter((field) => !values[field]);
+  if (missing.length) {
+    throw new Error(`Missing required fields: ${missing.join(", ")}`);
+  }
+  return {
+    unitName: values.unitName.toString().trim(),
+    sectionName: values.sectionName.toString().trim(),
+    ownerEmail: values.ownerEmail.toString().trim().toLowerCase(),
+    dueDate: values.dueDate.toString().trim(),
+  };
+}
 
-Connect functions logs errors back to apps script basics. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+function createUnitArtifacts(request) {
+  const root = DriveApp.getFolderById(SANDBOX_ROOT_ID);
+  const unitFolder = root.createFolder(`${request.unitName} - ${request.sectionName}`);
+  const doc = DocumentApp.create(`Setup notes - ${request.unitName}`);
 
-## Classroom Example
+  const result = {
+    level: "info",
+    unitName: request.unitName,
+    sectionName: request.sectionName,
+    folderId: unitFolder.getId(),
+    docId: doc.getId(),
+    message: "Sandbox setup created",
+  };
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+  Logger.log(JSON.stringify(result));
+  return result;
+}
 
-For **Functions, Logs, and Errors**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on functions logs errors.
+function createUnitArtifactsSafe(values) {
+  try {
+    const request = buildUnitRequest(values);
+    return createUnitArtifacts(request);
+  } catch (error) {
+    const failure = {
+      level: "error",
+      message: error.message,
+      unitName: values.unitName || "",
+      sectionName: values.sectionName || "",
+    };
+    Logger.log(JSON.stringify(failure));
+    throw error;
+  }
+}
+```
 
-Example entry:
+## Expected Output
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports functions logs errors inside apps script basics. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what functions logs errors may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or first script notes review. |
+```json
+{
+  "level": "info",
+  "unitName": "Unit 03 - Sensor Lab",
+  "sectionName": "Sample Robotics 8A",
+  "folderId": "sandbox-folder-id",
+  "docId": "sandbox-doc-id",
+  "message": "Sandbox setup created"
+}
+```
 
-## Practice The Decision
+## Failure Example
 
-Update the **First script notes** with one row or section for **Functions, Logs, and Errors**.
+Input without `sectionName`:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | functions logs errors |
-| Classroom context | Where apps script basics appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What functions logs errors causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves first script notes is ready or what blocks it |
-| Maintenance trigger | When the functions logs errors decision should be checked again |
+```
+Error: Missing required fields: sectionName
+```
+
+Recovery:
+
+1. Pause script
+2. update row field
+3. rerun with sandbox data only
+4. confirm one new folder and one new doc
+
+## Permissions / Rollback
+
+- Required: Drive editor rights for `FOLDER_ROOT_SANDBOX_ID`; Docs create permission
+- Rollback: delete sandbox folder and setup doc after each failed attempt
+- Privacy: no student emails, names, or grades in Logger payload
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Can another teacher rerun this on fake data and predict:
 
-A reviewer should be able to find the functions logs errors decision, inspect the first script notes evidence, and understand how it supports apps script basics.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- pass output shape
+- exact failure message
+- rollback action from the notes

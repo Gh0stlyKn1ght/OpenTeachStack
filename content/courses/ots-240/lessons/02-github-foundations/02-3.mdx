@@ -5,7 +5,7 @@ chapter: GitHub Foundations for Teachers
 chapterSlug: 02-github-foundations
 sectionNumber: 02.3
 sectionSlug: 02-3
-title: 'Workshop: Create a Curriculum Repo'
+title: Workshop: Create a Curriculum Repo
 type: workshop
 duration: 45 minutes
 artifact: Curriculum repo
@@ -17,62 +17,27 @@ migrationStatus: authored
 ---
 # Workshop: Create a Curriculum Repo
 
-## Why This Matters
+## Task Goal
 
-Open work needs when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Create or verify a repository with required teaching folders and a clear first commit.
 
-In **GitHub Foundations for Teachers**, the work sits inside open curriculum publishing with GitHub, README files, licenses, attribution, and review routines. The risk is treating free-to-view material as automatically open, reusable, remixable, or safe to publish. This lesson narrows that risk into one visible update to **Curriculum repo**.
+## Checklist
 
-## Core Idea
+1. Create repo with this structure: `content/`, `docs/`, `LICENSE`, `README.md`.
+2. Add initial files from your open resource decision log.
+3. Commit with a message following your course pattern.
 
-Complete the workshop with sample or low-risk material first. Record the setup, result, error or review note, and what changed before using it with a live class.
+## Practical Script (Low Risk)
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```bash
+git init
 
-## Lesson Focus
+git add README.md LICENSE content
+git commit -m "course: ots-240 | scaffold | create teaching repository structure"
+```
 
-Because this is a workshop, the teacher works with a safe sample before touching live students, public files, or active course systems. The workshop records setup, result, error, revision, and the decision that follows.
+## Verification
 
-In 02.3, focus on create curriculum repo. Choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Connect it to curriculum repo, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect create curriculum repo back to github foundations teachers. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher is preparing a curriculum repository with a README, source notes, a license file, contribution guidance, and a release checklist.
-
-For **Workshop: Create a Curriculum Repo**, choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Keep the example small enough to review during the lesson and focused on create curriculum repo.
-
-Example entry:
-
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports create curriculum repo inside github foundations teachers. |
-| Evidence | The teacher can point to source notes, license decisions, README sections, review comments, attribution records, and release status. |
-| Boundary | The teacher names what create curriculum repo may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or curriculum repo review. |
-
-## Workshop Task
-
-Update the **Curriculum repo** with one row or section for **Workshop: Create a Curriculum Repo**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | create curriculum repo |
-| Classroom context | Where github foundations teachers appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a repository file, README section, issue, pull request, source note, or license entry |
-| Teacher decision | What create curriculum repo causes you to keep, revise, test, publish, restrict, or remove |
-| Workshop evidence | What proves curriculum repo is ready or what blocks it |
-| Maintenance trigger | When the create curriculum repo decision should be checked again |
-
-## Quality Check
-
-Before moving on, test the work against this standard: a reviewer can see what may be reused, what must be credited, what changed, and how the repository will be maintained.
-
-A reviewer should be able to find the create curriculum repo decision, inspect the curriculum repo evidence, and understand how it supports github foundations teachers.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- one branch exists for work (`week-xx`),
+- `README.md` explains setup in fewer than 6 bullet points,
+- at least one commit shows ownership and reason.

@@ -19,60 +19,84 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Apps Script Basics**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **First script notes**.
+Bound scripts should be attached only after the automation goal is clearly bounded. If the decision logic is outside the spreadsheet, you should not ask a beginner course to run it.
 
 ## Core Idea
 
-Keep the technical move small enough to verify. Record the input, expected output, test case, observed result, and what the teacher should do if it fails.
+Use one bound script per active lesson workflow, and confirm it can be run from the spreadsheet without guessing where context comes from.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+In this section, your script stays sandbox-safe:
 
-## Lesson Focus
+- no real student identifiers
+- no real class folders
+- no production email sends
 
-Because this is a focused section, the teacher isolates the script editor bound scripts decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+## Setup
 
-In 02.1, focus on script editor bound scripts. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to first script notes, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+In Google Sheets, open **Extensions → Apps Script** from a dedicated sandbox spreadsheet and create:
 
-Connect script editor bound scripts back to apps script basics. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+1. `onOpen()` that adds a custom menu
+2. `runSandboxUnitSetup()` that reads one row from a clearly named range
+3. `buildUnitSummaryFromRow()` that validates required fields
 
-## Classroom Example
+## Concrete Code
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+```javascript
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu("Teacher Toolkit").addItem("Run sandbox unit setup", "runSandboxUnitSetup").addToUi();
+}
 
-For **Script Editor and Bound Scripts**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on script editor bound scripts.
+function buildUnitSummaryFromRow(row) {
+  const required = ["unitName", "sectionName", "ownerEmail", "dueDate"];
+  const missing = required.filter((key) => !row[key]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required fields: ${missing.join(", ")}`);
+  }
 
-Example entry:
+  return {
+    unitName: row.unitName.trim(),
+    sectionName: row.sectionName.trim(),
+    ownerEmail: row.ownerEmail.trim().toLowerCase(),
+    dueDate: row.dueDate,
+    status: "sandbox-validated",
+  };
+}
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports script editor bound scripts inside apps script basics. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what script editor bound scripts may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or first script notes review. |
+function runSandboxUnitSetup() {
+  const sample = {
+    unitName: "Unit 03 - Sensor Lab",
+    sectionName: "Sample Robotics 8A",
+    ownerEmail: "sample-teacher@example.edu",
+    dueDate: "2026-09-15",
+  };
+  const result = buildUnitSummaryFromRow(sample);
+  Logger.log(JSON.stringify(result));
+  return result;
+}
+```
 
-## Practice The Decision
+## Permissions/Access Note
 
-Update the **First script notes** with one row or section for **Script Editor and Bound Scripts**.
+For this step, students only need read access to the file. Teacher role runs the script with Edit rights.
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | script editor bound scripts |
-| Classroom context | Where apps script basics appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What script editor bound scripts causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves first script notes is ready or what blocks it |
-| Maintenance trigger | When the script editor bound scripts decision should be checked again |
+## Expected Output
+
+`Logger.log` should print:
+
+- `unitName: "Unit 03 - Sensor Lab"`
+- `sectionName: "Sample Robotics 8A"`
+- `status: "sandbox-validated"`
+
+## Failure Path
+
+- if a required field is blank, the script throws a clear “Missing required fields” error
+- fix the source object, then rerun only `runSandboxUnitSetup`
+- log remains bounded to sandbox data
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Verify that a substitute can:
 
-A reviewer should be able to find the script editor bound scripts decision, inspect the first script notes evidence, and understand how it supports apps script basics.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+1. open the spreadsheet
+2. choose `Teacher Toolkit > Run sandbox unit setup`
+3. read output from logs and confirm required fields are present

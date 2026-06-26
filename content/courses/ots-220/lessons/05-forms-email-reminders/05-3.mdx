@@ -19,60 +19,96 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+This workshop connects everything:
+- form responses,
+- safe staging in queue,
+- sending guardrails.
 
-In **Forms, Email, and Reminders**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Reminder email script**.
+You now build and run a low-risk routine: send a small batch to a test label and move rows through statuses.
 
 ## Core Idea
 
-Complete the workshop with sample or low-risk material first. Record the setup, result, error or review note, and what changed before using it with a live class.
+A production-safe workshop script does three things in one pass:
+1) selects approved rows,
+2) sends emails with logging,
+3) marks row status with audit data.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```javascript
+function runReminderBatch() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("ReminderQueue");
+  const start = 2; // skip header
+  const rows = sheet.getDataRange().getValues();
+  const maxSends = 5;
+  let sent = 0;
 
-## Lesson Focus
+  for (let i = 1; i < rows.length && sent < maxSends; i++) {
+    const row = rows[i];
+    const rowNum = i + 1;
 
-Because this is a workshop, the teacher works with a safe sample before touching live students, public files, or active course systems. The workshop records setup, result, error, revision, and the decision that follows.
+    if (!canSendReminderRow(row)) continue;
 
-In 05.3, focus on reminder emails sheet data. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to reminder email script, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+    try {
+      const subject = `Reminder: ${row[3]}`;
+      const body =
+        `Hi ${row[1]},\n\n` +
+        `This is a reminder for ${row[3]} due ${row[4]}.\n\n` +
+        `Please review and reply to your student directly.`;
 
-Connect reminder emails sheet data back to forms email reminders. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+      withBackoffRetry(() =>
+        MailApp.sendEmail({
+          to: row[2],
+          subject,
+          body,
+        })
+      );
 
-## Classroom Example
+      sheet.getRange(rowNum, 6).setValue("sent");
+      sheet.getRange(rowNum, 7).setValue(new Date());
+      Logger.log(`Sent ${row[0]}`);
+      sent++;
+    } catch (err) {
+      Logger.log(`Failed ${row[0]}: ${err.message}`);
+      sheet.getRange(rowNum, 6).setValue("error");
+      sheet.getRange(rowNum, 9).setValue(`send_failed:${err.message}`);
+    }
+  }
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+  Logger.log(`Run complete: ${sent} sent`);
+}
+```
 
-For **Workshop: Reminder Emails from Sheet Data**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on reminder emails sheet data.
+## Sample Queue for Exercise
 
-Example entry:
+| requestId | studentAlias | guardianEmail | missingItem | dueDate | status | reviewedAt | reviewer | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| RQ-1001 | ALEX-Q | alex.guardian@example.edu | safety checklist | 2026-09-20 | approved | 2026-09-16 07:30 | Teacher Alex | confirmed |
+| RQ-1002 | KIM-P | kim.guardian@example.edu | 3D model update | 2026-09-21 | approved | 2026-09-16 07:31 | Teacher Alex | confirmed |
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports reminder emails sheet data inside forms email reminders. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what reminder emails sheet data may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or reminder email script review. |
+Expected after running `runReminderBatch()`:
+- RQ-1001, RQ-1002 statuses become `sent`.
+- `reviewedAt` set to run timestamp.
+- any failure writes `send_failed:<reason>` in notes column.
 
-## Workshop Task
+## Test Loop Plan
 
-Update the **Reminder email script** with one row or section for **Workshop: Reminder Emails from Sheet Data**.
+1) Test with fake addresses first (`sample-guardian@...`).  
+2) Verify logs show both successful sends and status transitions.  
+3) Mark one row `needs_review`; confirm it is skipped.  
+4) Add a wrong email and confirm it becomes `error`.
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | reminder emails sheet data |
-| Classroom context | Where forms email reminders appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What reminder emails sheet data causes you to keep, revise, test, publish, restrict, or remove |
-| Workshop evidence | What proves reminder email script is ready or what blocks it |
-| Maintenance trigger | When the reminder emails sheet data decision should be checked again |
+## Rollback
+
+If this run sends too many messages:
+- open sheet,
+- revert mistaken rows back to `approved`,
+- do a second controlled run with smaller batch size.
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the reminder emails sheet data decision, inspect the reminder email script evidence, and understand how it supports forms email reminders.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+- At least one successful send in log.
+- One skipped row (non-approved) remains unchanged.
+- One failed row writes a reason.
 
 ## Reflection
 
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+If your teacher asks, "Who approved each message and when?" can your sheet prove that from `reviewedAt` and `reviewer` fields?

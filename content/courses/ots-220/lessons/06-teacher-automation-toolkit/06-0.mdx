@@ -19,60 +19,67 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Teacher Automation Toolkit**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Automation toolkit**.
+Earlier chapters built useful automations: folder creation, document generation, form capture, and controlled reminders.
+In this chapter, you package those pieces into something a colleague can understand, review, and maintain.
 
 ## Core Idea
 
-Map the chapter before building. Choose one classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Then name the classroom purpose it serves and the evidence that will show whether the work is ready.
+An automation toolkit is not one script file.
+It is a **system with ownership, permissions, checks, rollback, and handoff notes**.
+If this is missing, automations stop being sustainable after one unit.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Final Artifact You Will Build
 
-## Lesson Focus
+By the end of 06, complete this 5-part toolkit:
 
-Because this is the opening plan for teacher automation toolkit, the teacher names the sequence before creating files or artifacts. The plan separates what will be learned, what will be built, and what evidence will prove that the build is ready.
+- `AutomationManifest` sheet (scope, owners, scripts, trigger map)
+- `Review Checklist` section
+- `Runbook` section (how to test and deploy)
+- `Release Snapshot` section (what changed this week)
+- `Rollback` section (how to pause all automation immediately)
 
-In 06.0, focus on chapter planning decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to automation toolkit, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+## Classroom Context
 
-Connect chapter planning decisions back to teacher automation toolkit. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+Use the same robotics workflow from OTS-220:
+- students submit checkpoint forms,
+- reminders are drafted and reviewed,
+- approved reminders are sent in controlled batches.
 
-## Classroom Example
+Your toolkit keeps that flow safe across team changes.
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Setup Checklist Before 06.1
 
-For **Chapter Plan**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on chapter planning decisions.
+1. Confirm you have `ReminderQueue` and `AutomationManifest` in your working spreadsheet.
+2. Confirm previous chapter’s functions exist (or notes for deferred implementation).
+3. Confirm script authorization scope includes only what each automation needs.
+4. Confirm an emergency toggle exists (`STOP_AUTOMATION`) in a clearly visible sheet cell.
 
-Example entry:
+## Starter Manifest Template
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports chapter planning decisions inside teacher automation toolkit. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what chapter planning decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or automation toolkit review. |
+| Component | Owner | Trigger | Status | Last Reviewed |
+| --- | --- | --- | --- | --- |
+| onCheckpointFormSubmit | You | Form submit trigger | active | 2026-09-16 |
+| runReminderBatch | You | time-based (daily 8:00 AM) | gated | 2026-09-16 |
+| reviewQueueAndLog | You | manual | active | 2026-09-16 |
 
-## Plan The Work
+## Mini Code Seed
 
-Update the **Automation toolkit** with one row or section for **Chapter Plan**.
+```javascript
+function initializeToolkitManifest() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName("AutomationManifest") ??
+    ss.insertSheet("AutomationManifest");
+  if (!sheet.getLastRow()) {
+    sheet.appendRow(["component", "owner", "trigger", "status", "lastReviewed"]);
+    sheet.appendRow(["onCheckpointFormSubmit", "Teacher", "Form submit", "active", new Date()]);
+  }
+  Logger.log("Manifest initialized");
+}
+```
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | chapter planning decisions |
-| Classroom context | Where teacher automation toolkit appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What chapter planning decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves automation toolkit is ready or what blocks it |
-| Maintenance trigger | When the chapter planning decisions decision should be checked again |
+## Chapter Exit Criteria
 
-## Quality Check
-
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the chapter planning decisions decision, inspect the automation toolkit evidence, and understand how it supports teacher automation toolkit.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+Before moving to 06.1:
+- manifest exists,
+- owner/trigger/review dates are filled,
+- you can explain where to pause all sends in one line.

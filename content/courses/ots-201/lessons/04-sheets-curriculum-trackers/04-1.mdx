@@ -19,56 +19,65 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Teachers often know where things are because they built the workspace themselves. That is useful until the course grows, a colleague needs access, a student link breaks, or old material starts competing with the current version.
+Inconsistent columns create inconsistent teaching decisions.
 
-A workspace system works when current materials, student-facing links, evidence locations, permissions, and maintenance routines are clear enough for another educator to inspect.
-
-In **Sheets Curriculum Trackers**, the work is to make Google Workspace decisions visible enough that another educator can understand the workflow, not just admire a tidy folder.
-
-This chapter treats Sheets as a decision tracker rather than a spreadsheet-shaped storage closet. Each row should help the teacher see what is ready, what is missing, and what needs review.
+For the robotics tracker, one row should always be one lesson run, and each column should answer one decision.
 
 ## Core Idea
 
-Design rows and columns so each cell has a clear job.
+Design rows for reusable interpretation:
 
-A row should represent one lesson or task, while columns capture decisions that change over time. Notes that require paragraphs belong in linked Docs, not crowded cells.
+- Row = one lesson occurrence
+- Column = one recurring teacher decision
 
-## Classroom Example
+For this chapter, avoid free-form narrative in the grid. Keep decisions in constrained fields.
 
-Use this working situation: a teacher is using Sheets to track unit status, standards, resources, assessments, and revision notes without burying curriculum decisions in separate documents.
+## Recommended Tracker Columns
 
-For a middle school robotics course, the teacher keeps one active unit folder, a student-facing directions Doc, a short launch deck, a response Sheet for exit tickets, and an archive folder for older versions. The system works only if the teacher can tell which file is current, who can edit it, where student evidence lands, and when cleanup happens.
+Use this exact starter header:
 
-Example:
-
-| Workspace decision | Classroom version |
+| Column | Purpose |
 | --- | --- |
-| Current material | The active lesson Doc is linked from the unit tracker and command center. |
-| Student access | Students receive view-only directions and submit evidence through the named form or assignment link. |
-| Teacher evidence | Responses, revision notes, and assessment status have visible locations. |
-| Maintenance rule | After teaching, the teacher updates status, archives old files, and records the next revision. |
+| Unit | Course period grouping |
+| Lesson | Short title + sequence |
+| Readiness status | Draft, Review, Active, Ready, Archived |
+| Standard | Reference code and target statement |
+| Evidence path | Exact Sheet/Doc/Form destination |
+| Owner | Primary teacher + backup |
+| Next review date | Date and time |
+| Blocker | What prevents launch |
+| Status note | One-line reason for current status |
+
+### Robotics Example Row
+
+| Unit | Lesson | Readiness status | Standard | Evidence path | Owner | Next review date | Blocker | Status note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Unit 03 | Distance calibration | Active | Data interpretation | Unit-03/Responses | Maya + Jordan | Friday 2:00 PM | None | Launch in 2 days; test threshold sample |
 
 ## Workspace Move
 
-Make the idea visible by updating the **Curriculum tracker sheet** with a real course or unit example.
+Build a row template with three locked rules:
 
-Add or revise this entry:
+1. No row is `Active` without a valid evidence path.
+2. No row is `Ready` without owner + next review date.
+3. No row is `Review needed` without a written blocker and owner.
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | Rows, Columns, and Teacher Decisions |
-| Workspace object | Folder, Doc, Slide deck, Sheet, Form, Calendar event, or command center section |
-| Classroom purpose | What teaching work this object supports |
-| Access and owner | Who can view, edit, maintain, or archive it |
-| Evidence or status | Where student work, teacher decisions, or readiness status will appear |
-| Artifact work | Define what one row represents and write rules for three columns that are often misused. |
+## Common Mistake
+
+Rows become too vague when “ready” and “review needed” are the only cues.
+
+Use explicit blockers and next actions so another educator can execute without asking the original author.
 
 ## Quality Check
 
-Before moving on, test the entry with a busy-week question: could another teacher find the current material, use it with students, collect the evidence, and know what to update afterward?
+Ask one colleague to open your sheet and answer:
 
-If the answer depends on your memory, revise the artifact until the workflow is visible.
+- Which lesson is active?
+- What is its blocker?
+- What must happen before teaching?
+
+If they ask more than one clarifying question, fix your columns.
 
 ## Reflection
 
-What part of this workspace currently depends too much on one person's memory? Write the next change that would make it easier to hand off, repeat, or maintain.
+Which row in your tracker still hides a hard decision in comments or chat notes? Bring that decision into the grid.

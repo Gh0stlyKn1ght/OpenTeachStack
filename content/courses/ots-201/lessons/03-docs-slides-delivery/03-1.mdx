@@ -19,56 +19,85 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Teachers often know where things are because they built the workspace themselves. That is useful until the course grows, a colleague needs access, a student link breaks, or old material starts competing with the current version.
+In this chapter segment, the Doc is the “source of truth” for a lesson. If a substitute opens the lesson, they should not have to guess a sequence.
 
-A workspace system works when current materials, student-facing links, evidence locations, permissions, and maintenance routines are clear enough for another educator to inspect.
+For the student-facing robotics lesson, the Doc must answer:
 
-In **Docs and Slides Delivery**, the work is to make Google Workspace decisions visible enough that another educator can understand the workflow, not just admire a tidy folder.
-
-This chapter separates lesson substance from delivery format. Docs hold stable directions, teacher notes, links, accessibility supports, and revision history; Slides guide the live classroom flow without pretending to be the whole lesson.
+- What is required for each student group before start?
+- Where do they find each link they need this week?
+- What is the exact evidence format expected?
+- What do students do if they get stuck?
 
 ## Core Idea
 
-Use Docs for directions students and teachers can return to.
+Your template should split content into:
 
-A reusable lesson Doc makes the student task, materials, links, submission evidence, and teacher setup notes easy to inspect.
+- **Student-facing instructions** (kept visible)
+- **Teacher-only execution notes** (kept in a collapsible section)
+- **Version and access metadata** (kept at the top)
 
-## Classroom Example
+## Concrete Template Draft
 
-Use this working situation: a teacher is creating reusable Docs and Slides so a lesson can be launched, followed, reviewed, and revised without rebuilding the delivery materials every time.
+Use this structure for your reusable direction Doc:
 
-For a middle school robotics course, the teacher keeps one active unit folder, a student-facing directions Doc, a short launch deck, a response Sheet for exit tickets, and an archive folder for older versions. The system works only if the teacher can tell which file is current, who can edit it, where student evidence lands, and when cleanup happens.
+1. Header: lesson title, version ID (example `v1.1`), owner, backup owner, reviewed date
+2. Learning target and materials
+3. Step-by-step procedure with minute targets
+4. Evidence requirements and exact submission path
+5. Exit reflection prompt
+6. Troubleshooting and support options
+7. Teacher reset checklist
 
-Example:
+Robotics example:
 
-| Workspace decision | Classroom version |
+`Distance Calibration Mini-lesson`
+
+- Target: “I can collect five sensor readings and defend a stop-distance threshold.”
+- Student artifact path: `Unit_03/Responses/Distance_Checks`
+- Exit prompt: “What changed from my predicted threshold and why?”
+
+## Workspace Move
+
+Update your `Reusable Docs/Slides template set` with one concrete Doc template row.
+
+| Template field | Robotics example |
 | --- | --- |
-| Current material | The active lesson Doc is linked from the unit tracker and command center. |
-| Student access | Students receive view-only directions and submit evidence through the named form or assignment link. |
-| Teacher evidence | Responses, revision notes, and assessment status have visible locations. |
-| Maintenance rule | After teaching, the teacher updates status, archives old files, and records the next revision. |
+| Lesson focus | Docs as reusable directions |
+| File name | `Robot_Distance_Directions_v1.1` |
+| Current students use | 3 readings, 1 team log row, 1 reflection statement |
+| Link chain | Linked from unit tracker, command center, and Slide title slide |
+| Permissions | Edit: teacher only; view: students + substitute; comment: lead teacher |
+| Visibility note | Teacher-only troubleshooting block is folded by default |
 
-## Build The Artifact
+## Common Mistake
 
-Build the **Reusable Docs/Slides template set** so the workspace decision can be inspected and reused.
+Don’t let the Doc become a “beautiful note dump.” If any teacher or student needs verbal clarification for key step one, the Doc is not yet reusable.
 
-Add or revise this entry:
+Examples of failure:
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | Docs as Directions and Lesson Templates |
-| Workspace object | Folder, Doc, Slide deck, Sheet, Form, Calendar event, or command center section |
-| Classroom purpose | What teaching work this object supports |
-| Access and owner | Who can view, edit, maintain, or archive it |
-| Evidence or status | Where student work, teacher decisions, or readiness status will appear |
-| Artifact work | Draft the Doc template headings and mark which sections are student-facing and which are teacher-only. |
+- Two different versions of the exit ticket are still active.
+- Materials list omits required setup gear.
+- Evidence instructions mention “record your work” without naming folder path.
+
+## Build Task
+
+Create one full section inside the template:
+
+### Student-facing “Evidence Submission” block
+
+- Required file path
+- Expected columns (`Team`, `Timestamp`, `Threshold`, `Justification`, `Anomaly`)
+- Required number of rows
+- Teacher sign-off field
 
 ## Quality Check
 
-Before moving on, test the entry with a busy-week question: could another teacher find the current material, use it with students, collect the evidence, and know what to update afterward?
+Ask a colleague to run this with a timer:
 
-If the answer depends on your memory, revise the artifact until the workflow is visible.
+1. Can a substitute identify what students should do in the first 45 seconds?
+2. Are submit paths and file names identical in Doc and Slide?
+3. Can the colleague file one fake evidence sample without asking for clarification?
 
 ## Reflection
 
-What part of this workspace currently depends too much on one person's memory? Write the next change that would make it easier to hand off, repeat, or maintain.
+Which direction section still assumes shared memory? Add one revision now: include the missing assumption in the template itself.

@@ -65,6 +65,24 @@ Update the **Automation candidate list** with one row or section for **Repeated 
 | Lesson evidence | What proves automation candidate list is ready or what blocks it |
 | Maintenance trigger | When the repeated tasks bad processes decision should be checked again |
 
+## Code Sample
+
+Use fictional classroom data when testing automation. This keeps the technical check inspectable without exposing student information.
+
+```javascript
+function logSampleRepeatedTasksvsBadProces() {
+  const sampleRow = {
+    className: 'Sample Robotics 8',
+    artifact: 'Automation candidate list',
+    status: 'revise',
+    nextStep: 'Add reviewer evidence before release'
+  };
+
+  Logger.log(JSON.stringify(sampleRow));
+  return sampleRow;
+}
+```
+
 ## Quality Check
 
 Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.

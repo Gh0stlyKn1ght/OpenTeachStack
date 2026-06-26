@@ -19,60 +19,53 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Docs from Sheet Rows**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Doc generator**.
+Template drift causes "silent bad docs." The class should see exactly what changed and where.
 
 ## Core Idea
 
-Turn the lesson idea into an inspectable decision. Name the classroom use, the evidence, the review step, and the next revision trigger.
+Use one placeholder map and log unmapped markers.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+## Mapping Table
 
-## Lesson Focus
-
-Because this is a focused section, the teacher isolates the document templates placeholders decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
-
-In 04.2, focus on document templates placeholders. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to doc generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect document templates placeholders back to docs sheet rows. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Document Templates and Placeholders**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on document templates placeholders.
-
-Example entry:
-
-| Decision | Classroom version |
+| Template marker | Source value |
 | --- | --- |
-| Teaching purpose | This work supports document templates placeholders inside docs sheet rows. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what document templates placeholders may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or doc generator review. |
+| `{{unitName}}` | row.unitName |
+| `{{learningTarget}}` | row.learningTarget |
+| `{{evidencePrompt}}` | row.evidencePrompt |
+| `{{sectionName}}` | row.sectionName |
 
-## Practice The Decision
+## Implementation
 
-Update the **Doc generator** with one row or section for **Document Templates and Placeholders**.
+```javascript
+function applyPlaceholdersToDoc(templateDocId, row) {
+  const doc = DocumentApp.openById(templateDocId);
+  const body = doc.getBody();
 
-| Field | Your note |
-| --- | --- |
-| Lesson focus | document templates placeholders |
-| Classroom context | Where docs sheet rows appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What document templates placeholders causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves doc generator is ready or what blocks it |
-| Maintenance trigger | When the document templates placeholders decision should be checked again |
+  body.replaceText("{{unitName}}", row.unitName);
+  body.replaceText("{{learningTarget}}", row.learningTarget);
+  body.replaceText("{{evidencePrompt}}", row.evidencePrompt);
+  body.replaceText("{{sectionName}}", row.sectionName);
+
+  const remaining = ["{{unitName}}", "{{learningTarget}}", "{{evidencePrompt}}", "{{sectionName}}"].filter((token) => doc.getBody().findText(token));
+  if (remaining.length > 0) {
+    throw new Error(`Unresolved placeholders: ${remaining.join(", ")}`);
+  }
+
+  doc.saveAndClose();
+  return doc.getUrl();
+}
+```
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Run on fake row and verify:
 
-A reviewer should be able to find the document templates placeholders decision, inspect the doc generator evidence, and understand how it supports docs sheet rows.
+- all markers replaced
+- no unresolved placeholders remain
+- template url and doc title are correct
+- no student data is present
 
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
+## Failure Drill
 
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- unresolved placeholder should throw a readable error
+- failure requires template marker fix before rerun

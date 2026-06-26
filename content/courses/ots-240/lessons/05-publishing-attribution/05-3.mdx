@@ -5,7 +5,7 @@ chapter: Publishing and Attribution
 chapterSlug: 05-publishing-attribution
 sectionNumber: 05.3
 sectionSlug: 05-3
-title: Attribution and License File
+title: Build Task: Attribution and License File
 type: artifact
 duration: 35 minutes
 artifact: Attribution and license file
@@ -15,64 +15,28 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-# Attribution and License File
+# Build Task: Attribution and License File
 
-## Why This Matters
+## Objective
 
-Open work needs when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+Create and verify final attribution files for publishing.
 
-In **Publishing and Attribution**, the work sits inside open curriculum publishing with GitHub, README files, licenses, attribution, and review routines. The risk is treating free-to-view material as automatically open, reusable, remixable, or safe to publish. This lesson narrows that risk into one visible update to **Attribution and license file**.
+## Required Files
 
-## Core Idea
+- `LICENSE`
+- `SOURCE_NOTES.md`
+- `ATTRIBUTION.md`
 
-Build the **Attribution and license file** as a usable artifact, not just a note. The finished version shows the decision, the classroom context, the evidence, and the next maintenance step.
+## Example `SOURCE_NOTES.md`
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```markdown
+# Source Notes
+- `images/robot-arm.png` from RoboticsLab open pack (CC BY 4.0)
+- `lessons/week-1.mdx` authored by You
+```
 
-## Lesson Focus
+## Acceptance
 
-Because this is an artifact lesson, the teacher turns attribution license file into something another educator can use. The artifact needs labels, examples, status, review notes, and a next action instead of a vague promise to improve later.
-
-In 05.3, focus on attribution license file. Choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Connect it to attribution license file, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
-
-Connect attribution license file back to publishing attribution. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
-
-## Classroom Example
-
-Use this working situation: a teacher is preparing a curriculum repository with a README, source notes, a license file, contribution guidance, and a release checklist.
-
-For **Attribution and License File**, choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Keep the example small enough to review during the lesson and focused on attribution license file.
-
-Example entry:
-
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports attribution license file inside publishing attribution. |
-| Evidence | The teacher can point to source notes, license decisions, README sections, review comments, attribution records, and release status. |
-| Boundary | The teacher names what attribution license file may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or attribution license file review. |
-
-## Build The Work
-
-Update the **Attribution and license file** with one row or section for **Attribution and License File**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | attribution license file |
-| Classroom context | Where publishing attribution appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a repository file, README section, issue, pull request, source note, or license entry |
-| Teacher decision | What attribution license file causes you to keep, revise, test, publish, restrict, or remove |
-| Artifact status | What proves attribution license file is ready or what blocks it |
-| Maintenance trigger | When the attribution license file decision should be checked again |
-
-## Quality Check
-
-Before moving on, test the work against this standard: a reviewer can see what may be reused, what must be credited, what changed, and how the repository will be maintained.
-
-A reviewer should be able to find the attribution license file decision, inspect the attribution license file evidence, and understand how it supports publishing attribution.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- Every external resource appears in `SOURCE_NOTES.md`.
+- `LICENSE` matches the chosen project terms.
+- Attribution text is understandable without opening PRs.

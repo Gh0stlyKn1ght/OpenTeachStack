@@ -19,60 +19,93 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Apps Script Basics**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **First script notes**.
+Automation is useful only when the teacher can explain exactly what it changes and why. In this chapter, each script should use safe sample data, produce inspectable output, and include a recovery path before touching live class materials.
 
 ## Core Idea
 
-Map the chapter before building. Choose one classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Then name the classroom purpose it serves and the evidence that will show whether the work is ready.
+Start with one reusable automation case and design it before coding:
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+- Input format
+- Function contract
+- Expected output
+- Failure path
+- Owner and review cadence
 
-## Lesson Focus
+## Working Scenario
 
-Because this is the opening plan for apps script basics, the teacher names the sequence before creating files or artifacts. The plan separates what will be learned, what will be built, and what evidence will prove that the build is ready.
+You will build a safe sandbox automation for robotics planning:
 
-In 02.0, focus on chapter planning decisions. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to first script notes, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+- read one fake Sheet row
+- create one sandbox folder
+- create one setup doc
+- write one compact log row to `First script notes`
 
-Connect chapter planning decisions back to apps script basics. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+Use this fake dataset:
 
-## Classroom Example
-
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
-
-For **Chapter Plan**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on chapter planning decisions.
-
-Example entry:
-
-| Decision | Classroom version |
+| Field | Fake value |
 | --- | --- |
-| Teaching purpose | This work supports chapter planning decisions inside apps script basics. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what chapter planning decisions may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or first script notes review. |
+| unitName | `Unit 03 - Sensor Lab` |
+| sectionName | `Sample Robotics 8A` |
+| ownerEmail | `sample-teacher@example.edu` |
+| dueDate | `2026-09-15` |
 
-## Plan The Work
+## Artifact Row
 
-Update the **First script notes** with one row or section for **Chapter Plan**.
+Add one row in **First script notes** before you write code:
 
-| Field | Your note |
+| Field | Required entry |
 | --- | --- |
-| Lesson focus | chapter planning decisions |
-| Classroom context | Where apps script basics appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What chapter planning decisions causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves first script notes is ready or what blocks it |
-| Maintenance trigger | When the chapter planning decisions decision should be checked again |
+| Lesson focus | Chapter 02 initial planning |
+| Input source | Sandbox row above |
+| Expected result | One folder ID, one doc ID, status `sandbox-created` |
+| Failure action | If input is invalid, stop before creating anything |
+| Permission note | Script account only has sandbox Drive scope in this phase |
+| Rollback note | Remove sandbox folder and doc before re-run |
+
+## Setup and First Test
+
+Use this minimal sample function as your first scaffold:
+
+```javascript
+function getSampleUnitRow() {
+  return {
+    unitName: "Unit 03 - Sensor Lab",
+    sectionName: "Sample Robotics 8A",
+    ownerEmail: "sample-teacher@example.edu",
+    dueDate: "2026-09-15",
+  };
+}
+
+function logSampleSetupRow() {
+  const row = getSampleUnitRow();
+  Logger.log(JSON.stringify({ level: "info", ...row, status: "sandbox-ready" }));
+  return row;
+}
+```
+
+## Expected Output
+
+- Execution log shows `level: "info"` and `status: "sandbox-ready"` with all four fields.
+- No live course folder IDs are used at this step.
+
+## Failure Handling
+
+If the log does not show all expected fields:
+
+- stop the flow
+- correct the object keys in one place
+- rerun only this section
+- keep the artifact note updated as `revise`
+
+If permission messages appear:
+
+- stop and confirm you are using a sandbox folder id
+- keep the test row unchanged until the folder permission is fixed
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
+Before moving on, verify:
 
-A reviewer should be able to find the chapter planning decisions decision, inspect the first script notes evidence, and understand how it supports apps script basics.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- you can describe the function contract from memory
+- you have written the rollback step in `First script notes`
+- you have a defined failure condition and owner

@@ -19,60 +19,61 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Open work needs when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
+This lesson assembles everything into a student-safe, teacher-reusable repository package.
 
-In **Open Curriculum Repository**, the work sits inside open curriculum publishing with GitHub, README files, licenses, attribution, and review routines. The risk is treating free-to-view material as automatically open, reusable, remixable, or safe to publish. This lesson narrows that risk into one visible update to **Open curriculum repository**.
+## Build Scope
 
-## Core Idea
+Create or verify:
+- `README.md`
+- `LICENSE`
+- `SOURCE_NOTES.md`
+- `ATTRIBUTION.md`
+- `docs/maintenance.md`
+- `lessons/` with all chapter files
 
-Build the **Open curriculum repository** as a usable artifact, not just a note. The finished version shows the decision, the classroom context, the evidence, and the next maintenance step.
+## Required Final Structure
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+```text
+/README.md
+/LICENSE
+/SOURCE_NOTES.md
+/ATTRIBUTION.md
+/docs/maintenance.md
+/content/courses/ots-240/
+```
 
-## Lesson Focus
+## Build Script (Check-only)
 
-Because this is an artifact lesson, the teacher turns open curriculum repository into something another educator can use. The artifact needs labels, examples, status, review notes, and a next action instead of a vague promise to improve later.
+```bash
+ls README.md LICENSE SOURCE_NOTES.md ATTRIBUTION.md
+rg -n "Student|email|phone" README.md SOURCE_NOTES.md ATTRIBUTION.md
+```
 
-In 06.3, focus on open curriculum repository. Choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Connect it to open curriculum repository, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+If any sensitive identifier appears in public files, remove/replace before release.
 
-Connect open curriculum repository back to open curriculum repository. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+## Final Assembly Tasks
 
-## Classroom Example
+1. Add release decision at top of `README.md` (`Publish`, `Publish internally`, `Revise`, `Blocked`).
+2. Link maintenance table into README.
+3. Confirm `LICENSE` summary exists in first section.
+4. Confirm `ATTRIBUTION.md` has at least one external and one internal source row.
+5. Confirm review owner and date are documented.
 
-Use this working situation: a teacher is preparing a curriculum repository with a README, source notes, a license file, contribution guidance, and a release checklist.
+## Evidence Package
 
-For **Open Curriculum Repository**, choose one concrete classroom material or teacher decision from this list: a repository file, README section, issue, pull request, source note, or license entry. Keep the example small enough to review during the lesson and focused on open curriculum repository.
+Keep these 6 evidence items for chapter exit:
+- completed `SOURCE_NOTES.md`,
+- complete `LICENSE`,
+- complete `ATTRIBUTION.md`,
+- `maintenance.md` with owner/date,
+- release gate table filled,
+- reviewer signoff note.
 
-Example entry:
+## Sample Release Artifact Text
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports open curriculum repository inside open curriculum repository. |
-| Evidence | The teacher can point to source notes, license decisions, README sections, review comments, attribution records, and release status. |
-| Boundary | The teacher names what open curriculum repository may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or open curriculum repository review. |
-
-## Build The Work
-
-Update the **Open curriculum repository** with one row or section for **Open Curriculum Repository**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | open curriculum repository |
-| Classroom context | Where open curriculum repository appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a repository file, README section, issue, pull request, source note, or license entry |
-| Teacher decision | What open curriculum repository causes you to keep, revise, test, publish, restrict, or remove |
-| Artifact status | What proves open curriculum repository is ready or what blocks it |
-| Maintenance trigger | When the open curriculum repository decision should be checked again |
-
-## Quality Check
-
-Before moving on, test the work against this standard: a reviewer can see what may be reused, what must be credited, what changed, and how the repository will be maintained.
-
-A reviewer should be able to find the open curriculum repository decision, inspect the open curriculum repository evidence, and understand how it supports open curriculum repository.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+```text
+Release decision: Publish internally
+Reason: ready for district-wide teachers; external-facing license review still in progress.
+Owner: You
+Next review: 2026-10-01
+```

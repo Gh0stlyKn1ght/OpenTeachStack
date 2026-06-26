@@ -19,60 +19,58 @@ migrationStatus: authored
 
 ## Why This Matters
 
-Automation is ready when a teacher can point to the decision, the classroom use, the evidence, and the next review step.
-
-In **Docs from Sheet Rows**, the work sits inside teacher automation with Google Apps Script and Workspace files. The risk is automating a process before the trigger, input, output, owner, permission boundary, and failure path are clear. This lesson narrows that risk into one visible update to **Doc generator**.
+If sheet columns and script field names drift, docs become wrong but still look "working." This section makes source-of-truth explicit.
 
 ## Core Idea
 
-Make the decision readable to someone else. The artifact explains the purpose, the source of truth, the review routine, and how future revisions will be recorded.
+One row = one generated doc.
 
-The goal is not to make a perfect document in one pass. The goal is to make the teacher decision clear enough that another educator can inspect it, reuse it, or challenge it without needing a private explanation.
+Use explicit required headers and validate before any write occurs.
 
-## Lesson Focus
+## Concrete Row and Field Map
 
-Because this is a focused section, the teacher isolates the sheet data source decision from the rest of the course. The lesson asks what this idea changes, where it appears, and how the teacher will know it worked.
+| Source header | Script field | Example value |
+| --- | --- | --- |
+| `unitName` | `unitName` | `Unit 03 - Sensor Lab` |
+| `learningTarget` | `learningTarget` | `Interpret sensor data and defend a threshold` |
+| `evidencePrompt` | `evidencePrompt` | `Record 5 values and highlight one outlier` |
 
-In 04.1, focus on sheet data source. Choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Connect it to doc generator, then decide whether it needs to be created, revised, tested, credited, restricted, published, or archived.
+## Implementation
 
-Connect sheet data source back to docs sheet rows. That connection matters because a polished artifact can still fail if the lesson purpose, boundary, evidence, and maintenance routine are not visible.
+```javascript
+function getSanitizedSourceRow() {
+  return {
+    unitName: "Unit 03 - Sensor Lab",
+    learningTarget: "Interpret sensor data and defend a threshold",
+    evidencePrompt: "Record 5 values and highlight one outlier",
+    sectionName: "Sample Robotics 8A",
+  };
+}
 
-## Classroom Example
+function validateSourceRow(row) {
+  const required = ["unitName", "learningTarget", "evidencePrompt", "sectionName"];
+  const missing = required.filter((field) => !row[field] || !row[field].toString().trim());
+  if (missing.length) {
+    throw new Error(`Missing required field(s): ${missing.join(", ")}`);
+  }
+  return row;
+}
+```
 
-Use this working situation: a teacher wants a script that creates unit folders, generates lesson Docs from Sheet rows, and sends reminder emails only after the teacher has reviewed the recipients.
+## Expected Failure and Repair
 
-For **Sheet Data as Source**, choose one concrete classroom material or teacher decision from this list: a spreadsheet row, folder ID, template Doc, script function, or email draft. Keep the example small enough to review during the lesson and focused on sheet data source.
+Failure:
 
-Example entry:
+`Error: Missing required field(s): sectionName`
 
-| Decision | Classroom version |
-| --- | --- |
-| Teaching purpose | This work supports sheet data source inside docs sheet rows. |
-| Evidence | The teacher can point to script notes, sample Sheet rows, logs, permission notes, test records, and a rollback plan. |
-| Boundary | The teacher names what sheet data source may change and what must stay protected or reviewed. |
-| Maintenance | The next update is triggered by a date, failed check, student confusion, changed source, or doc generator review. |
+Repair:
 
-## Practice The Decision
-
-Update the **Doc generator** with one row or section for **Sheet Data as Source**.
-
-| Field | Your note |
-| --- | --- |
-| Lesson focus | sheet data source |
-| Classroom context | Where docs sheet rows appears in your course, unit, tool, site, media packet, safety routine, or capstone |
-| Working material | Classroom material or teacher decision: a spreadsheet row, folder ID, template Doc, script function, or email draft |
-| Teacher decision | What sheet data source causes you to keep, revise, test, publish, restrict, or remove |
-| Lesson evidence | What proves doc generator is ready or what blocks it |
-| Maintenance trigger | When the sheet data source decision should be checked again |
+1. Fix the Sheet header or row value.
+2. rerun validation only.
+3. confirm no doc created before rerun.
 
 ## Quality Check
 
-Before moving on, test the work against this standard: the script can be run on sample data, stopped safely, explained by another teacher, and repaired when an error appears.
-
-A reviewer should be able to find the sheet data source decision, inspect the doc generator evidence, and understand how it supports docs sheet rows.
-
-If the work only names a tool or a file, revise it. The artifact needs to show the teaching purpose, evidence, boundary, and maintenance routine.
-
-## Reflection
-
-What would another teacher need to know before trusting this part of the work? Add that missing context to the artifact before you continue.
+- The field list is fixed in one place.
+- Missing field path fails before writes.
+- A teammate can run validation on fake row and predict what is required.
