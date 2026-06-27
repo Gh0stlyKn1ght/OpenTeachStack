@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/start", 0.9),
     entry("/syllabus", 0.7),
     entry("/templates", 0.8),
+    entry("/videos", 0.7),
   ];
 
   const kbRoutes = [

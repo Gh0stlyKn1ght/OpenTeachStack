@@ -14,5 +14,12 @@ export const metadata: Metadata = createPageMetadata({
 });
 
 export default function VideosPage() {
-  return <VideoLibraryPage library={library} />;
+  return (
+    <>
+      <link rel="preconnect" href="https://i.ytimg.com" />
+      <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+      <link rel="preconnect" href="https://www.youtube.com" />
+      <VideoLibraryPage library={library} />
+    </>
+  );
 }

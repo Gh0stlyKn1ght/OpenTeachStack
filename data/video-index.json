@@ -2,7 +2,7 @@
   "title": "OpenTeachStack Video Library",
   "description": "Curated educational videos for teachers entering technology, AI, computer science, cybersecurity, robotics, and modern instructional design.",
   "page": "/videos",
-  "generatedAt": "2026-06-27T00:00:00.000Z",
+  "generatedAt": "2026-06-27T21:53:16.550Z",
   "videos": [
     {
       "videoId": "sI6LBouiIZo",
@@ -14,15 +14,20 @@
       "duration": null,
       "publishedAt": null,
       "description": null,
+      "metadataSource": "fallback",
+      "lastCheckedAt": "2026-06-27T00:00:00.000Z",
       "category": "Featured",
       "section": "Featured",
-      "tags": ["teaching", "technology", "professional-growth", "education"],
+      "tags": [
+        "teaching",
+        "technology",
+        "professional-growth",
+        "education"
+      ],
       "level": "beginner",
       "notes": "First approved OpenTeachStack video.",
       "featured": true,
-      "status": "approved",
-      "metadataSource": "fallback",
-      "lastCheckedAt": "2026-06-27T00:00:00.000Z"
+      "status": "approved"
     },
     {
       "videoId": "yhGzXULZkEw",
@@ -34,15 +39,20 @@
       "duration": null,
       "publishedAt": null,
       "description": null,
+      "metadataSource": "fallback",
+      "lastCheckedAt": "2026-06-27T00:00:00.000Z",
       "category": "AI",
       "section": "AI for Educators",
-      "tags": ["ai", "teaching", "workflow", "classroom"],
+      "tags": [
+        "ai",
+        "teaching",
+        "workflow",
+        "classroom"
+      ],
       "level": null,
       "notes": null,
       "featured": false,
-      "status": "approved",
-      "metadataSource": "fallback",
-      "lastCheckedAt": "2026-06-27T00:00:00.000Z"
+      "status": "approved"
     }
   ],
   "report": {

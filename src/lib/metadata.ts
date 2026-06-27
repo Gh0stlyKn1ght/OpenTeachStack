@@ -382,6 +382,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Start", href: "/book/ots-101" },
   { label: "Pathway", href: "/pathway" },
   { label: "Knowledge Base", href: "/kb" },
+  { label: "Videos", href: "/videos" },
   { label: "Blog", href: "/blog" },
   { label: "Build Notes", href: "/build-notes" },
   { label: "About", href: "/about" },

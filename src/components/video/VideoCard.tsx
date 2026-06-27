@@ -1,6 +1,7 @@
 "use client";
 
 import type { VideoItem } from "@/lib/videos/types";
+import Image from "next/image";
 
 const statusLabels: Record<VideoItem["status"], string> = {
   approved: "Approved",
@@ -37,10 +38,13 @@ export default function VideoCard({
         className="relative aspect-video w-full overflow-hidden bg-code-bg text-left"
         aria-label={`Watch ${video.title}`}
       >
-        <img
+        <Image
           src={video.thumbnail}
           alt=""
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+          width={480}
+          height={360}
+          unoptimized
+          className="h-full w-full object-cover transition-opacity duration-200 group-hover:opacity-95"
           loading={featured ? "eager" : "lazy"}
         />
         {video.duration && (

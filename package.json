@@ -46,7 +46,12 @@
     "check:rendered-course-lessons": "node scripts/check-rendered-course-lessons.mjs",
     "check:instructional-depth": "node scripts/check-instructional-depth.mjs",
     "check:prompt-library": "node scripts/check-prompt-library.mjs",
-    "check:format-readability": "node scripts/check-format-readability.mjs"
+    "check:format-readability": "node scripts/check-format-readability.mjs",
+    "videos:scan": "node scripts/videos/scan-videos.mjs",
+    "videos:update": "node scripts/videos/update-video-cache.mjs",
+    "videos:validate": "node scripts/videos/validate-video-sources.mjs",
+    "videos:index": "node scripts/videos/generate-video-index.mjs",
+    "videos:build": "npm run videos:scan && npm run videos:update && npm run videos:validate && npm run videos:index"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
