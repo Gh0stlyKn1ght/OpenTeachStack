@@ -37,10 +37,11 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 - [x] Replace boilerplate `Chapter Purpose` / `Lessons in This Chapter` / `Exit Criteria` blocks — identical across 8 of 10 overviews — with per-chapter content
 - [x] Fix capstone overview `10-0`: its `Lessons in This Chapter` currently describes Chapter 1 ("Start by naming what the teacher is actually building…"), not the capstone
 
-### P1 — Frontmatter schema split (investigated — needs a decision, not churn)
+### P1 — Body H1 duplication (fixed)
 
-- [~] **Finding (2026-06-27): the split is cosmetic, not a functional bug.** The book route (`src/app/book/ots-101/[chapter]/[section]/page.tsx`) takes title/number/duration/type from the `src/lib/book.ts` registry and reads only `migrationStatus` from MDX frontmatter (`src/lib/content.ts`). So ch01–02 (`sectionNumber`+`duration`, no body H1) vs ch03–10 (`order`+`minutes`+body H1) does **not** make the reader diverge. Unifying *toward* schema B would add a duplicate `# H1` (page title + body H1) with no rendering benefit.
-- [ ] **Decision needed before any change:** pick one body-H1 policy and apply it in that direction — either drop the body `# H1` from ch03–10 (48 files, removes the page-title/body double-H1) or accept the current state. Do not migrate ch01–02 *into* schema B. Low priority; no functional impact.
+- [x] **Confirmed a real double-h1, not cosmetic.** The section page renders the lesson title as `<h1>` (`src/components/field-guide/ArticleHeader.tsx`), so every ch03–10 lesson whose MDX body opened with `# Title` produced a *second* `<h1>`. ch01–02 were already correct (no body H1). Titles come from `src/lib/book.ts`, the print routes are empty stubs, and `src/lib/content.ts` reads only `migrationStatus` from frontmatter — so the body H1 was pure redundancy.
+- [x] Stripped the leading body `# H1` from all 48 schema-B lesson files; every lesson now has exactly one `<h1>` (the page title). All content gates pass.
+- Note: the underlying frontmatter field-name split (`duration`/`sectionNumber` vs `minutes`/`order`) remains but is unused by the reader — left as-is, genuinely cosmetic.
 
 ### P1 — Source Bank & capstone wiring
 
