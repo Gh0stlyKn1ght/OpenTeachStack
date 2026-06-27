@@ -47,6 +47,10 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 - [ ] Reconcile capstone template vs `10-0`: `templates/mini-course-content-packet.md` omits the inventory (ch1) and system map (ch7) that the overview lists as packet pieces
 - [ ] Decide whether lessons should link learners to the Source Bank — there are currently **zero in-lesson source links** in all 60 files; the curated 31-link bank is a site feature disconnected from the course
 
+### P1 — Wide-table rendering (fixed)
+
+- [x] Transposed the 7- and 8-column "Build Artifact" tables in `01-4` and `02-4` to 2-column field-per-row tables. Seven or eight columns overflowed the reading width and rendered as cramped wrapped stacks, and the blank fill-in rows showed only empty cells. The transposed templates now read cleanly and label what each field captures; the worked examples read top-to-bottom. `02-2`'s 3-column tables were already fine. (2026-06-27)
+
 ### Verified OK (no action)
 
 - Source Bank live-link sample (6 fetched) returned no 404s; CS-First retired note matches reality; `cyber.org` 403 is already honestly labeled `fetch-blocked-403-not-404`; all 31 entries `reviewedAt: 2026-06-20`
