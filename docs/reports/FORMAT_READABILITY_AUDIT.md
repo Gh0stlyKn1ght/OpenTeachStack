@@ -1,6 +1,6 @@
 # Format Readability Audit
 
-Generated: 2026-06-27T00:31:54.815Z
+Generated: 2026-06-27T22:45:43.161Z
 
 ## Summary
 
@@ -384,6 +384,8 @@ Generated: 2026-06-27T00:31:54.815Z
 ## Notes
 
 - The audit no longer requires Build Step or Quality Check for every lesson.
+- Section names are advisory only; this is a formatting audit. Whether each teaching move is present is enforced by check:instructional-depth.
+- Real formatting failures still block: missing headings/lists, walls of text, weak/better comparisons without a table, and process lessons without numbered steps.
 - Lesson checks are based on lessonType frontmatter when present, with inference as a fallback.
 - Author profiles, README files, and course support folders use lighter support-file rules.
 - Use findings as review prompts, not permission to add fake sections.

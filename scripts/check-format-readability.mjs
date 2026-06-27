@@ -233,6 +233,15 @@ function hasNumberedList(body) {
   return /^\s*\d+\.\s+/m.test(body);
 }
 
+function hasNumberedSteps(body) {
+  // A numbered list OR a sequence of "## Step 1:" / "### Step 2" headings both
+  // communicate a numbered process; artifact builds often use step headings so
+  // each step can carry its own code block or template.
+  if (hasNumberedList(body)) return true;
+  const stepHeadings = body.match(/^#{2,4}\s+Step\s+\d+/gim);
+  return (stepHeadings?.length ?? 0) >= 2;
+}
+
 function hasChecklist(body) {
   return /^\s*[-*+]\s+\[[ xX]\]\s+/m.test(body) || /^\s*[-*+]\s+/m.test(body);
 }
@@ -286,15 +295,19 @@ function analyzeLessonStructure(body, lessonType) {
     return { problems, recommendations };
   }
 
+  // Section names are advisory, not required. The lesson quality rubric uses
+  // flexible lesson types and explicitly forbids forcing the same section
+  // headings into every lesson. Whether each teaching move is actually present
+  // is enforced by check:instructional-depth; this audit checks formatting.
   for (const aliases of rule.sections) {
     if (!sectionSatisfied(body, aliases)) {
-      problems.push(`${lessonType} missing section signal: ${aliases[0]}`);
+      recommendations.push(`Optional: a ${aliases[0]}-style section could help, but it is not required for this lesson type.`);
     }
   }
 
-  if (rule.requireNumbered && !hasNumberedList(body)) {
+  if (rule.requireNumbered && !hasNumberedSteps(body)) {
     problems.push(`${lessonType} requires numbered steps`);
-    recommendations.push("Use numbered steps for the process or assembly sequence.");
+    recommendations.push("Use numbered steps (a numbered list or Step 1/Step 2 headings) for the process or assembly sequence.");
   }
 
   if (rule.requireChecklistLike && !hasChecklist(body)) {
@@ -563,6 +576,8 @@ const lines = [
   "## Notes",
   "",
   "- The audit no longer requires Build Step or Quality Check for every lesson.",
+  "- Section names are advisory only; this is a formatting audit. Whether each teaching move is present is enforced by check:instructional-depth.",
+  "- Real formatting failures still block: missing headings/lists, walls of text, weak/better comparisons without a table, and process lessons without numbered steps.",
   "- Lesson checks are based on lessonType frontmatter when present, with inference as a fallback.",
   "- Author profiles, README files, and course support folders use lighter support-file rules.",
   "- Use findings as review prompts, not permission to add fake sections.",
