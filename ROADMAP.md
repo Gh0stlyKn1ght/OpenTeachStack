@@ -10,7 +10,11 @@
 
 See **v2.1 — OTS-101 Content Integrity Remediation** for the current priority work.
 
-### Prior aspirational status (kept for history, contradicted by status.json)
+### Prior aspirational status (historical only, contradicted by status.json)
+
+The section below is retained as project history. It is not current planning
+truth, release evidence, or permission to mark any non-OTS-101 course live.
+Current course readiness must come from `content/courses/{course}/status.json`.
 
 All nine pathway courses are authored, reader-migrated, and passing lint/build/route checks.
 Roadmap currently has no blocked required items in v0.6, v1.1, v1.2, v1.3, v1.4, v1.5, or v2.0.

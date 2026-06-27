@@ -11,6 +11,7 @@ const checks = [
   { label: "npm run lint", cmd: "npm run lint" },
   { label: "npm run build", cmd: "npm run build" },
   { label: "npm run check:script-workflow", cmd: "npm run check:script-workflow" },
+  { label: "npm run check:root-doc-truth", cmd: "npm run check:root-doc-truth" },
   { label: "npm run check:routes", cmd: "npm run check:routes" },
   { label: "npm run check:content-layout", cmd: "npm run check:content-layout" },
   {

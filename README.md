@@ -8,7 +8,7 @@
 [![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
 [![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
-[![OTS-101: 10 Chapters](https://img.shields.io/badge/OTS--101-10%20Chapters-0969DA?style=flat-square)](#ots-101--teaching-teachers-foundations)
+[![OTS-101: Draft Rebuild](https://img.shields.io/badge/OTS--101-Draft%20Rebuild-0969DA?style=flat-square)](#ots-101--ai-course-content-foundations-for-teachers)
 
 **A field guide for educators entering the tech world.**
 
@@ -16,9 +16,10 @@ OpenTeachStack is an open-source pathway for educators building curriculum
 systems with AI, open resources, Google Workspace, and practical classroom
 workflows.
 
-OpenTeachStack is not one giant course. It is a course path. The first course is:
+OpenTeachStack is not one giant course. It is a course path. The only active
+course rebuild right now is:
 
-**OTS-101 — Teaching Teachers Foundations**
+**OTS-101 — AI Course Content Foundations for Teachers**
 
 `OTS` stands for **Open Teacher Stack**. Keep course codes in the `OTS-###`
 format across the project.
@@ -31,37 +32,40 @@ Start with the learning need. Gather trusted sources. Let AI help draft or
 structure the work. Verify it before students see it. Teach it, save it, and
 improve it after class.
 
-## OTS-101 — Teaching Teachers Foundations
+## OTS-101 — AI Course Content Foundations for Teachers
 
-**Prompting, Standards, Resource Literacy, and Curriculum Systems for Educators**
+**Use AI to build student-facing course content teachers can verify, revise, and reuse.**
 
-OTS-101 is a 10-chapter foundations course for teachers who want practical control over curriculum design without being forced into code, domains, GitHub, or publishing workflows on day one.
+OTS-101 is a 10-chapter draft foundations course for teachers who want practical
+control over AI-assisted course content without pretending a platform export,
+outline, or generated file is the course.
 
-Current OTS-101 release shape:
+Current OTS-101 source-of-truth status:
 
-- 10 foundations chapters
-- 89 chapter section pages
-- 17 active section/source pages
-- 11 foundation artifact templates with Markdown downloads
-- 31 verified Source Bank links
-- mini-unit capstone, course audit, release packet, and sample robotics mini-unit
+- Source of truth: `content/courses/ots-101`
+- Registry and reader metadata: `src/lib/book.ts`
+- Status: draft active rebuild
+- Lesson bodies: 60 real teacher-facing lesson sections across chapters 01-10
+- Human classroom review: not complete
+- Release rule: not live until `content/courses/ots-101/status.json` says `humanReviewed: true`
 
 ## OTS-101 Scope
 
 | # | Chapter |
 |---|--------|
-| 01 | Teacher Builder Mindset |
-| 02 | Prompting for Teachers |
-| 03 | AI Literacy and Verification |
-| 04 | Standards to Learning Targets |
-| 05 | Course and Unit Architecture |
-| 06 | Resource Discovery and Open Resources |
-| 07 | Google Workspace Planning Systems |
-| 08 | Assessment, Rubrics, and Feedback |
-| 09 | Delivery Planning |
-| 10 | Mini-Unit Capstone |
+| 01 | Curriculum vs Course Content |
+| 02 | From Standards or Goals to Lessons |
+| 03 | Prompting AI Without Generic Garbage |
+| 04 | Verifying AI Before Students See It |
+| 05 | Building Real Student-Facing Lessons |
+| 06 | Assignments, Labs, Rubrics, and Feedback |
+| 07 | Organizing the Course Content System |
+| 08 | Safety, Accessibility, Copyright, and Source Quality |
+| 09 | Publishing to a Platform |
+| 10 | Capstone: Build a Mini Course Content Packet |
 
-The OTS-101 capstone is a **mini-unit system**, not a full published course site.
+The OTS-101 capstone is a **mini course content packet**, not a full published
+course site.
 
 ## Intentionally Out of Scope for OTS-101
 
@@ -80,15 +84,19 @@ These topics belong in later course path courses:
 
 | Code | Course | Level | Status |
 |---|---|---:|---|
-| OTS-101 | Teaching Teachers Foundations | Beginner | Released |
-| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Released |
-| OTS-220 | Apps Script for Teacher Automation | Intermediate | Released |
-| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Released |
-| OTS-260 | AI Media & Lesson Delivery | Intermediate | Released |
-| OTS-280 | Cyber Safety for Educators | Intermediate | Released |
-| OTS-301 | Teacher Course Sites | Advanced | Released |
-| OTS-320 | AI Coding Agents for Educators | Advanced | Released |
-| OTS-399 | Capstone Studio | Advanced | Released |
+| OTS-101 | AI Course Content Foundations for Teachers | Beginner | Draft active rebuild |
+| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Coming Soon |
+| OTS-220 | Apps Script for Teacher Automation | Intermediate | Coming Soon |
+| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Coming Soon |
+| OTS-260 | AI Media & Lesson Delivery | Intermediate | Coming Soon |
+| OTS-280 | Cyber Safety for Educators | Intermediate | Coming Soon |
+| OTS-301 | Teacher Course Sites | Advanced | Coming Soon |
+| OTS-320 | AI Coding Agents for Educators | Advanced | Coming Soon |
+| OTS-399 | Capstone Studio | Advanced | Coming Soon |
+
+Only OTS-101 currently has real lesson bodies. The rest are roadmap/course
+package placeholders until OTS-101 is reviewed and strong enough to guide the
+rest of the pathway.
 
 ## Content Safety Rules
 
@@ -147,8 +155,9 @@ Open [http://localhost:4000](http://localhost:4000) to view the site.
 
 ## Roadmap
 
-v2.0 shipped — OTS-101 through OTS-399 are authored, reader-migrated, and passing
-lint/build/route checks. The current maintenance priority is release hygiene:
+Current priority: finish and protect the OTS-101 rebuild before expanding the
+rest of the pathway. The old v2.0 full-pathway checklist is historical only and
+must not be used to claim current course readiness.
 
 - Use `npm run verify:release` for a non-mutating release gate; use `npm run verify:release:write` only when intentionally refreshing `docs/BUILD_VERIFICATION.md`
 - Preserve the canonical `/book/{course}` route contract
@@ -156,7 +165,8 @@ lint/build/route checks. The current maintenance priority is release hygiene:
 - Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers script-workflow safety, route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, instructional-depth checks, format/readability checks, release-readiness checks, prompt-library checks, OTS-101 title sync, and course-reader migration checks.
 - Add future improvements only when the real artifact or workflow exists
 
-See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.
+See [ROADMAP.md](ROADMAP.md) for the current OTS-101 priority and historical
+planning notes.
 
 ## License
 
