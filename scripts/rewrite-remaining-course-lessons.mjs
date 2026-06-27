@@ -2,6 +2,13 @@ import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
+const force = process.argv.includes("--force");
+
+if (!force) {
+  console.error("This legacy multi-course rewrite script is disabled by default.");
+  console.error("Run `node scripts/rewrite-remaining-course-lessons.mjs --force` only after reviewing the target diff plan.");
+  process.exit(1);
+}
 
 const courseProfiles = {
   "ots-220": {

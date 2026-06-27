@@ -153,7 +153,7 @@ lint/build/route checks. The current maintenance priority is release hygiene:
 - Use `npm run verify:release` for a non-mutating release gate; use `npm run verify:release:write` only when intentionally refreshing `docs/BUILD_VERIFICATION.md`
 - Preserve the canonical `/book/{course}` route contract
 - Keep README, roadmap, course metadata, and live navigation in sync
-- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, and course-reader migration checks.
+- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers script-workflow safety, route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, instructional-depth checks, format/readability checks, release-readiness checks, prompt-library checks, OTS-101 title sync, and course-reader migration checks.
 - Add future improvements only when the real artifact or workflow exists
 
 See [ROADMAP.md](ROADMAP.md) for full phases through v2.0.

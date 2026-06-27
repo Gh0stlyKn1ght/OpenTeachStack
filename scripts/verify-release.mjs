@@ -7,10 +7,17 @@ const buildVerificationPath = join(root, "docs", "BUILD_VERIFICATION.md");
 const shouldWriteReport = process.argv.includes("--write");
 
 const checks = [
+  { label: "npm run typecheck", cmd: "npm run typecheck" },
   { label: "npm run lint", cmd: "npm run lint" },
   { label: "npm run build", cmd: "npm run build" },
+  { label: "npm run check:script-workflow", cmd: "npm run check:script-workflow" },
   { label: "npm run check:routes", cmd: "npm run check:routes" },
   { label: "npm run check:content-layout", cmd: "npm run check:content-layout" },
+  {
+    label: "npm run check:course-source-truth",
+    cmd: "npm run check:course-source-truth",
+  },
+  { label: "npm run check:blog-system", cmd: "npm run check:blog-system" },
   {
     label: "npm run check:no-scaffold-fallback",
     cmd: "npm run check:no-scaffold-fallback",
@@ -22,6 +29,10 @@ const checks = [
   {
     label: "npm run check:learner-facing-content",
     cmd: "npm run check:learner-facing-content",
+  },
+  {
+    label: "npm run check:course-doc-staleness",
+    cmd: "npm run check:course-doc-staleness",
   },
   {
     label: "npm run check:course-learner-sense",
@@ -36,10 +47,20 @@ const checks = [
     cmd: "npm run check:instructional-depth",
   },
   {
+    label: "npm run check:format-readability",
+    cmd: "npm run check:format-readability",
+  },
+  {
     label: "npm run check:release-readiness",
     cmd: "npm run check:release-readiness",
   },
   { label: "npm run check:source-bank", cmd: "npm run check:source-bank" },
+  { label: "npm run check:prompt-library", cmd: "npm run check:prompt-library" },
+  { label: "npm run check:ots101-reader", cmd: "npm run check:ots101-reader" },
+  {
+    label: "npm run check:ots101-book-titles",
+    cmd: "npm run check:ots101-book-titles",
+  },
   {
     label: "npm run check:rendered-course-lessons",
     cmd: "npm run check:rendered-course-lessons",

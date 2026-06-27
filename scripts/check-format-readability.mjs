@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const reportOnly = process.argv.includes("--report-only");
+const shouldWriteReport = process.argv.includes("--write-report");
 const reportPath = path.join(root, "docs", "reports", "FORMAT_READABILITY_AUDIT.md");
 const scanRoots = [
   path.join(root, "content", "courses"),
@@ -261,7 +262,7 @@ function classify(file) {
   return "other";
 }
 
-function inferLessonType(file, frontmatter, body) {
+function inferLessonType(file, frontmatter) {
   if (frontmatter.lessonType && allowedLessonTypes.has(frontmatter.lessonType)) {
     return { lessonType: frontmatter.lessonType, inferred: false, unknown: false };
   }
@@ -327,7 +328,7 @@ function analyzeLessonStructure(body, lessonType) {
   return { problems, recommendations };
 }
 
-function analyzeBlog(body, rel) {
+function analyzeBlog(body) {
   const problems = [];
   const recommendations = [];
   const missing = requiredBlogSections.filter((section) => !headingExists(body, [section]));
@@ -426,7 +427,7 @@ function analyze(file) {
       recommendations.push("Add an explicit lessonType so the audit can judge the lesson by its teaching job.");
     }
 
-    const classification = inferLessonType(file, data, body);
+    const classification = inferLessonType(file, data);
     lessonType = classification.lessonType;
     lessonTypeInferred = classification.inferred;
     lessonTypeUnknown = classification.unknown;
@@ -436,7 +437,7 @@ function analyze(file) {
   }
 
   if (type === "blog") {
-    const blogResult = analyzeBlog(body, rel);
+    const blogResult = analyzeBlog(body);
     problems.push(...blogResult.problems);
     recommendations.push(...blogResult.recommendations);
   }
@@ -584,8 +585,10 @@ const lines = [
   "",
 ].join("\n");
 
-fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-fs.writeFileSync(reportPath, lines);
+if (shouldWriteReport) {
+  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+  fs.writeFileSync(reportPath, lines);
+}
 
 console.log(`Reviewed ${results.length} markdown files.`);
 console.log(`Passing: ${passing.length}`);
@@ -594,7 +597,11 @@ console.log(`Strict lesson failures: ${strictLessonFailures.length}`);
 console.log(`Support-file warnings: ${supportWarnings.length}`);
 console.log(`Blog formatting warnings: ${blogWarnings.length}`);
 console.log(`Unknown lessonType files: ${unknownLessonType.length}`);
-console.log(`Report written: ${relative(reportPath)}`);
+if (shouldWriteReport) {
+  console.log(`Report written: ${relative(reportPath)}`);
+} else {
+  console.log("Report was not written. Run `npm run check:format-readability:write` to refresh docs/reports/FORMAT_READABILITY_AUDIT.md.");
+}
 
 if (failing.length > 0 && !reportOnly) {
   process.exitCode = 1;

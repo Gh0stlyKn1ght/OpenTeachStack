@@ -4,6 +4,13 @@ import matter from "gray-matter";
 
 const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
+const force = process.argv.includes("--force");
+
+if (!force) {
+  console.error("This legacy course-wide writer is disabled by default.");
+  console.error("Run `node scripts/complete-course-lessons.mjs --force` only after reviewing the target diff plan.");
+  process.exit(1);
+}
 
 const courseProfiles = {
   "ots-101": {

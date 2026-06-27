@@ -3,6 +3,13 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const lessonsRoot = join(root, "content", "courses", "ots-201", "lessons");
+const force = process.argv.includes("--force");
+
+if (!force) {
+  console.error("This legacy OTS-201 rewrite script is disabled by default.");
+  console.error("Run `node scripts/rewrite-ots201-real-lessons.mjs --force` only after reviewing the target diff plan.");
+  process.exit(1);
+}
 
 const chapters = [
   {
