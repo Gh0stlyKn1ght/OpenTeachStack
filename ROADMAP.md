@@ -30,21 +30,22 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
   - `Build Step` / `Quality Check` stamps (6 files each) — rewritten lesson-specific
   - `Capstone Connection` stamp (7 files) — rewritten lesson-specific
   - `Self-Audit Checklist` stamp (9 files) — deleted (bodies already self-audit); specific evidence/next-step kept where the depth gate requires it
-  - [ ] comparison tail `The Confusion → Side-by-Side Comparison → Decision Rule → Practice`, incl. byte-identical table (3 files) — still open (carries required Decision Rule + Practice; needs rewrite)
+  - [x] comparison tail `The Confusion → Side-by-Side Comparison → Decision Rule → Practice`, incl. byte-identical table (3 files: `01-1`, `01-3`, `05-3`) — bodies already satisfy the comparison requirements; replaced each tail with a topic-specific Practice
 
 ### P0 — Rewrite stamped chapter overviews (X-0)
 
 - [x] Replace boilerplate `Chapter Purpose` / `Lessons in This Chapter` / `Exit Criteria` blocks — identical across 8 of 10 overviews — with per-chapter content
 - [x] Fix capstone overview `10-0`: its `Lessons in This Chapter` currently describes Chapter 1 ("Start by naming what the teacher is actually building…"), not the capstone
 
-### P1 — Finish the half-done reader migration (frontmatter schema split)
+### P1 — Frontmatter schema split (investigated — needs a decision, not churn)
 
-- [ ] Unify frontmatter: chapters **01–02 (12 files)** use `sectionNumber` + `duration` and no H1; chapters **03–10 (48 files)** use `order` + `minutes` + H1. Migrate 01–02 to the 03–10 schema so the reader/PDF path does not diverge by chapter (9 files currently have no H1)
+- [~] **Finding (2026-06-27): the split is cosmetic, not a functional bug.** The book route (`src/app/book/ots-101/[chapter]/[section]/page.tsx`) takes title/number/duration/type from the `src/lib/book.ts` registry and reads only `migrationStatus` from MDX frontmatter (`src/lib/content.ts`). So ch01–02 (`sectionNumber`+`duration`, no body H1) vs ch03–10 (`order`+`minutes`+body H1) does **not** make the reader diverge. Unifying *toward* schema B would add a duplicate `# H1` (page title + body H1) with no rendering benefit.
+- [ ] **Decision needed before any change:** pick one body-H1 policy and apply it in that direction — either drop the body `# H1` from ch03–10 (48 files, removes the page-title/body double-H1) or accept the current state. Do not migrate ch01–02 *into* schema B. Low priority; no functional impact.
 
 ### P1 — Source Bank & capstone wiring
 
-- [ ] Update Source Bank picoCTF entry — site has rebranded to CyLab Security Academy (`cylabacademy.org`), account cutoff May 8 2026; `verified-active` description is now stale (`src/lib/sourceBank.ts`)
-- [ ] Reconcile capstone template vs `10-0`: `templates/mini-course-content-packet.md` omits the inventory (ch1) and system map (ch7) that the overview lists as packet pieces
+- [x] Update Source Bank picoCTF entry — added CyLab Security Academy (`cylabacademy.org`) rebrand note + May 8 2026 cutoff; refreshed `reviewedAt` (`src/lib/sourceBank.ts`)
+- [x] Reconcile capstone template vs `10-0`/`10-4`: added `Source of truth and system map` and `Course content inventory` fields (blank + worked example) to `templates/mini-course-content-packet.md`
 - [ ] Decide whether lessons should link learners to the Source Bank — there are currently **zero in-lesson source links** in all 60 files; the curated 31-link bank is a site feature disconnected from the course
 
 ### Verified OK (no action)
