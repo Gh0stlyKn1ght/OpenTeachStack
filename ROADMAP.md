@@ -1,10 +1,61 @@
 # Roadmap
 
-## Current Status: v2.0 — Full Pathway Release
+## Current Status: PRIORITY — OTS-101 Content Integrity (pre-review)
+
+> **Reality check (2026-06-27): the v2.0 "all nine courses authored" claim below is not true against the repo.**
+> `status.json` and file counts show only **OTS-101** has authored lesson bodies (60 sections, `hasRealLessons: true`, `humanReviewed: false`).
+> The other 8 courses are `planned` / Coming Soon with **0 lesson `.mdx` files** (`hasRealLessons: false`) — outlines and scaffolds only. OTS-220 has draft labs but no lesson bodies.
+> Per the content-truth rules, a file count, route, or outline is not an authored course. The historical v0.5–v2.0 checklists below are kept for traceability but must not be read as "courses are done."
+> **Active priority is v2.1 — finish and clean OTS-101 before it goes to human review.**
+
+See **v2.1 — OTS-101 Content Integrity Remediation** for the current priority work.
+
+### Prior aspirational status (kept for history, contradicted by status.json)
 
 All nine pathway courses are authored, reader-migrated, and passing lint/build/route checks.
 Roadmap currently has no blocked required items in v0.6, v1.1, v1.2, v1.3, v1.4, v1.5, or v2.0.
 Full-course browser print/PDF exports are available at `/book/print/[course]` for every structured pathway course.
+
+## v2.1 — OTS-101 Content Integrity Remediation (PRIORITY)
+
+Source: OTS-101 Lesson Quality Rubric audit, 2026-06-27 (`docs/LESSON_QUALITY_RUBRIC.md` applied across all 60 lesson files).
+
+Finding in one line: **the teaching is real; the wrappers are templated.** The X-1…X-4 section bodies are strong and rubric-passing (real classroom scenarios, weak/better pairs, inspectable artifacts, embedded safety notes). No verbatim automatic-failure phrases are present (0/60). The failures are reusable scaffolding stamped around and between the good content — the rubric's "route-filling prose" failure (§38) at the structural level. Fix before the human review that `status.json` is waiting on.
+
+### P0 — Strip templated scaffolding (mechanical, ~25 files, deletion not rewrite)
+
+- [ ] Remove duplicate `… 2` headings whose bodies repeat the first verbatim — confirmed in `01-0`, `01-3`, `08-1`
+- [ ] Remove the `> OTS-101 frame:` blockquote pasted **7×** in `01-3` (worst single file in the course)
+- [ ] De-duplicate cloned section tails repeated across files with only the artifact noun swapped:
+  - `Build Step` / `Quality Check` stamps (6 files each)
+  - `Capstone Connection` stamp (7 files)
+  - `Self-Audit Checklist` stamp (9 files)
+  - comparison tail `The Confusion → Side-by-Side Comparison → Decision Rule → Practice`, incl. byte-identical table (3 files)
+
+### P0 — Rewrite stamped chapter overviews (X-0)
+
+- [ ] Replace boilerplate `Chapter Purpose` / `Lessons in This Chapter` / `Exit Criteria` blocks — identical across 8 of 10 overviews — with per-chapter content
+- [ ] Fix capstone overview `10-0`: its `Lessons in This Chapter` currently describes Chapter 1 ("Start by naming what the teacher is actually building…"), not the capstone
+
+### P1 — Finish the half-done reader migration (frontmatter schema split)
+
+- [ ] Unify frontmatter: chapters **01–02 (12 files)** use `sectionNumber` + `duration` and no H1; chapters **03–10 (48 files)** use `order` + `minutes` + H1. Migrate 01–02 to the 03–10 schema so the reader/PDF path does not diverge by chapter (9 files currently have no H1)
+
+### P1 — Source Bank & capstone wiring
+
+- [ ] Update Source Bank picoCTF entry — site has rebranded to CyLab Security Academy (`cylabacademy.org`), account cutoff May 8 2026; `verified-active` description is now stale (`src/lib/sourceBank.ts`)
+- [ ] Reconcile capstone template vs `10-0`: `templates/mini-course-content-packet.md` omits the inventory (ch1) and system map (ch7) that the overview lists as packet pieces
+- [ ] Decide whether lessons should link learners to the Source Bank — there are currently **zero in-lesson source links** in all 60 files; the curated 31-link bank is a site feature disconnected from the course
+
+### Verified OK (no action)
+
+- Source Bank live-link sample (6 fetched) returned no 404s; CS-First retired note matches reality; `cyber.org` 403 is already honestly labeled `fetch-blocked-403-not-404`; all 31 entries `reviewedAt: 2026-06-20`
+- Capstone traceability: every chapter feeds exactly one packet artifact; no orphan lessons
+- Safety-note coverage is threaded, not spotty (Chapter 08 + verification checklists + capstone publish gate)
+
+### Truth-debt (separate from OTS-101, but blocks an honest v2.0)
+
+- [ ] Reconcile roadmap completion claims with `status.json`: do not mark OTS-201/220/240/260/280/301/320/399 as authored while their `lessons/` folders contain 0 `.mdx` bodies. Either author them or restate their status as outline/Coming Soon.
 
 ## v0.2 — OTS-101 Foundations Complete
 

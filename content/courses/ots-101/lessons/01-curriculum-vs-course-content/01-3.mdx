@@ -18,8 +18,6 @@ migrationStatus: authored
 ---
 ## What happened
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
 A folder can look like a course before the course exists.
 
 This is the fake course trap.
@@ -45,8 +43,6 @@ It may still be missing the lesson students actually use.
 
 ## What looked fine
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
 The folder has familiar course objects.
 
 A description sounds official. An outline gives sequence. A quiz plan feels like assessment. A final project gives the course an ending.
@@ -60,8 +56,6 @@ But those pieces can be packaging support instead of teaching content.
 <FakeCourseTrapVisual />
 
 ## What was actually broken
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
 
 Ms. Rivera is building a robotics safety mini-unit.
 
@@ -86,8 +80,6 @@ The course is not teachable yet.
 
 ## Root cause
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
 The prompt asked for the container before the course source existed.
 
 Weak prompt:
@@ -99,8 +91,6 @@ Better prompt:
 > Help me audit whether I have a real course source before creating any platform export. Check for learning target, student-facing lesson, worked example, weak example, practice task, assessment evidence, safety verification, accessibility check, and revision note. Mark missing pieces as missing instead of inventing a fake-complete course.
 
 ## The fix
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
 
 Run a course truth check before packaging.
 
@@ -116,27 +106,15 @@ Run a course truth check before packaging.
 
 ## Rule we keep
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
 Export last.
 
 Source first.
 
-## Compare the Work 2
-
-The comparison should make the decision easier, not just rename two options.
+## What a Real Course Source Includes
 
 A real course source includes the target, lesson, examples, task, assessment evidence, verification notes, safety/accessibility review, and revision log.
 
-## Teacher Judgment 2
-
-The teacher owns the final call whenever students will rely on the output.
-
-The platform package comes after that.
-
 ## Teacher takeaway
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
 
 Before trusting any generated course folder, ask:
 
