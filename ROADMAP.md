@@ -47,7 +47,7 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 
 - [x] Update Source Bank picoCTF entry — added CyLab Security Academy (`cylabacademy.org`) rebrand note + May 8 2026 cutoff; refreshed `reviewedAt` (`src/lib/sourceBank.ts`)
 - [x] Reconcile capstone template vs `10-0`/`10-4`: added `Source of truth and system map` and `Course content inventory` fields (blank + worked example) to `templates/mini-course-content-packet.md`
-- [ ] Decide whether lessons should link learners to the Source Bank — there are currently **zero in-lesson source links** in all 60 files; the curated 31-link bank is a site feature disconnected from the course
+- [x] Decided (2026-06-27): keep lessons link-free; the Source Bank stays a standalone library feature. Lessons teach source verification as a skill rather than pointing at specific tools, which preserves the de-templated voice. No per-lesson source-link block added.
 
 ### P1 — Wide-table rendering (fixed)
 
