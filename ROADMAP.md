@@ -26,11 +26,11 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 
 - [x] Remove duplicate `… 2` headings whose bodies repeat the first verbatim — confirmed in `01-0`, `01-3`, `08-1`
 - [x] Remove the `> OTS-101 frame:` blockquote pasted **7×** in `01-3` (worst single file in the course)
-- [ ] De-duplicate cloned section tails repeated across files with only the artifact noun swapped:
-  - `Build Step` / `Quality Check` stamps (6 files each)
-  - `Capstone Connection` stamp (7 files)
-  - `Self-Audit Checklist` stamp (9 files)
-  - comparison tail `The Confusion → Side-by-Side Comparison → Decision Rule → Practice`, incl. byte-identical table (3 files)
+- [x] De-duplicate cloned section tails repeated across files with only the artifact noun swapped:
+  - `Build Step` / `Quality Check` stamps (6 files each) — rewritten lesson-specific
+  - `Capstone Connection` stamp (7 files) — rewritten lesson-specific
+  - `Self-Audit Checklist` stamp (9 files) — deleted (bodies already self-audit); specific evidence/next-step kept where the depth gate requires it
+  - [ ] comparison tail `The Confusion → Side-by-Side Comparison → Decision Rule → Practice`, incl. byte-identical table (3 files) — still open (carries required Decision Rule + Practice; needs rewrite)
 
 ### P0 — Rewrite stamped chapter overviews (X-0)
 
