@@ -1,0 +1,6 @@
+{
+  "allowUnlistedManualReview": true,
+  "approvedChannels": ["https://www.youtube.com/@TEDx"],
+  "blockedChannels": [],
+  "approvedDomains": ["youtube.com", "youtu.be"]
+}
