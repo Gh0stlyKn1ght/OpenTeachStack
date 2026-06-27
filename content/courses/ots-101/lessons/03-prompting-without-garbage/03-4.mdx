@@ -13,218 +13,124 @@ canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-4"
 ---
 # Build Artifact: Reusable Course-Content Prompt
 
-In this lesson, you will build a prompt you can reuse when asking AI to draft course content.
+## The Teacher Problem
 
-The goal is not to create one perfect mega-prompt.
+Teachers do not need one perfect mega-prompt.
 
-The goal is to create a reusable structure that keeps AI from inventing the lesson behind your back.
+They need a reusable structure that keeps AI from inventing the lesson behind their back.
 
-## What your artifact must do
+This artifact helps you ask for one bounded piece of course content at a time and keeps the review trail visible.
 
-Your reusable prompt should help you ask for one bounded piece of course content at a time.
+## The Artifact
 
-Examples include:
+Your reusable prompt should include:
 
-- student-facing directions
-- a practice activity
-- rubric criteria
-- feedback language
-- discussion questions
-- a short formative check
-- a lesson sequence outline
-- a parent or student explanation
-
-Do not use this prompt to outsource the entire course.
-
-Use it to draft one inspectable artifact that the teacher still owns.
+- source
+- context
+- task
+- format
+- example
+- non-example
+- teacher-check section
 
 <FrameworkBlock title="Reusable prompt parts" eyebrow="Artifact blueprint">
-  <ConceptCard title="Source">
-    What approved material should AI use?
-  </ConceptCard>
-  <ConceptCard title="Context">
-    What classroom details should shape the draft?
-  </ConceptCard>
-  <ConceptCard title="Task">
-    What single artifact should AI produce?
-  </ConceptCard>
-  <ConceptCard title="Format">
-    What structure makes the output easy to review?
-  </ConceptCard>
-  <ConceptCard title="Examples">
-    What model and non-model should guide the style?
-  </ConceptCard>
-  <ConceptCard title="Checks">
-    What must be flagged for teacher review?
-  </ConceptCard>
+  <ConceptCard title="Source">What approved material should AI use?</ConceptCard>
+  <ConceptCard title="Context">What classroom details should shape the draft?</ConceptCard>
+  <ConceptCard title="Task">What single artifact should AI produce?</ConceptCard>
+  <ConceptCard title="Format">What structure makes the output easy to review?</ConceptCard>
+  <ConceptCard title="Examples">What model and non-model should guide quality?</ConceptCard>
+  <ConceptCard title="Checks">What must be flagged for teacher review?</ConceptCard>
 </FrameworkBlock>
 
-## Step 1: Name the source
+## Build Step
 
-Write the source section first.
+1. Open the learning target and lesson map from Chapter 2.
+2. Copy the student-friendly target into the prompt.
+3. Add the approved source or a safe teacher-created summary.
+4. Add classroom context: time, tools, prior learning, student needs, and constraints.
+5. Ask for one artifact, not the whole lesson.
+6. Choose a format that will be easy to inspect.
+7. Add one example and one non-example.
+8. Require a teacher-check section.
 
-Use this starter:
-
-```text
-Use the following source material as the ground truth. Do not invent standards, policies, tools, facts, or student data. If something is missing, list it in the teacher-check section instead of guessing.
-```
-
-Then add the actual source.
-
-If the source is long, summarize it first or paste the most relevant section.
-
-## Step 2: Add classroom context
-
-Use this starter:
-
-```text
-Context:
-- Course or grade:
-- Time available:
-- What students already know:
-- Tools or materials students can use:
-- Accessibility or language needs:
-- Constraints or things to avoid:
-```
-
-This is where the prompt becomes yours.
-
-A course prompt without context will drift toward generic advice.
-
-## Step 3: Write the task as one job
-
-Use this starter:
-
-```text
-Task:
-Draft [one specific course artifact] that helps students [practice, show, explain, build, revise, or reflect on] [learning target].
-```
-
-Examples:
-
-```text
-Draft three student-facing practice questions that help students support a claim with evidence from the source.
-```
-
-```text
-Draft one rubric row for explaining a troubleshooting process in plain language.
-```
-
-```text
-Draft a 15-minute activity sequence that helps students classify examples and non-examples before writing their own.
-```
-
-## Step 4: Control the format
-
-Use this starter:
-
-```text
-Format:
-Return the output as [table, numbered list, student handout draft, rubric row, slide outline, teacher script]. Include only the sections listed below:
-```
-
-Then list the sections you want.
-
-A good format prevents AI from giving you a giant blob of confident prose.
-
-## Step 5: Add examples and non-examples
-
-Use this starter:
-
-```text
-Example of acceptable output:
-[Paste short model]
-
-Non-example to avoid:
-[Paste short weak model]
-
-Preserve these features from the example:
-[Name the useful traits]
-
-Avoid these habits from the non-example:
-[Name the weak traits]
-```
-
-This is especially useful if the AI keeps writing in fake course language.
-
-## Step 6: Require a teacher-check section
-
-Use this starter:
-
-```text
-Teacher-check section:
-At the end, list anything I need to verify before students see the draft. Include possible accuracy issues, missing context, accessibility concerns, privacy concerns, and any assumptions you made.
-```
-
-This section is non-negotiable.
-
-If AI produces course content without naming what needs teacher review, it is acting more finished than it should.
-
-## Finished reusable prompt
-
-Copy this structure into your own notes and customize it for your course.
+## Example Output
 
 ```text
 Use the source material below as the ground truth. Do not invent standards, policies, tools, facts, student data, or requirements. If something is missing, list it in the teacher-check section instead of guessing.
 
 Context:
-- Course or grade:
-- Time available:
-- What students already know:
-- Tools or materials students can use:
-- Accessibility or language needs:
-- Constraints or things to avoid:
+- Course or grade: Middle school robotics
+- Time available: 35 minutes
+- What students already know: They have seen the startup checklist but skip steps when excited.
+- Tools or materials students can use: Approved startup checklist, fictional scenarios, powered-off robot for practice
+- Accessibility or language needs: Directions should be short and concrete.
+- Constraints or things to avoid: Do not create new safety rules or ask students to use powered equipment without teacher supervision.
 
 Task:
-Draft [one specific course artifact] that helps students [specific learning move] connected to [learning target].
+Draft three fictional startup scenarios that help students choose the next safe action and explain which checklist step supports it.
 
 Format:
-Return the output as [format]. Include these sections only:
-- [Section 1]
-- [Section 2]
-- [Section 3]
-- Teacher-check section
+Return a table with these columns:
+- Scenario
+- Student task
+- Expected evidence
+- Teacher-check note
 
 Example of acceptable output:
-[Paste short model]
+Read Scenario A. Choose the next safe action from the checklist. Write one sentence naming the checklist step that supports your choice.
 
 Non-example to avoid:
-[Paste short weak model]
-
-Preserve these features from the example:
-[Name useful traits]
-
-Avoid these habits from the non-example:
-[Name weak traits]
-
-Source material:
-[Paste or summarize source]
+Discuss why robot safety is important and reflect on responsible behavior.
 
 Teacher-check section:
-List anything I must verify before students see the draft. Include accuracy issues, missing context, accessibility concerns, privacy concerns, and assumptions.
+List anything I must verify before students see the draft, including safety accuracy, unclear assumptions, accessibility concerns, and missing source information.
+
+Source material:
+[Teacher adds approved checklist or safe summary here.]
 ```
 
-## Save the artifact
+## Weak Version
 
-Save your reusable prompt somewhere you can find it before the next chapter.
+Weak reusable prompt:
 
-You will use it again when building student-facing lessons, assignments, rubrics, and course publishing materials.
+> Make this lesson better for students.
 
-<TakeawayStrip tone="teacher">
-  A reusable prompt is not a shortcut around teacher judgment. It is a container that makes teacher judgment easier to apply.
-</TakeawayStrip>
+That prompt gives AI too much control. It does not name the source, target, task, format, or verification rules.
 
-## Build Step
+## Better Version
 
-1. Open the current version of Reusable course-content prompt.
-2. Mark the part that is unclear, missing, or unsafe for students.
-3. Ask AI for a narrow revision of that one part, not a full replacement.
-4. Accept, revise, or reject the output in teacher language.
+Better reusable prompt:
+
+> Use the target, source, and context below. Draft only the student-facing practice task. Return it in the requested format and end with teacher-check notes.
+
+That prompt keeps the job small enough to review.
 
 ## Quality Check
 
-Before keeping the revision, confirm that Reusable course-content prompt has a visible learning target, a student-facing direction, and one review point the teacher can actually inspect.
+Before keeping the prompt, confirm:
+
+- [ ] The source is named.
+- [ ] The classroom context is concrete.
+- [ ] The task asks for one artifact.
+- [ ] The format makes review easier.
+- [ ] The example and non-example are specific.
+- [ ] The teacher-check section is required.
+- [ ] The prompt does not expose private student information.
+
+## Safety / Accessibility / Source Note
+
+Keep private data out of the source section. If you need to describe student needs, describe the learning support without naming the student.
+
+Example:
+
+> Some students benefit from chunked directions and vocabulary support.
+
+Do not paste private plans, grades, behavior notes, or identifiable student work.
+
+## Reflection
+
+What part of your prompt would stop AI from inventing something you cannot verify?
 
 ## Capstone Connection
 
-Keep this version of Reusable course-content prompt for the final mini-course packet. The capstone should show the decision trail, not just the polished ending.
+Keep this reusable prompt for the final mini-course packet. The capstone should show the decision trail, not just the polished ending.

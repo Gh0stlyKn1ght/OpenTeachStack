@@ -13,15 +13,21 @@ canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-5"
 ---
 # Checkpoint: Does the Output Sound Like Your Course?
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+## What You Are Checking
 
-A prompt is only useful if the output survives teacher review.
+A prompt is useful only if the output survives teacher review.
 
-This checkpoint helps you decide whether the AI draft belongs in your course, needs revision, or should be thrown away.
+This checkpoint helps you decide whether the AI draft belongs in your student-facing course content, needs revision, or should be discarded.
 
-Do not ask, "Is this good?"
+Do not ask only:
 
-Ask, "Can I teach from this, and can students act on it?"
+> Is this good?
+
+Ask:
+
+> Can I teach from this, can students act on it, and can I verify the claims?
+
+## Review Criteria
 
 <FrameworkBlock title="The teacher-owned review" eyebrow="Checkpoint routine">
   <ConceptCard title="Fit">
@@ -38,89 +44,65 @@ Ask, "Can I teach from this, and can students act on it?"
   </ConceptCard>
 </FrameworkBlock>
 
-## Review question 1: Does it match the target?
+## Weak Version
 
-Look back at the learning target.
+Weak AI output:
 
-If the target asks students to compare, the draft should not only ask students to define. If the target asks students to build, the draft should not only ask students to discuss. If the target asks students to justify, the draft should require evidence.
+> Students will engage in a meaningful exploration of robot safety and reflect on responsible behavior.
 
-The verb matters.
+It sounds pleasant, but students still do not know what source to use, what action to take, what evidence to submit, or what safety rule the teacher has verified.
 
-## Review question 2: Can students act on it?
+## Better Version
 
-Read the student-facing part as if you are a tired student opening the course page after lunch.
+Better AI output:
 
-Can you tell:
+> Read Scenario A. Choose the next safe action from the approved startup checklist. Write one sentence naming the checklist step that supports your choice.
 
-- where to start?
-- what material to use?
-- what action to take?
-- what to submit or show?
-- what good work looks like?
-
-If not, revise before publishing.
-
-## Review question 3: What did AI assume?
-
-Find the assumptions.
-
-AI may assume tools exist, students know vocabulary, time is available, links are safe, sources are accurate, or a school policy allows something.
-
-Those assumptions need teacher review.
-
-## Review question 4: Is the voice too generic?
-
-Generic course language often sounds like this:
-
-> Students will engage in a meaningful exploration of the topic and reflect on their learning.
-
-That sentence may sound pleasant, but it does not carry enough instructional weight.
-
-Course voice should sound closer to this:
-
-> Use the two examples from yesterday. Choose the stronger one, underline the evidence that makes it stronger, and write two sentences explaining your choice.
-
-The second version tells students what to do.
-
-## Decide the status
-
-After review, give the draft one of three statuses.
-
-## Keep
-
-The draft is accurate, specific, aligned, and ready for light teacher editing.
-
-## Revise
-
-The draft has useful pieces, but needs clearer directions, better evidence, stronger examples, accessibility changes, or voice cleanup.
-
-## Discard
-
-The draft invented too much, missed the learning target, created unsafe or inaccurate material, or would take longer to fix than to rewrite.
-
-## Final checkpoint prompt
-
-Use this after AI gives you a draft:
-
-```text
-Review this draft against the learning target, student clarity, source accuracy, accessibility, privacy, and course voice. Identify what to keep, what to revise, what to discard, and what I must verify as the teacher.
-```
-
-<TakeawayStrip tone="teacher">
-  The best sign of a good AI workflow is not that the first draft is perfect. It is that the teacher can quickly see what is usable, what is risky, and what needs revision.
-</TakeawayStrip>
+This sounds less fancy and works better. Students know the source, action, product, and success condition.
 
 ## Self-Audit Checklist
 
-- I can name the classroom problem this lesson is trying to solve.
-- I can point to the part of Reusable course-content prompt that changed.
-- I removed any private student data before using AI.
-- I know what the teacher, not AI, must approve before students see it.
+- [ ] The draft matches the learning target.
+- [ ] Students can tell what to do first.
+- [ ] Students know what source, example, or tool to use.
+- [ ] Students know what to submit, show, or explain.
+- [ ] The teacher can verify facts, sources, policy, safety, and accessibility.
+- [ ] The draft sounds like this course, not a generic lesson shell.
+
+## Decision Table
+
+| Status | Use when | Next action |
+| --- | --- | --- |
+| Ready | The draft is accurate, specific, aligned, and needs only light teacher editing. | Save it with a review note. |
+| Revise | Useful pieces exist, but clarity, evidence, accessibility, or voice needs work. | Prompt for a narrow revision or rewrite the weak part yourself. |
+| Blocked | The draft invents facts, ignores the target, creates risk, or takes longer to fix than rewrite. | Discard it and return to the source and target. |
 
 ## Evidence to Save
 
-Save the revised Reusable course-content prompt with a short note explaining the decision you made, the AI output you accepted or rejected, and the next review date.
+Save:
+
+- the reusable prompt
+- the AI output
+- one accepted / revised / rejected decision
+- the teacher-check note
+- the next review date or trigger
 
 ## Next Step
 
-Use the evidence from this checkpoint to tighten the next lesson artifact instead of starting from a blank prompt.
+Use this review prompt after AI gives you a draft:
+
+```text
+Review this draft against the learning target, student clarity, source accuracy, accessibility, privacy, safety, and course voice. Identify what to keep, what to revise, what to discard, and what I must verify as the teacher.
+```
+
+## Safety / Accessibility / Source Note
+
+If the AI output includes links, safety claims, tool steps, citations, standards alignment, grading rules, or student accommodations, verify those before students see the draft.
+
+## Reflection
+
+Which status did your latest AI output earn: ready, revise, or blocked? What evidence supports that decision?
+
+## Capstone Connection
+
+Add the decision note to your mini-course packet. A strong packet shows how AI was reviewed, not just what AI produced.

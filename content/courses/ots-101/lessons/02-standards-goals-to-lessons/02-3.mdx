@@ -16,11 +16,9 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-## When to use this workflow
+## The Teacher Problem
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-Use this workflow when your starting point is not a formal standard.
+Not every lesson starts from a clean standard.
 
 Sometimes the starting point is messier:
 
@@ -30,99 +28,117 @@ Sometimes the starting point is messier:
 - the rubric does not match the assignment
 - students can do the task live but cannot explain it
 
-Those are real teaching signals.
+Those are real teaching signals. They still need to become a sequence.
 
-They still need to become a sequence.
+## The Idea
 
-## Key Idea
+A messy classroom problem can become a teachable sequence when the teacher names:
 
-A messy classroom problem can become a teachable sequence when the teacher names the target, the practice, and the evidence before asking AI to draft anything.
+1. the problem students are having
+2. the target the problem points toward
+3. the practice students need before assessment
+4. the evidence that will prove progress
+5. the part AI may draft
+6. the part the teacher must verify
 
-## Workflow steps
+The point is to prepare student-facing course content that AI can help draft later, not to turn a frustration into a polished but unfocused lesson.
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-<FrameworkBlock label="Workflow" title="Messy Idea to Teachable Sequence" intro="Turn a classroom frustration into a lesson path." tone="purple">
-  <ConceptCard number="01" title="Messy idea">Students keep rushing robot startup.</ConceptCard>
-  <ConceptCard number="02" title="Classroom problem">The startup routine is not visible enough before practice.</ConceptCard>
-  <ConceptCard number="03" title="Learning target">Students choose the next safe action in a scenario.</ConceptCard>
-  <ConceptCard number="04" title="Practice">Scenario first, powered-off routine second.</ConceptCard>
-  <ConceptCard number="05" title="Evidence">Checklist choice plus short explanation.</ConceptCard>
-  <ConceptCard number="06" title="AI support">AI drafts fictional scenarios; teacher verifies safety.</ConceptCard>
-</FrameworkBlock>
-
-## Example run
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+## Classroom Scenario
 
 Messy idea:
 
 > Students keep rushing robot startup.
 
-Teachable sequence:
+Better diagnosis:
 
-1. Students identify why startup order matters.
-2. Students label the next safe action in a fictional scenario.
-3. Students practice the routine with powered-off equipment.
-4. Students explain which checklist step prevents accidental movement.
+> Students are treating the checklist as a poster, not as a decision tool.
 
-## What can go wrong
+Teachable target:
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+> Students can choose the next safe startup action in a scenario and explain the checklist step that supports it.
+
+Now the lesson can focus on scenario decisions instead of a general safety talk.
+
+## Weak Version
 
 Weak sequence:
 
-> Talk about safety, show a video, give a quiz.
+1. Talk about safety.
+2. Show a video.
+3. Give a quiz.
 
-This may fill time, but it does not create a clear path from confusion to evidence.
+This may fill the period, but it does not create a clear path from the classroom problem to evidence.
 
-The student may remember safety words without being able to choose a safe action.
+## Better Version
 
-## Review gate
+Better sequence:
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+1. Show one fictional startup scenario.
+2. Ask students to choose the next safe action.
+3. Have students cite the checklist step that supports the choice.
+4. Practice the routine with powered-off equipment.
+5. Collect one written explanation before live equipment use.
 
-A teachable sequence should answer:
-
-- What problem started this lesson?
-- What target did the problem become?
-- What practice comes before assessment?
-- What evidence proves the target?
-- What can AI draft safely?
-- What must the teacher verify?
-
-## Next action
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-Write one messy teaching idea.
-
-Then transform it:
-
-```txt
-Messy idea:
-Classroom problem:
-Learning target:
-Practice activity:
-Evidence:
-AI draft task:
-Teacher verification:
-```
-
-Ask AI to draft only the practice activity or scenario, not the whole lesson.
-
-## Problem
-
-Turn a Messy Idea Into a Teachable Sequence matters because AI can make weak course work look complete. The teacher still has to decide what students should learn, what evidence counts, and what belongs in front of the class.
+The sequence now matches the problem.
 
 ## Common Misunderstanding
 
-The common mistake is thinking a polished AI draft means the curriculum decision is finished. A draft can be useful and still be unready for students.
+The classroom problem is not automatically the lesson target.
 
-## Concrete Example
+"Students rush startup" is a signal. The teachable target is the smaller skill inside the signal: choosing the next safe action and explaining why.
 
-Instead of asking AI to "make a lesson," the teacher names the learning target, the student task, and the evidence to check. AI can then help draft language inside those boundaries.
+## Build Step
+
+Turn one messy classroom signal into a teachable sequence.
+
+```txt
+Messy idea:
+What students are actually struggling with:
+Student-friendly target:
+Practice before assessment:
+Evidence students produce:
+AI may draft:
+Teacher must verify:
+```
+
+Example:
+
+| Field | Filled example |
+| --- | --- |
+| Messy idea | Students rush startup. |
+| Struggle | They skip decision points in the checklist. |
+| Target | Choose next safe action and cite the checklist. |
+| Practice | Two fictional scenarios, then powered-off rehearsal. |
+| Evidence | Scenario choices plus short explanation. |
+| AI may draft | Fictional scenarios. |
+| Teacher must verify | Checklist accuracy and equipment safety. |
 
 ## Quick Check
 
-Can you point to the teacher decision inside Learning target and lesson map? If not, the next move is not more prompting. The next move is naming the decision.
+Trace the sequence in one sentence:
+
+> Because students are struggling with `___`, they will practice `___`, and I will collect `___` as evidence.
+
+If the three blanks do not line up, the lesson is not ready for AI drafting yet.
+
+## Quality Check
+
+Your sequence is ready for AI support when:
+
+- the target names a visible student action
+- practice comes before assessment
+- evidence matches the target
+- AI is asked for one bounded draft
+- the teacher verification step is named
+
+## Safety / Accessibility / Source Note
+
+For physical safety, lab, tool, account, privacy, or policy-related lessons, use fictional scenarios unless approved local material is safe to share. AI can draft practice cases, but the teacher checks the actual rule.
+
+## Reflection
+
+What classroom frustration are you tempted to solve with a generic lesson? What is the smaller target hiding inside it?
+
+## Capstone Connection
+
+Add one messy-idea-to-sequence row to the learning target and lesson map. This row will help the final packet show why the lesson exists.

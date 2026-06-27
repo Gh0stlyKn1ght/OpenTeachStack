@@ -13,13 +13,17 @@ canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-2"
 ---
 # The Source-Context-Task-Format-Check Prompt Pattern
 
-A strong classroom prompt does not need to be fancy.
+## Why This Framework Exists
 
-It needs to be complete enough that the AI knows what role it is playing and limited enough that the teacher can inspect the result.
+A strong classroom prompt does not need to sound technical.
+
+It needs to give AI enough information to draft one usable piece and enough limits that the teacher can inspect the result.
 
 Use this pattern:
 
 **Source. Context. Task. Format. Check.**
+
+## The Framework
 
 <FrameworkBlock title="Source to check" eyebrow="Prompt pattern">
   <ConceptCard title="1. Source">
@@ -39,127 +43,89 @@ Use this pattern:
   </ConceptCard>
 </FrameworkBlock>
 
-## 1. Source
-
-The source tells AI what to anchor to.
-
-This could be:
-
-- a learning target
-- a standard
-- teacher notes
-- a reading passage
-- a rubric
-- a prior lesson
-- a district policy
-- a sample student-facing task
-
-Without a source, AI tends to invent the center of the lesson.
-
-A source line can be simple:
-
-> Use only the learning target and notes below as your source. Do not invent standards, tools, or facts.
-
-## 2. Context
-
-Context tells AI what kind of classroom this is for.
-
-Useful context includes:
-
-- grade band or course level
-- time available
-- student readiness
-- tools students can access
-- accommodations or accessibility needs
-- what students already learned
-- what the teacher wants to avoid
-
-A context line can sound like this:
-
-> This is for a 7th grade class with 35 minutes. Students have already discussed examples, but they need help turning examples into evidence-based claims.
-
-## 3. Task
-
-The task tells AI exactly what to produce.
-
-Do not ask for everything at once if you only need one piece.
-
-Weak task:
-
-> Make a lesson.
-
-Better task:
-
-> Draft three student-facing practice prompts that help students support a claim with evidence from the source text.
-
-The better task is narrower, which makes the output easier to inspect.
-
-## 4. Format
-
-Format tells AI how to return the work.
-
-A format can be a table, a list, a script, a rubric row, a slide outline, or a student handout draft.
-
-For course content, format is not decoration. It is part of usability.
-
-A format line can sound like this:
-
-> Return the draft as a two-column table: Student-facing directions and Teacher review notes.
-
-## 5. Check
-
-The check tells AI what to flag instead of pretending everything is ready.
-
-Ask AI to identify:
-
-- assumptions it made
-- missing source information
-- claims that need verification
-- privacy or accessibility concerns
-- places where teacher judgment is required
-
-A check line can sound like this:
-
-> End with a short teacher-check section listing anything I must verify before students see this.
-
-## Put it together
-
-Here is the skeleton:
-
-```text
-Use the source below as the ground truth.
-
-Context:
-[Who this is for, timing, tools, prior learning, constraints]
-
-Task:
-[The one artifact you want drafted]
-
-Format:
-[The structure you want back]
-
-Check:
-[What the AI must flag for teacher review]
-
-Source:
-[Paste or summarize the teacher-approved source material]
-```
-
-<TakeawayStrip tone="teacher">
-  This pattern does not make AI perfect. It makes the draft inspectable, which is the point.
-</TakeawayStrip>
-
-## Why This Framework Exists
-
-This framework keeps the source-context-task-format-check prompt pattern from becoming a pile of disconnected AI outputs. It gives the teacher a small set of parts to inspect before the material reaches students.
-
 ## Parts of the Model
 
-- The teaching decision names what students should learn or do.
-- The AI support drafts, organizes, or revises a bounded piece.
-- The teacher verification checks accuracy, safety, accessibility, and classroom fit.
-- The saved artifact preserves what changed for future reuse.
+| Part | Teacher question | Example line |
+| --- | --- | --- |
+| Source | What should AI use? | Use only the learning target and startup checklist below. |
+| Context | Who is this for? | This is for a 35-minute middle school robotics class. |
+| Task | What one thing should AI draft? | Draft three fictional startup scenarios. |
+| Format | How should I receive it? | Return a table with scenario, student task, and teacher check. |
+| Check | What must be verified? | End with assumptions and safety items I must review. |
+
+## Classroom Scenario
+
+The teacher has this Chapter 2 target:
+
+> Students can choose the next safe startup step using the approved checklist.
+
+Before AI drafts student-facing course content, the teacher uses the prompt pattern to keep the source, context, task, format, and check visible.
+
+A useful prompt does not ask for a whole lesson. It asks for the piece the teacher needs next.
+
+```text
+Source:
+Use the approved startup checklist below. Do not invent safety rules.
+
+Context:
+Middle school robotics, 35 minutes. Students have seen the checklist but skip steps when excited.
+
+Task:
+Draft three fictional startup scenarios where students choose the next safe action.
+
+Format:
+Return a table with scenario, correct next action, student explanation prompt, and teacher-check note.
+
+Check:
+List any assumptions or safety details I must verify before using the scenarios.
+```
+
+## Weak Version
+
+Weak prompt:
+
+> Make a startup safety lesson.
+
+That asks AI to decide source, context, task, format, and check.
+
+## Better Version
+
+Better prompt:
+
+> Use the approved startup checklist below. Draft three fictional scenarios where students choose the next safe action and cite the checklist. Return a table. Do not invent rules. End with teacher-check notes.
+
+That gives AI a narrow job and keeps the teacher in charge.
 
 ## How to Use It
 
-Use the model on Reusable course-content prompt by labeling each part before revising. If a part cannot be labeled, slow down and clarify the teaching decision first.
+1. Start with the learning target and lesson map from Chapter 2.
+2. Fill in each part of the prompt pattern.
+3. Remove anything AI should not decide.
+4. Ask for one artifact, not the whole course.
+5. Review the teacher-check section before keeping the output.
+
+## Failure Mode
+
+| Missing part | What usually happens |
+| --- | --- |
+| Source | AI invents the center. |
+| Context | AI writes for imaginary students. |
+| Task | AI overproduces. |
+| Format | Review takes longer. |
+| Check | The draft sounds more certain than it should. |
+
+## Quality Check
+
+Your prompt is ready when you can point to each part and explain why it belongs there.
+
+## Safety / Accessibility / Source Note
+
+The source section is a boundary. Do not put private student data, confidential policy, or protected material there unless your school has approved that use.
+
+## Reflection
+
+Which part of the pattern do you usually leave unstated?
+
+## Capstone Connection
+
+Save one completed Source-Context-Task-Format-Check prompt in your mini-course packet. It documents how AI was bounded before drafting.

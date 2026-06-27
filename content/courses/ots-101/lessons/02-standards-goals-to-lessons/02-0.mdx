@@ -16,100 +16,115 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-## What this chapter is really about
+## Chapter Purpose
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+Teachers often start with standards, district language, old unit goals, or a classroom problem that needs attention.
 
-AI can draft a lesson before the teacher knows what the lesson is supposed to prove.
+AI can turn any of that into a lesson-looking page in seconds.
 
-That is the problem.
+That is useful only after the teacher has named what students should actually do, what practice they need, and what evidence will prove the learning happened.
 
-A standard, district goal, or rough teaching idea is not a lesson yet. It becomes a lesson when the teacher can name the student target, the practice path, and the evidence students will produce.
+Chapter 2 is about slowing down at that exact point. Before AI drafts the student-facing lesson, the teacher builds a small map that connects source goal, student target, practice, evidence, AI support, and teacher verification.
 
-## The sequence we use
+## The Teacher Problem
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+The pressure is real. A teacher needs something for tomorrow, the standard is broad, and AI is ready to produce slides, a quiz, a handout, and an exit ticket.
 
-Do not start with the tool.
+The problem is that a full set of materials can hide a missing instructional decision.
 
-Start with the target.
+If the teacher cannot say what students should be able to do by the end of the lesson, the AI draft may only decorate the confusion.
+
+## The Idea
+
+A standard or rough goal becomes useful course content when it is translated into three classroom decisions:
+
+- the student-friendly target
+- the practice students need before assessment
+- the evidence the teacher will inspect
+
+Everything else comes after that.
 
 <FrameworkBlock label="Chapter Map" title="From Goal to Lesson" intro="Chapter 2 turns adult-facing goals into student-facing work." tone="green">
-  <ConceptCard number="01" title="Source goal" tone="green">A standard, district outcome, course goal, or classroom need.</ConceptCard>
-  <ConceptCard number="02" title="Student target" tone="blue">A plain-language statement students can understand.</ConceptCard>
-  <ConceptCard number="03" title="Practice path" tone="amber">The sequence students follow before assessment.</ConceptCard>
-  <ConceptCard number="04" title="Evidence" tone="purple">The work students produce so the teacher can check learning.</ConceptCard>
+  <ConceptCard number="01" title="Source goal" tone="green">The standard, course goal, district expectation, or classroom need.</ConceptCard>
+  <ConceptCard number="02" title="Student target" tone="blue">The plain-language action students should be able to take.</ConceptCard>
+  <ConceptCard number="03" title="Practice path" tone="amber">The rehearsal students need before the final check.</ConceptCard>
+  <ConceptCard number="04" title="Evidence" tone="purple">The product, answer, explanation, or performance the teacher can inspect.</ConceptCard>
   <ConceptCard number="05" title="AI support" tone="orange">One narrow draft task AI can help with.</ConceptCard>
-  <ConceptCard number="06" title="Teacher verification" tone="pink">Accuracy, fit, safety, source, and classroom judgment.</ConceptCard>
-  <TakeawayStrip>A target gives AI a job and gives the teacher a way to judge the draft.</TakeawayStrip>
+  <ConceptCard number="06" title="Teacher verification" tone="pink">The check the teacher owns before students see the material.</ConceptCard>
+  <TakeawayStrip>A target gives AI a job and gives the teacher a way to reject the wrong draft.</TakeawayStrip>
 </FrameworkBlock>
 
-## A real classroom version
+## Classroom Scenario
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+A robotics teacher starts with a rough need:
 
-The robotics teacher starts with a broad need:
+> Students keep rushing robot startup.
 
-> Students need to stop rushing robot startup.
+That is a real classroom problem, but it is not yet a lesson.
 
-That is real, but it is not yet a lesson.
-
-A stronger target is:
+The teacher turns it into a target:
 
 > Students can choose the next safe action in a robot startup scenario and explain which checklist step supports that choice.
 
-Now the teacher can build a lesson around scenario practice, not a generic safety lecture.
+Now the lesson has a shape. Students need scenario practice, a visible checklist, and an explanation the teacher can inspect.
 
-## What this chapter produces
+## Weak Version
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+Weak lesson direction:
 
-By the end of the chapter, you will have a learning target and lesson map.
+> Teach robot startup safety.
 
-The map connects:
+That may produce slides, reminders, or a quiz, but it does not say what students will do with the safety idea.
 
-| Piece | What it answers |
-| --- | --- |
-| Source goal | Where did the learning need come from? |
-| Student target | What should students be able to do? |
-| Practice | How will students rehearse the skill? |
-| Evidence | What will students produce? |
-| AI support | What can AI draft safely? |
-| Teacher verification | What must the teacher check? |
+## Better Version
 
-## What to watch for
+Better lesson direction:
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+> Students use the approved startup checklist to choose the next safe action in two fictional scenarios and explain the checklist step that supports each choice.
 
-The trap is asking AI for the final lesson too early.
-
-If the target is vague, the AI output will probably be vague too.
-
-A better move is to ask AI for options only after the teacher names the target and evidence.
-
-## Where this goes next
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-Chapter 3 will teach prompting patterns.
-
-Chapter 2 gives those prompts something solid to aim at.
-
-## Chapter Purpose
-
-This chapter gives teachers one usable way to handle standards goals to lessons without asking AI to invent the whole course. The point is to name the teaching decision first, then use AI only where it can support that decision.
-
-## Lessons in This Chapter
-
-- Start by naming what the teacher is actually building.
-- Separate the learning plan from the student-facing material.
-- Use AI for draft support, examples, and cleanup only after the teacher has named the target.
-- Save one visible artifact so the chapter ends with evidence, not just reading.
-
-## Exit Criteria
-
-By the end of this chapter, the teacher should be able to point to Learning target and lesson map and explain what changed because of the chapter, what still needs review, and what is safe to reuse with students.
+That version gives the teacher a target, a practice path, and evidence.
 
 ## What You Will Build
 
-You will build or revise Learning target and lesson map so the chapter ends with a visible classroom artifact, not just a set of notes.
+You will build a learning target and lesson map with these fields:
+
+| Map field | What it prevents |
+| --- | --- |
+| Source goal | AI inventing the lesson purpose |
+| Student-friendly target | vague student directions |
+| Practice path | disconnected activities |
+| Evidence | busy work with no proof |
+| AI support | over-broad prompting |
+| Teacher verification | unsafe or unreviewed publishing |
+| Revision trigger | calling the first draft final |
+
+## Lessons in This Chapter
+
+1. Start with the learning target, not the tool.
+2. Translate standards or goals into student-friendly outcomes.
+3. Turn messy classroom problems into teachable sequences.
+4. Build the learning target and lesson map.
+5. Check whether a student can understand what they are doing.
+
+## Exit Criteria
+
+Before moving to Chapter 3, you should have:
+
+- one completed learning target and lesson map
+- one student-friendly target that names visible action
+- one practice path that matches the target
+- one evidence statement the teacher can inspect
+- one narrow AI support task
+- one teacher verification note
+
+## Safety / Accessibility / Source Note
+
+If the source goal comes from a required standard, district document, safety rule, or policy, do not ask AI to invent or reinterpret it. Provide only material you are allowed to use, then verify the target against the source before students see it.
+
+## Reflection
+
+Where are you most tempted to let AI skip the decision: target, practice, evidence, or verification?
+
+## Capstone Connection
+
+This map becomes one of the first pieces in the final mini-course packet. It proves the student-facing lesson came from a teacher-owned instructional decision, not from a blank prompt.

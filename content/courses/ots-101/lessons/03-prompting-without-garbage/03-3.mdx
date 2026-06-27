@@ -13,82 +13,83 @@ canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-3"
 ---
 # Giving AI Examples and Non-Examples
 
-AI responds better when it can see the difference between what you want and what you do not want.
+## The Confusion
 
-That is familiar teaching work.
+Teachers often give AI directions but no model.
 
-Teachers use examples and non-examples all the time. We show students a strong answer, a weak answer, and the reason one works better. The same move can improve AI drafting.
+Then the output comes back polished, vague, and hard to fix.
 
-## Why examples matter
+That is familiar teaching work. Students also need examples and non-examples. AI does better when it can see the difference between output you would revise and output you do not want in the course.
+
+## The Idea
 
 A prompt pattern gives AI structure.
 
-Examples give AI taste.
+Examples give AI a standard.
 
-They show the level of specificity, voice, length, format, and classroom realism you expect.
+Non-examples mark the edge of what you want to avoid.
 
-A reusable course prompt should include at least one example of acceptable output and one non-example of output you want the AI to avoid.
+When you are building student-facing course content, the contrast matters because AI will often imitate the surface of a sample before it understands the teaching purpose.
 
 <FrameworkBlock title="Example vs non-example" eyebrow="Prompt calibration">
   <ConceptCard title="Example">
-    A short model of the kind of output you would actually revise and use.
+    A short model of output you would actually revise and use.
   </ConceptCard>
   <ConceptCard title="Non-example">
-    A short model of the generic, vague, inflated, or unsafe output you do not want.
+    A short model of generic, vague, inflated, unsafe, or unreviewable output.
   </ConceptCard>
   <ConceptCard title="Reason">
-    A plain explanation of why the example works and why the non-example fails.
+    A plain explanation of why one works and the other fails.
   </ConceptCard>
 </FrameworkBlock>
 
-## Example: useful student-facing direction
+## Side-by-Side Comparison
 
-Useful output sounds like something a student can act on.
+| Prompt ingredient | Weak version | Better version |
+| --- | --- | --- |
+| Student direction | Explore online safety and reflect on your choices. | Read Scenario A. Circle the unsafe choice, then write one safer next step. |
+| Evidence | Be ready to discuss. | Submit one sentence naming the risk and one sentence naming the safer action. |
+| Teacher check | Make it grade appropriate. | Flag any safety claim, policy assumption, or student privacy issue I must verify. |
+| Course voice | engaging, thoughtful, meaningful | direct, concrete, student-action focused |
 
-> Read the two short source excerpts. Choose one claim about school technology use. Underline one sentence from each excerpt that supports or challenges the claim. Then write three sentences explaining how the evidence changes your thinking.
+## Weak Version
 
-This works because students can see the materials, the action, the product, and the thinking move.
+Non-example to avoid:
 
-## Non-example: generic student-facing direction
+> Students will engage in a meaningful exploration of online safety and reflect on how responsible choices shape their digital lives.
 
-Generic output often sounds polished but slippery.
+Why it fails:
 
-> Explore the topic of technology use and reflect on how it impacts your life. Discuss your thoughts with a partner and be ready to share.
+- no source
+- no action
+- no product
+- no success criteria
+- no teacher verification
 
-This is not useless in every situation, but it is too vague for course content that needs to be reused. It does not name the source, the evidence, the product, or the success criteria.
+## Better Version
 
-## Add the reason, not just the sample
+Example to preserve:
 
-Do not only paste examples into your prompt. Explain what the AI should learn from them.
+> Read the two fictional messages. Circle the message that asks for private information. Underline the clue that helped you decide. Then write one safer response the student could send.
 
-For example:
+Why it works:
 
-```text
-Use the example style because it gives students a clear source, action, product, and evidence requirement.
-Avoid the non-example style because it uses broad verbs without naming what students should produce.
-```
+- students know what to use
+- students know what to do
+- the teacher can inspect evidence
+- the scenario avoids real student disclosure
 
-That explanation helps the AI transfer the pattern to new topics.
+## Decision Rule
 
-## Keep examples short
+Use examples when AI keeps drifting toward generic tone.
 
-You do not need a full lesson as an example.
+Use non-examples when AI keeps repeating a habit you want to stop.
 
-One strong direction, one rubric row, one discussion prompt, or one feedback comment may be enough.
+Always explain why the example works. Do not assume the model will infer the teaching standard from the sample alone.
 
-Short examples are easier to reuse and less likely to drag the AI into copying the wrong details.
+## Practice
 
-## Use course-specific examples
-
-The best examples come from your own course.
-
-If you teach history, give an example using evidence from sources. If you teach math, give an example that shows the kind of reasoning students must display. If you teach CTE, give an example tied to tools, workflow, or safety checks.
-
-The more your example reflects the actual course, the less generic the AI output becomes.
-
-## Mini prompt section
-
-Add this to your reusable prompt:
+Add this block to your reusable prompt:
 
 ```text
 Example of acceptable output:
@@ -97,38 +98,27 @@ Example of acceptable output:
 Non-example to avoid:
 [Paste a weak or generic model]
 
-Why the example works:
-[Name the features the AI should preserve]
+Preserve these features:
+[Name the useful traits]
 
-Why the non-example fails:
-[Name the habits the AI should avoid]
+Avoid these habits:
+[Name the weak traits]
 ```
 
-<TakeawayStrip tone="teacher">
-  Examples teach the AI your standard. Non-examples teach it where the cliff edge is.
-</TakeawayStrip>
+## Quality Check
 
-## The Confusion
+Your example/non-example pair is ready when the difference is visible without a long explanation.
 
-Teachers often treat the two sides of this decision as interchangeable. In practice, the wrong choice changes what students see, what teachers can verify, and what can be reused later.
+If both samples sound like they could appear on the same worksheet, sharpen the contrast.
 
-## Side-by-Side Comparison
+## Safety / Accessibility / Source Note
 
-| Choice | Use it when | Watch for |
-| --- | --- | --- |
-| Draft with AI | You already know the target and need a faster first pass. | The draft may sound finished while still missing the teaching decision. |
-| Teacher verifies | Students will rely on the material, submit work, or follow directions. | The teacher must check accuracy, privacy, accessibility, and fit. |
+Use fictional examples when modeling privacy, safety, behavior, identity, family details, health, or student writing. A strong example should not require real student exposure.
 
-## Decision Rule
+## Reflection
 
-If the output changes what a student will do, submit, believe, or be graded on, the teacher verifies it before it becomes course content.
+What is one AI habit you want your non-example to stop: vague verbs, fake reflection, invented policy, too much text, or generic tone?
 
-## Practice
+## Capstone Connection
 
-Pick one sentence from Reusable course-content prompt and label whether AI may draft it, whether the teacher must verify it, and what evidence would prove it is ready.
-
-## Practice Moves
-
-- Identify which part of the work AI may draft.
-- Identify which part the teacher must verify.
-- Save the decision so the same confusion does not return in the next artifact.
+Save one example/non-example pair with your reusable prompt. It gives another educator a visible standard for reviewing future AI output.

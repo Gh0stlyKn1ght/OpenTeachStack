@@ -13,90 +13,106 @@ canonicalRoute: "/book/ots-101/03-prompting-without-garbage/03-0"
 ---
 # Prompting AI Without Generic Garbage
 
-Most bad AI course content does not start bad because the tool is useless.
+## Chapter Purpose
 
-It starts bad because the prompt asks for a finished lesson before the teacher has supplied the conditions that make a lesson teachable.
+Most weak AI course content does not start weak because the tool is useless.
 
-A weak prompt says:
+It starts weak because the prompt asks AI to finish the lesson before the teacher has supplied the source, context, task, format, and review checks that make the output teachable.
 
-> Make me a lesson about fractions.
+Chapter 3 turns the learning target and lesson map from Chapter 2 into a reusable prompt teachers can actually inspect.
 
-A stronger prompt says:
+## The Teacher Problem
 
-> Use the attached learning target, student context, source material, required format, and review checklist to draft one student-facing activity I can inspect before using it with students.
+A one-sentence prompt is tempting:
 
-That difference matters. The first prompt invites AI to invent a school-shaped object. The second prompt gives AI a bounded job inside a teacher-owned workflow.
+> Make me a lesson about digital citizenship.
 
-This chapter is about building that second kind of prompt.
+AI will answer. It may even answer beautifully.
+
+But if the prompt does not include the source, target, classroom situation, evidence need, and teacher review rules, the output will fill in the blanks with generic school language.
+
+## The Idea
+
+A useful prompt is not long because longer is better.
+
+It is specific because the teacher has already made the instructional decision.
+
+The prompt tells AI:
+
+- what source to use
+- what classroom context matters
+- what one student-facing artifact to draft
+- what format to return
+- what examples and non-examples to follow
+- what the teacher must verify
 
 <FrameworkBlock title="The prompt is not the lesson" eyebrow="Core distinction">
   <ConceptCard title="Teacher decision">
-    Name what students need to learn, what evidence will count, and what constraints matter in your room.
+    Name what students need to learn, what evidence will count, and what constraints matter in the room.
   </ConceptCard>
   <ConceptCard title="AI draft task">
     Ask AI to produce one specific artifact: directions, examples, rubric language, question stems, or a lesson sequence.
   </ConceptCard>
   <ConceptCard title="Teacher verification">
-    Check accuracy, fit, accessibility, safety, and whether the artifact actually supports the learning target.
+    Check accuracy, fit, accessibility, privacy, safety, and whether the artifact supports the learning target.
   </ConceptCard>
 </FrameworkBlock>
 
-## What this chapter builds
+## Classroom Scenario
 
-By the end of this chapter, you will have a reusable course-content prompt that can be adapted across lessons without producing the same bland, fake-sounding output every time.
+The robotics teacher from Chapter 2 has this target:
 
-The prompt will include:
+> Students can choose the next safe startup step using the approved checklist.
 
-- source material the AI must use
-- classroom context the AI must respect
-- the exact task the AI should complete
-- the output format you want back
-- examples and non-examples
-- teacher review checks before anything reaches students
+Weak prompt:
 
-## Why this matters
+> Make a robot safety lesson.
 
-AI is very good at sounding complete.
+Better prompt:
 
-That is the danger.
+> Use the approved startup checklist below. Draft three fictional startup scenarios where students choose the next safe action and explain the checklist step that supports it. Do not invent equipment rules. Return a table with scenario, correct next action, teacher check, and one accessibility note.
 
-A draft can have a warm introduction, clean bullet points, a fake objective, a pretend assessment, and still fail the real classroom test: a teacher cannot tell what students are supposed to do, what they are practicing, or what evidence proves learning happened.
-
-This chapter gives you a way to slow AI down.
-
-## What Teachers Should Notice
-
-The chapter is trying to make one teacher decision visible before any AI draft gets treated as finished.
-
-Not by using longer prompts for the sake of longer prompts, but by giving the model the same instructional boundaries a teaching partner would need.
-
-## The chapter path
-
-1. First, we look at why generic prompts create fake lessons.
-2. Then we build the source-context-task-format-check pattern.
-3. Then we add examples and non-examples so the AI can see the difference between useful and useless output.
-4. Then you build a reusable course-content prompt.
-5. Finally, you test whether the output still sounds like your course after AI touches it.
-
-<TakeawayStrip tone="teacher">
-  The goal is not to become a prompt engineer. The goal is to become a teacher who can ask AI for bounded, inspectable help.
-</TakeawayStrip>
-
-## Chapter Purpose
-
-This chapter gives teachers one usable way to handle prompting without garbage without asking AI to invent the whole course. The point is to name the teaching decision first, then use AI only where it can support that decision.
-
-## Lessons in This Chapter
-
-- Start by naming what the teacher is actually building.
-- Separate the learning plan from the student-facing material.
-- Use AI for draft support, examples, and cleanup only after the teacher has named the target.
-- Save one visible artifact so the chapter ends with evidence, not just reading.
-
-## Exit Criteria
-
-By the end of this chapter, the teacher should be able to point to Reusable course-content prompt and explain what changed because of the chapter, what still needs review, and what is safe to reuse with students.
+The second prompt does not hand AI the course. It hands AI one draft job.
 
 ## What You Will Build
 
-You will build or revise Reusable course-content prompt so the chapter ends with a visible classroom artifact, not just a set of notes.
+You will build a reusable course-content prompt with these pieces:
+
+| Prompt piece | What it protects |
+| --- | --- |
+| Source | accuracy and alignment |
+| Context | classroom fit |
+| Task | scope control |
+| Format | reviewability |
+| Example and non-example | course voice and specificity |
+| Teacher check | safety, source, accessibility, and privacy review |
+
+## Lessons in This Chapter
+
+1. Diagnose why generic prompts create fake lessons.
+2. Build the Source-Context-Task-Format-Check pattern.
+3. Add examples and non-examples to steer quality.
+4. Build the reusable course-content prompt.
+5. Check whether the AI output sounds like your course.
+
+## Exit Criteria
+
+Before moving to Chapter 4, you should have:
+
+- one reusable prompt tied to your Chapter 2 map
+- one acceptable example
+- one non-example to avoid
+- one teacher-check section
+- one accepted / revised / rejected AI output note
+
+## Safety / Accessibility / Source Note
+
+Do not paste private student information, confidential policy, student work, or protected documents into AI just to get a better draft. Use fictional examples, approved source text, or teacher-created summaries when needed.
+
+## Reflection
+
+Where does your current AI prompt ask the model to guess: source, context, task, format, or review check?
+
+## Capstone Connection
+
+The reusable prompt becomes part of the final mini-course packet. It shows how AI was used, what boundaries were set, and what the teacher still approved.

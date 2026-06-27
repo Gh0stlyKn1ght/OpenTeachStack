@@ -16,13 +16,11 @@ sourceLessonSlug: ''
 sourceLessonTitle: ''
 migrationStatus: authored
 ---
-## The problem
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+## The Teacher Problem
 
 The tool is loud.
 
-AI makes it easy to say:
+AI makes it easy to ask for the visible thing first:
 
 - make me slides
 - make me a worksheet
@@ -30,11 +28,9 @@ AI makes it easy to say:
 - make me a lesson
 - make me a rubric
 
-Those requests can produce useful pieces, but they can also produce content that does not prove anything important.
+Those requests can produce useful drafts, but they can also produce material that does not prove the learning target.
 
-## The concept
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+## The Idea
 
 A learning target names what students should be able to do by the end of the lesson.
 
@@ -46,78 +42,77 @@ It should be clear enough that:
 - the rubric can score the right thing
 - AI can draft a narrow support piece
 
-The target decides the tool.
+The target decides the tool. The tool should not decide the target.
 
-Not the other way around.
+In OTS-101, that matters because AI-supported course content eventually becomes student-facing work. The teacher has to name the learning before asking for the artifact.
 
-## Concrete example
+## Concrete Example
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+Classroom scenario:
 
-Tool-first request:
+A robotics teacher needs a quick lesson for startup safety.
+
+The teacher could ask:
 
 > Create a quiz about robot startup safety.
 
+That request may produce ten reasonable-looking questions. It still might miss the point.
+
+If the real target is safe decision-making during startup, a quiz about vocabulary is not enough.
+
+## Common Misunderstanding
+
+The mistake is treating the requested tool as the instructional decision.
+
+Slides, worksheets, quizzes, and rubrics are containers. They are useful only when the learning target tells them what evidence to collect.
+
+## Weak Version
+
+Tool-first request:
+
+> Make me a worksheet about safe robot startup.
+
+This asks for a format before naming the learning.
+
+## Better Version
+
 Target-first request:
 
-> My learning target is: students can choose the next safe action in a robot startup scenario. Suggest one practice activity and one quick check that would prove this target without inventing safety policy.
+> My learning target is: students can choose the next safe action in a robot startup scenario and explain which checklist step supports that choice. Suggest one practice activity and one quick check that would produce evidence of that target. Do not invent safety rules.
 
-The second request gives AI a lane.
+This gives AI a lane and gives the teacher a way to reject output that drifts.
 
-It also gives the teacher a way to reject output that does not match the target.
+## Build Step
 
-## Common misunderstanding
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-A quiz is not automatically evidence.
-
-A slide deck is not automatically instruction.
-
-A worksheet is not automatically practice.
-
-The artifact only matters if it helps students produce evidence of the target.
-
-## Better mental model
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-Use this order:
-
-```txt
-target -> evidence -> practice -> artifact -> AI draft -> teacher verification
-```
-
-If you reverse the order, the tool starts driving the lesson.
-
-## Quick check
-
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
-
-Take one planned AI request and rewrite it:
+Take one planned AI request and rewrite it before you prompt.
 
 | Tool-first request | Learning target | Better AI task |
 | --- | --- | --- |
-|  |  |  |
+| Make a quiz about robot startup safety. | Students choose the next safe startup action using the approved checklist. | Draft two fictional scenarios and one student explanation prompt. |
+| Make slides about source credibility. | Students decide whether a source supports a claim. | Draft one comparison activity using the two sources I provide. |
+| Make a rubric for the project. | Students explain a design choice using evidence from constraints. | Draft one rubric row for evidence-based design explanation. |
 
-Do not ask AI for the full lesson yet.
+## Quality Check
 
-Ask it for one support piece that serves the target.
+Your revised request is ready when it answers:
 
-## Boundary note
+- What should students be able to do?
+- What evidence will show that they can do it?
+- What single piece may AI draft?
+- What must the teacher verify?
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+If you cannot answer those questions, do not ask AI for the lesson yet.
 
-When the target involves safe physical action, account access, student privacy, grading, or policy, AI may draft practice language but the teacher must verify the actual rules.
+## Safety / Accessibility / Source Note
 
-## Why it matters next
+When the target involves safe physical action, student privacy, grading, disability supports, or school policy, AI may help draft wording. It must not decide the rule.
 
-> OTS-101 frame: AI supports teacher-approved course content that becomes student-facing only after review.
+Use your approved source, and mark anything that needs human confirmation.
 
-The next lesson turns adult-facing standards or goals into student-friendly targets.
+## Reflection
 
-That work only matters if the target remains the anchor.
+Which tool do you usually ask for first when you are under pressure? What target should come before that request?
 
-## Problem
+## Capstone Connection
 
-Start With the Learning Target, Not the Tool matters because AI can make weak course work look complete. The teacher still has to decide what students should learn, what evidence counts, and what belongs in front of the class.
+Add one target-first AI task to your learning target and lesson map. This becomes the prompt seed you will use in Chapter 3.
