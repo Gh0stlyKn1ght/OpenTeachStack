@@ -24,8 +24,8 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 
 ### P0 — Strip templated scaffolding (mechanical, ~25 files, deletion not rewrite)
 
-- [ ] Remove duplicate `… 2` headings whose bodies repeat the first verbatim — confirmed in `01-0`, `01-3`, `08-1`
-- [ ] Remove the `> OTS-101 frame:` blockquote pasted **7×** in `01-3` (worst single file in the course)
+- [x] Remove duplicate `… 2` headings whose bodies repeat the first verbatim — confirmed in `01-0`, `01-3`, `08-1`
+- [x] Remove the `> OTS-101 frame:` blockquote pasted **7×** in `01-3` (worst single file in the course)
 - [ ] De-duplicate cloned section tails repeated across files with only the artifact noun swapped:
   - `Build Step` / `Quality Check` stamps (6 files each)
   - `Capstone Connection` stamp (7 files)
@@ -34,8 +34,8 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 
 ### P0 — Rewrite stamped chapter overviews (X-0)
 
-- [ ] Replace boilerplate `Chapter Purpose` / `Lessons in This Chapter` / `Exit Criteria` blocks — identical across 8 of 10 overviews — with per-chapter content
-- [ ] Fix capstone overview `10-0`: its `Lessons in This Chapter` currently describes Chapter 1 ("Start by naming what the teacher is actually building…"), not the capstone
+- [x] Replace boilerplate `Chapter Purpose` / `Lessons in This Chapter` / `Exit Criteria` blocks — identical across 8 of 10 overviews — with per-chapter content
+- [x] Fix capstone overview `10-0`: its `Lessons in This Chapter` currently describes Chapter 1 ("Start by naming what the teacher is actually building…"), not the capstone
 
 ### P1 — Finish the half-done reader migration (frontmatter schema split)
 
