@@ -13,6 +13,8 @@ Use it after building at least one lesson, assignment, rubric, verification note
 - Course or mini-unit:
 - Audience:
 - Platform:
+- Source of truth and system map:
+- Course content inventory:
 - Learning target map:
 - Student-facing lesson:
 - Assignment:
@@ -28,6 +30,8 @@ Use it after building at least one lesson, assignment, rubric, verification note
 - Course or mini-unit: Intro to Robotics Safety - Safe robot startup and shutdown
 - Audience: High school robotics students
 - Platform: Google Classroom
+- Source of truth and system map: course-content/source/robotics-safety/ holds the source; platform copies are exports
+- Course content inventory: One ready lesson, one draft quiz, one teacher-only setup note
 - Learning target map: Students can perform the approved startup/shutdown routine.
 - Student-facing lesson: Safe Robot Startup and Shutdown lesson page
 - Assignment: Startup Routine Scenario Check

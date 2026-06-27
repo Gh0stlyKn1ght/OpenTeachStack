@@ -417,12 +417,13 @@ export const sourceBankResources: SourceBankResource[] = [
     bestUse:
       "Beginner cybersecurity learning and CTF-style practice backed by Carnegie Mellon.",
     teacherSetupNote:
-      "Use for guided, ethical cyber practice after establishing safety norms and scope.",
+      "Use for guided, ethical cyber practice after establishing safety norms and scope. picoCTF has moved to the CyLab Security Academy at cylabacademy.org; send students there to log in.",
     privacyNote:
       "Keep activities authorized, defensive, and classroom-contained.",
     verificationStatus: "verified-active",
-    reviewedAt: "2026-06-20",
+    reviewedAt: "2026-06-27",
     tags: ["students", "teachers", "cybersecurity"],
+    note: "picoCTF.org now redirects to the CyLab Security Academy (cylabacademy.org). Accounts created before May 8, 2026 carry over; a future picoCTF.com is planned.",
   },
   {
     id: "cisco-networking-academy",
