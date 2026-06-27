@@ -1,0 +1,57 @@
+{
+  "title": "OpenTeachStack Video Library",
+  "description": "Curated educational videos for teachers entering technology, AI, computer science, cybersecurity, robotics, and modern instructional design.",
+  "page": "/videos",
+  "generatedAt": "2026-06-27T00:00:00.000Z",
+  "videos": [
+    {
+      "videoId": "sI6LBouiIZo",
+      "url": "https://www.youtube.com/watch?v=sI6LBouiIZo",
+      "title": "Reinventing Teaching After The Introduction Of AI | Amy Bruckman | TEDxWeber School Youth",
+      "channelTitle": "TEDx Talks",
+      "channelUrl": "https://www.youtube.com/@TEDx",
+      "thumbnail": "https://i.ytimg.com/vi/sI6LBouiIZo/hqdefault.jpg",
+      "duration": null,
+      "publishedAt": null,
+      "description": null,
+      "category": "Featured",
+      "section": "Featured",
+      "tags": ["teaching", "technology", "professional-growth", "education"],
+      "level": "beginner",
+      "notes": "First approved OpenTeachStack video.",
+      "featured": true,
+      "status": "approved",
+      "metadataSource": "fallback",
+      "lastCheckedAt": "2026-06-27T00:00:00.000Z"
+    },
+    {
+      "videoId": "yhGzXULZkEw",
+      "url": "https://youtu.be/yhGzXULZkEw?si=pQ3slkw0SATbdXGX",
+      "title": "What to teach when AI writes the code | Rainer Stropek | TEDxLinz",
+      "channelTitle": "TEDx Talks",
+      "channelUrl": "https://www.youtube.com/@TEDx",
+      "thumbnail": "https://i.ytimg.com/vi/yhGzXULZkEw/hqdefault.jpg",
+      "duration": null,
+      "publishedAt": null,
+      "description": null,
+      "category": "AI",
+      "section": "AI for Educators",
+      "tags": ["ai", "teaching", "workflow", "classroom"],
+      "level": null,
+      "notes": null,
+      "featured": false,
+      "status": "approved",
+      "metadataSource": "fallback",
+      "lastCheckedAt": "2026-06-27T00:00:00.000Z"
+    }
+  ],
+  "report": {
+    "total": 2,
+    "approved": 2,
+    "needsReview": 0,
+    "blocked": 0,
+    "unavailable": 0,
+    "duplicates": 0,
+    "missingMetadata": 0
+  }
+}
