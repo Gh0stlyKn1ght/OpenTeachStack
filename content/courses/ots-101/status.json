@@ -10,6 +10,6 @@
   "humanReviewed": false,
   "authoredChapterRange": "01-10",
   "lessonBodyPass": "complete draft authoring pass",
-  "releaseReadiness": "not release-ready until human review, visual/readability pass, and validation gates run",
-  "notes": "Active draft rebuild. Chapters 01-10 have real lesson bodies in the active OTS-101 course structure. Course still needs human review before it should be treated as live."
+  "releaseReadiness": "Validation gates and the automated visual/readability pass are complete (all content gates green; format-readability 321/321). Human classroom review is the sole remaining blocker. Not release-ready until humanReviewed is true.",
+  "notes": "Active draft rebuild. Chapters 01-10 have real lesson bodies. v2.1 content-integrity cleanup complete (de-boilerplated overviews and section tails, one h1 per page, wide artifact tables transposed, weak/better comparison tables added). Automated content gates pass. Still needs human classroom review before it should be treated as live."
 }

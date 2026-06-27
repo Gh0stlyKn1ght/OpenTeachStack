@@ -150,7 +150,7 @@ Open [http://localhost:4000](http://localhost:4000) to view the site.
 v2.0 shipped — OTS-101 through OTS-399 are authored, reader-migrated, and passing
 lint/build/route checks. The current maintenance priority is release hygiene:
 
-- Keep `docs/BUILD_VERIFICATION.md` current with `npm run verify:release`
+- Use `npm run verify:release` for a non-mutating release gate; use `npm run verify:release:write` only when intentionally refreshing `docs/BUILD_VERIFICATION.md`
 - Preserve the canonical `/book/{course}` route contract
 - Keep README, roadmap, course metadata, and live navigation in sync
 - Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, release-readiness checks, prompt-library checks, and course-reader migration checks.
