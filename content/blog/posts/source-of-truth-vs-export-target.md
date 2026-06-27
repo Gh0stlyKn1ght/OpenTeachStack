@@ -15,18 +15,17 @@ sourceSession: "OTS-101 source-of-truth architecture cleanup"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 The project had two kinds of course folders that looked important.
 
-One lived where the course actually belongs:
+- One lived where the course actually belongs:
 
 ```txt
 content/courses/{course}/
 ```
 
-The other lived near export and upload support:
+- The other lived near export and upload support:
 
 ```txt
 teachable/{course}/
@@ -36,6 +35,10 @@ That was enough to confuse the whole system.
 
 If both folders look like course homes, an AI agent can start treating either one as the truth. Then it starts making decisions from the wrong place.
 
+## What Broke
+
+The breakage was useful because it exposed the system underneath the content.
+
 That is how export packaging quietly becomes curriculum architecture.
 
 ## Why it bothered me
@@ -44,12 +47,24 @@ Because teachers deal with this all the time.
 
 A platform starts to feel like the course because it is where students click.
 
+## What Fixed It
+
+The repair had to change the source of truth, not just the visible page.
+
 Canvas feels like the course.
 Google Classroom feels like the course.
 Teachable feels like the course.
 A website feels like the course.
 
+## What We Carry Forward
+
+The next build gets easier when the mistake becomes a rule we can reuse.
+
 But those are containers.
+
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
 
 They matter, but they are not the source of instructional truth.
 
@@ -60,6 +75,10 @@ They matter, but they are not the source of instructional truth.
 The repo architecture was acting like a prompt.
 
 When the folder structure says, “Here are several places that might be the course,” the agent guesses.
+
+## What Broke 2
+
+The breakage was useful because it exposed the system underneath the content.
 
 And when the agent guesses, it may do the wrong kind of work:
 
@@ -80,6 +99,10 @@ The mistake was giving the system too many places to believe.
 A course needs one source of truth.
 
 Everything else should point downstream.
+
+## What Fixed It 2
+
+The repair had to change the source of truth, not just the visible page.
 
 For OpenTeachStack, the rule is:
 
@@ -151,6 +174,10 @@ The exact names do not matter as much as the boundary.
 
 Source first.
 
+## What We Carry Forward 2
+
+The next build gets easier when the mistake becomes a rule we can reuse.
+
 Export second.
 
 ## Final thought
@@ -159,6 +186,18 @@ A platform can deliver a course, but it should not define the course.
 
 If you let the container become the source of truth, every future revision gets harder.
 
+## What Broke 3
+
+The breakage was useful because it exposed the system underneath the content.
+
 OpenTeachStack needs the opposite:
 
 > One real course source, many possible exports.
+
+## The Mistake
+
+The export target is where content travels. The source of truth is where content is maintained. Confusing those two is how old drafts keep coming back from the dead.
+
+## What We Changed
+
+OpenTeachStack needs one maintained content home, then controlled exports out to whatever platform needs the material next.

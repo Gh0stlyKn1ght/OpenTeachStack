@@ -81,6 +81,10 @@ If we tell teachers to avoid fake completeness, then our own routes cannot prete
 
 If we tell teachers that formatting is instruction, then the blog and lessons cannot be walls of text.
 
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
+
 That last one matters more than it sounds.
 
 A teacher-facing page should show the reader:
@@ -182,8 +186,16 @@ Not just routed.
 
 Teachable.
 
+## What We Changed
+
+The fix matters because it changes the system, not just the sentence.
+
 That is the bar these notes are here to protect.
 
+## What This Blog Is For
 
+These notes are the shop floor. They document what broke, what we misunderstood, and what we changed while building OpenTeachStack in public.
 
+## What It Is Not
 
+This is not a polished marketing channel pretending the process was clean. The useful part is the repair work.

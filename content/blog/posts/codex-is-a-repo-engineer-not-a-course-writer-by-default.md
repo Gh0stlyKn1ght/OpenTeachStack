@@ -15,7 +15,6 @@ sourceSession: "OpenTeachStack course rebuild session, 2026-06-26"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 In the rebuild session, Codex kept doing what a coding agent is trained to do well: make files exist, preserve routes, satisfy checks, update docs, and report the validation story.
@@ -104,3 +103,11 @@ Then ask for two kinds of validation:
 AI agents are not useless when they miss the point. They are usually following the wrong scoreboard.
 
 Change the scoreboard, and the work changes.
+
+## The Role We Needed
+
+Codex is useful here when it behaves like a repo engineer with instructional taste: preserve the source of truth, avoid fake placeholders, and make the course easier for a teacher to actually use.
+
+## The Boundary
+
+The human still owns the teaching argument. The tool can move files, enforce contracts, and surface weak spots, but it should not pretend a generic scaffold is a finished course.

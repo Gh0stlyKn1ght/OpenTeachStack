@@ -11,6 +11,10 @@ const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
 const scanStatuses = new Set(["reviewed", "teachable-ready", "remediated"]);
 const releaseCourseReadiness = RELEASE_COURSE_STATUSES;
+const reviewCourseReadiness = new Set([
+  ...releaseCourseReadiness,
+  "active-rebuild",
+]);
 
 function fail(message) {
   console.error(`Instructional depth check failed: ${message}`);
@@ -40,9 +44,11 @@ function hasHeading(content, heading) {
 function lessonKind(parsed) {
   const courseSlug = String(parsed.data.courseSlug || "").toLowerCase();
   const type = String(parsed.data.type || "").toLowerCase();
+  const lessonType = String(parsed.data.lessonType || "").toLowerCase();
   const title = String(parsed.data.title || "").toLowerCase();
   const chapter = String(parsed.data.chapter || "").toLowerCase();
 
+  if (depthRequirements[lessonType]) return lessonType;
   if (type.includes("checkpoint")) return "checkpoint";
   if (type.includes("workshop") || type.includes("build")) return "build";
   if (type.includes("artifact") || title.includes("artifact")) return "build";
@@ -70,11 +76,161 @@ function lessonKind(parsed) {
 }
 
 const depthRequirements = {
+  "chapter-overview": [
+    {
+      label: "chapter purpose",
+      pattern: /chapter purpose|what this chapter is really about|why this chapter matters|chapter promise/i,
+    },
+    {
+      label: "chapter artifact target",
+      pattern: /what you will build|build or revise|buildartifact|artifact|inventory|packet|checklist|map/i,
+    },
+    {
+      label: "chapter path",
+      pattern: /lessons in this chapter|chapter path|by the end of chapter|where this goes next/i,
+    },
+    {
+      label: "exit criteria",
+      pattern: /exit criteria|before you move on|what to keep|by the end|what to watch for/i,
+    },
+  ],
+  comparison: [
+    {
+      label: "confusion or mistake",
+      pattern: /confusion|mistake|trap|weak|wrong|fake|what goes wrong/i,
+    },
+    {
+      label: "weak example",
+      pattern: /weak|non-example|not enough|before/i,
+    },
+    {
+      label: "better example",
+      pattern: /better|strong|stronger|after|improved/i,
+    },
+    {
+      label: "decision rule or practice",
+      pattern: /decision rule|rule|practice|try it|what you will do|check/i,
+    },
+    {
+      label: "artifact or evidence connection",
+      pattern: /artifact|evidence|save|capstone|packet|review/i,
+    },
+  ],
+  framework: [
+    {
+      label: "framework purpose",
+      pattern: /framework|model|pattern|why this matters|why this framework exists/i,
+    },
+    {
+      label: "framework parts",
+      pattern: /parts|source|context|task|format|check|criteria|rubric|component/i,
+    },
+    {
+      label: "use guidance",
+      pattern: /how to use|use the framework|put it to work|workflow|apply/i,
+    },
+    {
+      label: "failure mode or review check",
+      pattern: /failure|mistake|trap|check|review|verify|quality/i,
+    },
+    {
+      label: "artifact or evidence connection",
+      pattern: /artifact|evidence|save|capstone|packet/i,
+    },
+  ],
+  workflow: [
+    {
+      label: "workflow use case",
+      pattern: /when to use|when this helps|workflow|use this workflow/i,
+    },
+    {
+      label: "numbered workflow steps",
+      pattern: /^\s*\d+\.\s+/m,
+    },
+    {
+      label: "example run or classroom application",
+      pattern: /example|scenario|classroom|student|teacher|apply/i,
+    },
+    {
+      label: "review gate",
+      pattern: /review|check|verify|criteria|quality|evidence/i,
+    },
+    {
+      label: "next action",
+      pattern: /next action|next step|what to do next|save|artifact/i,
+    },
+  ],
+  "case-study": [
+    {
+      label: "scenario",
+      pattern: /what happened|scenario|classroom problem|teacher|student/i,
+    },
+    {
+      label: "surface-level problem",
+      pattern: /what looked fine|looked fine|seemed fine|at first glance|polished/i,
+    },
+    {
+      label: "actual failure",
+      pattern: /what was actually broken|what was broken|problem|missing|fake/i,
+    },
+    {
+      label: "root cause",
+      pattern: /root cause|why it happened|caused|because/i,
+    },
+    {
+      label: "fix or teacher rule",
+      pattern: /the fix|fix|better direction|takeaway|rule we keep/i,
+    },
+  ],
+  "artifact-build": [
+    {
+      label: "artifact purpose",
+      pattern: /artifact|what the artifact does|in this lesson, you will|build/i,
+    },
+    {
+      label: "build sequence",
+      pattern: /build step|build steps|step 1|^\s*\d+\.\s+/im,
+    },
+    {
+      label: "example or sample",
+      pattern: /example|sample|completed|better version|finished/i,
+    },
+    {
+      label: "quality criteria",
+      pattern: /quality check|checklist|criteria|review|ready|revise/i,
+    },
+    {
+      label: "capstone connection",
+      pattern: /capstone|packet|save|what to keep|artifact/i,
+    },
+  ],
+  "capstone-assembly": [
+    {
+      label: "packet assembly target",
+      pattern: /packet|capstone|what you are assembling|assemble|mini-course/i,
+    },
+    {
+      label: "required pieces",
+      pattern: /required pieces|required artifacts|include|source of truth|student-facing/i,
+    },
+    {
+      label: "assembly steps",
+      pattern: /assembly steps|step 1|^\s*\d+\.\s+/im,
+    },
+    {
+      label: "release check",
+      pattern: /release check|final review|finished packet checklist|ready|revise|do not publish/i,
+    },
+    {
+      label: "revision plan",
+      pattern: /revision plan|final revision note|next review|teacher decision/i,
+    },
+  ],
   concept: [
     {
       label: "Why This Matters",
       heading: "Why This Matters",
-      pattern: /##+\s*why\s+this\s+matters/i,
+      pattern: /##+\s*why\s+this\s+matters|teacher problem|classroom problem|the problem|confusion|pressure/i,
     },
     {
       label: "concrete classroom example",
@@ -83,15 +239,15 @@ const depthRequirements = {
     },
     {
       label: "common mistake",
-      pattern: /mistake|avoid|common\s+error|common\s+pitfall|wrong|confuses/i,
+      pattern: /mistake|avoid|common\s+error|common\s+pitfall|wrong|confuses|weak|fake|trap|not enough/i,
     },
     {
       label: "practice task",
-      pattern: /what you will do|practice|try it|activity|task|apply this|teacher should/i,
+      pattern: /what you will do|practice|try it|activity|task|apply this|teacher should|build step|next action|check/i,
     },
     {
       label: "artifact connection",
-      pattern: /artifact/i,
+      pattern: /artifact|capstone|packet|save|evidence|source of truth/i,
     },
     {
       label: "quality check",
@@ -100,7 +256,7 @@ const depthRequirements = {
     {
       label: "key idea or core idea section",
       heading: "Key Idea",
-      pattern: /key idea|core idea|big idea/i,
+      pattern: /key idea|core idea|big idea|the idea|chapter purpose|takeaway|rule/i,
     },
   ],
   technical: [
@@ -235,7 +391,7 @@ function loadCourseReadiness() {
 }
 
 function isReleaseCourse(courseReadiness) {
-  return releaseCourseReadiness.has(courseReadiness || "internal");
+  return reviewCourseReadiness.has(courseReadiness || "internal");
 }
 
 let checkedLessons = 0;

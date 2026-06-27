@@ -16,7 +16,6 @@ sourceSession: "2026-06-26 OpenTeachStack course polish batching session"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 At first, the work moved one lesson at a time.
@@ -27,11 +26,19 @@ Run a check.
 
 Fix another lesson.
 
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
+
 Run a check.
 
 That was safe, but it was also ridiculous for the size of the course problem.
 
 The issue was not one broken lesson. The issue was that multiple courses needed the same kind of humanizing pass: fewer generic artifact wrappers, more filled examples, more ready/revise/blocked decisions, more concrete evidence, and better course-specific support files.
+
+## What We Changed
+
+The fix matters because it changes the system, not just the sentence.
 
 So the workflow changed.
 
@@ -147,3 +154,13 @@ The course got better when the work stopped treating every missing section as an
 That is the real OpenTeachStack move:
 
 > Build the artifact family, not just the page.
+
+## The Pattern We Are Trying to Break
+
+The dangerous rhythm is not one bad draft. It is accepting a hundred tiny almost-right pages because each one feels too small to stop for.
+
+## Practical Takeaways
+
+- Batch the polish so the same issue is fixed everywhere it appears.
+- Keep the change tied to a visible reader problem.
+- Stop when the content is clearer, not when every page has the same shape.

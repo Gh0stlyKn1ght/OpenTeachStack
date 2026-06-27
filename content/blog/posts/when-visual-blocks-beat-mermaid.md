@@ -15,7 +15,6 @@ sourceSession: "OTS-101 visual block system design"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 We tried using Mermaid diagrams to explain course workflows.
@@ -25,6 +24,10 @@ The idea was good.
 The result was not always good.
 
 Some diagrams rendered too small. Some were hard to read in the course viewport. Some made simple processes feel more technical than they needed to be.
+
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
 
 The visual was supposed to help.
 
@@ -123,3 +126,11 @@ If it makes the idea harder to read, replace it.
 Pretty is not the goal.
 
 Readable is the goal.
+
+## Why the Visual Changed
+
+The first Mermaid diagrams were technically valid but instructionally weak. If a visual is too tiny to read, it is not helping the learner.
+
+## Design Rule
+
+Use Mermaid for relationships that need graph logic. Use cards, steps, tabs, and tables when the learner needs to compare, scan, or teach from the page.

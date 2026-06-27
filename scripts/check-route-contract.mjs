@@ -121,8 +121,8 @@ if (!bookIndex.includes('href="/book/ots-101"')) {
   fail("book index must link to dedicated OTS-101 route.");
 }
 
-if (!bookIndex.includes('href="/book/ots-280"')) {
-  fail("book index must link to dedicated OTS-280 route.");
+if (!bookIndex.includes("OTS-280") || !bookIndex.includes("Coming Soon")) {
+  fail("book index must list OTS-280 as Coming Soon while OTS-101 is the only active rebuild.");
 }
 
 if (process.exitCode) {

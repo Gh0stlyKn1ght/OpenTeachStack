@@ -15,18 +15,17 @@ sourceSession: "OTS-101 legacy folder cleanup"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 The editor kept showing old paths.
 
-One tab pointed at:
+- One tab pointed at:
 
 ```txt
 content/courses/ots-101/lessons/01-teacher-builder-mindset/01-0.mdx
 ```
 
-But the active rebuilt course used:
+- But the active rebuilt course used:
 
 ```txt
 content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-0.mdx
@@ -36,6 +35,10 @@ That mismatch made the project feel broken even after the new course structure e
 
 It was not just annoying.
 
+## What Broke
+
+The breakage was useful because it exposed the system underneath the content.
+
 It was a source-of-truth problem.
 
 ## Why it bothered me
@@ -44,11 +47,27 @@ Old folders are not harmless when AI agents are working in the repo.
 
 A stale folder is a prompt.
 
+## What Fixed It
+
+The repair had to change the source of truth, not just the visible page.
+
 A stale tab is a prompt.
+
+## What We Carry Forward
+
+The next build gets easier when the mistake becomes a rule we can reuse.
 
 A stale audit report is a prompt.
 
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
+
 If old paths still exist, the system may keep trying to repair, read, rewrite, or revive them.
+
+## What Broke 2
+
+The breakage was useful because it exposed the system underneath the content.
 
 That is how fake course content comes back from the dead.
 
@@ -75,9 +94,21 @@ Do not leave retired course architecture sitting around as if it might still be 
 
 If a folder is legacy, mark it or delete it.
 
+## What Fixed It 2
+
+The repair had to change the source of truth, not just the visible page.
+
 If an audit references dead routes, mark it obsolete.
 
+## What We Carry Forward 2
+
+The next build gets easier when the mistake becomes a rule we can reuse.
+
 If an export outline points to retired slugs, update it.
+
+## What We Changed
+
+The fix matters because it changes the system, not just the sentence.
 
 If scripts can recreate the old course shape, remove them.
 
@@ -86,6 +117,10 @@ If scripts can recreate the old course shape, remove them.
 We cleaned the active OTS-101 source area.
 
 The old lesson folders were deleted.
+
+## What Broke 3
+
+The breakage was useful because it exposed the system underneath the content.
 
 The active lessons README now documents the real chapter structure:
 
@@ -125,8 +160,20 @@ A messy source of truth creates messy teaching work.
 
 The fix is not more polish.
 
+## What Fixed It 3
+
+The repair had to change the source of truth, not just the visible page.
+
 The fix is honesty:
 
 > This is the source. That is legacy. This is export. That is archive.
 
 Name the truth, or the folder structure will name it for you.
+
+## The Real Cleanup
+
+The hard part was not deleting a file. The hard part was admitting that a visible tab, a live route, and a current source file were no longer the same thing.
+
+## Course-Building Lesson
+
+When teachers build with AI, every artifact needs a home, a status, and a route. Otherwise the old version wins by being easier to find.

@@ -16,7 +16,6 @@ sourceSession: "2026-06-26 OpenTeachStack instructional-depth remediation sessio
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 The course routes worked. The lessons rendered. The release checks were mostly doing their job.
@@ -58,6 +57,10 @@ A concept lesson should not pass just because it has a title and some explanatio
 A technical lesson should not pass just because it says "automation" or "script." It should show inspectable technical work: fake data, a code sample, an error path, logs, rollback, and evidence of output.
 
 A build lesson should not pass just because it says "create an artifact." It should show what the learner creates, what a completed sample looks like, how the empty structure works, and how another reviewer checks it.
+
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
 
 That became the deeper course question:
 
@@ -124,6 +127,10 @@ It may be formatted.
 
 It may even sound polished.
 
+## What We Changed
+
+The fix matters because it changes the system, not just the sentence.
+
 But it is not done.
 
 ## Final thought
@@ -135,3 +142,14 @@ It was:
 > Does this page teach enough that another educator can inspect, use, and improve the work?
 
 That is the bar AI-assisted course building has to clear.
+
+## What Render Checks Miss
+
+A page can compile, route, and render while still failing as instruction. The deeper question is whether the lesson gives a teacher a usable decision, artifact, example, and review point.
+
+## Better Evidence
+
+- The lesson names the classroom problem.
+- The artifact is concrete enough to inspect.
+- The teacher can tell what AI drafted and what they verified.
+- The next action is visible without guessing.

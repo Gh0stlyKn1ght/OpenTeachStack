@@ -15,7 +15,6 @@ sourceSession: "OTS-101 formatting and readability cleanup"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 The content started sounding more human, but some pages still felt hard to use.
@@ -25,6 +24,10 @@ That was the next problem.
 A lesson can have better voice and still read like a wall of text. A blog post can be honest and still make the reader dig for the point.
 
 That matters because OpenTeachStack is not only explaining course design.
+
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
 
 It has to model it.
 
@@ -117,3 +120,11 @@ A course page is not a transcript of what the teacher knows.
 It is a tool that helps someone move.
 
 If the page does not help the reader move, keep shaping it.
+
+## Why Formatting Counts
+
+Headings, bullets, tables, and spacing are not decoration in a course. They tell a tired teacher where to look, what to do next, and what evidence counts.
+
+## A Simple Rule
+
+If a reader has to decode the shape of the page before they can learn from it, the formatting is part of the instructional problem.

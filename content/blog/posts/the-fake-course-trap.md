@@ -15,7 +15,6 @@ sourceSession: "OTS-101 rebuild and placeholder cleanup"
 humanReviewed: true
 published: true
 ---
-
 ## What happened
 
 I thought the project was farther along than it was.
@@ -25,6 +24,10 @@ There were course folders. There were lesson files. There were routes. There wer
 Then we opened the actual lesson bodies.
 
 That is where the lie showed up.
+
+## What This Exposed
+
+The useful part is the pattern underneath the mistake.
 
 The files looked like course content, but too many of them were just generic scaffold text wearing course clothes.
 
@@ -153,3 +156,14 @@ It has to teach.
 So the rule is simple:
 
 > If the page only looks complete, keep building.
+
+## How the Trap Shows Up
+
+The fake course trap starts when a page has headings, confident prose, and no real teaching decision underneath it.
+
+## The Fix We Are Practicing
+
+- Name the artifact before drafting.
+- Keep AI inside a bounded job.
+- Verify the student-facing result.
+- Save the revision trail so the course can improve instead of reset.

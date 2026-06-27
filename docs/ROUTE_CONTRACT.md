@@ -26,6 +26,7 @@ This file is the route and slug source of truth for course-book work. Do not add
 - Dedicated courses may still appear in pathway metadata and search, but their route generation must come from their dedicated data modules.
 - Generic pathway courses must use `/book/{courseSlug}/{chapterSlug}/{sectionSlug}`.
 - OTS-101 legacy `/course` and `/course/{moduleSlug}` routes redirect to `/book/ots-101`.
+- The book index links to OTS-101 only while OTS-101 is the active rebuild. OTS-280 keeps its dedicated route ownership but is listed as Coming Soon until it has the same content-readiness review.
 - Do not use TT-prefixed or alternate public course-code slugs.
 - Do not add compatibility links that point from a canonical page back to itself.
 
