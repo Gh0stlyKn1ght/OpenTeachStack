@@ -5,10 +5,10 @@
     "teachable"
   ],
   "hasRealLessons": true,
-  "hasTemplates": false,
+  "hasTemplates": true,
   "hasSamplePacket": false,
   "humanReviewed": false,
   "authoredChapterRange": "00-13",
   "lessonBodyPass": "complete draft authoring pass",
-  "notes": "Coming Soon. Chapters 00-13 have authored teacher-facing on-ramp lessons covering the Teacher Builder Stack, workstation setup, project structure, IDE and VS Code basics, terminal, Git/GitHub, documentation literacy, Markdown/MDX, web publishing, modern project stacks, AI assistants/coding agents/MCP, safety, and the Teacher Builder Starter Kit capstone. Still needs human review before release."
+  "notes": "Coming Soon. Chapters 00-13 have authored teacher-facing on-ramp lessons and course-specific templates for the Teacher Builder Starter Kit, workstation setup, documentation checks, AI/MCP access mapping, and safe AI builder review. Still needs a sample packet and human review before release."
 }
