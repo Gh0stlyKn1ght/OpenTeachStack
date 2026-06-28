@@ -6,8 +6,8 @@
   "canonicalRoute": "/book/ots-000",
   "sourceRegistry": "src/lib/courseStructures.ts",
   "generatedAt": "2026-06-27",
-  "migrationStatus": "planned",
-  "courseReadiness": "coming-soon",
+  "migrationStatus": "draft",
+  "courseReadiness": "active-rebuild",
   "coursePromise": "By the end, educators understand the software, vocabulary, files, workflows, AI tools, documentation habits, and safety boundaries used to build modern curriculum projects.",
   "chapters": [
     {
@@ -109,5 +109,5 @@
       "lessonCount": 6
     }
   ],
-  "liveLessonPolicy": "No OTS-000 lessons are live until authored as real teacher-facing content. Planned chapter routes are Coming Soon only."
+  "liveLessonPolicy": "OTS-000 has a complete draft authoring pass, templates, and a sample packet. Keep public pathway status Coming Soon until human review approves the course for public-facing draft or release."
 }

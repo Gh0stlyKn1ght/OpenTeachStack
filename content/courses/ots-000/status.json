@@ -1,5 +1,5 @@
 {
-  "status": "planned",
+  "status": "draft",
   "sourceOfTruth": "content/courses/ots-000",
   "exportTargets": [
     "teachable"
@@ -10,5 +10,6 @@
   "humanReviewed": false,
   "authoredChapterRange": "00-13",
   "lessonBodyPass": "complete draft authoring pass",
-  "notes": "Coming Soon. Chapters 00-13 have authored teacher-facing on-ramp lessons, course-specific templates, and a completed sample Teacher Builder Starter Kit packet. Still needs human review before release."
+  "releaseReadiness": "Complete draft authoring pass with templates and sample packet. Public pathway status remains Coming Soon until human review approves the course for public-facing draft or release.",
+  "notes": "Draft. Chapters 00-13 have authored teacher-facing on-ramp lessons, course-specific templates, and a completed sample Teacher Builder Starter Kit packet. Still needs human review before public release."
 }
