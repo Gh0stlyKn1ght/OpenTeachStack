@@ -4,6 +4,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const courseRoot = join(root, "content", "courses");
 const requiredCourses = [
+  "ots-000",
   "ots-101",
   "ots-201",
   "ots-220",

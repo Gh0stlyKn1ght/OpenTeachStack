@@ -1,0 +1,71 @@
+{
+  "code": "OTS-000",
+  "slug": "ots-000",
+  "title": "Teacher Tech Stack Orientation",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-000",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "generatedAt": "2026-06-27",
+  "migrationStatus": "planned",
+  "courseReadiness": "coming-soon",
+  "coursePromise": "By the end, teachers can explain the software stack behind modern curriculum projects, navigate basic project tools, compare AI assistants and coding agents, use tool documentation, and set up a safer builder workspace.",
+  "chapters": [
+    {
+      "number": "01",
+      "slug": "01-builder-workstation",
+      "title": "The Builder Workstation",
+      "buildArtifact": "Builder workstation checklist",
+      "lessonCount": 6
+    },
+    {
+      "number": "02",
+      "slug": "02-files-folders-paths-projects",
+      "title": "Files, Folders, Paths, and Projects",
+      "buildArtifact": "Project structure map",
+      "lessonCount": 6
+    },
+    {
+      "number": "03",
+      "slug": "03-what-is-an-ide",
+      "title": "What Is an IDE?",
+      "buildArtifact": "IDE navigation notes",
+      "lessonCount": 6
+    },
+    {
+      "number": "04",
+      "slug": "04-terminal-git-github",
+      "title": "Terminal, Git, and GitHub Without the Panic",
+      "buildArtifact": "Git safety notes",
+      "lessonCount": 6
+    },
+    {
+      "number": "05",
+      "slug": "05-documentation-tool-literacy",
+      "title": "Documentation and Tool Literacy",
+      "buildArtifact": "Documentation reading checklist",
+      "lessonCount": 6
+    },
+    {
+      "number": "06",
+      "slug": "06-website-project-stack-literacy",
+      "title": "Website and Project Stack Literacy",
+      "buildArtifact": "Project stack vocabulary map",
+      "lessonCount": 6
+    },
+    {
+      "number": "07",
+      "slug": "07-ai-assistants-coding-agents-mcp",
+      "title": "AI Assistants, Coding Agents, and MCP",
+      "buildArtifact": "AI tool comparison map",
+      "lessonCount": 6
+    },
+    {
+      "number": "08",
+      "slug": "08-software-safety-workspace-capstone",
+      "title": "Software Safety and Workspace Capstone",
+      "buildArtifact": "Builder workspace setup plan",
+      "lessonCount": 6
+    }
+  ],
+  "liveLessonPolicy": "No OTS-000 lessons are live until authored as real teacher-facing content. Planned chapter routes are Coming Soon only."
+}

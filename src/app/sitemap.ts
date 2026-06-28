@@ -83,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kb/standards-curriculum/turn-standards-into-learning-targets",
     "/kb/start-here/what-this-knowledge-base-is",
     "/kb/templates",
+    "/kb/tools-platforms",
     "/kb/tools-platforms/free-tools-for-teachers-and-students",
   ].map((path) => entry(path, 0.6));
 

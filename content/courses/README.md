@@ -10,6 +10,7 @@ Every course must carry an honest `status.json`.
 
 Current courses:
 
+- [OTS-000 Teacher Tech Stack Orientation](./ots-000/README.md)
 - [OTS-101 AI Course Content Foundations for Teachers](./ots-101/README.md)
 - [OTS-201 Google Workspace Systems for Teachers](./ots-201/README.md)
 - [OTS-220 Apps Script for Teacher Automation](./ots-220/README.md)

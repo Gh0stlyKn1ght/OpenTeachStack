@@ -1,0 +1,12 @@
+{
+  "status": "planned",
+  "sourceOfTruth": "content/courses/ots-000",
+  "exportTargets": [
+    "teachable"
+  ],
+  "hasRealLessons": false,
+  "hasTemplates": false,
+  "hasSamplePacket": false,
+  "humanReviewed": false,
+  "notes": "Coming Soon. Planned as the beginner orientation course for teacher-builder software, tool vocabulary, VS Code, terminal, GitHub, documentation, AI assistants, coding agents, MCP, and software safety."
+}

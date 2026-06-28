@@ -234,6 +234,22 @@ export interface PathwayCourse {
 
 export const PATHWAY_COURSES: PathwayCourse[] = [
   {
+    code: "OTS-000",
+    title: "Teacher Tech Stack Orientation",
+    level: "Beginner",
+    status: "Coming Soon",
+    purpose:
+      "Introduce the software, vocabulary, tools, and workflows behind AI-supported curriculum projects before teachers move into course building, GitHub, websites, or coding agents.",
+    prerequisites: "Basic computer and web browser comfort.",
+    majorArtifacts: [
+      "Builder workstation checklist",
+      "Tool vocabulary map",
+      "VS Code navigation notes",
+      "Software safety checklist",
+      "Builder workspace setup plan",
+    ],
+  },
+  {
     code: "OTS-101",
     title: "AI Course Content Foundations for Teachers",
     level: "Beginner",
