@@ -83,17 +83,15 @@ drafts/
 student-ready/
   lesson-03-student-page.md
 
-## Make the Handoff Visible
-
-The reader should see where teacher judgment stops and AI support begins.
-
 exports/
   canvas-lesson-03-2026-06-26.md
+
+archive/
+  lesson-03-old-version-2026-05-10.md
+
+teacher-notes/
+  lesson-03-facilitation-notes.md
 ```
-
-## Keep the Trail
-
-A reusable workflow saves the decision path, not just the final wording.
 
 Now the folder location helps explain the file.
 
@@ -109,21 +107,26 @@ Use simple status labels:
 - exported
 - archived
 
-Those labels can live in filenames, frontmatter, a checklist, or a tracking sheet.
+Put the status somewhere visible:
 
-The point is visibility.
+- filename
+- folder location
+- frontmatter
+- checklist row
+- tracker sheet
+
+The point is not the tool. The point is that another teacher can see the status before using the file.
 
 ## Keep teacher notes separate
 
-Teacher notes may include pacing reminders, answer keys, facilitation moves, and private context.
+Teacher notes may include:
 
-They should not be mixed into student-ready materials by accident.
+- pacing reminders
+- answer keys
+- facilitation moves
+- private context
 
-## Check the Artifact
-
-The output is ready only when the artifact can stand outside the chat.
-
-Use a separate folder or clear label.
+They should not be mixed into student-ready materials by accident. Use a separate folder or clear label for teacher-only material.
 
 ```text
 teacher-notes/
@@ -161,18 +164,77 @@ That map gives collaborators a mental model of the system.
   A good folder structure does not just store files. It tells the teacher what can be trusted, what needs review, and what is only an export.
 </TakeawayStrip>
 
-## When to Use This Workflow
+## Classroom Scenario
 
-Use this workflow when design folders that show status needs to become repeatable enough that another teacher could follow the same decision path without guessing what happened.
+A teacher has three useful files: an AI draft, an approved student page, and a Canvas export. All three mention the same lesson.
 
-## Workflow Steps
+If they sit in one folder with similar names, a future teacher has to guess which one students should see.
 
-1. Name the teaching problem before opening the AI tool.
-2. Gather the existing source material, examples, or constraints.
-3. Ask for one narrow output tied to Course content system map.
-4. Check the output against the lesson goal, privacy limits, and classroom reality.
-5. Save the accepted version with a short revision note.
+## Weak Version
+
+Weak folder pattern:
+
+```text
+lesson-03.md
+lesson-03-new.md
+lesson-03-ai.md
+lesson-03-final.md
+```
+
+Those names preserve confusion.
+
+## Better Version
+
+Better folder pattern:
+
+```text
+source/
+  lesson-03-evidence-comparison.md
+
+drafts/
+  lesson-03-ai-draft-2026-06-26.md
+
+student-ready/
+  lesson-03-student-page-approved.md
+
+exports/
+  canvas-lesson-03-export-2026-06-26.md
+```
+
+Now the folder structure shows status before anyone opens a file.
+
+## Build Step
+
+Sketch the smallest folder map that would separate source, drafts, student-ready files, exports, archives, and teacher notes in your course.
+
+## Quality Check
+
+The folder design works when a colleague can tell where a new AI draft belongs and where an approved student handout belongs.
+
+## Safety / Accessibility / Source Note
+
+Keep teacher-only notes, answer keys, private student context, and draft AI output out of student-ready folders. Folder structure is part of privacy protection.
+
+## Reflection
+
+Which folder in your current system hides status instead of revealing it?
+
+## Capstone Connection
+
+Add your folder map to the course content system map. It helps another teacher find the right version without relying on your memory.
+
+## When This Helps
+
+Use this workflow when course files are multiplying faster than review status can keep up: AI drafts, approved lessons, exports, old versions, and teacher notes all start blending together.
+
+## Steps
+
+1. List the file types your course already has.
+2. Sort each type into source, draft, student-ready, export, archive, or teacher-notes.
+3. Create only the folders needed to show those statuses.
+4. Move or relabel one confusing file as a test.
+5. Write the folder rule that would prevent the same confusion next time.
 
 ## Next Action
 
-Apply the workflow to one real piece of course content, then write down what AI improved and what the teacher still had to decide.
+Add the folder map and one folder rule to your course content system map.
