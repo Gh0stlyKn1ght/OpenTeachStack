@@ -40,6 +40,30 @@ Fill in one row per field:
 | Teacher verification | The check the teacher owns before students see it. |
 | Revision trigger | The signal that tells you to revise after teaching. |
 
+## Classroom Scenario
+
+A robotics teacher has an approved startup checklist, a safety expectation, and a class that keeps moving too quickly when equipment comes out.
+
+The teacher could ask AI for a full safety lesson. That would be fast, but it would also bury the decision the teacher needs to make first.
+
+The map forces the teacher to name the student action, the practice path, and the evidence before AI drafts anything.
+
+## Weak Version
+
+Weak map:
+
+| Map field | Weak entry |
+| --- | --- |
+| Source goal or problem | Robot safety |
+| Student-friendly target | Students understand startup safety. |
+| Practice path | Watch slides and answer questions. |
+| Evidence | Quiz score |
+| AI support | Make the whole lesson. |
+| Teacher verification | Read it over. |
+| Revision trigger | If it does not work |
+
+This looks filled in, but it is not inspectable. The target is invisible, the practice is generic, and AI has been handed the instructional decision.
+
 ## Example Output
 
 | Map field | Example |
@@ -53,6 +77,22 @@ Fill in one row per field:
 | Revision trigger | Revise after first class if students miss the same checklist step. |
 
 This map tells AI what to draft and tells the teacher what to inspect.
+
+## Better Version
+
+Better map:
+
+| Map field | Better entry |
+| --- | --- |
+| Source goal or problem | Students rush robot startup and skip checklist decisions. |
+| Student-friendly target | I can choose the next safe startup step using the approved checklist. |
+| Practice path | Two fictional scenarios, then powered-off rehearsal. |
+| Evidence | Scenario choices plus checklist explanation. |
+| AI support | Draft three fictional startup scenarios. |
+| Teacher verification | Check scenarios against approved class checklist and equipment rules. |
+| Revision trigger | Revise after first class if students miss the same checklist step. |
+
+This version gives AI a narrow drafting job and keeps the safety judgment with the teacher.
 
 ## Build Step
 
