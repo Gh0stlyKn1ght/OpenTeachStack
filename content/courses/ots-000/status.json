@@ -4,9 +4,11 @@
   "exportTargets": [
     "teachable"
   ],
-  "hasRealLessons": false,
+  "hasRealLessons": true,
   "hasTemplates": false,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "notes": "Coming Soon. Planned as the beginner on-ramp course for teacher-builder software, project vocabulary, VS Code, terminal, GitHub, documentation, Markdown/MDX, web publishing, AI assistants, coding agents, MCP, and software safety. Final artifact: Teacher Builder Starter Kit."
+  "authoredChapterRange": "00-01",
+  "lessonBodyPass": "first two chapters authored",
+  "notes": "Coming Soon. Chapters 00-01 have authored teacher-facing on-ramp lessons for the Teacher Builder Stack and Builder Workstation. Remaining chapters are planned only. Final artifact: Teacher Builder Starter Kit."
 }
