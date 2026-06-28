@@ -3,6 +3,8 @@ import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
+const canPreviewComingSoon = process.env.NODE_ENV !== "production";
+
 export const metadata: Metadata = {
   title: "Pathway — OpenTeachStack",
   description:
@@ -10,6 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default function PathwayPage() {
+  function courseHref(code: string) {
+    if (code === "OTS-101") return "/book/ots-101";
+    if (code === "OTS-280") return "/book/ots-280";
+    return `/book/${code.toLowerCase()}`;
+  }
+
   return (
     <FieldGuidePage
       eyebrow="OpenTeachStack Pathway"
@@ -50,19 +58,13 @@ export default function PathwayPage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {course.code}
                 </span>
-                {course.status === "Coming Soon" ? (
+                {course.status === "Coming Soon" && !canPreviewComingSoon ? (
                   <span className="font-heading text-xl font-bold text-foreground/70">
                     {course.title}
                   </span>
                 ) : (
                   <Link
-                    href={
-                      course.code === "OTS-101"
-                        ? "/book/ots-101"
-                        : course.code === "OTS-280"
-                          ? "/book/ots-280"
-                          : `/book/${course.code.toLowerCase()}`
-                    }
+                    href={courseHref(course.code)}
                     className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
                   >
                     {course.title}
