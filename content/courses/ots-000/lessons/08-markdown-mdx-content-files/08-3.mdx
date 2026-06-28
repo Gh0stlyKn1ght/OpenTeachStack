@@ -1,0 +1,98 @@
+---
+title: "Frontmatter and MDX Components"
+module: "ots-000"
+type: "lecture"
+order: 51
+week: 8
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain metadata and MDX components without making teachers afraid of content files."
+outcomes:
+  - "Define frontmatter and MDX components."
+  - "Identify areas to pause before editing."
+tags: ["ots-000", "mdx"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Markdown, MDX, and Content Files"
+chapterSlug: "08-markdown-mdx-content-files"
+sectionNumber: "08.3"
+sectionSlug: "08-3"
+canonicalRoute: "/book/ots-000/08-markdown-mdx-content-files/08-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Starter Markdown lesson"
+---
+## The Teacher Problem
+
+MDX files can look like normal Markdown until a teacher sees metadata or components and worries the whole file is unsafe to edit.
+
+The better move is to separate the lesson body from the structured parts.
+
+## The Idea
+
+Frontmatter is metadata at the top of a file.
+
+It may control title, route, order, status, duration, or other information the site needs.
+
+MDX components are special blocks inside Markdown that render custom visuals or behavior.
+
+## Classroom Scenario
+
+A teacher opens a lesson file and sees:
+
+```md
+---
+title: "Chapter Overview"
+order: 1
+---
+
+## The Teacher Problem
+```
+
+The teacher can revise the lesson body but should pause before changing `title`, `order`, or route fields.
+
+## Weak Version
+
+```text
+I should delete the metadata because students do not need to read it.
+```
+
+That metadata may control the site.
+
+## Better Version
+
+```text
+I will edit the lesson body and ask before changing frontmatter or components that affect rendering.
+```
+
+## Build Step
+
+Add a frontmatter note above your starter lesson:
+
+```md
+---
+title: "Starter Lesson"
+status: "draft"
+---
+```
+
+Then write one sentence explaining that frontmatter is metadata, not student-facing lesson prose.
+
+## Quality Check
+
+You should know which parts of the file are safe to revise and which parts need review.
+
+## Safety / Accessibility / Source Note
+
+Breaking frontmatter can break routes, titles, ordering, or publishing metadata. Do not bulk-edit frontmatter unless you have a clear map and a verification step.
+
+## Reflection
+
+What is one metadata field you would ask about before changing?
+
+## Capstone Connection
+
+Your Starter Kit should include a note that separates lesson body edits from metadata edits.

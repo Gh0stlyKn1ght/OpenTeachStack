@@ -1,0 +1,91 @@
+---
+title: "Hosting, Domains, DNS, Deployment, and Build Failures"
+module: "ots-000"
+type: "lecture"
+order: 57
+week: 9
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain common publishing terms and where failures can happen."
+outcomes:
+  - "Define hosting, domain, DNS, deployment, and build."
+  - "Use publishing vocabulary to describe failures."
+tags: ["ots-000", "deployment"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Websites, Hosting, and Publishing"
+chapterSlug: "09-websites-hosting-publishing"
+sectionNumber: "09.3"
+sectionSlug: "09-3"
+canonicalRoute: "/book/ots-000/09-websites-hosting-publishing/09-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Website publishing flow diagram"
+---
+## The Teacher Problem
+
+Publishing failures sound scarier when the vocabulary is missing.
+
+"The domain is broken" might actually mean DNS is not pointing correctly, the deployment failed, or the page route does not exist.
+
+## The Idea
+
+Use plain terms.
+
+| Term | Plain meaning |
+|---|---|
+| Host | service that serves the site |
+| Domain | human-friendly name like `example.org` |
+| DNS | directions that point the domain to the right service |
+| Build | process that turns project files into a site or app output |
+| Deployment | sending the built site/app to the host |
+| Build failure | project could not produce a valid output |
+
+## Classroom Scenario
+
+A teacher updates content, but the deployment fails. The old site remains online. The issue is not the domain. The build failed before the host received the new version.
+
+## Weak Version
+
+```text
+The website did not update, so the domain is broken.
+```
+
+Maybe not.
+
+## Better Version
+
+```text
+The local edit exists, but the deployment failed during build, so the published site stayed on the old version.
+```
+
+## Build Step
+
+Add failure points to your diagram:
+
+```text
+Source edit can fail because:
+Build can fail because:
+Deployment can fail because:
+Domain/DNS can fail because:
+Student view can fail because:
+```
+
+## Quality Check
+
+Your notes should help you describe where the failure happened before asking for help.
+
+## Safety / Accessibility / Source Note
+
+A successful deployment is not automatically a safe release. Run student-view, privacy, link, and accessibility checks before announcing content.
+
+## Reflection
+
+Which term would help you explain a site problem more clearly: host, domain, DNS, build, or deployment?
+
+## Capstone Connection
+
+Your Starter Kit should include a publishing vocabulary table so you can report problems without guessing.

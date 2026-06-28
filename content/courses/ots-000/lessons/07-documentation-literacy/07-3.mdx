@@ -1,0 +1,94 @@
+---
+title: "Version Numbers, Changelogs, and Current Links"
+module: "ots-000"
+type: "lecture"
+order: 45
+week: 7
+duration: "20 minutes"
+level: "Beginner"
+summary: "Teach why software docs age and how to notice stale guidance."
+outcomes:
+  - "Explain why versions matter."
+  - "Check whether a docs page may be stale."
+tags: ["ots-000", "documentation"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Documentation Literacy"
+chapterSlug: "07-documentation-literacy"
+sectionNumber: "07.3"
+sectionSlug: "07-3"
+canonicalRoute: "/book/ots-000/07-documentation-literacy/07-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Documentation evaluation checklist"
+---
+## The Teacher Problem
+
+Software changes.
+
+A clear tutorial from two years ago may no longer match the current tool. A command may be renamed. A setup step may move. A feature may be deprecated.
+
+## The Idea
+
+Version numbers and dates help you notice whether guidance might be stale.
+
+Look for:
+
+- published or updated date
+- tool version
+- docs version selector
+- warning banners
+- deprecation notes
+- changelog entries
+- matching operating system
+
+## Classroom Scenario
+
+A teacher follows an old Next.js tutorial and hits errors because the project uses a newer version with different conventions.
+
+The teacher did not fail. The tutorial did not match the tool version.
+
+## Weak Version
+
+```text
+The instructions worked for someone online, so they should work for me.
+```
+
+Not if your versions differ.
+
+## Better Version
+
+```text
+Before following setup instructions, I will check the date, version, and official docs for my current tool.
+```
+
+## Build Step
+
+Add these fields to your docs checklist:
+
+```text
+Date checked:
+Tool version:
+Docs version:
+Warning or deprecation notes:
+Matches my operating system? yes / no / not sure
+```
+
+## Quality Check
+
+If the docs page has no date, no version, and no official source, treat it as orientation, not authority.
+
+## Safety / Accessibility / Source Note
+
+Stale documentation can create security risk if it recommends old packages, outdated permissions, or unsupported workflows.
+
+## Reflection
+
+What is one tool in your stack where version differences might matter?
+
+## Capstone Connection
+
+Your Starter Kit docs links should include a date checked so future you knows when to refresh them.
