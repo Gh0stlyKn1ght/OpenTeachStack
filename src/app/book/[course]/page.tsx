@@ -9,6 +9,8 @@ import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import { COURSE_STRUCTURES, getCourseStructure } from "@/lib/courseStructures";
 
+const canPreviewComingSoon = process.env.NODE_ENV !== "production";
+
 type CoursePageProps = {
   params: Promise<{ course: string }>;
 };
@@ -43,7 +45,7 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
 
   const firstChapter = course.chapters[0];
 
-  if (course.status === "Coming Soon") {
+  if (course.status === "Coming Soon" && !canPreviewComingSoon) {
     return (
       <FieldGuidePage
         eyebrow={`${course.code} Coming Soon`}
@@ -112,8 +114,14 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
       <ArticleBody>
         <section className="book-spread">
           <div>
-            <h2>Course Thesis</h2>
-            <p>{course.thesis}</p>
+          <h2>Course Thesis</h2>
+          {course.status === "Coming Soon" && canPreviewComingSoon ? (
+            <div className="course-section-status">
+              Development preview: this course is still Coming Soon in
+              production. Use this outline for planning only.
+            </div>
+          ) : null}
+          <p>{course.thesis}</p>
             <p>
               This structure follows the same course-book workflow as OTS-101:
               chapters, sections, workshops, artifact builds, verification

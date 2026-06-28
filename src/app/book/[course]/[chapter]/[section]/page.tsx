@@ -33,6 +33,8 @@ import {
 } from "@/lib/courseStructures";
 import { mdxOptions } from "@/lib/mdx";
 
+const canPreviewComingSoon = process.env.NODE_ENV !== "production";
+
 const mdxComponents = {
   pre: MDXPre,
   MermaidBlock,
@@ -83,7 +85,7 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
 
   const { previous, next } = getAdjacentCourseSections(record);
 
-  if (record.course.status === "Coming Soon") {
+  if (record.course.status === "Coming Soon" && !canPreviewComingSoon) {
     return (
       <FieldGuidePage
         eyebrow={`${record.course.code} Coming Soon`}
@@ -183,9 +185,9 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
       <ArticleBody>
         {!courseLesson ? (
           <div className="course-section-status">
-            This lesson is intentionally unavailable. This course is Coming
-            Soon or in rebuild, and OpenTeachStack does not publish placeholder
-            MDX to make routes look complete.
+            {record.course.status === "Coming Soon" && canPreviewComingSoon
+              ? "Development preview: this planned section is visible locally, but no authored lesson MDX exists yet. Do not treat this outline as release-ready content."
+              : "This lesson is intentionally unavailable. This course is Coming Soon or in rebuild, and OpenTeachStack does not publish placeholder MDX to make routes look complete."}
           </div>
         ) : !isReleaseReady ? (
           <div className="course-section-status">

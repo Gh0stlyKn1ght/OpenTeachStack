@@ -14,6 +14,8 @@ import {
   getSectionHref,
 } from "@/lib/courseStructures";
 
+const canPreviewComingSoon = process.env.NODE_ENV !== "production";
+
 type ChapterPageProps = {
   params: Promise<{ course: string; chapter: string }>;
 };
@@ -58,7 +60,7 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
   const previous = course.chapters[currentIndex - 1];
   const next = course.chapters[currentIndex + 1];
 
-  if (course.status === "Coming Soon") {
+  if (course.status === "Coming Soon" && !canPreviewComingSoon) {
     return (
       <FieldGuidePage
         eyebrow={`${course.code} Coming Soon`}
@@ -151,6 +153,12 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
           current={currentIndex + 1}
           total={course.chapters.length}
         />
+        {course.status === "Coming Soon" && canPreviewComingSoon ? (
+          <div className="course-section-status">
+            Development preview: this chapter outline is visible locally, but
+            the course remains Coming Soon in production.
+          </div>
+        ) : null}
 
         <section>
           <h2>Chapter Sections</h2>
