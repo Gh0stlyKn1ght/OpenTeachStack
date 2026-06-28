@@ -1,0 +1,100 @@
+---
+title: "Node.js, npm, pnpm, and Project Commands"
+module: "ots-000"
+type: "lecture"
+order: 62
+week: 10
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain JavaScript project tools and package commands at a high level."
+outcomes:
+  - "Define Node and package managers."
+  - "Recognize common project commands."
+tags: ["ots-000", "node", "npm"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "The Modern Project Stack"
+chapterSlug: "10-modern-project-stack"
+sectionNumber: "10.2"
+sectionSlug: "10-2"
+canonicalRoute: "/book/ots-000/10-modern-project-stack/10-2"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Project stack card"
+---
+## The Teacher Problem
+
+Project READMEs often say:
+
+```text
+npm install
+npm run dev
+npm run build
+```
+
+Without context, those commands feel like spells.
+
+## The Idea
+
+Node.js lets JavaScript-based tools run on your computer.
+
+Package managers like npm or pnpm install project dependencies and run project scripts.
+
+Common scripts:
+
+| Command | Plain meaning |
+|---|---|
+| `npm install` | install the project packages |
+| `npm run dev` | start a local development preview |
+| `npm run build` | test whether the project can build for release |
+| `npm run test` | run the project's checks if configured |
+
+## Classroom Scenario
+
+A teacher opens a course-site repo. The README says `npm run dev` starts the preview. That command does not create the course. It starts a local view of the project.
+
+## Weak Version
+
+```text
+npm commands are coding, so I should never touch them.
+```
+
+Some commands are normal preview or check steps.
+
+## Better Version
+
+```text
+I can run documented project commands when I know the folder, the purpose, and the expected result.
+```
+
+## Build Step
+
+Add a commands section to your stack card:
+
+```text
+Install command:
+Preview command:
+Build command:
+Test/check command:
+Where commands must run:
+Where I found them:
+```
+
+## Quality Check
+
+Commands should come from the project README, official docs, or a trusted maintainer, not a random guess.
+
+## Safety / Accessibility / Source Note
+
+Installing packages changes local project folders and can download many files. Use trusted repos and avoid running install commands in mystery projects.
+
+## Reflection
+
+Which project command would you feel safest running after reading the README?
+
+## Capstone Connection
+
+Your Starter Kit should connect terminal commands to the specific project they belong to.

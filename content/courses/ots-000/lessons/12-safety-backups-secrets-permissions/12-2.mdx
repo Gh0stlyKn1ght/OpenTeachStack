@@ -1,0 +1,94 @@
+---
+title: "Secrets, API Keys, Student Data, and Privacy Boundaries"
+module: "ots-000"
+type: "lecture"
+order: 74
+week: 12
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain sensitive information teachers must keep out of prompts, repos, and public projects."
+outcomes:
+  - "Identify secrets and private data."
+  - "Set privacy boundaries before tool use."
+tags: ["ots-000", "privacy", "secrets"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Safety, Backups, Secrets, and Permissions"
+chapterSlug: "12-safety-backups-secrets-permissions"
+sectionNumber: "12.2"
+sectionSlug: "12-2"
+canonicalRoute: "/book/ots-000/12-safety-backups-secrets-permissions/12-2"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Safe AI builder checklist"
+---
+## The Teacher Problem
+
+Teachers may not think of passwords, API keys, private links, rosters, screenshots, or student examples as "secrets" until a tool asks for access.
+
+By then, the boundary may already be blurry.
+
+## The Idea
+
+Secrets are values that grant access. Private data is information that should not be exposed. Both need protection.
+
+Examples:
+
+- passwords
+- API keys and tokens
+- `.env` files
+- private repo links
+- student names or grades
+- screenshots with account details
+- unpublished sensitive documents
+- private school system URLs
+
+## Classroom Scenario
+
+A teacher wants AI help debugging a tool setup and pastes the `.env` file into chat. That file may contain keys that grant access.
+
+The safer move is to remove secrets and describe the problem.
+
+## Weak Version
+
+```text
+The AI needs all the details, so I will paste the config file.
+```
+
+No.
+
+## Better Version
+
+```text
+I will remove secrets, use placeholders, and share only the minimum needed context.
+```
+
+## Build Step
+
+Add a privacy boundary to your checklist:
+
+```text
+Never paste:
+Use fake examples for:
+Ask permission before sharing:
+Store securely:
+```
+
+## Quality Check
+
+If a piece of information would be bad on a public website, do not put it into a public repo or AI prompt.
+
+## Safety / Accessibility / Source Note
+
+Do not rely on deleting a message or commit as your only fix after exposing a secret. Treat exposed secrets as compromised and rotate them through the proper system.
+
+## Reflection
+
+What information do you need to replace with fake examples before practicing?
+
+## Capstone Connection
+
+Your Starter Kit should include a privacy boundary you can apply before using AI help.

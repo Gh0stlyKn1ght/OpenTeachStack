@@ -1,0 +1,100 @@
+---
+title: "Build Task: What This Project Uses Stack Card"
+module: "ots-000"
+type: "lecture"
+order: 64
+week: 10
+duration: "40 minutes"
+level: "Beginner"
+summary: "Build a simple card that explains the stack behind one curriculum project."
+outcomes:
+  - "Create a project stack card."
+  - "Name edit boundaries for each stack layer."
+tags: ["ots-000", "artifact"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "The Modern Project Stack"
+chapterSlug: "10-modern-project-stack"
+sectionNumber: "10.4"
+sectionSlug: "10-4"
+canonicalRoute: "/book/ots-000/10-modern-project-stack/10-4"
+migrationStatus: "authored"
+lessonType: "artifact"
+minutes: 40
+artifact: "Project stack card"
+---
+## The Teacher Problem
+
+A project stack can stay invisible until something breaks.
+
+Then the teacher has to learn the stack under pressure.
+
+## The Idea
+
+A stack card is a short explanation of what a project uses and what each piece does.
+
+It is not a full technical manual. It is an orientation card.
+
+## Classroom Scenario
+
+A teacher opens a course-site repo and writes:
+
+| Layer | Tool | Job | Edit boundary |
+|---|---|---|---|
+| Content | MDX | lesson files | teacher-editable with review |
+| Framework | Next.js | routes and rendering | technical review |
+| Styling | Tailwind | page styling | review for accessibility |
+| Hosting | Vercel | published site | check deployments |
+
+Now the project is less mysterious.
+
+## Weak Version
+
+```text
+This project uses modern web stuff.
+```
+
+That does not guide action.
+
+## Better Version
+
+```text
+This project uses MDX for content, Next.js for the site, Tailwind for styling, npm scripts for checks, and Vercel for hosting.
+```
+
+## Build Step
+
+Create your stack card:
+
+```text
+Project name:
+What it is for:
+Content format:
+Main folders:
+Framework:
+Styling:
+Commands:
+Host:
+Checks:
+Teacher-editable:
+Review before editing:
+Do not touch yet:
+```
+
+## Quality Check
+
+The card should help someone decide what they can edit safely and what needs review.
+
+## Safety / Accessibility / Source Note
+
+Include a warning for secrets, `.env` files, student data, private screenshots, and deployment settings.
+
+## Reflection
+
+Which layer of the stack most affects your day-to-day teacher work?
+
+## Capstone Connection
+
+The stack card becomes part of your Teacher Builder Starter Kit and prepares you for AI-agent access decisions.

@@ -1,0 +1,87 @@
+---
+title: "Build Task: Safe AI Builder Checklist"
+module: "ots-000"
+type: "lecture"
+order: 76
+week: 12
+duration: "40 minutes"
+level: "Beginner"
+summary: "Build a checklist for safe AI-assisted project work."
+outcomes:
+  - "Create a Safe AI Builder Checklist."
+  - "Define backups, privacy boundaries, scope, and review steps."
+tags: ["ots-000", "artifact", "safety"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Safety, Backups, Secrets, and Permissions"
+chapterSlug: "12-safety-backups-secrets-permissions"
+sectionNumber: "12.4"
+sectionSlug: "12-4"
+canonicalRoute: "/book/ots-000/12-safety-backups-secrets-permissions/12-4"
+migrationStatus: "authored"
+lessonType: "artifact"
+minutes: 40
+artifact: "Safe AI builder checklist"
+---
+## The Teacher Problem
+
+AI project help can be useful and still unsafe.
+
+The checklist protects the teacher's judgment before speed takes over.
+
+## The Idea
+
+The Safe AI Builder Checklist should be used before any AI tool reads files, edits files, runs commands, connects to services, or prepares student-facing material.
+
+## Classroom Scenario
+
+A teacher wants Codex to update a course outline. The checklist forces the teacher to name the target files, protected files, backup state, verification commands, and review steps before work starts.
+
+## Weak Version
+
+```text
+Ask AI to fix the course.
+```
+
+That is too broad to review.
+
+## Better Version
+
+```text
+Ask AI to update one registry, protect authored lessons, show the diff, run the title check, and stop if unrelated files change.
+```
+
+## Build Step
+
+Create the checklist:
+
+```text
+Task:
+Allowed files:
+Protected files:
+Backup/Git checkpoint:
+Private data removed:
+Secrets protected:
+Draft location:
+Verification step:
+Diff review:
+Human approval before publish:
+```
+
+## Quality Check
+
+The checklist should be specific enough that another teacher could tell whether the AI stayed in bounds.
+
+## Safety / Accessibility / Source Note
+
+If the task affects student-facing content, add checks for accuracy, source quality, privacy, accessibility, copyright, and classroom fit.
+
+## Reflection
+
+Which checklist item would stop the riskiest mistake in your current workflow?
+
+## Capstone Connection
+
+This checklist becomes one of the final required pieces of the Teacher Builder Starter Kit.

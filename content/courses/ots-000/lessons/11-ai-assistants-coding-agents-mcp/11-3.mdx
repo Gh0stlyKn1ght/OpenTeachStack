@@ -1,0 +1,92 @@
+---
+title: "MCP Clients, Servers, Tools, and Trust Boundaries"
+module: "ots-000"
+type: "lecture"
+order: 69
+week: 11
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain MCP as tool access, not magic."
+outcomes:
+  - "Explain MCP in plain language."
+  - "Map what an MCP-connected agent can reach."
+tags: ["ots-000", "mcp"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "AI Assistants, Coding Agents, and MCP"
+chapterSlug: "11-ai-assistants-coding-agents-mcp"
+sectionNumber: "11.3"
+sectionSlug: "11-3"
+canonicalRoute: "/book/ots-000/11-ai-assistants-coding-agents-mcp/11-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "AI tool comparison and MCP access map"
+---
+## The Teacher Problem
+
+MCP can sound abstract until something gets access.
+
+Teachers need the simple version: MCP lets AI applications connect to tools and data through a shared protocol.
+
+That can be useful. It also needs boundaries.
+
+## The Idea
+
+Plain terms:
+
+| Term | Plain meaning |
+|---|---|
+| MCP client | the AI app using the connection |
+| MCP server | the connector that exposes tools or data |
+| Tool | an action the AI can request |
+| Context | information the AI can use |
+| Trust boundary | the line around what the AI is allowed to reach |
+
+## Classroom Scenario
+
+An AI tool connected to GitHub can inspect issues or pull requests. An AI tool connected to local files can read project folders. Those are different access levels.
+
+## Weak Version
+
+```text
+MCP makes the AI better, so more connections are better.
+```
+
+More access is not automatically better.
+
+## Better Version
+
+```text
+MCP gives agents access. I need to know what the connection exposes before using it.
+```
+
+## Build Step
+
+Create an access map:
+
+```text
+Connected system:
+What the agent can read:
+What the agent can change:
+What approval is needed:
+What must stay private:
+```
+
+## Quality Check
+
+If you cannot name what the connection can read or change, do not use it yet.
+
+## Safety / Accessibility / Source Note
+
+MCP access can include files, services, repos, databases, browsers, calendars, or custom tools. Treat access as a permission decision, not a feature toggle.
+
+## Reflection
+
+What system would you be cautious about connecting to an AI agent?
+
+## Capstone Connection
+
+The MCP access map becomes part of your Starter Kit and prepares you for safer advanced agent workflows.

@@ -8,7 +8,7 @@
   "hasTemplates": false,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "authoredChapterRange": "00-09",
-  "lessonBodyPass": "first ten chapters authored",
-  "notes": "Coming Soon. Chapters 00-09 have authored teacher-facing on-ramp lessons for the Teacher Builder Stack, Builder Workstation, Project Structure, IDE concepts, VS Code, terminal basics, Git/GitHub basics, documentation literacy, Markdown/MDX, and web publishing concepts. Remaining chapters are planned only. Final artifact: Teacher Builder Starter Kit."
+  "authoredChapterRange": "00-13",
+  "lessonBodyPass": "complete draft authoring pass",
+  "notes": "Coming Soon. Chapters 00-13 have authored teacher-facing on-ramp lessons covering the Teacher Builder Stack, workstation setup, project structure, IDE and VS Code basics, terminal, Git/GitHub, documentation literacy, Markdown/MDX, web publishing, modern project stacks, AI assistants/coding agents/MCP, safety, and the Teacher Builder Starter Kit capstone. Still needs human review before release."
 }

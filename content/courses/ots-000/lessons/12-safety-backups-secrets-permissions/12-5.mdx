@@ -1,0 +1,84 @@
+---
+title: "Chapter Checkpoint"
+module: "ots-000"
+type: "lecture"
+order: 77
+week: 12
+duration: "10 minutes"
+level: "Beginner"
+summary: "Review whether the Safe AI Builder Checklist is strong enough to stop unsafe work."
+outcomes:
+  - "Audit the Safe AI Builder Checklist."
+  - "Name one stop condition."
+tags: ["ots-000", "checkpoint", "safety"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Safety, Backups, Secrets, and Permissions"
+chapterSlug: "12-safety-backups-secrets-permissions"
+sectionNumber: "12.5"
+sectionSlug: "12-5"
+canonicalRoute: "/book/ots-000/12-safety-backups-secrets-permissions/12-5"
+migrationStatus: "authored"
+lessonType: "checkpoint"
+minutes: 10
+artifact: "Safe AI builder checklist"
+---
+## The Teacher Problem
+
+A safety checklist that never says stop is not a safety checklist.
+
+It is decoration.
+
+## The Idea
+
+This checkpoint asks whether your checklist can block unsafe work.
+
+## Classroom Scenario
+
+An AI agent starts editing files outside the agreed folder. The checklist says to stop and review before continuing.
+
+That is the checklist doing its job.
+
+## Weak Version
+
+```text
+I wrote safety reminders.
+```
+
+Reminders are useful, but stop rules are stronger.
+
+## Better Version
+
+```text
+I named the exact conditions where I pause, stop, or ask for review.
+```
+
+## Build Step
+
+Add stop conditions:
+
+- unrelated files changed
+- private data appears
+- command effect is unclear
+- source of truth is uncertain
+- generated content replaced authored work
+- verification fails
+- published route behaves differently than expected
+
+## Quality Check
+
+Your checklist should include at least three stop conditions.
+
+## Safety / Accessibility / Source Note
+
+If a safety check fails, do not publish and do not keep prompting around the failure. Fix the boundary first.
+
+## Reflection
+
+Which stop condition will be hardest for you to honor under deadline pressure?
+
+## Capstone Connection
+
+Save the revised checklist. It protects the final Starter Kit and future pathway work.
