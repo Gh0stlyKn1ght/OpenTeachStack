@@ -8,62 +8,104 @@
   "generatedAt": "2026-06-27",
   "migrationStatus": "planned",
   "courseReadiness": "coming-soon",
-  "coursePromise": "By the end, teachers can explain the software stack behind modern curriculum projects, navigate basic project tools, compare AI assistants and coding agents, use tool documentation, and set up a safer builder workspace.",
+  "coursePromise": "By the end, educators understand the software, vocabulary, files, workflows, AI tools, documentation habits, and safety boundaries used to build modern curriculum projects.",
   "chapters": [
+    {
+      "number": "00",
+      "slug": "00-welcome-teacher-builder-stack",
+      "title": "Welcome to the Teacher Builder Stack",
+      "buildArtifact": "Teacher builder vocabulary map",
+      "lessonCount": 6
+    },
     {
       "number": "01",
       "slug": "01-builder-workstation",
-      "title": "The Builder Workstation",
+      "title": "Your Computer as a Builder Workstation",
       "buildArtifact": "Builder workstation checklist",
       "lessonCount": 6
     },
     {
       "number": "02",
-      "slug": "02-files-folders-paths-projects",
-      "title": "Files, Folders, Paths, and Projects",
-      "buildArtifact": "Project structure map",
+      "slug": "02-files-folders-project-structure",
+      "title": "Files, Folders, and Project Structure",
+      "buildArtifact": "Labeled project-folder map",
       "lessonCount": 6
     },
     {
       "number": "03",
       "slug": "03-what-is-an-ide",
       "title": "What Is an IDE?",
-      "buildArtifact": "IDE navigation notes",
+      "buildArtifact": "IDE navigation diagram",
       "lessonCount": 6
     },
     {
       "number": "04",
-      "slug": "04-terminal-git-github",
-      "title": "Terminal, Git, and GitHub Without the Panic",
-      "buildArtifact": "Git safety notes",
+      "slug": "04-vscode-teacher-builders",
+      "title": "VS Code for Teacher Builders",
+      "buildArtifact": "VS Code survival sheet",
       "lessonCount": 6
     },
     {
       "number": "05",
-      "slug": "05-documentation-tool-literacy",
-      "title": "Documentation and Tool Literacy",
-      "buildArtifact": "Documentation reading checklist",
+      "slug": "05-terminal-without-fear",
+      "title": "The Terminal Without Fear",
+      "buildArtifact": "Terminal command cheat sheet",
       "lessonCount": 6
     },
     {
       "number": "06",
-      "slug": "06-website-project-stack-literacy",
-      "title": "Website and Project Stack Literacy",
-      "buildArtifact": "Project stack vocabulary map",
+      "slug": "06-git-github-basics",
+      "title": "Git and GitHub Basics",
+      "buildArtifact": "GitHub project-reading checklist",
       "lessonCount": 6
     },
     {
       "number": "07",
-      "slug": "07-ai-assistants-coding-agents-mcp",
-      "title": "AI Assistants, Coding Agents, and MCP",
-      "buildArtifact": "AI tool comparison map",
+      "slug": "07-documentation-literacy",
+      "title": "Documentation Literacy",
+      "buildArtifact": "Documentation evaluation checklist",
       "lessonCount": 6
     },
     {
       "number": "08",
-      "slug": "08-software-safety-workspace-capstone",
-      "title": "Software Safety and Workspace Capstone",
-      "buildArtifact": "Builder workspace setup plan",
+      "slug": "08-markdown-mdx-content-files",
+      "title": "Markdown, MDX, and Content Files",
+      "buildArtifact": "Starter Markdown lesson",
+      "lessonCount": 6
+    },
+    {
+      "number": "09",
+      "slug": "09-websites-hosting-publishing",
+      "title": "Websites, Hosting, and Publishing",
+      "buildArtifact": "Website publishing flow diagram",
+      "lessonCount": 6
+    },
+    {
+      "number": "10",
+      "slug": "10-modern-project-stack",
+      "title": "The Modern Project Stack",
+      "buildArtifact": "Project stack card",
+      "lessonCount": 6
+    },
+    {
+      "number": "11",
+      "slug": "11-ai-assistants-coding-agents-mcp",
+      "title": "AI Assistants, Coding Agents, and MCP",
+      "buildArtifact": "AI tool comparison and MCP access map",
+      "lessonCount": 6
+    },
+    {
+      "number": "12",
+      "slug": "12-safety-backups-secrets-permissions",
+      "title": "Safety, Backups, Secrets, and Permissions",
+      "buildArtifact": "Safe AI builder checklist",
+      "lessonCount": 6
+    },
+    {
+      "number": "13",
+      "slug": "13-teacher-builder-starter-kit",
+      "title": "Capstone: Teacher Builder Starter Kit",
+      "buildArtifact": "Teacher Builder Starter Kit",
       "lessonCount": 6
     }
   ],

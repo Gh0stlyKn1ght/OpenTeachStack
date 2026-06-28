@@ -239,14 +239,14 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     level: "Beginner",
     status: "Coming Soon",
     purpose:
-      "Introduce the software, vocabulary, tools, and workflows behind AI-supported curriculum projects before teachers move into course building, GitHub, websites, or coding agents.",
+      "Give teachers a plain-language on-ramp to the software, vocabulary, files, workflows, AI tools, and safety habits behind modern curriculum projects before they enter the deeper pathway.",
     prerequisites: "Basic computer and web browser comfort.",
     majorArtifacts: [
       "Builder workstation checklist",
       "Tool vocabulary map",
       "VS Code navigation notes",
       "Software safety checklist",
-      "Builder workspace setup plan",
+      "Teacher Builder Starter Kit",
     ],
   },
   {

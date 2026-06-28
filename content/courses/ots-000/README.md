@@ -6,7 +6,7 @@ Canonical route: `/book/ots-000`
 
 Reader source: `src/lib/courseStructures.ts`
 
-This folder is the course-owned content package for OTS-000. It is the planned orientation course for teachers who need plain-language grounding in the software, vocabulary, and workflows behind AI-supported curriculum projects.
+This folder is the course-owned content package for OTS-000. It is the planned on-ramp course for teachers who need plain-language grounding in the software, vocabulary, files, workflows, AI tools, documentation habits, and safety boundaries behind modern curriculum projects.
 
 ## Course boundary
 
@@ -21,14 +21,19 @@ It does not replace:
 
 ## Planned focus
 
+- Teacher builder stack vocabulary
 - Computer and local setup requirements
 - Files, folders, paths, and project structure
 - IDE and VS Code basics
-- Terminal, Git, and GitHub vocabulary
+- Terminal basics without panic
+- Git and GitHub basics
 - Documentation literacy
-- Markdown, MDX, Node, npm, and project-stack vocabulary
-- Codex, Claude Code, Gemini, Copilot, Cursor, and MCP as concepts
-- Software safety, permissions, secrets, backups, and diffs
+- Markdown, MDX, and content files
+- Websites, hosting, domains, and deployment
+- Modern project stack vocabulary
+- AI assistants, coding agents, and MCP
+- Safety, backups, secrets, permissions, and diffs
+- Teacher Builder Starter Kit capstone
 
 ## Maintenance Rule
 
