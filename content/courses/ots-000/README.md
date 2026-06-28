@@ -1,12 +1,20 @@
 # OTS-000 Teacher Tech Stack Orientation
 
-Status: Coming Soon - planned beginner ramp.
+Status: Draft - public pathway remains Coming Soon until human review.
 
 Canonical route: `/book/ots-000`
 
 Reader source: `src/lib/courseStructures.ts`
 
-This folder is the course-owned content package for OTS-000. It is the planned on-ramp course for teachers who need plain-language grounding in the software, vocabulary, files, workflows, AI tools, documentation habits, and safety boundaries behind modern curriculum projects.
+This folder is the course-owned content package for OTS-000. It is the on-ramp course for teachers who need plain-language grounding in the software, vocabulary, files, workflows, AI tools, documentation habits, and safety boundaries behind modern curriculum projects.
+
+Current internal state:
+
+- Chapters `00-13` have authored draft lesson bodies.
+- Course-specific templates exist.
+- A completed sample Teacher Builder Starter Kit exists.
+- Source references exist.
+- Human review is still required before public release.
 
 ## Course boundary
 
@@ -19,7 +27,7 @@ It does not replace:
 - OTS-301, which teaches teacher course sites.
 - OTS-320, which teaches advanced AI coding-agent workflows.
 
-## Planned focus
+## Course focus
 
 - Teacher builder stack vocabulary
 - Computer and local setup requirements
@@ -35,6 +43,27 @@ It does not replace:
 - Safety, backups, secrets, permissions, and diffs
 - Teacher Builder Starter Kit capstone
 
+## Course package
+
+- `lessons/` - authored draft lesson MDX for chapters `00-13`
+- `templates/` - reusable Starter Kit, workstation, documentation, AI/MCP, and safety templates
+- `examples/` - completed sample Teacher Builder Starter Kit
+- `references/` - official software documentation links and teacher-use notes
+- `docs/` - human review checklist and course review notes
+- `assets/` - course-owned media, diagrams, and downloads when needed
+- `labs/` - future hands-on setup activities if the course needs them
+
+## Review status
+
+OTS-000 should stay public-facing Coming Soon until human review confirms:
+
+- the on-ramp is beginner-friendly
+- tool descriptions are accurate enough
+- safety boundaries are strong
+- lessons are not coding-heavy
+- templates are useful
+- the sample packet is safe and realistic
+
 ## Maintenance Rule
 
-Do not add lesson MDX until OTS-101 remains reviewed and the OTS-000 outline is ready for real teacher-facing authoring.
+Do not mark OTS-000 live just because files exist. It becomes release-ready only after human review approves the authored lessons, templates, references, and sample packet.
