@@ -1,0 +1,94 @@
+---
+title: "Chapter Checkpoint"
+module: "ots-000"
+type: "lecture"
+order: 17
+week: 2
+duration: "10 minutes"
+level: "Beginner"
+summary: "Check whether the project-folder map is safe and useful."
+outcomes:
+  - "Audit the project-folder map."
+  - "Identify one edit boundary."
+tags:
+  - "ots-000"
+  - "checkpoint"
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Files, Folders, and Project Structure"
+chapterSlug: "02-files-folders-project-structure"
+sectionNumber: "02.5"
+sectionSlug: "02-5"
+canonicalRoute: "/book/ots-000/02-files-folders-project-structure/02-5"
+migrationStatus: "authored"
+lessonType: "checkpoint"
+minutes: 10
+artifact: "Labeled project-folder map"
+---
+## The Teacher Problem
+
+A folder map can become decorative.
+
+It may show the structure but fail to tell the teacher what to do with that information.
+
+The point is not to admire the tree. The point is to make safer project decisions.
+
+## The Idea
+
+This checkpoint asks whether your map shows source, output, configuration, assets, and edit boundaries clearly enough to prevent mistakes.
+
+## Classroom Scenario
+
+A teacher asks an AI agent to "clean up course files." The folder map lets the teacher add a boundary:
+
+```text
+Only inspect content/courses/ots-000/lessons. Do not edit generated reports, exports, config files, or unrelated courses.
+```
+
+That is a safer prompt because the teacher knows the map.
+
+## Weak Version
+
+```text
+I drew the folder tree, so I understand the project.
+```
+
+Not yet.
+
+## Better Version
+
+```text
+I can identify source content, generated output, config files, assets, and folders that require review before editing.
+```
+
+That is usable.
+
+## Build Step
+
+Review each row and add one of these labels:
+
+- Teacher-editable
+- Review before editing
+- Generated or output
+- Do not touch yet
+- Unknown
+
+For every unknown item, write one question.
+
+## Quality Check
+
+Your map should include at least one "do not touch yet" or "review before editing" item. If everything looks safe, the map is probably too optimistic.
+
+## Safety / Accessibility / Source Note
+
+Before giving a folder to an AI tool, check whether it contains secrets, private notes, student data, exports, or work from another course.
+
+## Reflection
+
+What is one folder you will now avoid editing until you know more?
+
+## Capstone Connection
+
+Save the revised map. Later, you will use it to choose safe boundaries for VS Code, GitHub, and AI-agent work.

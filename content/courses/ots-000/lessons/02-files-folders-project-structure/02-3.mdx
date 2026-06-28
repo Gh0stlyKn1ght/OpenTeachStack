@@ -1,0 +1,105 @@
+---
+title: "Common Project Files: README, package.json, Markdown, and Config"
+module: "ots-000"
+type: "lecture"
+order: 15
+week: 2
+duration: "20 minutes"
+level: "Beginner"
+summary: "Introduce common files teachers will see in curriculum and web projects."
+outcomes:
+  - "Recognize common project files."
+  - "Use common files to orient inside a project."
+tags:
+  - "ots-000"
+  - "project-files"
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Files, Folders, and Project Structure"
+chapterSlug: "02-files-folders-project-structure"
+sectionNumber: "02.3"
+sectionSlug: "02-3"
+canonicalRoute: "/book/ots-000/02-files-folders-project-structure/02-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Labeled project-folder map"
+---
+## The Teacher Problem
+
+A teacher opens a project and sees file names that look technical.
+
+The temptation is to ignore all of them or ask AI to explain everything at once.
+
+That is too much.
+
+Start with the files that orient you.
+
+## The Idea
+
+Some files are common landmarks.
+
+| File | Plain meaning | Teacher use |
+|---|---|---|
+| `README.md` | project front page | explains purpose, setup, and use |
+| `package.json` | project command and dependency list | shows scripts like `dev`, `build`, and `test` |
+| `.md` | Markdown content | common writing/source file |
+| `.mdx` | Markdown plus components | common course-site lesson file |
+| `.json` | structured data/config | can control metadata or settings |
+| `.yml` / `.yaml` | configuration | often used for workflows or settings |
+| `.tsx` | React/TypeScript component | app or interface code |
+
+You do not need to edit all of these. You need to recognize what they probably do.
+
+## Classroom Scenario
+
+A teacher wants to know how to start a local preview. The answer is not buried in every file. It is usually in `README.md` or the `scripts` section of `package.json`.
+
+## Weak Version
+
+```text
+I do not understand these files, so I will avoid the whole project.
+```
+
+Avoiding everything blocks useful teacher ownership.
+
+## Better Version
+
+```text
+I can start with README.md, then check package.json for project commands if the README points me there.
+```
+
+That is a reasonable path.
+
+## Build Step
+
+Add a "common files" section to your map.
+
+Use this format:
+
+```text
+File:
+What it probably does:
+Would I edit it directly?
+What question should I ask first?
+```
+
+Add at least five files.
+
+## Quality Check
+
+For config or code files, the safest first answer may be `do not edit until I know what controls this`.
+
+## Safety / Accessibility / Source Note
+
+Configuration files can affect the whole project. Do not ask an AI agent to rewrite config broadly unless you have a clear goal, a backup, and a way to verify the change.
+
+## Reflection
+
+Which common file should you open first when entering a new project?
+
+## Capstone Connection
+
+Your Starter Kit should include a common-file cheat sheet for the projects you plan to work with.

@@ -1,0 +1,101 @@
+---
+title: "Chapter Overview"
+module: "ots-000"
+type: "lecture"
+order: 12
+week: 2
+duration: "10 minutes"
+level: "Beginner"
+summary: "Preview the file and project-structure concepts teachers need before GitHub, VS Code, and AI agents make sense."
+outcomes:
+  - "Explain why file literacy matters for curriculum projects."
+  - "Start a labeled project-folder map."
+tags:
+  - "ots-000"
+  - "files"
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Files, Folders, and Project Structure"
+chapterSlug: "02-files-folders-project-structure"
+sectionNumber: "02.0"
+sectionSlug: "02-0"
+canonicalRoute: "/book/ots-000/02-files-folders-project-structure/02-0"
+migrationStatus: "authored"
+lessonType: "overview"
+minutes: 10
+artifact: "Labeled project-folder map"
+---
+> OTS-000 frame: before a teacher can safely use VS Code, GitHub, or an AI coding agent, they need to know what file or folder is being touched.
+
+## The Teacher Problem
+
+Curriculum projects can look like a pile of folders with strange names.
+
+A teacher may see `content`, `src`, `public`, `docs`, `package.json`, and `README.md` and think the whole project is code.
+
+Some of it is code. Some of it is course content. Some of it is configuration. Some of it is documentation.
+
+That difference matters.
+
+## The Idea
+
+File literacy is the ability to tell what kind of thing you are looking at before you edit it.
+
+You do not need to know every file. You need to know enough to avoid the wrong move:
+
+- editing an export instead of the source
+- deleting a folder because it looked unused
+- changing a config file without knowing what it controls
+- asking AI to rewrite files that should be preserved
+
+## Classroom Scenario
+
+A teacher wants to update one lesson title. The title appears in a lesson MDX file, a registry file, a sidebar, and a generated report.
+
+If the teacher edits the report, nothing changes for students. If the teacher edits the source file or registry, the site changes.
+
+## Weak Version
+
+```text
+I found the title somewhere, so I changed it there.
+```
+
+That is how stale copies keep winning.
+
+## Better Version
+
+```text
+I found the title, checked whether the file is source or output, and updated the source of truth.
+```
+
+This is the file habit we want.
+
+## Build Step
+
+Start a labeled project-folder map.
+
+Create these columns:
+
+```text
+Folder or file | What it seems to hold | Source, output, config, or docs? | Safe to edit? | Notes
+```
+
+Add five folders or files from a real project if you have one. If not, use examples from this course.
+
+## Quality Check
+
+A useful folder map helps you decide where to look first and what not to touch without asking AI to guess.
+
+## Safety / Accessibility / Source Note
+
+Never paste private student files into a project just to test file organization. Use fake examples when practicing.
+
+## Reflection
+
+Which file or folder name have you seen before but never fully understood?
+
+## Capstone Connection
+
+Your labeled project-folder map becomes the second major section of the Teacher Builder Starter Kit.

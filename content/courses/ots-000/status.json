@@ -8,7 +8,7 @@
   "hasTemplates": false,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "authoredChapterRange": "00-01",
-  "lessonBodyPass": "first two chapters authored",
-  "notes": "Coming Soon. Chapters 00-01 have authored teacher-facing on-ramp lessons for the Teacher Builder Stack and Builder Workstation. Remaining chapters are planned only. Final artifact: Teacher Builder Starter Kit."
+  "authoredChapterRange": "00-03",
+  "lessonBodyPass": "first four chapters authored",
+  "notes": "Coming Soon. Chapters 00-03 have authored teacher-facing on-ramp lessons for the Teacher Builder Stack, Builder Workstation, Project Structure, and IDE concepts. Remaining chapters are planned only. Final artifact: Teacher Builder Starter Kit."
 }

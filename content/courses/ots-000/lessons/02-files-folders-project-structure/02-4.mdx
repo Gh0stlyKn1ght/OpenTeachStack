@@ -1,0 +1,104 @@
+---
+title: "Build Task: Labeled Project-Folder Map"
+module: "ots-000"
+type: "lecture"
+order: 16
+week: 2
+duration: "35 minutes"
+level: "Beginner"
+summary: "Build a map that labels important folders, files, and edit boundaries."
+outcomes:
+  - "Create a labeled folder map."
+  - "Identify source, output, config, docs, and assets."
+tags:
+  - "ots-000"
+  - "artifact"
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Files, Folders, and Project Structure"
+chapterSlug: "02-files-folders-project-structure"
+sectionNumber: "02.4"
+sectionSlug: "02-4"
+canonicalRoute: "/book/ots-000/02-files-folders-project-structure/02-4"
+migrationStatus: "authored"
+lessonType: "artifact"
+minutes: 35
+artifact: "Labeled project-folder map"
+---
+## The Teacher Problem
+
+Teachers can lose confidence inside a project because every folder looks equally mysterious.
+
+Without a map, they may edit the wrong file, ignore the right file, or ask an AI tool to search blindly.
+
+## The Idea
+
+A labeled project-folder map is a small guide to the project.
+
+It does not document every file. It names the areas a teacher needs to understand before editing, previewing, publishing, or asking for agent help.
+
+## Classroom Scenario
+
+A teacher is told to update one course lesson. The folder map shows that authored lessons live in `content/courses`, while root-level exports are legacy support.
+
+That prevents the teacher from updating the wrong copy.
+
+## Weak Version
+
+```text
+content = stuff
+src = code
+docs = notes
+```
+
+This is too vague to guide real work.
+
+## Better Version
+
+| Folder or file | Holds | Type | Safe to edit? | Notes |
+|---|---|---|---|---|
+| `content/courses` | course-owned source content | source | yes, with review | real course materials live here |
+| `docs/reports` | audit outputs | output/docs | usually no | may be regenerated |
+| `src/app` | route pages | code | only with care | affects visible site behavior |
+| `public/images` | images served by site | asset | yes, with naming rules | check file size and rights |
+
+## Build Step
+
+Create your folder map with these columns:
+
+```text
+Folder or file | Holds | Type | Safe to edit? | Who should review? | Notes
+```
+
+Use at least eight rows.
+
+Include:
+
+- one content folder
+- one documentation folder
+- one asset folder
+- one config or package file
+- one folder you should not edit without help
+
+## Quality Check
+
+Your map should help someone new answer:
+
+- Where is the source of truth?
+- What is generated or output?
+- What is safe for a teacher to edit?
+- What needs a technical review?
+
+## Safety / Accessibility / Source Note
+
+If a folder can contain student data, private notes, screenshots, or credentials, mark that clearly. The map should not expose the data, but it should warn the reader.
+
+## Reflection
+
+Which folder changed from "mystery" to "I know what this is for"?
+
+## Capstone Connection
+
+This folder map becomes the project navigation section of your Teacher Builder Starter Kit.

@@ -1,0 +1,104 @@
+---
+title: "What Is a Project Folder?"
+module: "ots-000"
+type: "lecture"
+order: 14
+week: 2
+duration: "15 minutes"
+level: "Beginner"
+summary: "Explain project folders as connected workspaces, not random file piles."
+outcomes:
+  - "Describe what a project folder is."
+  - "Identify source, support, and output areas in a project."
+tags:
+  - "ots-000"
+  - "project-folders"
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Files, Folders, and Project Structure"
+chapterSlug: "02-files-folders-project-structure"
+sectionNumber: "02.2"
+sectionSlug: "02-2"
+canonicalRoute: "/book/ots-000/02-files-folders-project-structure/02-2"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 15
+artifact: "Labeled project-folder map"
+---
+## The Teacher Problem
+
+A folder can hold anything. A project folder holds connected work.
+
+That difference matters when a teacher opens a repo, course site, or curriculum system for the first time.
+
+If every folder looks equally important, the teacher has no way to know where content lives or what controls the site.
+
+## The Idea
+
+A project folder is the top-level folder that holds the materials, code, settings, documentation, and assets for one project.
+
+It may include:
+
+- content files
+- app or site files
+- images
+- scripts
+- configuration
+- documentation
+- package files
+- generated reports
+
+The project folder is the thing you usually open in VS Code.
+
+## Classroom Scenario
+
+A teacher downloads a course-site project and opens only the `content` folder. They can edit lessons, but the terminal commands in the README do not work because the terminal is not at the project root.
+
+The lesson files were real. The workspace location was wrong.
+
+## Weak Version
+
+```text
+I opened the folder with the file I care about, so I am in the project.
+```
+
+Sometimes that is too deep.
+
+## Better Version
+
+```text
+I opened the project root, then navigated to the content folder from there.
+```
+
+This gives the tools the whole project context.
+
+## Build Step
+
+In your folder map, mark the project root.
+
+Then label at least four areas:
+
+- course content
+- documentation
+- assets
+- configuration
+- app or site code
+- generated output
+
+## Quality Check
+
+You should be able to answer: if I open VS Code, which folder should I open first?
+
+## Safety / Accessibility / Source Note
+
+Do not assume every folder is safe to edit. Some folders are generated, cached, or controlled by tools. When in doubt, check the README or ask before editing.
+
+## Reflection
+
+Have you ever opened a folder too deep inside a project and then wondered why instructions did not work?
+
+## Capstone Connection
+
+Your Starter Kit will include a note naming the project root and the folders you are most likely to edit.
