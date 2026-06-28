@@ -1,0 +1,94 @@
+---
+title: "cd, ls, pwd, mkdir, and Project Commands"
+module: "ots-000"
+type: "lecture"
+order: 33
+week: 5
+duration: "20 minutes"
+level: "Beginner"
+summary: "Introduce the small command set teachers need to navigate and run project scripts."
+outcomes:
+  - "Explain basic navigation commands."
+  - "Separate navigation commands from project commands."
+tags: ["ots-000", "terminal"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "The Terminal Without Fear"
+chapterSlug: "05-terminal-without-fear"
+sectionNumber: "05.3"
+sectionSlug: "05-3"
+canonicalRoute: "/book/ots-000/05-terminal-without-fear/05-3"
+migrationStatus: "authored"
+lessonType: "framework"
+minutes: 20
+artifact: "Terminal command cheat sheet"
+---
+## The Teacher Problem
+
+Terminal tutorials jump from navigation to project commands without explaining the difference.
+
+Teachers need to know which commands help them move around and which commands make the project do something.
+
+## The Idea
+
+Start small.
+
+| Command | Plain meaning | Risk level |
+|---|---|---|
+| `pwd` | show current folder | low |
+| `ls` | list files and folders | low |
+| `cd folder-name` | move into a folder | low |
+| `cd ..` | move up one folder | low |
+| `mkdir name` | make a folder | changes files |
+| `npm run dev` | run the project's dev script | starts a process |
+| `npm run build` | run the project's build script | creates output and checks build |
+
+Navigation commands help you get oriented. Project commands ask the project to do work.
+
+## Classroom Scenario
+
+A teacher uses `pwd` and `ls` to confirm they are in the project root before running `npm run dev`.
+
+That small habit prevents a lot of confusion.
+
+## Weak Version
+
+```text
+All terminal commands are equally risky.
+```
+
+No. Reading the current folder is different from deleting a directory.
+
+## Better Version
+
+```text
+I can start with low-risk navigation commands and pause before commands that change files or run project scripts.
+```
+
+## Build Step
+
+Add a command table:
+
+```text
+Command | Meaning | Reads or changes? | When I would use it
+```
+
+Include `pwd`, `ls`, `cd`, `mkdir`, and one project command from a README.
+
+## Quality Check
+
+Each command needs a purpose. Do not collect commands like trading cards.
+
+## Safety / Accessibility / Source Note
+
+Windows PowerShell, macOS Terminal, Linux shells, and Git Bash may use slightly different commands or output. Do not panic if screenshots differ from your machine.
+
+## Reflection
+
+Which command helps you avoid being in the wrong folder?
+
+## Capstone Connection
+
+Your Starter Kit should include a command list sorted by low-risk navigation and higher-risk project actions.

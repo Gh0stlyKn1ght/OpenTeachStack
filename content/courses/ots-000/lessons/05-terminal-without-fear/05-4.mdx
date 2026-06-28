@@ -1,0 +1,93 @@
+---
+title: "Build Task: Terminal Command Cheat Sheet"
+module: "ots-000"
+type: "lecture"
+order: 34
+week: 5
+duration: "30 minutes"
+level: "Beginner"
+summary: "Build a practical command cheat sheet with safety notes."
+outcomes:
+  - "Create a terminal command cheat sheet."
+  - "Label commands by purpose and risk."
+tags: ["ots-000", "artifact"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "The Terminal Without Fear"
+chapterSlug: "05-terminal-without-fear"
+sectionNumber: "05.4"
+sectionSlug: "05-4"
+canonicalRoute: "/book/ots-000/05-terminal-without-fear/05-4"
+migrationStatus: "authored"
+lessonType: "artifact"
+minutes: 30
+artifact: "Terminal command cheat sheet"
+---
+## The Teacher Problem
+
+Teachers do not need a giant command reference.
+
+They need a small cheat sheet that explains what a command does, where to run it, and when to stop.
+
+## The Idea
+
+The cheat sheet should be honest about risk.
+
+Some commands only show information. Some create folders. Some install packages. Some start servers. Some can destroy work if used carelessly.
+
+## Classroom Scenario
+
+A teacher is about to run a preview command. The cheat sheet reminds them to check the current folder and confirm the command comes from the project README.
+
+## Weak Version
+
+```text
+npm run dev
+npm run build
+npm install
+git status
+```
+
+This is a list, not a safety tool.
+
+## Better Version
+
+| Command | Plain meaning | Where to run it | Risk note |
+|---|---|---|---|
+| `pwd` | show current folder | anywhere | reads only |
+| `ls` | list files | current folder | reads only |
+| `npm run dev` | start local preview | project root | starts a server |
+| `npm install` | install project packages | project root | changes dependency folder |
+
+## Build Step
+
+Create your cheat sheet with these sections:
+
+1. Location checks
+2. Navigation commands
+3. Project preview commands
+4. Project check commands
+5. Commands I will not run without help
+
+## Quality Check
+
+Every command should answer:
+
+- What does it do?
+- Where do I run it?
+- Does it read, change, install, start, publish, or delete?
+- What should I do if it errors?
+
+## Safety / Accessibility / Source Note
+
+Do not include destructive commands as casual examples. If a command can delete, reset, overwrite, or force changes, put it in the "only with help" section.
+
+## Reflection
+
+Which command moved from scary to understandable after you explained it?
+
+## Capstone Connection
+
+This cheat sheet becomes the terminal section of your Teacher Builder Starter Kit.

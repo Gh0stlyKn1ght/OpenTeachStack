@@ -1,0 +1,83 @@
+---
+title: "Installing VS Code and Opening a Folder"
+module: "ots-000"
+type: "lecture"
+order: 25
+week: 4
+duration: "15 minutes"
+level: "Beginner"
+summary: "Teach the first safe VS Code move: open the project folder, not a random file."
+outcomes:
+  - "Explain why the project root matters."
+  - "Record the safe folder-opening path."
+tags: ["ots-000", "vscode"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "VS Code for Teacher Builders"
+chapterSlug: "04-vscode-teacher-builders"
+sectionNumber: "04.1"
+sectionSlug: "04-1"
+canonicalRoute: "/book/ots-000/04-vscode-teacher-builders/04-1"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 15
+artifact: "VS Code survival sheet"
+---
+## The Teacher Problem
+
+Opening one file is not the same as opening the project.
+
+If the teacher opens only a lesson file, search, terminal commands, and source control may not have the full project context.
+
+## The Idea
+
+VS Code works best when you open the project root: the top-level folder that contains the README, content folders, package file, and project settings.
+
+## Classroom Scenario
+
+A teacher opens `02-4.mdx` directly and edits it. Then they cannot find the other lesson files or run the preview command because VS Code is not pointed at the whole project.
+
+## Weak Version
+
+```text
+I opened the file I care about, so I opened the project.
+```
+
+Not always.
+
+## Better Version
+
+```text
+I opened the project folder first, then opened the file from Explorer.
+```
+
+## Build Step
+
+Add this to your survival sheet:
+
+```text
+Project folder I should open:
+How I know it is the project root:
+Where the README is:
+Where course content lives:
+```
+
+If you are using Windows and the `code .` command is available, write what folder you must be in before running it.
+
+## Quality Check
+
+You should be able to point to the project root without guessing.
+
+## Safety / Accessibility / Source Note
+
+Only install VS Code from the official Visual Studio Code site or an approved software portal. On school-managed devices, follow your organization’s install rules.
+
+## Reflection
+
+What clue tells you that you opened the project root instead of a subfolder?
+
+## Capstone Connection
+
+Your Starter Kit should include the exact folder-opening habit you will use before editing project files.

@@ -1,0 +1,91 @@
+---
+title: "Branches, Pull Requests, and Why Agents Need Git Safety"
+module: "ots-000"
+type: "lecture"
+order: 39
+week: 6
+duration: "20 minutes"
+level: "Beginner"
+summary: "Explain branch and review workflow as a safety system, especially for AI-assisted changes."
+outcomes:
+  - "Describe branches and pull requests in plain language."
+  - "Explain why AI-agent work needs review history."
+tags: ["ots-000", "github", "ai-agents"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "Git and GitHub Basics"
+chapterSlug: "06-git-github-basics"
+sectionNumber: "06.3"
+sectionSlug: "06-3"
+canonicalRoute: "/book/ots-000/06-git-github-basics/06-3"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "GitHub project-reading checklist"
+---
+## The Teacher Problem
+
+AI agents can change many files quickly.
+
+That speed is useful only if the teacher can inspect what changed and recover from mistakes.
+
+## The Idea
+
+Branches and pull requests create review space.
+
+Plain language:
+
+- A branch is a separate line of work.
+- A pull request is a proposed change for review.
+- A diff shows what changed.
+- A commit message explains why the change exists.
+
+For agent work, that review space is not optional.
+
+## Classroom Scenario
+
+A teacher asks an agent to update course titles. The agent changes the right registry file but also edits unrelated docs. A diff makes that visible before the changes become accepted.
+
+## Weak Version
+
+```text
+The agent finished, so the work is done.
+```
+
+No. The agent produced changes. The teacher still reviews.
+
+## Better Version
+
+```text
+The agent finished a draft change. I will inspect the diff, confirm the right files changed, and run the agreed checks before accepting it.
+```
+
+## Build Step
+
+Add an AI-change safety section to your checklist:
+
+```text
+Before agent work:
+During agent work:
+After agent work:
+Files that must not be touched:
+Checks that prove the work:
+```
+
+## Quality Check
+
+Your safety section should include the word `diff`. If you cannot inspect what changed, the workflow is not safe enough.
+
+## Safety / Accessibility / Source Note
+
+Do not let agents work on repos containing secrets, private student data, or unpublished sensitive content unless the access boundary is understood and approved.
+
+## Reflection
+
+What would you want to see in a diff before trusting an AI-assisted change?
+
+## Capstone Connection
+
+Your Starter Kit will prepare you for OTS-320 by making review habits visible before agent speed enters the workflow.

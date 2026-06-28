@@ -1,0 +1,97 @@
+---
+title: "Editing Markdown and MDX Files"
+module: "ots-000"
+type: "lecture"
+order: 26
+week: 4
+duration: "20 minutes"
+level: "Beginner"
+summary: "Show teachers how to edit content files without damaging structure."
+outcomes:
+  - "Identify editable content areas in Markdown and MDX."
+  - "Avoid damaging frontmatter and code fences."
+tags: ["ots-000", "markdown", "mdx"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "VS Code for Teacher Builders"
+chapterSlug: "04-vscode-teacher-builders"
+sectionNumber: "04.2"
+sectionSlug: "04-2"
+canonicalRoute: "/book/ots-000/04-vscode-teacher-builders/04-2"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "VS Code survival sheet"
+---
+## The Teacher Problem
+
+Markdown and MDX files look editable because they are mostly text. But they can still contain structure that should not be casually changed.
+
+Frontmatter, links, tables, code blocks, and components all matter.
+
+## The Idea
+
+Edit the lesson body first. Treat metadata and special syntax with care.
+
+Common safe edits:
+
+- revise a paragraph
+- fix directions
+- update a heading
+- improve an example
+- add a checklist item
+
+Common risky edits:
+
+- deleting frontmatter
+- breaking a link
+- changing a route
+- removing closing code fences
+- editing a component you do not understand
+
+## Classroom Scenario
+
+A teacher wants to clarify a build step. The safe edit is in the paragraph under `## Build Step`, not in the frontmatter at the top.
+
+## Weak Version
+
+```text
+It is just text, so I can edit anything.
+```
+
+That is how metadata breaks.
+
+## Better Version
+
+```text
+I can edit the lesson body, and I will pause before changing frontmatter, imports, routes, links, or MDX components.
+```
+
+## Build Step
+
+Add a Markdown and MDX safety box to your survival sheet:
+
+```text
+Usually safe:
+Pause first:
+Never paste secrets:
+Preview after:
+```
+
+## Quality Check
+
+After an edit, you should be able to explain exactly what content changed and what structure you left alone.
+
+## Safety / Accessibility / Source Note
+
+Do not paste student names, grades, private examples, or unverified source text into a lesson file while practicing.
+
+## Reflection
+
+Which part of an MDX file would you pause before editing?
+
+## Capstone Connection
+
+The Starter Kit should include a safe-editing note before you use AI or bulk search-replace on content files.

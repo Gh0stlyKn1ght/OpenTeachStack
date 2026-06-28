@@ -1,0 +1,91 @@
+---
+title: "Commands, Prompts, and Current Folders"
+module: "ots-000"
+type: "lecture"
+order: 32
+week: 5
+duration: "20 minutes"
+level: "Beginner"
+summary: "Teach the location habit that makes terminal commands safer."
+outcomes:
+  - "Explain why current folder matters."
+  - "Use location checks before project commands."
+tags: ["ots-000", "terminal"]
+date: "2026-06-27"
+draft: false
+course: "ots-000"
+courseSlug: "ots-000"
+chapter: "The Terminal Without Fear"
+chapterSlug: "05-terminal-without-fear"
+sectionNumber: "05.2"
+sectionSlug: "05-2"
+canonicalRoute: "/book/ots-000/05-terminal-without-fear/05-2"
+migrationStatus: "authored"
+lessonType: "concept"
+minutes: 20
+artifact: "Terminal command cheat sheet"
+---
+## The Teacher Problem
+
+Commands often depend on the folder where they are run.
+
+Beginners copy the command but miss the location.
+
+## The Idea
+
+Before running a command, ask:
+
+1. What folder am I in?
+2. What command am I running?
+3. What should it do?
+4. What could it change?
+
+The prompt often shows part of the current folder, but you can also use a command to check.
+
+## Classroom Scenario
+
+A teacher tries to run `npm run dev` from the desktop. The project is in a different folder, so the command fails.
+
+The error does not mean the teacher is bad at this. It means the terminal is in the wrong place.
+
+## Weak Version
+
+```text
+The command failed, so the project is broken.
+```
+
+Maybe not.
+
+## Better Version
+
+```text
+The command failed. First I will check whether I am in the project folder.
+```
+
+## Build Step
+
+Add this pre-command checklist:
+
+```text
+Before I press Enter:
+- I know the current folder.
+- I know what the command is supposed to do.
+- I know whether it reads, installs, changes, starts, or deletes.
+- I know how to stop if it hangs or looks wrong.
+```
+
+## Quality Check
+
+If you cannot fill in one bullet, pause and ask before running the command.
+
+## Safety / Accessibility / Source Note
+
+Be extra careful with commands that include words like `delete`, `remove`, `rm`, `clean`, `force`, `reset`, or `overwrite`.
+
+## Reflection
+
+What is the safest habit you can build before pressing Enter?
+
+## Capstone Connection
+
+Your terminal cheat sheet should put the location check above the command list.
