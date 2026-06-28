@@ -119,18 +119,68 @@ Student view checked:
   If the student view does not work, the lesson is not published yet. It is only placed somewhere.
 </TakeawayStrip>
 
-## When to Use This Workflow
+## When to use this workflow
 
-Use this workflow when check the student view needs to become repeatable enough that another teacher could follow the same decision path without guessing what happened.
+Use this workflow after the platform copy is built and before students are told to use it.
 
-## Workflow Steps
+The student view check is the release gate. If the student path fails, the lesson is not ready even if the teacher-facing page looks finished.
 
-1. Name the teaching problem before opening the AI tool.
-2. Gather the existing source material, examples, or constraints.
-3. Ask for one narrow output tied to Platform publishing checklist.
-4. Check the output against the lesson goal, privacy limits, and classroom reality.
-5. Save the accepted version with a short revision note.
+## Classroom scenario
 
-## Next Action
+A teacher publishes an assignment from the teacher account. The lesson page opens, the attached document opens, and the rubric appears.
 
-Apply the workflow to one real piece of course content, then write down what AI improved and what the teacher still had to decide.
+In student view, the document says "request access," the rubric is hidden, and the submit button only allows text entry even though the directions ask for a file upload.
+
+Nothing about the lesson goal is wrong. The release is wrong.
+
+## Weak version
+
+```text
+I previewed the page from my account and everything opened.
+```
+
+Teacher preview is useful, but it is not enough.
+
+## Better version
+
+```text
+Student-view release note:
+- Started from the module page
+- Assignment visible to students
+- Lesson directions readable
+- Document opened with student permissions
+- Rubric visible
+- Submission type matches directions
+- Due date visible
+```
+
+This version checks the path students will actually take.
+
+## Workflow steps
+
+1. Enter the course from the same starting point students use.
+2. Open the lesson, assignment, files, media, forms, and links.
+3. Compare each student-facing direction to the platform setting.
+4. Check that examples, success criteria, rubrics, and submission instructions are visible.
+5. Fix mismatches before release.
+6. Save a short student-view release note.
+
+## Quality check
+
+Ask:
+
+- Can a student find the lesson without a private teacher link?
+- Can a student open every required item?
+- Can a student complete the task using only the visible directions?
+- Can a student submit in the format the directions require?
+- Would the page still make sense if the student missed the verbal explanation?
+
+## Safety and access note
+
+Student view can expose safety and equity problems the teacher view hides: blocked videos, inaccessible files, account prompts, public sharing settings, or tools that require personal data.
+
+Treat those as release blockers, not small annoyances.
+
+## Next action
+
+Run one real student-view check and write the release note in your platform publishing checklist.
