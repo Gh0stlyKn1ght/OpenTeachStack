@@ -65,6 +65,201 @@ export interface CourseLessonItem extends ContentItem {
 /** Absolute path to the project-root `content/` directory. */
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
+const VALID_CONTENT_TYPES = new Set<ContentFrontmatter["type"]>([
+  "lecture",
+  "lab",
+  "field-note",
+  "template",
+  "case-study",
+]);
+
+const VALID_MIGRATION_STATUSES = new Set<CourseLessonItem["frontmatter"]["migrationStatus"]>([
+  "scaffolded",
+  "generated",
+  "authored",
+  "reviewed",
+]);
+
+function relativeContentPath(filePath: string) {
+  return path.relative(process.cwd(), filePath);
+}
+
+function frontmatterError(filePath: string, key: string, message: string): never {
+  throw new Error(`Invalid frontmatter in ${relativeContentPath(filePath)}: ${key} ${message}`);
+}
+
+function asFrontmatterRecord(data: unknown, filePath: string): Record<string, unknown> {
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    frontmatterError(filePath, "frontmatter", "must be an object.");
+  }
+
+  return data as Record<string, unknown>;
+}
+
+function readString(
+  data: Record<string, unknown>,
+  key: string,
+  filePath: string,
+  fallback: string,
+) {
+  const value = data[key];
+  if (value === undefined || value === null) {
+    return fallback;
+  }
+
+  if (typeof value !== "string") {
+    frontmatterError(filePath, key, "must be a string.");
+  }
+
+  return value;
+}
+
+function readRequiredString(data: Record<string, unknown>, key: string, filePath: string) {
+  const value = data[key];
+  if (typeof value !== "string" || value.trim().length === 0) {
+    frontmatterError(filePath, key, "must be a non-empty string.");
+  }
+
+  return value;
+}
+
+function readNumber(
+  data: Record<string, unknown>,
+  key: string,
+  filePath: string,
+  fallback: number,
+) {
+  const value = data[key];
+  if (value === undefined || value === null) {
+    return fallback;
+  }
+
+  const numericValue = typeof value === "string" ? Number(value) : value;
+  if (typeof numericValue !== "number" || Number.isNaN(numericValue)) {
+    frontmatterError(filePath, key, "must be a number.");
+  }
+
+  return numericValue;
+}
+
+function readBoolean(
+  data: Record<string, unknown>,
+  key: string,
+  filePath: string,
+  fallback: boolean,
+) {
+  const value = data[key];
+  if (value === undefined || value === null) {
+    return fallback;
+  }
+
+  if (typeof value === "boolean") {
+    return value;
+  }
+
+  if (value === "true") {
+    return true;
+  }
+
+  if (value === "false") {
+    return false;
+  }
+
+  frontmatterError(filePath, key, "must be a boolean.");
+}
+
+function readStringArray(data: Record<string, unknown>, key: string, filePath: string) {
+  const value = data[key];
+  if (value === undefined || value === null) {
+    return [];
+  }
+
+  if (!Array.isArray(value) || value.some((item) => typeof item !== "string")) {
+    frontmatterError(filePath, key, "must be an array of strings.");
+  }
+
+  return value;
+}
+
+function defaultContentType(filePath: string): ContentFrontmatter["type"] {
+  const normalizedPath = filePath.replace(/\\/g, "/");
+  if (normalizedPath.includes("/labs/")) {
+    return "lab";
+  }
+
+  if (normalizedPath.includes("/field-notes/")) {
+    return "field-note";
+  }
+
+  if (normalizedPath.includes("/templates/")) {
+    return "template";
+  }
+
+  if (normalizedPath.includes("/case-studies/")) {
+    return "case-study";
+  }
+
+  return "lecture";
+}
+
+function readContentType(data: Record<string, unknown>, filePath: string) {
+  const value = data.type;
+  if (value === undefined || value === null) {
+    return defaultContentType(filePath);
+  }
+
+  if (typeof value !== "string" || !VALID_CONTENT_TYPES.has(value as ContentFrontmatter["type"])) {
+    frontmatterError(filePath, "type", "must be one of lecture, lab, field-note, template, or case-study.");
+  }
+
+  return value as ContentFrontmatter["type"];
+}
+
+function normalizeContentFrontmatter(data: unknown, filePath: string): ContentFrontmatter {
+  const frontmatter = asFrontmatterRecord(data, filePath);
+  const title = readRequiredString(frontmatter, "title", filePath);
+
+  return {
+    title,
+    module: readString(frontmatter, "module", filePath, "uncategorized"),
+    type: readContentType(frontmatter, filePath),
+    order: readNumber(frontmatter, "order", filePath, 0),
+    week: readNumber(frontmatter, "week", filePath, 0),
+    duration: readString(frontmatter, "duration", filePath, "self-paced"),
+    level: readString(frontmatter, "level", filePath, "beginner"),
+    summary: readString(frontmatter, "summary", filePath, title),
+    outcomes: readStringArray(frontmatter, "outcomes", filePath),
+    tags: readStringArray(frontmatter, "tags", filePath),
+    date: readString(frontmatter, "date", filePath, ""),
+    draft: readBoolean(frontmatter, "draft", filePath, false),
+    author: readString(frontmatter, "author", filePath, ""),
+  };
+}
+
+function normalizeCourseLessonFrontmatter(
+  data: unknown,
+  filePath: string,
+): CourseLessonItem["frontmatter"] {
+  const frontmatter = asFrontmatterRecord(data, filePath);
+  const migrationStatus = readRequiredString(frontmatter, "migrationStatus", filePath);
+
+  if (!VALID_MIGRATION_STATUSES.has(migrationStatus as CourseLessonItem["frontmatter"]["migrationStatus"])) {
+    frontmatterError(filePath, "migrationStatus", "must be scaffolded, generated, authored, or reviewed.");
+  }
+
+  return {
+    ...normalizeContentFrontmatter(frontmatter, filePath),
+    course: readRequiredString(frontmatter, "course", filePath),
+    courseSlug: readRequiredString(frontmatter, "courseSlug", filePath),
+    chapter: readRequiredString(frontmatter, "chapter", filePath),
+    chapterSlug: readRequiredString(frontmatter, "chapterSlug", filePath),
+    sectionNumber: readRequiredString(frontmatter, "sectionNumber", filePath),
+    sectionSlug: readRequiredString(frontmatter, "sectionSlug", filePath),
+    canonicalRoute: readRequiredString(frontmatter, "canonicalRoute", filePath),
+    migrationStatus: migrationStatus as CourseLessonItem["frontmatter"]["migrationStatus"],
+  };
+}
+
 /**
  * Resolve the directory for a given content type.
  * Throws if the directory does not exist.
@@ -101,7 +296,25 @@ function parseFile(filePath: string, slug: string): ContentItem {
 
   return {
     slug,
-    frontmatter: data as ContentFrontmatter,
+    frontmatter: normalizeContentFrontmatter(data, filePath),
+    content,
+    readingTime: {
+      text: stats.text,
+      minutes: stats.minutes,
+      time: stats.time,
+      words: stats.words,
+    },
+  };
+}
+
+function parseCourseLessonFile(filePath: string, slug: string): CourseLessonItem {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(raw);
+  const stats = readingTime(content);
+
+  return {
+    slug,
+    frontmatter: normalizeCourseLessonFrontmatter(data, filePath),
     content,
     readingTime: {
       text: stats.text,
@@ -148,7 +361,7 @@ export function getCourseLessonBySlugs(
     return undefined;
   }
 
-  return parseFile(filePath, sectionSlug) as CourseLessonItem;
+  return parseCourseLessonFile(filePath, sectionSlug);
 }
 
 /**

@@ -24,12 +24,12 @@ export default function HomePage() {
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-foreground/68">
               A sequenced field guide for educators entering the tech world.
-              Start with foundations, then move into the teacher technology
+              Start with orientation, then move into the teacher technology
               system you need next.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
-              Start with OTS-101. Use the Knowledge Base when you need prompts,
-              templates, source checks, safety guidance, or quick workflows.
+              Start with OTS-000 if the tool stack still feels fuzzy. Move to
+              OTS-101 when you are ready to build AI-assisted course content.
             </p>
             <p className="mt-4 max-w-3xl rounded-sm border border-accent/30 bg-surface-alt/35 px-4 py-3 text-sm leading-relaxed text-foreground/66">
               Video walkthroughs and additional supporting content are coming
@@ -38,8 +38,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">
-            <Link href="/book/ots-101" className="book-action">
-              Start OTS-101
+            <Link href="/book/ots-000" className="book-action">
+              Start OTS-000
             </Link>
             <Link href="/kb" className="book-action-secondary">
               Open Knowledge Base
@@ -64,7 +64,7 @@ export default function HomePage() {
         <ol className="border-y border-border">
           {PATHWAY_COURSES.map((course, index) => {
             const sequence = String(index + 1).padStart(2, "0");
-            const isFirstCourse = course.code === "OTS-101";
+            const isFirstCourse = course.code === "OTS-000";
             const isComingSoon = course.status === "Coming Soon";
 
             return (
@@ -101,7 +101,10 @@ export default function HomePage() {
                         Coming soon
                       </span>
                     ) : (
-                      <Link href="/book/ots-101" className="book-action">
+                      <Link
+                        href={`/book/${course.code.toLowerCase()}`}
+                        className="book-action"
+                      >
                         {isFirstCourse ? "Start here" : "Open course"}
                       </Link>
                     )}

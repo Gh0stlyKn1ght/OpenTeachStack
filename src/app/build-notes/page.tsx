@@ -20,7 +20,7 @@ export default function BuildNotesPage() {
       eyebrow="Build Notes"
       title="The messy build journal."
       subtitle="Mistakes, fixes, architecture decisions, and course-writing lessons from building OpenTeachStack."
-      breadcrumbs={[{ label: "Start", href: "/book/ots-101" }]}
+      breadcrumbs={[{ label: "Start", href: "/book/ots-000" }]}
     >
       <ArticleBody>
         {featured ? (

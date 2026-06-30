@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import ArtifactCard from "@/components/book/ArtifactCard";
 import ChapterProgress from "@/components/book/ChapterProgress";
 import CourseStructureSidebar from "@/components/book/CourseStructureSidebar";
@@ -29,6 +29,16 @@ export function generateStaticParams() {
   );
 }
 
+function getCanonicalChapterForStaleSlug(courseSlug: string, chapterSlug: string) {
+  const requestedChapterNumber = chapterSlug.split("-")[0];
+  if (!requestedChapterNumber) {
+    return undefined;
+  }
+
+  const course = COURSE_STRUCTURES.find((item) => item.slug === courseSlug);
+  return course?.chapters.find((chapter) => chapter.number === requestedChapterNumber);
+}
+
 export async function generateMetadata({
   params,
 }: ChapterPageProps): Promise<Metadata> {
@@ -50,6 +60,11 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
   const record = getCourseChapter(courseSlug, chapterSlug);
 
   if (!record) {
+    const canonicalChapter = getCanonicalChapterForStaleSlug(courseSlug, chapterSlug);
+    if (canonicalChapter) {
+      redirect(`/book/${courseSlug}/${canonicalChapter.slug}`);
+    }
+
     notFound();
   }
 
@@ -65,7 +80,7 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
       <FieldGuidePage
         eyebrow={`${course.code} Coming Soon`}
         title={course.title}
-        subtitle="This chapter is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+        subtitle="This chapter is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
         breadcrumbs={[
           { label: "Book", href: "/book" },
           { label: course.code, href: `/book/${course.slug}` },
@@ -73,7 +88,7 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
         meta={[
           { label: "Course", value: course.code },
           { label: "Status", value: "Coming Soon" },
-          { label: "Boundary", value: "Frozen until OTS-101 is right" },
+          { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
         ]}
       >
         <ArticleBody>
@@ -86,8 +101,9 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
                 masquerade as authored course content.
               </p>
               <p>
-                OTS-101 is the active rebuild. Once it is right, this course
-                can be opened and authored for real.
+                OTS-000 and OTS-101 are the active sequence. Once that on-ramp
+                plus foundations sequence is right, this course can be opened
+                and authored for real.
               </p>
             </div>
             <ArtifactCard
@@ -96,8 +112,8 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
             />
           </section>
 
-          <Link href="/book/ots-101" className="book-action">
-            Return to OTS-101
+          <Link href="/book/ots-000" className="book-action">
+            Return to OTS-000
           </Link>
         </ArticleBody>
       </FieldGuidePage>

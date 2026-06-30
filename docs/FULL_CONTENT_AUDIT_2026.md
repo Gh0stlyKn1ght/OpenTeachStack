@@ -2,6 +2,8 @@
 
 Generated: 2026-06-25T22:40:57.213Z
 
+Staleness note, 2026-06-28: this is a historical gate snapshot, not the current course-readiness claim. It predates the OTS-000 on-ramp decision and the later status reset that keeps later pathway courses Coming Soon until OTS-000 and OTS-101 are reviewed as a sequence.
+
 ## Executive Summary
 
 OpenTeachStack now has the instructional-depth gate wired into the test chain and passing across all release-targeted course lessons. The broad remediation pass focused on concrete classroom examples, artifact links, completed sample rows, technical code samples, safety boundaries, common mistakes, and reviewer checks.

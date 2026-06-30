@@ -2,6 +2,8 @@
 
 Date: 2026-06-26
 
+Sequence update, 2026-06-28: OTS-000 now precedes OTS-101 as the teacher tech-stack orientation. OTS-101 remains the drafted course-content foundations sequel, not the first thing a teacher must use.
+
 ## Why this rebuild started
 
 The repo had working routes and many course-shaped files, but most course lesson bodies were generic generated scaffolds. That created a false release state: the site looked complete while the lessons did not actually teach teachers how to create student-facing course content with AI.
@@ -11,6 +13,12 @@ The repo had working routes and many course-shaped files, but most course lesson
 The placeholder MDX lesson bodies that matched repeated scaffold language were deleted from course lesson folders. The repo now prefers intentionally unavailable lessons over fake authored content.
 
 Legacy OTS-101 folders such as `01-teacher-builder-mindset`, `02-prompting`, and `10-mini-unit-capstone` were removed from the active lesson path because they belonged to the earlier placeholder course shape.
+
+## OTS-000 and OTS-101 sequence created
+
+OTS-000 now owns the teacher tech-stack on-ramp: files and folders, VS Code, GitHub basics, Markdown/MDX, websites and hosting concepts, AI assistants, MCP-style tool access, backups, secrets, and the Teacher Builder Starter Kit.
+
+OTS-101 owns the next step: AI-assisted course content foundations.
 
 ## OTS-101 real content created
 
@@ -38,7 +46,8 @@ The authored pass uses a consistent lesson pattern: teacher problem, idea, class
 ## Route and pathway behavior changes
 
 - Section routes show an honest unavailable state when a lesson body is missing.
-- OTS-101 is the active draft course.
+- OTS-000 is the active draft on-ramp.
+- OTS-101 is the active draft sequel for course-content foundations.
 - Other pathway courses are Coming Soon and should not behave like clickable live courses.
 - Root-level `teachable/{course}` folders are export support only and do not prove course readiness.
 
@@ -57,12 +66,13 @@ The authored pass uses a consistent lesson pattern: teacher problem, idea, class
 
 ## Current status
 
-OTS-101 has a complete authored draft pass, but it is not release-ready yet.
+OTS-000 and OTS-101 form the active draft sequence, but the sequence is not release-ready yet.
 
 Remaining work before release:
 
-1. Human review for voice, accuracy, classroom realism, and example quality.
-2. Visual/readability review of all chapters.
-3. Sample mini course packet refresh.
-4. Validation gates after review.
-5. Final release-readiness decision.
+1. Human review of OTS-000 as the on-ramp into OTS-101.
+2. Human review of OTS-101 for voice, accuracy, classroom realism, and example quality.
+3. Visual/readability review of all active sequence chapters.
+4. Sample mini course packet refresh.
+5. Validation gates after review.
+6. Final release-readiness decision.

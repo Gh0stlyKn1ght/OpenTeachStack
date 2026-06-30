@@ -45,7 +45,8 @@ Use this while existing route readers still expect `lessons/`:
 ```txt
 content/
   courses/
-    ots-101/
+      ots-000/
+      ots-101/
       README.md
       course.json
       status.json
@@ -67,6 +68,7 @@ Use this when the reader is ready for chapter-owned lesson folders:
 ```txt
 content/
   courses/
+    ots-000/
     ots-101/
       course.md
       status.json
@@ -109,8 +111,10 @@ A course may be marked `live` only when all of these are true:
 
 File count, route count, Teachable package count, and green build status are not enough.
 
-## OTS-101 boundary
+## Active sequence boundary
 
-OTS-101 is the only active rebuild.
+OTS-000 and OTS-101 are the only active sequence work.
 
-All other courses stay planned/Coming Soon until OTS-101 is right.
+OTS-000 is the teacher tech-stack orientation and on-ramp. OTS-101 is the AI course-content foundations sequel.
+
+All other courses stay planned/Coming Soon until the OTS-000/OTS-101 sequence is right.

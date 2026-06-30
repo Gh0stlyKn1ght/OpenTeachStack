@@ -13,10 +13,10 @@ export default function CyberSafetyCoursePage() {
     <FieldGuidePage
       eyebrow="OTS-280 Coming Soon Pathway Course"
       title="Cyber Safety for Educators"
-      subtitle="Identity, privacy, accounts, and website safety for teachers. This course is frozen until OTS-101 proves the content model with real lessons."
+      subtitle="Identity, privacy, accounts, and website safety for teachers. This course is frozen until OTS-000 and OTS-101 are reviewed as a real on-ramp plus foundations sequence."
       meta={[
         { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        { label: "Boundary", value: "Frozen until OTS-000/101 are right" },
       ]}
     >
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
@@ -24,13 +24,14 @@ export default function CyberSafetyCoursePage() {
           Why This Is Closed
         </h2>
         <p className="mb-3 text-sm leading-relaxed text-slate">
-          OpenTeachStack is rebuilding OTS-101 first. We are not publishing
-          course previews, fake lesson bodies, or outline-only pathway content
-          while the foundation course is still being repaired.
+          OpenTeachStack is rebuilding the on-ramp and foundations sequence
+          first. We are not publishing course previews, fake lesson bodies, or
+          outline-only pathway content while OTS-000 and OTS-101 are still
+          being reviewed.
         </p>
         <p className="m-0 text-sm leading-relaxed text-slate">
-          OTS-280 remains Coming Soon until OTS-101 is rebuilt, reviewed, and
-          strong enough to guide the rest of the pathway.
+          OTS-280 remains Coming Soon until OTS-000 and OTS-101 are reviewed
+          and strong enough to guide the rest of the pathway.
         </p>
       </section>
 
@@ -39,13 +40,13 @@ export default function CyberSafetyCoursePage() {
           Return to the Active Course
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
-          OTS-101 is the only course currently being rebuilt.
+          OTS-000 and OTS-101 are the current sequence under review.
         </p>
         <Link
-          href="/book/ots-101"
+          href="/book/ots-000"
           className="inline-flex rounded-md bg-[var(--color-text)] px-4 py-2 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
-          Open OTS-101
+          Open OTS-000
         </Link>
       </section>
 

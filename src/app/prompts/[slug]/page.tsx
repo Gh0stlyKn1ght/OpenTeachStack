@@ -4,14 +4,17 @@ import Link from "next/link";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import PrintPageButton from "@/components/PrintPageButton";
-import { getPromptBySlug, TEACHER_PROMPTS } from "@/lib/prompts";
+import { getPromptBySlug, PROMPT_SLUG_ALIASES, TEACHER_PROMPTS } from "@/lib/prompts";
 
 interface PromptDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return TEACHER_PROMPTS.map((prompt) => ({ slug: prompt.slug }));
+  return [
+    ...TEACHER_PROMPTS.map((prompt) => ({ slug: prompt.slug })),
+    ...Object.keys(PROMPT_SLUG_ALIASES).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({

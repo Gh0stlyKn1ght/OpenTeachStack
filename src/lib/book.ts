@@ -323,7 +323,7 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
       },
       {
         label: "Assessment rubric template",
-        url: "/templates/assessment-rubric-template",
+        url: "/templates/assignment-rubric-packet",
       },
     ],
     lastVerified: EVIDENCE_LAST_VERIFIED,
@@ -335,37 +335,37 @@ export const EVIDENCE_TOPICS: EvidenceTopic[] = [
 
 export const OTS_101_STANDARDS_ASSESSMENT_MATRIX: StandardsAssessmentTraceRow[] = [
   {
-    module: "04 — Standards to Learning Targets",
+    module: "02 — Learning Target and Lesson Map",
     standards:
       "Standard intent is translated into measurable learner outcomes and aligned lesson evidence.",
-    assessmentArtifact: "Standards unpacking sheet",
-    evidenceRoute: "/templates/standards-unpacking-sheet",
+    assessmentArtifact: "Learning target and lesson map",
+    evidenceRoute: "/templates/learning-target-lesson-map",
     sourceReference:
       "Use official standard references from the source bank + OTS-101 chapter route",
   },
   {
-    module: "08 — Assessment, Rubrics, and Feedback",
+    module: "06 — Assignments, Labs, Rubrics, and Feedback",
     standards:
       "Learning targets from earlier modules are scored with observable criteria and feedback loops.",
-    assessmentArtifact: "Assessment and rubric draft",
-    evidenceRoute: "/templates/assessment-rubric-template",
+    assessmentArtifact: "Assignment and rubric packet",
+    evidenceRoute: "/templates/assignment-rubric-packet",
     sourceReference:
       "Use official sources and prompt/verification notes from OTS-101 section bodies.",
   },
   {
-    module: "09 — Delivery Planning",
+    module: "09 — Publishing to a Platform",
     standards:
-      "Standards-aligned lessons map to student-facing workflows, pacing, and backup plans.",
-    assessmentArtifact: "Delivery plan",
-    evidenceRoute: "/templates/delivery-plan",
+      "Student-facing content is checked from the student view before export, release, or blocked status.",
+    assessmentArtifact: "Publishing checklist",
+    evidenceRoute: "/templates/publishing-checklist",
     sourceReference:
       "Link chapter 09 outcomes to chapter 10 capstone artifact validation steps.",
   },
   {
-    module: "10 — Mini-Unit Capstone",
+    module: "10 — Mini Course Content Packet",
     standards:
-      "Mini-unit evidence shows standards, artifacts, and assessment evidence are connected before release.",
-    assessmentArtifact: "Verified mini-unit capstone",
+      "Packet evidence shows targets, student-facing content, assessment, safety, source, publishing, and revision evidence are connected before release.",
+    assessmentArtifact: "Verified Mini Course Content Packet",
     evidenceRoute: "/book/ots-101/10-mini-course-content-packet",
     sourceReference: "Course-level evidence matrix + source bank verification notes.",
   },

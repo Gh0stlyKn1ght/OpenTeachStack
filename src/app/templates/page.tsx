@@ -8,7 +8,7 @@ import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 export const metadata: Metadata = createPageMetadata({
   title: "Template Library — OpenTeachStack",
   description:
-    "Available OTS-101 foundations templates, including workflow audit, standards unpacking, mini-unit map, prompt library, resource evaluation, verification, assessment, delivery, and revision logs.",
+    "Available OTS-101 foundations templates, including course content inventory, learning target map, reusable prompt, verification, assignments, safety review, publishing checks, and the Mini Course Content Packet.",
   path: "/templates",
 });
 
@@ -76,7 +76,7 @@ export default function TemplatesPage() {
             Available Foundations Templates
           </h2>
           <p className="mb-4 text-sm text-foreground/50">
-            These templates support the OTS-101 mini-unit capstone.
+            These templates support the OTS-101 Mini Course Content Packet.
           </p>
           {FOUNDATION_TEMPLATES.map((template) => (
             <TemplateCard

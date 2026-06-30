@@ -19,4 +19,4 @@
 - It gives no privacy, source, accessibility, or safety boundary.
 - It does not tell the teacher what to check before using the output.
 
-This pattern should be marked **Revise**. It is not ready for a reusable prompt library.
+This pattern should be marked **Revise**. It is not ready for a reusable course-content prompt.

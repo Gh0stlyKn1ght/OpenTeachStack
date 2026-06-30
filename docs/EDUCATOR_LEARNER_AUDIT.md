@@ -2,6 +2,8 @@
 
 Date: 2026-06-24
 
+Staleness note, 2026-06-28: this audit predates the OTS-000 on-ramp decision and the OTS-101 retargeting to AI Course Content Foundations for Teachers. Treat the old OTS-101 title, old chapter slugs, mini-unit framing, and entry-course recommendations as historical evidence only.
+
 Status: Historical pre-remediation snapshot. Use this audit to understand the
 original learner-facing issues; use `docs/STUDENT_LEARNER_FACING_AUDIT.md`,
 `docs/COURSE_LEARNER_FACING_REVIEW.md`, and the current verification commands

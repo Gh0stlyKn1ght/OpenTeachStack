@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       subtitle={post.summary}
       breadcrumbs={[
         { label: "Blog", href: "/blog" },
-        { label: "OTS-101", href: "/book/ots-101" },
+        { label: "Start", href: "/book/ots-000" },
       ]}
     >
       <ArticleByline author={post.author} date={post.date} title={post.title} readingTime={post.readingTime} />

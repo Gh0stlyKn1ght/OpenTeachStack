@@ -32,7 +32,7 @@ const resourceHubs = [
   {
     title: "Template Library",
     href: "/templates",
-    desc: "Blank and example artifacts for audits, mini-units, source checks, assessments, and delivery plans.",
+    desc: "Blank and example artifacts for course content inventories, target maps, prompts, verification checks, assessments, safety reviews, and publishing checks.",
     badge: "Templates",
   },
   {
@@ -44,7 +44,7 @@ const resourceHubs = [
   {
     title: "Examples",
     href: "/examples",
-    desc: "Finished-enough model artifacts, including the sample robotics mini-unit.",
+    desc: "Finished-enough model artifacts, including the sample robotics Mini Course Content Packet.",
     badge: "Models",
   },
   {

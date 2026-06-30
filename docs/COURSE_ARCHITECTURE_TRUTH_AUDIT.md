@@ -2,6 +2,8 @@
 
 Date: 2026-06-26
 
+Sequence update, 2026-06-28: this audit predates the OTS-000 on-ramp decision. Treat OTS-101-only statements below as stale unless they have been revised to the OTS-000 -> OTS-101 sequence.
+
 ## Current architecture problem
 
 OpenTeachStack had two competing mental models:
@@ -23,7 +25,7 @@ A Teachable package is not a course. A course-description file is not a course. 
 | OTS-101 | Has 12 real lesson files and 13 templates. | It is draft, not live. Later chapters are still missing. |
 | Other courses | Have zero lesson MDX files after fake placeholders were removed, but still have templates/docs/export support. | They must remain Coming Soon and unavailable. |
 | Course docs | Some stale course outline files still claimed `release-ready outline`. | Stale claims can override the honest status model in future work. |
-| Routes | Non-OTS-101 book routes now render Coming Soon stop pages. | Keep this behavior until OTS-101 is genuinely reviewed. |
+| Routes | Non-OTS-000/OTS-101 book routes now render Coming Soon stop pages. | Keep this behavior until the OTS-000/OTS-101 sequence is genuinely reviewed. |
 | Scripts | Bulk authoring commands are refused by package scripts, but old authoring scripts still exist. | They should remain blocked unless intentionally removed or rewritten as audited one-course tools. |
 
 ## Source-of-truth folders
@@ -58,7 +60,7 @@ The course-local export folder is intentionally not proof that the course is liv
 
 None.
 
-OTS-101 is the only active draft rebuild. It is not live yet.
+OTS-000 and OTS-101 are the active draft sequence. Neither is live yet.
 
 ## Courses with Teachable packages but no real lesson tree
 
@@ -73,7 +75,7 @@ These courses have root-level Teachable packages but no real lesson MDX files:
 - OTS-320
 - OTS-399
 
-They are Coming Soon and frozen until OTS-101 proves the content model.
+They are Coming Soon and frozen until OTS-000 and OTS-101 prove the on-ramp plus foundations content model.
 
 ## Recommended migration tree
 
@@ -82,6 +84,7 @@ Target shape:
 ```txt
 content/
   courses/
+    ots-000/
     ots-101/
       course.md
       status.json
@@ -107,6 +110,7 @@ Near-term compatible shape:
 ```txt
 content/
   courses/
+    ots-000/
     ots-101/
       course.json
       status.json
@@ -132,4 +136,4 @@ Use the near-term shape until routes and readers are migrated safely.
 
 - Decide whether root-level `teachable/` should eventually move to `exports/teachable/` or stay as a legacy bridge.
 - Review whether stale historical audit docs should be archived or clearly marked as outdated snapshots.
-- Review OTS-101 Chapters 01-02 for voice and usefulness before Chapter 03 authoring continues.
+- Review OTS-000 and OTS-101 together for voice, usefulness, and sequencing before any later pathway course opens.

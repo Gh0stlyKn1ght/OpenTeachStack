@@ -16,13 +16,13 @@ export default function Ots280BookPage() {
     <FieldGuidePage
       eyebrow={`${CYBER_COURSE_CODE} Coming Soon`}
       title="Cyber Safety for Educators"
-      subtitle="This course is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+      subtitle="This course is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Course path", value: CYBER_COURSE_PATH },
         { label: "Course", value: CYBER_COURSE_CODE },
         { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
       ]}
     >
       <ArticleBody>
@@ -35,18 +35,19 @@ export default function Ots280BookPage() {
               scaffolded course content just to make the pathway look full.
             </p>
             <p>
-              Finish OTS-101 first. After that course proves the content model,
-              OTS-280 can be rebuilt intentionally.
+              Finish the OTS-000 on-ramp and OTS-101 foundations sequence first.
+              After that sequence proves the content model, OTS-280 can be
+              rebuilt intentionally.
             </p>
           </div>
           <ArtifactCard
             title="Coming Soon"
-            description="This course stays frozen until OTS-101 has real, reviewed, teacher-useful lesson content."
+            description="This course stays frozen until OTS-000 and OTS-101 have real, reviewed, teacher-useful lesson content."
           />
         </section>
 
-        <Link href="/book/ots-101" className="book-action">
-          Return to OTS-101
+        <Link href="/book/ots-000" className="book-action">
+          Return to OTS-000
         </Link>
       </ArticleBody>
     </FieldGuidePage>

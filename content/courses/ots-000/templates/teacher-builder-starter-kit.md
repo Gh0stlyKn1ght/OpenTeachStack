@@ -162,3 +162,13 @@ I will be careful with:
 I still need help with:
 My next OpenTeachStack course should be:
 ```
+
+## Starter Kit Checklist
+
+Use these bullets as the scan path for the template:
+
+- Name the project container.
+- List the tools and accounts.
+- Save the key file paths.
+- Record the evidence that the setup works.
+- Note the next revision trigger.

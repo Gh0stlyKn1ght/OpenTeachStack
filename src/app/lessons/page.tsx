@@ -32,7 +32,7 @@ export default function LessonsPage() {
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Legacy lessons", value: String(lessons.length) },
-        { label: "Primary reader", value: "/book/ots-101" },
+        { label: "Primary reader", value: "/book" },
         { label: "Status", value: "Compatibility archive" },
       ]}
     >

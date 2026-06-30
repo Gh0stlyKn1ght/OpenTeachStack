@@ -70,7 +70,7 @@ export const lessonVisuals: Record<string, VisualAsset> = {
   },
   "capstone-build-your-mini-course": {
     src: "/images/ots-101/capstone-build-your-mini-course.webp",
-    alt: "Illustration of a completed mini-unit packet with standards, resources, rubric, delivery plan, and revision log.",
+    alt: "Illustration of a completed Mini Course Content Packet with targets, student-facing content, sources, rubric, publishing checks, and revision notes.",
   },
 };
 
@@ -81,7 +81,7 @@ export const pageVisuals = {
   },
   releasePacket: {
     src: "/images/ots-101/release-packet.webp",
-    alt: "Illustration of an OTS-101 release packet with module cards, checklists, source evidence, and rubric materials.",
+    alt: "Illustration of an OTS-101 review packet with chapter cards, source evidence, safety checks, publishing notes, and rubric materials.",
   },
 } satisfies Record<string, VisualAsset>;
 

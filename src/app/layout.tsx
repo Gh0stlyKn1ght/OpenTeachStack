@@ -60,7 +60,7 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <head>
         <Script
           id="openteachstack-theme"
           strategy="beforeInteractive"
@@ -76,6 +76,8 @@ try {
             `,
           }}
         />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <AcademicHeader />
         <main className="flex-1">{children}</main>
         <Footer />

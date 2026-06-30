@@ -87,7 +87,7 @@ export const MODULES: CourseModule[] = [
       "What are teachers actually building when they use AI for course work?",
     buildArtifact: "Course content inventory",
     evidence:
-      "A labeled inventory that separates learning plan, student-facing content, instructional materials, platform links, and revision needs.",
+      "A labeled inventory that separates learning plan, student-facing content, instructional materials, platform links, OTS-000 context, verification needs, and revision needs.",
     templateSlugs: [
       "course-content-inventory",
       "curriculum-course-content-map",
@@ -105,7 +105,7 @@ export const MODULES: CourseModule[] = [
       "How do you move from a goal or standard to content students can use?",
     buildArtifact: "Learning target and lesson map",
     evidence:
-      "A learning target map that shows target, student-facing language, lesson sequence, evidence, and AI support notes.",
+      "A learning target map that shows source goal, student-friendly target, practice path, evidence, AI support, teacher verification, revision trigger, and local boundary.",
     templateSlugs: ["learning-target-lesson-map"],
   },
   {
@@ -119,7 +119,7 @@ export const MODULES: CourseModule[] = [
       "How do teachers keep AI output from turning into generic lesson filler?",
     buildArtifact: "Reusable course-content prompt",
     evidence:
-      "One reusable prompt with source material, classroom context, output format, verification rules, and teacher revision notes.",
+      "One reusable course-content prompt with source material, classroom context, output format, local boundary, verification rules, and teacher revision notes.",
     templateSlugs: ["ai-course-content-prompt"],
   },
   {
@@ -131,9 +131,9 @@ export const MODULES: CourseModule[] = [
     slug: "04-verify-ai-before-students",
     essentialQuestion:
       "What must be true before AI-assisted content reaches students?",
-    buildArtifact: "AI output verification checklist",
+    buildArtifact: "AI draft verification checklist",
     evidence:
-      "A documented verification pass showing accepted, revised, rejected, and still-uncertain content decisions.",
+      "A documented verification pass showing accepted, revised, rejected, and blocked content decisions before students see the draft.",
     templateSlugs: ["ai-output-verification-checklist"],
   },
   {
@@ -145,9 +145,9 @@ export const MODULES: CourseModule[] = [
     slug: "05-student-facing-lessons",
     essentialQuestion:
       "Can students use the lesson without the teacher re-explaining the page?",
-    buildArtifact: "Student-facing lesson page",
+    buildArtifact: "Student-facing lesson draft",
     evidence:
-      "One student-facing lesson page with target, directions, example, check for understanding, submission expectation, and accessibility pass.",
+      "One student-facing lesson draft with target, directions, example, non-example, success check, stuck-point support, submission expectation, and teacher verification notes.",
     templateSlugs: ["student-facing-lesson-page"],
   },
   {
@@ -159,9 +159,9 @@ export const MODULES: CourseModule[] = [
     slug: "06-assignments-labs-rubrics-feedback",
     essentialQuestion:
       "Does the assessment prove the target instead of just collecting work?",
-    buildArtifact: "Assignment and rubric packet",
+    buildArtifact: "Assignment and feedback packet",
     evidence:
-      "One assignment or lab with rubric criteria, feedback routine, student submission instructions, and revision opportunity.",
+      "One assignment or lab with evidence, not-enough-evidence note, observable rubric criteria, feedback routine, student submission instructions, and revision opportunity.",
     templateSlugs: ["assignment-rubric-packet"],
   },
   {
@@ -173,9 +173,9 @@ export const MODULES: CourseModule[] = [
     slug: "07-organizing-course-content-system",
     essentialQuestion:
       "Could another teacher find, understand, and update the course materials?",
-    buildArtifact: "Course content folder map",
+    buildArtifact: "Course content system map",
     evidence:
-      "A folder and naming map with live/draft/archive rules, link ownership, version notes, and revision log location.",
+      "A source/draft/student-ready/export/archive map with naming rules, review status, OTS-000 context when relevant, and revision log location.",
     templateSlugs: ["course-content-folder-map", "revision-log"],
   },
   {
@@ -187,9 +187,9 @@ export const MODULES: CourseModule[] = [
     slug: "08-safety-accessibility-copyright-source-quality",
     essentialQuestion:
       "What must be fixed before teacher-built content is shared?",
-    buildArtifact: "Content safety review",
+    buildArtifact: "Course content safety and access checklist",
     evidence:
-      "A safety review that identifies privacy, accessibility, copyright, source, and classroom-use decisions before release.",
+      "A safety and access review that identifies privacy, accessibility, copyright, source, local boundary, and classroom-use decisions before release.",
     templateSlugs: ["content-safety-review"],
   },
   {
@@ -201,9 +201,9 @@ export const MODULES: CourseModule[] = [
     slug: "09-publishing-to-platform",
     essentialQuestion:
       "Can students find the right next action in the published space?",
-    buildArtifact: "Publishing checklist",
+    buildArtifact: "Platform publishing checklist",
     evidence:
-      "A publishing checklist that separates public, classroom-only, teacher-only, and draft materials with navigation and link checks.",
+      "A publishing checklist that separates source/export copies, public/classroom-only/teacher-only materials, student-view checks, access checks, and blocked decisions.",
     templateSlugs: ["publishing-checklist"],
   },
   {
@@ -215,9 +215,9 @@ export const MODULES: CourseModule[] = [
     slug: "10-mini-course-content-packet",
     essentialQuestion:
       "Is this mini course packet teachable, verifiable, safe, and reusable?",
-    buildArtifact: "Mini course content packet",
+    buildArtifact: "Mini Course Content Packet",
     evidence:
-      "A complete mini course content packet with verified student-facing content, assessment, safety review, publishing checklist, and revision log.",
+      "A review-ready Mini Course Content Packet with verified student-facing content, assessment, safety review, publishing status, OTS-000 context where relevant, and revision log.",
     templateSlugs: ["mini-course-content-packet"],
   },
 ];
@@ -237,7 +237,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-000",
     title: "Teacher Tech Stack Orientation",
     level: "Beginner",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Give teachers a plain-language on-ramp to the software, vocabulary, files, workflows, AI tools, and safety habits behind modern curriculum projects before they enter the deeper pathway.",
     prerequisites: "Basic computer and web browser comfort.",
@@ -255,14 +255,14 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     level: "Beginner",
     status: "Draft",
     purpose:
-      "Teach teachers how to use AI to create student-facing lessons, assignments, rubrics, verification routines, and small course content packets.",
-    prerequisites: "Basic Google Workspace familiarity.",
+      "Teach teachers how to use AI to create student-facing lessons, assignments, rubrics, verification routines, and small course content packets after the OTS-000 orientation.",
+    prerequisites: "OTS-000 or equivalent comfort with files, tools, source notes, and safety boundaries.",
     majorArtifacts: [
-      "Teacher workflow audit",
-      "Mini-unit map",
-      "Prompt library",
+      "Course content inventory",
+      "Learning target and lesson map",
+      "Reusable course-content prompt",
       "AI verification checklist",
-      "Mini-unit capstone",
+      "Mini Course Content Packet",
     ],
   },
   {
@@ -303,7 +303,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     status: "Coming Soon",
     purpose:
       "Teach OER publishing, licensing decisions, GitHub basics, and open-source contribution workflows.",
-    prerequisites: "OTS-101 resource evaluation and licensing basics.",
+    prerequisites: "OTS-101 source review, safety review, and publishing-check basics.",
     majorArtifacts: [
       "Licensed resource bank",
       "README",
@@ -318,7 +318,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     status: "Coming Soon",
     purpose:
       "Create accessible visuals, slide systems, diagrams, short videos, and delivery routines.",
-    prerequisites: "OTS-101 delivery plan.",
+    prerequisites: "OTS-101 student-facing lesson draft and publishing checklist.",
     majorArtifacts: [
       "Image prompt log",
       "Slide deck",
@@ -381,7 +381,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
       "Assemble the full pathway into a publishable curriculum system with automation, open resources, and delivery evidence.",
     prerequisites: "OTS-101 and at least two intermediate/advanced pathway courses.",
     majorArtifacts: [
-      "Published mini-course",
+      "Review-ready course-content packet",
       "Automation evidence",
       "Repository",
       "Presentation",
@@ -395,7 +395,7 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Start", href: "/book/ots-101" },
+  { label: "Start", href: "/book/ots-000" },
   { label: "Pathway", href: "/pathway" },
   { label: "Knowledge Base", href: "/kb" },
   { label: "Blog", href: "/blog" },

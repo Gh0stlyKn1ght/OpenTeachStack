@@ -29,6 +29,17 @@ function normalizeChart(chart?: string) {
     .join("\n");
 }
 
+function sanitizeMermaidSvg(svg: string) {
+  return svg
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<foreignObject[\s\S]*?<\/foreignObject>/gi, "")
+    .replace(/<(iframe|object|embed|link|meta)\b[\s\S]*?<\/\1>/gi, "")
+    .replace(/<(iframe|object|embed|link|meta)\b[^>]*\/?>/gi, "")
+    .replace(/\s+on[a-zA-Z]+\s*=\s*"[^"]*"/g, "")
+    .replace(/\s+on[a-zA-Z]+\s*=\s*'[^']*'/g, "")
+    .replace(/\s+(href|xlink:href|src)\s*=\s*(['"])\s*javascript:[\s\S]*?\2/gi, "");
+}
+
 export default function MermaidBlock({ chart, caption }: MermaidBlockProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [renderState, setRenderState] = useState<RenderState>({
@@ -51,7 +62,7 @@ export default function MermaidBlock({ chart, caption }: MermaidBlockProps) {
     return loadMermaid().then((mermaid) => {
       mermaid.initialize({
         startOnLoad: false,
-        securityLevel: "loose",
+        securityLevel: "strict",
         theme: isDark ? "dark" : "default",
         fontFamily: '"Source Sans 3", sans-serif',
         themeVariables: isDark
@@ -97,7 +108,11 @@ export default function MermaidBlock({ chart, caption }: MermaidBlockProps) {
         idRef.current,
         normalizedChart,
       );
-      setRenderState({ status: "rendered", svg: rendered, error: "" });
+      setRenderState({
+        status: "rendered",
+        svg: sanitizeMermaidSvg(rendered),
+        error: "",
+      });
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Unknown Mermaid render error";

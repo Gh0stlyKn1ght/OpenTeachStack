@@ -47,8 +47,13 @@ export interface TeacherPrompt {
 
 export const TEACHER_PROMPTS = prompts as TeacherPrompt[];
 
+export const PROMPT_SLUG_ALIASES: Record<string, string> = {
+  "build-mini-unit-map": "build-learning-target-lesson-map",
+};
+
 export function getPromptBySlug(slug: string) {
-  return TEACHER_PROMPTS.find((prompt) => prompt.slug === slug);
+  const canonicalSlug = PROMPT_SLUG_ALIASES[slug] ?? slug;
+  return TEACHER_PROMPTS.find((prompt) => prompt.slug === canonicalSlug);
 }
 
 export function getPromptCategories() {

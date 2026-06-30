@@ -7,7 +7,7 @@ import { getAllContent } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Apps Script Labs — OpenTeachStack Pathway",
   description:
-    "Supplemental Google Apps Script labs for the OpenTeachStack pathway. Apps Script belongs in OTS-220 and is not required in OTS-101 Foundations.",
+    "Supplemental Google Apps Script labs for the OpenTeachStack pathway. Apps Script belongs in OTS-220 and is not required in OTS-000 or OTS-101.",
 };
 
 export default function AppsScriptPage() {
@@ -17,7 +17,7 @@ export default function AppsScriptPage() {
     <FieldGuidePage
       eyebrow="OTS-220 Lab Shelf"
       title="Apps Script Labs"
-      subtitle="Google Apps Script turns spreadsheets, documents, and forms from static tools into programmable classroom systems. These labs support the released OTS-220 track and are not required in OTS-101 Foundations."
+      subtitle="Google Apps Script turns spreadsheets, documents, and forms from static tools into programmable classroom systems. These labs support the later OTS-220 track and are not required in the OTS-000/OTS-101 starting sequence."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Track", value: "OTS-220" },
@@ -39,8 +39,9 @@ export default function AppsScriptPage() {
         </p>
         <p>
           The labs below support OTS-220: Apps Script for Teacher Automation.
-          OTS-101 should only preview the idea of automation and keep its
-          capstone focused on the mini-unit system.
+          OTS-000 may orient teachers to the tool stack, and OTS-101 may point
+          toward automation as later work, but neither course requires scripts.
+          OTS-101 stays focused on the Mini Course Content Packet.
         </p>
         <p>
           This course connects to several other parts of the project. The{" "}

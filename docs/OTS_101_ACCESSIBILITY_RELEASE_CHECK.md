@@ -2,15 +2,17 @@
 
 Date: 2026-06-20
 
-Scope: OTS-101 public release pages, syllabus, module pages, active lessons, templates, Source Bank, audit page, release packet, and sample mini-unit routes.
+Staleness note, 2026-06-28: this check predates OTS-000 and the OTS-101 retargeting to AI Course Content Foundations for Teachers. Treat the release approval below as historical only. Current release requires OTS-000/OTS-101 sequence review, human classroom review, and fresh validation gates.
+
+Original scope: OTS-101 public release pages, syllabus, module pages, active lessons, templates, Source Bank, audit page, release packet, and sample mini-unit routes.
 
 This is a release-readiness check, not a formal third-party WCAG certification.
 
 ## Result
 
-OTS-101 is approved for first public release with continued accessibility monitoring.
+Original result: OTS-101 was approved for first public release with continued accessibility monitoring.
 
-Release status: pass with follow-up polish
+Current result: draft pending OTS-000 sequence review, human classroom review, and fresh validation.
 
 ## Required Checks
 

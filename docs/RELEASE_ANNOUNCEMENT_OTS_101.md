@@ -1,5 +1,11 @@
 # OTS-101 Release Announcement
 
+Staleness note, 2026-06-28: this announcement is not current release copy. It predates the OTS-000 on-ramp decision and the OTS-101 retargeting to **AI Course Content Foundations for Teachers**. Do not publish this as-is.
+
+Current status: OTS-000 is the first draft on-ramp. OTS-101 is the draft sequel for AI-assisted course content foundations. Human review and validation are still required before any release announcement.
+
+Archived claim below:
+
 OTS-101: Teaching Teachers Foundations is ready for its first public release.
 
 OTS-101 is the starting course for OpenTeachStack: a practical, open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows.

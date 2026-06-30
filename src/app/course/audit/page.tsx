@@ -8,7 +8,7 @@ import { FOUNDATION_TEMPLATES } from "@/lib/templates";
 export const metadata: Metadata = createPageMetadata({
   title: "OTS-101 Course Audit — OpenTeachStack",
   description:
-    "Self-audit and peer-review checklist for the OTS-101 Foundations mini-unit capstone, including source use, safety checks, templates, and classroom readiness.",
+    "Self-audit and peer-review checklist for the OTS-101 Mini Course Content Packet after the OTS-000 orientation.",
   path: "/course/audit",
 });
 
@@ -17,8 +17,9 @@ const auditSections = [
     title: "Scope",
     checks: [
       "The work stays inside OTS-101 foundations outcomes.",
-      "Apps Script, GitHub, domains, AI coding agents, and course-site publishing are not required to finish.",
-      "The final artifact is a small mini-unit system, not a full course platform.",
+      "OTS-000 tool, source, access, platform, and safety context is referenced only when it affects the course-content artifact.",
+      "Apps Script, GitHub, domains, AI coding agents, and course-site building are not required to finish.",
+      "The final artifact is a Mini Course Content Packet, not a full course platform.",
     ],
   },
   {
@@ -37,7 +38,7 @@ const auditSections = [
       "Each lesson connects to a learning target.",
       "Each learning target connects to a standard or course outcome.",
       "Assessment evidence measures the target instead of measuring trivia, compliance, or effort.",
-      "The delivery plan includes student-facing directions, timing, checks for understanding, and a backup routine.",
+      "The packet includes student-facing directions, timing or use notes, checks for understanding, and a backup or blocked-item note.",
     ],
   },
   {
@@ -55,7 +56,7 @@ const auditSections = [
       "Directions use plain, student-ready language.",
       "Links are descriptive and tested.",
       "Materials are usable on the devices students actually have.",
-      "The mini-unit can be taught by another teacher without a private meeting to decode it.",
+      "The packet can be reviewed or piloted by another teacher without a private meeting to decode it.",
     ],
   },
 ];
@@ -64,8 +65,8 @@ export default function CourseAuditPage() {
   return (
     <FieldGuidePage
       eyebrow="OTS-101 Audit"
-      title="Mini-Unit Capstone Self-Audit"
-      subtitle="Use this checklist before sharing an OTS-101 capstone with students, colleagues, or the open-source project. The goal is a curriculum system that is coherent, sourced, teachable, and safe."
+      title="Mini Course Content Packet Self-Audit"
+      subtitle="Use this checklist before treating an OTS-101 packet as ready for review, pilot, or release. The goal is course content that is coherent, sourced, teachable, and safe after the OTS-000 orientation."
       meta={[
         { label: "Scope", value: "OTS-101 capstone" },
         { label: "Templates", value: String(FOUNDATION_TEMPLATES.length) },
@@ -144,7 +145,8 @@ export default function CourseAuditPage() {
             <div className="space-y-4 text-sm leading-relaxed text-slate">
               <p>
                 A capstone is ready when the reviewer can trace every major
-                decision back to a target, source, template, or revision note.
+                decision back to a target, source, OTS-000 boundary when
+                relevant, template, or revision note.
               </p>
               <p>
                 If a claim depends on software behavior, start with the

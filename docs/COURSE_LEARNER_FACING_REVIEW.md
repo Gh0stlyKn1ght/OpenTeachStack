@@ -2,6 +2,8 @@
 
 Date: 2026-06-24
 
+Staleness note, 2026-06-28: this review predates the OTS-000 on-ramp and the OTS-101 Mini Course Content Packet retargeting. Treat the old mini-unit/workflow-audit summary as historical evidence, not the current OTS-101 artifact model.
+
 This review checks whether released course lessons read like learner-facing course pages instead of internal authoring notes.
 
 ## Review Method

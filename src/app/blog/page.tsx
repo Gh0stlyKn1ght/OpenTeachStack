@@ -20,7 +20,7 @@ export default function BlogPage() {
       eyebrow="JC's Blog"
       title="Teacher-builder notes from OpenTeachStack."
       subtitle="Founder-written posts, classroom reflections, and opinionated notes about building honest AI-assisted course content."
-      breadcrumbs={[{ label: "Start", href: "/book/ots-101" }]}
+      breadcrumbs={[{ label: "Start", href: "/book/ots-000" }]}
     >
       <ArticleBody>
         {featured ? (

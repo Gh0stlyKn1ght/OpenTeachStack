@@ -6,7 +6,7 @@ import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 export const metadata: Metadata = {
   title: "Examples — OpenTeachStack",
   description:
-    "Example OpenTeachStack artifacts and mini-units that show what finished work can look like.",
+    "Example OpenTeachStack artifacts and Mini Course Content Packets that show what finished work can look like.",
 };
 
 export default function ExamplesPage() {
@@ -14,29 +14,29 @@ export default function ExamplesPage() {
     <FieldGuidePage
       eyebrow="Examples"
       title="Proof beats explanation."
-      subtitle="Templates help. Examples convince. These samples show what an OTS-101 mini-unit package can look like when it is small, sourced, teachable, and ready to improve."
+      subtitle="Templates help. Examples convince. These samples show what an OTS-101 Mini Course Content Packet can look like when it is small, sourced, teachable, honest about OTS-000 context, and ready to improve."
       breadcrumbs={[{ label: "Knowledge Base", href: "/kb" }]}
       meta={[
         { label: "Course", value: "OTS-101" },
-        { label: "Artifact", value: "Mini-unit package" },
+        { label: "Artifact", value: "Mini Course Content Packet" },
         { label: "Mode", value: "Example shelf" },
       ]}
     >
       <ArticleBody>
         <Link
-          href="/examples/robotics-mini-unit"
+          href="/examples/robotics-course-content-packet"
           className="block rounded-md border border-border bg-surface p-5 no-underline transition-colors hover:border-accent/50"
         >
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-accent">
-            Sample Mini-Unit
+            Sample Mini Course Content Packet
           </p>
           <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
             Intro Robotics: What Is a Robot?
           </h2>
           <p className="m-0 text-sm leading-relaxed text-slate">
-            A complete example package with standards thinking, mini-unit map,
-            lesson structure, prompt notes, source checks, assessment, delivery,
-            and revision log.
+            A review-ready example package with target mapping, student-facing
+            lesson structure, prompt notes, source checks, assessment,
+            publishing status, and revision log.
           </p>
         </Link>
       </ArticleBody>

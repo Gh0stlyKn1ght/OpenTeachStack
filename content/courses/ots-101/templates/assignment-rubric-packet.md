@@ -14,9 +14,11 @@ Use it when a lesson needs graded or reviewed student work.
 - Learning target:
 - Student task:
 - Submission:
+- Not enough evidence:
 - Criteria:
 - Feedback routine:
 - Revision opportunity:
+- Teacher verification:
 
 ## Completed fictional example
 
@@ -24,13 +26,16 @@ Use it when a lesson needs graded or reviewed student work.
 - Learning target: I can choose the safe next step in a robot startup scenario.
 - Student task: Read two scenarios and label the next safe action.
 - Submission: Completed scenario sheet.
+- Not enough evidence: A photo of the robot setup without the checklist explanation.
 - Criteria: Correct step, clear explanation, safety vocabulary.
 - Feedback routine: Teacher marks one strength and one safety correction.
 - Revision opportunity: Students revise one scenario explanation before practice.
+- Teacher verification: Check that scenario steps match the approved routine.
 
 ## Quality check
 
 - The task matches the target.
+- Completion alone would not pass.
 - The rubric uses observable criteria.
 - Feedback helps students improve, not just receive a score.
 

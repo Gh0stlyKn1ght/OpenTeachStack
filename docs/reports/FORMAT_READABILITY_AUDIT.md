@@ -1,14 +1,14 @@
 # Format Readability Audit
 
-Generated: 2026-06-27T22:45:43.161Z
+Generated: 2026-06-29T00:37:58.198Z
 
 ## Summary
 
-- Files reviewed: 321
-- Files passing: 321
-- Files needing formatting review: 0
-- Strict lesson failures: 0
-- Support-file warnings: 0
+- Files reviewed: 425
+- Files passing: 376
+- Files needing formatting review: 49
+- Strict lesson failures: 45
+- Support-file warnings: 4
 - Blog formatting warnings: 0
 
 ## Lesson type counts
@@ -16,19 +16,41 @@ Generated: 2026-06-27T22:45:43.161Z
 - artifact-build: 9
 - capstone-assembly: 1
 - case-study: 2
-- chapter-overview: 10
-- checkpoint: 11
-- comparison: 5
-- concept: 11
-- framework: 3
+- chapter-overview: 24
+- checkpoint: 25
+- comparison: 15
+- concept: 36
+- framework: 9
+- unknown: 15
 - workflow: 8
 
 ## Unknown lessonType files
 
-- None
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-4.mdx
+- content/courses/ots-000/lessons/01-builder-workstation/01-4.mdx
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-4.mdx
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-4.mdx
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-4.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-4.mdx
+- content/courses/ots-000/lessons/07-documentation-literacy/07-4.mdx
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-4.mdx
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-4.mdx
+- content/courses/ots-000/lessons/10-modern-project-stack/10-4.mdx
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-4.mdx
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-4.mdx
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-2.mdx
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-3.mdx
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-4.mdx
 
 ## Repeated formatting problems
 
+- no bullet or numbered lists: 31
+- unknown lessonType; human review required: 15
+- 6 consecutive plain paragraph blocks: 2
+- weak/better comparison without a table: 1
+- support file appears to list items without bullets: 1
+- support file longer than 150 words without headings: 1
+- 5 consecutive plain paragraph blocks: 1
 
 ## Recommended first remediation tranche
 
@@ -40,15 +62,62 @@ Generated: 2026-06-27T22:45:43.161Z
 
 ## Priority fixes
 
-- No priority lesson or blog formatting issues found.
+- content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-0.mdx: 5 consecutive plain paragraph blocks
 
 ## Strict lesson failures
 
-- None
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-1.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/01-builder-workstation/01-1.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/01-builder-workstation/01-2.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/01-builder-workstation/01-3.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/01-builder-workstation/01-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-1.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-1.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-1.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-4.mdx (comparison): weak/better comparison without a table
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/06-git-github-basics/06-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/07-documentation-literacy/07-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/07-documentation-literacy/07-1.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/07-documentation-literacy/07-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-2.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/10-modern-project-stack/10-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/10-modern-project-stack/10-1.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/10-modern-project-stack/10-2.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/10-modern-project-stack/10-4.mdx (unknown): no bullet or numbered lists; unknown lessonType; human review required
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-1.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-2.mdx (comparison): no bullet or numbered lists
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-0.mdx (chapter-overview): no bullet or numbered lists
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-3.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-4.mdx (unknown): no bullet or numbered lists; unknown lessonType; human review required
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-1.mdx (concept): no bullet or numbered lists
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-2.mdx (unknown): no bullet or numbered lists; unknown lessonType; human review required
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-3.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-4.mdx (unknown): unknown lessonType; human review required
+- content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-0.mdx (chapter-overview): 5 consecutive plain paragraph blocks
 
 ## Support-file warnings
 
-- None
+- content/courses/ots-000/templates/teacher-builder-starter-kit.md: support file appears to list items without bullets
+- content/courses/ots-101/README.md: 6 consecutive plain paragraph blocks
+- content/courses/ots-101/examples/README.md: support file longer than 150 words without headings
+- content/courses/ots-101/lessons/README.md: 6 consecutive plain paragraph blocks
 
 ## Blog formatting warnings
 
@@ -70,13 +139,70 @@ Generated: 2026-06-27T22:45:43.161Z
 - content/blog/posts/when-visual-blocks-beat-mermaid.md
 - content/blog/templates/author-blog-post-template.md
 - content/courses/README.md
-- content/courses/ots-101/README.md
+- content/courses/ots-000/README.md
+- content/courses/ots-000/assets/README.md
+- content/courses/ots-000/docs/ARTIFACT_MATRIX.md
+- content/courses/ots-000/docs/DRAFT_REVIEW_NOTES.md
+- content/courses/ots-000/docs/HUMAN_REVIEW_CHECKLIST.md
+- content/courses/ots-000/docs/README.md
+- content/courses/ots-000/docs/ROUTE_REVIEW_CHECKLIST.md
+- content/courses/ots-000/examples/README.md
+- content/courses/ots-000/examples/completed-teacher-builder-starter-kit.md
+- content/courses/ots-000/labs/README.md
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-2.mdx
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-3.mdx
+- content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-5.mdx
+- content/courses/ots-000/lessons/01-builder-workstation/01-0.mdx
+- content/courses/ots-000/lessons/01-builder-workstation/01-5.mdx
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-0.mdx
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-2.mdx
+- content/courses/ots-000/lessons/02-files-folders-project-structure/02-5.mdx
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-0.mdx
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-2.mdx
+- content/courses/ots-000/lessons/03-what-is-an-ide/03-5.mdx
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-0.mdx
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-2.mdx
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-3.mdx
+- content/courses/ots-000/lessons/04-vscode-teacher-builders/04-5.mdx
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-1.mdx
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-2.mdx
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-3.mdx
+- content/courses/ots-000/lessons/05-terminal-without-fear/05-5.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-0.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-1.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-2.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-3.mdx
+- content/courses/ots-000/lessons/06-git-github-basics/06-5.mdx
+- content/courses/ots-000/lessons/07-documentation-literacy/07-2.mdx
+- content/courses/ots-000/lessons/07-documentation-literacy/07-3.mdx
+- content/courses/ots-000/lessons/07-documentation-literacy/07-5.mdx
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-1.mdx
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-2.mdx
+- content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-5.mdx
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-1.mdx
+- content/courses/ots-000/lessons/09-websites-hosting-publishing/09-5.mdx
+- content/courses/ots-000/lessons/10-modern-project-stack/10-3.mdx
+- content/courses/ots-000/lessons/10-modern-project-stack/10-5.mdx
+- content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-5.mdx
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-1.mdx
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-2.mdx
+- content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-5.mdx
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-0.mdx
+- content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-5.mdx
+- content/courses/ots-000/lessons/README.md
+- content/courses/ots-000/references/README.md
+- content/courses/ots-000/references/source-references.md
+- content/courses/ots-000/templates/README.md
+- content/courses/ots-000/templates/ai-mcp-access-map.md
+- content/courses/ots-000/templates/builder-workstation-checklist.md
+- content/courses/ots-000/templates/documentation-evaluation-checklist.md
+- content/courses/ots-000/templates/safe-ai-builder-checklist.md
 - content/courses/ots-101/assets/README.md
+- content/courses/ots-101/docs/OTS_000_TO_OTS_101_ALIGNMENT.md
 - content/courses/ots-101/docs/OTS_101_ACCESSIBILITY_RELEASE_CHECK.md
 - content/courses/ots-101/docs/OTS_101_BROWSER_ACCESSIBILITY_AUDIT.md
 - content/courses/ots-101/docs/OTS_101_CURRICULUM_MANAGER_AUDIT.md
 - content/courses/ots-101/docs/README.md
-- content/courses/ots-101/examples/README.md
 - content/courses/ots-101/examples/completed-artifact.md
 - content/courses/ots-101/examples/reviewer-notes.md
 - content/courses/ots-101/examples/robotics-safety-mini-course-packet.md
@@ -91,7 +217,6 @@ Generated: 2026-06-27T22:45:43.161Z
 - content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-4.mdx
 - content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-5.mdx
 - content/courses/ots-101/lessons/01-curriculum-vs-course-content/README.md
-- content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-0.mdx
 - content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-1.mdx
 - content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-2.mdx
 - content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-3.mdx
@@ -146,7 +271,6 @@ Generated: 2026-06-27T22:45:43.161Z
 - content/courses/ots-101/lessons/10-mini-course-content-packet/10-3.mdx
 - content/courses/ots-101/lessons/10-mini-course-content-packet/10-4.mdx
 - content/courses/ots-101/lessons/10-mini-course-content-packet/10-5.mdx
-- content/courses/ots-101/lessons/README.md
 - content/courses/ots-101/references/README.md
 - content/courses/ots-101/templates/README.md
 - content/courses/ots-101/templates/ai-course-content-prompt.md
@@ -380,7 +504,596 @@ Generated: 2026-06-27T22:45:43.161Z
 
 ## Files needing formatting
 
-- None
+### content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-1.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/00-welcome-teacher-builder-stack/00-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/01-builder-workstation/01-1.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/01-builder-workstation/01-2.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/01-builder-workstation/01-3.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/01-builder-workstation/01-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/02-files-folders-project-structure/02-1.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/02-files-folders-project-structure/02-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/02-files-folders-project-structure/02-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/03-what-is-an-ide/03-1.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/03-what-is-an-ide/03-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/03-what-is-an-ide/03-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/04-vscode-teacher-builders/04-1.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/04-vscode-teacher-builders/04-4.mdx
+
+Type: lesson (comparison, inferred)
+
+Problems:
+- weak/better comparison without a table
+
+Recommended fixes:
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+- Use a table when comparing weak and better examples.
+- Revise structure using the comparison lesson-type rule instead of forcing Build Step everywhere.
+
+### content/courses/ots-000/lessons/05-terminal-without-fear/05-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/05-terminal-without-fear/05-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/06-git-github-basics/06-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/07-documentation-literacy/07-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/07-documentation-literacy/07-1.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/07-documentation-literacy/07-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/08-markdown-mdx-content-files/08-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/09-websites-hosting-publishing/09-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/09-websites-hosting-publishing/09-2.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/09-websites-hosting-publishing/09-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/09-websites-hosting-publishing/09-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/10-modern-project-stack/10-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/10-modern-project-stack/10-1.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/10-modern-project-stack/10-2.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/10-modern-project-stack/10-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- no bullet or numbered lists
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-1.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Side-by-Side Comparison-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-2.mdx
+
+Type: lesson (comparison)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Confusion-style section could help, but it is not required for this lesson type.
+- Optional: a Decision Rule-style section could help, but it is not required for this lesson type.
+- Optional: a Practice-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/11-ai-assistants-coding-agents-mcp/11-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-0.mdx
+
+Type: lesson (chapter-overview, inferred)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Chapter Purpose-style section could help, but it is not required for this lesson type.
+- Optional: a What You Will Build-style section could help, but it is not required for this lesson type.
+- Optional: a Lessons in This Chapter-style section could help, but it is not required for this lesson type.
+- Optional: a Exit Criteria-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-3.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/12-safety-backups-secrets-permissions/12-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- no bullet or numbered lists
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-1.mdx
+
+Type: lesson (concept)
+
+Problems:
+- no bullet or numbered lists
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Optional: a Concrete Example-style section could help, but it is not required for this lesson type.
+- Optional: a Common Misunderstanding-style section could help, but it is not required for this lesson type.
+- Optional: a Quick Check-style section could help, but it is not required for this lesson type.
+
+### content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-2.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- no bullet or numbered lists
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Use bullets for checks/options or numbers for process.
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-3.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/lessons/13-teacher-builder-starter-kit/13-4.mdx
+
+Type: lesson (unknown, inferred)
+
+Problems:
+- unknown lessonType; human review required
+
+Recommended fixes:
+- Add a supported lessonType frontmatter value before applying strict structure rules.
+
+### content/courses/ots-000/templates/teacher-builder-starter-kit.md
+
+Type: support
+
+Problems:
+- support file appears to list items without bullets
+
+Recommended fixes:
+- Use bullets when listing support items.
+
+### content/courses/ots-101/README.md
+
+Type: support
+
+Problems:
+- 6 consecutive plain paragraph blocks
+
+Recommended fixes:
+- Break wall-of-text support files with headings or bullets.
+
+### content/courses/ots-101/examples/README.md
+
+Type: support
+
+Problems:
+- support file longer than 150 words without headings
+
+Recommended fixes:
+- Add headings to make the support file scannable.
+
+### content/courses/ots-101/lessons/02-standards-goals-to-lessons/02-0.mdx
+
+Type: lesson (chapter-overview)
+
+Problems:
+- 5 consecutive plain paragraph blocks
+
+Recommended fixes:
+- Break paragraph runs with headings, lists, examples, or checks.
+
+### content/courses/ots-101/lessons/README.md
+
+Type: support
+
+Problems:
+- 6 consecutive plain paragraph blocks
+
+Recommended fixes:
+- Break wall-of-text support files with headings or bullets.
+
 ## Notes
 
 - The audit no longer requires Build Step or Quality Check for every lesson.

@@ -28,7 +28,7 @@ export default function StartPage() {
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Audience", value: "Non-technical teachers" },
-        { label: "First course", value: "OTS-101" },
+        { label: "First course", value: "OTS-000" },
         { label: "Mode", value: "Plain-language start" },
       ]}
     >
@@ -42,9 +42,9 @@ export default function StartPage() {
           assessments rebuilt from memory.
         </p>
         <p>
-          OpenTeachStack starts smaller than the tech stack. One course. One
-          unit. One workflow. Build the system before you buy another
-          subscription.
+          OpenTeachStack starts with the tech stack orientation, then narrows
+          into one course, one unit, and one workflow. Know the containers
+          before you ask AI to improve the course content inside them.
         </p>
       </section>
 
@@ -72,10 +72,11 @@ export default function StartPage() {
           build with Next.js.
         </p>
         <p>
-          The foundations course starts with teacher artifacts: prompts,
-          templates, standards, sources, verification checks, delivery plans,
-          and revision notes. Later pathway courses teach websites,
-          automation, GitHub, and AI coding agents when you are ready.
+          OTS-000 handles the tool-stack orientation. OTS-101 starts the
+          course-content work: prompts, templates, standards, sources,
+          verification checks, student-facing lessons, and revision notes.
+          Later pathway courses teach websites, automation, GitHub, and AI
+          coding agents when you are ready.
         </p>
       </section>
 
@@ -92,10 +93,10 @@ export default function StartPage() {
 
       <div className="flex flex-wrap gap-3">
         <Link
-          href="/book/ots-101"
+          href="/book/ots-000"
           className="inline-flex rounded-lg bg-[var(--color-text)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] no-underline hover:opacity-90"
         >
-          Start OTS-101
+          Start OTS-000
         </Link>
         <Link
           href="/kb/templates"

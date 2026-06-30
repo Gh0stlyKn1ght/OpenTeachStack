@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/courses/ots-280", 0.8),
     entry("/evidence", 0.6),
     entry("/examples", 0.6),
-    entry("/examples/robotics-mini-unit", 0.7),
+    entry("/examples/robotics-course-content-packet", 0.7),
     entry("/field-notes", 0.7),
     entry("/kb", 0.9, "weekly"),
     entry("/kb/source-bank", 0.8, "weekly"),

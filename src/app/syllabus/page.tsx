@@ -13,9 +13,9 @@ import {
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Syllabus — OpenTeachStack Foundations",
+  title: "Syllabus — OTS-101 AI Course Content Foundations",
   description:
-    "Syllabus for OTS-101: Teaching Teachers Foundations, a 10-chapter course on prompting, standards, resource literacy, and curriculum systems.",
+    "Syllabus for OTS-101: AI Course Content Foundations for Teachers, the sequel after OTS-000.",
   path: "/syllabus",
 });
 
@@ -27,6 +27,7 @@ export default function SyllabusPage() {
       subtitle={COURSE_SUBTITLE}
       breadcrumbs={[
         { label: "Book", href: "/book" },
+        { label: "OTS-000", href: "/book/ots-000" },
         { label: COURSE_CODE, href: "/book/ots-101" },
       ]}
       meta={[
@@ -40,25 +41,26 @@ export default function SyllabusPage() {
       <div className="prose-academic">
         <h2>Course Description</h2>
         <p>
-          Teaching Teachers Foundations ({COURSE_CODE}) is the required
-          beginner course in the OpenTeachStack pathway. It teaches educators
-          how to use AI responsibly, unpack standards, evaluate resources,
-          build practical planning systems, design assessments, and prepare a
-          small curriculum sequence for real classroom delivery.
+          AI Course Content Foundations ({COURSE_CODE}) is the course after
+          OTS-000. It teaches educators how to use AI responsibly to turn goals,
+          standards, source material, assignments, rubrics, and student-facing
+          directions into a small course content packet they can actually review
+          before students see it.
         </p>
         <p>
           The broader OpenTeachStack project includes later courses in Google
-          Workspace systems, Apps Script automation, GitHub, AI media, course
-          sites, and AI coding agents. OTS-101 previews those possibilities
-          but does not require them.
+          Workspace systems, Apps Script automation, open resources, AI media,
+          course sites, and AI coding agents. OTS-101 may point toward those
+          possibilities, but it does not require teachers to build that stack.
         </p>
 
         <h2>Out of Scope for OTS-101</h2>
         <p>
-          The foundations course does not require Apps Script implementation,
-          GitHub publishing, Codex or Claude Code workflows, Next.js,
-          Docusaurus, DNS, domains, hosting, live public websites, or full
-          video production. Those topics belong in later pathway courses.
+          OTS-101 does not reteach file management, VS Code, GitHub basics,
+          Markdown/MDX, websites, hosting, AI assistant setup, MCP-style tool
+          access, backups, or secret handling. Those belong in OTS-000. It also
+          does not require Apps Script implementation, public website launch,
+          DNS, domains, or full video production.
         </p>
 
         <h2>Intended Audience</h2>
@@ -72,7 +74,7 @@ export default function SyllabusPage() {
 
         <h2>Prerequisites</h2>
         <ul>
-          <li>Basic Google Docs, Sheets, Slides, Forms, and Drive familiarity.</li>
+          <li>OTS-000 or equivalent comfort with the basic teacher tech stack.</li>
           <li>Access to state, district, or subject-area standards.</li>
           <li>Access to an AI assistant such as ChatGPT, Claude, or similar.</li>
           <li>No coding experience required.</li>
@@ -80,23 +82,23 @@ export default function SyllabusPage() {
 
         <h2>Learning Outcomes</h2>
         <ul>
-          <li>Explain the difference between collecting tools and building systems.</li>
-          <li>Write structured prompts and revise AI output in teacher voice.</li>
+          <li>Separate curriculum intent from student-facing course content.</li>
+          <li>Map standards or goals into teachable targets and lesson evidence.</li>
+          <li>Write bounded prompts for course-content artifacts.</li>
           <li>Verify AI output for accuracy, bias, privacy, citations, and standards claims.</li>
-          <li>Unpack standards into learning targets and assessment evidence.</li>
-          <li>Design a coherent mini-unit architecture.</li>
-          <li>Evaluate resources for quality, licensing, accessibility, and alignment.</li>
-          <li>Use Google Workspace as a planning system, not just storage.</li>
-          <li>Draft assessments, rubrics, and feedback loops tied to learning targets.</li>
-          <li>Plan classroom delivery with student-facing directions and backup routines.</li>
-          <li>Assemble and revise a complete mini-unit capstone.</li>
+          <li>Draft student-facing lessons with clear directions and support.</li>
+          <li>Draft assignments, rubrics, feedback notes, and evidence checks tied to targets.</li>
+          <li>Organize course content so it can be reviewed, revised, and reused.</li>
+          <li>Check safety, accessibility, copyright, and source quality before publishing.</li>
+          <li>Prepare a student-view or platform-ready publishing checklist.</li>
+          <li>Assemble and revise a Mini Course Content Packet.</li>
         </ul>
 
         <h2>Outcome Traceability</h2>
         <p>
           OTS-101 does not claim alignment to one state standard set. Teachers
           bring their own state, district, or subject-area standards into the
-          mini-unit. This table shows how the course outcomes trace to module
+          packet. This table shows how the course outcomes trace to chapter
           work and capstone evidence.
         </p>
         <table>
@@ -110,63 +112,63 @@ export default function SyllabusPage() {
           </thead>
           <tbody>
             <tr>
-              <td>Build systems instead of collecting tools.</td>
-              <td>Teacher workflow audit</td>
-              <td>Priority workflow problem and improvement plan</td>
-              <td>The problem is specific enough to improve.</td>
+              <td>Separate curriculum intent from student-facing course content.</td>
+              <td>Course content inventory</td>
+              <td>Inventory notes and keep/revise/rebuild decisions</td>
+              <td>The teacher can explain what students actually see and use.</td>
+            </tr>
+            <tr>
+              <td>Map standards or goals into teachable targets.</td>
+              <td>Learning target and lesson map</td>
+              <td>Targets, evidence, and lesson sequence notes</td>
+              <td>Each target uses observable learner action.</td>
             </tr>
             <tr>
               <td>Prompt responsibly and preserve teacher voice.</td>
-              <td>Reusable prompt library</td>
-              <td>Prompt log with revision notes</td>
+              <td>Reusable course-content prompt</td>
+              <td>Prompt, AI draft, revision notes, and teacher edits</td>
               <td>AI output is revised, not pasted untouched.</td>
             </tr>
             <tr>
               <td>Verify AI output and source claims.</td>
-              <td>AI verification checklist</td>
+              <td>AI output verification checklist</td>
               <td>Accepted, changed, and rejected AI output notes</td>
-              <td>Claims, citations, and answer keys are checked.</td>
+              <td>Claims, citations, answer keys, and examples are checked.</td>
             </tr>
             <tr>
-              <td>Unpack standards into learning targets.</td>
-              <td>Standards unpacking sheet</td>
-              <td>Three standards or outcomes with target and evidence</td>
-              <td>Each target uses observable learner action.</td>
+              <td>Draft real student-facing lessons.</td>
+              <td>Student-facing lesson draft</td>
+              <td>Directions, examples, supports, and stuck-point notes</td>
+              <td>A student could start without a private teacher explanation.</td>
             </tr>
             <tr>
-              <td>Design a coherent mini-unit architecture.</td>
-              <td>Mini-unit map and lesson template</td>
-              <td>3 to 5 lesson sequence</td>
-              <td>Lessons build instead of sitting as isolated activities.</td>
-            </tr>
-            <tr>
-              <td>Evaluate resources for credibility and use.</td>
-              <td>Resource evaluation sheet</td>
-              <td>Five reviewed resources with license or terms notes</td>
-              <td>Software and platform links use official docs first.</td>
-            </tr>
-            <tr>
-              <td>Use Google Workspace as planning infrastructure.</td>
-              <td>Workspace planning map</td>
-              <td>Artifact storage and update plan</td>
-              <td>The system is usable without automation.</td>
-            </tr>
-            <tr>
-              <td>Assess the intended learning target.</td>
-              <td>Assessment/rubric draft</td>
-              <td>One task with observable rubric criteria</td>
+              <td>Draft assignments, rubrics, and feedback evidence.</td>
+              <td>Assignment and rubric packet</td>
+              <td>Task, rubric, sample feedback, and evidence notes</td>
               <td>The assessment measures the target, not effort alone.</td>
             </tr>
             <tr>
-              <td>Prepare classroom delivery.</td>
-              <td>Delivery plan</td>
-              <td>Student directions, timing, feedback, and backup plan</td>
-              <td>A teacher can teach it without a private explanation.</td>
+              <td>Organize course content for review and reuse.</td>
+              <td>Course content folder map</td>
+              <td>Packet index and revision locations</td>
+              <td>The content can be found and updated without guessing.</td>
             </tr>
             <tr>
-              <td>Revise and archive the work.</td>
-              <td>Reflection and revision log</td>
-              <td>Revision history and next-step notes</td>
+              <td>Check safety, accessibility, copyright, and source quality.</td>
+              <td>Content safety review</td>
+              <td>Privacy, access, source, copyright, and accessibility notes</td>
+              <td>Risky content is changed, blocked, or documented.</td>
+            </tr>
+            <tr>
+              <td>Prepare a student-view publishing check.</td>
+              <td>Publishing checklist</td>
+              <td>Student-view check, source export, and blocked-item notes</td>
+              <td>The packet is review-ready, not merely uploaded somewhere.</td>
+            </tr>
+            <tr>
+              <td>Assemble and revise the Mini Course Content Packet.</td>
+              <td>Mini Course Content Packet</td>
+              <td>Final packet index, review notes, and revision plan</td>
               <td>The teacher can explain what changed and why.</td>
             </tr>
           </tbody>
@@ -242,30 +244,28 @@ export default function SyllabusPage() {
             on their own work.
           </li>
           <li>
-            <strong>Capstone review</strong> based on the mini-unit system and
+            <strong>Capstone review</strong> based on the Mini Course Content Packet and
             revision evidence.
           </li>
         </ul>
 
-        <h2>Mini-Unit Capstone</h2>
+        <h2>Mini Course Content Packet Capstone</h2>
         <p>
-          The capstone is a small curriculum system, not a full published
+          The capstone is a small course content packet, not a full published
           course site. Required artifacts:
         </p>
         <ul>
-          <li>Teacher workflow audit</li>
-          <li>Standards unpacking sheet</li>
-          <li>Mini-unit map</li>
-          <li>3 to 5 lesson sequence</li>
-          <li>Reusable lesson template</li>
-          <li>Prompt library</li>
-          <li>Resource evaluation sheet</li>
-          <li>Assessment or quiz draft</li>
-          <li>Rubric</li>
+          <li>Course content inventory</li>
+          <li>Learning target and lesson map</li>
+          <li>Reusable course-content prompt</li>
+          <li>Student-facing lesson draft</li>
+          <li>Assignment or lab draft</li>
+          <li>Rubric and feedback notes</li>
           <li>AI verification checklist</li>
-          <li>Accessibility/privacy/copyright checklist</li>
-          <li>Delivery plan</li>
-          <li>Reflection and revision log</li>
+          <li>Safety, accessibility, copyright, and source review</li>
+          <li>Course content folder map</li>
+          <li>Publishing checklist</li>
+          <li>Reflection and revision notes</li>
         </ul>
 
         <h2>Safety Thread</h2>
@@ -278,7 +278,7 @@ export default function SyllabusPage() {
 
         <h2>Pathway Continuation</h2>
         <p>
-          After OTS-101, teachers can move into specialized pathway courses:
+          After OTS-000 and OTS-101, teachers can move into specialized pathway courses:
           Google Workspace systems, Apps Script, GitHub/open resources, AI
           media, course sites, AI coding agents, and capstone studio. See the{" "}
           <Link href="/pathway">Pathway Overview</Link>.

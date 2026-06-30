@@ -152,9 +152,10 @@ export default function AboutPage() {
 
         <h2>Where to Start</h2>
         <p>
-          Start with <Link href="/book/ots-101">OTS-101 Foundations</Link>. Then use
-          the <Link href="/pathway">Pathway Overview</Link> to choose the next
-          track when you are ready.
+          Start with <Link href="/book/ots-000">OTS-000 Teacher Tech Stack Orientation</Link>.
+          Then move into <Link href="/book/ots-101">OTS-101 AI Course Content Foundations</Link>
+          and use the <Link href="/pathway">Pathway Overview</Link> when you are
+          ready for later tracks.
         </p>
 
         <h2>Contact</h2>

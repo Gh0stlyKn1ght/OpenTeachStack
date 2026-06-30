@@ -9,7 +9,7 @@
   "hasSamplePacket": true,
   "humanReviewed": false,
   "authoredChapterRange": "01-10",
-  "lessonBodyPass": "complete draft authoring pass",
-  "releaseReadiness": "Validation gates and the automated visual/readability pass are complete (all content gates green; format-readability 321/321). Human classroom review is the sole remaining blocker. Not release-ready until humanReviewed is true.",
-  "notes": "Active draft rebuild. Chapters 01-10 have real lesson bodies. v2.1 content-integrity cleanup complete (de-boilerplated overviews and section tails, one h1 per page, wide artifact tables transposed, weak/better comparison tables added). Automated content gates pass. Still needs human classroom review before it should be treated as live."
+  "lessonBodyPass": "complete draft authoring pass; OTS-000 sequence alignment applied across Chapters 01-10 plus course metadata, core templates, examples, and review docs",
+  "releaseReadiness": "Validation gates and the automated visual/readability pass were previously complete (all content gates green; format-readability 321/321), but OTS-101 now needs a sequence-alignment review against OTS-000 before public release. Not release-ready until humanReviewed is true and the OTS-000-to-OTS-101 boundary is confirmed.",
+  "notes": "Draft sequel after OTS-000. Chapters 01-10 have real lesson bodies, templates, and sample packet materials. OTS-000 bridge language is now present across chapter overviews, deeper boundary cleanup was applied across lesson sections, and course metadata/templates/examples/review docs now treat OTS-000 context as support for tools, access, source, platform, safety, or local boundaries only. Human review still needs to confirm that OTS-101 assumes OTS-000 vocabulary where appropriate and keeps the capstone focused on a Mini Course Content Packet."
 }

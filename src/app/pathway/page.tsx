@@ -21,10 +21,10 @@ export default function PathwayPage() {
   return (
     <FieldGuidePage
       eyebrow="OpenTeachStack Pathway"
-      title="One foundations course, then specialized tracks."
+      title="Start with orientation, then build course content."
       subtitle="OpenTeachStack is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows."
       meta={[
-        { label: "Start", value: "OTS-101 Foundations" },
+        { label: "Start", value: "OTS-000 Orientation" },
         { label: "Tracks", value: String(PATHWAY_COURSES.length) },
       ]}
     >
@@ -33,17 +33,17 @@ export default function PathwayPage() {
           Start Here
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-foreground/60">
-          OTS-101 keeps the first step small: a verified mini-unit system with
-          sources, prompts, assessment, delivery, and revision evidence. Apps
-          Script, GitHub, domains, AI coding agents, and live publishing are
-          released as specialized tracks, but they are not required foundations
-          outcomes.
+          OTS-000 keeps the first step honest: understand the tool stack,
+          files, platforms, AI access, documentation, and safety boundaries.
+          OTS-101 comes next with a small AI-assisted course content packet.
+          Apps Script, GitHub, domains, AI coding agents, and live publishing
+          remain specialized tracks.
         </p>
         <Link
-          href="/book/ots-101"
+          href="/book/ots-000"
           className="inline-flex rounded-md bg-[var(--color-text)] px-4 py-2 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
-          View OTS-101 Foundations
+          View OTS-000 Orientation
         </Link>
       </section>
 

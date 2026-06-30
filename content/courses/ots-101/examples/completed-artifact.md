@@ -1,19 +1,22 @@
 # Completed Artifact
 
-## Completed Teacher Workflow Audit Sample
+## Completed Mini Course Content Packet Sample
 
-This sample shows a first-pass workflow audit for a beginner-friendly mini-unit. It uses fictional classroom details and sample-only student evidence.
+This sample shows a first-pass Mini Course Content Packet after OTS-000 orientation. It uses fictional classroom details and sample-only student evidence.
+
+Use the OTS-000 context only when it clarifies tools, access, source, platform, safety, or local boundaries. The OTS-101 artifact still has to prove the course content is teachable.
 
 ## Workflow Summary
 
 | Field | Completed example |
 | --- | --- |
-| Workflow name | Sensor-threshold mini-unit setup |
+| Packet name | Sensor-threshold course-content packet |
 | Course context | Grade 8 robotics |
 | Source or standard | Students collect sensor data, identify patterns, and justify a design decision |
 | Student-facing task | Teams collect five distance readings and choose a stop threshold for a robot |
 | Evidence students produce | Data table with units, threshold decision, and one reflection sentence |
 | Files or tools used | Slide directions, sensor setup photo, response sheet, sample data row, teacher revision note |
+| Relevant OTS-000 context | Source folder holds approved materials; platform copies are exports; no real student data in samples |
 | Verification before teaching | Test one sensor, confirm centimeter units, check the response sheet has a sample row |
 | Revision note after teaching | Add a second sample row if teams confuse centimeters and inches |
 
@@ -34,15 +37,16 @@ This sample shows a first-pass workflow audit for a beginner-friendly mini-unit.
 
 ## Reviewer Check
 
-Before calling the workflow audit ready, another educator should be able to answer yes to each question:
+Before calling the packet ready for teacher review, another educator should be able to answer yes to each question:
 
 - Can I tell what students do during class?
 - Can I find the source, student-facing artifact, and evidence?
 - Can I see the check the teacher runs before teaching?
 - Can I tell what changes after the first classroom use?
 - Can I identify what stays private?
+- Can I see which OTS-000 or local boundary affects tools, sources, access, or safety?
 
-Use this as a minimum baseline before class launch. A stronger artifact includes a second workflow row from a different subject area and one dated revision note from an actual pilot.
+Use this as a minimum baseline before class launch. A stronger artifact includes one dated revision note from an actual pilot and a clear decision about whether publishing is verified, blocked, or out of scope.
 
 ## Standards Unpacking Row
 
@@ -54,7 +58,7 @@ Use this as a minimum baseline before class launch. A stronger artifact includes
 | Evidence of readiness | Student cites at least two readings, explains why one reading may be unreliable, and revises after feedback. |
 | Revision trigger | Revise the target if students can complete the table but cannot explain the unreliable reading. |
 
-## Mini-Unit Map
+## Learning Target and Lesson Map
 
 | Lesson | Student evidence | Review rule |
 | --- | --- | --- |
@@ -100,3 +104,4 @@ Use this as a minimum baseline before class launch. A stronger artifact includes
 | Resource evaluation sheet | Revise | official/OER/blog comparison | Add final license note before public sharing. |
 | Rubric draft | Ready | observable criteria | Keep real student samples private. |
 | Delivery plan | Ready | 45-minute fallback plan | Revise if most students miss close evidence. |
+| Publishing check | Blocked | student-view not available in sample | Do not mark published until access is checked. |

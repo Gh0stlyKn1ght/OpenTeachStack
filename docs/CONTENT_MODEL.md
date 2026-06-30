@@ -2,6 +2,8 @@
 
 Date: 2026-06-26
 
+Sequence update, 2026-06-28: OTS-000 is now the teacher tech-stack orientation and OTS-101 is the course-content foundations sequel.
+
 OpenTeachStack teaches teachers how to create student-facing course content with AI. It does not treat a route, file, outline, or generated MDX body as proof that a course teaches.
 
 Agent identity: teacher-facing course writer first, repo engineer second.
@@ -28,7 +30,7 @@ One real course is better than nine fake courses.
 - `authored`: a real teacher-facing lesson body exists and passes the lesson quality rubric.
 - `reviewed`: authored content has been checked against the rubric and route behavior.
 - `teachable-ready`: reviewed content also has templates, sample packet evidence, and release checks.
-- `coming-soon`: the course may appear in the pathway, but lessons must be unavailable until OTS-101 is right and the course is intentionally rebuilt.
+- `coming-soon`: the course may appear in the pathway, but lessons must be unavailable until the OTS-000/OTS-101 sequence is right and the course is intentionally rebuilt.
 
 Do not use file existence, route coverage, or passing checks as evidence that a course is live.
 Do not use root-level `teachable/{course}` folders as evidence that a course is live.
@@ -40,14 +42,24 @@ Do not use root-level `teachable/{course}` folders as evidence that a course is 
 - Do not call all online content curriculum.
 - Do not restore deleted fake lesson files to make tests pass.
 - Missing content should render as intentionally unavailable or stay unlinked.
-- Do not rebuild non-OTS-101 courses until OTS-101 has real, reviewed, teacher-useful content.
+- Do not rebuild later pathway courses until OTS-000 and OTS-101 have real, reviewed, teacher-useful content as a sequence.
 - Do not let export folders define course architecture.
+
+## OTS-000 on-ramp target
+
+OTS-000 is the teacher tech-stack orientation.
+
+By the end, a teacher should understand the practical tools and boundaries needed to work safely in the rest of OpenTeachStack: files and folders, VS Code, GitHub basics, Markdown/MDX, websites and hosting concepts, AI assistants, MCP-style tool access, backups, secrets, and the Teacher Builder Starter Kit.
+
+OTS-000 should not drift into course-content authoring. Its job is confidence with the working environment.
 
 ## OTS-101 rebuild target
 
 OTS-101 is now **AI Course Content Foundations for Teachers**.
 
 By the end, a teacher should be able to use AI to help build a small student-facing course content packet that is teachable, verified, safe, accessible, and reusable.
+
+OTS-101 assumes OTS-000 or equivalent comfort with the basic tool stack. It should not reteach GitHub, VS Code, file management, website hosting, secrets, backups, or coding-agent setup except as brief local context.
 
 Required lesson ingredients:
 

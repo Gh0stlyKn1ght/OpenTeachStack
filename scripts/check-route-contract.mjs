@@ -13,6 +13,7 @@ function fail(message) {
 }
 
 const expectedCourseSlugs = new Map([
+  ["OTS-000", "ots-000"],
   ["OTS-101", "ots-101"],
   ["OTS-201", "ots-201"],
   ["OTS-220", "ots-220"],
@@ -121,8 +122,23 @@ if (!bookIndex.includes('href="/book/ots-101"')) {
   fail("book index must link to dedicated OTS-101 route.");
 }
 
+if (!bookIndex.includes('href="/book/ots-000"')) {
+  fail("book index must link to OTS-000 at /book/ots-000.");
+}
+
 if (!bookIndex.includes("OTS-280") || !bookIndex.includes("Coming Soon")) {
-  fail("book index must list OTS-280 as Coming Soon while OTS-101 is the only active rebuild.");
+  fail("book index must list OTS-280 as Coming Soon while only approved courses are available.");
+}
+
+const genericChapterRoute = read("src/app/book/[course]/[chapter]/page.tsx");
+const genericSectionRoute = read("src/app/book/[course]/[chapter]/[section]/page.tsx");
+
+if (!genericChapterRoute.includes("getCanonicalChapterForStaleSlug")) {
+  fail("generic chapter routes must redirect stale chapter slugs to canonical chapter routes.");
+}
+
+if (!genericSectionRoute.includes("getCanonicalRecordForStaleChapterSlug")) {
+  fail("generic section routes must redirect stale chapter slugs to canonical section routes.");
 }
 
 if (process.exitCode) {

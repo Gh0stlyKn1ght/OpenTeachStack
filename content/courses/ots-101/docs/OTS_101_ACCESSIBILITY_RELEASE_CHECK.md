@@ -2,15 +2,21 @@
 
 Date: 2026-06-20
 
-Scope: OTS-101 public release pages, syllabus, module pages, active lessons, templates, Source Bank, audit page, release packet, and sample mini-unit routes.
+Sequence update: 2026-06-28
+
+This check predates OTS-000 becoming the teacher tech-stack orientation. Treat the release approval below as stale until OTS-101 is reviewed as the next course after OTS-000 and human review confirms the sequence boundary.
+
+Original scope: OTS-101 public release pages, syllabus, module pages, active lessons, templates, Source Bank, audit page, release packet, and sample mini-unit routes.
 
 This is a release-readiness check, not a formal third-party WCAG certification.
 
 ## Result
 
-OTS-101 is approved for first public release with continued accessibility monitoring.
+Original result: OTS-101 was approved for first public release with continued accessibility monitoring.
 
-Release status: pass with follow-up polish
+Current result: draft pending OTS-000 sequence review and human classroom review.
+
+Release status: hold for sequence-aware review
 
 ## Required Checks
 
@@ -29,12 +35,19 @@ Release status: pass with follow-up polish
 
 ## Release Requirements Now Met
 
-- OTS-101 does not require coding, GitHub, domains, public websites, Apps Script, or AI coding agents.
-- The capstone is a small mini-unit system with accessible delivery expectations.
+- OTS-101 should not require coding, GitHub, domains, public websites, Apps Script, or AI coding agents. Those boundaries now rely on the OTS-000-to-OTS-101 alignment review.
+- Original check: the capstone was scoped as a small mini-unit system with accessible delivery expectations. Current check: confirm the Mini Course Content Packet is accessible, reviewable, and honest about OTS-000 boundaries.
 - The syllabus includes outcome traceability.
 - The capstone rubric includes levels and a final submission checklist.
 - Source Bank governance is documented.
 - Source checks pass after removing unwanted references.
+
+## Sequence-Aware Checks Now Required
+
+- Confirm OTS-101 assumes OTS-000 tool vocabulary instead of reteaching it.
+- Confirm platform publishing remains a student-view and source/export check, not a site-building or deployment lesson.
+- Confirm accessibility checks reference OTS-000/local tool and access boundaries only when they affect student-facing content.
+- Confirm the Mini Course Content Packet can stand on its own as course-content evidence.
 
 ## Required Follow-Up After Launch
 
@@ -45,4 +58,6 @@ Release status: pass with follow-up polish
 
 ## Approval Note
 
-OTS-101 is accessible enough for first release because its core experience is text-first, link-based, template-supported, and scoped for non-technical teachers. The remaining work is polish and evidence collection, not a blocker to publishing the foundations course.
+Original approval note: OTS-101 was considered accessible enough for first release because its core experience was text-first, link-based, template-supported, and scoped for non-technical teachers.
+
+Current note: accessibility is likely still a strength, but this document no longer authorizes release by itself. Release needs the OTS-000 sequence review, human classroom review, and any current route/build checks required by the repo.

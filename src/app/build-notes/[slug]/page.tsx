@@ -87,7 +87,7 @@ export default async function BuildNotePage({ params }: BuildNotePageProps) {
       subtitle={post.summary}
       breadcrumbs={[
         { label: "Build Notes", href: "/build-notes" },
-        { label: "OTS-101", href: "/book/ots-101" },
+        { label: "Start", href: "/book/ots-000" },
       ]}
     >
       <ArticleByline

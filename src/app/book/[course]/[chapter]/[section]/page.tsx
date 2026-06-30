@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import CourseStructureSidebar from "@/components/book/CourseStructureSidebar";
 import ArticleBody from "@/components/field-guide/ArticleBody";
@@ -49,6 +49,26 @@ type SectionPageProps = {
   params: Promise<{ course: string; chapter: string; section: string }>;
 };
 
+function getCanonicalRecordForStaleChapterSlug(
+  courseSlug: string,
+  chapterSlug: string,
+  sectionSlug: string,
+) {
+  const course = COURSE_STRUCTURES.find(
+    (courseStructure) => courseStructure.slug === courseSlug,
+  );
+  if (!course) return undefined;
+
+  const requestedChapterNumber = sectionSlug.split("-")[0];
+
+  return getAllCourseSectionRecords(course).find(
+    (record) =>
+      record.chapter.slug !== chapterSlug &&
+      record.chapter.number === requestedChapterNumber &&
+      record.sectionSlug === sectionSlug,
+  );
+}
+
 export function generateStaticParams() {
   return COURSE_STRUCTURES.flatMap((course) =>
     getAllCourseSectionRecords(course).map((record) => ({
@@ -80,6 +100,15 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
   const record = getCourseSectionRecord(course, chapter, section);
 
   if (!record) {
+    const canonicalRecord = getCanonicalRecordForStaleChapterSlug(
+      course,
+      chapter,
+      section,
+    );
+    if (canonicalRecord) {
+      redirect(canonicalRecord.href);
+    }
+
     notFound();
   }
 
@@ -90,7 +119,7 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
       <FieldGuidePage
         eyebrow={`${record.course.code} Coming Soon`}
         title={record.course.title}
-        subtitle="This lesson is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+        subtitle="This lesson is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
         breadcrumbs={[
           { label: "Book", href: "/book" },
           { label: record.course.code, href: `/book/${record.course.slug}` },
@@ -98,7 +127,7 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
         meta={[
           { label: "Course", value: record.course.code },
           { label: "Status", value: "Coming Soon" },
-          { label: "Boundary", value: "Frozen until OTS-101 is right" },
+          { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
         ]}
       >
         <ArticleBody>
@@ -111,11 +140,11 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
                 as if they were real instruction.
               </p>
               <p>
-                OTS-101 is the only course currently being rebuilt.
+                OTS-000 and OTS-101 are the only active sequence work right now.
               </p>
             </div>
             <div className="course-section-status">
-              Coming Soon. Frozen until OTS-101 is right.
+              Coming Soon. Frozen until OTS-000/101 is right.
             </div>
           </section>
         </ArticleBody>

@@ -58,6 +58,7 @@ export default function PromptsPage() {
         <aside className="mt-10 border-t border-border pt-6">
           <p className="text-sm leading-relaxed text-foreground/55">
             Need a full course instead of a prompt? Start at{" "}
+            <Link href="/book/ots-000">OTS-000</Link>, then move into{" "}
             <Link href="/book/ots-101">OTS-101</Link> or return to the{" "}
             <Link href="/kb">Knowledge Base</Link>.
           </p>

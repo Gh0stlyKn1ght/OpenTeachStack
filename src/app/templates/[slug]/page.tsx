@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PrintPageButton from "@/components/PrintPageButton";
 import {
   FOUNDATION_TEMPLATES,
+  TEMPLATE_SLUG_ALIASES,
   getFoundationTemplate,
 } from "@/lib/templates";
 
@@ -12,7 +13,10 @@ interface TemplatePageProps {
 }
 
 export function generateStaticParams() {
-  return FOUNDATION_TEMPLATES.map((template) => ({ slug: template.slug }));
+  return [
+    ...FOUNDATION_TEMPLATES.map((template) => ({ slug: template.slug })),
+    ...Object.keys(TEMPLATE_SLUG_ALIASES).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({

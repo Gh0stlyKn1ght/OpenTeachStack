@@ -26,7 +26,7 @@ export interface AppSource {
 export const officialDocSources: CourseSourceGroup[] = [
   {
     course: "OTS-101",
-    title: "Teaching Teachers Foundations",
+    title: "AI Course Content Foundations for Teachers",
     sources: [
       {
         label: "OpenAI Prompt Engineering Guide",

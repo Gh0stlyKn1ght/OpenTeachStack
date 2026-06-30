@@ -1,5 +1,7 @@
 # OpenTeachStack Curriculum Manager Audit
 
+Staleness note, 2026-06-28: this audit predates the OTS-000 on-ramp decision and the OTS-101 retargeting to AI Course Content Foundations for Teachers. Treat the old OTS-101 title, old chapter slugs, mini-unit framing, and release-readiness claims as historical evidence only.
+
 ## Executive Summary
 
 Overall pathway grade: **68/100**

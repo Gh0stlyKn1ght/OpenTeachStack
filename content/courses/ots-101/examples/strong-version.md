@@ -18,4 +18,4 @@
 - The teacher supplies the learning target and evidence before AI drafts anything.
 - The prompt keeps source verification with the teacher.
 - The output request ends with a checklist instead of pretending the first draft is finished.
-- The revision trigger makes the prompt library improve after classroom use.
+- The revision trigger makes the reusable course-content prompt improve after classroom use.

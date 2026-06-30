@@ -10,21 +10,24 @@ Use it before prompting AI for a lesson draft.
 
 ## Blank fields
 
-| Learning target | Student-friendly version | Lesson activity | Evidence | AI support | Teacher verification |
-| --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |
+| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | OTS-000 / local boundary |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |
 
 ## Completed fictional example
 
-| Learning target | Student-friendly version | Lesson activity | Evidence | AI support | Teacher verification |
-| --- | --- | --- | --- | --- | --- |
-| Students can explain and perform safe startup and shutdown. | I can follow the startup and shutdown checklist before using the robot. | Label the routine in a scenario, then practice with a powered-off robot. | Completed scenario and teacher observation. | Draft scenario and student directions. | Check sequence against team safety routine. |
+| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | OTS-000 / local boundary |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Students rush startup and skip checklist decisions. | I can choose the next safe startup step using the approved checklist. | Label two fictional scenarios, then practice with a powered-off robot. | Scenario choices, checklist explanation, and teacher observation. | Draft fictional scenarios and student directions. | Check sequence against approved team safety routine. | Revise if students miss the same checklist step after first use. | Use approved routine only; do not invent equipment rules. |
 
 ## Quality check
 
 - The target uses an observable verb.
-- The activity gives students practice with the target.
+- The practice path prepares students for the evidence task.
 - The evidence proves the target instead of only proving participation.
+- AI support is narrow enough to review.
+- Teacher verification and revision trigger are visible.
+- Tool, source, access, policy, or safety boundaries are named when relevant.
 
 ## Safety note
 

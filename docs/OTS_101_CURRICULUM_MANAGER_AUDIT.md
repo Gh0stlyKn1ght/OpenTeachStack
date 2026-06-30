@@ -2,6 +2,8 @@
 
 Date: 2026-06-20
 
+Staleness note, 2026-06-28: this audit predates OTS-000 and the OTS-101 retargeting to AI Course Content Foundations for Teachers. Treat release recommendations, old course title, and mini-unit/workflow-audit framing below as historical evidence, not current readiness.
+
 Course: OTS-101 Teaching Teachers Foundations
 
 Audience: classroom teachers, CTE/STEM teachers, robotics and computer science educators, club advisors, department leads, and teacher-creators who want practical curriculum systems with AI, source verification, Google Workspace planning, assessment, and classroom delivery.

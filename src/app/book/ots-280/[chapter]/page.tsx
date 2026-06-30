@@ -46,7 +46,7 @@ export default async function CyberChapterPage({ params }: ChapterPageProps) {
     <FieldGuidePage
       eyebrow={`${CYBER_COURSE_CODE} Coming Soon`}
       title="Cyber Safety for Educators"
-      subtitle="This chapter is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+      subtitle="This chapter is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
       breadcrumbs={[
         { label: "Book", href: "/book" },
         { label: CYBER_COURSE_CODE, href: "/book/ots-280" },
@@ -54,7 +54,7 @@ export default async function CyberChapterPage({ params }: ChapterPageProps) {
       meta={[
         { label: "Course", value: CYBER_COURSE_CODE },
         { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
       ]}
     >
       <ArticleBody>
@@ -63,8 +63,8 @@ export default async function CyberChapterPage({ params }: ChapterPageProps) {
             <h2>Chapter locked</h2>
             <p>
               OTS-280 is Coming Soon. Its chapter structure exists, but the
-              course is not open for reading until OTS-101 proves the content
-              model.
+              course is not open for reading until the OTS-000/OTS-101 sequence
+              proves the content model.
             </p>
             <p>
               No chapter table of contents, section links, or lesson bodies are
@@ -73,12 +73,12 @@ export default async function CyberChapterPage({ params }: ChapterPageProps) {
           </div>
           <ArtifactCard
             title="Coming Soon"
-            description="Frozen until OTS-101 is right."
+            description="Frozen until OTS-000/101 is right."
           />
         </section>
 
-        <Link href="/book/ots-101" className="book-action">
-          Return to OTS-101
+        <Link href="/book/ots-000" className="book-action">
+          Return to OTS-000
         </Link>
       </ArticleBody>
     </FieldGuidePage>

@@ -10,7 +10,7 @@ import { pageVisuals } from "@/lib/visualAssets";
 export const metadata: Metadata = createPageMetadata({
   title: "OTS-101 Release Packet — OpenTeachStack",
   description:
-    "Final release packet for OTS-101 Foundations, including module builds, capstone evidence, safety checks, and next steps.",
+    "Draft release-review packet for OTS-101 Foundations, including chapter builds, capstone evidence, safety checks, sequence boundaries, and next steps.",
   path: "/course/release",
   image: {
     url: pageVisuals.releasePacket.src,
@@ -21,36 +21,35 @@ export const metadata: Metadata = createPageMetadata({
 const releaseChecks = [
   "Every module has a clear build artifact.",
   "Every required template is available as a page and Markdown download.",
-  "The capstone is a mini-unit system, not a full course site.",
+  "The capstone is a Mini Course Content Packet, not a full course site.",
+  "The OTS-000 boundary is clear: tool-stack orientation supports OTS-101 but does not replace course-content evidence.",
   "The pathway boundaries are clear: code, GitHub, domains, public publishing, and AI agents can wait.",
   "The Source Bank is available as the shared system for verified tools, course platforms, learning resources, account notes, and privacy cautions.",
   "Official sources are available for software-facing lessons and workflows.",
   "The one-day lesson site workflow is visible as a signature method.",
-  "The course has a non-technical start path.",
+  "The course has an OTS-000 prerequisite path.",
   "The final audit checks scope, sources, alignment, AI safety, accessibility, and classroom readiness.",
-  "The curriculum-manager audit is documented and remaining v1 risks are visible in the roadmap.",
+  "The curriculum-manager audit is marked stale where it predates OTS-000.",
 ];
 
 const finalPackage = [
-  "Teacher workflow audit",
-  "Standards unpacking sheet",
-  "Mini-unit map",
-  "Reusable lesson template",
-  "Prompt library",
-  "Resource evaluation sheet",
+  "Course content inventory",
+  "Learning target and lesson map",
+  "Student-facing lesson draft",
+  "Assignment and feedback packet",
+  "Reusable course-content prompt",
   "AI verification checklist",
-  "Assessment/rubric draft",
-  "Delivery plan",
-  "One-day lesson site plan",
+  "Course content safety and access checklist",
+  "Platform publishing checklist or blocked note",
   "Reflection and revision log",
 ];
 
 export default function Ots101ReleasePage() {
   return (
     <FieldGuidePage
-      eyebrow="OTS-101 Release Packet"
-      title="Teaching Teachers Foundations is ready when the work can be taught."
-      subtitle="This is the final check for OTS-101: a coherent, source-backed mini-unit system a teacher can explain, teach, revise, and own."
+      eyebrow="OTS-101 Release Review Packet"
+      title="OTS-101 is ready only when the packet can be taught and reviewed."
+      subtitle="This is the draft release-review check for OTS-101 after OTS-000: a coherent, source-backed Mini Course Content Packet a teacher can explain, teach, revise, and own."
       meta={[
         { label: "Checks", value: String(releaseChecks.length) },
         { label: "Package items", value: String(finalPackage.length) },
@@ -116,7 +115,7 @@ export default function Ots101ReleasePage() {
       <section className="mb-10 grid gap-6 lg:grid-cols-2">
         <div className="rounded-md border border-border bg-surface p-5">
           <h2 className="mb-3 font-heading text-xl font-bold text-foreground">
-            Final Student-Ready Package
+            Final Review Package
           </h2>
           <ul className="space-y-2 pl-0">
             {finalPackage.map((item) => (
@@ -149,10 +148,11 @@ export default function Ots101ReleasePage() {
           Final Reality Check
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
-          If the mini-unit only works because the teacher remembers a private
+          If the packet only works because the teacher remembers a private
           explanation, it is not finished. If the sources cannot be checked, it
           is not finished. If AI wrote it and nobody verified it, it is not
-          finished.
+          finished. If publishing has not been checked from the student view,
+          mark it blocked instead of release-ready.
         </p>
         <div className="flex flex-wrap gap-2">
           <Link
@@ -168,10 +168,10 @@ export default function Ots101ReleasePage() {
             Open Source Bank
           </Link>
           <Link
-            href="/examples/robotics-mini-unit"
+            href="/examples/robotics-course-content-packet"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
-            View Sample Mini-Unit
+            View Sample Packet
           </Link>
         </div>
       </section>

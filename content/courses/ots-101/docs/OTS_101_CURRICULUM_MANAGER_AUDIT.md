@@ -2,6 +2,10 @@
 
 Date: 2026-06-20
 
+Sequence update: 2026-06-28
+
+This audit predates the OTS-000 teacher tech-stack orientation. Treat its release recommendation as stale until OTS-101 is reviewed as the next course after OTS-000. The current boundary source is `OTS_000_TO_OTS_101_ALIGNMENT.md`.
+
 Course: OTS-101 Teaching Teachers Foundations
 
 Audience: classroom teachers, CTE/STEM teachers, robotics and computer science educators, club advisors, department leads, and teacher-creators who want practical curriculum systems with AI, source verification, Google Workspace planning, assessment, and classroom delivery.
@@ -12,9 +16,9 @@ OTS-101 is a strong release candidate, not a finished v1. The course has a clear
 
 The main risk is not missing content volume. The main risk is reviewer evidence. A district, department, or program reviewer will look for standards-to-assessment traceability, performance-leveled rubric criteria, accessibility/UDL supports, and a maintenance workflow for source links.
 
-Recommendation: revise, then ship. Do not rebuild and do not expand OTS-101 into GitHub, Apps Script, domains, course-site publishing, or AI coding agents.
+Original recommendation: revise, then ship. Current sequence-aware recommendation: review OTS-101 as the sequel to OTS-000 before release. Do not expand OTS-101 into GitHub, Apps Script, domains, course-site publishing, or AI coding agents.
 
-Overall readiness score: 8.4 / 10
+Original readiness score: 8.4 / 10. Current readiness is draft pending OTS-000 alignment review and human classroom review.
 
 ## Scorecard
 
@@ -31,7 +35,7 @@ Overall readiness score: 8.4 / 10
 | Assessment quality | 7 | Capstone, peer review, and artifact checks exist. | Capstone and audit page | Add more explicit evidence expectations. |
 | Rubric quality | 7 | Capstone rubric now has performance levels, but needs classroom trial feedback. | Capstone rubric | Revalidate after pilot use. |
 | Resource quality | 8 | Source Bank is a major strength. | `src/lib/sourceBank.ts` and `/kb/source-bank` | Keep verification workflow current. |
-| Accessibility | 7 | Accessibility is present in the release check, capstone checklist, and delivery expectations. | Syllabus, audit, capstone checks, accessibility release check | Run formal browser audit after launch. |
+| Accessibility | 7 | Accessibility is present in the release check, capstone checklist, and delivery expectations. | Syllabus, audit, capstone checks, accessibility release check | Re-run sequence-aware accessibility review before launch. |
 | Differentiation | 6 | Beginner orientation exists, but accommodations and extensions are light. | Syllabus and templates | Add support/extension examples. |
 | Safety/privacy/copyright | 8 | Strong throughline, especially AI verification, Source Bank, and licensing checks. | Safety guide, capstone, templates | Add lesson-level reminders where thin. |
 | Technology fit | 8 | OTS-101 does not require coding, domains, GitHub, or automation. | Syllabus out-of-scope section | Keep device/account assumptions visible. |
@@ -40,7 +44,7 @@ Overall readiness score: 8.4 / 10
 | Engagement | 7 | Practical artifact-building is engaging for the right audience. | Module build artifacts | Add more real examples and non-examples. |
 | Capstone quality | 8 | Right-sized, useful, and aligned to the course purpose. | Capstone lesson | Pilot and revise rubric language. |
 | Sustainability | 7 | Source Bank and docs help; update rhythm must be enforced. | Source maintenance doc | Schedule link review cadence. |
-| Overall readiness | 8.4 | Ready for first public release with post-launch accessibility and exemplar polish. | Full course pass | Ship foundations release and continue polish. |
+| Overall readiness | 8.4 | Original audit saw the course as near release, but this score predates OTS-000. | Full course pass | Re-score after OTS-000 sequence and human review. |
 
 ## Curriculum Architecture
 
@@ -201,9 +205,9 @@ P0 complete in this pass:
 - Upgrade capstone rubric to leveled criteria.
 - Remove overclaim that OTS-101 is fully finalized.
 
-P1 after first release:
+P1 before any public release:
 
-- Run formal browser-based WCAG 2.1 AA accessibility audit.
+- Run formal browser-based WCAG 2.1 AA accessibility audit or equivalent internal browser pass.
 - Add one completed example packet or annotated exemplar.
 - Add more alternate submission examples after pilot feedback.
 
@@ -221,7 +225,9 @@ P3 future:
 
 ## Final Recommendation
 
-Recommendation: ship the first public foundations release, then continue polish.
+Original recommendation: ship the first public foundations release, then continue polish.
+
+Current sequence-aware recommendation: keep OTS-101 in draft until the OTS-000-to-OTS-101 alignment review confirms the course no longer acts like the first orientation course.
 
 Top 5 fixes:
 

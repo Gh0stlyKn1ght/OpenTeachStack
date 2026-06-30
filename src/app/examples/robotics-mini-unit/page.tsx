@@ -3,16 +3,16 @@ import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 
 export const metadata: Metadata = {
-  title: "Sample Robotics Mini-Unit — OpenTeachStack",
+  title: "Sample Robotics Mini Course Content Packet — OpenTeachStack",
   description:
-    "A complete OTS-101 sample mini-unit package for an intro robotics lesson on what makes something a robot.",
+    "A review-ready OTS-101 sample Mini Course Content Packet for an intro robotics lesson on what makes something a robot.",
 };
 
 const artifactSections = [
   {
-    title: "1. Teacher Workflow Audit",
+    title: "1. Course Content Inventory",
     body:
-      "Current problem: robotics materials are split between slides, kit PDFs, old videos, and improvised whiteboard explanations. Better system: one mini-unit map, one source list, one lesson page, one assessment, and one revision log.",
+      "Current problem: robotics materials are split between slides, kit PDFs, old videos, and improvised whiteboard explanations. Better system: one source list, one lesson page, one assessment, one publishing status note, and one revision log.",
   },
   {
     title: "2. Standards Unpacking",
@@ -20,17 +20,17 @@ const artifactSections = [
       "Target skill: students explain how a system senses information, processes it, and acts. Evidence: students classify devices and defend their reasoning using sense-think-act language.",
   },
   {
-    title: "3. Mini-Unit Map",
+    title: "3. Learning Target and Lesson Map",
     body:
       "Lesson 1: What is a robot? Lesson 2: Sensors and inputs. Lesson 3: Decisions and if/then logic. Lesson 4: Build or simulate a simple sensor decision.",
   },
   {
-    title: "4. Lesson Template",
+    title: "4. Student-Facing Lesson Draft",
     body:
       "Opening question: Is an automatic door a robot? Direct instruction: sense-think-act model. Practice: classify examples and non-examples. Check: explain one decision chain.",
   },
   {
-    title: "5. Prompt Library Note",
+    title: "5. Reusable Course-Content Prompt",
     body:
       "Prompt used: one-day lesson site builder. Teacher revision: removed vague AI language, added classroom examples, marked video/image placeholders for verification.",
   },
@@ -50,9 +50,9 @@ const artifactSections = [
       "Task: classify eight systems as robot / not robot / depends, then justify two answers. Criteria: accurate vocabulary, sense-think-act reasoning, and evidence-based explanation.",
   },
   {
-    title: "9. Delivery Plan",
+    title: "9. Publishing Status",
     body:
-      "45 minutes: 5-minute hook, 10-minute model, 20-minute classification task, 5-minute pair check, 5-minute exit ticket. Backup: printed cards if devices or robots are unavailable.",
+      "Classroom copy is treated as an export from the approved source. Student-view access must be checked before release; otherwise publishing remains blocked.",
   },
   {
     title: "10. Reflection and Revision",
@@ -72,9 +72,9 @@ const sourceChecks = [
 export default function RoboticsMiniUnitExamplePage() {
   return (
     <FieldGuidePage
-      eyebrow="OTS-101 Sample Mini-Unit"
+      eyebrow="OTS-101 Sample Packet"
       title="Intro Robotics: What Is a Robot?"
-      subtitle="A finished-enough example: clear target, trusted sources, one lesson sequence, one assessment, safety checks, and a revision path."
+      subtitle="A review-ready example: clear target, trusted sources, one student-facing lesson, one assessment, safety checks, blocked publishing status if needed, and a revision path."
       meta={[
         { label: "Artifacts", value: String(artifactSections.length) },
         { label: "Source checks", value: String(sourceChecks.length) },
@@ -143,21 +143,22 @@ export default function RoboticsMiniUnitExamplePage() {
           Build This Today
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
-          Copy this structure into your own subject. Replace robotics with one
-          concept students misunderstand, then build the same artifact trail.
+          Copy this structure into your own subject after the OTS-000
+          orientation. Replace robotics with one concept students misunderstand,
+          then build the same review trail.
         </p>
         <div className="flex flex-wrap gap-2">
           <Link
-            href="/templates/mini-unit-map"
+            href="/templates/course-content-map"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
-            Mini-Unit Map
+            Course Content Map
           </Link>
           <Link
-            href="/templates/one-day-lesson-site-planner"
+            href="/templates/publishing-checklist"
             className="rounded-sm border border-border bg-background px-3 py-1.5 text-xs font-semibold text-foreground/70 no-underline transition-colors hover:border-accent hover:text-accent"
           >
-            One-Day Planner
+            Publishing Checklist
           </Link>
           <Link
             href="/course/release"

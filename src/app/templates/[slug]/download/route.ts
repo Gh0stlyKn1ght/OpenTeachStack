@@ -1,5 +1,6 @@
 import {
   FOUNDATION_TEMPLATES,
+  TEMPLATE_SLUG_ALIASES,
   getFoundationTemplate,
   renderTemplateMarkdown,
 } from "@/lib/templates";
@@ -11,7 +12,10 @@ interface TemplateDownloadRouteContext {
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  return FOUNDATION_TEMPLATES.map((template) => ({ slug: template.slug }));
+  return [
+    ...FOUNDATION_TEMPLATES.map((template) => ({ slug: template.slug })),
+    ...Object.keys(TEMPLATE_SLUG_ALIASES).map((slug) => ({ slug })),
+  ];
 }
 
 export async function GET(

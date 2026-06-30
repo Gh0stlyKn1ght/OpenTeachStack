@@ -86,7 +86,7 @@ export const COURSE_STRUCTURES: CourseStructure[] = [
     slug: "ots-000",
     title: "Teacher Tech Stack Orientation",
     level: "Beginner",
-    status: "Coming Soon",
+    status: "Draft",
     coursePath: "Modern Teacher Systems",
     prerequisite: "Basic computer and web browser comfort",
     thesis:

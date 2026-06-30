@@ -10,6 +10,7 @@ This file is the route and slug source of truth for course-book work. Do not add
 
 | Course | Owner | Canonical route | Notes |
 | --- | --- | --- | --- |
+| OTS-000 | Generic pathway routes | `/book/ots-000` | Teacher Tech Stack Orientation uses `COURSE_STRUCTURES` and is the on-ramp before OTS-101. |
 | OTS-101 | Dedicated book routes | `/book/ots-101` | Foundations has custom data in `src/lib/book.ts` and dedicated routes under `src/app/book/ots-101`. |
 | OTS-201 | Generic pathway routes | `/book/ots-201` | Uses `COURSE_STRUCTURES` and `src/app/book/[course]`. |
 | OTS-220 | Generic pathway routes | `/book/ots-220` | Uses `COURSE_STRUCTURES` and `src/app/book/[course]`. |
@@ -26,7 +27,7 @@ This file is the route and slug source of truth for course-book work. Do not add
 - Dedicated courses may still appear in pathway metadata and search, but their route generation must come from their dedicated data modules.
 - Generic pathway courses must use `/book/{courseSlug}/{chapterSlug}/{sectionSlug}`.
 - OTS-101 legacy `/course` and `/course/{moduleSlug}` routes redirect to `/book/ots-101`.
-- The book index links to OTS-101 only while OTS-101 is the active rebuild. OTS-280 keeps its dedicated route ownership but is listed as Coming Soon until it has the same content-readiness review.
+- The book index starts with OTS-000 as the teacher tech-stack orientation, then points to OTS-101 as the drafted sequel. OTS-280 keeps its dedicated route ownership but is listed as Coming Soon until it has the same content-readiness review.
 - Do not use TT-prefixed or alternate public course-code slugs.
 - Do not add compatibility links that point from a canonical page back to itself.
 

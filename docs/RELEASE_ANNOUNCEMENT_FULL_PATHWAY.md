@@ -1,5 +1,11 @@
 # OpenTeachStack Full Pathway Release
 
+Staleness note, 2026-06-28: this announcement is not current release copy. It predates the OTS-000 on-ramp decision and the reset to an honest OTS-000/OTS-101 draft sequence. Do not publish this as-is.
+
+Current status: OTS-000 is the first draft on-ramp. OTS-101 is the draft sequel for AI-assisted course content foundations. Later pathway courses remain Coming Soon until that sequence is reviewed and proven.
+
+Archived claim below:
+
 The full OpenTeachStack pathway is now live in authored form.
 
 This milestone moves beyond OTS-101 foundations and includes all nine pathway courses:

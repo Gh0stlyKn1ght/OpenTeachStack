@@ -14,7 +14,7 @@ import { COURSE_CODE, COURSE_SUBTITLE, COURSE_THESIS, COURSE_TITLE } from "@/lib
 export const metadata: Metadata = {
   title: `${BOOK_COURSE_CODE} Course Book — OpenTeachStack`,
   description:
-    `${BOOK_COURSE_CODE} book-style table of contents for the OpenTeachStack foundations course.`,
+    `${BOOK_COURSE_CODE} book-style table of contents for the OpenTeachStack course-content foundations sequel after OTS-000.`,
 };
 
 export default function Ots101BookPage() {
@@ -30,9 +30,9 @@ export default function Ots101BookPage() {
         { label: "Course path", value: BOOK_COURSE_PATH },
         { label: "Course", value: BOOK_COURSE_CODE },
         { label: "Legacy code", value: COURSE_CODE },
-        { label: "Level", value: "Beginner" },
+        { label: "Level", value: "Beginner after OTS-000" },
         { label: "Final artifact", value: "Mini course content packet" },
-        { label: "Source bank", value: "Verified links" },
+        { label: "Status", value: "Draft sequel" },
       ]}
       sidebar={<BookSidebar />}
       footer={
@@ -51,10 +51,10 @@ export default function Ots101BookPage() {
             <h2>Course Thesis</h2>
             <p>{COURSE_SUBTITLE}</p>
             <p>
-              {BOOK_COURSE_CODE} is the active rebuild course for teachers who
-              want to use AI to create student-facing course content without
-              surrendering verification, safety, accessibility, or teacher
-              judgment.
+              {BOOK_COURSE_CODE} follows OTS-000. It assumes teachers have
+              the basic tool-stack vocabulary and now want to use AI to create
+              student-facing course content without surrendering verification,
+              safety, accessibility, or teacher judgment.
             </p>
           </div>
           <ArtifactCard
@@ -66,9 +66,9 @@ export default function Ots101BookPage() {
         <section>
           <h2>Chapter Table of Contents</h2>
           <p className="mb-6 max-w-3xl text-sm leading-relaxed text-foreground/58">
-            OTS-101 is being rebuilt one real chapter at a time. Missing
-            lessons are intentionally unavailable until they have real
-            teacher-facing bodies.
+            OTS-101 has a complete draft lesson pass, but it still needs
+            sequence-aware human review before release. Read it as the next
+            course after OTS-000, not as the first orientation course.
           </p>
           <CourseTOC />
         </section>
@@ -89,7 +89,7 @@ export default function Ots101BookPage() {
         <section className="border-l-2 border-accent pl-5">
           <h2>Prompt Support</h2>
           <p>
-            OTS-101 includes prompt-library work, but prompts are never final
+            OTS-101 includes reusable prompt work, but prompts are never final
             artifacts by themselves. Copy a prompt, add your context, verify the
             output, revise it in teacher voice, and save the result with the
             matching course artifact.

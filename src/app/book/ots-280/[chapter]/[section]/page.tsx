@@ -47,7 +47,7 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
     <FieldGuidePage
       eyebrow={`${CYBER_COURSE_CODE} Coming Soon`}
       title="Cyber Safety for Educators"
-      subtitle="This lesson is intentionally unavailable until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+      subtitle="This lesson is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
       breadcrumbs={[
         { label: "Book", href: "/book" },
         { label: CYBER_COURSE_CODE, href: "/book/ots-280" },
@@ -55,7 +55,7 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
       meta={[
         { label: "Course", value: CYBER_COURSE_CODE },
         { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-101 is right" },
+        { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
       ]}
     >
       <ArticleBody>
@@ -67,10 +67,10 @@ export default async function CyberSectionPage({ params }: SectionPageProps) {
               placeholder, or outline-only lesson pages as if they were real
               instruction.
             </p>
-            <p>OTS-101 is the only course currently being rebuilt.</p>
+            <p>OTS-000 and OTS-101 are the only active sequence work right now.</p>
           </div>
           <div className="course-section-status">
-            Coming Soon. Frozen until OTS-101 is right.
+            Coming Soon. Frozen until OTS-000/101 is right.
           </div>
         </section>
       </ArticleBody>
