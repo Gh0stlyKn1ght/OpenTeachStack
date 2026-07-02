@@ -12,13 +12,13 @@ Use it especially when AI has generated a course package that looks complete bec
 
 ## Blank fields
 
-| Item | Category | Audience | Platform/location | OTS-000 context | Status | AI help needed | Verification needed | Next revision |
+| Item | Category | Audience | Platform/location | Local/tool/access context | Status | AI help needed | Verification needed | Next revision |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  | tool / access / source / safety note if relevant | keep / revise / verify / archive / missing / blocked |  |  |  |
 
 ## Completed fictional example
 
-| Item | Category | Audience | Platform/location | OTS-000 context | Status | AI help needed | Verification needed | Next revision |
+| Item | Category | Audience | Platform/location | Local/tool/access context | Status | AI help needed | Verification needed | Next revision |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Startup checklist | Student-facing course content | Students | Google Classroom topic: Safety | Approved routine lives in shared source folder. | revise | Rewrite for clearer steps | Verify against approved safety routine | Thursday planning block |
 | Teacher setup notes | Instructional materials | Teacher only | Drive teacher folder | Private teacher-only file. | keep | None | Check equipment names | End of unit |
@@ -29,7 +29,7 @@ Use it especially when AI has generated a course package that looks complete bec
 
 - Every item has a category.
 - Student-facing items are separate from teacher-only materials.
-- OTS-000 context is included only when it clarifies tools, access, source, platform, or safety.
+- Local/tool/access context is included only when it clarifies tools, access, source, platform, or safety.
 - AI tasks are specific enough to prompt safely.
 - Verification tasks stay with the teacher.
 - Export or platform items do not count as proof that the source course is ready.

@@ -24,7 +24,7 @@ Allowed tool / access boundary:
 | Bias or representation |  | accept / revise / reject / blocked |  |
 | Accessibility |  | accept / revise / reject / blocked |  |
 | Copyright/license |  | accept / revise / reject / blocked |  |
-| OTS-000 / local boundary |  | accept / revise / reject / blocked |  |
+| Local/tool/access boundary |  | accept / revise / reject / blocked |  |
 
 ## Completed fictional example
 
@@ -38,7 +38,7 @@ Allowed tool / access boundary: No student data; use teacher-provided source onl
 | Accuracy | Startup routine matches teacher-provided checklist. | accept | None |
 | Student privacy | Scenario uses fictional initials only. | accept | None |
 | Accessibility | Checklist headings are clear, but video has no transcript. | revise | Add transcript before publishing. |
-| OTS-000 / local boundary | Platform copy still needs student-view access check. | blocked | Test from student account before release. |
+| Local/tool/access boundary | Platform copy still needs student-view access check. | blocked | Test from student account before release. |
 
 ## Quality check
 

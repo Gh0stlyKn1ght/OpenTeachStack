@@ -6,7 +6,7 @@ Course: OTS-000 Teacher Tech Stack Orientation
 
 Current status: draft, not human-reviewed.
 
-Public pathway status should remain Coming Soon until review is complete.
+Public pathway status is active draft. It should remain clearly non-live until review is complete.
 
 ## What exists
 
@@ -33,7 +33,7 @@ By the end, educators understand the software, vocabulary, files, workflows, AI 
 - Some tool descriptions may need a technical accuracy pass against current official documentation.
 - The course may still feel long for a true beginner, even though each chapter is short.
 - The language should be checked for accidental developer assumptions, especially in Node, npm, deployment, GitHub, and MCP sections.
-- The public pathway and book index still intentionally show Coming Soon; reviewers should confirm whether local dev preview is enough for review.
+- The public pathway and book index show Draft; reviewers should confirm the visible route does not imply release readiness.
 - The course has not had a browser pass for route rendering, navigation, or MDX component behavior.
 
 ## Human review questions
@@ -43,7 +43,7 @@ By the end, educators understand the software, vocabulary, files, workflows, AI 
 3. Does the Teacher Builder Starter Kit feel like a real final product?
 4. Are any software claims too specific for a course that should stay durable?
 5. Are AI-agent and MCP warnings clear without making the tools sound forbidden?
-6. Should OTS-000 open as public draft before OTS-101 is human-reviewed, or stay Coming Soon?
+6. What must change before OTS-000 moves from public draft to live/release-ready?
 
 ## Suggested review path
 
@@ -61,7 +61,7 @@ Reviewer:
 Date:
 
 Decision:
-- keep Coming Soon
+- keep active draft
 - open as public draft
 - revise before preview
 - ready for release

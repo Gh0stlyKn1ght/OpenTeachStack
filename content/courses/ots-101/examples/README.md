@@ -1,15 +1,17 @@
 # OTS-101 Examples
 
-These examples support OTS-101 as the course-content foundations sequel after OTS-000.
+These examples support OTS-101 as the active course-content foundations rebuild.
 
 Use them to make each lesson artifact specific, practical, and safe.
+
+## File Roles
 
 - completed-artifact.md: starter Mini Course Content Packet samples and quality criteria.
 - weak-version.md: anti-patterns to diagnose shallow artifact quality.
 - strong-version.md: revised artifacts with explicit evidence requirements.
 - reviewer-notes.md: completion checks used before human review and any release decision.
 
-The examples include:
+## What The Examples Include
 
 - course content inventory and system-map thinking,
 - reusable course-content prompt samples,
@@ -18,9 +20,9 @@ The examples include:
 - Mini Course Content Packet structure,
 - source and resource review comparison,
 - observable rubric rows,
-- OTS-000 context notes when tool, source, access, platform, or safety boundaries matter.
+- context notes when tool, source, access, platform, or safety boundaries matter.
 
-Privacy, safety, and licensing assumptions:
+## Privacy, Safety, And Licensing
 
 - All students and classes are fictional placeholders.
 - Keep source and copyright notes visible on each sample.

@@ -239,7 +239,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     level: "Beginner",
     status: "Draft",
     purpose:
-      "Give teachers a plain-language on-ramp to the software, vocabulary, files, workflows, AI tools, and safety habits behind modern curriculum projects before they enter the deeper pathway.",
+      "Give teachers a plain-language on-ramp to the software, vocabulary, files, workflows, AI tools, and safety habits behind modern curriculum projects before they enter deeper course-content work.",
     prerequisites: "Basic computer and web browser comfort.",
     majorArtifacts: [
       "Builder workstation checklist",
@@ -255,7 +255,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     level: "Beginner",
     status: "Draft",
     purpose:
-      "Teach teachers how to use AI to create student-facing lessons, assignments, rubrics, verification routines, and small course content packets after the OTS-000 orientation.",
+      "Teach teachers how to use AI to create student-facing lessons, assignments, rubrics, verification routines, and small course content packets.",
     prerequisites: "OTS-000 or equivalent comfort with files, tools, source notes, and safety boundaries.",
     majorArtifacts: [
       "Course content inventory",
@@ -269,7 +269,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-201",
     title: "Google Workspace Systems for Teachers",
     level: "Beginner/Intermediate",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Turn Drive, Docs, Sheets, Forms, Slides, and Calendar into durable classroom operating systems.",
     prerequisites: "OTS-101 or equivalent planning workflow.",
@@ -284,7 +284,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-220",
     title: "Apps Script for Teacher Automation",
     level: "Intermediate",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Build safe Google Workspace automations for folders, documents, quizzes, and reminders.",
     prerequisites:
@@ -300,7 +300,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-240",
     title: "Open Resources & GitHub for Educators",
     level: "Intermediate",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Teach OER publishing, licensing decisions, GitHub basics, and open-source contribution workflows.",
     prerequisites: "OTS-101 source review, safety review, and publishing-check basics.",
@@ -315,7 +315,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-260",
     title: "AI Media & Lesson Delivery",
     level: "Intermediate",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Create accessible visuals, slide systems, diagrams, short videos, and delivery routines.",
     prerequisites: "OTS-101 student-facing lesson draft and publishing checklist.",
@@ -330,7 +330,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-280",
     title: "Cyber Safety for Educators",
     level: "Intermediate",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Teach identity hygiene, account safety, public profile audits, website safety, repo exposure checks, and basic incident response for public-facing educators.",
     prerequisites: "OTS-101 or equivalent comfort with basic digital workflows.",
@@ -346,7 +346,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-301",
     title: "Teacher Course Sites",
     level: "Advanced",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Compare Google Sites, static HTML, GitHub Pages, Docusaurus, Next.js, domains, DNS, and hosting.",
     prerequisites: "OTS-101 plus comfort with files and web publishing concepts.",
@@ -361,7 +361,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-320",
     title: "AI Coding Agents for Educators",
     level: "Advanced",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Use Codex, Claude Code, and similar tools safely with version control, diffs, test plans, and content protection.",
     prerequisites: "OTS-240 or equivalent version-control basics.",
@@ -376,7 +376,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
     code: "OTS-399",
     title: "Capstone Studio",
     level: "Advanced",
-    status: "Coming Soon",
+    status: "Draft",
     purpose:
       "Assemble the full pathway into a publishable curriculum system with automation, open resources, and delivery evidence.",
     prerequisites: "OTS-101 and at least two intermediate/advanced pathway courses.",

@@ -1,5 +1,5 @@
 {
-  "status": "planned",
+  "status": "draft",
   "sourceOfTruth": "content/courses/ots-301",
   "exportTargets": [
     "teachable"
@@ -8,5 +8,6 @@
   "hasTemplates": true,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "notes": "Coming Soon. Frozen until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+  "releaseReadiness": "Active draft preview for pathway browsing. This course has templates and course structure, but no authored lesson-body pass yet. Not release-ready until hasRealLessons and humanReviewed are true.",
+  "notes": "Active draft preview. Open for review and planning, but lesson bodies still need real teacher-facing authoring before this can be treated as a course."
 }

@@ -42,9 +42,10 @@ export default function StartPage() {
           assessments rebuilt from memory.
         </p>
         <p>
-          OpenTeachStack starts with the tech stack orientation, then narrows
-          into one course, one unit, and one workflow. Know the containers
-          before you ask AI to improve the course content inside them.
+          OpenTeachStack starts with OTS-000 as the active tool-stack
+          orientation, then narrows into OTS-101 for one course, one unit, and
+          one workflow. Know the containers before you ask AI to improve the
+          course content inside them.
         </p>
       </section>
 
@@ -76,7 +77,7 @@ export default function StartPage() {
           course-content work: prompts, templates, standards, sources,
           verification checks, student-facing lessons, and revision notes.
           Later pathway courses teach websites, automation, GitHub, and AI
-          coding agents when you are ready.
+          coding agents as draft previews that still need review.
         </p>
       </section>
 

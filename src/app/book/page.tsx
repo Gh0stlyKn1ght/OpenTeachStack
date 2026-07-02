@@ -8,8 +8,6 @@ import { BOOK_COURSE_CODE, BOOK_COURSE_PATH, METHOD_STEPS } from "@/lib/book";
 import { COURSE_STRUCTURES } from "@/lib/courseStructures";
 import { COURSE_SUBTITLE, COURSE_THESIS } from "@/lib/metadata";
 
-const canPreviewComingSoon = process.env.NODE_ENV !== "production";
-
 export const metadata: Metadata = {
   title: "Course Book — OpenTeachStack",
   description:
@@ -77,8 +75,8 @@ export default function BookPage() {
           <p>
             OTS-000 is the orientation on-ramp. OTS-101 is the drafted sequel
             for AI-assisted course content foundations. Other pathway courses
-            stay Coming Soon until the on-ramp and foundations sequence has
-            been reviewed honestly.
+            are visible as draft previews so they can be reviewed without
+            claiming release readiness.
           </p>
           <div className="divide-y divide-border border-y border-border">
             <Link
@@ -117,51 +115,32 @@ export default function BookPage() {
                 Draft sequel
               </span>
             </Link>
-            {pathwayCourses.map((course) =>
-              canPreviewComingSoon ? (
-                <Link
-                  key={course.slug}
-                  href={`/book/${course.slug}`}
-                  className="grid gap-3 py-4 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
-                >
-                  <span className="font-mono text-sm text-accent">
-                    {course.code}
+            {pathwayCourses.map((course) => (
+              <Link
+                key={course.slug}
+                href={`/book/${course.slug}`}
+                className="grid gap-3 py-4 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
+              >
+                <span className="font-mono text-sm text-accent">
+                  {course.code}
+                </span>
+                <span>
+                  <strong className="block text-foreground">
+                    {course.title}
+                  </strong>
+                  <span className="mt-1 block text-sm text-foreground/55">
+                    {course.thesis}
                   </span>
-                  <span>
-                    <strong className="block text-foreground">
-                      {course.title}
-                    </strong>
-                    <span className="mt-1 block text-sm text-foreground/55">
-                      {course.thesis}
-                    </span>
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                    Coming Soon
-                  </span>
-                </Link>
-              ) : (
-                <div
-                  key={course.slug}
-                  className="grid gap-3 py-4 md:grid-cols-[6rem_1fr_8rem]"
-                >
-                  <span className="font-mono text-sm text-accent">
-                    {course.code}
-                  </span>
-                  <span>
-                    <strong className="block text-foreground">
-                      {course.title}
-                    </strong>
-                    <span className="mt-1 block text-sm text-foreground/55">
-                      {course.thesis}
-                    </span>
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                    Coming Soon
-                  </span>
-                </div>
-              ),
-            )}
-            <div className="grid gap-3 py-4 md:grid-cols-[6rem_1fr_8rem]">
+                </span>
+                <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
+                  Draft preview
+                </span>
+              </Link>
+            ))}
+            <Link
+              href="/book/ots-280"
+              className="grid gap-3 py-4 no-underline transition-colors hover:bg-surface-alt/35 md:grid-cols-[6rem_1fr_8rem]"
+            >
               <span className="font-mono text-sm text-accent">OTS-280</span>
               <span>
                 <strong className="block text-foreground">
@@ -174,9 +153,9 @@ export default function BookPage() {
                 </span>
               </span>
               <span className="font-mono text-xs uppercase tracking-wider text-foreground/40">
-                Coming Soon
+                Draft preview
               </span>
-            </div>
+            </Link>
           </div>
         </section>
 

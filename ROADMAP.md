@@ -3,8 +3,8 @@
 ## Current Status: PRIORITY — OTS-101 Content Integrity (pre-review)
 
 > **Reality check (2026-06-27): the v2.0 "all nine courses authored" claim below is not true against the repo.**
-> `status.json` and file counts show only **OTS-101** has authored lesson bodies (60 sections, `hasRealLessons: true`, `humanReviewed: false`).
-> The other 8 courses are `planned` / Coming Soon with **0 lesson `.mdx` files** (`hasRealLessons: false`) — outlines and scaffolds only. OTS-220 has draft labs but no lesson bodies.
+> `status.json` and file counts show **OTS-000** and **OTS-101** have authored lesson-body passes (`hasRealLessons: true`, `humanReviewed: false`).
+> The later pathway courses are active draft previews, but most still have **0 lesson `.mdx` files** (`hasRealLessons: false`) — outlines, structures, route-backed previews, and support materials only. OTS-220 has draft labs but no lesson bodies.
 > Per the content-truth rules, a file count, route, or outline is not an authored course. The historical v0.5–v2.0 checklists below are kept for traceability but must not be read as "courses are done."
 > **Active priority is v2.1 — finish and clean OTS-101 before it goes to human review.**
 
@@ -65,7 +65,7 @@ Finding in one line: **the teaching is real; the wrappers are templated.** The X
 
 ### Truth-debt (separate from OTS-101, but blocks an honest v2.0)
 
-- [ ] Reconcile roadmap completion claims with `status.json`: do not mark OTS-201/220/240/260/280/301/320/399 as authored while their `lessons/` folders contain 0 `.mdx` bodies. Either author them or restate their status as outline/Coming Soon.
+- [ ] Reconcile roadmap completion claims with `status.json`: do not mark OTS-201/220/240/260/280/301/320/399 as authored while their `lessons/` folders contain 0 `.mdx` bodies. Keep them as active draft previews until lesson-body authoring and human review are complete.
 
 ## v0.2 — OTS-101 Foundations Complete
 

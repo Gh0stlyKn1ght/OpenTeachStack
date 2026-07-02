@@ -93,4 +93,4 @@ OTS-101 should remain draft until its lessons are reviewed against this sequence
 - Does it keep teacher judgment, verification, safety, accessibility, and source quality visible?
 - Does it point advanced technical work to the later pathway instead of expanding OTS-101?
 
-If OTS-000 remains Coming Soon, OTS-101 can still be reviewed internally, but public pathway language should make the sequence honest.
+Because OTS-000 is now an active draft, public pathway language should make the sequence honest: OTS-000 is the on-ramp, OTS-101 is the foundations course, and neither is live until human review approves release.

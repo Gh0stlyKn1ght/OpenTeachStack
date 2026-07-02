@@ -16,10 +16,12 @@ OpenTeachStack is an open-source pathway for educators building curriculum
 systems with AI, open resources, Google Workspace, and practical classroom
 workflows.
 
-OpenTeachStack is not one giant course. It is a course path. The only active
-course rebuild right now is:
+OpenTeachStack is not one giant course. It is a course path. The full pathway is
+currently open as an active draft preview so the courses can be reviewed in one
+pass. The first two authored draft courses are:
 
-**OTS-101 — AI Course Content Foundations for Teachers**
+1. **OTS-000 — Teacher Tech Stack Orientation**
+2. **OTS-101 — AI Course Content Foundations for Teachers**
 
 `OTS` stands for **Open Teacher Stack**. Keep course codes in the `OTS-###`
 format across the project.
@@ -31,6 +33,23 @@ The signature workflow is:
 Start with the learning need. Gather trusted sources. Let AI help draft or
 structure the work. Verify it before students see it. Teach it, save it, and
 improve it after class.
+
+## OTS-000 — Teacher Tech Stack Orientation
+
+**Build the plain-language tool and safety vocabulary teachers need before deeper course-content work.**
+
+OTS-000 is a 14-chapter draft on-ramp for teachers who need practical grounding
+in files, folders, IDEs, terminals, GitHub, documentation, AI assistants,
+project stacks, backups, secrets, permissions, and safe builder habits.
+
+Current OTS-000 source-of-truth status:
+
+- Source of truth: `content/courses/ots-000`
+- Registry and reader metadata: `src/lib/courseStructures.ts`
+- Status: draft active on-ramp
+- Lesson bodies: 84 real teacher-facing lesson sections across chapters 00-13
+- Human classroom review: not complete
+- Release rule: not live until `content/courses/ots-000/status.json` says `humanReviewed: true`
 
 ## OTS-101 — AI Course Content Foundations for Teachers
 
@@ -84,19 +103,21 @@ These topics belong in later course path courses:
 
 | Code | Course | Level | Status |
 |---|---|---:|---|
+| OTS-000 | Teacher Tech Stack Orientation | Beginner | Draft active on-ramp |
 | OTS-101 | AI Course Content Foundations for Teachers | Beginner | Draft active rebuild |
-| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Coming Soon |
-| OTS-220 | Apps Script for Teacher Automation | Intermediate | Coming Soon |
-| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Coming Soon |
-| OTS-260 | AI Media & Lesson Delivery | Intermediate | Coming Soon |
-| OTS-280 | Cyber Safety for Educators | Intermediate | Coming Soon |
-| OTS-301 | Teacher Course Sites | Advanced | Coming Soon |
-| OTS-320 | AI Coding Agents for Educators | Advanced | Coming Soon |
-| OTS-399 | Capstone Studio | Advanced | Coming Soon |
+| OTS-201 | Google Workspace Systems for Teachers | Beginner/Intermediate | Draft active preview |
+| OTS-220 | Apps Script for Teacher Automation | Intermediate | Draft active preview |
+| OTS-240 | Open Resources & GitHub for Educators | Intermediate | Draft active preview |
+| OTS-260 | AI Media & Lesson Delivery | Intermediate | Draft active preview |
+| OTS-280 | Cyber Safety for Educators | Intermediate | Draft active preview |
+| OTS-301 | Teacher Course Sites | Advanced | Draft active preview |
+| OTS-320 | AI Coding Agents for Educators | Advanced | Draft active preview |
+| OTS-399 | Capstone Studio | Advanced | Draft active preview |
 
-Only OTS-101 currently has real lesson bodies. The rest are roadmap/course
-package placeholders until OTS-101 is reviewed and strong enough to guide the
-rest of the pathway.
+No course should be treated as release-ready until its
+`content/courses/{course}/status.json` record says `humanReviewed: true`.
+OTS-201, OTS-220, OTS-240, OTS-260, OTS-301, OTS-320, and OTS-399 are open for
+pathway review but still need real teacher-facing lesson-body authoring.
 
 ## Content Safety Rules
 
@@ -112,11 +133,12 @@ rest of the pathway.
 
 Teachers do not need GitHub, Next.js, DNS, or automation on day one.
 
-Start with the site's **Start Here If You Are Not Technical** page, then move into OTS-101 Foundations.
+Start with the site's **Start Here If You Are Not Technical** page, then move into OTS-000 Orientation and OTS-101 Foundations.
 
 Useful course entry points:
 
 - `/start` — non-technical starting path
+- `/book/ots-000` — OTS-000 orientation course book
 - `/book/ots-101` — OTS-101 course book
 - `/course` — compatibility redirect to the OTS-101 course book
 - `/kb/source-bank` — verified links and official resources
@@ -155,9 +177,9 @@ Open [http://localhost:4000](http://localhost:4000) to view the site.
 
 ## Roadmap
 
-Current priority: finish and protect the OTS-101 rebuild before expanding the
-rest of the pathway. The old v2.0 full-pathway checklist is historical only and
-must not be used to claim current course readiness.
+Current priority: review the full active draft pathway without confusing draft
+visibility for release readiness. The old v2.0 full-pathway checklist is
+historical only and must not be used to claim current course readiness.
 
 - Use `npm run verify:release` for a non-mutating release gate; use `npm run verify:release:write` only when intentionally refreshing `docs/BUILD_VERIFICATION.md`
 - Preserve the canonical `/book/{course}` route contract

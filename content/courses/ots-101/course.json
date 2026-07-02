@@ -9,7 +9,7 @@
   "migrationStatus": "draft",
   "courseReadiness": "active-rebuild",
   "coursePromise": "By the end, a teacher can use AI to help build a small student-facing course content packet that is teachable, verified, safe, accessible, and reusable.",
-  "sequenceNote": "OTS-101 follows OTS-000. It assumes basic teacher tech-stack vocabulary and focuses on AI-assisted course content foundations.",
+  "sequenceNote": "OTS-101 is the active foundations course after OTS-000. It assumes basic comfort with files, tools, source notes, and safety boundaries while focusing on AI-assisted course content foundations.",
   "chapters": [
     {
       "number": "01",
@@ -83,7 +83,7 @@
     }
   ],
   "liveLessonPolicy": "Only lessons with real teacher-facing bodies should exist as MDX. Missing lessons are intentionally unavailable until authored.",
-  "releaseBoundary": "Draft sequel after OTS-000. Do not treat as release-ready until human review confirms the OTS-000-to-OTS-101 sequence boundary and classroom usefulness.",
+  "releaseBoundary": "Draft active rebuild. Do not treat as release-ready until human review confirms classroom usefulness, teacher-facing voice, verification quality, and capstone evidence.",
   "samplePacket": {
     "course": "Intro to Robotics Safety",
     "audience": "high school robotics students",

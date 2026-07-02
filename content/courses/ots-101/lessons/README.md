@@ -2,9 +2,11 @@
 
 This folder contains the drafted OTS-101 lesson set.
 
-OTS-101 now follows OTS-000. Chapter revisions should keep OTS-000 as the teacher tech-stack orientation and keep OTS-101 focused on AI-assisted course content foundations.
+OTS-101 is active as the foundations course after OTS-000. Chapter revisions should keep OTS-101 focused on AI-assisted course content foundations.
 
-Active chapter folders:
+## Active Chapter Folders
+
+These are the current source-of-truth chapter folders:
 
 ```txt
 - 01-curriculum-vs-course-content
@@ -21,9 +23,11 @@ Active chapter folders:
 
 Legacy folders such as `01-teacher-builder-mindset`, `02-prompting`, and `10-mini-unit-capstone` were removed because they belonged to the earlier placeholder course shape and caused source-of-truth confusion.
 
+## Route Boundary
+
 Do not recreate legacy folders to satisfy routes. The active course registry is `src/lib/book.ts`, and authored lesson content belongs in the active chapter folders above.
 
-Before marking the course release-ready, review every chapter against `../docs/OTS_000_TO_OTS_101_ALIGNMENT.md`.
+Before marking the course release-ready, review every chapter against the active OTS-000-to-OTS-101 sequence and the required lesson shape in `VOICEPRINT.md`.
 
 ## Lesson Folder Map
 

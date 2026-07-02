@@ -1,6 +1,6 @@
 # OTS-220 Apps Script for Teacher Automation
 
-Status: Coming Soon - frozen until OTS-101 is right.
+Status: Active draft preview - open for review; not human-reviewed or release-ready.
 
 Canonical route: `/book/ots-220`
 

@@ -27,7 +27,7 @@ const requiredEntries = [
   "references",
 ];
 const strictReadiness = new Set(["release", "public-beta", "teachable-ready"]);
-const noLessonReadiness = new Set(["coming-soon", "planned"]);
+const noLessonReadiness = new Set(["coming-soon", "planned", "active-preview"]);
 
 function fail(message) {
   console.error(`Course content layout violation: ${message}`);

@@ -13,7 +13,7 @@ Use it after building at least one lesson, assignment, rubric, verification note
 - Course or packet focus:
 - Audience:
 - Platform:
-- Relevant OTS-000 context:
+- Relevant local/tool/access context:
 - Source of truth and system map:
 - Course content inventory:
 - Learning target map:
@@ -32,7 +32,7 @@ Use it after building at least one lesson, assignment, rubric, verification note
 - Course or packet focus: Intro to Robotics Safety - Safe robot startup and shutdown
 - Audience: High school robotics students
 - Platform: Google Classroom
-- Relevant OTS-000 context: approved class safety routine is the source; Google Classroom is an export; no student data in prompts.
+- Relevant local/tool/access context: approved class safety routine is the source; Google Classroom is an export; no student data in prompts.
 - Source of truth and system map: course-content/source/robotics-safety/ holds the source; platform copies are exports
 - Course content inventory: One ready lesson, one draft quiz, one teacher-only setup note
 - Learning target map: Students choose the next safe action using the approved checklist; revise if students miss the same checklist step after first practice.
@@ -53,7 +53,7 @@ Use it after building at least one lesson, assignment, rubric, verification note
 - The packet is safe to share with the intended audience.
 - Another teacher can understand what to update next.
 - Publishing is marked verified, blocked, or out of scope.
-- OTS-000 context supports the packet without replacing the course-content evidence.
+- Local/tool/access context supports the packet without replacing the course-content evidence.
 
 ## Safety note
 

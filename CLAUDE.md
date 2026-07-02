@@ -11,14 +11,14 @@ file is not proof that the course teaches.
 
 ## Current Course Boundary
 
-- Only OTS-101 is the active rebuild.
-- OTS-101 title: AI Course Content Foundations for Teachers.
-- OTS-101 source of truth: `content/courses/ots-101`.
-- OTS-101 registry/header source: `src/lib/book.ts`.
-- OTS-101 status: draft until `content/courses/ots-101/status.json` says `humanReviewed: true`.
-- OTS-201 through OTS-399 stay Coming Soon until OTS-101 is reviewed and strong enough to guide the rest of the pathway.
+- The full pathway is visible as an active draft preview.
+- OTS-000 and OTS-101 have authored lesson-body passes.
+- Later pathway courses may be open for review before they have real lesson-body passes.
+- Course source of truth: `content/courses/{course}`.
+- Course release status comes from `content/courses/{course}/status.json`.
+- No course is live until its status file says `humanReviewed: true`.
 
-Do not refill, mark live, or fake-complete the other pathway courses.
+Do not mark courses live, reviewed, or release-ready just because their routes are visible.
 
 ## Project Structure
 - `src/app/` — Next.js App Router pages

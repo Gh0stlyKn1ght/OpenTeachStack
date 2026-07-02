@@ -1,6 +1,6 @@
 # OTS-000 Teacher Tech Stack Orientation
 
-Status: Draft - public pathway remains Coming Soon until human review.
+Status: Draft active on-ramp - not live until human review.
 
 Canonical route: `/book/ots-000`
 
@@ -55,7 +55,7 @@ It does not replace:
 
 ## Review status
 
-OTS-000 should stay public-facing Coming Soon until human review confirms:
+OTS-000 is public-facing as a draft active on-ramp. It should not be marked live or release-ready until human review confirms:
 
 - the on-ramp is beginner-friendly
 - tool descriptions are accurate enough

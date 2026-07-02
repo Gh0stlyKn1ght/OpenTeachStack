@@ -55,7 +55,7 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
         meta={[
           { label: "Course", value: course.code },
           { label: "Status", value: "Coming Soon" },
-          { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
+          { label: "Boundary", value: "Unavailable until course status is draft" },
         ]}
       >
         <ArticleBody>
@@ -75,7 +75,7 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
             </div>
             <ArtifactCard
               title="Coming Soon"
-              description="This course stays frozen until OTS-000 and OTS-101 have real, reviewed, teacher-useful lesson content."
+              description="This course is unavailable until its source-of-truth status moves into draft review."
             />
           </section>
 
@@ -118,7 +118,7 @@ export default async function CourseStructurePage({ params }: CoursePageProps) {
           <h2>Course Thesis</h2>
           {course.status === "Coming Soon" && canPreviewComingSoon ? (
             <div className="course-section-status">
-              Development preview: this course is still Coming Soon in
+              Development preview: this course is still unavailable in
               production. Use this outline for planning only.
             </div>
           ) : null}

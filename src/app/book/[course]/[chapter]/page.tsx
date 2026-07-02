@@ -88,7 +88,7 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
         meta={[
           { label: "Course", value: course.code },
           { label: "Status", value: "Coming Soon" },
-          { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
+          { label: "Boundary", value: "Unavailable until course status is draft" },
         ]}
       >
         <ArticleBody>
@@ -101,9 +101,8 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
                 masquerade as authored course content.
               </p>
               <p>
-                OTS-000 and OTS-101 are the active sequence. Once that on-ramp
-                plus foundations sequence is right, this course can be opened
-                and authored for real.
+                Once this course moves into draft review, it can be opened and
+                authored for real.
               </p>
             </div>
             <ArtifactCard
@@ -172,7 +171,7 @@ export default async function CourseChapterPage({ params }: ChapterPageProps) {
         {course.status === "Coming Soon" && canPreviewComingSoon ? (
           <div className="course-section-status">
             Development preview: this chapter outline is visible locally, but
-            the course remains Coming Soon in production.
+            the course remains unavailable in production.
           </div>
         ) : null}
 

@@ -17,7 +17,7 @@ Audience:
 Task:
 Format:
 Constraints:
-OTS-000 / local boundary:
+Local/tool/access boundary:
 Examples:
 Non-example to avoid:
 Checks:
@@ -32,7 +32,7 @@ Audience: First-year robotics students.
 Task: Draft a student-facing lesson page.
 Format: Learning target, short explanation, worked scenario, quick check, submission task.
 Constraints: Do not invent policy. Use plain language. No real student names.
-OTS-000 / local boundary: Use the teacher-approved routine only. Google Classroom is an export surface, not the source of truth.
+Local/tool/access boundary: Use the teacher-approved routine only. Google Classroom is an export surface, not the source of truth.
 Examples: Include one safe startup decision.
 Non-example to avoid: A vague page that says "be careful around robots."
 Checks: Add a teacher verification note for any safety claim.

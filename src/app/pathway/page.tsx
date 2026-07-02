@@ -3,8 +3,6 @@ import Link from "next/link";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
 import { PATHWAY_COURSES } from "@/lib/metadata";
 
-const canPreviewComingSoon = process.env.NODE_ENV !== "production";
-
 export const metadata: Metadata = {
   title: "Pathway — OpenTeachStack",
   description:
@@ -22,7 +20,7 @@ export default function PathwayPage() {
     <FieldGuidePage
       eyebrow="OpenTeachStack Pathway"
       title="Start with orientation, then build course content."
-      subtitle="OpenTeachStack is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows."
+      subtitle="OpenTeachStack is an open-source pathway for educators building curriculum systems with AI, automation, open resources, Google Workspace, and modern publishing workflows. The full pathway is open as a draft preview."
       meta={[
         { label: "Start", value: "OTS-000 Orientation" },
         { label: "Tracks", value: String(PATHWAY_COURSES.length) },
@@ -35,9 +33,9 @@ export default function PathwayPage() {
         <p className="mb-4 text-sm leading-relaxed text-foreground/60">
           OTS-000 keeps the first step honest: understand the tool stack,
           files, platforms, AI access, documentation, and safety boundaries.
-          OTS-101 comes next with a small AI-assisted course content packet.
-          Apps Script, GitHub, domains, AI coding agents, and live publishing
-          remain specialized tracks.
+          OTS-101 comes next with a small AI-assisted course content packet. The
+          later pathway courses are visible as draft previews so they can be
+          reviewed without pretending they are release-ready.
         </p>
         <Link
           href="/book/ots-000"
@@ -58,18 +56,12 @@ export default function PathwayPage() {
                 <span className="font-mono text-sm font-semibold text-accent">
                   {course.code}
                 </span>
-                {course.status === "Coming Soon" && !canPreviewComingSoon ? (
-                  <span className="font-heading text-xl font-bold text-foreground/70">
-                    {course.title}
-                  </span>
-                ) : (
-                  <Link
-                    href={courseHref(course.code)}
-                    className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
-                  >
-                    {course.title}
-                  </Link>
-                )}
+                <Link
+                  href={courseHref(course.code)}
+                  className="font-heading text-xl font-bold text-foreground no-underline hover:text-link"
+                >
+                  {course.title}
+                </Link>
                 <span className="rounded-sm bg-surface-alt px-2 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground/55">
                   {course.status}
                 </span>

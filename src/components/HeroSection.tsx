@@ -58,10 +58,10 @@ export default function HeroSection() {
           </Link>
 
           <Link
-            href="/book/ots-101"
+            href="/book/ots-000"
             className="inline-flex items-center px-8 py-3.5 text-sm font-semibold rounded-lg no-underline border border-border text-foreground/70 hover:border-accent hover:text-accent transition-all duration-300 hover:-translate-y-0.5"
           >
-            Start OTS-101
+            Start OTS-000
             <svg
               className="ml-2 w-4 h-4"
               fill="none"

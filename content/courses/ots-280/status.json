@@ -1,5 +1,5 @@
 {
-  "status": "planned",
+  "status": "draft",
   "sourceOfTruth": "content/courses/ots-280",
   "exportTargets": [
     "teachable"
@@ -8,5 +8,6 @@
   "hasTemplates": true,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "notes": "Coming Soon. Frozen until OTS-101 is rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+  "releaseReadiness": "Active draft preview for pathway browsing. OTS-280 has route-backed teacher-facing cyber safety section content, but it is not human-reviewed and is not release-ready.",
+  "notes": "Active draft preview. Open for review and planning, with route-backed safety content. Human review and a course-quality pass are still required before release."
 }

@@ -6,15 +6,15 @@ Use this after the content review direction is approved. This checklist is for l
 
 ## Review rule
 
-OTS-000 may be previewed in local development, but the public pathway should keep it marked Coming Soon until human review approves a public draft or release.
+OTS-000 is active as a public-facing draft route, but it should stay clearly non-live until human review approves release.
 
 ## Course entry routes
 
 | Route | What to check |
 |---|---|
-| `/pathway` | OTS-000 appears in the pathway, status remains Coming Soon publicly, and dev preview links work locally. |
+| `/pathway` | OTS-000 appears in the pathway with Draft status and does not imply release readiness. |
 | `/book` | OTS-000 appears in the book list and remains clearly non-live. |
-| `/book/ots-000` | Course thesis, chapter table of contents, final artifact, and Coming Soon/draft boundary are clear. |
+| `/book/ots-000` | Course thesis, chapter table of contents, final artifact, and draft/non-live boundary are clear. |
 
 ## Representative chapter routes
 
@@ -57,8 +57,8 @@ Before public release, confirm:
 
 - `content/courses/ots-000/status.json` still has `humanReviewed: false` unless review is complete.
 - Public pathway metadata still describes OTS-000 honestly.
-- Coming Soon behavior is intentional for production until approved.
-- Local dev preview does not accidentally imply public release.
+- Draft behavior is intentional for production until approved.
+- Public draft access does not accidentally imply public release.
 
 ## Review notes
 

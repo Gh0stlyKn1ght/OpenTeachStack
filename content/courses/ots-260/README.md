@@ -1,6 +1,6 @@
 # OTS-260 AI Media and Lesson Delivery
 
-Status: Coming Soon - frozen until OTS-101 is right.
+Status: Active draft preview - open for review; not human-reviewed or release-ready.
 
 Canonical route: `/book/ots-260`
 

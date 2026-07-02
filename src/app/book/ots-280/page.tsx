@@ -3,7 +3,11 @@ import Link from "next/link";
 import ArtifactCard from "@/components/book/ArtifactCard";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import { CYBER_COURSE_CODE, CYBER_COURSE_PATH } from "@/lib/cyberSafety";
+import {
+  CYBER_BOOK_CHAPTERS,
+  CYBER_COURSE_CODE,
+  CYBER_COURSE_PATH,
+} from "@/lib/cyberSafety";
 
 export const metadata: Metadata = {
   title: `${CYBER_COURSE_CODE} Course Book — OpenTeachStack`,
@@ -14,40 +18,73 @@ export const metadata: Metadata = {
 export default function Ots280BookPage() {
   return (
     <FieldGuidePage
-      eyebrow={`${CYBER_COURSE_CODE} Coming Soon`}
+      eyebrow={`${CYBER_COURSE_CODE} Course Book`}
       title="Cyber Safety for Educators"
-      subtitle="This course is intentionally unavailable until OTS-000 and OTS-101 are rebuilt, reviewed, and strong enough to guide the rest of the pathway."
+      subtitle="A draft cyber safety course for teachers working in public, connected, AI-supported spaces."
       breadcrumbs={[{ label: "Book", href: "/book" }]}
       meta={[
         { label: "Course path", value: CYBER_COURSE_PATH },
         { label: "Course", value: CYBER_COURSE_CODE },
-        { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
+        { label: "Status", value: "Draft" },
+        { label: "Review", value: "Human review still required" },
       ]}
     >
       <ArticleBody>
         <section className="book-spread">
           <div>
-            <h2>Why this course is not open yet</h2>
+            <h2>Course Thesis</h2>
             <p>
-              OpenTeachStack is rebuilding one real course first. We are not
-              publishing placeholder chapter pages, fake lesson bodies, or
-              scaffolded course content just to make the pathway look full.
+              Teachers need calm, practical safety routines before they publish
+              public sites, reuse accounts everywhere, paste information into
+              AI tools, or invite the internet into their classroom workflow.
             </p>
             <p>
-              Finish the OTS-000 on-ramp and OTS-101 foundations sequence first.
-              After that sequence proves the content model, OTS-280 can be
-              rebuilt intentionally.
+              This draft is open for review. Treat it as a working course, not
+              a release claim: the human review pass still needs to check
+              examples, classroom fit, source quality, and risk language.
             </p>
           </div>
           <ArtifactCard
-            title="Coming Soon"
-            description="This course stays frozen until OTS-000 and OTS-101 have real, reviewed, teacher-useful lesson content."
+            title="Teacher cyber safety plan"
+            description="The course builds toward a private, maintainable safety plan for accounts, identity, public profiles, websites, repos, and incident response."
           />
         </section>
 
-        <Link href="/book/ots-000" className="book-action">
-          Return to OTS-000
+        <section>
+          <h2>Chapter Table of Contents</h2>
+          <ol className="divide-y divide-border border-y border-border">
+            {CYBER_BOOK_CHAPTERS.map((chapter) => (
+              <li
+                key={chapter.slug}
+                className="grid gap-3 py-4 md:grid-cols-[4.5rem_1fr_10rem]"
+              >
+                <span className="font-mono text-sm text-accent">
+                  {chapter.number}
+                </span>
+                <span>
+                  <Link
+                    href={chapter.href}
+                    className="block font-semibold text-foreground no-underline hover:text-accent"
+                  >
+                    {chapter.title}
+                  </Link>
+                  <span className="mt-1 block text-sm text-foreground/55">
+                    {chapter.essentialQuestion}
+                  </span>
+                </span>
+                <span className="font-mono text-[0.68rem] uppercase tracking-wider text-foreground/40">
+                  {chapter.difficulty}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <Link
+          href={CYBER_BOOK_CHAPTERS[0]?.href ?? "/book"}
+          className="book-action"
+        >
+          Start course
         </Link>
       </ArticleBody>
     </FieldGuidePage>

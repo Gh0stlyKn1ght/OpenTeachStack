@@ -56,5 +56,6 @@
   ],
   "copiedAssets": [],
   "copiedLabs": [],
-  "courseReadiness": "coming-soon"
+  "courseReadiness": "active-preview",
+  "releaseBoundary": "Active draft preview. Open for pathway review, but not release-ready until lesson bodies are authored and humanReviewed is true."
 }

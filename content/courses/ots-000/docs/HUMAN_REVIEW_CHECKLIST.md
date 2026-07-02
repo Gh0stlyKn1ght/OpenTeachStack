@@ -2,7 +2,7 @@
 
 Status: draft review required.
 
-Use this checklist before changing OTS-000 from Coming Soon to public-facing draft or release status.
+Use this checklist before changing OTS-000 from active draft to live or release-ready status.
 
 ## Course Promise
 
@@ -77,7 +77,7 @@ Confirm the completed sample packet:
 Before marking this course public-facing, decide:
 
 ```text
-Keep as Coming Soon:
+Keep as active draft:
 
 Open as public draft:
 

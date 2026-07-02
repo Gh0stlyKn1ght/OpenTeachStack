@@ -126,8 +126,11 @@ if (!bookIndex.includes('href="/book/ots-000"')) {
   fail("book index must link to OTS-000 at /book/ots-000.");
 }
 
-if (!bookIndex.includes("OTS-280") || !bookIndex.includes("Coming Soon")) {
-  fail("book index must list OTS-280 as Coming Soon while only approved courses are available.");
+if (
+  !bookIndex.includes('href="/book/ots-280"') ||
+  !bookIndex.includes("Draft preview")
+) {
+  fail("book index must link to dedicated OTS-280 as a draft preview.");
 }
 
 const genericChapterRoute = read("src/app/book/[course]/[chapter]/page.tsx");

@@ -12,7 +12,7 @@ Use it before publishing to students, an LMS, a website, Teachable, or a public 
 
 Lesson or artifact:
 Student-facing location:
-Relevant OTS-000 / local boundary:
+Relevant local/tool/access boundary:
 
 | Area | Question | Decision | Fix needed |
 | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ Relevant OTS-000 / local boundary:
 
 Lesson or artifact: Safe Robot Startup and Shutdown lesson page
 Student-facing location: Google Classroom topic
-Relevant OTS-000 / local boundary: Approved routine is the source; Google Classroom copy is an export.
+Relevant local/tool/access boundary: Approved routine is the source; Google Classroom copy is an export.
 
 | Area | Question | Decision | Fix needed |
 | --- | --- | --- | --- |

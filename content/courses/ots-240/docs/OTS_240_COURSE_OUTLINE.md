@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: Coming Soon outline - frozen until OTS-101 is right.
+Status: Active draft preview outline - open for review; not human-reviewed or release-ready.
 
 Course path: Modern Teacher Systems
 

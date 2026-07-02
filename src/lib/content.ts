@@ -19,7 +19,24 @@ export type ContentType =
 export interface ContentFrontmatter {
   title: string;
   module: string;
-  type: "lecture" | "lab" | "field-note" | "template" | "case-study";
+  type:
+    | "lecture"
+    | "lab"
+    | "field-note"
+    | "template"
+    | "case-study"
+    | "overview"
+    | "section"
+    | "concept"
+    | "workflow"
+    | "framework"
+    | "comparison"
+    | "practice"
+    | "artifact"
+    | "checkpoint"
+    | "review"
+    | "safety"
+    | "source-check";
   order: number;
   week: number;
   duration: string;
@@ -71,6 +88,18 @@ const VALID_CONTENT_TYPES = new Set<ContentFrontmatter["type"]>([
   "field-note",
   "template",
   "case-study",
+  "overview",
+  "section",
+  "concept",
+  "workflow",
+  "framework",
+  "comparison",
+  "practice",
+  "artifact",
+  "checkpoint",
+  "review",
+  "safety",
+  "source-check",
 ]);
 
 const VALID_MIGRATION_STATUSES = new Set<CourseLessonItem["frontmatter"]["migrationStatus"]>([
@@ -116,6 +145,28 @@ function readString(
 
 function readRequiredString(data: Record<string, unknown>, key: string, filePath: string) {
   const value = data[key];
+  if (typeof value !== "string" || value.trim().length === 0) {
+    frontmatterError(filePath, key, "must be a non-empty string.");
+  }
+
+  return value;
+}
+
+function readRequiredStringWithFallback(
+  data: Record<string, unknown>,
+  key: string,
+  filePath: string,
+  fallback: string,
+) {
+  const value = data[key];
+  if (value === undefined || value === null || value === "") {
+    if (fallback.trim().length === 0) {
+      frontmatterError(filePath, key, "must be a non-empty string.");
+    }
+
+    return fallback;
+  }
+
   if (typeof value !== "string" || value.trim().length === 0) {
     frontmatterError(filePath, key, "must be a non-empty string.");
   }
@@ -209,7 +260,7 @@ function readContentType(data: Record<string, unknown>, filePath: string) {
   }
 
   if (typeof value !== "string" || !VALID_CONTENT_TYPES.has(value as ContentFrontmatter["type"])) {
-    frontmatterError(filePath, "type", "must be one of lecture, lab, field-note, template, or case-study.");
+    frontmatterError(filePath, "type", "must be a supported content or course-section type.");
   }
 
   return value as ContentFrontmatter["type"];
@@ -242,6 +293,14 @@ function normalizeCourseLessonFrontmatter(
 ): CourseLessonItem["frontmatter"] {
   const frontmatter = asFrontmatterRecord(data, filePath);
   const migrationStatus = readRequiredString(frontmatter, "migrationStatus", filePath);
+  const normalizedPath = filePath.replace(/\\/g, "/");
+  const coursePathMatch = normalizedPath.match(
+    /content\/courses\/([^/]+)\/lessons\/([^/]+)\/([^/.]+)\.mdx$/,
+  );
+  const inferredCourseSlug = coursePathMatch?.[1] ?? "";
+  const inferredChapterSlug = coursePathMatch?.[2] ?? "";
+  const inferredSectionSlug = coursePathMatch?.[3] ?? "";
+  const inferredSectionNumber = inferredSectionSlug.replace("-", ".");
 
   if (!VALID_MIGRATION_STATUSES.has(migrationStatus as CourseLessonItem["frontmatter"]["migrationStatus"])) {
     frontmatterError(filePath, "migrationStatus", "must be scaffolded, generated, authored, or reviewed.");
@@ -250,11 +309,31 @@ function normalizeCourseLessonFrontmatter(
   return {
     ...normalizeContentFrontmatter(frontmatter, filePath),
     course: readRequiredString(frontmatter, "course", filePath),
-    courseSlug: readRequiredString(frontmatter, "courseSlug", filePath),
+    courseSlug: readRequiredStringWithFallback(
+      frontmatter,
+      "courseSlug",
+      filePath,
+      inferredCourseSlug,
+    ),
     chapter: readRequiredString(frontmatter, "chapter", filePath),
-    chapterSlug: readRequiredString(frontmatter, "chapterSlug", filePath),
-    sectionNumber: readRequiredString(frontmatter, "sectionNumber", filePath),
-    sectionSlug: readRequiredString(frontmatter, "sectionSlug", filePath),
+    chapterSlug: readRequiredStringWithFallback(
+      frontmatter,
+      "chapterSlug",
+      filePath,
+      inferredChapterSlug,
+    ),
+    sectionNumber: readRequiredStringWithFallback(
+      frontmatter,
+      "sectionNumber",
+      filePath,
+      inferredSectionNumber,
+    ),
+    sectionSlug: readRequiredStringWithFallback(
+      frontmatter,
+      "sectionSlug",
+      filePath,
+      inferredSectionSlug,
+    ),
     canonicalRoute: readRequiredString(frontmatter, "canonicalRoute", filePath),
     migrationStatus: migrationStatus as CourseLessonItem["frontmatter"]["migrationStatus"],
   };

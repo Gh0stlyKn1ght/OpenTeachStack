@@ -173,10 +173,10 @@ export const CHAPTER_SECTIONS: Record<string, ChapterSection[]> = {
   ],
   "mini-course-content-packet": [
     { number: "10.0", title: "Chapter Overview", type: "overview", duration: "10 minutes" },
-    { number: "10.1", title: "What Belongs in the Mini-Course Packet", type: "section", duration: "15 minutes" },
+    { number: "10.1", title: "What Belongs in the Mini Course Content Packet", type: "section", duration: "15 minutes" },
     { number: "10.2", title: "Assemble the Packet in a Clean Order", type: "section", duration: "20 minutes" },
     { number: "10.3", title: "Run the Final Course Content Review", type: "checkpoint", duration: "20 minutes" },
-    { number: "10.4", title: "Build Artifact: Mini-Course Content Packet", type: "artifact", duration: "45 minutes", artifact: "Mini-course content packet" },
+    { number: "10.4", title: "Build Artifact: Mini Course Content Packet", type: "artifact", duration: "45 minutes", artifact: "Mini-course content packet" },
     { number: "10.5", title: "Checkpoint: What Is Ready, and What Needs Revision?", type: "checkpoint", duration: "10 minutes" },
   ],
 };

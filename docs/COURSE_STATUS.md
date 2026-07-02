@@ -1,38 +1,29 @@
 # Course Status
 
-Date: 2026-06-26
+Date: 2026-07-02
 
-## Active sequence draft
+## Active draft pathway
 
 | Course | Status | Notes |
 | --- | --- | --- |
-| OTS-000 - Teacher Tech Stack Orientation | Draft on-ramp | Introduces files, folders, VS Code, GitHub basics, Markdown/MDX, websites/hosting, AI assistants, MCP-style tool use, safety, backups, secrets, and the Teacher Builder Starter Kit. |
-| OTS-101 - AI Course Content Foundations for Teachers | Draft sequel, authored pass complete | Chapters 01-10 now have real lesson bodies aligned as the next course after OTS-000. Human review and validation are still required before release. |
+| OTS-000 - Teacher Tech Stack Orientation | Draft active on-ramp | Chapters 00-13 have teacher-facing on-ramp lessons, templates, and a sample Teacher Builder Starter Kit. Human review is still required before release. |
+| OTS-101 - AI Course Content Foundations for Teachers | Draft active rebuild, authored pass complete | Chapters 01-10 now have real lesson bodies focused on AI-assisted course content foundations. Human review and validation are still required before release. |
+| OTS-201 - Google Workspace Systems for Teachers | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-220 - Apps Script for Teacher Automation | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-240 - Open Resources and GitHub for Educators | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-260 - AI Media and Lesson Delivery | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-280 - Cyber Safety for Educators | Draft active preview | Open for pathway review with route-backed cyber safety content. Human review and course-quality review are still required before release. |
+| OTS-301 - Teacher Course Sites | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-320 - AI Coding Agents for Educators | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
+| OTS-399 - Capstone Studio | Draft active preview | Open for pathway review. Structure and templates exist; real lesson-body authoring and human review are still required before release. |
 
-There are currently no live courses. OTS-000 and OTS-101 are the active draft sequence, not a public release claim.
+There are currently no live courses. Active draft visibility is not a public release claim.
 
 Course status is recorded in `content/courses/{course}/status.json`. Root-level `teachable/{course}` folders are export support only and do not count as course readiness.
 
-## Coming Soon courses
-
-| Course | Status | Notes |
-| --- | --- | --- |
-| OTS-201 - Google Workspace Systems for Teachers | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-220 - Apps Script for Teacher Automation | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-240 - Open Resources and GitHub for Educators | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-260 - AI Media and Lesson Delivery | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-280 - Cyber Safety for Educators | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-301 - Teacher Course Sites | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-320 - AI Coding Agents for Educators | Coming Soon | Frozen until the OTS-000/OTS-101 on-ramp and foundations sequence is reviewed and the content model is proven. |
-| OTS-399 - Capstone Studio | Coming Soon | Frozen until the pathway has real reviewed course bodies. |
-
-Do not build, scaffold, or refill these courses until OTS-000 and OTS-101 pass sequence-aware review.
-
 ## Public route policy
 
-- OTS-000 is the first clickable draft course.
-- OTS-101 is clickable as the draft sequel after OTS-000.
-- Coming Soon courses should not be clickable as if they are available.
+- All pathway courses are clickable as draft courses.
 - Missing content should render as unavailable instead of being filled with placeholders.
 - Export folders are downstream packaging, not the source of truth.
 
@@ -48,8 +39,8 @@ Known removed scaffold fingerprints included:
 
 ## Next immediate work
 
-1. Review OTS-000 and OTS-101 as a real on-ramp plus foundations sequence.
-2. Review OTS-101 Chapters 01-10 for instructional quality, examples, and voice after the OTS-000 bridge.
+1. Review the active draft pathway course by course, starting with OTS-000 and OTS-101 because they have authored lesson-body passes.
+2. Decide which later draft previews need full lesson-body authoring before human review.
 3. Run the format/readability audit intentionally and remediate real issues, not fake formatting.
-4. Refresh or rebuild the sample Mini Course Content Packet so it matches the final OTS-101 capstone.
-5. Run validation gates only after the review pass is ready.
+4. Use the refreshed Mini Course Content Packet samples during human review to check whether the capstone is clear enough for a real teacher to inspect.
+5. Run validation gates after each review tranche.

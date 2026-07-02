@@ -11,42 +11,41 @@ export const metadata: Metadata = {
 export default function CyberSafetyCoursePage() {
   return (
     <FieldGuidePage
-      eyebrow="OTS-280 Coming Soon Pathway Course"
+      eyebrow="OTS-280 Draft Pathway Course"
       title="Cyber Safety for Educators"
-      subtitle="Identity, privacy, accounts, and website safety for teachers. This course is frozen until OTS-000 and OTS-101 are reviewed as a real on-ramp plus foundations sequence."
+      subtitle="Identity, privacy, accounts, and website safety for teachers working in public, connected spaces."
       meta={[
-        { label: "Status", value: "Coming Soon" },
-        { label: "Boundary", value: "Frozen until OTS-000/101 are right" },
+        { label: "Status", value: "Draft" },
+        { label: "Review", value: "Human review still required" },
       ]}
     >
       <section className="mb-10 rounded-md border border-border bg-surface p-5">
         <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
-          Why This Is Closed
+          Draft Review Boundary
         </h2>
         <p className="mb-3 text-sm leading-relaxed text-slate">
-          OpenTeachStack is rebuilding the on-ramp and foundations sequence
-          first. We are not publishing course previews, fake lesson bodies, or
-          outline-only pathway content while OTS-000 and OTS-101 are still
-          being reviewed.
+          OTS-280 is open as a draft preview so the full pathway can be checked
+          in one pass. It still needs human review for classroom fit, source
+          quality, safety language, and practical usefulness.
         </p>
         <p className="m-0 text-sm leading-relaxed text-slate">
-          OTS-280 remains Coming Soon until OTS-000 and OTS-101 are reviewed
-          and strong enough to guide the rest of the pathway.
+          Treat this as working course material, not a release-ready claim.
         </p>
       </section>
 
       <section className="mt-10 rounded-md border border-accent/30 bg-surface p-5">
         <h2 className="mb-2 font-heading text-xl font-bold text-foreground">
-          Return to the Active Course
+          Open the Course Book
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-slate">
-          OTS-000 and OTS-101 are the current sequence under review.
+          Review the chapter path, teacher-facing safety checks, and section
+          practice prompts in the active draft book.
         </p>
         <Link
-          href="/book/ots-000"
+          href="/book/ots-280"
           className="inline-flex rounded-md bg-[var(--color-text)] px-4 py-2 text-sm font-semibold text-[var(--color-bg)] no-underline transition-opacity hover:opacity-90"
         >
-          Open OTS-000
+          Open OTS-280
         </Link>
       </section>
 

@@ -24,12 +24,13 @@ export default function HomePage() {
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-foreground/68">
               A sequenced field guide for educators entering the tech world.
-              Start with orientation, then move into the teacher technology
-              system you need next.
+              Start with the teacher tech-stack orientation, then move into
+              AI-assisted course content foundations.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-foreground/58">
-              Start with OTS-000 if the tool stack still feels fuzzy. Move to
-              OTS-101 when you are ready to build AI-assisted course content.
+              OTS-000 and OTS-101 are active draft courses. OTS-000 builds the
+              tool and safety vocabulary; OTS-101 uses that foundation to build
+              student-facing course content with AI.
             </p>
             <p className="mt-4 max-w-3xl rounded-sm border border-accent/30 bg-surface-alt/35 px-4 py-3 text-sm leading-relaxed text-foreground/66">
               Video walkthroughs and additional supporting content are coming

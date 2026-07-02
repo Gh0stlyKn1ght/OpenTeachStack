@@ -12,13 +12,13 @@ Use it before publishing or sharing course content with another teacher.
 
 ## Blank fields
 
-| Folder or location | Purpose | Audience | Status shown | Naming rule | Archive rule | OTS-000 / local context |
+| Folder or location | Purpose | Audience | Status shown | Naming rule | Archive rule | Local/tool/access context |
 | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | source / draft / student-ready / export / archive / teacher-only |  |  |  |
 
 ## Completed fictional example
 
-| Folder or location | Purpose | Audience | Status shown | Naming rule | Archive rule | OTS-000 / local context |
+| Folder or location | Purpose | Audience | Status shown | Naming rule | Archive rule | Local/tool/access context |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01-student-facing | Lessons, assignments, checklists students use | Students | student-ready | `unit-lesson-title-approved` | Move old versions to archive after revision | Student access must be checked from platform view. |
 | 02-teacher-materials | Demo notes, setup list, answer keys | Teacher | teacher-only | `teacher-only-topic-date` | Never publish publicly | Private teacher folder, not a student surface. |

@@ -127,7 +127,7 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
         meta={[
           { label: "Course", value: record.course.code },
           { label: "Status", value: "Coming Soon" },
-          { label: "Boundary", value: "Frozen until OTS-000/101 is right" },
+          { label: "Boundary", value: "Unavailable until course status is draft" },
         ]}
       >
         <ArticleBody>
@@ -140,11 +140,11 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
                 as if they were real instruction.
               </p>
               <p>
-                OTS-000 and OTS-101 are the only active sequence work right now.
+                This course has not moved into draft review yet.
               </p>
             </div>
             <div className="course-section-status">
-              Coming Soon. Frozen until OTS-000/101 is right.
+              Unavailable until course status is draft.
             </div>
           </section>
         </ArticleBody>
@@ -216,7 +216,7 @@ export default async function CourseSectionPage({ params }: SectionPageProps) {
           <div className="course-section-status">
             {record.course.status === "Coming Soon" && canPreviewComingSoon
               ? "Development preview: this planned section is visible locally, but no authored lesson MDX exists yet. Do not treat this outline as release-ready content."
-              : "This lesson is intentionally unavailable. This course is Coming Soon or in rebuild, and OpenTeachStack does not publish placeholder MDX to make routes look complete."}
+              : "This lesson is intentionally unavailable because no authored lesson MDX exists yet. The course is open as a draft preview, but OpenTeachStack does not publish placeholder MDX to make routes look complete."}
           </div>
         ) : !isReleaseReady ? (
           <div className="course-section-status">

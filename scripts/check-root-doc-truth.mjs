@@ -17,6 +17,16 @@ const roadmap = read("ROADMAP.md");
 const claude = read("CLAUDE.md");
 const ots101Status = JSON.parse(read("content/courses/ots-101/status.json"));
 const ots101Course = JSON.parse(read("content/courses/ots-101/course.json"));
+const laterCourseCodes = [
+  "OTS-201",
+  "OTS-220",
+  "OTS-240",
+  "OTS-260",
+  "OTS-280",
+  "OTS-301",
+  "OTS-320",
+  "OTS-399",
+];
 
 const forbiddenRootClaims = [
   {
@@ -64,12 +74,22 @@ if (!readme.includes("Draft active rebuild")) {
   fail("README.md does not mark OTS-101 as a draft active rebuild.");
 }
 
-if (!readme.includes("Coming Soon")) {
-  fail("README.md does not mark future pathway courses as Coming Soon.");
+if (!readme.includes("Draft active preview")) {
+  fail("README.md does not mark later pathway courses as draft active previews.");
 }
 
-if (!claude.includes("Only OTS-101 is the active rebuild.")) {
-  fail("CLAUDE.md does not preserve the active OTS-101-only boundary.");
+if (!claude.includes("The full pathway is visible as an active draft preview.")) {
+  fail("CLAUDE.md does not preserve the full-pathway draft-preview boundary.");
+}
+
+if (!claude.includes("No course is live until its status file says `humanReviewed: true`.")) {
+  fail("CLAUDE.md does not preserve the human-review release boundary.");
+}
+
+for (const courseCode of laterCourseCodes) {
+  if (!readme.includes(`${courseCode} |`) || !readme.includes(`${courseCode}`)) {
+    fail(`README.md does not list ${courseCode}.`);
+  }
 }
 
 if (!roadmap.includes("Current course readiness must come from `content/courses/{course}/status.json`.")) {
@@ -88,4 +108,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log("Root doc truth check passed: root Markdown matches OTS-101 draft and Coming Soon pathway boundaries.");
+console.log("Root doc truth check passed: root Markdown matches draft-preview pathway boundaries.");

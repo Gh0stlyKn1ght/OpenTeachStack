@@ -2,9 +2,9 @@
 
 ## Completed Mini Course Content Packet Sample
 
-This sample shows a first-pass Mini Course Content Packet after OTS-000 orientation. It uses fictional classroom details and sample-only student evidence.
+This sample shows a first-pass Mini Course Content Packet for OTS-101. It uses fictional classroom details and sample-only student evidence.
 
-Use the OTS-000 context only when it clarifies tools, access, source, platform, safety, or local boundaries. The OTS-101 artifact still has to prove the course content is teachable.
+Use local tool, access, source, platform, safety, or boundary notes only when they help another teacher understand the packet. The OTS-101 artifact still has to prove the course content is teachable.
 
 ## Workflow Summary
 
@@ -16,7 +16,7 @@ Use the OTS-000 context only when it clarifies tools, access, source, platform, 
 | Student-facing task | Teams collect five distance readings and choose a stop threshold for a robot |
 | Evidence students produce | Data table with units, threshold decision, and one reflection sentence |
 | Files or tools used | Slide directions, sensor setup photo, response sheet, sample data row, teacher revision note |
-| Relevant OTS-000 context | Source folder holds approved materials; platform copies are exports; no real student data in samples |
+| Relevant local/tool/access context | Source folder holds approved materials; platform copies are exports; no real student data in samples |
 | Verification before teaching | Test one sensor, confirm centimeter units, check the response sheet has a sample row |
 | Revision note after teaching | Add a second sample row if teams confuse centimeters and inches |
 
@@ -44,7 +44,7 @@ Before calling the packet ready for teacher review, another educator should be a
 - Can I see the check the teacher runs before teaching?
 - Can I tell what changes after the first classroom use?
 - Can I identify what stays private?
-- Can I see which OTS-000 or local boundary affects tools, sources, access, or safety?
+- Can I see which local boundary affects tools, sources, access, or safety?
 
 Use this as a minimum baseline before class launch. A stronger artifact includes one dated revision note from an actual pilot and a clear decision about whether publishing is verified, blocked, or out of scope.
 

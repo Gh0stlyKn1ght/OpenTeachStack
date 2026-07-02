@@ -4,7 +4,7 @@ Course: Intro to Robotics Safety
 Audience: High school robotics students
 Packet focus: Safe robot startup and shutdown
 Platform: Google Classroom or course website
-Relevant OTS-000 context: approved class safety routine lives in the shared source folder; Google Classroom is an export/delivery surface; no live-equipment practice happens without teacher supervision.
+Relevant local/tool/access context: approved class safety routine lives in the shared source folder; Google Classroom is an export/delivery surface; no live-equipment practice happens without teacher supervision.
 
 This is a fictional sample packet for OTS-101. It uses no real student data, no district data, and no real private links.
 
@@ -17,7 +17,7 @@ This is a fictional sample packet for OTS-101. It uses no real student data, no 
 | Teacher equipment setup list | Instructional materials | Teacher only | Not published to students. |
 | Google Classroom topic: Robot Safety | Course platform | Students | Container for posts and submissions. |
 | Revision log | Course content system | Teacher / reviewer | Shows what changed after teaching. |
-| OTS-000 safety/source note | Course context | Teacher / reviewer | Explains the approved routine and platform boundary. |
+| Local safety/source note | Course context | Teacher / reviewer | Explains the approved routine and platform boundary. |
 
 ## Learning target map
 
@@ -71,7 +71,7 @@ Teacher verification required:
 - Check all steps against the approved class safety routine.
 - Check scenarios for age-appropriate language.
 - Remove any claim that sounds like policy unless local policy is provided.
-- Confirm the AI tool and account used for drafting match the teacher's OTS-000 safety/access notes.
+- Confirm the AI tool and account used for drafting match the teacher's local safety/access notes.
 
 ## Reusable AI course-content prompt
 
@@ -106,7 +106,7 @@ Do not invent safety rules, equipment policy, emergency procedures, or grading c
 | Accessibility | Needs revision | Add text transcript if a demo video is used. |
 | Safety accuracy | Needs teacher verification | Compare routine against approved classroom checklist. |
 | Source quality | Pass with note | Source is teacher-provided class routine. |
-| OTS-000 boundary | Pass with note | Platform copy is an export; source routine remains in shared course folder. |
+| Local/tool/access boundary | Pass with note | Platform copy is an export; source routine remains in shared course folder. |
 
 ## Publishing checklist
 

@@ -10,13 +10,13 @@ Use it before prompting AI for a lesson draft.
 
 ## Blank fields
 
-| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | OTS-000 / local boundary |
+| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | Local/tool/access boundary |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |  |
 
 ## Completed fictional example
 
-| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | OTS-000 / local boundary |
+| Source goal or problem | Student-friendly target | Practice path | Evidence | AI support | Teacher verification | Revision trigger | Local/tool/access boundary |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Students rush startup and skip checklist decisions. | I can choose the next safe startup step using the approved checklist. | Label two fictional scenarios, then practice with a powered-off robot. | Scenario choices, checklist explanation, and teacher observation. | Draft fictional scenarios and student directions. | Check sequence against approved team safety routine. | Revise if students miss the same checklist step after first use. | Use approved routine only; do not invent equipment rules. |
 

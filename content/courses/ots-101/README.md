@@ -1,6 +1,6 @@
 # OTS-101 AI Course Content Foundations for Teachers
 
-Status: Draft - needs sequence alignment after OTS-000.
+Status: Draft active rebuild.
 
 Canonical route: `/book/ots-101`
 
@@ -8,9 +8,7 @@ Reader source: `src/lib/book.ts`
 
 This folder is the course-owned content package for OTS-101. It contains learner-facing lesson source, course artifacts, review notes, and release materials for the book route.
 
-OTS-101 now follows OTS-000. It should assume teachers have already built basic vocabulary around files, folders, VS Code, GitHub, Markdown, hosting, documentation, AI assistants, coding agents, MCP, backups, secrets, and safe project habits.
-
-The job of OTS-101 is not to reteach the tool stack. The job is to help teachers use AI to build a small student-facing course content packet that is teachable, verified, safe, accessible, and reusable.
+OTS-101 is active as the foundations course after OTS-000. The job is to help teachers use AI to build a small student-facing course content packet that is teachable, verified, safe, accessible, and reusable.
 
 ## Course boundary
 
@@ -24,9 +22,17 @@ OTS-101 owns:
 - platform publishing decisions at a non-technical level
 - Mini Course Content Packet capstone
 
-OTS-101 should only reference OTS-000 tool vocabulary when it supports the course-content artifact. Deeper GitHub, course-site publishing, automation, and coding-agent workflows belong in later pathway courses.
+OTS-101 may reference basic tool vocabulary when it supports a course-content artifact, but it should not become a tool-orientation course. Deeper GitHub, course-site publishing, automation, and coding-agent workflows belong in later pathway courses.
 
-See `docs/OTS_000_TO_OTS_101_ALIGNMENT.md` before revising OTS-101 lessons.
+## Review Before Release
+
+Before marking OTS-101 public-facing or release-ready, confirm:
+
+- every lesson solves a real teacher problem
+- every build step produces inspectable course-content evidence
+- every AI draft is checked before students see it
+- safety, accessibility, copyright, source quality, and revision triggers are visible
+- later-course topics stay out of OTS-101 unless they directly support the Mini Course Content Packet
 
 ## Folders
 
@@ -41,7 +47,7 @@ See `docs/OTS_000_TO_OTS_101_ALIGNMENT.md` before revising OTS-101 lessons.
 
 Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.
 
-Before marking OTS-101 public-facing or release-ready, review it against the OTS-000 sequence boundary so it reads like the next course after orientation, not a duplicate first course.
+Before marking OTS-101 public-facing or release-ready, review it against the active OTS-000-to-OTS-101 sequence so it stays focused on course content foundations instead of re-teaching the tool stack.
 
 ## Reader Map
 
