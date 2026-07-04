@@ -20,6 +20,7 @@ function nodeScriptPath(command) {
 const testCommand = npmScripts.test ?? "";
 const requiredTestCommands = [
   "npm run check:script-workflow",
+  "npm run verify:locks",
   "npm run check:ots101-book-titles",
   "npm run check:format-readability",
 ];
@@ -31,6 +32,10 @@ for (const command of requiredTestCommands) {
 }
 
 const verifyReleaseSource = readFileSync(join(scriptsRoot, "verify-release.mjs"), "utf8");
+if (!verifyReleaseSource.includes('cmd: "npm run verify:locks"')) {
+  fail("scripts/verify-release.mjs does not include npm run verify:locks.");
+}
+
 const testCheckCommands = testCommand
   .split("&&")
   .map((item) => item.trim())

@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 import matter from "gray-matter";
 
 const args = process.argv.slice(2);
@@ -362,6 +363,7 @@ for (const chapter of courseJson.chapters ?? []) {
 
     parsed.data.migrationStatus = "generated";
     parsed.content = bodyFor(chapter, section, chapterGuide);
+    assertCourseWriteAllowed(filePath, { operation: "write lesson body" });
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
   }
 }
@@ -371,6 +373,7 @@ if (force || courseJson.migrationStatus !== "generated") {
     console.log("[dry-run] WRITE: course.json");
   } else {
     courseJson.migrationStatus = "generated";
+    assertCourseWriteAllowed(courseJsonPath, { operation: "write course metadata" });
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
   }
 }

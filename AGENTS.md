@@ -34,6 +34,14 @@ Root-level `teachable/` is legacy export support only. A Teachable package is no
 
 Use `content/courses/{course}/status.json` for honest course status. Do not mark a course live because it has files, routes, or Teachable packaging.
 
+## Course lock rule
+
+Before editing any course file, check `content/course-locks.yml`.
+
+If the course status is `locked`, do not modify it. Do not regenerate, normalize, remediate, scaffold, or rewrite locked courses.
+
+Generated drafts must go to `.generated/drafts`. Production course files may only change through an explicit promote or unlock workflow.
+
 ## Content truth rules
 
 - A route is not a lesson.

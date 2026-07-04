@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 
 const root = process.cwd();
 const force = process.argv.includes("--force");
@@ -340,6 +341,7 @@ for (const courseSlug of courseRoots) {
     const source = readFileSync(filePath, "utf8");
     const frontmatter = splitFrontmatter(source);
     const metadata = readFrontmatter(source);
+    assertCourseWriteAllowed(filePath, { operation: "write legacy lesson rewrite" });
     writeFileSync(filePath, `${frontmatter}\n${bodyFor(profile, metadata)}`, "utf8");
     count += 1;
   }

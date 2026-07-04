@@ -1,0 +1,5 @@
+# OpenTeachStack course lock registry.
+# Do not mark a course locked until it has passed human quality review.
+version: 1
+updatedAt: "2026-07-04T00:00:00.000Z"
+courses: {}

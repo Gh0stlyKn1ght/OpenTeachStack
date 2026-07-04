@@ -40,6 +40,14 @@ for (const script of authorScripts) {
     fail(`${relativePath}: expected section file writes were not found.`);
   }
 
+  if (!source.includes("assertCourseWriteAllowed(filePath")) {
+    fail(`${relativePath}: missing course lock guard before lesson file writes.`);
+  }
+
+  if (!source.includes("assertCourseWriteAllowed(courseJsonPath")) {
+    fail(`${relativePath}: missing course lock guard before course.json writes.`);
+  }
+
   if (/parsed\.data\.migrationStatus\s*=\s*"authored"/.test(source)) {
     fail(
       `${relativePath}: generated section bodies must not be marked migrationStatus authored.`,
@@ -68,10 +76,12 @@ if (!scaffoldSource.includes('const force = args.includes("--force");')) {
 for (const requiredGuard of [
   /!force\s*&&\s*existsSync\(absolutePath\)/,
   /!force\s*&&\s*existsSync\(target\)/,
+  /assertCourseWriteAllowed\(absolutePath/,
+  /assertCourseWriteAllowed\(target/,
 ]) {
   if (!requiredGuard.test(scaffoldSource)) {
     fail(
-      "scripts/scaffold-course-content.mjs: missing no-overwrite guard for existing generated targets.",
+      "scripts/scaffold-course-content.mjs: missing no-overwrite or course-lock guard for generated targets.",
     );
   }
 }

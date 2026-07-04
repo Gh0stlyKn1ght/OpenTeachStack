@@ -5,6 +5,7 @@ import {
   findGenericAuthoringFragments,
   GENERATED_STATUSES,
 } from "./lib/content-fingerprints.mjs";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 
 const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
@@ -412,6 +413,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
 
     parsed.data.migrationStatus = "remediated";
     parsed.content = bodyFor(parsed, courseSlug);
+    assertCourseWriteAllowed(filePath, { operation: "write lesson remediation" });
     writeFileSync(filePath, matter.stringify(parsed.content, parsed.data));
     changed++;
     courseChanged++;
@@ -422,6 +424,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
     if (existsSync(courseJsonPath)) {
       const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
       courseJson.migrationStatus = "remediated";
+      assertCourseWriteAllowed(courseJsonPath, { operation: "write course metadata" });
       writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
     }
     courseStats.set(courseSlug, courseChanged);

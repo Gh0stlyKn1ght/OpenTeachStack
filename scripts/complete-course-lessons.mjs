@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import matter from "gray-matter";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 
 const root = process.cwd();
 const coursesRoot = join(root, "content", "courses");
@@ -530,6 +531,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
     parsed.data.migrationStatus = "remediated";
     const next = matter.stringify(body, parsed.data);
     if (next !== raw) {
+      assertCourseWriteAllowed(filePath, { operation: "write lesson completion" });
       writeFileSync(filePath, next);
       changed += 1;
       courseChanged += 1;
@@ -538,6 +540,7 @@ for (const courseSlug of readdirSync(coursesRoot).sort()) {
 
   if (courseChanged > 0) {
     courseJson.migrationStatus = "remediated";
+    assertCourseWriteAllowed(courseJsonPath, { operation: "write course metadata" });
     writeFileSync(courseJsonPath, `${JSON.stringify(courseJson, null, 2)}\n`);
     stats.set(courseSlug, courseChanged);
   }

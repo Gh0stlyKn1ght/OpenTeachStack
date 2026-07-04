@@ -1,0 +1,11 @@
+# Locked course content and protection rules require owner review.
+/content/course-locks.yml @Gh0stlyKn1ght
+/content/courses/**/.course-lock.json @Gh0stlyKn1ght
+/content/courses/** @Gh0stlyKn1ght
+
+# Curriculum generation, remediation, and lock tooling require owner review.
+/scripts/curriculum/ @Gh0stlyKn1ght
+/scripts/lib/course-locks.mjs @Gh0stlyKn1ght
+/scripts/*course*.mjs @Gh0stlyKn1ght
+/scripts/remediate-educator-learner-audit.mjs @Gh0stlyKn1ght
+/scripts/rewrite-*.mjs @Gh0stlyKn1ght

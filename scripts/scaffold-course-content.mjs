@@ -1,5 +1,6 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
@@ -33,6 +34,7 @@ function write(relativePath, content) {
     written++;
     return;
   }
+  assertCourseWriteAllowed(absolutePath, { operation: "write course scaffold" });
   mkdirSync(dirname(absolutePath), { recursive: true });
   writeFileSync(absolutePath, content);
   written++;
@@ -52,6 +54,7 @@ function copyIfChanged(sourceRelativePath, targetRelativePath) {
     copied++;
     return;
   }
+  assertCourseWriteAllowed(target, { operation: "copy course scaffold" });
   mkdirSync(dirname(target), { recursive: true });
   copyFileSync(source, target);
   copied++;

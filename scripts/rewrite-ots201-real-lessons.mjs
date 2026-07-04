@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
 
 const root = process.cwd();
 const lessonsRoot = join(root, "content", "courses", "ots-201", "lessons");
@@ -199,6 +200,7 @@ for (const chapter of chapters) {
     const [file] = lesson;
     const filePath = join(lessonsRoot, chapter.slug, `${file}.mdx`);
     const frontmatter = splitFrontmatter(readFileSync(filePath, "utf8"));
+    assertCourseWriteAllowed(filePath, { operation: "write legacy OTS-201 lesson rewrite" });
     writeFileSync(filePath, `${frontmatter}\n${lessonBody(chapter, lesson)}`, "utf8");
   }
 }
