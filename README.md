@@ -1,5 +1,8 @@
 # OpenTeachStack
 
+[![CI Build Status](https://github.com/Gh0stlyKn1ght/OpenTeachStack/actions/workflows/ci.yml/badge.svg)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/actions/workflows/ci.yml)
+[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
+[![Pathway: 10/10 Enriched](https://img.shields.io/badge/Pathway-10%2F10%20Enriched-green?style=flat-square)](#course-path-model)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-blue?style=flat-square)](LICENSE)
 [![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square)](CONTENT_LICENSE.md)
 [![Built with Next.js 16](https://img.shields.io/badge/Built%20with-Next.js%2016-black?style=flat-square&logo=next.js)](https://nextjs.org)
@@ -8,7 +11,6 @@
 [![Content: MDX](https://img.shields.io/badge/Content-MDX-FCB32C?style=flat-square&logo=mdx&logoColor=black)](https://mdxjs.com)
 [![GitHub repository](https://img.shields.io/badge/GitHub-OpenTeachStack-181717?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square&logo=github)](https://github.com/Gh0stlyKn1ght/OpenTeachStack/pulls)
-[![OTS-101: Draft Rebuild](https://img.shields.io/badge/OTS--101-Draft%20Rebuild-0969DA?style=flat-square)](#ots-101--ai-course-content-foundations-for-teachers)
 
 **A field guide for educators entering the tech world.**
 
@@ -135,9 +137,8 @@ These topics belong in later course path courses:
 | OTS-399 | Capstone Studio | Advanced | Draft active preview |
 
 No course should be treated as release-ready until its
-`content/courses/{course}/status.json` record says `humanReviewed: true`.
-OTS-201, OTS-220, OTS-240, OTS-260, OTS-301, OTS-320, and OTS-399 are open for
-pathway review but still need real teacher-facing lesson-body authoring.
+`content/courses/{course}/status.json` record says `humanReviewed: true` and the locks are verified.
+Currently, OTS-201 through OTS-399 are open in `Draft active preview` status, meaning they are ready for manual review and validation of their generated lesson structures, Mermaid flowcharts, Comparison/Workflow/Checklist blocks, and GSAP/Anime.js page animations.
 
 ## Content Safety Rules
 
