@@ -72,6 +72,7 @@ export interface CourseLessonItem extends ContentItem {
     sectionSlug: string;
     canonicalRoute: string;
     migrationStatus: "scaffolded" | "generated" | "authored" | "reviewed";
+    lessonType?: string;
   };
 }
 

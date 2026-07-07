@@ -245,7 +245,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The chapter intent is to keep the page set clear, maintainable, and safe enough to review in one pass.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${doThis.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 

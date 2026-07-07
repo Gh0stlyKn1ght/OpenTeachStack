@@ -252,7 +252,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The chapter goal is to keep repository work reusable, explicit, and safe enough for another educator to trust.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${doThis.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 

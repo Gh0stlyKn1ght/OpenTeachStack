@@ -196,7 +196,7 @@ As part of your broader **workspace system**, ${chapter.title} is about ${guide.
 
 ${chapter.title} should stay safe, repeatable, and handoff-ready. The goal is to make each workflow visible, maintainable, and privacy-aware before it becomes a habit.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${doThis.map((item, index) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${index + 1}. ${item}` : `- ${item}`).join("\n")}
 

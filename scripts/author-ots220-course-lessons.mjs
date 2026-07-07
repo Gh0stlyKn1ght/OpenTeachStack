@@ -226,7 +226,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The chapter goal is to keep outcomes useful while preserving rollback and privacy boundaries.  
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${doThis.map((item, index) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${index + 1}. ${item}` : `- ${item}`).join("\n")}
 

@@ -273,7 +273,7 @@ function bodyFor(chapter, section, guide) {
 
 ${chapter.title} emphasizes **${guide.decision}**. This lesson turns **${section.title}** into a capstone evidence item that peers can inspect and maintain later.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${checklist.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 

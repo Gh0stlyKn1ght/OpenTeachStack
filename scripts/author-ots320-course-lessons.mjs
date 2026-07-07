@@ -239,7 +239,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The chapter decision is focused and specific: ${guide.decision}
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${checklist.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 

@@ -97,7 +97,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The useful question is not "Can I make this look impressive?" The useful question is "Will this media help students understand, practice, review, or revisit the learning target?" A teacher should leave this section with a visible piece of the chapter artifact: **${chapter.buildArtifact}**.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${[
   `Name the specific lesson moment connected to ${section.title}.`,

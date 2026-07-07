@@ -110,7 +110,7 @@ ${chapter.title} is about ${guide.focus}. In this section, **${section.title}** 
 
 The goal is not to make teachers paranoid or technical for its own sake. The goal is to help a teacher decide ${guide.decision} and leave behind a safe, maintainable artifact: **${chapter.buildArtifact}**.
 
-## Do This
+\${richContent}\n\n## Do This
 
 ${[
   `Name the specific safety problem connected to ${section.title}.`,

@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import CoursePacketLearningShell from "./CoursePacketLearningShell";
+import LessonAnimatedEntry from "@/components/LessonAnimatedEntry";
 import type {
   CoursePacketChapterView,
   CoursePacketSectionView,
@@ -86,13 +87,15 @@ export default function CoursePacketLessonTemplate({
         ) : null}
 
         {lesson ? (
-          <div className="prose-academic">
-            <MDXRemote
-              source={lesson.content}
-              options={mdxOptions}
-              components={coursePacketMdxComponents}
-            />
-          </div>
+          <LessonAnimatedEntry lessonType={lesson.frontmatter.lessonType}>
+            <div className="prose-academic">
+              <MDXRemote
+                source={lesson.content}
+                options={mdxOptions}
+                components={coursePacketMdxComponents}
+              />
+            </div>
+          </LessonAnimatedEntry>
         ) : null}
       </section>
     </CoursePacketLearningShell>
