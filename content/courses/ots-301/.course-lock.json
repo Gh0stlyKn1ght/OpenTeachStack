@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "courseId": "ots-301",
+  "status": "locked",
+  "lockedAt": "2026-07-07T22:58:40.678Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 4 Teacher Course Sites verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-301/README.md",
+    "content/courses/ots-301/course.json",
+    "content/courses/ots-301/status.json",
+    "content/courses/ots-301/lessons/**",
+    "content/courses/ots-301/labs/**",
+    "content/courses/ots-301/assets/**",
+    "content/courses/ots-301/docs/**",
+    "content/courses/ots-301/templates/**",
+    "content/courses/ots-301/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "ba8e072ccc2e0d8e496ab3d45447a80a22b0ac8cea61ac93769da10027fa8ce1",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "a6ef7b80dd1ea84c4731f085707a605f45453301e54151d1b1961b054b776f23",
+      "bytes": 1695
+    },
+    {
+      "path": "docs/OTS_301_COURSE_HUB_SITEMAP_TEMPLATE.md",
+      "sha256": "79be4b12f31bfc4bfadbbad1bd1bbbf1ff143434514d519e20982febc97468bd",
+      "bytes": 1605
+    },
+    {
+      "path": "docs/OTS_301_COURSE_OUTLINE.md",
+      "sha256": "1b2ae79d39aa087780dddf65942ad20b65a9152f5cb2af1e4c51bafbc9e58b4d",
+      "bytes": 3987
+    },
+    {
+      "path": "docs/OTS_301_LIVE_SITE_REVIEW.md",
+      "sha256": "06b5955d6f614830259100aa51384e908eec7d50ee777ddffe59482a197b7842",
+      "bytes": 1863
+    },
+    {
+      "path": "docs/OTS_301_SAFE_DOMAIN_EXAMPLES.md",
+      "sha256": "3996786e096fdc6a5f4acb7cefcdc7fbcab1d9034e51b4e264011fa2f9e87837",
+      "bytes": 1652
+    },
+    {
+      "path": "docs/OTS_301_SOURCE_REFERENCES.md",
+      "sha256": "d4669cfb35c0ee94c3ea64e5365d68bb1b01508cb9027d1c222edda027cc7afd",
+      "bytes": 1868
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "47ca2b50f3ffcc851edffce7a96c85fd164dc674b6a18fec642f22b399d0ed02",
+      "bytes": 321
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "4f56047daa6beaa33bcf60e1fd48434272c3628122bb59fa730fb571078b2cfc",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-course-site-strategy/01-0.mdx",
+      "sha256": "0390c099d9f3863f4d4877c66611b7f0a71668cc6164b74db13fdbeaf062a571",
+      "bytes": 2605
+    },
+    {
+      "path": "lessons/01-course-site-strategy/01-1.mdx",
+      "sha256": "b945c7795ff0bb4d205a666d1b1aff902740f5bf2e65596ec681afe416617385",
+      "bytes": 2596
+    },
+    {
+      "path": "lessons/01-course-site-strategy/01-2.mdx",
+      "sha256": "5e9763cefb1eaee3ba94397ba1bc5f2235d656ab699f2b1c7ffe86e620d05a14",
+      "bytes": 2566
+    },
+    {
+      "path": "lessons/01-course-site-strategy/01-3.mdx",
+      "sha256": "f140e84c9d3173127b2c7c0822539a42784c28a50d2272f97616b0e0561ecc6b",
+      "bytes": 2627
+    },
+    {
+      "path": "lessons/01-course-site-strategy/01-4.mdx",
+      "sha256": "c98ac0caafe343bd4f7e966ad35b46f6456bb1ffbb161918e932f63e9e5a5105",
+      "bytes": 2596
+    },
+    {
+      "path": "lessons/01-course-site-strategy/README.md",
+      "sha256": "60cfc453a8a98c886fa47ab55a8af897b570345019a486c9917e3eda5a57767c",
+      "bytes": 134
+    },
+    {
+      "path": "lessons/02-web-basics/02-0.mdx",
+      "sha256": "d9c1ed2c15a134da58cd236c3bcea8c93b06ef7eeaac0a62aac1832d5c0d64e8",
+      "bytes": 2559
+    },
+    {
+      "path": "lessons/02-web-basics/02-1.mdx",
+      "sha256": "987854157c05dd78d4eb8119e3adf0f56ab027934f16bae7db499076ceb458ee",
+      "bytes": 2577
+    },
+    {
+      "path": "lessons/02-web-basics/02-2.mdx",
+      "sha256": "880f4ea25aef0a2d7b7d39755cbc2654c9928cd39b6a58b43d61083b53652f90",
+      "bytes": 2567
+    },
+    {
+      "path": "lessons/02-web-basics/02-3.mdx",
+      "sha256": "f4458c3a39d349c94fcb0aec5dd2c6cb93fac9d772f2755df105a601b99e99e4",
+      "bytes": 2581
+    },
+    {
+      "path": "lessons/02-web-basics/02-4.mdx",
+      "sha256": "e6a3fb1705972b601333521a712242e5cd0c0d7351cb1da3754ea6185337f2ac",
+      "bytes": 2550
+    },
+    {
+      "path": "lessons/02-web-basics/README.md",
+      "sha256": "e5616718432789df9abae41a08e05723f466614da7b95f9363800e8c61078eeb",
+      "bytes": 127
+    },
+    {
+      "path": "lessons/03-course-hub-structure/03-0.mdx",
+      "sha256": "420f1f1408ea689fd81a726f2a45eae0dc19f83103a493909bc739713d4692f0",
+      "bytes": 2596
+    },
+    {
+      "path": "lessons/03-course-hub-structure/03-1.mdx",
+      "sha256": "aaa8eede798e882b242caa35472f6bcdc9804e34d89a02be6caa1543571e20b3",
+      "bytes": 2689
+    },
+    {
+      "path": "lessons/03-course-hub-structure/03-2.mdx",
+      "sha256": "e6ff746fa7028fac349d2c4be37e8c5c28c98e98c6e5bd58dfcdf7afbe932271",
+      "bytes": 2592
+    },
+    {
+      "path": "lessons/03-course-hub-structure/03-3.mdx",
+      "sha256": "bbaa02062b53c917b9eab8a01eb07ded6560fb95dc9e5cbda9ba54a145ac2e3e",
+      "bytes": 2632
+    },
+    {
+      "path": "lessons/03-course-hub-structure/03-4.mdx",
+      "sha256": "41e24ef95a44157842735bb6eed5cacd486bd5ce954d7729885727efb1e7d9d0",
+      "bytes": 2587
+    },
+    {
+      "path": "lessons/03-course-hub-structure/README.md",
+      "sha256": "4b89aedab0105e44bfa6d5ab444950c353ffb92bf6bf5ac6dec2e3e8dfc09747",
+      "bytes": 136
+    },
+    {
+      "path": "lessons/04-accessibility-safety/04-0.mdx",
+      "sha256": "8c7a749c6ed914a784aef92f0c6aff6e43a42addeb452ac26f2d8a53781f4d47",
+      "bytes": 2638
+    },
+    {
+      "path": "lessons/04-accessibility-safety/04-1.mdx",
+      "sha256": "7d695b7227a81f596d93ad8557dd2b45deed019319fb2c936ed7983fe3aec581",
+      "bytes": 2639
+    },
+    {
+      "path": "lessons/04-accessibility-safety/04-2.mdx",
+      "sha256": "3740ccbbda6560dbc409b2d8a959a12617b84f296c22a37961b0b0840bf32484",
+      "bytes": 2679
+    },
+    {
+      "path": "lessons/04-accessibility-safety/04-3.mdx",
+      "sha256": "246de050244842fe7c51f9e7ce355e3fe48689139afe9084e097b3f4436d1489",
+      "bytes": 2737
+    },
+    {
+      "path": "lessons/04-accessibility-safety/04-4.mdx",
+      "sha256": "506e14f415be82e68daa71eab1a2bceb8d248e4c9c3ec7f00ddb8c6f07861ce5",
+      "bytes": 2629
+    },
+    {
+      "path": "lessons/04-accessibility-safety/README.md",
+      "sha256": "a7d144e7fc359fd03d33409213bca239c2d5ff565d4d7d97b64e903d390070d1",
+      "bytes": 149
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/05-0.mdx",
+      "sha256": "f3476ba062e2155e67dbc165e9a727970a94b155b1a48bf34270fd63d1f4a3f7",
+      "bytes": 2521
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/05-1.mdx",
+      "sha256": "be627338366a98eaec96aa4b39e4c1e72650d9bdecf99fc5cb67ab023573e816",
+      "bytes": 2604
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/05-2.mdx",
+      "sha256": "1477eb79e936eca488f1d841feb6e214cc6409ae9f1df0811500d28b9c076276",
+      "bytes": 2582
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/05-3.mdx",
+      "sha256": "5c861958772af8f778bd3de2c2c93dfbc7a21838302515f83db0c89e9a50b2fc",
+      "bytes": 2543
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/05-4.mdx",
+      "sha256": "3f2610d2ec50e1d248e1a17c079aa2d85bb7c74d83aabc5af0403fe6053008c0",
+      "bytes": 2512
+    },
+    {
+      "path": "lessons/05-deployment-maintenance/README.md",
+      "sha256": "2867510a11323692b23119fd80907795f05d12f13a486cf5f17e89adf4966123",
+      "bytes": 142
+    },
+    {
+      "path": "lessons/06-published-course-hub/06-0.mdx",
+      "sha256": "02094da868c46e129703e584a8653c2ec51e9d28aa3ae1ea3bb15dfd5c98eeef",
+      "bytes": 2560
+    },
+    {
+      "path": "lessons/06-published-course-hub/06-1.mdx",
+      "sha256": "a804fef5903d739a065a2418423d3a6e05a7898adc31c0ffc44d0cc4f3159ce6",
+      "bytes": 2526
+    },
+    {
+      "path": "lessons/06-published-course-hub/06-2.mdx",
+      "sha256": "6d6013208d8be53bbb4a1948510f9e2789293452fda2f85e1f235510b4e116f2",
+      "bytes": 2561
+    },
+    {
+      "path": "lessons/06-published-course-hub/06-3.mdx",
+      "sha256": "32b28941ba4e800120a5ad70b6fd9f1fc46ab22759febb69abaaa7a5accd2aa2",
+      "bytes": 2615
+    },
+    {
+      "path": "lessons/06-published-course-hub/06-4.mdx",
+      "sha256": "0e68faa1ae8145ff73315cbd37491e934203821a47813eaaf7fd009677984f3b",
+      "bytes": 2551
+    },
+    {
+      "path": "lessons/06-published-course-hub/README.md",
+      "sha256": "31c9f34ef807900b0eadcf48efb5c4048b5450fc7853968696b92d754560c766",
+      "bytes": 138
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "4ab54e9a02e589ef6c7782e3b14de5c9b4da9b1fa13c26c8381f6617516d29a1",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "79a67b0adc3643c193aca493d18a217294aaa0ccecd25b012e36162c8d5a5ad0",
+      "bytes": 873
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "b48a64205379e69a53c2c5f511289675ce2726a68939c039b4e1b6cc3decd0a9",
+      "bytes": 321
+    },
+    {
+      "path": "status.json",
+      "sha256": "41915281a87d33aade0d2dcf3b54001a6641a5d7b76ba52bb4bc3f071a41da0c",
+      "bytes": 385
+    },
+    {
+      "path": "templates/course-hub-sitemap-template.md",
+      "sha256": "8eb18b3065881e987040e0fee2d2f210662437290b91e9a74b490094222a65c8",
+      "bytes": 1547
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "843e69288a403156bd0679f5ebe0c472f07a197adf22c69d392a1cd997a558c1",
+      "bytes": 298
+    }
+  ]
+}

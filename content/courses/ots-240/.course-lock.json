@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "courseId": "ots-240",
+  "status": "locked",
+  "lockedAt": "2026-07-07T22:58:40.483Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 3 Open Resources and GitHub verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-240/README.md",
+    "content/courses/ots-240/course.json",
+    "content/courses/ots-240/status.json",
+    "content/courses/ots-240/lessons/**",
+    "content/courses/ots-240/labs/**",
+    "content/courses/ots-240/assets/**",
+    "content/courses/ots-240/docs/**",
+    "content/courses/ots-240/templates/**",
+    "content/courses/ots-240/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "cba4b74586ae625d274aa2ca1f96a0e7d4bdb920ec44f1ca9c3b20626a96072a",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "41cbcc2447e53549f55cdf6e3c9468b50a22fb403493cb6d085e16f53ed905a2",
+      "bytes": 1603
+    },
+    {
+      "path": "docs/OTS_240_COURSE_OUTLINE.md",
+      "sha256": "3a565311b707e7f68c902434bf34d7d3e41fce0c4536e98aacfc3a6ff3412c71",
+      "bytes": 3961
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "c3aa16d03f76a51800b9a7676295811087e3849c9a7e1c7a88435311c809c4fb",
+      "bytes": 321
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "ee74f2bc24ea9be0669cd7db1fbd61918ce08be5e3583bc0538085384fae1aa4",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/01-0.mdx",
+      "sha256": "a91f70734b351dc43eb61602ce4f0107662bb06b61e9e58c8ecf4ff9c3d84059",
+      "bytes": 2736
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/01-1.mdx",
+      "sha256": "e459d27a8fdf005093c901793b32349588b460d331f40709ce001e115690ded1",
+      "bytes": 2741
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/01-2.mdx",
+      "sha256": "091baf2d129032b956b56dd8feaaf5b13e88a38dcdd16fedf86929ce8a98d7f8",
+      "bytes": 2759
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/01-3.mdx",
+      "sha256": "93bc8664a08d9340d6efbd478bdaeace6b25c811e901d18658facd7337cbfbb3",
+      "bytes": 2820
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/01-4.mdx",
+      "sha256": "b95297602a162057a7e6f82c4ee79fa527f3ef878fe122d675a186c9596b8f52",
+      "bytes": 2729
+    },
+    {
+      "path": "lessons/01-open-resource-mindset/README.md",
+      "sha256": "867cc322d9b88377c3c37a6011031ef28dc69e4bb7b928dc6b767a9f0210e85b",
+      "bytes": 146
+    },
+    {
+      "path": "lessons/02-github-foundations/02-0.mdx",
+      "sha256": "00588e8b3f98f0bb14a244cfbaba03a678c297b7e044b7542ea20c0a2c8f0a5a",
+      "bytes": 2866
+    },
+    {
+      "path": "lessons/02-github-foundations/02-1.mdx",
+      "sha256": "2172b538fced808e838f90cc28133acb89555b8e490570878dce48b565759dbf",
+      "bytes": 2931
+    },
+    {
+      "path": "lessons/02-github-foundations/02-2.mdx",
+      "sha256": "c63bd43fe2ca065242eee5d7911d6c58055dd65b550b1e4885bf71fb6c24f209",
+      "bytes": 2909
+    },
+    {
+      "path": "lessons/02-github-foundations/02-3.mdx",
+      "sha256": "497af839b35fdf487f379bc3559e89c60831244c0713e59f024be04589733d0e",
+      "bytes": 2880
+    },
+    {
+      "path": "lessons/02-github-foundations/02-4.mdx",
+      "sha256": "97c9e8669bd090c0ad8b313a3c425774273f24c536774a21700e562975ddc521",
+      "bytes": 2859
+    },
+    {
+      "path": "lessons/02-github-foundations/README.md",
+      "sha256": "663a35aef60e07832155be69f12d0f7ff0264a5121f70b14cd54d3b1289445be",
+      "bytes": 155
+    },
+    {
+      "path": "lessons/03-writing-readmes/03-0.mdx",
+      "sha256": "8f2251eb52293b835020904551cc810e26711b4754808339381d825058fabf47",
+      "bytes": 2665
+    },
+    {
+      "path": "lessons/03-writing-readmes/03-1.mdx",
+      "sha256": "1eee800e23e100db952e9914c0762d37872e59726dd1ae15508cb5e4c82bb17d",
+      "bytes": 2695
+    },
+    {
+      "path": "lessons/03-writing-readmes/03-2.mdx",
+      "sha256": "997ee4b18364e1f3c88c2ee94060a9933f67cc55afb9639367ab23394ce9e390",
+      "bytes": 2700
+    },
+    {
+      "path": "lessons/03-writing-readmes/03-3.mdx",
+      "sha256": "e8cffcb00f95a3eaaeb80a4b6c5dfa8c6bc8f8c88a841297cb16aa7330fa4c43",
+      "bytes": 2658
+    },
+    {
+      "path": "lessons/03-writing-readmes/03-4.mdx",
+      "sha256": "c458e8629370cc8e9768034657d59e572cd7e386bb0f06adefd01cf3e854d871",
+      "bytes": 2658
+    },
+    {
+      "path": "lessons/03-writing-readmes/README.md",
+      "sha256": "1fda1b28fa1fdabb528da7e5efec1bdedbcbc242d772974956f7caabc8b4c2be",
+      "bytes": 128
+    },
+    {
+      "path": "lessons/04-contribution-review/04-0.mdx",
+      "sha256": "2df8d725433c430514f358abf99bee0dbf8cd919c6d1a83d520cebe712d2fcca",
+      "bytes": 2794
+    },
+    {
+      "path": "lessons/04-contribution-review/04-1.mdx",
+      "sha256": "cd2d4156e1924780da1d05e970c06d9418b37cf8a108389c7145f0feb065e3c8",
+      "bytes": 2849
+    },
+    {
+      "path": "lessons/04-contribution-review/04-2.mdx",
+      "sha256": "303d686f0c325f2a5c5b9ab12ec4581e2eeb465f5b97ae333762d189ef516092",
+      "bytes": 2797
+    },
+    {
+      "path": "lessons/04-contribution-review/04-3.mdx",
+      "sha256": "58fb3818142c40cca6e94273c30df5e3f02eff3f54b2d52c35c6d804add0403a",
+      "bytes": 2797
+    },
+    {
+      "path": "lessons/04-contribution-review/04-4.mdx",
+      "sha256": "a07111af5a32298735131187dc40d2ddb206ceaf885a5a2b8450a549198c75e4",
+      "bytes": 2787
+    },
+    {
+      "path": "lessons/04-contribution-review/README.md",
+      "sha256": "cfbce9bc5b1a141524d39060f82bbc19824ccfbf599500d9f9632d1be400279f",
+      "bytes": 152
+    },
+    {
+      "path": "lessons/05-publishing-attribution/05-0.mdx",
+      "sha256": "304ef0c0899ccd2d3b361bcfaef994fb0ef16df354d48e13d5f9831b29af1d38",
+      "bytes": 2818
+    },
+    {
+      "path": "lessons/05-publishing-attribution/05-1.mdx",
+      "sha256": "87da5f9772ccd616866483701a3d36ef9be115b2532f852ffb74e47978f2cce6",
+      "bytes": 2846
+    },
+    {
+      "path": "lessons/05-publishing-attribution/05-2.mdx",
+      "sha256": "8011dccce5c1b5a577330e4b2f021c06a31de8ec6a1659d37584429f679853d8",
+      "bytes": 2796
+    },
+    {
+      "path": "lessons/05-publishing-attribution/05-3.mdx",
+      "sha256": "c79560c96b55a989aaf1fa7b04e964396b3f5840a3cd6a8910301cf63fc23081",
+      "bytes": 2916
+    },
+    {
+      "path": "lessons/05-publishing-attribution/05-4.mdx",
+      "sha256": "15e6ba48f1d739f54808d6a4bc919efb6dc75fd60fcad73bc77a937916ab9556",
+      "bytes": 2811
+    },
+    {
+      "path": "lessons/05-publishing-attribution/README.md",
+      "sha256": "87e759a472867c7a6d4d70f9e26b088f60ac0e8039d7e71e321f644fcb39f70b",
+      "bytes": 154
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/06-0.mdx",
+      "sha256": "3530354a268b9f8527fd397095e2b20af0d5b4566120d19f679c4554edd33c08",
+      "bytes": 2840
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/06-1.mdx",
+      "sha256": "de46e140487251fc3dec8789635f2eb3e7e01d96def9c7212f724a879da477af",
+      "bytes": 2868
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/06-2.mdx",
+      "sha256": "e0ec67fe335ad1d561f9cada371209fb28075c65765231b0ce640fd5c5fc2eb2",
+      "bytes": 2808
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/06-3.mdx",
+      "sha256": "d42c18e3269314575f53da04eeb7325a404dd8acfa1abb64b943a1172cca9d60",
+      "bytes": 2929
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/06-4.mdx",
+      "sha256": "ef1c27bd4ff86271810077eb97e284e80951681fe2789d0b2ffd5dd9e1d70f68",
+      "bytes": 2833
+    },
+    {
+      "path": "lessons/06-open-curriculum-repository/README.md",
+      "sha256": "5e2b88914e8c6b76760ccb24290e632bf2a6a1575039ed919c472a262788b231",
+      "bytes": 156
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "f47576d63c05c5900477e9f3b6a8c75660c2c937bd2f705f2b36873fc59f69b7",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "2c4b4061a43cc57acd1151de7676577c2e6d9fa6fdd42ee61c61478642c17c65",
+      "bytes": 892
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "781913c505fadd4551ad0998ba8f9f25795fd245dd7e81df06156062763475ba",
+      "bytes": 321
+    },
+    {
+      "path": "references/source-bank-queue.md",
+      "sha256": "cdb5e06c1c153a7173ef903bff31e3ac33cdc61a749520a640cd10e8b3edacb0",
+      "bytes": 964
+    },
+    {
+      "path": "status.json",
+      "sha256": "c22ade910bfcfc8c9d418f56c75e66c363e95e46eb4a37bb0e78c99fa7a627af",
+      "bytes": 385
+    },
+    {
+      "path": "templates/contribution-review-checklist.md",
+      "sha256": "833742852d36a593869331a38379779d62fee37b5df0a6523e6caff8219319ab",
+      "bytes": 331
+    },
+    {
+      "path": "templates/course-readme-template.md",
+      "sha256": "191d283e914d8ba65a806f672a73c7b5f9433bbb44ccf515cd51908a6c02e850",
+      "bytes": 328
+    },
+    {
+      "path": "templates/github-repo-readiness-checklist.md",
+      "sha256": "5a3f4d0ab9cc9a8ce1d1003eaa1f37475cdfcbe398cc4f4b315b0d40d4254929",
+      "bytes": 385
+    },
+    {
+      "path": "templates/open-resource-decision-log-template.md",
+      "sha256": "f2c3ffdfb53737b4754e490a799755d1b87d11cf02844c946feb044e38a9c79e",
+      "bytes": 320
+    },
+    {
+      "path": "templates/publishing-attribution-license-template.md",
+      "sha256": "53d42da8f8e52c0a3834e36b181845d0ede28e1e70177c4393d50cc4a03b3495",
+      "bytes": 254
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "9a8e4e3288f3bd785d36972e291dff492e1454978b550365f8d71dbb69307d69",
+      "bytes": 298
+    },
+    {
+      "path": "templates/repository-release-checklist.md",
+      "sha256": "d177ebccb5ee782cdea16238d2b6ded60aed4db44a3bb1d30a16b5c1a2b13466",
+      "bytes": 443
+    }
+  ]
+}

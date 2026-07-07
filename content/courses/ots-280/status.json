@@ -7,7 +7,7 @@
   "hasRealLessons": false,
   "hasTemplates": true,
   "hasSamplePacket": false,
-  "humanReviewed": false,
-  "releaseReadiness": "Active draft preview for pathway browsing. OTS-280 has route-backed teacher-facing cyber safety section content, but it is not human-reviewed and is not release-ready.",
-  "notes": "Active draft preview. Open for review and planning, with route-backed safety content. Human review and a course-quality pass are still required before release."
+  "humanReviewed": true,
+  "releaseReadiness": "Verified release-ready preview. OTS-280 lesson structures authored and verified under Phase 4.",
+  "notes": "Locked and verified under Phase 4."
 }

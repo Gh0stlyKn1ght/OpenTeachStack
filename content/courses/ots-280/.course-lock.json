@@ -1,0 +1,465 @@
+{
+  "version": 1,
+  "courseId": "ots-280",
+  "status": "locked",
+  "lockedAt": "2026-07-07T22:58:40.607Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 4 Cyber Safety verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-280/README.md",
+    "content/courses/ots-280/course.json",
+    "content/courses/ots-280/status.json",
+    "content/courses/ots-280/lessons/**",
+    "content/courses/ots-280/labs/**",
+    "content/courses/ots-280/assets/**",
+    "content/courses/ots-280/docs/**",
+    "content/courses/ots-280/templates/**",
+    "content/courses/ots-280/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "e0a5895106f2717e3436ee2c1ae5e523afb4e1e43bff9bd5b572c86578165f2a",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "60f35d4cbe022947b5548abc2d6a24cbe1f4fec629a546ce1dcf68bfd3640754",
+      "bytes": 2614
+    },
+    {
+      "path": "docs/OTS_280_COURSE_OUTLINE.md",
+      "sha256": "19c149c040a996a7de078ea508bccf5041b6606c603c591451e1b8ea61d52fa6",
+      "bytes": 4542
+    },
+    {
+      "path": "docs/OTS_280_PRIVACY_REVIEW.md",
+      "sha256": "655fb6382d65d17917ea9b201799776e4f20dd00f01c08e8cccee4adb3fbea38",
+      "bytes": 1881
+    },
+    {
+      "path": "docs/OTS_280_PRIVATE_USE_TEMPLATES.md",
+      "sha256": "6233be24edeef5968558a87508162b52db5c349b640d2611e5410f6bf9879f64",
+      "bytes": 5605
+    },
+    {
+      "path": "docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md",
+      "sha256": "2b0914f136130ffea9be4e4cf3573c0fc1088bb4dd2785520ffc8b5097ce5b2e",
+      "bytes": 2845
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "ad9d0e76a62743f48f5d32d6d58b1155624cf5da719e4edb4073006e49039341",
+      "bytes": 321
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "74bc420bf7a0b2ac4ed950e349cae31547816220e683b022bf580098825115ec",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-0.mdx",
+      "sha256": "100bb531f5ee67507099ed80ee7497fdbb7aced2f4f58ae35f3f94369911d20c",
+      "bytes": 2680
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-1.mdx",
+      "sha256": "44769a12a924c4762211ad270d3062b241a250378117c6a26a3fe91e2b532f9b",
+      "bytes": 2777
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-2.mdx",
+      "sha256": "3a620b78a92376783e4af0fb6919d4dcb819a94f01935ca3c75f81acad9e3205",
+      "bytes": 2777
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-3.mdx",
+      "sha256": "401f578944785ea9184d0a0666b40bfc03fef210fe2104582fad68fa0260afe6",
+      "bytes": 2807
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-4.mdx",
+      "sha256": "a49f54b6d86d6057d5f56dcf9f4e1c2094e97916981f073b27d29c53e61073af",
+      "bytes": 2723
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/01-5.mdx",
+      "sha256": "fc5c7f475044bdf337b447afccff7bc4922244d40e037307497c6df72e34b62e",
+      "bytes": 2681
+    },
+    {
+      "path": "lessons/01-teacher-threat-model/README.md",
+      "sha256": "83087bc321cadc801126d1686fd27aa605de222942be37152fc44212d042871c",
+      "bytes": 143
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-0.mdx",
+      "sha256": "77cf9da1e909c4746593cf5be95c4d5776842b39a2ae49c6856ed5e19d4ee2ae",
+      "bytes": 2704
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-1.mdx",
+      "sha256": "6fbe920259bd2979a96bd853f15d59d688bc51b90d7557563c4f1d3c5107fd3b",
+      "bytes": 2791
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-2.mdx",
+      "sha256": "6ef2e1fd7d76315ef2713eba0cd81b134451d6707b6049d64dcbd1a3ca0da8a1",
+      "bytes": 2846
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-3.mdx",
+      "sha256": "1caceeca09e98deb9bece9d3176ce959cc35b4efdb1940f58181ed77794dd024",
+      "bytes": 2771
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-4.mdx",
+      "sha256": "f06dd270d8d893210f75320c9e412831d74b97eb7365a64e4327b3af4ddab261",
+      "bytes": 2821
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-5.mdx",
+      "sha256": "0dc0aa32507a73df2259d1d4a048b27112dcc3e36fb485b92020e7194a623065",
+      "bytes": 2850
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/02-6.mdx",
+      "sha256": "3865ca703937e05eb90e959bb7e9350e0f509007a7ae5edddb2f422f3f6aebaf",
+      "bytes": 2705
+    },
+    {
+      "path": "lessons/02-account-hygiene-mfa/README.md",
+      "sha256": "e12fc25cd9080d2db3070c37b51528d29a59bb5c809ccdc098656356df2deb42",
+      "bytes": 154
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-0.mdx",
+      "sha256": "3c8e1be26f960c40d7fd027e44c54ef939d4e2efc2eff0e57d710b20f1978c54",
+      "bytes": 2804
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-1.mdx",
+      "sha256": "b1aebe64684595fd3dbe1730d46d072471e331bd303d6e3fb28355718fe08ccf",
+      "bytes": 2956
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-2.mdx",
+      "sha256": "a71111341c99233086f6c5e4a2567139175a9453ee78e7eeca5025429d5fb8cd",
+      "bytes": 2983
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-3.mdx",
+      "sha256": "f66ea02dbbac74fc7c8e31254c20318683307a494bc77b7a15c50f5e2f08c746",
+      "bytes": 2901
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-4.mdx",
+      "sha256": "4da6ce8df04c6dfa689d09ed723e482b67c1e350f9955a24fb071faef66447b5",
+      "bytes": 2881
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/03-5.mdx",
+      "sha256": "c6ca289d008c8cc6de0bfd664d2820c83047dd8f3e0be36e8282cfac04641b99",
+      "bytes": 2805
+    },
+    {
+      "path": "lessons/03-usernames-identity-separation/README.md",
+      "sha256": "1017881cc28f392fe8b59724083a750d7dbf019d83d0d54858e3233f6f6788d2",
+      "bytes": 167
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-0.mdx",
+      "sha256": "c1a00811fe02ce9dbd216731e5c7dc8508b8b90552eddad88da1ff521349dc16",
+      "bytes": 2769
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-1.mdx",
+      "sha256": "25935c0f2501660aab04e9dc5c45b20e3b0d026057a1034e94f8c3b1c9ec70d8",
+      "bytes": 2901
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-2.mdx",
+      "sha256": "8ca9092ead0c3a8a392a5bde0c7793069dc30a1c0a5d3704b8d3b57ca1506152",
+      "bytes": 2886
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-3.mdx",
+      "sha256": "06bbe2f8ec6e1c91a67ebd8e4149756d0b4b34d451f38d8ac0ec398b6459f44a",
+      "bytes": 2886
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-4.mdx",
+      "sha256": "191b52f695642a28c0b2ceb6c6dd2320a0d1a55547d07d27da5a2a0237fd6330",
+      "bytes": 2861
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-5.mdx",
+      "sha256": "ff262b4b04790c09fd666021a8a31925ef71bfd5c81b1af730c829887d9b0cbf",
+      "bytes": 2866
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/04-6.mdx",
+      "sha256": "7ae99d9d06ee7262703a22c655c3099af119289f4b884fe1d00c576daffdd534",
+      "bytes": 2770
+    },
+    {
+      "path": "lessons/04-email-phishing-impersonation/README.md",
+      "sha256": "1d2c32e7fbca236aab2354e5063a6a4ffb350efd422f346e4600ee55505359c4",
+      "bytes": 167
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-0.mdx",
+      "sha256": "e2fb4bd238bf202322ffda0f5fb20cbfdaa0d5d4ed8550e0e6effd8c55f3a6cb",
+      "bytes": 2748
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-1.mdx",
+      "sha256": "06dc59daffb14b5f07f2eeaa34499ce96a2462ea8eb3494a9468ff1b57ae6cb2",
+      "bytes": 2885
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-2.mdx",
+      "sha256": "75eb49ce9c6a95d0bc1098195124a30874c9f612a245426dcd7f3040323ce582",
+      "bytes": 2850
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-3.mdx",
+      "sha256": "45a5dded503ca18e3ca4eeb7412ad86cb67364ab91748a926c455f37e9914d57",
+      "bytes": 2860
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-4.mdx",
+      "sha256": "1dca41844a5b7b1dfe3a845a6fa0ea0bb1571ccc5d721d60bdd561a25a8271e2",
+      "bytes": 2875
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-5.mdx",
+      "sha256": "0f33e611896c4b021d184744d54184c2dc82847a8df9c239a2acf1b41a09e009",
+      "bytes": 2796
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/05-6.mdx",
+      "sha256": "62fc7b22442be95190c3f35db3e933e636948487514a2b9185a45816215e17a9",
+      "bytes": 2749
+    },
+    {
+      "path": "lessons/05-social-media-doxxing/README.md",
+      "sha256": "be672b2511b68f2c6374105bd01ba6ac882c1c8539081f5113b65627bb402caf",
+      "bytes": 147
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-0.mdx",
+      "sha256": "a7232eb2aab37642729252c2f2e64416609a62498e534b7a14ef3c356f108522",
+      "bytes": 2723
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-1.mdx",
+      "sha256": "48ec18ab9aa0235e3ac6add88accb2c8523f297f9d0409555d57d6b0a2358369",
+      "bytes": 2835
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-2.mdx",
+      "sha256": "a0cfd1ca88d45a3ab7a875a8515d649852b5084a897792b6114c9cd33e75ecb7",
+      "bytes": 2795
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-3.mdx",
+      "sha256": "08e7136a5bda85c9e99c64a7f48bb86d8dfa7ad15b4a8ff4478f642c13a5c0ca",
+      "bytes": 2840
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-4.mdx",
+      "sha256": "0121e78e9dd5acf4d38baa3a6ce6185434e042632c92730bce5ebfcf5bc6bef3",
+      "bytes": 2820
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/06-5.mdx",
+      "sha256": "d0c1b216c47da6455cb5ef3de5b0ab6d3487995d2c0477aada8195f18af7ea6d",
+      "bytes": 2724
+    },
+    {
+      "path": "lessons/06-vpns-wifi-location/README.md",
+      "sha256": "c353f0553773e3157dd1e1ce77d50397f157dab550b681d10c5e1ebb8d621141",
+      "bytes": 156
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-0.mdx",
+      "sha256": "16d950dae7201e1a11163025978de6f67b5375947637bc16aa749a850a19f049",
+      "bytes": 2796
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-1.mdx",
+      "sha256": "edf32a4f68613b49735878a90b44505d966291018c80754e28185eb376cff696",
+      "bytes": 2948
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-2.mdx",
+      "sha256": "cca2c3e6475c719c0d13104cbb4120714c52147bb2b2469d28179978682b7dfc",
+      "bytes": 2938
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-3.mdx",
+      "sha256": "2f468cea48dcb8d105bbf9d0c7739a313ad9db679932cc7440fce9be0498a77f",
+      "bytes": 2953
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-4.mdx",
+      "sha256": "9992de9ecb1fe189d096fcf29abb96a832fd5d556e0fe8db93b5b5a88219ac72",
+      "bytes": 2970
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/07-5.mdx",
+      "sha256": "e8ccdba8388cccc091b90afbd071644bb43af46482a569b06ef10634590e4fa1",
+      "bytes": 2797
+    },
+    {
+      "path": "lessons/07-browser-device-file-safety/README.md",
+      "sha256": "21a94276da34ce48412355ff969a96ff2cf76842eb167fb6873540e533cf16a5",
+      "bytes": 174
+    },
+    {
+      "path": "lessons/08-website-safety/08-0.mdx",
+      "sha256": "94aae3c91a841836890a6431e9a89ae14b90e6eb3c772e0ad1c88b03fc66b72d",
+      "bytes": 2793
+    },
+    {
+      "path": "lessons/08-website-safety/08-1.mdx",
+      "sha256": "c676fb3849a794a28e898d096c07a601cec4688ed205391c144fe4a5fe692f6f",
+      "bytes": 2950
+    },
+    {
+      "path": "lessons/08-website-safety/08-2.mdx",
+      "sha256": "488c9b0a09b21cc2088aa70a3d0583e2c1e6f68eddf55f10fc131f368032844a",
+      "bytes": 2917
+    },
+    {
+      "path": "lessons/08-website-safety/08-3.mdx",
+      "sha256": "4d98c55bf68ec8bd620e08c18479249c29f905e872f049557721c87659ec5e04",
+      "bytes": 2920
+    },
+    {
+      "path": "lessons/08-website-safety/08-4.mdx",
+      "sha256": "482bf164f9dc8538db71434a19857ded69f2040cac87feb31e80eaa35ffb1853",
+      "bytes": 2871
+    },
+    {
+      "path": "lessons/08-website-safety/08-5.mdx",
+      "sha256": "7f0a70a92f1cbedc0cdbcd2a1595efb6fe848ca9aa79ddb2fbe31c6de82bdaa3",
+      "bytes": 2794
+    },
+    {
+      "path": "lessons/08-website-safety/README.md",
+      "sha256": "f4307e056afcadc1a9ca9f749d20de3939c50433aa3a1f97185f7d267f1bbcf8",
+      "bytes": 154
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-0.mdx",
+      "sha256": "aa2c6cac69d7bade231b630e5919391e6172fc15a9d070c39849bdc99def112d",
+      "bytes": 2814
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-1.mdx",
+      "sha256": "cfa6e7db1b4b3455a79083185a4c843290cf9736d548b83502633bd298c3f387",
+      "bytes": 2911
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-2.mdx",
+      "sha256": "62e349f65bc9cf4b74180a3876db2e520660b61cbaa66f43d46ab9a953429918",
+      "bytes": 2966
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-3.mdx",
+      "sha256": "e16421a4feff306893668562631733e3870f2adbe64d78d5ea724d303f91e813",
+      "bytes": 2916
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-4.mdx",
+      "sha256": "ec814db7aa206ca6d1649b42c1169da273e8c5b1e2c3395eaf84ec79261d9187",
+      "bytes": 2946
+    },
+    {
+      "path": "lessons/09-github-domains-repos/09-5.mdx",
+      "sha256": "d068bba649af3f0631fd071c7206fc2a552869400b5cfc368de4a0ee3808ed8e",
+      "bytes": 2815
+    },
+    {
+      "path": "lessons/09-github-domains-repos/README.md",
+      "sha256": "f86fbaf4d25671dd8930da199d6ad6719304eede5282e26adda6a18eb4b2ef83",
+      "bytes": 168
+    },
+    {
+      "path": "lessons/10-incident-response/10-0.mdx",
+      "sha256": "fff2f1d0b6497e98e52ddda7d5fbc990247ab828941bea2580582e1c369e7f57",
+      "bytes": 2803
+    },
+    {
+      "path": "lessons/10-incident-response/10-1.mdx",
+      "sha256": "9faedcb5ac2ed748d688fc76a960767e25d4e3360369b8f41d45c0459eeaf8e2",
+      "bytes": 2915
+    },
+    {
+      "path": "lessons/10-incident-response/10-2.mdx",
+      "sha256": "3de9341d284444c74fce6e5f8fb3431de8b8862df0c5167343dc225e29fda081",
+      "bytes": 2855
+    },
+    {
+      "path": "lessons/10-incident-response/10-3.mdx",
+      "sha256": "e56db68689bc600002a2dd710cdd4e48076f329e8d05006006a2f705c20294ab",
+      "bytes": 2960
+    },
+    {
+      "path": "lessons/10-incident-response/10-4.mdx",
+      "sha256": "19d3e1bf326d742e21847d067f675d6c4db90f58913448e23f7add529aef61d4",
+      "bytes": 2893
+    },
+    {
+      "path": "lessons/10-incident-response/10-5.mdx",
+      "sha256": "452b39eff0cc034df1eb6b51410aeaf7b126728fe7a7a2fecdfd53a441e2cb46",
+      "bytes": 2804
+    },
+    {
+      "path": "lessons/10-incident-response/README.md",
+      "sha256": "4bb1da1bad634781155d9309ad1d2381a1e431cc8c9fc14d0b27f320390f7032",
+      "bytes": 161
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "8b164a42bb47a1a9d3bce28c1276501dea4296e1f5d75ba62043f93f783429a1",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "548ee546bd6f190f4fd01bdd87981b16461ece2a25f064f3574e666a2cf05261",
+      "bytes": 879
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "864db870cc04e27f3f6bd610eb4a0a50a0c253910e9253f6980d474456d968f3",
+      "bytes": 321
+    },
+    {
+      "path": "status.json",
+      "sha256": "0ad89fa713f7698d648dfc501fddd26c9a7f912731e78d4f5c05243cdc419c30",
+      "bytes": 385
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "df0b3c350f51277d6faec1ebb51cbf19df6f8010126bdab555a794c83a445159",
+      "bytes": 298
+    }
+  ]
+}

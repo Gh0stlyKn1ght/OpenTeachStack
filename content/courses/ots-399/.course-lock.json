@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "courseId": "ots-399",
+  "status": "locked",
+  "lockedAt": "2026-07-07T22:58:40.802Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 5 Capstone Studio verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-399/README.md",
+    "content/courses/ots-399/course.json",
+    "content/courses/ots-399/status.json",
+    "content/courses/ots-399/lessons/**",
+    "content/courses/ots-399/labs/**",
+    "content/courses/ots-399/assets/**",
+    "content/courses/ots-399/docs/**",
+    "content/courses/ots-399/templates/**",
+    "content/courses/ots-399/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "c2b456427229edc1edd3f78cdd2d84194a09c4a8d6df09943108d7d88ebf970d",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "f44ca21be9ac38fbc0ac270389ca859fb4045ad3df6f3b440a8f8955d7d9f0e5",
+      "bytes": 1617
+    },
+    {
+      "path": "docs/OTS_399_CAPSTONE_ARTIFACTS.md",
+      "sha256": "c6939cf1d39c8a6324e48c1270a364f9b84eeda0f3ca027998cd087a35d7b081",
+      "bytes": 932
+    },
+    {
+      "path": "docs/OTS_399_COURSE_OUTLINE.md",
+      "sha256": "a765e0bef71991fd61fa1aff350d29b131c271dfdd9ecf93977352d273e2b2dc",
+      "bytes": 3737
+    },
+    {
+      "path": "docs/pathway-traceability-check.md",
+      "sha256": "b8969d62be0ba4cd6797daee946d2e075cc0d31ecd92b80c576d549e2cc5d728",
+      "bytes": 886
+    },
+    {
+      "path": "docs/privacy-accessibility-safety-review.md",
+      "sha256": "cecd45dfe2f4122c6548565a6abcbac44be020f697eb1dbba6801e4032adfb45",
+      "bytes": 1094
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "7710d5216b37ccb0cf69f5f57200d9e4d76dc446fa941f0d6df19baa162d0db8",
+      "bytes": 321
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "f386f2260820b145856f71f160ea3fbcc2143bdd1c205af76f7b116a276e98fc",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-capstone-scope/01-0.mdx",
+      "sha256": "59ad5d107cf7d45a13feb88a68271a63492a3d55d65a03217f938bbdc5131abe",
+      "bytes": 2808
+    },
+    {
+      "path": "lessons/01-capstone-scope/01-1.mdx",
+      "sha256": "9dc098a2772f4b1af300a02a7f1a2aba0fc86f91f0bf7b3f7e4240043a9d76db",
+      "bytes": 2816
+    },
+    {
+      "path": "lessons/01-capstone-scope/01-2.mdx",
+      "sha256": "4fb266db5cd43bf9228e17a0754d0723df5250017a4b1419ac4a922ee0f11198",
+      "bytes": 2816
+    },
+    {
+      "path": "lessons/01-capstone-scope/01-3.mdx",
+      "sha256": "ec00bfbf5773be577258eddc2134bd7ff4e7751231b98b8f5a54cb9001563414",
+      "bytes": 2849
+    },
+    {
+      "path": "lessons/01-capstone-scope/01-4.mdx",
+      "sha256": "8948a0961b657ad2e21b6479e06632241df71ccc4a999ce97127d6c6a058d38d",
+      "bytes": 2816
+    },
+    {
+      "path": "lessons/01-capstone-scope/README.md",
+      "sha256": "81414cce51cad6f502fd0a895a3b48cea73e5640bed220978d1c762bc3dff6af",
+      "bytes": 123
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/02-0.mdx",
+      "sha256": "84567fc843484f8d7fd721b89ede59e8cead893d4d5d82fc24c774e4332ea638",
+      "bytes": 2826
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/02-1.mdx",
+      "sha256": "32d40e1c7b9e8577fc5ce3b8687b680229237f8ceb65feecdbc64295d83fe234",
+      "bytes": 2837
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/02-2.mdx",
+      "sha256": "4fd13e37e8e92be52bc03f2419f2af6108dbf0346368dfbe4bf96625661cc7d5",
+      "bytes": 2846
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/02-3.mdx",
+      "sha256": "7d7fe01a474cb985069fbf7e9df4896345776984570e783113fbd59b3aafcd43",
+      "bytes": 2832
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/02-4.mdx",
+      "sha256": "3c3d63a05a48b28882b239b0b49c0b8e0c914c902bab15ee30414696fc85aaa1",
+      "bytes": 2834
+    },
+    {
+      "path": "lessons/02-curriculum-system-assembly/README.md",
+      "sha256": "cf3714fd64c25e2151ed788fd03a5746e1f751ebe64d12f2c960e0dfe552b8bf",
+      "bytes": 140
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/03-0.mdx",
+      "sha256": "46d0e30f85c8ac3f32cbadde00cac318d7567543088a1cdafba0ce0e564fa3b9",
+      "bytes": 2823
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/03-1.mdx",
+      "sha256": "036ebbdc896f3390649e0aa5e84026c049cdccd5526bdbd6971aadcdae591123",
+      "bytes": 2825
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/03-2.mdx",
+      "sha256": "280432010776e8f86f4ee6944bc99840a6ae26fe6d524236e88b040520f6f977",
+      "bytes": 2801
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/03-3.mdx",
+      "sha256": "a91c3120cec565f7f1a1374198b761e57e7643e478587d7de9381ac843391d3b",
+      "bytes": 2889
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/03-4.mdx",
+      "sha256": "1f2b542ee6bbaf925338b61dbd3acfd0675ff00be938ccd7f5ca6b4564ed14bb",
+      "bytes": 2831
+    },
+    {
+      "path": "lessons/03-automation-tool-evidence/README.md",
+      "sha256": "849d88030e5197a5c0dcf84a9b6545a3f08317dcfa0ba2abfdbbd64c53124320",
+      "bytes": 152
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/04-0.mdx",
+      "sha256": "6d79da45a120b37c0bfac621a7fc637bae1165180ad4483b63754edbe477272f",
+      "bytes": 2934
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/04-1.mdx",
+      "sha256": "982502960cbb8ea28469705d80d4bf32c9a42aaaead7d214fe107bdd5dbf0e50",
+      "bytes": 2930
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/04-2.mdx",
+      "sha256": "af1408068a48e43ae29a4a47416ce5d73b0c664e58651169b45e479b5b821889",
+      "bytes": 2951
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/04-3.mdx",
+      "sha256": "3ea410068efaa3ca934d0e9179830d03ed989bb52ee88a0d0bda3c63bc778188",
+      "bytes": 2995
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/04-4.mdx",
+      "sha256": "45cf5dbecf824563bc5b8a3d9c8828ade74dfbf88ccc84d7b274ce0b105af1e3",
+      "bytes": 2942
+    },
+    {
+      "path": "lessons/04-publishing-safety-review/README.md",
+      "sha256": "e1a18756220d8ca62ea36cb6a773b8bee9ea0abefbce889118e4bf6b7e105009",
+      "bytes": 151
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/05-0.mdx",
+      "sha256": "f55132d30f4526ddc199c2d00ab6b4c8264012b2d443c13def1dbf4a4d440e15",
+      "bytes": 2789
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/05-1.mdx",
+      "sha256": "1234b641cdfd50f4dd73d18257159b7137e636eb1ae338f434065cff5dc39217",
+      "bytes": 2773
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/05-2.mdx",
+      "sha256": "f3116d202ff83fd09ce02c37bb27c583664986425c6277f6e1919dd78848b52c",
+      "bytes": 2770
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/05-3.mdx",
+      "sha256": "72ebc77c43b453fb7fc5cd1971d9c7786e0551350fc6eb27786f6be3d55b0290",
+      "bytes": 2890
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/05-4.mdx",
+      "sha256": "866a07c8248474c60554af35cfb6f05ebdb488fdf067c4afe05124d7325cd981",
+      "bytes": 2797
+    },
+    {
+      "path": "lessons/05-presentation-peer-review/README.md",
+      "sha256": "1678c2daddedf8532797ff03d5bbe61655354a2ad7e8d4132dcbeba18ee96cd4",
+      "bytes": 162
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/06-0.mdx",
+      "sha256": "bf690b27c1b64add37dec68fb27f7d7de452a27b7f9b3182742b443ef57ffea3",
+      "bytes": 2858
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/06-1.mdx",
+      "sha256": "c4c3852be7d448392cbc154c2625379d157930a369230871d3f67fa8384aa193",
+      "bytes": 2848
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/06-2.mdx",
+      "sha256": "e43ac1a7347f4b1544f494328d47f4dc9a8705194300c2cc9ef7b7ed08568817",
+      "bytes": 2866
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/06-3.mdx",
+      "sha256": "c3cb334aa61753399318a02f7f2b470e53768ef9ec15a9c14949017023564f4c",
+      "bytes": 2952
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/06-4.mdx",
+      "sha256": "9e675014b56db0e10c2d2334d4cc3867dce0e1be7eb39ca3dd1b6722b36276d3",
+      "bytes": 2866
+    },
+    {
+      "path": "lessons/06-published-curriculum-system/README.md",
+      "sha256": "f1c9f61598d750c3e5aa353c5efae23c3ffa3e91e18771870f57db3c95209b3d",
+      "bytes": 159
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "36a10886a8d95cb73e14b0c5bb64557d997962d396e2f3d118fb6e2ce91b9116",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "a69e95590b42baf56ab8a4ef2656db80004bd23d5463720c296661fa8beb3566",
+      "bytes": 868
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "740a3ed85be9f7952649145ba73d45017f4967cf7e0ce284bcdbad7854ff4894",
+      "bytes": 321
+    },
+    {
+      "path": "references/source-references.md",
+      "sha256": "f2ef387fdd8a90c6223a04cde48e42e275d5d656fcbe9a2c3838c2cf65a3129f",
+      "bytes": 1097
+    },
+    {
+      "path": "status.json",
+      "sha256": "a38786997b0b9eebfca30d857638e4cab57649c5a5826fb2b6c7d690e1ace88a",
+      "bytes": 394
+    },
+    {
+      "path": "templates/artifact-index-template.md",
+      "sha256": "15e322cbefbde8b1003df7d3aaefcdc319b541e08d0d78c1dfa6b59a3d05d97f",
+      "bytes": 808
+    },
+    {
+      "path": "templates/capstone-proposal-template.md",
+      "sha256": "89e16ccbd1a74560c583fda266a29423c2ed252eae8b4125a84cb2bb51f1993c",
+      "bytes": 1021
+    },
+    {
+      "path": "templates/final-release-checklist.md",
+      "sha256": "23976ce397e363052a55b044e31bfa539329ff40b626c6c9a4444d45749e4a94",
+      "bytes": 831
+    },
+    {
+      "path": "templates/peer-review-protocol.md",
+      "sha256": "d262604725a4baf6383d4d77dd807483f5f2362b864c210a3f342438776b37ef",
+      "bytes": 728
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "7e56a1d5b59729a2a7e8d0159ebd0b890c8d726bdfea960a5bbc121448b173a6",
+      "bytes": 298
+    },
+    {
+      "path": "templates/technical-evidence-log-template.md",
+      "sha256": "d1f95d02ba40f5415bddeb967ec00d3727d60fc1ce54d2db13cd4d407d870aae",
+      "bytes": 872
+    }
+  ]
+}

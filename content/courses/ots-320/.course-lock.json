@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "courseId": "ots-320",
+  "status": "locked",
+  "lockedAt": "2026-07-07T22:58:40.739Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 4 AI Coding Agents verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-320/README.md",
+    "content/courses/ots-320/course.json",
+    "content/courses/ots-320/status.json",
+    "content/courses/ots-320/lessons/**",
+    "content/courses/ots-320/labs/**",
+    "content/courses/ots-320/assets/**",
+    "content/courses/ots-320/docs/**",
+    "content/courses/ots-320/templates/**",
+    "content/courses/ots-320/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "2c54cf4ad3fd20bdacc86423cbed4fb42179aeddd11b4abfaaddd542f906bc74",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "513be01112391350d67188031ad03cf425df14278688260576e994e7ddfade2e",
+      "bytes": 1597
+    },
+    {
+      "path": "docs/OTS_320_AGENT_ARTIFACTS.md",
+      "sha256": "04a85dd16ee8721c66e1aaf04b1e4b4f789cb9f1c577a39e2b53d3d8363c4c3a",
+      "bytes": 650
+    },
+    {
+      "path": "docs/OTS_320_COURSE_OUTLINE.md",
+      "sha256": "f2ab0866e81f6a5b05e5e5252a5d2694fd70cd982c4dd1ea01a064aefde0fba6",
+      "bytes": 3768
+    },
+    {
+      "path": "docs/privacy-accessibility-safety-review.md",
+      "sha256": "6b7a79b370ed0b94ee8cefe6e760bc7f39a289f4974fd210462c1720caf3a372",
+      "bytes": 1322
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "357afe5ca0a6cdf8c7554bfe5565db17d49b899e49a5e624377d2ae1dc83555e",
+      "bytes": 321
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "100a765e938429040c3746fe20365f8a6213624848f387a377eb1ca96ad60409",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/01-0.mdx",
+      "sha256": "fd91420daa49e72702acb75c7a5af8bca6625865d9970c631a8fdd571f08efda",
+      "bytes": 2903
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/01-1.mdx",
+      "sha256": "dd2789988633a3bb25f9dcd537c68a265f9a12c73d842c92e1e13525258acb38",
+      "bytes": 2904
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/01-2.mdx",
+      "sha256": "b94bdbf07899da0bbe259b7748e91aeddbe4330cc9331912fbb2813e7e047c31",
+      "bytes": 2892
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/01-3.mdx",
+      "sha256": "cce27d64f33121ae1c989bc42773701ed02010aebf77fb8d49079cb4ea5c245a",
+      "bytes": 2949
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/01-4.mdx",
+      "sha256": "183c81148794c3b18f18636618b190bcd36a4ea9fa88586fbe0c0d5856fa4339",
+      "bytes": 2937
+    },
+    {
+      "path": "lessons/01-agent-safety-mindset/README.md",
+      "sha256": "0bdd4e6cf47ecaa03dae2c7b885a1611665bb71c3f76f7fdaaa4103e55681087",
+      "bytes": 140
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/02-0.mdx",
+      "sha256": "78ca13c7c64efdd79157eb5c907446b747311e5d863ad7ffd48def23a5982ef6",
+      "bytes": 2839
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/02-1.mdx",
+      "sha256": "5419f8cae430aaa2614f35e0f6c8fb7786cc4af9fd089f126195354549817696",
+      "bytes": 2834
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/02-2.mdx",
+      "sha256": "56da687a814818f5833d1980de39868b3ae185fc7f2b90dca2235af13acf2881",
+      "bytes": 2828
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/02-3.mdx",
+      "sha256": "b85dbcf354100ad71f624b4ecdd2680f9ea317a7e9140b7eaaf5394ddaa3fb19",
+      "bytes": 2808
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/02-4.mdx",
+      "sha256": "a2d4ff01c646b1cd4df1709de4567dfd211b46f43bf0ae9aa8fd1c74ac5b5c88",
+      "bytes": 2873
+    },
+    {
+      "path": "lessons/02-repo-branch-workflow/README.md",
+      "sha256": "05d7e82c15464f31b785f4185f8ccdd7f7362422ec488266c556429e3f015349",
+      "bytes": 143
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/03-0.mdx",
+      "sha256": "7c99870039295ce84560d2c614c45993ea4a1f53562efedd75554d0649e93c72",
+      "bytes": 2900
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/03-1.mdx",
+      "sha256": "b26acf60f4c45f573abdfa0abc35aa472421584dc881c613dd55e9d0fe47dc48",
+      "bytes": 2963
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/03-2.mdx",
+      "sha256": "c089781cb2d3bb80b71db28cda88bb0b94ec31e1d9211d062328f46c494c4166",
+      "bytes": 2889
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/03-3.mdx",
+      "sha256": "10743d214e9611604ffe58886506f449e28cd76f6fbd3cc6ebc568c5cdc68fda",
+      "bytes": 2916
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/03-4.mdx",
+      "sha256": "62b7fa9ef9a66125e0ed3665a3217f22a24df697435e57fcdb9e70e4f77d4ccb",
+      "bytes": 2934
+    },
+    {
+      "path": "lessons/03-prompting-coding-agents/README.md",
+      "sha256": "af7b830658ba11c9623393d3325b33d58b17afce9709c186f37c37476e2eda09",
+      "bytes": 141
+    },
+    {
+      "path": "lessons/04-testing-verification/04-0.mdx",
+      "sha256": "d7af0c1ba85919df27311d3495bb55f7502cfedf2669c2a1c6cb7e48774dbdfa",
+      "bytes": 2895
+    },
+    {
+      "path": "lessons/04-testing-verification/04-1.mdx",
+      "sha256": "76728474ec0c1d76832d8ec29c95eaca834f16974704d5349d69c2236bfb64cb",
+      "bytes": 2894
+    },
+    {
+      "path": "lessons/04-testing-verification/04-2.mdx",
+      "sha256": "55cb5d479e1218e5cd230d0f4d99c43d47275d41fd87e93998ad2ccf26f9f96c",
+      "bytes": 2912
+    },
+    {
+      "path": "lessons/04-testing-verification/04-3.mdx",
+      "sha256": "e524c28b53a8619e204139c4ba361b1b543d3d13f471ca8d667efddfe588f23e",
+      "bytes": 2893
+    },
+    {
+      "path": "lessons/04-testing-verification/04-4.mdx",
+      "sha256": "0b7db0daa8100114b9df3d4e3aeedfff5992715eb9fd6fac60ebfc4e35a3b5d6",
+      "bytes": 2929
+    },
+    {
+      "path": "lessons/04-testing-verification/README.md",
+      "sha256": "2b45e05c1a229df1a6500b177288f4ee0503b5ac4205c8137116a5eb9966f0b9",
+      "bytes": 136
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/05-0.mdx",
+      "sha256": "1a544a14f1c0906964eb612024caea0dd784bec70d01cd286876f18bbc3f6333",
+      "bytes": 2899
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/05-1.mdx",
+      "sha256": "b973459ed39cfa9ee8f66753c8fa10bdc86f56120a2766c71d4219ba24d38226",
+      "bytes": 2896
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/05-2.mdx",
+      "sha256": "fc0594254985f1c3031c88dfdca0d9015252b494f0a87c5c5fb96644abc1829d",
+      "bytes": 2894
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/05-3.mdx",
+      "sha256": "cb77f66cc2c28664250700a55abb94a2f06a32344e20facebcf705c4e2a1b295",
+      "bytes": 2890
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/05-4.mdx",
+      "sha256": "dba87e7f3419e5ca1f736cb3f3fa41daea2f4223959ac128e48ff7f5155f9303",
+      "bytes": 2933
+    },
+    {
+      "path": "lessons/05-building-teacher-tools/README.md",
+      "sha256": "0fe866862f69808b2e44ef85bf8d058552ae583926d32730741592e4df9bd81c",
+      "bytes": 142
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/06-0.mdx",
+      "sha256": "c5fab83350cdb7ebb2f0e49a89c1cfeca98b496196965fe40dc10f8fbdd37b20",
+      "bytes": 2874
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/06-1.mdx",
+      "sha256": "227d3f31ee86028bc94e78a71a47702b500b7dac80aa184624dd38933a6a97ab",
+      "bytes": 2855
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/06-2.mdx",
+      "sha256": "a1088c164c801cdfff00f2caf6949942928b0e1970220f492a6177865603121b",
+      "bytes": 2819
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/06-3.mdx",
+      "sha256": "4a3d2cbbafc323bd05a73114ee879173f70b72dded307a9b394e7dae96ddf1e0",
+      "bytes": 2938
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/06-4.mdx",
+      "sha256": "5c5500cf9b17e4d419aa026c3c81aa11102d0c24540033498fdb8bc5c815a662",
+      "bytes": 2908
+    },
+    {
+      "path": "lessons/06-reviewed-agent-build/README.md",
+      "sha256": "b58de1516a6e4863e7e5fc409b8924b830ca4eb0a0613543d4f9ae3beb0f8856",
+      "bytes": 153
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "96f5e6b8717f4c48d2f7d42375e38db33542175d5bf6713231753f296fcefc68",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "c291548eed4f30b0329444b5cbfef579d949756c6e7917cd34b00f9f6ef603f9",
+      "bytes": 883
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "3eccf44242d1e5be1f9171c678c3ae0d2baabda4aff3292a4e2f16876d197c5d",
+      "bytes": 321
+    },
+    {
+      "path": "references/source-references.md",
+      "sha256": "a9b8cef4b2e7177c6180eef336db3f38dc8acac6ca2dc0d27cecdd42d5373fbc",
+      "bytes": 919
+    },
+    {
+      "path": "status.json",
+      "sha256": "68ce05e246ec76f5c560ea69721469a7681a6a78e8deff769cb5d62e3054b294",
+      "bytes": 385
+    },
+    {
+      "path": "templates/diff-review-checklist.md",
+      "sha256": "aa815f53612c812378bb4c6087d896e128f9ef57c3d312209b2d9d9e64357941",
+      "bytes": 1266
+    },
+    {
+      "path": "templates/fake-data-testing-protocol.md",
+      "sha256": "902d5791141ab3e007dedd7045f05af99c075ffc4e23ec8f8aed2b516eed1a9f",
+      "bytes": 1176
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "c1df39e7836ba20b5f494310c1ee229ca12fba3a1663c1308153c101ebc109d6",
+      "bytes": 298
+    },
+    {
+      "path": "templates/safe-agent-prompt-template.md",
+      "sha256": "8e3c5e86b6651bd2494eca2c0b166d52bc7507fce5500ed015eba606648747a4",
+      "bytes": 1241
+    }
+  ]
+}
