@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "code": "OTS-000",
+  "slug": "ots-000",
+  "title": "Teacher Tech Stack Orientation",
+  "owner": "generic",
+  "canonicalRoute": "/book/ots-000",
+  "reader": "course-book",
+  "sourceRegistry": "src/lib/courseStructures.ts",
+  "sourceRoot": "content/courses/ots-000",
+  "contentRoots": {
+    "lessons": "content/courses/ots-000/lessons",
+    "labs": "content/courses/ots-000/labs",
+    "templates": "content/courses/ots-000/templates",
+    "references": "content/courses/ots-000/references",
+    "assets": "content/courses/ots-000/assets",
+    "docs": "content/courses/ots-000/docs"
+  },
+  "draftRoot": "content/courses/ots-000/drafts",
+  "exportsRoot": "content/courses/ots-000/exports",
+  "reportsRoot": "content/courses/ots-000/reports",
+  "generatedRoot": "content/courses/ots-000/generated",
+  "requiredChecks": [
+    "check:course-packet",
+    "check:course-source-truth",
+    "check:content-layout",
+    "check:learner-facing-content",
+    "check:release-readiness"
+  ],
+  "releasePolicy": {
+    "requiresHumanReview": true,
+    "requiresRealLessons": true,
+    "requiresTemplates": true,
+    "requiresSamplePacket": true
+  }
+}

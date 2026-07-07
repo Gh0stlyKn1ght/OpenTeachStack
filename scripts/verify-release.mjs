@@ -19,6 +19,7 @@ const checks = [
     label: "npm run check:course-source-truth",
     cmd: "npm run check:course-source-truth",
   },
+  { label: "npm run check:course-packet", cmd: "npm run check:course-packet" },
   { label: "npm run check:blog-system", cmd: "npm run check:blog-system" },
   {
     label: "npm run check:no-scaffold-fallback",

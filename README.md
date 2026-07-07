@@ -34,6 +34,26 @@ Start with the learning need. Gather trusted sources. Let AI help draft or
 structure the work. Verify it before students see it. Teach it, save it, and
 improve it after class.
 
+## Current Architecture Status
+
+CourseOS architecture work is now active before the next broad content pass.
+
+Current completed tranche:
+
+- CourseOS plan and architecture audit are in `docs/architecture/`
+- OTS-000 and OTS-101 have `course.packet.json`
+- `npm run check:course-packet` validates the packet contract
+- `npm run report:course-health -- --course ots-101` generates OTS-101 health evidence
+- `check:course-packet` is part of `npm test` and `npm run verify:release`
+
+Current handoff:
+
+- [CourseOS handoff](docs/architecture/HANDOFF.md)
+- [CourseOS implementation plan](docs/architecture/COURSEOS_IMPLEMENTATION_PLAN_2026-07-06.md)
+- [CourseOS overview](docs/architecture/COURSEOS.md)
+
+Do not resume broad course-content remediation until the next CourseOS tranche is complete. The next safe architecture work is the all-course health summary, draft workbench schema, and reader-unification migration note.
+
 ## OTS-000 — Teacher Tech Stack Orientation
 
 **Build the plain-language tool and safety vocabulary teachers need before deeper course-content work.**
@@ -148,6 +168,8 @@ Useful course entry points:
 
 Reviewer and maintenance docs:
 
+- [CourseOS Handoff](docs/architecture/HANDOFF.md)
+- [CourseOS Implementation Plan](docs/architecture/COURSEOS_IMPLEMENTATION_PLAN_2026-07-06.md)
 - [OTS-101 Curriculum Manager Audit](docs/OTS_101_CURRICULUM_MANAGER_AUDIT.md)
 - [OTS-101 Accessibility Release Check](docs/OTS_101_ACCESSIBILITY_RELEASE_CHECK.md)
 - [OTS-101 Release Announcement](docs/RELEASE_ANNOUNCEMENT_OTS_101.md)
@@ -182,9 +204,11 @@ visibility for release readiness. The old v2.0 full-pathway checklist is
 historical only and must not be used to claim current course readiness.
 
 - Use `npm run verify:release` for a non-mutating release gate; use `npm run verify:release:write` only when intentionally refreshing `docs/BUILD_VERIFICATION.md`
+- Use `npm run check:course-packet` after packet, status, route, or course-control changes
+- Use `npm run report:course-health -- --course ots-101` after OTS-101 packet/status changes
 - Preserve the canonical `/book/{course}` route contract
 - Keep README, roadmap, course metadata, and live navigation in sync
-- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers script-workflow safety, route contracts, content layout, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, instructional-depth checks, format/readability checks, release-readiness checks, prompt-library checks, OTS-101 title sync, and course-reader migration checks.
+- Keep `npm run typecheck` and `npm run test` passing before release; the test gate covers script-workflow safety, route contracts, content layout, course packet validation, source-bank links, scaffold-fallback protection, content-authoring overwrite protection, learner-facing content checks, uniqueness checks, instructional-depth checks, format/readability checks, release-readiness checks, prompt-library checks, OTS-101 title sync, and course-reader migration checks.
 - Add future improvements only when the real artifact or workflow exists
 
 See [ROADMAP.md](ROADMAP.md) for the current OTS-101 priority and historical

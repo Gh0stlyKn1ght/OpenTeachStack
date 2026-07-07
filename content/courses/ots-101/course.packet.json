@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "code": "OTS-101",
+  "slug": "ots-101",
+  "title": "AI Course Content Foundations for Teachers",
+  "owner": "dedicated",
+  "canonicalRoute": "/book/ots-101",
+  "reader": "course-book",
+  "sourceRegistry": "src/lib/book.ts",
+  "sourceRoot": "content/courses/ots-101",
+  "contentRoots": {
+    "lessons": "content/courses/ots-101/lessons",
+    "labs": "content/courses/ots-101/labs",
+    "templates": "content/courses/ots-101/templates",
+    "references": "content/courses/ots-101/references",
+    "assets": "content/courses/ots-101/assets",
+    "docs": "content/courses/ots-101/docs"
+  },
+  "draftRoot": "content/courses/ots-101/drafts",
+  "exportsRoot": "content/courses/ots-101/exports",
+  "reportsRoot": "content/courses/ots-101/reports",
+  "generatedRoot": "content/courses/ots-101/generated",
+  "requiredChecks": [
+    "check:course-packet",
+    "check:course-source-truth",
+    "check:content-layout",
+    "check:learner-facing-content",
+    "check:release-readiness",
+    "check:ots101-reader",
+    "check:ots101-book-titles"
+  ],
+  "releasePolicy": {
+    "requiresHumanReview": true,
+    "requiresRealLessons": true,
+    "requiresTemplates": true,
+    "requiresSamplePacket": true
+  }
+}

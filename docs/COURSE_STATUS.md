@@ -2,6 +2,8 @@
 
 Date: 2026-07-02
 
+Update, 2026-07-06: CourseOS architecture work is active before the next broad content pass. OTS-000 and OTS-101 now have `course.packet.json` manifests, `npm run check:course-packet` is wired into the local and release gates, and OTS-101 has a generated health report at `content/courses/ots-101/reports/health.json`. See `docs/architecture/HANDOFF.md`.
+
 ## Active draft pathway
 
 | Course | Status | Notes |
@@ -39,8 +41,9 @@ Known removed scaffold fingerprints included:
 
 ## Next immediate work
 
-1. Review the active draft pathway course by course, starting with OTS-000 and OTS-101 because they have authored lesson-body passes.
-2. Decide which later draft previews need full lesson-body authoring before human review.
-3. Run the format/readability audit intentionally and remediate real issues, not fake formatting.
-4. Use the refreshed Mini Course Content Packet samples during human review to check whether the capstone is clear enough for a real teacher to inspect.
-5. Run validation gates after each review tranche.
+1. Continue the CourseOS architecture tranche before broad content remediation resumes.
+2. Generate and review the all-course health summary with `npm run report:course-health`.
+3. Add the OTS-101 draft workbench schema and reader-unification migration note.
+4. Review the active draft pathway course by course, starting with OTS-000 and OTS-101 because they have authored lesson-body passes.
+5. Use the refreshed Mini Course Content Packet samples during human review to check whether the capstone is clear enough for a real teacher to inspect.
+6. Run validation gates after each review tranche.
