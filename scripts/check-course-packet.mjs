@@ -1,6 +1,10 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { listCourseRecords, readCourseRecord } from "./lib/course-registry.mjs";
+import {
+  EXPECTED_PACKETIZED_COURSE_SLUGS,
+  listCourseRecords,
+  readCourseRecord,
+} from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -24,7 +28,7 @@ const requiredPacketKeys = [
   "requiredChecks",
   "releasePolicy",
 ];
-const migratedCourses = new Set(["ots-000", "ots-101"]);
+const migratedCourses = new Set(EXPECTED_PACKETIZED_COURSE_SLUGS);
 const failures = [];
 
 function valueAfter(flag) {

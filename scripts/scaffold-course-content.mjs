@@ -1,6 +1,6 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { assertCourseWriteAllowed } from "./lib/course-locks.mjs";
+import { assertCourseWriteAllowed, isCourseLocked } from "./lib/course-locks.mjs";
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
@@ -334,14 +334,9 @@ const GENERATED_HEADER = `<!-- AUTO-GENERATED SCAFFOLD — safe to replace with 
 const GENERATION_SOURCE = "scaffold";
 
 function buildCourseReadme(course) {
-  return `${GENERATED_HEADER}
-# ${course.code} ${course.title}
-
-Status: migration scaffold
+  return `# ${course.code} ${course.title}
 
 Canonical route: \`${course.canonicalRoute}\`
-
-Source registry: \`${course.sourceRegistry}\`
 
 This folder is the course-owned content package for ${course.code}. It is designed so the course can be migrated, exported, or maintained without hunting through global content folders.
 
@@ -406,8 +401,19 @@ function buildSectionMdx(course, chapter, section) {
     ? readFrontmatterTitle(`content/lessons/${sourceLessonSlug}.mdx`)
     : undefined;
 
-  return `{/* AUTO-GENERATED SCAFFOLD — replace this file with authored content. Do not re-run scaffold without --force. */}
----
+  let lessonType = "concept";
+  if (section.type === "overview") lessonType = "chapter-overview";
+  else if (section.type === "artifact" || section.type === "studio") lessonType = "artifact-build";
+  else if (section.type === "checkpoint" || section.type === "review") lessonType = "checkpoint";
+  else if (section.type === "workshop") lessonType = "workflow";
+
+  let contentType = "section";
+  if (section.type === "overview") contentType = "overview";
+  else if (section.type === "checkpoint" || section.type === "review") contentType = "checkpoint";
+  else if (section.type === "artifact" || section.type === "studio") contentType = "artifact";
+  else if (section.type === "lecture") contentType = "lecture";
+
+  return `---
 course: ${yamlString(course.code)}
 courseSlug: ${yamlString(course.slug)}
 chapter: ${yamlString(chapter.title)}
@@ -415,7 +421,8 @@ chapterSlug: ${yamlString(chapter.slug)}
 sectionNumber: ${yamlString(section.number)}
 sectionSlug: ${yamlString(slug)}
 title: ${yamlString(section.title)}
-type: ${yamlString(section.type)}
+type: ${yamlString(contentType)}
+lessonType: ${yamlString(lessonType)}
 duration: ${yamlString(section.duration)}
 artifact: ${yamlString(section.artifact ?? chapter.buildArtifact)}
 canonicalRoute: ${yamlString(canonicalRoute)}
@@ -425,6 +432,8 @@ sourceLessonTitle: ${yamlString(sourceLessonTitle ?? "")}
 migrationStatus: "scaffolded"
 generationSource: ${yamlString(GENERATION_SOURCE)}
 ---
+
+{/* AUTO-GENERATED SCAFFOLD — replace this file with authored content. Do not re-run scaffold without --force. */}
 
 # ${section.title}
 
@@ -452,6 +461,10 @@ Use this file for the permanent lesson body when ${course.code} moves from regis
 }
 
 function scaffoldCourse(course) {
+  if (isCourseLocked(course.slug, root)) {
+    console.log(`Skipping locked course: ${course.code}`);
+    return;
+  }
   const base = `content/courses/${course.slug}`;
   ensureDir(base);
   const copiedDocs = copyCourseDocs(course);

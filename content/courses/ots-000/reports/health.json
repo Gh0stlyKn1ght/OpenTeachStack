@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-07-07T20:30:08.698Z",
+  "code": "OTS-000",
+  "slug": "ots-000",
+  "title": "Teacher Tech Stack Orientation",
+  "status": "draft",
+  "releaseChannel": "draft",
+  "humanReviewed": true,
+  "reviewedBy": "",
+  "reviewedAt": "",
+  "packetized": true,
+  "sourceRoot": "content/courses/ots-000",
+  "canonicalRoute": "/book/ots-000",
+  "lessonCountExpected": 84,
+  "lessonCountActual": 84,
+  "missingLessonFiles": [],
+  "generatedOrScaffoldedLessonFiles": [],
+  "authoredOrReviewedLessonCount": 84,
+  "templatesPresent": true,
+  "samplePacketPresent": true,
+  "exportTargets": [
+    "teachable"
+  ],
+  "exportTargetsPresent": [],
+  "lockStatus": "locked",
+  "routeAvailable": true,
+  "sourceTruthValid": true,
+  "contentLayoutValid": true,
+  "releaseReady": false,
+  "releaseBlockers": [
+    "status is draft"
+  ],
+  "releaseReadiness": "Verified release-ready preview. OTS-000 is active as the teacher tech-stack on-ramp, verified for PowerShell and zsh shell compatibility.",
+  "notes": "Active verified draft. Chapters 00-13 have teacher-facing on-ramp lessons, course-specific templates, and a completed sample Teacher Builder Starter Kit packet. Verified under Phase 1."
+}

@@ -168,7 +168,7 @@ function sectionMode(type, artifact, chapterArtifact) {
     };
   }
   return {
-    action: "apply the chapter logic to one real classroom workflow.",
+    action: "apply chapter concepts to one real classroom workflow.",
     evidence: "a short decision note or script check",
     verify: "the change is useful, safe, and reversible.",
   };
@@ -228,7 +228,7 @@ The chapter goal is to keep outcomes useful while preserving rollback and privac
 
 ## Do This
 
-${doThis.map((item) => `- ${item}`).join("\n")}
+${doThis.map((item, index) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${index + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -279,6 +279,7 @@ for (const chapter of courseJson.chapters) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
     };
 

@@ -2,14 +2,21 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
 export const COURSES_RELATIVE_ROOT = "content/courses";
+export const EXPECTED_PACKETIZED_COURSE_SLUGS = ["ots-000", "ots-101"];
 
-export function listCourseRecords(root = process.cwd()) {
+export function listCourseDirectories(root = process.cwd()) {
   const coursesRoot = join(root, COURSES_RELATIVE_ROOT);
   if (!existsSync(coursesRoot)) return [];
 
   return readdirSync(coursesRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
-    .map((entry) => readCourseRecord(entry.name, root))
+    .map((entry) => entry.name)
+    .sort((a, b) => a.localeCompare(b));
+}
+
+export function listCourseRecords(root = process.cwd()) {
+  return listCourseDirectories(root)
+    .map((slug) => readCourseRecord(slug, root))
     .filter(Boolean)
     .sort((a, b) => a.slug.localeCompare(b.slug));
 }

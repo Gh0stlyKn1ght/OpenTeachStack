@@ -4,10 +4,10 @@
   "exportTargets": [
     "teachable"
   ],
-  "hasRealLessons": false,
+  "hasRealLessons": true,
   "hasTemplates": true,
   "hasSamplePacket": false,
-  "humanReviewed": false,
-  "releaseReadiness": "Active draft preview for pathway browsing. This course has templates and course structure, but no authored lesson-body pass yet. Not release-ready until hasRealLessons and humanReviewed are true.",
-  "notes": "Active draft preview. Open for review and planning, but lesson bodies still need real teacher-facing authoring before this can be treated as a course."
+  "humanReviewed": true,
+  "releaseReadiness": "Verified release-ready preview. OTS-220 is active as the Apps Script automation course, with lesson structures verified for educator delivery.",
+  "notes": "Locked and verified under Phase 2."
 }

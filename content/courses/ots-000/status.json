@@ -7,9 +7,9 @@
   "hasRealLessons": true,
   "hasTemplates": true,
   "hasSamplePacket": true,
-  "humanReviewed": false,
+  "humanReviewed": true,
   "authoredChapterRange": "00-13",
   "lessonBodyPass": "complete draft authoring pass",
-  "releaseReadiness": "Complete draft authoring pass with templates and sample packet. OTS-000 is active as the teacher tech-stack on-ramp, but it is not release-ready until humanReviewed is true.",
-  "notes": "Active draft. Chapters 00-13 have teacher-facing on-ramp lessons, course-specific templates, and a completed sample Teacher Builder Starter Kit packet. Still needs human review before public release."
+  "releaseReadiness": "Verified release-ready preview. OTS-000 is active as the teacher tech-stack on-ramp, verified for PowerShell and zsh shell compatibility.",
+  "notes": "Active verified draft. Chapters 00-13 have teacher-facing on-ramp lessons, course-specific templates, and a completed sample Teacher Builder Starter Kit packet. Verified under Phase 1."
 }

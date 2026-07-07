@@ -1,3 +1,4 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # OTS-280 docs
 
 Outlines, source queues, review notes, roadmap support, and release evidence.

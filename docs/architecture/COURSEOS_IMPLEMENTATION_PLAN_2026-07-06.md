@@ -2,7 +2,7 @@
 
 Date: 2026-07-06
 
-Status: active implementation plan. First tranche completed on 2026-07-06; next work should continue with the remaining unchecked phases before resuming broad content remediation.
+Status: boilerplate/control-plane and reader-template tranche completed on 2026-07-07. Next work should use the system for reviewed OTS-101 course work, not broaden into bulk content remediation.
 
 This plan turns the OpenTeachStack architecture note into a scoped implementation path.
 
@@ -200,7 +200,7 @@ Exit criteria:
 
 ## Phase 4 - Course Health Report
 
-Status: first scoped report command done for OTS-101; all-course summary remains next.
+Status: first scoped report command done for OTS-101; all-course summary generated on 2026-07-07.
 
 - [x] Add:
 
@@ -255,7 +255,7 @@ Exit criteria:
 
 - [x] `npm run report:course-health -- --course ots-101` writes a readable health report.
 - [x] Reports do not mark a course live automatically.
-- [ ] Generate and review a root `content/course-health.json` all-course summary intentionally.
+- [x] Generate and review a root `content/course-health.json` all-course summary intentionally.
 
 ## Phase 5 - Course Packet Validation
 
@@ -301,7 +301,7 @@ Exit criteria:
 
 ## Phase 6 - Course-Level Runtime Boundary
 
-Status: not started.
+Status: first OTS-101 route-segment boundary added on 2026-07-07.
 
 Add:
 
@@ -321,14 +321,20 @@ The notice should include:
 - suggested local command
 - link back to `/book`
 
+Current first boundary:
+
+```txt
+src/app/book/ots-101/error.tsx
+```
+
 Exit criteria:
 
-- A broken draft course can fail without taking down the whole pathway.
-- OTS-101 route behavior remains unchanged except for safer failure handling.
+- [x] A broken draft course can fail without taking down the whole pathway.
+- [x] OTS-101 route behavior remains unchanged except for safer failure handling.
 
 ## Phase 7 - Reader Unification Plan
 
-Status: not started.
+Status: migration note added and first shared CourseOS packet learning template wired on 2026-07-07.
 
 Do not force reader unification immediately.
 
@@ -341,20 +347,33 @@ CoursePacketRouteResolver
 CoursePacketHealthGate
 ```
 
+Current migration note:
+
+```txt
+docs/architecture/COURSE_READER_UNIFICATION_MIGRATION.md
+```
+
 Exit criteria:
 
-- Dedicated reader behavior is documented.
-- Generic reader behavior is documented.
-- The convergence path is clear before code is moved.
+- [x] Dedicated reader behavior is documented.
+- [x] Generic reader behavior is documented.
+- [x] The convergence path is clear before code is moved.
+- [x] OTS-101, OTS-280, and generic `/book/[course]` course readers render through the shared CourseOS packet template.
 
 ## Phase 8 - Draft Workbench
 
-Status: not started.
+Status: first OTS-101 workbench and manifest schema added on 2026-07-07.
 
 Add course-local draft support:
 
 ```txt
 content/courses/{course}/drafts/
+```
+
+Current first workbench:
+
+```txt
+content/courses/ots-101/drafts/2026-07-07-ots101-review-workbench/
 ```
 
 Draft folder example:
@@ -373,13 +392,13 @@ Drafts are not source. They are proposed work.
 
 Exit criteria:
 
-- Draft manifest schema exists.
-- Docs explain that AI and scripts write drafts by default.
-- Source files are not rewritten by draft creation.
+- [x] Draft manifest schema exists.
+- [x] Docs explain that AI and scripts write drafts by default.
+- [x] Source files are not rewritten by draft creation.
 
 ## Phase 9 - Promotion Pipeline
 
-Status: not started.
+Status: guarded apply mode added on 2026-07-07; active workbench still not promotable.
 
 Add:
 
@@ -396,7 +415,27 @@ Package script:
 Command:
 
 ```bash
-npm run promote:course-draft -- --course ots-101 --draft 2026-07-06-content-fix
+npm run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench
+```
+
+Current dry-run report command:
+
+```bash
+npm run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench --write-report
+```
+
+Current apply contract:
+
+```bash
+npm run promote:course-draft -- --course ots-101 --draft <reviewed-draft-id> --apply --approved-by <reviewer-name> --write-report
+```
+
+Apply mode refuses to copy unless the draft is in `review`, `promotion.allowed` is true, target paths are valid, draft files exist, no unmapped files remain, and post-copy validation passes.
+
+Current automated fixture gate:
+
+```bash
+npm run check:course-draft-promotion
 ```
 
 Promotion must:
@@ -414,14 +453,17 @@ Promotion must:
 
 Exit criteria:
 
-- Promotion is explicit.
-- Promotion is reviewable.
-- Promotion writes reports.
-- Promotion respects locks.
+- [x] Promotion is explicit.
+- [x] Promotion is reviewable.
+- [x] Promotion writes dry-run reports.
+- [x] Promotion respects locks by refusing locked-course promotion.
+- [x] Promotion copies approved files only behind explicit review/approval flags.
+- [x] Promotion runs post-copy validation after copying.
+- [x] Promotion failure fixtures are covered by an automated check.
 
 ## Phase 10 - PacketLock Hardening
 
-Status: not started.
+Status: packet-root filtering added to the lock helper on 2026-07-07; no courses locked yet.
 
 Keep:
 
@@ -447,13 +489,13 @@ Do not lock:
 
 Exit criteria:
 
-- Lock readiness appears in course health reports.
-- Lock scripts understand packet roots.
-- Empty lock registry remains valid and honest until review is complete.
+- [x] Lock readiness appears in course health reports.
+- [x] Lock scripts understand packet roots.
+- [x] Empty lock registry remains valid and honest until review is complete.
 
 ## Phase 11 - Affected Course Detection
 
-Status: not started.
+Status: first read-only detector added on 2026-07-07.
 
 Add:
 
@@ -466,6 +508,8 @@ Package script:
 ```json
 "affected:courses": "node scripts/affected-courses.mjs"
 ```
+
+The command reads `git status --porcelain` by default and maps changed paths under `content/courses/{course}` to scoped checks. It can also be called with repeated `--file` arguments for targeted inspection.
 
 The command should map changed files to course packets and list required checks.
 
@@ -487,12 +531,12 @@ Example output:
 
 Exit criteria:
 
-- A single course edit no longer creates full-pathway confusion.
-- Required checks are course-scoped when safe.
+- [x] A single course edit no longer creates full-pathway confusion.
+- [x] Required checks are course-scoped when safe.
 
 ## Phase 12 - Replace Hardcoded Course Truth Gradually
 
-Status: not started.
+Status: core boilerplate checks moved to the script-side CourseOS registry on 2026-07-07.
 
 Refactor checks one at a time to read from the control plane or packet manifests.
 
@@ -504,11 +548,23 @@ Likely candidates:
 - reader migration checks
 - release readiness checks
 
+Completed candidates:
+
+- `scripts/verify-release.mjs` now reads course canonical routes from `scripts/lib/course-registry.mjs` instead of scraping `src/lib/metadata.ts` for course codes.
+- `scripts/check-course-source-truth.mjs` reads course directories and normalized records from the registry, while still failing unreadable course folders.
+- `scripts/check-course-content-layout.mjs` reads course directories and normalized records from the registry, while still failing unreadable course folders.
+- `scripts/check-route-contract.mjs` derives expected course slugs and dedicated/generic ownership from course records.
+- `scripts/check-root-doc-truth.mjs` reads course codes/status through the registry.
+- `scripts/check-prompt-library.mjs` validates related course codes against the registry.
+- `scripts/check-course-packet.mjs` centralizes expected packetized courses through the script-side registry.
+
 Exit criteria:
 
-- No large-bang rewrite.
-- Each refactor preserves the existing check intent.
-- Course truth lives in packets and normalized registry records, not scattered arrays.
+- [x] No large-bang rewrite.
+- [x] Each refactor preserves the existing check intent.
+- [x] Core boilerplate course truth lives in packets and normalized registry records, not scattered arrays.
+
+Remaining hardcoded course names are intentionally course-specific surfaces, such as legacy authoring scripts and individual reader migration checks. Those should be retired or migrated as their courses move into the packet model; they are not the control plane.
 
 ## First Execution Tranche
 
@@ -544,6 +600,28 @@ This work is successful when:
 The platform should become harder to lie to.
 
 That is the point.
+
+## Boilerplate Completion Snapshot
+
+As of 2026-07-07, the CourseOS boilerplate system is built enough to use:
+
+- packet manifests exist for the migrated courses
+- packet validation is wired into test and release gates
+- health reports exist per course and at the root summary level
+- OTS-101 has a draft workbench with a manifest schema
+- draft promotion supports dry-run reports and guarded apply mode
+- promotion failure paths are covered by automated fixtures
+- lock verification understands packet roots and excludes drafts/reports/generated/export output
+- affected-course detection maps changed course files to scoped checks
+- route/source/layout/root-doc/prompt-library/release-smoke checks read from the registry
+- active course book routes use the shared CourseOS packet learning template instead of each hand-building a field-guide page
+- PageOS route-template enforcement now registers every `src/app/**/page.tsx` as an approved template family in `docs/architecture/page-template-registry.json`
+- `npm.cmd run check:page-templates` verifies that course pages use CourseOS packet templates and non-course pages use their declared page family instead of silent one-off shells
+- future `Coming Soon` generic course routes still render an unavailable CourseOS packet state in production instead of opening outline-only course surfaces
+- browser verification confirmed `/book/ots-101`, `/book/ots-101/01-curriculum-vs-course-content/01-0`, `/book/ots-201`, `/book/ots-280`, and `/book/ots-280/01-teacher-threat-model/01-0` render `.course-packet-page` and do not render `.field-guide-page`
+- full `npm.cmd test` and `npm.cmd run verify:release` passed on 2026-07-07
+
+This does not mean OTS-101 is live. It means the boilerplate system that protects OTS-101 course work is in place, and the wider app now has PageOS enforcement so CourseOS is not asked to do jobs that belong to docs pages, redirect aliases, template downloads, or library surfaces.
 
 ## Current Handoff
 

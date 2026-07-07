@@ -263,6 +263,443 @@ body::after {
   line-height: 1.5;
 }
 
+/* ── CourseOS Packet Learning Template ──────────────────────────────── */
+.course-packet-page {
+  min-height: 100%;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-surface-alt) 42%, transparent) 0 18rem, transparent 18rem),
+    var(--color-bg);
+  color: var(--color-text);
+}
+
+.course-packet-page-no-sidebar {
+  background: var(--color-bg);
+}
+
+.course-packet-shell {
+  display: grid;
+  grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);
+  gap: 0;
+  min-height: calc(100vh - 4rem);
+}
+
+.course-packet-shell-no-sidebar {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.course-packet-sidebar {
+  border-right: 1px solid var(--color-border);
+  padding: 2rem 1rem;
+}
+
+.course-packet-sidebar-inner {
+  position: sticky;
+  top: 5rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.course-packet-sidebar-header {
+  display: grid;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.course-packet-sidebar-header p,
+.course-packet-eyebrow,
+.course-packet-status-panel span,
+.course-packet-panel > span,
+.course-packet-section-heading > span,
+.course-packet-meta dt,
+.course-packet-lesson-labels span {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.course-packet-sidebar-header a {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-decoration: none;
+}
+
+.course-packet-sidebar-header span {
+  color: color-mix(in srgb, var(--color-foreground) 58%, transparent);
+  font-size: 0.9rem;
+}
+
+.course-packet-nav-list,
+.course-packet-section-list,
+.course-packet-chapter-map,
+.course-packet-section-map {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-packet-nav-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.course-packet-nav-link,
+.course-packet-section-link {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.5rem;
+  border-left: 3px solid transparent;
+  padding: 0.55rem 0.65rem;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+  text-decoration: none;
+}
+
+.course-packet-nav-link span,
+.course-packet-section-link span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--color-foreground) 45%, transparent);
+}
+
+.course-packet-nav-link strong,
+.course-packet-section-link strong {
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.course-packet-nav-link:hover,
+.course-packet-section-link:hover,
+.course-packet-nav-link-active,
+.course-packet-section-link-active {
+  border-left-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface));
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.course-packet-section-list {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0.25rem 0 0.55rem 1rem;
+  border-left: 1px solid var(--color-border);
+  padding-left: 0.6rem;
+}
+
+.course-packet-section-link {
+  grid-template-columns: 2.8rem minmax(0, 1fr);
+  padding-block: 0.42rem;
+}
+
+.course-packet-section-link strong {
+  font-size: 0.78rem;
+}
+
+.course-packet-sidebar-mobile {
+  display: none;
+}
+
+.course-packet-article {
+  width: min(100% - 3rem, 62rem);
+  padding: 3rem 0 6rem;
+  margin-inline: auto;
+}
+
+.course-packet-shell-no-sidebar .course-packet-article {
+  width: min(100% - 3rem, 68rem);
+}
+
+.course-packet-breadcrumbs {
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.course-packet-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-packet-breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 0.5rem;
+  color: color-mix(in srgb, var(--color-foreground) 32%, transparent);
+}
+
+.course-packet-breadcrumbs a {
+  color: color-mix(in srgb, var(--color-foreground) 58%, transparent);
+  text-decoration: none;
+}
+
+.course-packet-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+  gap: 2rem;
+  align-items: end;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+
+.course-packet-header h1 {
+  margin: 0.75rem 0 0;
+  max-width: 52rem;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 850;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.course-packet-header p:not(.course-packet-eyebrow) {
+  max-width: 45rem;
+  margin: 1rem 0 0;
+  color: color-mix(in srgb, var(--color-foreground) 66%, transparent);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.course-packet-status-panel,
+.course-packet-panel,
+.course-packet-status-note {
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+}
+
+.course-packet-status-panel {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+}
+
+.course-packet-status-panel strong {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.course-packet-status-panel small {
+  color: color-mix(in srgb, var(--color-foreground) 58%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.course-packet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.3rem 0 0;
+}
+
+.course-packet-meta div {
+  min-width: 8rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 76%, transparent);
+  background: color-mix(in srgb, var(--color-surface-alt) 34%, transparent);
+  padding: 0.7rem 0.8rem;
+}
+
+.course-packet-meta dd {
+  margin: 0.15rem 0 0;
+  color: color-mix(in srgb, var(--color-foreground) 72%, transparent);
+  font-size: 0.9rem;
+}
+
+.course-packet-body {
+  display: grid;
+  gap: 2.25rem;
+  margin-top: 2.5rem;
+}
+
+.course-packet-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  gap: 1rem;
+}
+
+.course-packet-panel,
+.course-packet-status-note {
+  padding: 1rem;
+}
+
+.course-packet-panel-primary {
+  border-left: 4px solid var(--color-accent);
+}
+
+.course-packet-panel h2,
+.course-packet-section-heading h2 {
+  margin: 0.45rem 0 0;
+  border: 0;
+  padding: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.15;
+}
+
+.course-packet-panel p {
+  margin: 0.75rem 0 0;
+  color: color-mix(in srgb, var(--color-foreground) 68%, transparent);
+  line-height: 1.6;
+}
+
+.course-packet-chapter-map,
+.course-packet-section-map {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.course-packet-chapter-map a,
+.course-packet-section-map a {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(11rem, 0.5fr);
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 76%, transparent);
+  padding: 0.9rem 1rem;
+  color: var(--color-foreground);
+  text-decoration: none;
+}
+
+.course-packet-chapter-map a:hover,
+.course-packet-section-map a:hover {
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.course-packet-chapter-map span,
+.course-packet-section-map span {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-weight: 800;
+}
+
+.course-packet-chapter-map strong,
+.course-packet-section-map strong {
+  color: var(--color-heading);
+  line-height: 1.25;
+}
+
+.course-packet-chapter-map small,
+.course-packet-section-map small {
+  color: color-mix(in srgb, var(--color-foreground) 52%, transparent);
+  line-height: 1.35;
+}
+
+.course-packet-progress {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.course-packet-progress > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: color-mix(in srgb, var(--color-foreground) 55%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.course-packet-progress > div:last-child {
+  height: 0.55rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface-alt) 74%, transparent);
+}
+
+.course-packet-progress > div:last-child span {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+}
+
+.course-packet-lesson-frame {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.course-packet-lesson-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.course-packet-lesson-labels span {
+  border: 1px solid color-mix(in srgb, var(--color-accent) 32%, var(--color-border));
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface));
+  padding: 0.35rem 0.55rem;
+}
+
+.course-packet-status-note {
+  border-left: 4px solid var(--color-accent);
+  color: color-mix(in srgb, var(--color-foreground) 72%, transparent);
+}
+
+@media (max-width: 78rem) {
+  .course-packet-page {
+    background: var(--color-bg);
+  }
+
+  .course-packet-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .course-packet-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem;
+  }
+
+  .course-packet-sidebar-inner {
+    display: none;
+  }
+
+  .course-packet-sidebar-mobile {
+    display: block;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    padding: 1rem;
+  }
+
+  .course-packet-sidebar-mobile summary {
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .course-packet-article {
+    width: min(100% - 1.5rem, 50rem);
+  }
+}
+
+@media (max-width: 54rem) {
+  .course-packet-header,
+  .course-packet-grid,
+  .course-packet-chapter-map a,
+  .course-packet-section-map a {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Knowledge Base Field Guide Alignment ────────────────────────────── */
 .kb-docs-shell {
   width: min(100% - 2rem, 88rem);

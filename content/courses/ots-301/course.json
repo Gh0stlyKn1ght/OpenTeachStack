@@ -1,12 +1,13 @@
 {
+  "generationSource": "scaffold",
   "code": "OTS-301",
   "slug": "ots-301",
   "title": "Teacher Course Sites",
   "owner": "generic",
   "canonicalRoute": "/book/ots-301",
   "sourceRegistry": "src/lib/courseStructures.ts",
-  "generatedAt": "2026-06-22",
-  "migrationStatus": "draft",
+  "generatedAt": "2026-07-07",
+  "migrationStatus": "generated",
   "chapters": [
     {
       "number": "01",
@@ -52,7 +53,6 @@
     }
   ],
   "copiedDocs": [
-    "templates/course-hub-sitemap-template.md",
     "docs/OTS_301_COURSE_HUB_SITEMAP_TEMPLATE.md",
     "docs/OTS_301_COURSE_OUTLINE.md",
     "docs/OTS_301_LIVE_SITE_REVIEW.md",
@@ -60,7 +60,5 @@
     "docs/OTS_301_SOURCE_REFERENCES.md"
   ],
   "copiedAssets": [],
-  "copiedLabs": [],
-  "courseReadiness": "active-preview",
-  "releaseBoundary": "Active draft preview. Open for pathway review, but not release-ready until lesson bodies are authored and humanReviewed is true."
+  "copiedLabs": []
 }

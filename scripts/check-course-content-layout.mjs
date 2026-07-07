@@ -1,20 +1,9 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseDirectories, listCourseRecords } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 const courseRoot = join(root, "content", "courses");
-const requiredCourses = [
-  "ots-000",
-  "ots-101",
-  "ots-201",
-  "ots-220",
-  "ots-240",
-  "ots-260",
-  "ots-280",
-  "ots-301",
-  "ots-320",
-  "ots-399",
-];
 const requiredEntries = [
   "README.md",
   "course.json",
@@ -51,8 +40,17 @@ function walkFiles(directory, predicate) {
 if (!existsSync(courseRoot)) {
   fail("content/courses is missing.");
 } else {
-  for (const course of requiredCourses) {
-    const base = join(courseRoot, course);
+  const courseDirectories = listCourseDirectories(root);
+  const records = listCourseRecords(root);
+  const recordsBySlug = new Map(records.map((record) => [record.slug, record]));
+
+  if (courseDirectories.length === 0) {
+    fail("content/courses has no course directories.");
+  }
+
+  for (const course of courseDirectories) {
+    const record = recordsBySlug.get(course);
+    const base = record?.paths.root ?? join(courseRoot, course);
     if (!existsSync(base)) {
       fail(`${course} folder is missing.`);
       continue;
@@ -64,41 +62,38 @@ if (!existsSync(courseRoot)) {
       }
     }
 
-    const courseJsonPath = join(base, "course.json");
-    if (existsSync(courseJsonPath)) {
-      const courseJson = JSON.parse(readFileSync(courseJsonPath, "utf8"));
-      if (courseJson.slug !== course) {
-        fail(`${course}/course.json has slug ${courseJson.slug}.`);
+    if (!record) {
+      fail(`${course} is missing readable course.json or status.json.`);
+      continue;
+    }
+
+    const courseJson = record.course;
+    if (courseJson.slug !== course) {
+      fail(`${course}/course.json has slug ${courseJson.slug}.`);
+    }
+    if (!courseJson.canonicalRoute?.startsWith(`/book/${course}`)) {
+      fail(`${course}/course.json has invalid canonical route ${courseJson.canonicalRoute}.`);
+    }
+
+    const courseReadiness = courseJson.courseReadiness ?? "internal";
+    const requiresCompleteLessons = strictReadiness.has(courseReadiness);
+
+    for (const chapter of courseJson.chapters ?? []) {
+      if (!chapter.lessonCount || chapter.lessonCount < 1) {
+        fail(`${course}/${chapter.slug} has no manifest lesson count.`);
       }
-      if (!courseJson.canonicalRoute?.startsWith(`/book/${course}`)) {
-        fail(`${course}/course.json has invalid canonical route ${courseJson.canonicalRoute}.`);
-      }
 
-      const courseReadiness = courseJson.courseReadiness ?? "internal";
-      const requiresCompleteLessons = strictReadiness.has(courseReadiness);
-
-      for (const chapter of courseJson.chapters ?? []) {
-        if (!chapter.lessonCount || chapter.lessonCount < 1) {
-          fail(`${course}/${chapter.slug} has no manifest lesson count.`);
-        }
-
-        const chapterLessonPath = join(base, "lessons", chapter.slug);
-        const chapterLessonFiles = walkFiles(chapterLessonPath, (file) => file.endsWith(".mdx"));
-        if (requiresCompleteLessons && chapterLessonFiles.length !== chapter.lessonCount) {
-          fail(
-            `${course}/${chapter.slug} has ${chapterLessonFiles.length} lesson files but manifest expects ${chapter.lessonCount}.`,
-          );
-        }
+      const chapterLessonPath = join(base, "lessons", chapter.slug);
+      const chapterLessonFiles = walkFiles(chapterLessonPath, (file) => file.endsWith(".mdx"));
+      if (requiresCompleteLessons && chapterLessonFiles.length !== chapter.lessonCount) {
+        fail(
+          `${course}/${chapter.slug} has ${chapterLessonFiles.length} lesson files but manifest expects ${chapter.lessonCount}.`,
+        );
       }
     }
 
     const lessonFiles = walkFiles(join(base, "lessons"), (file) => file.endsWith(".mdx"));
-    if (lessonFiles.length === 0 && existsSync(join(base, "course.json"))) {
-      const courseJson = JSON.parse(readFileSync(join(base, "course.json"), "utf8"));
-      if (!noLessonReadiness.has(courseJson.courseReadiness ?? "internal")) {
-        fail(`${course} has no course-owned lesson files.`);
-      }
-    } else if (lessonFiles.length === 0) {
+    if (lessonFiles.length === 0 && !noLessonReadiness.has(courseReadiness)) {
       fail(`${course} has no course-owned lesson files.`);
     }
   }

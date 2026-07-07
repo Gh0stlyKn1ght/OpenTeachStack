@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { VideoItem } from "@/lib/videos/types";
 
 const statusLabels: Record<VideoItem["status"], string> = {
@@ -37,11 +38,13 @@ export default function VideoCard({
         className="relative aspect-video w-full overflow-hidden bg-code-bg text-left"
         aria-label={`Watch ${video.title}`}
       >
-        <img
+        <Image
           src={video.thumbnail}
           alt=""
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
-          loading={featured ? "eager" : "lazy"}
+          fill
+          sizes={featured ? "(min-width: 768px) 56vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+          priority={featured}
         />
         {video.duration && (
           <span className="absolute bottom-3 right-3 rounded-sm bg-background/90 px-2 py-1 font-mono text-xs font-semibold text-foreground">

@@ -25,7 +25,8 @@ import {
   TakeawayStrip,
   TiredTeacherTestVisual,
   WorkflowBlock,
-} from "@/components/InstructionalBlocks";import { lessonVisuals } from "@/lib/visualAssets";
+} from "@/components/InstructionalBlocks";
+import { lessonVisuals } from "@/lib/visualAssets";
 
 const mdxComponents = {
   pre: MDXPre,
@@ -35,6 +36,17 @@ const mdxComponents = {
   TeacherNote,
   RealityCheck,
   BuildTask,
+  FrameworkBlock,
+  ConceptCard,
+  TakeawayStrip,
+  ComparisonBlock,
+  WorkflowBlock,
+  ChecklistBlock,
+  FakeCourseTrapVisual,
+  SourceTruthExportVisual,
+  CourseTruthStackVisual,
+  AICourseContentWorkflowVisual,
+  TiredTeacherTestVisual,
 };
 
 interface LessonPageProps {

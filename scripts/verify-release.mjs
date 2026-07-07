@@ -1,6 +1,7 @@
 import { execFileSync, execSync, spawn } from "node:child_process";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseRecords } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 const buildVerificationPath = join(root, "docs", "BUILD_VERIFICATION.md");
@@ -14,12 +15,17 @@ const checks = [
   { label: "npm run verify:locks", cmd: "npm run verify:locks" },
   { label: "npm run check:root-doc-truth", cmd: "npm run check:root-doc-truth" },
   { label: "npm run check:routes", cmd: "npm run check:routes" },
+  { label: "npm run check:page-templates", cmd: "npm run check:page-templates" },
   { label: "npm run check:content-layout", cmd: "npm run check:content-layout" },
   {
     label: "npm run check:course-source-truth",
     cmd: "npm run check:course-source-truth",
   },
   { label: "npm run check:course-packet", cmd: "npm run check:course-packet" },
+  {
+    label: "npm run check:course-draft-promotion",
+    cmd: "npm run check:course-draft-promotion",
+  },
   { label: "npm run check:blog-system", cmd: "npm run check:blog-system" },
   {
     label: "npm run check:no-scaffold-fallback",
@@ -140,17 +146,16 @@ function runProductionRouteSmoke() {
 }
 
 function getReleasedCourseBookRoutes() {
-  const metadataPath = join(root, "src", "lib", "metadata.ts");
-  const metadata = readFileSync(metadataPath, "utf8");
-  const codes = [
-    ...metadata.matchAll(/code:\s*"(?<code>OTS-\d{3})"/g),
-  ].map((match) => match.groups?.code).filter(Boolean);
+  const routes = listCourseRecords(root)
+    .map((record) => record.canonicalRoute)
+    .filter((route) => route?.startsWith("/book/"))
+    .sort((a, b) => a.localeCompare(b));
 
-  if (codes.length === 0) {
-    throw new Error("Could not find PATHWAY_COURSES codes for route smoke.");
+  if (routes.length === 0) {
+    throw new Error("Could not find course canonical routes for route smoke.");
   }
 
-  return [...new Set(codes)].map((code) => `/book/${code.toLowerCase()}`);
+  return [...new Set(routes)];
 }
 
 function getFreePort() {

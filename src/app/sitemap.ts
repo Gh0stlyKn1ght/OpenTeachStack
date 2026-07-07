@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     entry("/", 1, "weekly"),
     entry("/about", 0.8),
+    entry("/audit", 0.8),
     entry("/apps-script", 0.7),
     entry("/book", 0.9, "weekly"),
     entry("/course", 0.7),

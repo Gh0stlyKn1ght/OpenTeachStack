@@ -4,7 +4,7 @@ import CourseSkillMatrix from "@/components/book/CourseSkillMatrix";
 import TransferableSkillsMap from "@/components/book/TransferableSkillsMap";
 import ArticleBody from "@/components/field-guide/ArticleBody";
 import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import { BOOK_COURSE_CODE, BOOK_COURSE_PATH, METHOD_STEPS } from "@/lib/book";
+import { BOOK_COURSE_PATH, METHOD_STEPS } from "@/lib/book";
 import { COURSE_STRUCTURES } from "@/lib/courseStructures";
 import { COURSE_SUBTITLE, COURSE_THESIS } from "@/lib/metadata";
 

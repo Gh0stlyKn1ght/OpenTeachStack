@@ -34,6 +34,17 @@ const mdxComponents = {
   TeacherNote,
   RealityCheck,
   BuildTask,
+  FrameworkBlock,
+  ConceptCard,
+  TakeawayStrip,
+  ComparisonBlock,
+  WorkflowBlock,
+  ChecklistBlock,
+  FakeCourseTrapVisual,
+  SourceTruthExportVisual,
+  CourseTruthStackVisual,
+  AICourseContentWorkflowVisual,
+  TiredTeacherTestVisual,
 };
 
 interface FieldNotePageProps {

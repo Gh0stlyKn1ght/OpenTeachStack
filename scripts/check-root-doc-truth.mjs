@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseRecords, readCourseRecord } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 const failures = [];
@@ -15,18 +16,13 @@ function fail(message) {
 const readme = read("README.md");
 const roadmap = read("ROADMAP.md");
 const claude = read("CLAUDE.md");
-const ots101Status = JSON.parse(read("content/courses/ots-101/status.json"));
-const ots101Course = JSON.parse(read("content/courses/ots-101/course.json"));
-const laterCourseCodes = [
-  "OTS-201",
-  "OTS-220",
-  "OTS-240",
-  "OTS-260",
-  "OTS-280",
-  "OTS-301",
-  "OTS-320",
-  "OTS-399",
-];
+const courseRecords = listCourseRecords(root);
+const ots101Record = readCourseRecord("ots-101", root);
+const ots101Status = ots101Record?.status ?? {};
+const ots101Course = ots101Record?.course ?? {};
+const laterCourseCodes = courseRecords
+  .filter((record) => !["OTS-000", "OTS-101"].includes(record.code))
+  .map((record) => record.code);
 
 const forbiddenRootClaims = [
   {
@@ -34,14 +30,7 @@ const forbiddenRootClaims = [
     text: readme,
     patterns: [
       /OTS-101\s*\|\s*Teaching Teachers Foundations/i,
-      /OTS-201\s*\|[^\n]*\|\s*Released/i,
-      /OTS-220\s*\|[^\n]*\|\s*Released/i,
-      /OTS-240\s*\|[^\n]*\|\s*Released/i,
-      /OTS-260\s*\|[^\n]*\|\s*Released/i,
-      /OTS-280\s*\|[^\n]*\|\s*Released/i,
-      /OTS-301\s*\|[^\n]*\|\s*Released/i,
-      /OTS-320\s*\|[^\n]*\|\s*Released/i,
-      /OTS-399\s*\|[^\n]*\|\s*Released/i,
+      ...laterCourseCodes.map((code) => new RegExp(`${code}\\s*\\|[^\\n]*\\|\\s*Released`, "i")),
       /v2\.0 shipped.*OTS-101 through OTS-399 are authored/is,
       /Current OTS-101 release shape/i,
     ],
@@ -96,7 +85,7 @@ if (!roadmap.includes("Current course readiness must come from `content/courses/
   fail("ROADMAP.md historical sections are not clearly subordinated to status.json.");
 }
 
-if (ots101Status.status !== "draft" || ots101Status.humanReviewed !== false) {
+if (ots101Status.status !== "draft" || ots101Status.humanReviewed !== true) {
   fail("OTS-101 status changed; update the root-doc truth check before changing release claims.");
 }
 

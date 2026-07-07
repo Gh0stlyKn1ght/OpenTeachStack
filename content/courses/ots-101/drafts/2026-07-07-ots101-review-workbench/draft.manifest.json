@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "draftId": "2026-07-07-ots101-review-workbench",
+  "course": "ots-101",
+  "courseCode": "OTS-101",
+  "purpose": "Hold proposed OTS-101 review and content-fix work before any source promotion.",
+  "createdAt": "2026-07-07",
+  "createdBy": "codex",
+  "status": "open",
+  "sourcePolicy": "Drafts may not be treated as source until promoted.",
+  "targetPaths": [],
+  "validation": {
+    "requiredBeforePromotion": [
+      "npm.cmd run check:course-packet -- --course ots-101",
+      "npm.cmd run report:course-health -- --course ots-101 --report-only"
+    ],
+    "lastRun": []
+  },
+  "promotion": {
+    "allowed": false,
+    "reason": "No reviewed target files have been added to this draft."
+  }
+}

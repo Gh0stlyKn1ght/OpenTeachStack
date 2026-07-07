@@ -1,11 +1,5 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # OTS-320 docs
-
-Course-owned planning, source, and review documents.
-
-## Documents
-
-- [Course outline](./OTS_320_COURSE_OUTLINE.md)
-- [Privacy, accessibility, and safety review](./privacy-accessibility-safety-review.md)
 
 Outlines, source queues, review notes, roadmap support, and release evidence.
 

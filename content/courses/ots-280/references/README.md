@@ -1,3 +1,4 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # OTS-280 references
 
 Primary sources, citation notes, platform docs, and source-bank queues.

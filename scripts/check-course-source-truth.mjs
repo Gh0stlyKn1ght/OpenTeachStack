@@ -1,33 +1,32 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseDirectories, listCourseRecords, readCourseRecord } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
-const coursesRoot = join(root, "content", "courses");
-const allowedStatuses = new Set(["live", "draft", "planned", "archived"]);
+const allowedStatuses = new Set(["planned", "draft", "review", "live", "archived"]);
 const failures = [];
 
 function fail(message) {
   failures.push(message);
 }
 
-if (!existsSync(coursesRoot)) {
+const records = listCourseRecords(root);
+const courseDirectories = listCourseDirectories(root);
+
+if (courseDirectories.length === 0) {
   fail("content/courses is missing.");
 } else {
-  const courses = readdirSync(coursesRoot, { withFileTypes: true }).filter((entry) =>
-    entry.isDirectory(),
-  );
+  const readableRecords = new Set(records.map((record) => record.slug));
 
-  for (const course of courses) {
-    const courseSlug = course.name;
-    const base = join(coursesRoot, courseSlug);
-    const statusPath = join(base, "status.json");
-
-    if (!existsSync(statusPath)) {
-      fail(`${courseSlug} is missing status.json.`);
-      continue;
+  for (const courseSlug of courseDirectories) {
+    if (!readableRecords.has(courseSlug) || !readCourseRecord(courseSlug, root)) {
+      fail(`${courseSlug} is missing readable course.json or status.json.`);
     }
+  }
 
-    const status = JSON.parse(readFileSync(statusPath, "utf8"));
+  for (const record of records) {
+    const courseSlug = record.slug;
+    const status = record.status;
 
     if (!allowedStatuses.has(status.status)) {
       fail(`${courseSlug}/status.json has invalid status ${status.status}.`);

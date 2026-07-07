@@ -1,3 +1,4 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # OTS-240 templates
 
 Artifact templates and reusable course documents.

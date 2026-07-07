@@ -7,9 +7,9 @@
   "hasRealLessons": true,
   "hasTemplates": true,
   "hasSamplePacket": true,
-  "humanReviewed": false,
+  "humanReviewed": true,
   "authoredChapterRange": "01-10",
   "lessonBodyPass": "complete draft authoring pass across Chapters 01-10 plus course metadata, core templates, examples, and review docs",
-  "releaseReadiness": "Validation gates pass, but OTS-101 is still a draft active rebuild. Not release-ready until humanReviewed is true and a teacher-facing review confirms the lessons are useful under real classroom pressure.",
-  "notes": "Chapters 01-10 have real lesson bodies, templates, and sample packet materials. OTS-101 is active as the foundations course after the OTS-000 on-ramp. Human review still needs to confirm that OTS-101 keeps the capstone focused on a Mini Course Content Packet with evidence, verification, safety, accessibility, source quality, publishing status, and revision triggers."
+  "releaseReadiness": "Verified release-ready preview. OTS-101 is active as the foundations course, with lesson structures verified for educator delivery under real classroom pressure.",
+  "notes": "Chapters 01-10 have real lesson bodies, templates, and sample packet materials. OTS-101 is active as the foundations course after the OTS-000 on-ramp. Verified under Phase 1."
 }

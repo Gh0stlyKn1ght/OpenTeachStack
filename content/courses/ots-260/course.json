@@ -1,12 +1,13 @@
 {
+  "generationSource": "scaffold",
   "code": "OTS-260",
   "slug": "ots-260",
   "title": "AI Media and Lesson Delivery",
   "owner": "generic",
   "canonicalRoute": "/book/ots-260",
   "sourceRegistry": "src/lib/courseStructures.ts",
-  "generatedAt": "2026-06-22",
-  "migrationStatus": "draft",
+  "generatedAt": "2026-07-07",
+  "migrationStatus": "generated",
   "chapters": [
     {
       "number": "01",
@@ -59,7 +60,5 @@
     "docs/OTS_260_VISUAL_STYLE_GUIDE_TEMPLATE.md"
   ],
   "copiedAssets": [],
-  "copiedLabs": [],
-  "courseReadiness": "active-preview",
-  "releaseBoundary": "Active draft preview. Open for pathway review, but not release-ready until lesson bodies are authored and humanReviewed is true."
+  "copiedLabs": []
 }

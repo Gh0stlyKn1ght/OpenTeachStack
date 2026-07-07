@@ -106,17 +106,19 @@ function bodyFor(chapter, section) {
 
 ## Core Idea
 
-${chapter.title} is about ${guide.focus}. In this section, **${section.title}** turns that chapter focus into one practical safety habit.
+${chapter.title} is about ${guide.focus}. In this section, **${section.title}** turns that chapter focus into one practical teacher safety habit.
 
 The goal is not to make teachers paranoid or technical for its own sake. The goal is to help a teacher decide ${guide.decision} and leave behind a safe, maintainable artifact: **${chapter.buildArtifact}**.
 
 ## Do This
 
-- Name the specific safety problem connected to ${section.title}.
-- Use this section to ${mode.action}.
-- Work with sanitized notes, fictional examples, or private local records instead of publishing sensitive details.
-- Record the teacher decision you made about ${guide.decision}.
-- Save the result where it can support the chapter artifact: ${chapter.buildArtifact}.
+${[
+  `Name the specific safety problem connected to ${section.title}.`,
+  `Use this section to ${mode.action}.`,
+  "Work with sanitized notes, fictional examples, or private local records instead of publishing sensitive details.",
+  `Record the teacher decision you made about ${guide.decision}.`,
+  `Save the result where it can support the chapter artifact: ${chapter.buildArtifact}.`,
+].map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -164,6 +166,7 @@ for (const chapter of courseJson.chapters) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
     };
 

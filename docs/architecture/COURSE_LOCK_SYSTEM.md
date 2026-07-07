@@ -40,10 +40,17 @@ npm run lock:course -- --course ots-101 --reason "Passed voice, safety, source, 
 
 The command:
 
-- computes SHA-256 hashes for every file under `content/courses/<course-id>`, except `.course-lock.json`,
+- computes SHA-256 hashes for protected source files under `content/courses/<course-id>`, except `.course-lock.json`,
 - writes `content/courses/<course-id>/.course-lock.json`,
 - updates `content/course-locks.yml`,
 - records `lockedAt`, `lockedBy`, `reason`, `protectedPaths`, allowed change categories, and unlock-required categories.
+
+For packetized courses, protected files come from `course.packet.json`:
+
+- compatibility metadata: `README.md`, `course.json`, `status.json`, and `course.packet.json`
+- authored content roots listed in `contentRoots`
+
+PacketLock does not hash `draftRoot`, `reportsRoot`, `generatedRoot`, or `exportsRoot`. Drafts, health reports, generated files, and export packages are review/work areas, not approved source.
 
 Use `--force` only when intentionally refreshing a lock after a reviewed maintenance change.
 

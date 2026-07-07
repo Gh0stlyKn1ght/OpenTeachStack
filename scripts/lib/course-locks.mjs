@@ -123,11 +123,17 @@ export function collectCourseFiles(courseId, root = process.cwd()) {
     throw new Error(`Course not found: content/courses/${courseId}`);
   }
 
+  const packet = readCoursePacket(courseId, root);
+  const protectedRoots = packetProtectedRoots(courseId, packet);
+  const ignoredRoots = packetIgnoredRoots(courseId, packet);
+
   const files = walkFiles(courseRoot)
     .map((filePath) => posixPath(relative(courseRoot, filePath)))
     .filter((filePath) => filePath !== LOCK_MANIFEST_FILE_NAME)
     .filter((filePath) => !filePath.endsWith("/.DS_Store"))
     .filter((filePath) => filePath !== "Thumbs.db")
+    .filter((filePath) => isProtectedCourseFile(filePath, protectedRoots))
+    .filter((filePath) => !isIgnoredCourseFile(filePath, ignoredRoots))
     .sort((a, b) => a.localeCompare(b));
 
   return files;
@@ -171,7 +177,7 @@ export function buildCourseManifest(courseId, options = {}) {
     lockedAt,
     lockedBy: options.lockedBy ?? "repo-maintainer",
     reason: options.reason ?? "Course passed review and is protected from accidental rewrites.",
-    protectedPaths: [`content/courses/${courseId}/**`],
+    protectedPaths: protectedPathsForCourse(courseId, root),
     allowedChanges: [...DEFAULT_ALLOWED_CHANGES],
     requiresUnlockFor: [...DEFAULT_REQUIRES_UNLOCK_FOR],
     files,
@@ -226,6 +232,79 @@ function walkFiles(directory) {
     }
   }
   return files;
+}
+
+function readCoursePacket(courseId, root = process.cwd()) {
+  const packetPath = join(courseRootPath(courseId, root), "course.packet.json");
+  if (!existsSync(packetPath)) return null;
+
+  return JSON.parse(readFileSync(packetPath, "utf8"));
+}
+
+function protectedPathsForCourse(courseId, root = process.cwd()) {
+  const packet = readCoursePacket(courseId, root);
+  const roots = packetProtectedRoots(courseId, packet);
+
+  return roots.map((filePath) => `content/courses/${courseId}/${filePath}${filePath.includes(".") ? "" : "/**"}`);
+}
+
+function packetProtectedRoots(courseId, packet) {
+  const defaultRoots = [
+    "README.md",
+    "course.json",
+    "status.json",
+    "lessons",
+    "labs",
+    "assets",
+    "docs",
+    "templates",
+    "references",
+  ];
+
+  if (!packet?.contentRoots || typeof packet.contentRoots !== "object") {
+    return defaultRoots;
+  }
+
+  const packetRoots = Object.values(packet.contentRoots)
+    .map((relativePath) => stripCourseRoot(courseId, relativePath))
+    .filter(Boolean);
+
+  return [
+    "README.md",
+    "course.json",
+    "status.json",
+    "course.packet.json",
+    ...packetRoots,
+  ];
+}
+
+function packetIgnoredRoots(courseId, packet) {
+  const defaults = ["drafts", "reports", "generated", "exports"];
+  if (!packet || typeof packet !== "object") return defaults;
+
+  return [
+    packet.draftRoot,
+    packet.reportsRoot,
+    packet.generatedRoot,
+    packet.exportsRoot,
+  ]
+    .map((relativePath) => stripCourseRoot(courseId, relativePath))
+    .filter(Boolean);
+}
+
+function stripCourseRoot(courseId, relativePath) {
+  const normalized = posixPath(relativePath);
+  const prefix = `content/courses/${courseId}/`;
+  if (!normalized.startsWith(prefix)) return "";
+  return normalized.slice(prefix.length);
+}
+
+function isProtectedCourseFile(filePath, protectedRoots) {
+  return protectedRoots.some((rootPath) => filePath === rootPath || filePath.startsWith(`${rootPath}/`));
+}
+
+function isIgnoredCourseFile(filePath, ignoredRoots) {
+  return ignoredRoots.some((rootPath) => filePath === rootPath || filePath.startsWith(`${rootPath}/`));
 }
 
 function parseRegistryYaml(source) {

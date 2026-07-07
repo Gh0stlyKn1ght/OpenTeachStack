@@ -1,12 +1,8 @@
 # OTS-280 Cyber Safety for Educators
 
-Status: Active draft preview - open for review; not human-reviewed or release-ready.
-
 Canonical route: `/book/ots-280`
 
-Reader source: `src/lib/cyberSafety.ts`
-
-This folder is the course-owned content package for OTS-280. It contains learner-facing lesson source, course artifacts, review notes, and release materials for the book route.
+This folder is the course-owned content package for OTS-280. It is designed so the course can be migrated, exported, or maintained without hunting through global content folders.
 
 ## Folders
 
@@ -17,7 +13,6 @@ This folder is the course-owned content package for OTS-280. It contains learner
 - `templates/` - course-specific artifact templates
 - `references/` - source queues, citation notes, and platform documentation notes
 
-## Maintenance Rule
+## Migration Rule
 
-Keep the book route, search metadata, source notes, build checks, and representative probes aligned whenever lesson content changes.
-
+Keep the current app routes working until this course folder becomes the reader source. Do not delete global lesson or lab files until route parity, search, build, and representative probes pass.

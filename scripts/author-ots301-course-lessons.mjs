@@ -241,13 +241,13 @@ function bodyFor(chapter, section) {
 
 ## Core Idea
 
-${chapter.title} is about ${guide.focus}. In this section, **${section.title}** turns that focus into a practical course-site authoring move.
+${chapter.title} is about ${guide.focus}. In this section, **${section.title}** turns that focus into a practical course site authoring move.
 
 The chapter intent is to keep the page set clear, maintainable, and safe enough to review in one pass.
 
 ## Do This
 
-${doThis.map((item) => `- ${item}`).join("\n")}
+${doThis.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -299,6 +299,7 @@ for (const [chapterSlug, chapter] of chapterMap.entries()) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
       duration: parsed.data.duration,
     };

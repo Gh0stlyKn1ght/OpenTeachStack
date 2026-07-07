@@ -99,11 +99,13 @@ The useful question is not "Can I make this look impressive?" The useful questio
 
 ## Do This
 
-- Name the specific lesson moment connected to ${section.title}.
-- Use this section to ${mode.action}.
-- Write the learning purpose before choosing the visual, slide, diagram, recording, or packet format.
-- Add an access note that names the needed alternative: alt text, captions, transcript, readable text, source note, or nonvisual explanation.
-- Save the work as part of the chapter artifact: ${chapter.buildArtifact}.
+${[
+  `Name the specific lesson moment connected to ${section.title}.`,
+  `Use this section to ${mode.action}.`,
+  "Write the learning purpose before choosing the visual, slide, diagram, recording, or packet format.",
+  "Add an access note that names the needed alternative: alt text, captions, transcript, readable text, source note, or nonvisual explanation.",
+  `Save the work as part of the chapter artifact: ${chapter.buildArtifact}.`,
+].map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -151,6 +153,7 @@ for (const chapter of courseJson.chapters) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
     };
 

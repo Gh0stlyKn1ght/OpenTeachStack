@@ -1,59 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import BookSidebar from "@/components/book/BookSidebar";
-import ArticleBody from "@/components/field-guide/ArticleBody";
-import ArticleFooterNav from "@/components/field-guide/ArticleFooterNav";
-import FieldGuidePage from "@/components/field-guide/FieldGuidePage";
-import BuildTask from "@/components/BuildTask";
-import {
-  AICourseContentWorkflowVisual,
-  ChecklistBlock,
-  ComparisonBlock,
-  ConceptCard,
-  CourseTruthStackVisual,
-  FakeCourseTrapVisual,
-  FrameworkBlock,
-  SourceTruthExportVisual,
-  TakeawayStrip,
-  TiredTeacherTestVisual,
-  WorkflowBlock,
-} from "@/components/InstructionalBlocks";
-import MDXPre from "@/components/MDXPre";
-import MermaidBlock from "@/components/MermaidBlock";
-import RealityCheck from "@/components/RealityCheck";
-import ReflectionPrompt from "@/components/ReflectionPrompt";
-import TeacherNote from "@/components/TeacherNote";
-import VideoEmbed from "@/components/VideoEmbed";
+import CoursePacketLessonTemplate from "@/components/course-packet/CoursePacketLessonTemplate";
 import { getCourseLessonBySlugs } from "@/lib/content";
-import { mdxOptions } from "@/lib/mdx";
 import {
   BOOK_COURSE_CODE,
-  getAdjacentBookSections,
   getAllBookSectionRecords,
   getSectionBySlugs,
 } from "@/lib/book";
-
-const mdxComponents = {
-  pre: MDXPre,
-  MermaidBlock,
-  VideoEmbed,
-  ReflectionPrompt,
-  TeacherNote,
-  RealityCheck,
-  BuildTask,
-  FrameworkBlock,
-  ConceptCard,
-  TakeawayStrip,
-  ComparisonBlock,
-  WorkflowBlock,
-  ChecklistBlock,
-  FakeCourseTrapVisual,
-  SourceTruthExportVisual,
-  CourseTruthStackVisual,
-  AICourseContentWorkflowVisual,
-  TiredTeacherTestVisual,
-};
+import {
+  findPacketChapter,
+  findPacketSection,
+  flattenPacketSections,
+  ots101PacketView,
+} from "@/lib/course-packet-adapters";
 
 type SectionPageProps = {
   params: Promise<{ chapter: string; section: string }>;
@@ -85,96 +44,36 @@ export async function generateMetadata({
 }
 
 export default async function SectionPage({ params }: SectionPageProps) {
-  const { chapter, section } = await params;
-  const record = getSectionBySlugs(chapter, section);
+  const { chapter: chapterSlug, section: sectionSlug } = await params;
+  const course = ots101PacketView();
+  const chapter = findPacketChapter(course, chapterSlug);
 
-  if (!record) {
+  if (!chapter) {
     notFound();
   }
 
-  const { previous, next } = getAdjacentBookSections(record);
-  const courseLesson = getCourseLessonBySlugs(
-    "ots-101",
-    record.chapter.slug,
-    record.sectionSlug,
+  const section = findPacketSection(chapter, sectionSlug);
+
+  if (!section) {
+    notFound();
+  }
+
+  const records = flattenPacketSections(course);
+  const currentIndex = records.findIndex(
+    (record) =>
+      record.chapter.slug === chapter.slug && record.section.slug === section.slug,
   );
-  const migrationStatus = courseLesson?.frontmatter.migrationStatus;
-  const isReleaseReady =
-    migrationStatus === "authored" || migrationStatus === "reviewed";
+  const lesson = getCourseLessonBySlugs("ots-101", chapter.slug, section.slug);
 
   return (
-    <FieldGuidePage
-      eyebrow={`${BOOK_COURSE_CODE} / Chapter ${record.chapter.number} / Section ${record.section.number}`}
-      title={record.section.title}
-      subtitle={record.chapter.problem}
-      breadcrumbs={[
-        { label: "Book", href: "/book" },
-        { label: BOOK_COURSE_CODE, href: "/book/ots-101" },
-        { label: record.chapter.title, href: record.chapter.href },
-      ]}
-      meta={[
-        { label: "Course", value: BOOK_COURSE_CODE },
-        { label: "Chapter", value: record.chapter.title },
-        { label: "Type", value: record.section.type },
-        { label: "Duration", value: record.section.duration },
-        { label: "Source", value: "Course-owned MDX" },
-      ]}
-      sidebar={
-        <BookSidebar
-          activeSlug={record.chapter.slug}
-          activeSectionSlug={record.sectionSlug}
-        />
-      }
-      footer={
-        <ArticleFooterNav
-          previous={
-            previous
-              ? {
-                  href: previous.href,
-                  label: "Previous section",
-                  title: `${previous.section.number}. ${previous.section.title}`,
-                }
-              : undefined
-          }
-          next={
-            next
-              ? {
-                  href: next.href,
-                  label: "Next section",
-                  title: `${next.section.number}. ${next.section.title}`,
-                }
-              : undefined
-          }
-        />
-      }
-    >
-      <ArticleBody>
-        {!courseLesson ? (
-          <div className="course-section-status">
-            This lesson is intentionally unavailable while OTS-101 is being
-            rebuilt. OpenTeachStack does not publish placeholder MDX to make
-            routes look complete.
-          </div>
-        ) : !isReleaseReady ? (
-          <div className="course-section-status">
-            This lesson is in teacher review. It still needs
-            classroom-specific revision before it should be treated as
-            release-ready course content.
-          </div>
-        ) : null}
-        {courseLesson ? (
-          <div className="prose-academic">
-            <MDXRemote
-              source={courseLesson.content}
-              options={mdxOptions}
-              components={mdxComponents}
-            />
-          </div>
-        ) : null}
-
-      </ArticleBody>
-    </FieldGuidePage>
+    <CoursePacketLessonTemplate
+      course={course}
+      chapter={chapter}
+      section={section}
+      lesson={lesson}
+      previous={records[currentIndex - 1]}
+      next={records[currentIndex + 1]}
+      unavailableMessage="This lesson is intentionally unavailable while OTS-101 is being rebuilt. OpenTeachStack does not publish placeholder MDX to make routes look complete."
+    />
   );
 }
-
-

@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "courseId": "ots-000",
+  "status": "locked",
+  "lockedAt": "2026-07-07T20:18:18.444Z",
+  "lockedBy": "NEO",
+  "reason": "PowerShell/zsh terminal compatibility checks complete, marked human-reviewed and verified under Phase 1.",
+  "protectedPaths": [
+    "content/courses/ots-000/README.md",
+    "content/courses/ots-000/course.json",
+    "content/courses/ots-000/status.json",
+    "content/courses/ots-000/course.packet.json",
+    "content/courses/ots-000/lessons/**",
+    "content/courses/ots-000/labs/**",
+    "content/courses/ots-000/templates/**",
+    "content/courses/ots-000/references/**",
+    "content/courses/ots-000/assets/**",
+    "content/courses/ots-000/docs/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "c7c627ae505b5d661d23061277fce023fdab52ddca148decaa174757182f7678",
+      "bytes": 98
+    },
+    {
+      "path": "course.json",
+      "sha256": "70a53f3b3277fa73044713ff90b2b47d50890d1e9f4abfe6d373761e031ea6f0",
+      "bytes": 3623
+    },
+    {
+      "path": "course.packet.json",
+      "sha256": "51815cff3d76b5e7ca50f2a551aa310dc50c8f719f705e83781a72452b46f671",
+      "bytes": 1158
+    },
+    {
+      "path": "docs/ARTIFACT_MATRIX.md",
+      "sha256": "4452dd87c32ea5e58fd6ba20ec6efd952d759f0a4bc2489034e6e12d33f83a19",
+      "bytes": 4306
+    },
+    {
+      "path": "docs/DRAFT_REVIEW_NOTES.md",
+      "sha256": "308804415195536a06e4d4b14a4500ecf36381733f517b90c0341270e95b8624",
+      "bytes": 2755
+    },
+    {
+      "path": "docs/HUMAN_REVIEW_CHECKLIST.md",
+      "sha256": "92ea26aee79c2833c3ac5c7c453d413fa043858a3b5dda56aabb2a82cc08b82e",
+      "bytes": 2115
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "817175cc495c13e13cca31f3239340c3ab2f44ff09c4e1b1e8a95f785e8d63a3",
+      "bytes": 502
+    },
+    {
+      "path": "docs/ROUTE_REVIEW_CHECKLIST.md",
+      "sha256": "08da9a36f456db7ee4e21ea8a04fe99f6d4b3ff2d535fd01065f74f81ef6dba6",
+      "bytes": 3120
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "cbb4a543d010c41392ea42d7c13b6e4d1f26d21c37d86d82198e0bdf5f75007f",
+      "bytes": 118
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-0.mdx",
+      "sha256": "af39eaf7245cc0751b49b30bc57ac9bfdf99c850fc3bcb2e85e9ba053a9f21ef",
+      "bytes": 3658
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-1.mdx",
+      "sha256": "1a269ca6081c95e88433dc332dd488c991e22b5c5d5d27a83ffe7fd4cf7e0fde",
+      "bytes": 3541
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-2.mdx",
+      "sha256": "cef875c07966a72ced58c5e1ce29435d30fd16cf1e8673695ac469ce1c53c22d",
+      "bytes": 3086
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-3.mdx",
+      "sha256": "ff0157122470e1e2e7ead4d8ac6e05921c9bbd027118ccf489892f54e81afdce",
+      "bytes": 3255
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-4.mdx",
+      "sha256": "b7c82aa2dc96f498b1d75f3566fdd8786aebc7bfdf3f39ffe8ce8f05530028c4",
+      "bytes": 3979
+    },
+    {
+      "path": "lessons/00-welcome-teacher-builder-stack/00-5.mdx",
+      "sha256": "4a39bc2f9a0ae20b99092822333bec662eed113f530807034e73514a3f9555ed",
+      "bytes": 3504
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-0.mdx",
+      "sha256": "18dd9b42a95e816f9f728cee57de4e9d88a89c5b69cd104fbc9416bfe5a368e3",
+      "bytes": 3056
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-1.mdx",
+      "sha256": "d18b00cb8e192f64af8081269b465ccb5e871366a23d535623857e8184a5604a",
+      "bytes": 3322
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-2.mdx",
+      "sha256": "f453a51a4a09bf3634e25998ed1804de6d2674d8e5a0d55b03c922697af73f07",
+      "bytes": 3620
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-3.mdx",
+      "sha256": "7cbf89d5efae879e6cfb122d1dae1010001cb871de6e008e94251788e7005125",
+      "bytes": 3382
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-4.mdx",
+      "sha256": "996f4e6721c0b7515d58414efd8a9d1c485bc3ddb73e3cf785549f7374da5922",
+      "bytes": 4004
+    },
+    {
+      "path": "lessons/01-builder-workstation/01-5.mdx",
+      "sha256": "016922faa91c5a160a6f25a557501eb0490fd89e0d21a752ba69e1ca67a3c8f6",
+      "bytes": 3654
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-0.mdx",
+      "sha256": "042b09cac96e66c1d0dd8d91598107dc847d42cd66ec0586ddff21f3a33d8435",
+      "bytes": 3049
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-1.mdx",
+      "sha256": "11c37a6201f4229a1e9897a6948e4afd477e7d58c070eddc6f113fa77c0e2629",
+      "bytes": 3162
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-2.mdx",
+      "sha256": "bca5261a4d4d07e9d4b1a63af7c7eeac31aadedc98eb876da0cf9feb10208fcb",
+      "bytes": 2745
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-3.mdx",
+      "sha256": "904a20b4dd2ba147f3d541306e3a697a62ab86d6cb3961c32a7c0c3a2e1c0019",
+      "bytes": 3414
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-4.mdx",
+      "sha256": "44e361aa1ba90978feca63c81ac6363436ee3dcda07540d3e27a98c65bffc662",
+      "bytes": 4025
+    },
+    {
+      "path": "lessons/02-files-folders-project-structure/02-5.mdx",
+      "sha256": "1676a08f341bd0804070c71b0ce4b4794c4afcbc0fff905babccb9dc83a24027",
+      "bytes": 3422
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-0.mdx",
+      "sha256": "46500a63312d4321d483c39b4704109b4ffe2b2a661f050ab4183116b9003dfc",
+      "bytes": 2528
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-1.mdx",
+      "sha256": "367276653f3d34528bba0d2fe0bb9ac042a857c349ee248a18d6b3815b15e693",
+      "bytes": 3085
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-2.mdx",
+      "sha256": "b3d0cc3f48385e136b79eba379f6cd585fa4ee3f528fc5b4e9ae0321932b6d71",
+      "bytes": 3568
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-3.mdx",
+      "sha256": "c97b6cad25967478622998b0fc27007804b66d3a0319c194fa8542806ad5b9d2",
+      "bytes": 3116
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-4.mdx",
+      "sha256": "166961a64386ef9c2c4ae4b73911d7d426c307eebc367e0991ba25136f5d4dc1",
+      "bytes": 3612
+    },
+    {
+      "path": "lessons/03-what-is-an-ide/03-5.mdx",
+      "sha256": "4ac5349dc4417d351724021569c91d7481392c2858a5d174e1b2c6286d08313d",
+      "bytes": 3224
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-0.mdx",
+      "sha256": "13792bf8c94dc5774aedec0be0bafd5ac9e56072014d3e5d301804be74dda82f",
+      "bytes": 2440
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-1.mdx",
+      "sha256": "2ca8518ffc66159f319fae0d77e7ade4f81b451862118a5789cfe80b04fc45f9",
+      "bytes": 2723
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-2.mdx",
+      "sha256": "bad3078f64fca4879a9519eb370151f54dd0aa95d561602bd37701896597b967",
+      "bytes": 2386
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-3.mdx",
+      "sha256": "b3886dea57c208cff979c5ef2f5cf4864a119d67dbd4d6641c88691fafe7ae04",
+      "bytes": 3372
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-4.mdx",
+      "sha256": "e051952ac21159602b52263465f803e888af9848c143c78a90ad103f40adf70e",
+      "bytes": 2864
+    },
+    {
+      "path": "lessons/04-vscode-teacher-builders/04-5.mdx",
+      "sha256": "f31c33cbd051b5a80d1f9fbf0792424382fdf5e2bfefb4797da251357b40536d",
+      "bytes": 3096
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-0.mdx",
+      "sha256": "1bbc526a42a1ee202a6eee1d878d2dd8800500a0dbe899276202e054a2f2c667",
+      "bytes": 2736
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-1.mdx",
+      "sha256": "faef373086220e3858576b58de13d5ace32a65605a246392565b73208d3dd5c3",
+      "bytes": 2357
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-2.mdx",
+      "sha256": "03726f2f99a9c0c1e96a0817343a52f1ed2ac800b4f63788b19690e034288764",
+      "bytes": 2229
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-3.mdx",
+      "sha256": "c7640c4578dc597c4be96e80adb37b9b85fc73eb0df5b05e358269482c4a2d39",
+      "bytes": 3445
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-4.mdx",
+      "sha256": "c61911de081164cb4f826c7a313d96d308686fc51c70ed9aea4fb6f9e3a3ddd8",
+      "bytes": 3571
+    },
+    {
+      "path": "lessons/05-terminal-without-fear/05-5.mdx",
+      "sha256": "dd534b3a8ac84cb8a394d8665e25a69e98f7ca91e0f9135a46365b2a563f6fc7",
+      "bytes": 3150
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-0.mdx",
+      "sha256": "00a96ec58e6711b999dd855ca8455a44aa0b9a76a3cb7584f199cb8806016aea",
+      "bytes": 2442
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-1.mdx",
+      "sha256": "8a5ade14ea57a534b1541a79262ba910f706667ff522b9b09bf9872d785d2999",
+      "bytes": 2442
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-2.mdx",
+      "sha256": "b36139c22dbb80ab83a64c3f0bafc71ba35d2de8a742f085cd4f2887a19cab18",
+      "bytes": 2446
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-3.mdx",
+      "sha256": "06b30ccf4fe453f69ef5823e01bad33ee5ee98fb3b9039450edd80a0f96d1a8b",
+      "bytes": 2528
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-4.mdx",
+      "sha256": "2cb50709c8c229605fea4e770e67787a26258390bb1ff7279d7b2127cca75a65",
+      "bytes": 3528
+    },
+    {
+      "path": "lessons/06-git-github-basics/06-5.mdx",
+      "sha256": "3baf21f236c69df8c62d1e0741986675c43b0b8f51dc0279e33a4b33615c1e6b",
+      "bytes": 3118
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-0.mdx",
+      "sha256": "2ef29f12f537d68912fb0ce2865f5e277bb528fc4c67d546aae3a5de15b6214c",
+      "bytes": 2806
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-1.mdx",
+      "sha256": "a2b2e5640dd9aaa3d433fc1f25e256340340a1aef3d3ed7f5b391f3fa56784c0",
+      "bytes": 2993
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-2.mdx",
+      "sha256": "43fbcd3c25d7aa56faae2ed6a781734e01658fdfb60f39c0e781b97f6df7f6e0",
+      "bytes": 3361
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-3.mdx",
+      "sha256": "2061487259bace226ba3eb95973d0c706942dae465621f0cb284534e87977698",
+      "bytes": 2355
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-4.mdx",
+      "sha256": "48ac47e86bb99f0de5ed4fda1fc98a5e48b54de7d6ac52495c312f535642fdd3",
+      "bytes": 3510
+    },
+    {
+      "path": "lessons/07-documentation-literacy/07-5.mdx",
+      "sha256": "b00233032936d05b81876de6ca61240b7c1c58e244aa8ff2fec8e4fe86d1e027",
+      "bytes": 3217
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-0.mdx",
+      "sha256": "00323efb7142ef2f50b300abe2a31f13e4425be63d713cbe145a4b3fc5c7ccc7",
+      "bytes": 2782
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-1.mdx",
+      "sha256": "d79d3adb530b8c799fe4f68b5d82e4edfdff54d80e3d6adf48f00e85b7bcf7c8",
+      "bytes": 2142
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-2.mdx",
+      "sha256": "29cfd448b3d8a5dda2c19d75d185f48a05e34d0932e7d4665aed8488af9e0882",
+      "bytes": 3259
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-3.mdx",
+      "sha256": "2fa0057e578ce796cd2d5214e10a3c641448da67b74bccbc4ae776d32ccbfce6",
+      "bytes": 2864
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-4.mdx",
+      "sha256": "4eabd29811fd129927fbfde8dd7a668a6b2ae629a1abfb231fdc937cfcadb0b4",
+      "bytes": 3315
+    },
+    {
+      "path": "lessons/08-markdown-mdx-content-files/08-5.mdx",
+      "sha256": "eccee5412c7d2b9d01cd6ec35cdc9192c6c63bb19f6b7fa0c2dd5bf7f9e488b8",
+      "bytes": 3176
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-0.mdx",
+      "sha256": "9d3f2a1f9f0a120566d2ba9c4538b565f5df065af8a6442257e53276d78298c7",
+      "bytes": 2650
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-1.mdx",
+      "sha256": "116f7505fab385f3b698a96f8efed23fc06d5f7edf03783636bde0828472c36f",
+      "bytes": 2282
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-2.mdx",
+      "sha256": "fc134893a3af5189b184b77842caff8c1daec9610b30d7004931f5f016fcf6c7",
+      "bytes": 2881
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-3.mdx",
+      "sha256": "0e0610a3d41291ae53b73c13ed849d4d8f55c34bb0c4aa3e602a0d12ce7712b5",
+      "bytes": 3021
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-4.mdx",
+      "sha256": "06bd3c602c947f415901239237b0c1fecb521a1ee40b601eda8c17f26ac12245",
+      "bytes": 3236
+    },
+    {
+      "path": "lessons/09-websites-hosting-publishing/09-5.mdx",
+      "sha256": "5c82b28ffcba19ed265a80f205ee5ed9f88cc870aa088cda634e19fb2e1aff2b",
+      "bytes": 3224
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-0.mdx",
+      "sha256": "7da819b40e593b76830beabb6856a52020b25f5f89ae68c715c26cc8d706f76d",
+      "bytes": 2741
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-1.mdx",
+      "sha256": "dc2ddd0be64795ffa04db365907a33a41177c7956a6cc2592765b57566720507",
+      "bytes": 2805
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-2.mdx",
+      "sha256": "21ca8b06fa215fd45e39e52c4d0590edc5499e8d36b076c73ce36b3f4c9715e9",
+      "bytes": 2892
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-3.mdx",
+      "sha256": "5612c1173b5b2064db8296fa25a8928abcaecde0d21342874f74c605f02bb0e4",
+      "bytes": 3467
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-4.mdx",
+      "sha256": "a15d2ea890ef0419616ef292fd707bc591e21e323269e28edda6bd1e5bf568dd",
+      "bytes": 3856
+    },
+    {
+      "path": "lessons/10-modern-project-stack/10-5.mdx",
+      "sha256": "b75e535f884864c980280215e393115ea5cc587530afa9052aed7aaa57923fac",
+      "bytes": 3010
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-0.mdx",
+      "sha256": "4724e01066f643c52f65aae0bc93430126ebb56bd2c82034c8b40790f7a96066",
+      "bytes": 2669
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-1.mdx",
+      "sha256": "e56ef22de72cf4b42d935e9cedbdb01d8c00eccc9c6159580fa73e3e832d2dc3",
+      "bytes": 2827
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-2.mdx",
+      "sha256": "21e50f6a45c6dc43237f70dc6502f2eeb7b9d94fc212aed943601d30fed268de",
+      "bytes": 2929
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-3.mdx",
+      "sha256": "64a249202c7c18850bc10f0c86915ff1e96e134762f6bf03956441428bcd0a1f",
+      "bytes": 2825
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-4.mdx",
+      "sha256": "cb0bf709083a24334c5533807c25b48bc96e54630d3d773c22e695708361d057",
+      "bytes": 3326
+    },
+    {
+      "path": "lessons/11-ai-assistants-coding-agents-mcp/11-5.mdx",
+      "sha256": "224c293a28c590b5d15641bc4e8748c29d6a5a0723780a323a0cab360b347b98",
+      "bytes": 2995
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-0.mdx",
+      "sha256": "cd100d794b095adcef005fd43d77c0ed37f66fff4c9997fe2c82ea707f241869",
+      "bytes": 2565
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-1.mdx",
+      "sha256": "85d726886fb92be63a1f066259f3619551e434c4b667149061f2911ffa7c8fd8",
+      "bytes": 2144
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-2.mdx",
+      "sha256": "e9e2c56c075cbd3a04ea81dfa1b6ddb6d5a927a1a46a5ae7fe64bb1196b88b16",
+      "bytes": 2482
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-3.mdx",
+      "sha256": "12d1254bd4bcd683f8462ad21aae52c95bc26043f579f442daffef5e904b6922",
+      "bytes": 2762
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-4.mdx",
+      "sha256": "f22aa51f934fe8ae3acba3069634f5f5fe9ed31317cce9a58fa559ffe089f81f",
+      "bytes": 3776
+    },
+    {
+      "path": "lessons/12-safety-backups-secrets-permissions/12-5.mdx",
+      "sha256": "c1b5458c6b3666de62912c361ebd332bae97f196d385d77c3dd14d7f991a596f",
+      "bytes": 3007
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-0.mdx",
+      "sha256": "39fdfcb109c46efe16b27b345b7d3c4dabc6f504a79d20bfba3a6c91edeedc67",
+      "bytes": 2308
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-1.mdx",
+      "sha256": "1e56681ae3f56ec2d4a8d7d31322165858326454723d14b96d3bb23039f9675c",
+      "bytes": 2367
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-2.mdx",
+      "sha256": "cccfaa45c09f4d3089fce535ad8a1cd1ce03a08b6ee523c7666cc742b9aca3d1",
+      "bytes": 3460
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-3.mdx",
+      "sha256": "921ecfe8a95a6f1dc4417c4ff8471d9b576d8a12f98e921fe888594f973e3952",
+      "bytes": 3088
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-4.mdx",
+      "sha256": "fb726d7d973a7dca089d80d6b78d580ba1a8cbb59f6525e5d7304b9dbae223ad",
+      "bytes": 3326
+    },
+    {
+      "path": "lessons/13-teacher-builder-starter-kit/13-5.mdx",
+      "sha256": "f92af400aa5fddf8cff61ff375f2bf8e832a052660f57572bcec8cd5cfda9d5c",
+      "bytes": 3178
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "8fc983e96c2fe8a7caea4f57305dc22e825d629b15b20d8983712e421d3e4923",
+      "bytes": 185
+    },
+    {
+      "path": "README.md",
+      "sha256": "d982901830726c66ee51e5416e7609f9b9823c85d6b4d24a786846c4a554364e",
+      "bytes": 2599
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "e1b1c9e7696704534234431f0a6162eb5c04ea2692982b4771aae2cc4d94f00e",
+      "bytes": 257
+    },
+    {
+      "path": "references/source-references.md",
+      "sha256": "40ca95475f897ffa499f34939e44861f5cb8ca7c2adb98f622951dff5bf770a4",
+      "bytes": 5862
+    },
+    {
+      "path": "status.json",
+      "sha256": "ac90965a162e518f4bbcf9e5e060e9c45e58c415e386a8627b28f658ae474f49",
+      "bytes": 664
+    },
+    {
+      "path": "templates/ai-mcp-access-map.md",
+      "sha256": "bee6ef7b48ad6243b65a0df46633530250000bebbabdb92a6f79fb385914d80e",
+      "bytes": 1205
+    },
+    {
+      "path": "templates/builder-workstation-checklist.md",
+      "sha256": "2e5fe5f6ab3a49605be09824648ad4d2aa1e206a56368b973d77de4b20c20367",
+      "bytes": 914
+    },
+    {
+      "path": "templates/documentation-evaluation-checklist.md",
+      "sha256": "a55d343e5b92477e03713fa31aca362709c758e66e7b3900e50059f7cdfcd7e6",
+      "bytes": 775
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "f713d38bbbd73ad75760e8053a6c32b4b10231137625c30fafc8ddee1d6a4203",
+      "bytes": 525
+    },
+    {
+      "path": "templates/safe-ai-builder-checklist.md",
+      "sha256": "9ad450730780dd8897560847632c5e5364fa9c45ffc1ab9b4096c10738f1ddfc",
+      "bytes": 1083
+    },
+    {
+      "path": "templates/teacher-builder-starter-kit.md",
+      "sha256": "34fd7ef68b0e15b8cabd1e7d444932721a7bb8bc6adebcf691dcf982de7b92e0",
+      "bytes": 3991
+    }
+  ]
+}

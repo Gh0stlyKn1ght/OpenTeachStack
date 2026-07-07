@@ -1,12 +1,13 @@
 {
+  "generationSource": "scaffold",
   "code": "OTS-320",
   "slug": "ots-320",
   "title": "AI Coding Agents for Educators",
   "owner": "generic",
   "canonicalRoute": "/book/ots-320",
   "sourceRegistry": "src/lib/courseStructures.ts",
-  "generatedAt": "2026-06-22",
-  "migrationStatus": "draft",
+  "generatedAt": "2026-07-07",
+  "migrationStatus": "generated",
   "chapters": [
     {
       "number": "01",
@@ -52,11 +53,9 @@
     }
   ],
   "copiedDocs": [
-    "docs/OTS_320_COURSE_OUTLINE.md",
-    "docs/OTS_320_AGENT_ARTIFACTS.md"
+    "docs/OTS_320_AGENT_ARTIFACTS.md",
+    "docs/OTS_320_COURSE_OUTLINE.md"
   ],
   "copiedAssets": [],
-  "copiedLabs": [],
-  "courseReadiness": "active-preview",
-  "releaseBoundary": "Active draft preview. Open for pathway review, but not release-ready until lesson bodies are authored and humanReviewed is true."
+  "copiedLabs": []
 }

@@ -29,7 +29,7 @@ const chapterGuides = {
   "03-prompting-coding-agents": {
     focus: "prompts that produce narrow, inspectable tasks rather than broad, speculative edits",
     decision:
-      "writing constraints that force measurable outputs, safety boundaries, and explicit handoff notes",
+      "writing constraints that force measurable outputs, safety boundaries, and explicit stop-and-review points",
     caution:
       "prompts that request broad repo changes, personal data, or hidden assumptions.",
   },
@@ -241,7 +241,7 @@ The chapter decision is focused and specific: ${guide.decision}
 
 ## Do This
 
-${checklist.map((item) => `- ${item}`).join("\n")}
+${checklist.map((item, i) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${i + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -289,6 +289,7 @@ for (const chapter of courseJson.chapters) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
       duration: parsed.data.duration,
     };

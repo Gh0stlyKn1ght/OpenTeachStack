@@ -1,12 +1,13 @@
 {
+  "generationSource": "scaffold",
   "code": "OTS-240",
   "slug": "ots-240",
   "title": "Open Resources and GitHub for Educators",
   "owner": "generic",
   "canonicalRoute": "/book/ots-240",
   "sourceRegistry": "src/lib/courseStructures.ts",
-  "generatedAt": "2026-06-22",
-  "migrationStatus": "draft",
+  "generatedAt": "2026-07-07",
+  "migrationStatus": "generated",
   "chapters": [
     {
       "number": "01",
@@ -55,7 +56,5 @@
     "docs/OTS_240_COURSE_OUTLINE.md"
   ],
   "copiedAssets": [],
-  "copiedLabs": [],
-  "courseReadiness": "active-preview",
-  "releaseBoundary": "Active draft preview. Open for pathway review, but not release-ready until lesson bodies are authored and humanReviewed is true."
+  "copiedLabs": []
 }

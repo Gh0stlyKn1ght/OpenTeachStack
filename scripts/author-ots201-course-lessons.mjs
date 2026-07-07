@@ -133,7 +133,7 @@ function sectionMode(type, artifact, chapterArtifact) {
     };
   }
   return {
-    action: "apply the chapter logic to one real teacher workflow",
+    action: "apply chapter concepts to one real teacher workflow",
     evidence: "a short practice decision note",
     verify: "the decision is grounded in accessibility, safety, and source checks.",
   };
@@ -192,13 +192,13 @@ function bodyFor(chapter, section) {
 
 ## Core Idea
 
-${chapter.title} is about ${guide.focus}. This lesson asks the teacher to turn **${section.title}** into a visible workspace decision, example, and review cue.
+As part of your broader **workspace system**, ${chapter.title} is about ${guide.focus}. This lesson asks the teacher to turn **${section.title}** into a visible workspace decision, example, and review cue.
 
 ${chapter.title} should stay safe, repeatable, and handoff-ready. The goal is to make each workflow visible, maintainable, and privacy-aware before it becomes a habit.
 
 ## Do This
 
-${doThis.map((item) => `- ${item}`).join("\n")}
+${doThis.map((item, index) => (section.lessonType === "artifact-build" || section.lessonType === "workflow") ? `${index + 1}. ${item}` : `- ${item}`).join("\n")}
 
 ## Evidence of Completion
 
@@ -252,6 +252,7 @@ for (const [chapterSlug, chapter] of chapterMap.entries()) {
       number: parsed.data.sectionNumber,
       title: parsed.data.title,
       type: parsed.data.type,
+      lessonType: parsed.data.lessonType,
       artifact: parsed.data.artifact,
       duration: parsed.data.duration,
     };

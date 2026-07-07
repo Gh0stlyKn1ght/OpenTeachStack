@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "courseId": "ots-101",
+  "status": "locked",
+  "lockedAt": "2026-07-07T20:18:25.405Z",
+  "lockedBy": "NEO",
+  "reason": "Authoring structures, custom templates, and lesson layout reviews complete, marked human-reviewed and verified under Phase 1.",
+  "protectedPaths": [
+    "content/courses/ots-101/README.md",
+    "content/courses/ots-101/course.json",
+    "content/courses/ots-101/status.json",
+    "content/courses/ots-101/course.packet.json",
+    "content/courses/ots-101/lessons/**",
+    "content/courses/ots-101/labs/**",
+    "content/courses/ots-101/templates/**",
+    "content/courses/ots-101/references/**",
+    "content/courses/ots-101/assets/**",
+    "content/courses/ots-101/docs/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/images/ai-as-curriculum-assistant.webp",
+      "sha256": "da4dfa559c1fcbd75f66dd036c2e14a07b97cf5b0bc53f692440c76ce4470569",
+      "bytes": 104252
+    },
+    {
+      "path": "assets/images/assessment-rubrics-and-feedback.webp",
+      "sha256": "f2d82efe2819255b40a50ff0ed7f051cfecf1a19fab17bb1f8475373a5292f28",
+      "bytes": 90110
+    },
+    {
+      "path": "assets/images/building-courses-from-standards.webp",
+      "sha256": "a1a9c704682c19f86725792346b3eb04bb119fab7edc54c1b16aba6f0c10ce79",
+      "bytes": 101468
+    },
+    {
+      "path": "assets/images/capstone-build-your-mini-course.webp",
+      "sha256": "51c70f4470af1b99e23383af126a503193ef47f6d911c0ddd6b079e8e312752f",
+      "bytes": 116732
+    },
+    {
+      "path": "assets/images/choosing-a-teacher-app-stack.webp",
+      "sha256": "25e4f163b5cde69cc51a83751bf95e244368a95d73173a3e3f5dcf83a4388ae6",
+      "bytes": 79972
+    },
+    {
+      "path": "assets/images/course-architecture.webp",
+      "sha256": "54fedfd579d5916c39f7e00541118b359d21e0b39670333bdef00013e313028a",
+      "bytes": 88230
+    },
+    {
+      "path": "assets/images/creative-commons-for-teachers.webp",
+      "sha256": "82974184ad4439ec2faf57c4ab0481d0c8590a0e3e9d4da1dcc95b7febe5575b",
+      "bytes": 95558
+    },
+    {
+      "path": "assets/images/delivery-planning-foundations.webp",
+      "sha256": "bf6121dfcdca993ef0159caa659732929a69bd243a7b35fc7089bc3fdf6bee90",
+      "bytes": 95290
+    },
+    {
+      "path": "assets/images/google-drive-folder-architecture.webp",
+      "sha256": "921135e031dfc5e2fc8b2080fb5022b27e7be01a070b464f7b6aaf300e3d91bd",
+      "bytes": 78138
+    },
+    {
+      "path": "assets/images/google-forms-as-quizzes.webp",
+      "sha256": "f9db4c8b31ad85ac8ba38ea9b9b70c8d4d3f2794f3e591ef1b56eea8684437db",
+      "bytes": 89346
+    },
+    {
+      "path": "assets/images/google-sheets-as-curriculum-database.webp",
+      "sha256": "4aaa434f9e894758b8181291ffe80c1b8ee809d2d76d0d8a6b7c7015251993d8",
+      "bytes": 89778
+    },
+    {
+      "path": "assets/images/one-day-lesson-site-workflow.webp",
+      "sha256": "8d6a4e25d5c9bca3ed440d6f5ca8ba5efe950803b45a78ebed336f10fff9ad3d",
+      "bytes": 61844
+    },
+    {
+      "path": "assets/images/open-source-vs-free.webp",
+      "sha256": "d660d008749c9c6a1834087c9e3979eb14c0a66462a933e78ec70ec074a7307e",
+      "bytes": 125688
+    },
+    {
+      "path": "assets/images/prompting-for-teachers.webp",
+      "sha256": "f474666d2afa764b75114bf0e96be9f69b06ff402cd0a8a6b07f7f5eadab5cc5",
+      "bytes": 84336
+    },
+    {
+      "path": "assets/images/release-packet.webp",
+      "sha256": "fc406713c615e1437453168a7497f557f819a5569cdb58ae512f68953be369e7",
+      "bytes": 73984
+    },
+    {
+      "path": "assets/images/resource-discovery-and-evaluation.webp",
+      "sha256": "2e9537cf2adff3f4781958ff5a52f2c92511b4ee3990df81719f272e7311b10f",
+      "bytes": 99374
+    },
+    {
+      "path": "assets/images/source-bank.webp",
+      "sha256": "d028e59e67729a5c662330932df4d0fbbe79ef4d3a63e3123975909525b3e4d4",
+      "bytes": 88706
+    },
+    {
+      "path": "assets/images/the-teacher-as-builder.webp",
+      "sha256": "cc09a2b9ac96fff10e72fe3f39091318230a43768cc2f535b9eca8455a365d4e",
+      "bytes": 106434
+    },
+    {
+      "path": "assets/images/what-teaching-teachers-is.webp",
+      "sha256": "22675e40b46d142e638649a0d88aedc0646ce21473f3dda888f920026b9c97e7",
+      "bytes": 96602
+    },
+    {
+      "path": "assets/README.md",
+      "sha256": "d9766b9356fd1cfdd93abf20d42aaaa61c04c6730f1575c4f1d55f2767ab8a07",
+      "bytes": 196
+    },
+    {
+      "path": "course.json",
+      "sha256": "278a216d16fa6351efaf7e02847a3ce9d5ae7a0a4d7822d290c7e396a1fa2f5a",
+      "bytes": 3439
+    },
+    {
+      "path": "course.packet.json",
+      "sha256": "8bd1638019e9b93875b4df000dc57412b535bcec4d5eaee15401eca7488c5694",
+      "bytes": 1219
+    },
+    {
+      "path": "docs/OTS_000_TO_OTS_101_ALIGNMENT.md",
+      "sha256": "27453b4b6e499e957d033c4bc9bc78af18ce419701dff4aab1fc672a6dacc3a2",
+      "bytes": 6461
+    },
+    {
+      "path": "docs/OTS_101_ACCESSIBILITY_RELEASE_CHECK.md",
+      "sha256": "932d3d5c5b7e5a5cfdcce63d5a1e9b68d7057f3d980a1261b0fd5defb8cd3e28",
+      "bytes": 4358
+    },
+    {
+      "path": "docs/OTS_101_BROWSER_ACCESSIBILITY_AUDIT.md",
+      "sha256": "c03c4e33a98ee7e61feee293a02f444bf389aaf9b25df60da7bc4c0b98bafc51",
+      "bytes": 434
+    },
+    {
+      "path": "docs/OTS_101_CURRICULUM_MANAGER_AUDIT.md",
+      "sha256": "aca00a0ba61c2d133d966c538b22439079a215bd41bb3a436956c11c66ad0199",
+      "bytes": 16161
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "8973ce4609909c0d80c8169bdca35dc7530b911362b97f530f3ca0f409899385",
+      "bytes": 360
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "68805f4757e30aa2bc9a68d39827b64f1d887a3e35ac64544631eb8cbd6e5a90",
+      "bytes": 192
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-0.mdx",
+      "sha256": "548cff9fcf75c95f9159591b1114d0004a63879a7f777b7936e33a04da9073e4",
+      "bytes": 5959
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-1.mdx",
+      "sha256": "8f5dd1e9293795a2a2757458323d2ccc7065395c2277a958cf7917fb82e3de6e",
+      "bytes": 4689
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-2.mdx",
+      "sha256": "6f03a44f6024539fab4f304ca3ef5e7bc968753b92a2494c068102ea488033ed",
+      "bytes": 3641
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-3.mdx",
+      "sha256": "fdb83a69bbd6e1de4db59282ab1fbca32e1703fbc90e46887e4d93040d909962",
+      "bytes": 4198
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-4.mdx",
+      "sha256": "6748c67c1e74f434c0194660ca8204d089cb27af6b81c086edf3ea2406961f9f",
+      "bytes": 4213
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/01-5.mdx",
+      "sha256": "ea01ba4e3b1632d3f2bafbe72096051102063ad3473693a89bde90c78254cbb9",
+      "bytes": 3431
+    },
+    {
+      "path": "lessons/01-curriculum-vs-course-content/README.md",
+      "sha256": "eea6adc948186336b3e576d56a2c2c30e917daa027d7a73108077a9b4e9d32fa",
+      "bytes": 322
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-0.mdx",
+      "sha256": "2e0a272e6b0da26a980ef8978163de614177bbc74ce8f923f5f0ea614f507453",
+      "bytes": 6253
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-1.mdx",
+      "sha256": "dabad93d169d19a08e7c030a4a4eac30a1cc8ba90634c2c830df7b2b0c9e44d7",
+      "bytes": 4291
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-2.mdx",
+      "sha256": "d10b18a8487e62ef3eef4f36ea06f988a80b336603d4f449031433b6229c1106",
+      "bytes": 4609
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-3.mdx",
+      "sha256": "ff49175a91b9fc76824be3ef060203130774b6c5947acc923289cff0b8f32784",
+      "bytes": 4270
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-4.mdx",
+      "sha256": "4bd4e2fc2b4f06a73ac5eb83dee388013a470266a052b59ab20e45b0e01e29ee",
+      "bytes": 5879
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/02-5.mdx",
+      "sha256": "c089524c843a9fb51725b621d5f78529fdf45d5e5cedb3ed82b9a31fa483d920",
+      "bytes": 3922
+    },
+    {
+      "path": "lessons/02-standards-goals-to-lessons/README.md",
+      "sha256": "3ea8168959eff3e16c75015ab4209b0e081cda7263707f67d1b82eb75fb0de0a",
+      "bytes": 318
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-0.mdx",
+      "sha256": "f64f24df224a72b6084b0f4456b726f04ba0a7196187701e32a2e88890ece4c0",
+      "bytes": 4839
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-1.mdx",
+      "sha256": "24f4bf69aaee42ee5d764c9e4ca6dc33a067d7555d3f5dc413bde71acfeb5272",
+      "bytes": 4545
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-2.mdx",
+      "sha256": "f4db89d503ec4402b386ba25b3dc6541f6f1b17ab1d770ea79f857212ea7220c",
+      "bytes": 4524
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-3.mdx",
+      "sha256": "5dbef293238dce2889acb4919b20205e272b215a09105750adecfe10e288bbb1",
+      "bytes": 4191
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-4.mdx",
+      "sha256": "81a1bf0daf26044cafa2c09d5427131de8cf0ab3792dd8e0dfa2e093650ed743",
+      "bytes": 5520
+    },
+    {
+      "path": "lessons/03-prompting-without-garbage/03-5.mdx",
+      "sha256": "dacf7da6aed6ce4939d2ce77a7a15f432eb2c1b749e494a898f4e86f11b0f346",
+      "bytes": 4294
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-0.mdx",
+      "sha256": "9d47bb7e59723fe398f11a10171e67df74d65f6db7fd9b8db20991760060b100",
+      "bytes": 3517
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-1.mdx",
+      "sha256": "52b3a1e4fd7b99c0f4b6ebac0422012490f95f94605489cd06b4d31f36f3368f",
+      "bytes": 5179
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-2.mdx",
+      "sha256": "3cd807f1c8781dffc1eb9a69764b9d4130a3d26ff92cf67d5ebbe381b54f3f71",
+      "bytes": 5902
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-3.mdx",
+      "sha256": "2f6b204dd2d2b6f60d8f1e3607084e33d32849f8678042b1a0fd01233418af79",
+      "bytes": 5910
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-4.mdx",
+      "sha256": "3eec4005361d9dc7e02e93a2917a9728e300584f796eef4db397d8b2edc33787",
+      "bytes": 7911
+    },
+    {
+      "path": "lessons/04-verify-ai-before-students/04-5.mdx",
+      "sha256": "fbb93d00c5a83b4a0318b8ef9b5da4658dcb98b275243d7e6695d3e7c35e2651",
+      "bytes": 4957
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-0.mdx",
+      "sha256": "150c7eb272715b767035c51109478e38e50424cff99cbed735205e87b85f0ab2",
+      "bytes": 3508
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-1.mdx",
+      "sha256": "70a8c0d930f724a3bf558492ec87bf1e1ff3fc7a6fb9311b23b7231aca24e809",
+      "bytes": 5316
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-2.mdx",
+      "sha256": "1853d255a62fc37e776113b963bc083f4994d2c5eebc1ea84403bc91582d6538",
+      "bytes": 5833
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-3.mdx",
+      "sha256": "11ab7596858c97bd2f65555daa964d0b548ab03d30202124e08f45e7a0504e53",
+      "bytes": 5274
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-4.mdx",
+      "sha256": "f5182eafc4eed3dc3e370663ed2f16e25736ff84505f70ce3018cabf7dc661c9",
+      "bytes": 6710
+    },
+    {
+      "path": "lessons/05-student-facing-lessons/05-5.mdx",
+      "sha256": "b99d3127193c3f6981153079643cdd6b4febe314c522fdbfa5604b5e3dc9f3eb",
+      "bytes": 4652
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-0.mdx",
+      "sha256": "235870e49e29c9599851b6a97c8c6c4f71e0ae15614056da3b7cb8adb7542c63",
+      "bytes": 3385
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-1.mdx",
+      "sha256": "00b9131534237c7dd7188cc97ce419b7ea9fa725277ee9650a44603c6b483549",
+      "bytes": 5417
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-2.mdx",
+      "sha256": "ecf4589086ab93fbbd8a8d3f12b881bf87dbf6d7011843864ec3bfb81d2e1a41",
+      "bytes": 5865
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-3.mdx",
+      "sha256": "602a54f09ec12279c5c505a554a09586a9c4874c2f428b41170b103896d888db",
+      "bytes": 5789
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-4.mdx",
+      "sha256": "a41b8950c905ef13f47f5795e28c00e533d7cbe1b11b72f5954fef3f687d5030",
+      "bytes": 5288
+    },
+    {
+      "path": "lessons/06-assignments-labs-rubrics-feedback/06-5.mdx",
+      "sha256": "64fccc8f1986163668b924c8d2e6e5b3c9d1dd3ea330a64567677886f6e009d8",
+      "bytes": 4572
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-0.mdx",
+      "sha256": "64f5fa982a5b51d43cf6ea9bfadbdc48c64d14d264070b7f937e619eb3583ec3",
+      "bytes": 3524
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-1.mdx",
+      "sha256": "5564f694385f3c433a5344ddddf79e890a1090fba3448c072151580113968877",
+      "bytes": 4913
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-2.mdx",
+      "sha256": "4aee4db7372b270ce927a4ae639c50717233b904201c2fa5d6a001ed76406c0a",
+      "bytes": 6176
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-3.mdx",
+      "sha256": "73aaa0fbb1d8d38ca1ad5bc567b83b551035b0818e23e1381a3324be68a35e9f",
+      "bytes": 5758
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-4.mdx",
+      "sha256": "81ff0dc0b2adb9aa48de58851a7b88a9ed64eeaf7072da04328fea1da9772b50",
+      "bytes": 5078
+    },
+    {
+      "path": "lessons/07-organizing-course-content-system/07-5.mdx",
+      "sha256": "8bc00f84fdd62757d52ccfb06c7178ed2b3407e16cedc51991154d74863e3eed",
+      "bytes": 4080
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-0.mdx",
+      "sha256": "9da5b0911daa7fa1c106dbdc5da1f40264059917537021e7cab7ec9efc96c8b6",
+      "bytes": 3494
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-1.mdx",
+      "sha256": "dc265310120aabd4d1fbb81abf028c44b0b0e59a3110b0f37ebe847a5967a0d8",
+      "bytes": 6880
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-2.mdx",
+      "sha256": "b4b78a6eaa74ebe125333502170643b912d04428946c611b910c754a5097df86",
+      "bytes": 6206
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-3.mdx",
+      "sha256": "5b08a5efb441a07de48590119458490cb72d00a3055889ed52fde1653cb566f8",
+      "bytes": 6376
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-4.mdx",
+      "sha256": "9f59c9fcca14aed620e8d4d07b1c637c07a2f78a4315967a6055f837a518f610",
+      "bytes": 6371
+    },
+    {
+      "path": "lessons/08-safety-accessibility-copyright-source-quality/08-5.mdx",
+      "sha256": "7e3c5818289af78c921cebd96f7ad815960789378f86373bdbc0a59e6e013840",
+      "bytes": 3668
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-0.mdx",
+      "sha256": "848dc53bbf70d4cb08492986121dd6333f05191858b27fc97b6d529c4ea93523",
+      "bytes": 3495
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-1.mdx",
+      "sha256": "d29a14ba3bbd9e317bff00a0746007163090c21f8dc86edabdc4bf6ea9492fa8",
+      "bytes": 4994
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-2.mdx",
+      "sha256": "90933a8b8d828146d77ee32c7d04a8bb369baf5c0f30ef98e622d0bb4488c7e9",
+      "bytes": 6737
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-3.mdx",
+      "sha256": "b2c6be991589d43094597a043adb620025276e1f82bb7b957520529a7ae166af",
+      "bytes": 5529
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-4.mdx",
+      "sha256": "854f7a5645b99d0f9b8a451c03acd030069555b1dfdef9c98fb3c5bbbb946aa8",
+      "bytes": 5887
+    },
+    {
+      "path": "lessons/09-publishing-to-platform/09-5.mdx",
+      "sha256": "2692427a2f780192ad18ce9cf32da1919796f9dd4a10d83580f7706adb860ab6",
+      "bytes": 3573
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-0.mdx",
+      "sha256": "2c9279fd732c30e2afc2c664001929e794cc0639176d6616564c3da9485a4601",
+      "bytes": 4058
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-1.mdx",
+      "sha256": "e335df4f01067601bd7986be6f81b248ed2461c76f409e66133f9f48a5dc9f58",
+      "bytes": 6011
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-2.mdx",
+      "sha256": "bdbf196dec2b2111bdb8876437649fdb7f651162a6809a3ec90732751725c019",
+      "bytes": 5749
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-3.mdx",
+      "sha256": "5fb237e13054073cfe6307b8e4454bea638a70bacd288bbe187100babe2f443c",
+      "bytes": 4104
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-4.mdx",
+      "sha256": "640db446e2ae0fa3f42da0909b5983f72256c700633242ceec1034193d491108",
+      "bytes": 5289
+    },
+    {
+      "path": "lessons/10-mini-course-content-packet/10-5.mdx",
+      "sha256": "d373bbba57933d86bd0f0d75c30f5522dc320aea18eab3563fd4d25bebf8943b",
+      "bytes": 4116
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "b3924035b6a313fb26c39d0e69feb41a172b11bb6c52b66d73d242968910f7c6",
+      "bytes": 1471
+    },
+    {
+      "path": "README.md",
+      "sha256": "77933c45c0169bdc70efb71ee10048383537f801a644557af3cd84e4b50b824d",
+      "bytes": 2614
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "ac08a39e1fd596cccce734d2e534c80bb3759a9d0f3e80b304529f0a4520e5a7",
+      "bytes": 446
+    },
+    {
+      "path": "status.json",
+      "sha256": "c0355dd472973ba22358ea40424197106551b688ad87595d28fe5da87c8f7138",
+      "bytes": 764
+    },
+    {
+      "path": "templates/ai-course-content-prompt.md",
+      "sha256": "7c99c62c0af7e154758a9318f4bc4f03146feef4c695bec957719dc5363ab113",
+      "bytes": 1543
+    },
+    {
+      "path": "templates/ai-output-verification-checklist.md",
+      "sha256": "14b1856e6105a23d4c9a441802f9f03cc3e7b96904909d40c9dc4bd48af7caf1",
+      "bytes": 2075
+    },
+    {
+      "path": "templates/assignment-rubric-packet.md",
+      "sha256": "175c51e92ce387abd2aeff822e90781b8a33c72d63a8a5e9143572441f074052",
+      "bytes": 1343
+    },
+    {
+      "path": "templates/content-safety-review.md",
+      "sha256": "82ddb59e40b3499f9dfaaf214186fcf077365a4e3e008b2f77a3f3e0d5f409bf",
+      "bytes": 1721
+    },
+    {
+      "path": "templates/course-content-folder-map.md",
+      "sha256": "0cd8bbeb8e1e299cfd6597312c86e58e4e97b50ca192b6e5aaa7ed83750f5785",
+      "bytes": 1516
+    },
+    {
+      "path": "templates/course-content-inventory.md",
+      "sha256": "76e23beef209e0c46442640737496478ad5fa669df60b315f5206c30687fc032",
+      "bytes": 2504
+    },
+    {
+      "path": "templates/course-truth-audit.md",
+      "sha256": "c4ae2ccbe0f9574df6420edaeeaf3baf53f816bada79976c3ee94e6d6273ced6",
+      "bytes": 3118
+    },
+    {
+      "path": "templates/curriculum-course-content-map.md",
+      "sha256": "1bd902b784b89cc4f1ed9bf11ad18f24a67333b2997916e81fbaad45b0462454",
+      "bytes": 1934
+    },
+    {
+      "path": "templates/learning-target-lesson-map.md",
+      "sha256": "7eab7d8bd75fcc36844b14dbb502adad0a1c7979ee6d09fa45e94fd1c96397aa",
+      "bytes": 1694
+    },
+    {
+      "path": "templates/mini-course-content-packet.md",
+      "sha256": "51bf8f58ff8afb3f03030128c7e28cb3a8c4b7c2e030b9bb5c4f91c525346006",
+      "bytes": 2484
+    },
+    {
+      "path": "templates/publishing-checklist.md",
+      "sha256": "8de6b9c270ce4a7d75e686e364a204335ed0e8665a32f4f338a2370155917122",
+      "bytes": 1713
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "a187891169614259886f72d51027818dd6a2fd99941435c449fafcbd687c25fb",
+      "bytes": 460
+    },
+    {
+      "path": "templates/revision-log.md",
+      "sha256": "b6f0781ab0f2eeaaa4c2d5b5fbf42e801838d6456eb8dcaedd23f54a6a9b1ad1",
+      "bytes": 868
+    },
+    {
+      "path": "templates/student-facing-lesson-page.md",
+      "sha256": "4679d57e03eeff793c263b02758d12061bdc8f42e0b46e385e059b2266761b09",
+      "bytes": 1464
+    }
+  ]
+}

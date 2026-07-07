@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseRecords } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 
@@ -12,20 +13,11 @@ function fail(message) {
   process.exitCode = 1;
 }
 
-const expectedCourseSlugs = new Map([
-  ["OTS-000", "ots-000"],
-  ["OTS-101", "ots-101"],
-  ["OTS-201", "ots-201"],
-  ["OTS-220", "ots-220"],
-  ["OTS-240", "ots-240"],
-  ["OTS-260", "ots-260"],
-  ["OTS-280", "ots-280"],
-  ["OTS-301", "ots-301"],
-  ["OTS-320", "ots-320"],
-  ["OTS-399", "ots-399"],
-]);
-
-const dedicatedCourseCodes = new Set(["OTS-101", "OTS-280"]);
+const courseRecords = listCourseRecords(root);
+const expectedCourseSlugs = new Map(courseRecords.map((record) => [record.code, record.slug]));
+const dedicatedCourseCodes = new Set(
+  courseRecords.filter((record) => record.owner === "dedicated").map((record) => record.code),
+);
 const genericCourseCodes = new Set(
   [...expectedCourseSlugs.keys()].filter(
     (code) => !dedicatedCourseCodes.has(code),

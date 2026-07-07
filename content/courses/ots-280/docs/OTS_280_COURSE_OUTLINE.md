@@ -2,7 +2,7 @@
 
 Date: 2026-06-22
 
-Status: Active draft preview outline - open for review; not human-reviewed or release-ready.
+Status: active course preview
 
 Course path: Cyber Safety for Educators
 
@@ -14,9 +14,9 @@ Teachers are public-facing professionals. Cyber safety should give them calm, pr
 
 OTS-280 should avoid fear-based security language. The course should teach repeatable maintenance routines that reduce risk while preserving the usefulness of public curriculum work.
 
-## Course Source Material
+## Source References
 
-This outline is backed by the cyber safety book model and supporting field note:
+This outline is extracted from the existing cyber safety book model and supporting field note:
 
 - `src/lib/cyberSafety.ts`
 - `content/field-notes/teachers-need-digital-self-defense.mdx`
@@ -75,4 +75,3 @@ The outline is represented in `src/lib/cyberSafety.ts` and rendered through the 
 3. FTC, NIST, GitHub secret scanning, and platform references are attached or queued in `docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md`.
 4. Escalation notes for district IT, administration, platform support, and law enforcement boundaries are documented in `docs/OTS_280_SOURCE_REFERENCES_AND_ESCALATION.md`.
 5. The current authored examples passed privacy review in `docs/OTS_280_PRIVACY_REVIEW.md`.
-

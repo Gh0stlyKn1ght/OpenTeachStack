@@ -1,3 +1,4 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # OTS-201 labs
 
 Course-owned labs, workshops, simulations, and build activities.

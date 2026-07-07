@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "courseId": "ots-201",
+  "status": "locked",
+  "lockedAt": "2026-07-07T21:11:26.057Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 2 Core Workspace verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-201/README.md",
+    "content/courses/ots-201/course.json",
+    "content/courses/ots-201/status.json",
+    "content/courses/ots-201/lessons/**",
+    "content/courses/ots-201/labs/**",
+    "content/courses/ots-201/assets/**",
+    "content/courses/ots-201/docs/**",
+    "content/courses/ots-201/templates/**",
+    "content/courses/ots-201/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "f672b874def6fbad83b8408393bbf0564879c0c5ae89d82260b4c7deed064c09",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "7d1e51a1d10db7b5e27791074b1c41e3384567c84814aaef7def5184a9a4de6b",
+      "bytes": 1647
+    },
+    {
+      "path": "docs/OTS_201_COURSE_OUTLINE.md",
+      "sha256": "1ae34ab88c4c320f49bcb12c181db643a38c711b3ef694092b6ba8e6349b435e",
+      "bytes": 2743
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "b6ec1ceb57d1ec968286987536809f012e903d36dfbafcb6b7d55f3d3c3269e5",
+      "bytes": 210
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "755a1a1a28f6b86acb547512b903550e5b3d2f60cf5f70c11482f48c47d9dd97",
+      "bytes": 308
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-0.mdx",
+      "sha256": "cfcb9991593c62a3ea203ce52f2603be3313112bed8607a7986c4471731a68e4",
+      "bytes": 3235
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-1.mdx",
+      "sha256": "38cabfde958244b6e19cabe27528acdbad3381107cef397584cd342ac697ed72",
+      "bytes": 3316
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-2.mdx",
+      "sha256": "399a59a844c981b9cdc5ce14a769e7692470e03fc3ec5f2af7100427336ed3f5",
+      "bytes": 3321
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-3.mdx",
+      "sha256": "0559c09f8b43fbedf0c955e922abfe8978aec4ef5af638ba297579742d519fee",
+      "bytes": 3313
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-4.mdx",
+      "sha256": "a7cb5ec50b0553aa941a8ed6b3a423b42235840e6936db43bc8b069c18d2a840",
+      "bytes": 3317
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/01-5.mdx",
+      "sha256": "b3d5c12c21eeffcb2cb4ed87b6ab1a213d666fe5f780d64563062322f03e9989",
+      "bytes": 3245
+    },
+    {
+      "path": "lessons/01-workspace-system-mindset/README.md",
+      "sha256": "1c5f40beb03e9b28e39936475647bf798d30147c17b537d5bc7c008b45e72536",
+      "bytes": 150
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-0.mdx",
+      "sha256": "7136c2ca72d5480b6836331cc67969190a6a54e37106fdfcd10ba8f9fe3c92bf",
+      "bytes": 3188
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-1.mdx",
+      "sha256": "fe4798a3bdc1ebdc9095b334b6262b4b5e08ea3e3482ad1da94afe93677fdba9",
+      "bytes": 3261
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-2.mdx",
+      "sha256": "2558eca1b9097fc0c8338c632f7f290d7c2dfe5b64ec5bce75dbb1a24b8ce505",
+      "bytes": 3239
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-3.mdx",
+      "sha256": "7a8311a5176a4ca901c4754109ac554df535669ade12b1de809da28f6c6dd74b",
+      "bytes": 3234
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-4.mdx",
+      "sha256": "00234ca5d3749d21f573f8352f43015167fc86f2d88da02d5f28b76944d2fbfd",
+      "bytes": 3256
+    },
+    {
+      "path": "lessons/02-drive-architecture/02-5.mdx",
+      "sha256": "5fd2458bb165d49e75cd4ac496063e6d10385b1a598ec5818132b3fe79e0b38e",
+      "bytes": 3198
+    },
+    {
+      "path": "lessons/02-drive-architecture/README.md",
+      "sha256": "044b0fd2f8edb9515dcfb2bc3f0b9bad07a4d8557b28479c19c06805fcd1be17",
+      "bytes": 136
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-0.mdx",
+      "sha256": "1affb6f801392190f06e9c600de8380c98b156f69d13c560460c967a1ad6e8e7",
+      "bytes": 3306
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-1.mdx",
+      "sha256": "09c21626d3deb5e4391e660f266aeb31929acac2d798743cbac1fc2849d4f4af",
+      "bytes": 3407
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-2.mdx",
+      "sha256": "404116bcb1b58dd477fe1dc84ab0583cc1e0f7a8ea263fe6b5222e167857f9a8",
+      "bytes": 3352
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-3.mdx",
+      "sha256": "abbf69e72f86d7a76b959edb62cde26390f38a9421cc5a95affd76f72d146e4a",
+      "bytes": 3417
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-4.mdx",
+      "sha256": "aed93e2f13c891a13afe93095b526538a532b114f3c26bc57d633ce23624999b",
+      "bytes": 3374
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/03-5.mdx",
+      "sha256": "fb16f6926a6831b403d817166a04012c75bcab33746e2c54754da6e0e498fa88",
+      "bytes": 3316
+    },
+    {
+      "path": "lessons/03-docs-slides-delivery/README.md",
+      "sha256": "51fd44e155213644a628acc8fb0448580a1b202ad87004bbb76b325496fdc832",
+      "bytes": 175
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-0.mdx",
+      "sha256": "d72115a95acea48b2ea2a8149dd9ddba21056761f39a18d3553b12aafb3bef60",
+      "bytes": 3235
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-1.mdx",
+      "sha256": "ba43088b0583a1ef0b996b7546a1efc12ec2e9b91032616ea835ea3d8630a214",
+      "bytes": 3323
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-2.mdx",
+      "sha256": "246f78da8ab3a31ecbd74ac063955002478dbab6cfae3d2625c2391e558fd86b",
+      "bytes": 3291
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-3.mdx",
+      "sha256": "4b2267713273372cbc031841e3db31d84ef4bda00df28e1e605a4cd4e321ee3d",
+      "bytes": 3351
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-4.mdx",
+      "sha256": "8930a8b959af860073044a77de9b96bc08b728193bec2745207a40c0a157be81",
+      "bytes": 3287
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/04-5.mdx",
+      "sha256": "7c143d3e708229cb97494aba4fcfe6a52ba3ad2f4202b62ccd41b4a8398ea002",
+      "bytes": 3245
+    },
+    {
+      "path": "lessons/04-sheets-curriculum-trackers/README.md",
+      "sha256": "8ff5505dadf5544532fc1ff6f46b2b073f3a65d8624ae42cbdbb33d1ecf2ada0",
+      "bytes": 157
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-0.mdx",
+      "sha256": "46b1278f556550a4d9ab32bb812d3b2a2816e9e4aad5fe8fecedb4e511ba8aac",
+      "bytes": 3278
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-1.mdx",
+      "sha256": "6632119665af1267d2265df29224ee57f8cc8e6be310a05f265888ac0d56b63d",
+      "bytes": 3349
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-2.mdx",
+      "sha256": "b0c865b92b3a1b3a6c3dd70992b978d0e77fc9945c646bce83caed05ec0651a5",
+      "bytes": 3334
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-3.mdx",
+      "sha256": "723058926f4fcae50eb164c9745153a47194970a74dbc37d3e5852ffbb9abaa0",
+      "bytes": 3354
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-4.mdx",
+      "sha256": "79850659463ed5961d30442d103b6758f95153f16219e7f1c8fe02b2232883f5",
+      "bytes": 3353
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/05-5.mdx",
+      "sha256": "1243257a5aa7e43c4884760ddaf9b9ae3ffaf93375050f993a0696d400d1eda3",
+      "bytes": 3288
+    },
+    {
+      "path": "lessons/05-forms-calendar-operations/README.md",
+      "sha256": "6961e8b03c88f3b45c9d77ea7c2ee4df8ff50af0e9a108c92da877a078f50f16",
+      "bytes": 169
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-0.mdx",
+      "sha256": "8623ffb6481911d4f035e8ebc5451f59cc4eb4ea6b86c6bf9fd0c85bd9a09de8",
+      "bytes": 3253
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-1.mdx",
+      "sha256": "4c507f2315f01c0bbb15fb170847dbd7b6ac603a973ac02e8f0e7bdf9c2f234b",
+      "bytes": 3294
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-2.mdx",
+      "sha256": "931acaf4806a48c97fff4fa36ff68de6b836efd0352874be5f6fcf3ae366e8c8",
+      "bytes": 3264
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-3.mdx",
+      "sha256": "2262c74e5f8968070808e303ca7b522f16005410fe696245a20693412421e7aa",
+      "bytes": 3279
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-4.mdx",
+      "sha256": "68b757600be9cbacc27806572243bbef6e2edcb52f0751a82baf1bcbc889f12d",
+      "bytes": 3340
+    },
+    {
+      "path": "lessons/06-workspace-command-center/06-5.mdx",
+      "sha256": "b92bf89b97520321cf3350e691dbfffe33e7020ecffa99d41033586117ac1da1",
+      "bytes": 3263
+    },
+    {
+      "path": "lessons/06-workspace-command-center/README.md",
+      "sha256": "2456f7ab4dcfe487280ee5163033ccd1d631cfeaaa07cdf92711d97b526a2eef",
+      "bytes": 150
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "67f0bd712459b3c4637f889de57e37608d1a3c840807d1e37773d7b0b9587b84",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "96f2e036f51bff4587aef6b69b882cd4167055dfabfacd8f628be72962ef0bf8",
+      "bytes": 983
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "758f000404b2a7c11a85f284a13d18c1f0ccb03669092b7cd7bc0d7eb0efc35f",
+      "bytes": 321
+    },
+    {
+      "path": "status.json",
+      "sha256": "b65a4c4222e806a0b3abc039b15ed4f7d5c68cd22302d00059448ac800f7acce",
+      "bytes": 434
+    },
+    {
+      "path": "templates/command-center-review-template.md",
+      "sha256": "98eac4fede1caf630a612d0c77605620d5ab6012b037df141f4ddaa34d97caff",
+      "bytes": 384
+    },
+    {
+      "path": "templates/curriculum-tracker-template.md",
+      "sha256": "413a0b377fb8ab25208e119c06d2283e6df373a87c517accca766df222afda4e",
+      "bytes": 349
+    },
+    {
+      "path": "templates/delivery-template-framework.md",
+      "sha256": "a898fcad2f1b1dd60462f2b9b08b50cd94a5f18eac948a153526eae5bd308eb7",
+      "bytes": 332
+    },
+    {
+      "path": "templates/drive-architecture-template.md",
+      "sha256": "541e13f6b343ee16efad2438ba6677c66716ac298f903afa3f19f3993e7a74da",
+      "bytes": 435
+    },
+    {
+      "path": "templates/forms-calendar-ops-template.md",
+      "sha256": "27e9a92c07a73455de498cdb9141f1b6b1feb03a20907c583c0015de3da08dfc",
+      "bytes": 388
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "6257bc5ca1ef2f3a90f08d335c43053382370febb315d07e6888267ccef26459",
+      "bytes": 298
+    },
+    {
+      "path": "templates/workspace-command-center-scope-template.md",
+      "sha256": "1919a199c5c749e3db9f1d2be25757a3b399edb74da1045e87a0e7136fe746e9",
+      "bytes": 343
+    }
+  ]
+}

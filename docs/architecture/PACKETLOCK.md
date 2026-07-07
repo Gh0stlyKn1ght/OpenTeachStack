@@ -54,4 +54,21 @@ Course health reports should show lock state:
 - missing manifest
 - hash mismatch
 
-The lock registry should eventually read packet roots, but the current lock scripts must remain compatible while migration is in progress.
+The lock helper now reads packet roots when `course.packet.json` exists.
+
+For packetized courses, future lock manifests protect:
+
+- `README.md`
+- `course.json`
+- `status.json`
+- `course.packet.json`
+- paths listed in `contentRoots`
+
+They intentionally ignore:
+
+- `draftRoot`
+- `reportsRoot`
+- `generatedRoot`
+- `exportsRoot`
+
+This keeps reviewed course source protected without freezing draft workbenches, health evidence, generated outputs, or downstream export packages.

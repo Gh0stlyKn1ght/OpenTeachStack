@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { listCourseRecords } from "./lib/course-registry.mjs";
 
 const root = process.cwd();
 const promptPath = join(root, "src", "lib", "prompts.json");
@@ -21,17 +22,7 @@ const requiredFields = [
   "tags",
 ];
 
-const allowedCourses = new Set([
-  "OTS-101",
-  "OTS-201",
-  "OTS-220",
-  "OTS-240",
-  "OTS-260",
-  "OTS-280",
-  "OTS-301",
-  "OTS-320",
-  "OTS-399",
-]);
+const allowedCourses = new Set(listCourseRecords(root).map((record) => record.code));
 
 const vaguePlaceholders = [
   "todo",

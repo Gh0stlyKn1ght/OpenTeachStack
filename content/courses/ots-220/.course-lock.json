@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "courseId": "ots-220",
+  "status": "locked",
+  "lockedAt": "2026-07-07T21:11:26.122Z",
+  "lockedBy": "NEO",
+  "reason": "Phase 2 Apps Script automation verification pass completed.",
+  "protectedPaths": [
+    "content/courses/ots-220/README.md",
+    "content/courses/ots-220/course.json",
+    "content/courses/ots-220/status.json",
+    "content/courses/ots-220/lessons/**",
+    "content/courses/ots-220/labs/**",
+    "content/courses/ots-220/assets/**",
+    "content/courses/ots-220/docs/**",
+    "content/courses/ots-220/templates/**",
+    "content/courses/ots-220/references/**"
+  ],
+  "allowedChanges": [
+    "typo",
+    "broken-link",
+    "metadata-only"
+  ],
+  "requiresUnlockFor": [
+    "lesson-body",
+    "lab-body",
+    "assessment-body",
+    "module-restructure",
+    "title-change",
+    "slug-change",
+    "generated-remediation"
+  ],
+  "files": [
+    {
+      "path": "assets/README.md",
+      "sha256": "fe2590e424d51e483c22d6460d786568d71d7d406063a8c20866808fd475958a",
+      "bytes": 312
+    },
+    {
+      "path": "course.json",
+      "sha256": "96284e3c61179741607866fb63af7d794ed82e36d883d1170685f4901f8554c7",
+      "bytes": 1753
+    },
+    {
+      "path": "docs/OTS_220_COURSE_OUTLINE.md",
+      "sha256": "c1d7c934c3be42176a9dedbd346677d5848732e2e00ffa56e35404bae7ce8cbc",
+      "bytes": 4080
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "1e9ba6c8073e5bde21065343c62cd9f342aec7e386f2b140f8924a4ce039d765",
+      "bytes": 210
+    },
+    {
+      "path": "labs/create-google-form-quizzes-from-sheet.mdx",
+      "sha256": "4853d553780ae66a00871fbd90101675b14145a2e05864bf560f8f8dbad2fea7",
+      "bytes": 6947
+    },
+    {
+      "path": "labs/generate-docs-from-sheet-rows.mdx",
+      "sha256": "79dd07cc91a50c07ed2366ea9c4aec7b55e9de463bc17973b357ba4a0bed48d4",
+      "bytes": 6976
+    },
+    {
+      "path": "labs/generate-unit-folders-with-apps-script.mdx",
+      "sha256": "ff0758939d161c354a4b7239c4ea4787cb7cdf2e8de241a171aa70be9a04c513",
+      "bytes": 6332
+    },
+    {
+      "path": "labs/README.md",
+      "sha256": "2f0ab6881f2650707b4637abf892f8c95a096646adce8a87036e731246c332fc",
+      "bytes": 308
+    },
+    {
+      "path": "labs/send-reminder-emails-from-sheet.mdx",
+      "sha256": "44359a83e0c6c76f955a1a20b2e55a497f858f1b3c6fbc83ba3adc3a02d3f3ad",
+      "bytes": 7308
+    },
+    {
+      "path": "labs/your-first-apps-script-custom-menu.mdx",
+      "sha256": "93100c4b342e8e844a3300a1b9582dc03fe2d00697acfda00e6c0125a6b11034",
+      "bytes": 4903
+    },
+    {
+      "path": "lessons/01-automation-mindset/01-0.mdx",
+      "sha256": "a53c480a3910d20bc187c37ccf141560c2aa924fb6dcf4503ec56c0c23d33402",
+      "bytes": 2965
+    },
+    {
+      "path": "lessons/01-automation-mindset/01-1.mdx",
+      "sha256": "c825d50947123072ee8f50e5b8f3d516e721b72960405a0c0891e686f956142e",
+      "bytes": 2984
+    },
+    {
+      "path": "lessons/01-automation-mindset/01-2.mdx",
+      "sha256": "bc88275b9e42b3407ec38aba0f016e5a461d50bd0ddcb4e3f1e406da116c3257",
+      "bytes": 3029
+    },
+    {
+      "path": "lessons/01-automation-mindset/01-3.mdx",
+      "sha256": "57bece2c96a09f1bbeea50541a91ee0f02d2ab902f6b2b4146e14eeb330f83d7",
+      "bytes": 3042
+    },
+    {
+      "path": "lessons/01-automation-mindset/01-4.mdx",
+      "sha256": "668c67b6c2055f60871bfc754cd0c835443caccf299f14a7d75774b408ba77ef",
+      "bytes": 2919
+    },
+    {
+      "path": "lessons/01-automation-mindset/README.md",
+      "sha256": "96b323b2daa0008fbb598ee8e905e540d2bb2f321e81df50d0610a67e77a02e6",
+      "bytes": 139
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-0.mdx",
+      "sha256": "5e78eb90cd4df165e4d3999cdb49e295f289073bd9eba4f7b5eeafbf37029294",
+      "bytes": 2713
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-1.mdx",
+      "sha256": "6b412a48f8e0518be2af72bf2ec130f9c80f50e65a2fd75096cfac3121a9754a",
+      "bytes": 2732
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-2.mdx",
+      "sha256": "d4b944adea515d8c84ee02c96628bb3740cc20c1210d3a12ecb1b7f745ab07dd",
+      "bytes": 2714
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-3.mdx",
+      "sha256": "5db74ddb5f9f7611350950f49a41ec19f09f4e7e1f5a05e2f4f960fca7b887b9",
+      "bytes": 2722
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-4.mdx",
+      "sha256": "0e80a654feb93d589b7633a57cffa5384550ba7d8d4de20ac47156a8300f0e8b",
+      "bytes": 2720
+    },
+    {
+      "path": "lessons/02-apps-script-basics/02-5.mdx",
+      "sha256": "99de6914d3819feded38f4b683ef380caf7147a29913b3c33db57efa0da43ead",
+      "bytes": 2667
+    },
+    {
+      "path": "lessons/02-apps-script-basics/README.md",
+      "sha256": "54aa3776d657a627a7cc6792e04d1650f0e8c06d8a08ce129f8ce2d4ceaed8ee",
+      "bytes": 132
+    },
+    {
+      "path": "lessons/03-folder-file-generators/03-0.mdx",
+      "sha256": "4ce084679fc9c9c51ec87fef13f3567fd64c4061e6338a63d00f005393f29dec",
+      "bytes": 2721
+    },
+    {
+      "path": "lessons/03-folder-file-generators/03-1.mdx",
+      "sha256": "fe81eb6d2d70aafa0be72f0d819c51ce7ddce72cb42fde56224ee19d3c0f0be8",
+      "bytes": 2670
+    },
+    {
+      "path": "lessons/03-folder-file-generators/03-2.mdx",
+      "sha256": "226b439921311b454b7286d12802e35b5549f1bc8c62a0a7ae18c3c11d371fd6",
+      "bytes": 2695
+    },
+    {
+      "path": "lessons/03-folder-file-generators/03-3.mdx",
+      "sha256": "d7b0c5c16fdd88ea4e3ff50cb731e25d95329d7d9d4c35cd6b5e3905ff1a08df",
+      "bytes": 2748
+    },
+    {
+      "path": "lessons/03-folder-file-generators/03-4.mdx",
+      "sha256": "850a286ac83e05eb01926aa21b4f5a3dac5b925ae7a559fb2ded41286c504554",
+      "bytes": 2675
+    },
+    {
+      "path": "lessons/03-folder-file-generators/README.md",
+      "sha256": "a1ff77102a58e3032e98bd2215dc67284bd07c7ef489883c2f77c85dd2bfd689",
+      "bytes": 142
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/04-0.mdx",
+      "sha256": "d6d7fefa14017811aadd553f100528637c64cd5fc1c410d06a17ef72d985b742",
+      "bytes": 2716
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/04-1.mdx",
+      "sha256": "9fb2829baf4e64b3a2341f7dc1e9844ece59e8d6bb4820386d8dfe8d48d554d2",
+      "bytes": 2680
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/04-2.mdx",
+      "sha256": "9bb681f72d0d14d4aa3efff40a37f2d90411eed9a1fb030444fe2e25168f9a37",
+      "bytes": 2755
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/04-3.mdx",
+      "sha256": "70175da6bc641f5b12afac7e73eef788ee9019f279d7d01d96cdb13e9351a410",
+      "bytes": 2753
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/04-4.mdx",
+      "sha256": "8e0b196d0ebe7c7975742e04dd91694a3e04b46dfa2b4ac328d01ec50645b025",
+      "bytes": 2670
+    },
+    {
+      "path": "lessons/04-docs-from-sheet-rows/README.md",
+      "sha256": "ff09f5460ef49f029badd099d951e2285c68be1870c4afb42b4f4510ab468bb0",
+      "bytes": 131
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/05-0.mdx",
+      "sha256": "6a3441353793acefe9c6b83beb8ff6c44f52e8c53887710bd4bfa131984d391f",
+      "bytes": 2733
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/05-1.mdx",
+      "sha256": "2ba08b1f6461be8723eceece25fee6f1aef6992bee9e9a16768582189c82e3b6",
+      "bytes": 2692
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/05-2.mdx",
+      "sha256": "65895e6e3feabfe41bab93a482fe35f41e0a2c4b35e47b894e4d895ece7f155a",
+      "bytes": 2737
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/05-3.mdx",
+      "sha256": "9b87390d93db6c1ae26167a8c20ccf0136c0034aab88991bf239b12475692eff",
+      "bytes": 2826
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/05-4.mdx",
+      "sha256": "c5869f19d33723189a1a5532be4eb91d51c764440d6c318ec6f169d2057ca36c",
+      "bytes": 2687
+    },
+    {
+      "path": "lessons/05-forms-email-reminders/README.md",
+      "sha256": "acb3cb8790d23cb190290e043d5b930b245e52ee878fd860a5775a55166bdcd7",
+      "bytes": 143
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/06-0.mdx",
+      "sha256": "7b49ddcb1d2b16deab34a021608597d880a33e875d4d9df04a21b19a7c2ba1aa",
+      "bytes": 2745
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/06-1.mdx",
+      "sha256": "7f1e3d1e01f2b4c490fd467c8d51b751cc3d9b6c0c4dfaa334a989f76f0fe269",
+      "bytes": 2724
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/06-2.mdx",
+      "sha256": "7d015874a41cb2958e2909cc097de9b4b515b0ebb90c521c2ec9899b239fae60",
+      "bytes": 2734
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/06-3.mdx",
+      "sha256": "97096c25652f48ff61063c2600b7e425b2c39961dcf93f4825825581422071ff",
+      "bytes": 2778
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/06-4.mdx",
+      "sha256": "fed32632944568d8b1e3cf6d455b69a6d98b6a238fe64242c85b0de7aa7afe8a",
+      "bytes": 2699
+    },
+    {
+      "path": "lessons/06-teacher-automation-toolkit/README.md",
+      "sha256": "427a993f4ed408a6a6491e2f827f524997a36b5e023cecab1bd9462f700b48ff",
+      "bytes": 148
+    },
+    {
+      "path": "lessons/README.md",
+      "sha256": "836d2431a5fc68de6699ba09e48be7e34a41c3021fb2075c2cd652ff31e6d878",
+      "bytes": 296
+    },
+    {
+      "path": "README.md",
+      "sha256": "9db23afb6916e9171d9a6a2597a5da932ed561237934dd8c7e551a4847db1f74",
+      "bytes": 997
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "2644d85abdd99b9cf30de1fba1b250e9fdd6f1516a144b64a823ec3f3ae4a650",
+      "bytes": 321
+    },
+    {
+      "path": "status.json",
+      "sha256": "b6a6fae0f9c64dd1ec391bf1dffb0f5141ff1777bfdccefade7a1c67e53105f6",
+      "bytes": 432
+    },
+    {
+      "path": "templates/automation-candidate-template.md",
+      "sha256": "3c0425e88980b0f8c31e8e29f88bbafb91c75461294da6381bc95862a33e3e4d",
+      "bytes": 469
+    },
+    {
+      "path": "templates/automation-toolkit-release-checklist.md",
+      "sha256": "bd5fea5917df00b2489328ad9aa7fff3b8f9fdbea4e7ca06d32416bb1f8edad9",
+      "bytes": 380
+    },
+    {
+      "path": "templates/custom-menu-template.md",
+      "sha256": "123aaba648bedeb2ea92c44b0bdcfe51072360bad840731f4ac07d27d1fa59be",
+      "bytes": 342
+    },
+    {
+      "path": "templates/doc-generation-template.md",
+      "sha256": "5262e6aaaa563a0c0aa888b39e60c24b25cb209ce2edea3652cde7cd402ce18d",
+      "bytes": 447
+    },
+    {
+      "path": "templates/folder-generator-worksheet.md",
+      "sha256": "9c14cf2b6924f5a54d262cc91c6f94380b7ee1f8c6324c88d95eae7675f410dc",
+      "bytes": 386
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "126e10280bfca5e0980fb8142edf064cbfbeff5a8c57540229ac9ef24b4aea12",
+      "bytes": 298
+    },
+    {
+      "path": "templates/reminder-automation-safety-checklist.md",
+      "sha256": "e42e08529df03f6b3d2041945127423447b01ff8f4756ea833ccd381dcc4ef15",
+      "bytes": 479
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-07T19:17:52.486Z",
+  "mode": "dry-run",
+  "course": "ots-101",
+  "courseCode": "OTS-101",
+  "draftId": "2026-07-07-ots101-review-workbench",
+  "draftRoot": "content/courses/ots-101/drafts/2026-07-07-ots101-review-workbench",
+  "sourceRoot": "content/courses/ots-101",
+  "approvedBy": "",
+  "copiedFiles": 0,
+  "promotionAllowedByScript": false,
+  "failures": [],
+  "warnings": [
+    "Draft manifest has no targetPaths. Nothing is ready to compare or promote."
+  ],
+  "summary": {
+    "targetCount": 0,
+    "changedTargets": 0,
+    "unchangedTargets": 0,
+    "newTargets": 0,
+    "missingDraftFiles": 0,
+    "unmappedDraftFileCount": 0
+  },
+  "targets": [],
+  "copiedTargets": [],
+  "unmappedDraftFiles": [],
+  "postCopyValidation": [],
+  "requiredChecks": [
+    "npm.cmd run check:course-packet -- --course ots-101",
+    "npm.cmd run report:course-health -- --course ots-101 --report-only",
+    "npm.cmd run verify:locks"
+  ]
+}

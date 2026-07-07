@@ -342,6 +342,7 @@ export const PATHWAY_COURSES: PathwayCourse[] = [
       "Incident response plan",
     ],
   },
+
   {
     code: "OTS-301",
     title: "Teacher Course Sites",
@@ -397,10 +398,9 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Start", href: "/book/ots-000" },
   { label: "Pathway", href: "/pathway" },
+  { label: "Audit", href: "/audit" },
   { label: "Knowledge Base", href: "/kb" },
   { label: "Blog", href: "/blog" },
   { label: "Build Notes", href: "/build-notes" },
   { label: "About", href: "/about" },
 ];
-
-

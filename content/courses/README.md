@@ -1,17 +1,14 @@
+<!-- AUTO-GENERATED SCAFFOLD — safe to replace with authored content. Do not re-run scaffold without --force. -->
 # Course-Owned Content
 
-Date: 2026-06-26
+Date: 2026-07-07
 
-This directory is the source of truth for OpenTeachStack course-owned content.
-
-Root-level `teachable/` is export-only legacy support. It must not be treated as course source content.
-
-Every course must carry an honest `status.json`.
+This directory is the migration-ready home for course-owned lessons, labs, assets, docs, templates, and references.
 
 Current courses:
 
 - [OTS-000 Teacher Tech Stack Orientation](./ots-000/README.md)
-- [OTS-101 AI Course Content Foundations for Teachers](./ots-101/README.md)
+- [OTS-101 Teaching Teachers Foundations](./ots-101/README.md)
 - [OTS-201 Google Workspace Systems for Teachers](./ots-201/README.md)
 - [OTS-220 Apps Script for Teacher Automation](./ots-220/README.md)
 - [OTS-240 Open Resources and GitHub for Educators](./ots-240/README.md)
@@ -21,6 +18,4 @@ Current courses:
 - [OTS-320 AI Coding Agents for Educators](./ots-320/README.md)
 - [OTS-399 Capstone Studio](./ots-399/README.md)
 
-Current app routes may still use compatibility readers. Move one reader at a time and verify route parity before deleting global content.
-
-Do not mark a course live because files, routes, or export packages exist.
+Current app routes still read from their existing registries. Move one reader at a time and verify route parity before deleting global content.

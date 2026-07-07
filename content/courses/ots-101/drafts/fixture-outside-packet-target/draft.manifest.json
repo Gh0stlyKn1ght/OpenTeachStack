@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "draftId": "fixture-outside-packet-target",
+  "course": "ots-101",
+  "courseCode": "OTS-101",
+  "purpose": "Fixture for validating that promotion refuses targets outside the course packet.",
+  "createdAt": "2026-07-07",
+  "createdBy": "codex",
+  "status": "review",
+  "sourcePolicy": "Drafts may not be treated as source until promoted.",
+  "targetPaths": [
+    "README.md"
+  ],
+  "validation": {
+    "requiredBeforePromotion": [
+      "npm.cmd run check:course-packet -- --course ots-101",
+      "npm.cmd run report:course-health -- --course ots-101 --report-only"
+    ],
+    "lastRun": []
+  },
+  "promotion": {
+    "allowed": true,
+    "reason": "Failure fixture only. This draft must never copy files."
+  }
+}
