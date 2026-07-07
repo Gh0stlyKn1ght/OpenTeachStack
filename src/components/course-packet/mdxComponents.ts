@@ -18,6 +18,9 @@ import RealityCheck from "@/components/RealityCheck";
 import ReflectionPrompt from "@/components/ReflectionPrompt";
 import TeacherNote from "@/components/TeacherNote";
 import VideoEmbed from "@/components/VideoEmbed";
+import LicenseSelector from "@/components/interactive/LicenseSelector";
+import ThreatProfileEstimator from "@/components/interactive/ThreatProfileEstimator";
+import SiteConfigPreviewer from "@/components/interactive/SiteConfigPreviewer";
 
 export const coursePacketMdxComponents = {
   pre: MDXPre,
@@ -38,4 +41,7 @@ export const coursePacketMdxComponents = {
   CourseTruthStackVisual,
   AICourseContentWorkflowVisual,
   TiredTeacherTestVisual,
+  LicenseSelector,
+  ThreatProfileEstimator,
+  SiteConfigPreviewer,
 };

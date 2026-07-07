@@ -1,8 +1,8 @@
 # Build Verification
 
-Date: 2026-07-07T23:30:38.957Z
+Date: 2026-07-07T23:43:30.353Z
 
-Commit SHA: 18806e4beb22de9a9fd712afacfaa4007bbf45db
+Commit SHA: 49add9632abe60398b767627dcdc562031cb78ee
 
 ## Result
 
@@ -39,7 +39,7 @@ Overall release verification: PASS
 | PASS | npm run check:ots101-reader | > openteachstack@0.1.0 check:ots101-reader |
 | PASS | npm run check:ots101-book-titles | > openteachstack@0.1.0 check:ots101-book-titles |
 | PASS | npm run check:rendered-course-lessons | > openteachstack@0.1.0 check:rendered-course-lessons |
-| PASS | production route smoke | Route smoke passed on port 17433: /=200, /pathway=200, /apps-script=200, /templates=200, /kb/library=200, /book=200, /book/ots-000=200, /book/ots-101=200, /book/ots-201=200, /book/ots-220=200, /book/ots-240=200, /book/ots-260=200, /book/ots-280=200, /book/ots-301=200, /book/ots-320=200, /book/ots-399=200, /courses/ots-280=200, /kb=200, /kb/source-bank=200, /prompts=200, /evidence=200, /robots.txt=200, /sitemap.xml=200 |
+| PASS | production route smoke | Route smoke passed on port 22380: /=200, /pathway=200, /apps-script=200, /templates=200, /kb/library=200, /book=200, /book/ots-000=200, /book/ots-101=200, /book/ots-201=200, /book/ots-220=200, /book/ots-240=200, /book/ots-260=200, /book/ots-280=200, /book/ots-301=200, /book/ots-320=200, /book/ots-399=200, /courses/ots-280=200, /kb=200, /kb/source-bank=200, /prompts=200, /evidence=200, /robots.txt=200, /sitemap.xml=200 |
 
 ## Known Failures
 
