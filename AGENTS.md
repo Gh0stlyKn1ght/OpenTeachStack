@@ -63,3 +63,10 @@ Do not sound like corporate professional development, a district memo, an ed-tec
 Every real OTS-101 lesson must include a teacher problem, plain-language explanation, classroom scenario, weak version, better version, build step, quality check, safety/accessibility/source note, reflection, and capstone connection.
 
 If those cannot be written honestly, create an authoring note or leave the route unavailable instead of generating filler.
+
+## Activation and handoff rules
+
+Upon startup/activation at the beginning of a conversation, the agent MUST immediately execute:
+`node scripts/curriculum/archive-chats.mjs`
+to back up all local transcripts by date and export the latest `docs/chat-archives/handoff-notes.md`. Always present the latest achievements and pending tasks to the user at the start of your turn.
+

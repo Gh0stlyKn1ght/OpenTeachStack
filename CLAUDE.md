@@ -45,6 +45,10 @@ authoring note. Do not generate filler.
 - `npm run test` — Non-mutating local quality gate
 - `npm run verify:release` — Non-mutating release gate
 - `npm run verify:release:write` — Explicitly refresh `docs/BUILD_VERIFICATION.md`
+- `node scripts/curriculum/archive-chats.mjs` — Archive chat logs and write handoff notes
+
+## Activation Rules
+- Immediately execute `node scripts/curriculum/archive-chats.mjs` on session activation to dump local transcripts and generate `docs/chat-archives/handoff-notes.md`.
 
 ## License
 - Code: MIT

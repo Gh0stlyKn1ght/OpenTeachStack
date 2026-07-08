@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 const courseSlug = valueFor("--course");
 
 if (!courseSlug) {
-  console.error("Usage: node scripts/curriculum/package-teachable.mjs --course <course-slug>");
+  console.error("Usage: node scripts/curriculum/package-teachable.mjs --course <course-slug> [--write]");
   process.exit(1);
 }
 
@@ -21,8 +21,15 @@ if (!fs.existsSync(courseRoot)) {
   process.exit(1);
 }
 
+const shouldWrite = process.argv.includes("--write");
+
+if (!shouldWrite) {
+  console.log("Teachable Packager Dry-run (pass --write to generate package).");
+  process.exit(0);
+}
+
 // Clean and recreate build directory
-if (fs.existsSync(buildDir)) {
+if (shouldWrite && fs.existsSync(buildDir)) {
   fs.rmSync(buildDir, { recursive: true, force: true });
 }
 fs.mkdirSync(buildDir, { recursive: true });
