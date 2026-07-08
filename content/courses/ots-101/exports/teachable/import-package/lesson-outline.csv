@@ -1,0 +1,11 @@
+course,chapter,slug,title,duration,type,artifact,status
+OTS-101,01,01-curriculum-vs-course-content,Curriculum vs Course Content,1 week,chapter,Course content inventory,draft
+OTS-101,02,02-standards-goals-to-lessons,From Standards or Goals to Lessons,1 week,chapter,Learning target and lesson map,draft
+OTS-101,03,03-prompting-without-garbage,Prompting AI Without Generic Garbage,1 week,chapter,Reusable course-content prompt,draft
+OTS-101,04,04-verify-ai-before-students,Verifying AI Before Students See It,1 week,chapter,AI output verification checklist,draft
+OTS-101,05,05-student-facing-lessons,Building Real Student-Facing Lessons,1 week,chapter,Student-facing lesson page,draft
+OTS-101,06,06-assignments-labs-rubrics-feedback,"Assignments, Labs, Rubrics, and Feedback",1 week,chapter,Assignment and rubric packet,draft
+OTS-101,07,07-organizing-course-content-system,Organizing the Course Content System,1 week,chapter,Course content folder map,draft
+OTS-101,08,08-safety-accessibility-copyright-source-quality,"Safety, Accessibility, Copyright, and Source Quality",1 week,chapter,Content safety review,draft
+OTS-101,09,09-publishing-to-platform,Publishing to a Platform,1 week,chapter,Publishing checklist,draft
+OTS-101,10,10-mini-course-content-packet,Capstone: Build a Mini Course Content Packet,1 week,chapter,Mini course content packet,draft

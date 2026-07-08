@@ -36,6 +36,7 @@
     "lock:course": "node scripts/curriculum/lock-course.mjs",
     "unlock:course": "node scripts/curriculum/unlock-course.mjs",
     "promote:course-draft": "node scripts/curriculum/promote-course-draft.mjs",
+    "package:teachable": "node scripts/curriculum/package-teachable.mjs",
     "check:locked-write": "node scripts/curriculum/check-locked-write.mjs",
     "scaffold:courses": "node scripts/refuse-fake-course-generation.mjs scaffold:courses",
     "author:ots101": "node scripts/refuse-fake-course-generation.mjs author:ots101",
