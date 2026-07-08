@@ -223,6 +223,7 @@ function runPostCopyValidation() {
         cwd: root,
         encoding: "utf8",
         windowsHide: true,
+        shell: process.platform === "win32",
       });
       return {
         label: validation.label,

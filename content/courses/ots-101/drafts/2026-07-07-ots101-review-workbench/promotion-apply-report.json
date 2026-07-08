@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-08T00:00:17.992Z",
+  "mode": "apply",
+  "course": "ots-101",
+  "courseCode": "OTS-101",
+  "draftId": "2026-07-07-ots101-review-workbench",
+  "draftRoot": "content/courses/ots-101/drafts/2026-07-07-ots101-review-workbench",
+  "sourceRoot": "content/courses/ots-101",
+  "approvedBy": "reviewer-neil",
+  "copiedFiles": 1,
+  "promotionAllowedByScript": false,
+  "failures": [
+    "Post-copy validation failed: verify:locks.",
+    "Post-copy validation failed: check:ots101-book-titles."
+  ],
+  "warnings": [
+    "Manifest promotion.allowed is true. This command will still copy files only when --apply and --approved-by are supplied."
+  ],
+  "summary": {
+    "targetCount": 1,
+    "changedTargets": 1,
+    "unchangedTargets": 0,
+    "newTargets": 0,
+    "missingDraftFiles": 0,
+    "unmappedDraftFileCount": 0
+  },
+  "targets": [
+    {
+      "targetPath": "content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-1.mdx",
+      "draftRelativePath": "lessons/01-curriculum-vs-course-content/01-1.mdx",
+      "sourceExists": true,
+      "draftExists": true,
+      "changeType": "changed",
+      "source": {
+        "bytes": 4695,
+        "sha256": "32642afcd2db03e158c766743374c667e8f5f7c48b6492a787b8af6f196e9bc6",
+        "lines": 116
+      },
+      "draft": {
+        "bytes": 1441,
+        "sha256": "537ade91b3e3b4f4890d324fe9f3531ca30de594acc4b5419f66576e01f22018",
+        "lines": 49
+      }
+    }
+  ],
+  "copiedTargets": [
+    {
+      "targetPath": "content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-1.mdx",
+      "draftRelativePath": "lessons/01-curriculum-vs-course-content/01-1.mdx",
+      "changeType": "changed"
+    }
+  ],
+  "unmappedDraftFiles": [],
+  "postCopyValidation": [
+    {
+      "label": "check:course-packet ots-101",
+      "result": "pass",
+      "output": [
+        "> openteachstack@0.1.0 check:course-packet",
+        "> node scripts/check-course-packet.mjs --course ots-101",
+        "",
+        "Course packet check passed for ots-101."
+      ]
+    },
+    {
+      "label": "report:course-health ots-101",
+      "result": "pass",
+      "output": [
+        "      \"notes\": \"Chapters 01-10 have real lesson bodies, templates, and sample packet materials. OTS-101 is active as the foundations course after the OTS-000 on-ramp. Verified under Phase 1.\"",
+        "    }",
+        "  ]",
+        "}"
+      ]
+    },
+    {
+      "label": "verify:locks",
+      "result": "fail",
+      "output": [
+        "> openteachstack@0.1.0 verify:locks",
+        "> node scripts/curriculum/verify-locks.mjs",
+        "",
+        "ots-000: 104 protected files, 0 changed, 0 deleted, 0 new lesson/lab files.",
+        "ots-101: 108 protected files, 1 changed, 0 deleted, 0 new lesson/lab files."
+      ]
+    },
+    {
+      "label": "check:ots101-reader",
+      "result": "pass",
+      "output": [
+        "> openteachstack@0.1.0 check:ots101-reader",
+        "> node scripts/check-ots101-course-reader.mjs",
+        "",
+        "OTS-101 course reader migration check passed. Release-ready lessons: 60; generated/scaffolded lessons: 0."
+      ]
+    },
+    {
+      "label": "check:ots101-book-titles",
+      "result": "fail",
+      "output": [
+        "> openteachstack@0.1.0 check:ots101-book-titles",
+        "> node scripts/check-ots101-book-titles.mjs"
+      ]
+    }
+  ],
+  "requiredChecks": [
+    "npm.cmd run check:course-packet -- --course ots-101",
+    "npm.cmd run report:course-health -- --course ots-101 --report-only",
+    "npm.cmd run verify:locks"
+  ]
+}

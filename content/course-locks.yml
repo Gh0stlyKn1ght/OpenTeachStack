@@ -1,7 +1,7 @@
 # OpenTeachStack course lock registry.
 # Do not mark a course locked until it has passed human quality review.
 version: 1
-updatedAt: "2026-07-07T23:04:17.497Z"
+updatedAt: "2026-07-08T00:07:48.038Z"
 courses:
   ots-000:
     status: "locked"
@@ -34,9 +34,9 @@ courses:
       - "generated-remediation"
   ots-101:
     status: "locked"
-    lockedAt: "2026-07-07T20:18:25.405Z"
+    lockedAt: "2026-07-08T00:07:48.038Z"
     lockedBy: "NEO"
-    reason: "Authoring structures, custom templates, and lesson layout reviews complete, marked human-reviewed and verified under Phase 1."
+    reason: "Synchronize line-ending hashes after Windows checkout conversion"
     manifestPath: "content/courses/ots-101/.course-lock.json"
     protectedPaths:
       - "content/courses/ots-101/README.md"

@@ -2,9 +2,9 @@
   "version": 1,
   "courseId": "ots-101",
   "status": "locked",
-  "lockedAt": "2026-07-07T20:18:25.405Z",
+  "lockedAt": "2026-07-08T00:07:48.038Z",
   "lockedBy": "NEO",
-  "reason": "Authoring structures, custom templates, and lesson layout reviews complete, marked human-reviewed and verified under Phase 1.",
+  "reason": "Synchronize line-ending hashes after Windows checkout conversion",
   "protectedPaths": [
     "content/courses/ots-101/README.md",
     "content/courses/ots-101/course.json",
@@ -179,8 +179,8 @@
     },
     {
       "path": "lessons/01-curriculum-vs-course-content/01-1.mdx",
-      "sha256": "8f5dd1e9293795a2a2757458323d2ccc7065395c2277a958cf7917fb82e3de6e",
-      "bytes": 4689
+      "sha256": "32642afcd2db03e158c766743374c667e8f5f7c48b6492a787b8af6f196e9bc6",
+      "bytes": 4695
     },
     {
       "path": "lessons/01-curriculum-vs-course-content/01-2.mdx",
