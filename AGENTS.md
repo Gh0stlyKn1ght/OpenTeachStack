@@ -34,7 +34,7 @@ Approved architecture documents:
 - `docs/architecture/ots-320-official-sources.json`
 - `docs/architecture/ots-320-evidence/`
 
-**Phase 4 is in progress.** The deterministic terminal engine, provider fixtures, Phase 3 evidence linkage, and local CI foundation are implemented. The xterm presentation adapter remains pending until the user's locally installed `@xterm` dependency metadata is committed to pushed `main`.
+**Phase 4 implementation is feature-complete in source and awaiting local runtime verification.** The deterministic terminal engine, provider fixtures, Phase 3 evidence linkage, xterm adapter, provider switching, keyboard input/history, permission and evidence panels, lab route, and local CI checker are implemented. Do not start Phase 5 until the user's real local `package-lock.json` update from the xterm installation is synchronized and the lab has been exercised locally.
 
 Until Phase 4 is complete:
 
