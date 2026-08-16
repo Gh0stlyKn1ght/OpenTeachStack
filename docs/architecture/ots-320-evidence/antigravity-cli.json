@@ -1,0 +1,138 @@
+{
+  "provider": "google",
+  "product": "antigravity-cli",
+  "verifiedAt": "2026-08-15",
+  "sourceRegistry": "docs/architecture/ots-320-official-sources.json",
+  "evidence": [
+    {
+      "id": "agy-help",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "agy --help",
+      "claim": "Google documents agy --help as the basic CLI verification command.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "google-agy-sdd-skills-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05"]
+    },
+    {
+      "id": "agy-launch",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "agy",
+      "claim": "Launching agy starts the Antigravity CLI and establishes a workspace context before agent work begins.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05", "06"]
+    },
+    {
+      "id": "agy-workspace-trust",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "claim": "Antigravity CLI asks the user to trust a workspace before granting the agent permission to read, edit, and execute files there.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "05"]
+    },
+    {
+      "id": "agy-models",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "agy models",
+      "claim": "Antigravity CLI can list models available to the current environment; the actual model list is volatile and should never be hard-coded into durable course claims.",
+      "risk": "low",
+      "volatile": true,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05"]
+    },
+    {
+      "id": "agy-model-select",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "agy --model \"<model name>\"",
+      "claim": "Antigravity CLI accepts a model selection flag for a session; model names remain version- and account-sensitive.",
+      "risk": "low",
+      "volatile": true,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05"]
+    },
+    {
+      "id": "agy-tool-permissions",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "syntax": "/config",
+      "claim": "Antigravity CLI exposes Tool Permission configuration. Current documented modes include request-review, proceed-in-sandbox, always-proceed, and strict; these labels are version-sensitive and must be rechecked before publication.",
+      "risk": "medium",
+      "volatile": true,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "05"]
+    },
+    {
+      "id": "agy-project-skills",
+      "kind": "skill",
+      "evidenceType": "documented",
+      "syntax": "npx skills add <skill-source>",
+      "claim": "Google's Antigravity codelab uses the Agent Skills ecosystem and documents project-scope installation under the .agents directory; Antigravity CLI is included as a supported target in that workflow.",
+      "risk": "low",
+      "volatile": true,
+      "sourceId": "google-agy-sdd-skills-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05", "09"]
+    },
+    {
+      "id": "agy-mcp-config",
+      "kind": "mcp",
+      "evidenceType": "documented",
+      "syntax": ".agents/mcp_config.json",
+      "claim": "Antigravity CLI supports workspace-level MCP configuration under .agents/mcp_config.json.",
+      "risk": "medium",
+      "volatile": true,
+      "sourceId": "google-agy-sdd-skills-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["05", "10"]
+    },
+    {
+      "id": "agy-mcp-status",
+      "kind": "mcp",
+      "evidenceType": "documented",
+      "syntax": "/mcp",
+      "claim": "Antigravity CLI exposes an interactive MCP status view so the user can inspect configured external tool connections.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "google-agy-sdd-skills-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["10"]
+    },
+    {
+      "id": "agy-mcp-destructive-risk",
+      "kind": "safety",
+      "evidenceType": "documented",
+      "claim": "Google's MCP example explicitly warns that an MCP server may expose destructive operations unless underlying service permissions constrain them; MCP connectivity is therefore a trust and authorization boundary, not just a convenience feature.",
+      "risk": "high",
+      "volatile": false,
+      "sourceId": "google-agy-sdd-skills-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["10"]
+    },
+    {
+      "id": "agy-dangerous-skip-permissions",
+      "kind": "safety",
+      "evidenceType": "documented",
+      "syntax": "agy --dangerously-skip-permissions",
+      "claim": "Antigravity CLI exposes a flag that automatically approves tool permissions; Google labels the behavior as dangerous and it must not be the normal course workflow.",
+      "risk": "high",
+      "volatile": true,
+      "sourceId": "google-agy-hands-on",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "05", "10"]
+    }
+  ]
+}

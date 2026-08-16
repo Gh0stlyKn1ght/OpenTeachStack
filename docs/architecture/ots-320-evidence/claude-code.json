@@ -1,0 +1,126 @@
+{
+  "provider": "anthropic",
+  "product": "claude-code",
+  "verifiedAt": "2026-08-15",
+  "sourceRegistry": "docs/architecture/ots-320-official-sources.json",
+  "evidence": [
+    {
+      "id": "claude-launch",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "claude",
+      "claim": "Claude Code starts an interactive terminal agent in the current working directory with access to repository files, terminal tools, Git state, project instructions, and configured extensions subject to permissions.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "anthropic-claude-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["04", "06"]
+    },
+    {
+      "id": "claude-print",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "claude -p \"query\"",
+      "claim": "Claude Code supports non-interactive print mode for scripted or pipeline-style use.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "anthropic-claude-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["04", "11"]
+    },
+    {
+      "id": "claude-continue",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "claude -c -p \"query\"",
+      "claim": "Claude Code can continue the most recent session for the working context in non-interactive use.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "anthropic-claude-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["04"]
+    },
+    {
+      "id": "claude-plan-mode",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "syntax": "claude --permission-mode plan",
+      "claim": "Claude Code can start in plan permission mode so the learner can inspect proposed work before normal write or execution workflows.",
+      "risk": "low",
+      "volatile": true,
+      "sourceId": "anthropic-claude-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "04"]
+    },
+    {
+      "id": "claude-permission-rules",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "claim": "Claude Code permission rules support allow, ask, and deny behavior, with deny taking precedence over ask and allow.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "anthropic-claude-tools",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "04"]
+    },
+    {
+      "id": "claude-read-only-shell",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "claim": "Claude Code recognizes a documented set of read-only shell commands and read-only Git forms that can run without a prompt unless policy explicitly asks or denies them.",
+      "risk": "medium",
+      "volatile": true,
+      "sourceId": "anthropic-claude-tools",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "04"]
+    },
+    {
+      "id": "claude-project-skills",
+      "kind": "skill",
+      "evidenceType": "documented",
+      "syntax": ".claude/skills/<skill-name>/SKILL.md",
+      "claim": "Claude Code loads project skills from .claude/skills and supports nested skill discovery as work moves through a repository.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "anthropic-claude-skills",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["04", "09"]
+    },
+    {
+      "id": "claude-mcp-add",
+      "kind": "mcp",
+      "evidenceType": "documented",
+      "syntax": "claude mcp add [options] <name> -- <command> [args...]",
+      "claim": "Claude Code can configure MCP servers from the CLI; project-scoped MCP configuration requires trust and should be reviewed before tools are used.",
+      "risk": "medium",
+      "volatile": true,
+      "sourceId": "anthropic-claude-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["04", "10"]
+    },
+    {
+      "id": "claude-mcp-status",
+      "kind": "mcp",
+      "evidenceType": "documented",
+      "syntax": "/mcp",
+      "claim": "The interactive MCP panel exposes connection and authentication status so learners can inspect whether an external tool is actually available.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "anthropic-claude-mcp",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["10"]
+    },
+    {
+      "id": "claude-bypass-permissions",
+      "kind": "safety",
+      "evidenceType": "documented",
+      "syntax": "claude --dangerously-skip-permissions",
+      "claim": "Claude Code exposes a bypass-permissions mode that suppresses normal permission prompts and therefore must be treated as elevated risk rather than a standard learning workflow.",
+      "risk": "high",
+      "volatile": true,
+      "sourceId": "anthropic-claude-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "04", "10"]
+    }
+  ]
+}

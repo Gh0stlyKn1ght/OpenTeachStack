@@ -1,0 +1,126 @@
+{
+  "provider": "openai",
+  "product": "codex-cli",
+  "verifiedAt": "2026-08-15",
+  "sourceRegistry": "docs/architecture/ots-320-official-sources.json",
+  "evidence": [
+    {
+      "id": "codex-launch",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "codex",
+      "claim": "Codex CLI starts an interactive terminal agent that can inspect a local repository, edit files, and run installed tools subject to its configured permissions.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "06"]
+    },
+    {
+      "id": "codex-session-permissions",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "syntax": "/permissions",
+      "claim": "The interactive CLI exposes a permissions command so the user can choose what Codex is allowed to do in the current workflow.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "03"]
+    },
+    {
+      "id": "codex-session-status",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "/status",
+      "claim": "The interactive CLI can display current session configuration, which is useful evidence before an agent begins changing a repository.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "08"]
+    },
+    {
+      "id": "codex-review",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "/review",
+      "claim": "Codex provides an interactive review command intended to inspect changes and surface issues after work has been performed.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "08"]
+    },
+    {
+      "id": "codex-exec",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "codex exec <task>",
+      "claim": "Codex supports non-interactive execution for repeatable scripts and CI-style workflows in addition to interactive use.",
+      "risk": "medium",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "11"]
+    },
+    {
+      "id": "codex-agents-md",
+      "kind": "behavior",
+      "evidenceType": "documented",
+      "claim": "Codex reads AGENTS.md guidance before work and layers global instructions with repository and nested-directory guidance down to the current working directory.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-agents-md",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "09"]
+    },
+    {
+      "id": "codex-repo-skills",
+      "kind": "skill",
+      "evidenceType": "documented",
+      "syntax": ".agents/skills/<skill-name>/SKILL.md",
+      "claim": "Codex discovers repository skills under .agents/skills while walking from the current working directory toward the repository root.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-skills",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "09"]
+    },
+    {
+      "id": "codex-git-checkpoints",
+      "kind": "safety",
+      "evidenceType": "documented",
+      "claim": "OpenAI recommends Git checkpoints before and after a task so agent changes can be inspected and reverted.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["08", "11"]
+    },
+    {
+      "id": "codex-workspace-write-on-request",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "syntax": "codex --sandbox workspace-write --ask-for-approval on-request",
+      "claim": "Codex documents a workspace-write sandbox combined with on-request approval as a controlled working mode.",
+      "risk": "medium",
+      "volatile": true,
+      "sourceId": "openai-codex-security",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "03"]
+    },
+    {
+      "id": "codex-dangerous-full-access",
+      "kind": "safety",
+      "evidenceType": "documented",
+      "syntax": "codex --dangerously-bypass-approvals-and-sandbox",
+      "claim": "Codex exposes an elevated-risk mode that removes both approval prompts and sandbox protections; it must not be presented as the default course workflow.",
+      "risk": "high",
+      "volatile": true,
+      "sourceId": "openai-codex-security",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "03", "10"]
+    }
+  ]
+}
