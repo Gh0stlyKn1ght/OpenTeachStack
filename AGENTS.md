@@ -47,8 +47,9 @@ Authored chapters:
 
 - Chapter 1 — **When AI Enters the Terminal**
 - Chapter 2 — **Context, Instructions, and Permissions**
+- Chapter 3 — **Codex CLI**
 
-The next authoring target is Chapter 3 — **Codex CLI**.
+The next authoring target is Chapter 4 — **Claude Code**.
 
 Do not bulk-author later chapters. Work one chapter at a time and leave planned sections intentionally unavailable until real lesson bodies exist.
 
