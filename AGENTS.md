@@ -30,14 +30,16 @@ Approved architecture documents:
 - `docs/architecture/OTS_320_PHASE1_COURSE_CONTRACT_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE2_SKILLS_IMPLEMENTATION_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE3_CLI_EVIDENCE_2026-08-15.md`
+- `docs/architecture/OTS_320_PHASE4_TERMINAL_EMULATOR_2026-08-15.md`
 - `docs/architecture/ots-320-official-sources.json`
 - `docs/architecture/ots-320-evidence/`
 
-**Phase 3 is complete. Phase 4 has not started yet.**
+**Phase 4 is in progress.** The deterministic terminal engine, provider fixtures, Phase 3 evidence linkage, and local CI foundation are implemented. The xterm presentation adapter remains pending until the user's locally installed `@xterm` dependency metadata is committed to pushed `main`.
 
-Until the user explicitly starts Phase 4:
+Until Phase 4 is complete:
 
-- do not build the terminal emulator,
+- do not begin Phase 5 lesson authoring,
+- do not wire the terminal into protected OTS-320 production lesson bodies,
 - do not rewrite OTS-320 production lessons,
 - do not regenerate the OTS-320 scaffold,
 - do not bulk-fill OTS-320 routes,
@@ -50,7 +52,7 @@ All other courses stay Coming Soon unless the user explicitly changes the active
 
 ## OTS-320 technical truth boundary
 
-Provider-specific technical claims must be grounded in current first-party documentation and, when used in lessons, should resolve through the Phase 3 evidence library.
+Provider-specific technical claims must be grounded in current first-party documentation and, when used in lessons or emulator fixtures, should resolve through the Phase 3 evidence library.
 
 Use official documentation for:
 
@@ -102,9 +104,10 @@ Use:
 npm run skills:sync
 npm run ci:skills
 npm run ci:ots320-evidence
+npm run ci:ots320-terminal
 ```
 
-`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity. `ci:ots320-evidence` verifies the three provider evidence files, provenance, metadata, risk marking, and minimum evidence depth.
+`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity. `ci:ots320-evidence` verifies the three provider evidence files, provenance, metadata, risk marking, and minimum evidence depth. `ci:ots320-terminal` verifies the deterministic terminal core, provider fixtures, evidence references, and forbidden execution paths.
 
 ## CI / GitHub Actions / Vercel boundary
 
@@ -116,8 +119,9 @@ For OTS-320 planning, skills, emulator work, course authoring, audits, and relat
 - CI should be provider-agnostic and runnable locally,
 - `npm run ci:skills` validates the Phase 2 skills system,
 - `npm run ci:ots320-evidence` validates the Phase 3 evidence layer,
+- `npm run ci:ots320-terminal` validates the Phase 4 deterministic terminal foundation,
 - `npm run ci` may run the repository's broader validation suite,
-- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, provenance errors, dangerous commands marked with the wrong risk, or mirror drift,
+- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, provenance errors, dangerous commands marked with the wrong risk, forbidden shell/network APIs, or mirror drift,
 - human instructional quality must not be reduced to a CI score,
 - **do not create or use GitHub Actions workflows for this initiative,**
 - **do not use Vercel builds, previews, deployments, or deployment gates for this initiative,**
@@ -127,7 +131,9 @@ The intended boundary is: **CI yes; GitHub Actions no; Vercel no.**
 
 ## Terminal emulator boundary
 
-When Phase 4 is explicitly started, build the emulator as a deterministic teaching fixture, not a browser shell.
+The Phase 4 deterministic engine lives under:
+
+`src/lib/ots320-terminal/`
 
 It may model:
 
@@ -139,7 +145,22 @@ It may model:
 - reset and rollback,
 - provider-specific presentation based on Phase 3 evidence.
 
-It must not expose unrestricted host command execution, real school systems, real credentials, or real student data.
+The engine must remain independent of xterm. xterm is a presentation surface only and must call the deterministic engine rather than becoming an execution layer.
+
+The terminal system must not expose:
+
+- unrestricted host command execution,
+- Node `child_process` execution,
+- arbitrary host filesystem access,
+- hidden network calls,
+- environment secrets,
+- real school systems,
+- real credentials,
+- real student data.
+
+Unsupported input must return a bounded fixture response and must never fall through to system execution.
+
+Do not hand-author or guess `package-lock.json` entries for xterm. Use the real dependency metadata produced by the user's package manager installation when it is committed.
 
 ## Course architecture boundary
 
@@ -186,7 +207,7 @@ Every real OTS-101 lesson must include a teacher problem, plain-language explana
 
 If those cannot be written honestly, create an authoring note or leave the route unavailable instead of generating filler.
 
-When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract, Phase 2 project skills, and Phase 3 evidence library to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
+When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract, Phase 2 project skills, Phase 3 evidence library, and Phase 4 terminal foundation to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
 
 ## Activation and handoff rules
 
