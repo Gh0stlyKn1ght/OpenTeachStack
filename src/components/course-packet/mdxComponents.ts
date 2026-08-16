@@ -21,6 +21,7 @@ import VideoEmbed from "@/components/VideoEmbed";
 import LicenseSelector from "@/components/interactive/LicenseSelector";
 import ThreatProfileEstimator from "@/components/interactive/ThreatProfileEstimator";
 import SiteConfigPreviewer from "@/components/interactive/SiteConfigPreviewer";
+import Ots320TerminalLab from "@/components/ots320/Ots320TerminalLab";
 
 export const coursePacketMdxComponents = {
   pre: MDXPre,
@@ -44,4 +45,5 @@ export const coursePacketMdxComponents = {
   LicenseSelector,
   ThreatProfileEstimator,
   SiteConfigPreviewer,
+  Ots320TerminalLab,
 };
