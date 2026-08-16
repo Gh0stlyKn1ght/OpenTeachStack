@@ -4,10 +4,10 @@
   "exportTargets": [
     "teachable"
   ],
-  "hasRealLessons": false,
+  "hasRealLessons": true,
   "hasTemplates": true,
   "hasSamplePacket": false,
-  "humanReviewed": true,
-  "releaseReadiness": "Verified release-ready preview. OTS-320 lesson structures authored and verified under Phase 4.",
-  "notes": "Locked and verified under Phase 4."
+  "humanReviewed": false,
+  "releaseReadiness": "Phase 5 authoring in progress. Chapter 1 is authored; later chapters remain intentionally unavailable until written and reviewed.",
+  "notes": "Rebuilding as Command Line AI for Teacher Builders. The previous scaffold/release-ready claim has been retired. Phase 1-4 architecture, evidence, skills, and terminal foundation are implemented in source. Xterm package-lock synchronization and local browser smoke verification remain technical follow-up items and are not treated as instructional-quality gates."
 }
