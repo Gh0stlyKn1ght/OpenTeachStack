@@ -8,6 +8,6 @@
   "hasTemplates": true,
   "hasSamplePacket": false,
   "humanReviewed": false,
-  "releaseReadiness": "Phase 5 authoring in progress. Chapters 1 and 2 are authored; provider-specific chapters remain intentionally unavailable until written and reviewed.",
-  "notes": "Rebuilding as Command Line AI for Teacher Builders. The previous scaffold/release-ready claim has been retired. Phases 1-4 are implemented in source. Phase 5 has authored the durable foundations before provider-specific instruction. Xterm package-lock synchronization and local browser smoke verification remain technical follow-up items and are not treated as instructional-quality gates."
+  "releaseReadiness": "Phase 5 authoring in progress. Chapters 1 through 3 are authored; Claude Code and later chapters remain intentionally unavailable until written and reviewed.",
+  "notes": "Rebuilding as Command Line AI for Teacher Builders. The previous scaffold/release-ready claim has been retired. Phases 1-4 are implemented in source. Phase 5 now includes the provider-neutral foundations plus the first provider chapter, Codex CLI, grounded in current first-party OpenAI documentation and the course evidence layer. Xterm package-lock synchronization and local browser smoke verification remain technical follow-up items and are not treated as instructional-quality gates."
 }
