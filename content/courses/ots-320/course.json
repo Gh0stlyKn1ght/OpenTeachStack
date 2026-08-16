@@ -1,61 +1,92 @@
 {
-  "generationSource": "scaffold",
+  "generationSource": "authored",
   "code": "OTS-320",
   "slug": "ots-320",
-  "title": "AI Coding Agents for Educators",
-  "owner": "generic",
+  "title": "Command Line AI for Teacher Builders",
+  "owner": "Gh0stlyKn1ght",
   "canonicalRoute": "/book/ots-320",
-  "sourceRegistry": "src/lib/courseStructures.ts",
-  "generatedAt": "2026-07-07",
-  "migrationStatus": "generated",
+  "sourceRegistry": "src/lib/ots320Course.ts",
+  "authoredAt": "2026-08-15",
+  "migrationStatus": "authored",
+  "prerequisite": "OTS-000 or equivalent terminal and file literacy; OTS-101 recommended",
+  "finalArtifact": "Reviewed agent-assisted teacher tool plus evidence dossier",
   "chapters": [
     {
       "number": "01",
-      "slug": "01-agent-safety-mindset",
-      "title": "Agent Safety Mindset",
-      "buildArtifact": "Agent safety checklist",
-      "lessonCount": 5
+      "slug": "01-when-ai-enters-the-terminal",
+      "title": "When AI Enters the Terminal",
+      "lessonCount": 5,
+      "authoringStatus": "authored"
     },
     {
       "number": "02",
-      "slug": "02-repo-branch-workflow",
-      "title": "Repo and Branch Workflow",
-      "buildArtifact": "Branch workflow notes",
-      "lessonCount": 5
+      "slug": "02-context-instructions-permissions",
+      "title": "Context, Instructions, and Permissions",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
     },
     {
       "number": "03",
-      "slug": "03-prompting-coding-agents",
-      "title": "Prompting Coding Agents",
-      "buildArtifact": "Safe agent prompt",
-      "lessonCount": 5
+      "slug": "03-codex-cli",
+      "title": "Codex CLI",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
     },
     {
       "number": "04",
-      "slug": "04-testing-verification",
-      "title": "Testing and Verification",
-      "buildArtifact": "Test checklist",
-      "lessonCount": 5
+      "slug": "04-claude-code",
+      "title": "Claude Code",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
     },
     {
       "number": "05",
-      "slug": "05-building-teacher-tools",
-      "title": "Building Teacher Tools",
-      "buildArtifact": "Small classroom tool",
-      "lessonCount": 5
+      "slug": "05-antigravity-cli",
+      "title": "Antigravity CLI",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
     },
     {
       "number": "06",
-      "slug": "06-reviewed-agent-build",
-      "title": "Reviewed Agent Build",
-      "buildArtifact": "Reviewed agent-built classroom tool",
-      "lessonCount": 5
+      "slug": "06-same-task-three-agents",
+      "title": "Same Task, Three Agents",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
+    },
+    {
+      "number": "07",
+      "slug": "07-prompts-as-technical-specifications",
+      "title": "Prompts as Technical Specifications",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
+    },
+    {
+      "number": "08",
+      "slug": "08-git-diffs-verification-rollback",
+      "title": "Git, Diffs, Verification, and Rollback",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
+    },
+    {
+      "number": "09",
+      "slug": "09-project-instructions-agent-skills",
+      "title": "Project Instructions and Agent Skills",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
+    },
+    {
+      "number": "10",
+      "slug": "10-mcp-external-tool-trust",
+      "title": "MCP and External Tool Trust",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
+    },
+    {
+      "number": "11",
+      "slug": "11-capstone-reviewed-agent-assisted-build",
+      "title": "Capstone: Reviewed Agent-Assisted Build",
+      "lessonCount": 5,
+      "authoringStatus": "planned"
     }
-  ],
-  "copiedDocs": [
-    "docs/OTS_320_AGENT_ARTIFACTS.md",
-    "docs/OTS_320_COURSE_OUTLINE.md"
-  ],
-  "copiedAssets": [],
-  "copiedLabs": []
+  ]
 }
