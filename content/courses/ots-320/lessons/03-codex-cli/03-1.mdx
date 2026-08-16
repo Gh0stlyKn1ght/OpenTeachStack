@@ -1,0 +1,357 @@
+---
+title: "Starting Codex in a Repository"
+description: "Launch Codex from the correct project, confirm repository identity and Git state, and understand how AGENTS.md becomes part of the working context."
+course: "ots-320"
+chapter: "Codex CLI"
+order: 1
+type: "concept"
+lessonType: "concept"
+minutes: 20
+artifact: "Codex session preflight"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/03-codex-cli/03-1"
+---
+The first Codex command is easy:
+
+```text
+codex
+```
+
+The harder part happens **before** you run it.
+
+You need to know where you are.
+
+OpenAI's current quickstart tells users to open a project directory and run `codex`. That sounds simple because it is simple. But it also means the directory you choose becomes part of the session's operating context.
+
+So this chapter starts one command earlier.
+
+## Preflight before launch
+
+A useful local sequence is:
+
+```text
+pwd
+git status
+```
+
+On Windows PowerShell, the equivalent location command is commonly:
+
+```powershell
+Get-Location
+```
+
+The exact shell command is less important than the check.
+
+You are proving two things:
+
+1. **I am inside the project I intend to work on.**
+2. **I understand the repository state before Codex begins doing anything.**
+
+Then launch:
+
+```text
+codex
+```
+
+## Why Git status comes first
+
+Imagine this starting state:
+
+```text
+On branch main
+Changes not staged for commit:
+  modified: content/courses/ots-320/lessons/03-codex-cli/03-1.mdx
+```
+
+Now you ask Codex to update a README.
+
+Later, you inspect `git diff` and see two changed files.
+
+Did Codex change both?
+
+Not necessarily.
+
+One change was already present.
+
+This is why a clean Git state is useful before agent work. OpenAI's current Codex security guidance explicitly recommends keeping `git status` clean before delegating when practical because it makes patches easier to isolate and revert.
+
+A dirty tree is not forbidden.
+
+It just means you need to record what was already dirty.
+
+## Launch from the smallest useful project boundary
+
+Suppose your disk looks like this:
+
+```text
+C:\Users\Teacher\Projects\
+├── OpenTeachStack\
+├── Robotnix.dev\
+├── private-notes\
+└── student-data-export\
+```
+
+If the task is in OpenTeachStack, launch from OpenTeachStack.
+
+Do not launch an agent from `Projects` just because all your work lives there.
+
+The narrower workspace gives you a cleaner mental model:
+
+```text
+this project
+not my entire projects directory
+```
+
+That is context hygiene.
+
+## First run and sign-in
+
+The current Codex quickstart documents this basic flow:
+
+```text
+open project directory
+        ↓
+run codex
+        ↓
+sign in when prompted on first use
+        ↓
+describe a task
+```
+
+Authentication is necessary for a real Codex session, but this course is not going to turn authentication screens into curriculum.
+
+The teaching point is simpler:
+
+> A real provider session has account state. The embedded OTS-320 terminal does not.
+
+The training fixture therefore says explicitly:
+
+```text
+[EMULATED] No provider service, account, or network connection was used.
+```
+
+That label protects the distinction between **learning the interface model** and **actually connecting to Codex**.
+
+## Inspect before you ask for work
+
+Once Codex opens, do not immediately type the biggest task on your list.
+
+Run:
+
+```text
+/status
+```
+
+The current Codex interface documents `/status` as a way to show current session configuration.
+
+Use that as a preflight checkpoint.
+
+You want to confirm things like:
+
+- expected project or workspace,
+- active session configuration,
+- the permission posture you intend to use.
+
+Then inspect project instructions.
+
+If the repository contains:
+
+```text
+AGENTS.md
+```
+
+read it yourself too.
+
+Do not assume "Codex reads it" means you no longer need to know what it says.
+
+## How Codex discovers AGENTS.md
+
+OpenAI currently documents a layered instruction model.
+
+Codex can read global guidance and project guidance, then walk from the project root toward the current working directory. Guidance closer to the current directory can override earlier guidance in the combined instruction chain.
+
+That is powerful because a large repository can carry broad rules at the root and narrower rules deeper in the tree.
+
+Example:
+
+```text
+repo/
+├── AGENTS.md
+└── content/
+    ├── AGENTS.md
+    └── courses/
+        └── ots-320/
+```
+
+Root guidance might say:
+
+```text
+Always inspect Git state before editing.
+```
+
+The nested content guidance might add:
+
+```text
+Do not rewrite authored lesson bodies without an explicit content task.
+```
+
+When working under `content/`, the more local guidance helps specialize the session.
+
+## `/init` is a starting tool, not magic governance
+
+Current Codex documentation exposes:
+
+```text
+/init
+```
+
+as a command that can create an `AGENTS.md` file with instructions for Codex.
+
+That can be useful in a repository that does not have project instructions yet.
+
+But do not confuse **file creation** with **good instructions**.
+
+A generated instruction file still needs human judgment.
+
+Weak project instruction:
+
+```text
+Make the project better.
+```
+
+Useful project instructions:
+
+```text
+- Inspect before editing.
+- Do not replace authored curriculum with generated filler.
+- Keep provider-specific technical claims tied to current official documentation.
+- Show the diff before claiming completion.
+- Stop if a task requires restructuring outside the requested scope.
+```
+
+The value comes from the operating rules, not from the filename alone.
+
+## First task: explain, do not edit
+
+A strong first Codex task in an unfamiliar project is:
+
+```text
+Inspect this repository and explain:
+1. what the project does,
+2. the major source directories,
+3. project instructions that apply,
+4. important project commands,
+5. current Git state.
+
+Do not modify files.
+```
+
+This request gives you a useful comparison point.
+
+You can verify the answer against:
+
+- `README.md`,
+- `AGENTS.md`,
+- `package.json`,
+- file structure,
+- `git status`.
+
+If Codex misunderstands the project during read-only investigation, that is valuable information to catch **before** an edit.
+
+## A launch record
+
+Capture this before meaningful Codex work:
+
+```text
+DATE:
+
+PROJECT:
+
+WORKING DIRECTORY:
+
+STARTING GIT STATUS:
+
+AGENTS.md PRESENT:
+yes / no
+
+INITIAL PERMISSION POSTURE:
+
+FIRST TASK:
+
+EXPECTED EVIDENCE:
+```
+
+You do not need a giant compliance form for every tiny task.
+
+This is training the habit until you can do it quickly.
+
+## Common failure: launching from habit
+
+A teacher works on three repositories in one evening.
+
+Terminal history says:
+
+```text
+cd OpenTeachStack
+codex
+```
+
+Later they close the terminal, open a new one, assume they are still in the same project, and run:
+
+```text
+codex
+```
+
+They are actually in the home directory.
+
+The cure is not an AI feature.
+
+The cure is:
+
+```text
+check location
+check Git state
+then launch
+```
+
+Tools do not eliminate basic systems discipline.
+
+They make it more valuable.
+
+## Source and version note
+
+Current Codex CLI behavior in this lesson was rechecked against official OpenAI documentation on 2026-08-15. The repository evidence IDs supporting this lesson include:
+
+```text
+codex-launch
+codex-session-status
+codex-init-agents-md
+codex-agents-md
+codex-git-checkpoints
+```
+
+The embedded terminal output remains emulated, not captured from a live Codex session.
+
+## Build: Codex session preflight
+
+Take a repository you control and write the preflight **without launching Codex yet**:
+
+```text
+Project:
+Working directory:
+How I confirmed the project:
+Starting Git state:
+Project instructions I expect Codex to load:
+First task:
+What must remain unchanged:
+```
+
+Then answer:
+
+> What evidence would tell me in the first two minutes that I launched Codex in the wrong context?
+
+## Reflection
+
+Which preflight check is most likely to save you from a bad session: location, Git state, project instructions, or the first task boundary?
+
+Why?
