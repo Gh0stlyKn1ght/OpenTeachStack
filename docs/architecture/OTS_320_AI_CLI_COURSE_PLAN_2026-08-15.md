@@ -266,9 +266,11 @@ Do not hand-maintain divergent Claude-specific copies.
 During the skills implementation phase, choose one verified portability method:
 
 1. repository symlinks from `.claude/skills/<name>` to `.agents/skills/<name>` if cross-platform Git behavior is acceptable, or
-2. a deterministic sync script that mirrors canonical skills into `.claude/skills` and a CI check that fails on drift.
+2. a deterministic local sync script that mirrors canonical skills into `.claude/skills` plus an optional local drift-check script the user may run manually.
 
-Because OpenTeachStack supports Windows as well as Unix-like environments, the sync-and-verify approach should be preferred unless symlink behavior is proven reliable in the repository's supported Windows setup.
+Because OpenTeachStack supports Windows as well as Unix-like environments, the local sync approach should be preferred unless symlink behavior is proven reliable in the repository's supported Windows setup.
+
+No CI or deployment system is required for skill synchronization or validation.
 
 ---
 
@@ -379,7 +381,7 @@ Must:
 
 **Job:** prevent scaffold completion from being mistaken for curriculum completion.
 
-Must fail or flag:
+Must flag locally when requested:
 
 - `${richContent}` and similar unresolved placeholders,
 - `generationSource: scaffold` in public lesson bodies,
@@ -390,6 +392,8 @@ Must fail or flag:
 - unverified commands,
 - stale provider documentation,
 - release metadata that contradicts actual content state.
+
+This audit is advisory and user-invoked. It is not a CI gate or deployment gate.
 
 ---
 
@@ -407,6 +411,24 @@ When implementation begins, `AGENTS.md` should require the relevant project skil
 
 ---
 
+# No CI / no Vercel rule
+
+This initiative does **not** use CI or Vercel as part of its implementation workflow.
+
+Do not:
+
+- create or run GitHub Actions gates for this work,
+- make authoring depend on CI status,
+- add release blockers tied to CI,
+- deploy previews to Vercel,
+- deploy production builds to Vercel,
+- use Vercel build output as a course-quality signal,
+- make phase completion depend on deployment infrastructure.
+
+When verification is useful, prefer small local scripts or direct inspection that the user explicitly chooses to run.
+
+---
+
 # Phased implementation
 
 ## Phase 0 — Governance and plan
@@ -421,7 +443,7 @@ Deliverables:
 - official source list,
 - no course lesson changes.
 
-Exit gate:
+Completion criteria:
 
 - project instructions clearly prevent bulk OTS-320 generation,
 - source and skill strategy is documented.
@@ -439,7 +461,7 @@ Deliverables:
 - provider documentation registry,
 - version / staleness policy implemented in course metadata.
 
-Exit gate:
+Completion criteria:
 
 - no chapter exists solely to advertise a product,
 - every chapter has a durable concept and artifact,
@@ -454,10 +476,10 @@ Deliverables:
 - implement the eight skills defined above,
 - implement `.agents/skills` canonical source,
 - implement Claude compatibility,
-- add skill parity / discovery checks,
-- add a small skill-evaluation fixture set.
+- add optional local skill parity / discovery checks,
+- add a small local skill-evaluation fixture set.
 
-Exit gate:
+Completion criteria:
 
 - Codex can discover the project skills,
 - AGY can discover the project skills,
@@ -475,9 +497,9 @@ Deliverables:
 - AGY command / permission evidence set,
 - captured or documented behavior notes,
 - provider source manifests,
-- stale-source checker.
+- optional local stale-source report.
 
-Exit gate:
+Completion criteria:
 
 - every command intended for the course has provenance,
 - uncertain commands are excluded rather than approximated.
@@ -493,9 +515,9 @@ Deliverables:
 - provider-themed adapters / presentation,
 - permission and filesystem event visualization,
 - resettable sample repository,
-- accessibility and keyboard pass.
+- accessibility and keyboard review.
 
-Exit gate:
+Completion criteria:
 
 - emulator cannot execute arbitrary host commands,
 - scenarios are deterministic,
@@ -515,7 +537,7 @@ Order:
 6. prompting as specification,
 7. Git evidence.
 
-Exit gate:
+Completion criteria:
 
 - each lesson teaches before it asks the learner to act,
 - each provider-specific technical claim is sourced,
@@ -533,31 +555,31 @@ Deliverables:
 - same-repository / same-task three-agent comparison lab,
 - evidence-based evaluation rubric.
 
-Exit gate:
+Completion criteria:
 
 - no false feature parity,
 - comparison is based on observable evidence and documented capabilities.
 
-## Phase 7 — Capstone, release gates, and pathway cleanup
+## Phase 7 — Capstone and pathway cleanup
 
-**Purpose:** finish the course and reconnect the pathway around it.
+**Purpose:** finish the course and reconnect the pathway around it without introducing CI/deployment bureaucracy.
 
 Deliverables:
 
 - capstone starter repository,
 - reviewed agent-assisted teacher tool build,
 - evidence dossier template,
-- OTS-320 content audit,
+- user-invoked OTS-320 content audit,
 - release metadata cleanup,
 - OTS-000 overlap pass so orientation teaches literacy while OTS-320 teaches operation.
 
-Exit gate:
+Completion criteria:
 
 - no scaffold placeholders,
 - no unverified command examples,
 - no contradictory release metadata,
 - human review completed,
-- OTS-320 remains hidden until all public-release gates pass.
+- OTS-320 remains hidden until the user decides it is ready to expose.
 
 ---
 
@@ -573,7 +595,9 @@ Do not use this initiative to:
 - rank providers from vibes,
 - require real student data,
 - require paid provider access for foundational emulator lessons,
-- bulk-generate every chapter before the evidence layer exists.
+- bulk-generate every chapter before the evidence layer exists,
+- create CI gates,
+- create Vercel deployment workflows.
 
 ---
 
