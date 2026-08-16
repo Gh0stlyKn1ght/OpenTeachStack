@@ -1,14 +1,16 @@
 {
   "course": "OTS-320",
   "title": "Command Line AI for Teacher Builders",
-  "registryVersion": 1,
+  "registryVersion": 2,
   "verifiedAt": "2026-08-15",
   "policy": {
     "sourcePriority": "first-party-only-for-provider-specific-technical-behavior",
     "automaticRewrites": false,
-    "ciGate": false,
-    "vercelGate": false,
-    "reviewMode": "local-and-deliberate"
+    "ciEnabled": true,
+    "ciMode": "provider-agnostic-repository-commands",
+    "githubActions": false,
+    "vercel": false,
+    "reviewMode": "ci-plus-human-review"
   },
   "providers": [
     {
@@ -20,13 +22,7 @@
           "title": "Codex CLI",
           "url": "https://developers.openai.com/codex/cli",
           "resolvedOfficialUrl": "https://learn.chatgpt.com/docs/codex/cli",
-          "topics": [
-            "installation",
-            "interactive-cli",
-            "commands",
-            "configuration",
-            "local-workflows"
-          ],
+          "topics": ["installation", "interactive-cli", "commands", "configuration", "local-workflows"],
           "verifiedAt": "2026-08-15"
         },
         {
@@ -34,12 +30,7 @@
           "title": "Custom instructions with AGENTS.md",
           "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
           "resolvedOfficialUrl": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
-          "topics": [
-            "AGENTS.md",
-            "instruction-discovery",
-            "instruction-precedence",
-            "nested-project-guidance"
-          ],
+          "topics": ["AGENTS.md", "instruction-discovery", "instruction-precedence", "nested-project-guidance"],
           "verifiedAt": "2026-08-15"
         },
         {
@@ -47,26 +38,14 @@
           "title": "Build skills",
           "url": "https://developers.openai.com/codex/build-skills",
           "resolvedOfficialUrl": "https://learn.chatgpt.com/docs/build-skills",
-          "topics": [
-            "SKILL.md",
-            "agents-skills-directory",
-            "skill-discovery",
-            "skill-scope",
-            "progressive-disclosure"
-          ],
+          "topics": ["SKILL.md", "agents-skills-directory", "skill-discovery", "skill-scope", "progressive-disclosure"],
           "verifiedAt": "2026-08-15"
         },
         {
           "id": "openai-codex-security",
           "title": "Agent approvals and security",
           "url": "https://developers.openai.com/codex/agent-approvals-security",
-          "topics": [
-            "approvals",
-            "sandboxing",
-            "permissions",
-            "network-access",
-            "risk-boundaries"
-          ],
+          "topics": ["approvals", "sandboxing", "permissions", "network-access", "risk-boundaries"],
           "verifiedAt": "2026-08-15"
         }
       ]
@@ -79,52 +58,28 @@
           "id": "anthropic-claude-cli",
           "title": "Claude Code CLI reference",
           "url": "https://code.claude.com/docs/en/cli-usage",
-          "topics": [
-            "interactive-cli",
-            "print-mode",
-            "piped-input",
-            "sessions",
-            "resume",
-            "output-formats",
-            "permission-options"
-          ],
+          "topics": ["interactive-cli", "print-mode", "piped-input", "sessions", "resume", "output-formats", "permission-options"],
           "verifiedAt": "2026-08-15"
         },
         {
           "id": "anthropic-claude-skills",
           "title": "Extend Claude with skills",
           "url": "https://code.claude.com/docs/en/slash-commands",
-          "topics": [
-            "SKILL.md",
-            "project-skills",
-            "claude-skills-directory",
-            "skill-discovery",
-            "progressive-loading"
-          ],
+          "topics": ["SKILL.md", "project-skills", "claude-skills-directory", "skill-discovery", "progressive-loading"],
           "verifiedAt": "2026-08-15"
         },
         {
           "id": "anthropic-claude-tools",
           "title": "Tools reference",
           "url": "https://code.claude.com/docs/en/tools-reference",
-          "topics": [
-            "built-in-tools",
-            "permission-requirements",
-            "tool-boundaries"
-          ],
+          "topics": ["built-in-tools", "permission-requirements", "tool-boundaries"],
           "verifiedAt": "2026-08-15"
         },
         {
           "id": "anthropic-claude-mcp",
           "title": "Connect Claude Code to tools via MCP",
           "url": "https://code.claude.com/docs/en/mcp",
-          "topics": [
-            "MCP",
-            "external-tools",
-            "remote-http",
-            "configuration",
-            "trust-boundaries"
-          ],
+          "topics": ["MCP", "external-tools", "remote-http", "configuration", "trust-boundaries"],
           "verifiedAt": "2026-08-15"
         }
       ]
@@ -137,27 +92,14 @@
           "id": "google-agy-sdd-skills-mcp",
           "title": "Spec-Driven Development with Antigravity CLI — Structured Agent Workflows with Skills and MCP",
           "url": "https://codelabs.developers.google.com/sdd-agy-cli",
-          "topics": [
-            "agy-cli",
-            "permissions",
-            "skills",
-            "MCP",
-            "workspace-config",
-            "spec-driven-workflows"
-          ],
+          "topics": ["agy-cli", "permissions", "skills", "MCP", "workspace-config", "spec-driven-workflows"],
           "verifiedAt": "2026-08-15"
         },
         {
           "id": "google-agy-hands-on",
           "title": "Hands-on with Antigravity CLI",
           "url": "https://codelabs.developers.google.com/antigravity-cli-hands-on",
-          "topics": [
-            "installation",
-            "terminal-ui",
-            "commands",
-            "workspace-navigation",
-            "agent-workflow"
-          ],
+          "topics": ["installation", "terminal-ui", "commands", "workspace-navigation", "agent-workflow"],
           "verifiedAt": "2026-08-15"
         }
       ]
@@ -170,6 +112,8 @@
     "Label synthetic terminal output as emulated.",
     "Label real saved terminal output as captured.",
     "Re-check commands that are version-sensitive before lesson publication.",
-    "Do not run CI or Vercel checks for source freshness."
+    "CI may validate registry structure and required provenance metadata.",
+    "Documentation freshness still requires deliberate source review rather than automatic rewriting.",
+    "Do not use GitHub Actions or Vercel for this initiative."
   ]
 }
