@@ -22,23 +22,32 @@ Do not act as a scaffold generator, route-coverage bot, or test-passing bot. A p
 
 The only active authored course rebuild remains OTS-101: AI Course Content Foundations for Teachers.
 
-OTS-320 is now in **planning-only status** for a future rebuild centered on command-line AI workflows using Codex CLI, Claude Code, and Google Antigravity CLI (`agy`). The approved planning document is:
+OTS-320 is now a controlled architecture rebuild centered on command-line AI workflows using Codex CLI, Claude Code, and Google Antigravity CLI (`agy`).
 
-`docs/architecture/OTS_320_AI_CLI_COURSE_PLAN_2026-08-15.md`
+Approved architecture documents:
 
-Until the user explicitly starts Phase 1 from that plan:
+- `docs/architecture/OTS_320_AI_CLI_COURSE_PLAN_2026-08-15.md`
+- `docs/architecture/OTS_320_PHASE1_COURSE_CONTRACT_2026-08-15.md`
+- `docs/architecture/ots-320-official-sources.json`
 
+**Phase 1 is complete. Phase 2 has not started yet.**
+
+Until the user explicitly starts Phase 2:
+
+- do not implement the planned project skills,
 - do not rewrite OTS-320 production lessons,
 - do not regenerate the OTS-320 scaffold,
 - do not bulk-fill OTS-320 routes,
 - do not mark OTS-320 reviewed, beta, public, enriched, or release-ready,
 - do not treat route or packet completeness as OTS-320 progress.
 
+The Phase 1 title, chapter contract, prerequisite boundary, source policy, and capstone contract are the approved migration target for the future production rebuild.
+
 All other courses stay Coming Soon unless the user explicitly changes the active-course boundary.
 
 ## OTS-320 technical truth boundary
 
-When OTS-320 work begins, provider-specific technical claims must be grounded in current first-party documentation.
+Provider-specific technical claims must be grounded in current first-party documentation.
 
 Use official documentation for:
 
@@ -63,7 +72,7 @@ The canonical project-skill location is:
 
 `.agents/skills/<skill-name>/SKILL.md`
 
-The planned skills are:
+The planned Phase 2 skills are:
 
 - `ots-official-docs` — verify technical claims against current first-party documentation and record provenance.
 - `ots-cli-verifier` — verify commands, flags, and command examples before they enter lessons.
@@ -74,7 +83,7 @@ The planned skills are:
 - `ots-cross-agent-compare` — compare Codex, Claude Code, and AGY using observable evidence without inventing feature parity.
 - `ots-course-audit` — detect placeholders, scaffold prose, unverified commands, stale sources, and dishonest release metadata.
 
-These skills are defined in the OTS-320 plan but are **not yet authorized for bulk implementation** until the project reaches Phase 2.
+These skills are defined but are **not yet authorized for implementation** until the user starts Phase 2.
 
 Codex and Antigravity-compatible skills should use the canonical `.agents/skills` source. Claude compatibility should reuse the same canonical content through a verified compatibility mechanism rather than maintaining divergent skill prose. Prefer a deterministic local sync-and-drift verification script over repository symlinks unless Windows behavior is proven reliable.
 
@@ -95,17 +104,21 @@ This section overrides any older plan, architecture document, skill draft, or ge
 
 ## Course architecture boundary
 
-`content/courses/{course}` is the source of truth.
+`content/courses/{course}` is the source of truth for production course content.
 
 Root-level `teachable/` is legacy export support only. A Teachable package is not a course, a course-description file is not a course, a lesson-outline CSV is not a lesson, and export package completeness is not course readiness.
 
-Use `content/courses/{course}/status.json` for honest course status. Do not mark a course live because it has files, routes, or Teachable packaging.
+Use `content/courses/{course}/status.json` for honest production course status. Do not mark a course live because it has files, routes, or Teachable packaging.
+
+Architecture contracts under `docs/architecture/` may define a future migration target without changing a protected production course during planning phases.
 
 ## Course lock rule
 
 Before editing any course file, check `content/course-locks.yml`.
 
 If the course status is `locked`, do not modify it. Do not regenerate, normalize, remediate, scaffold, or rewrite locked courses.
+
+If a protected course requires a title change, module restructure, or generated remediation, use an explicit unlock workflow before modifying production course files.
 
 Generated drafts must go to `.generated/drafts`. Production course files may only change through an explicit promote or unlock workflow.
 
@@ -134,7 +147,7 @@ Every real OTS-101 lesson must include a teacher problem, plain-language explana
 
 If those cannot be written honestly, create an authoring note or leave the route unavailable instead of generating filler.
 
-When OTS-320 authoring is explicitly activated, use the OTS-320 plan and project skills to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
+When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract and project skills to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
 
 ## Activation and handoff rules
 
