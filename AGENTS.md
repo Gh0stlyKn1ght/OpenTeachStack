@@ -22,26 +22,26 @@ Do not act as a scaffold generator, route-coverage bot, or test-passing bot. A p
 
 The only active authored course rebuild remains OTS-101: AI Course Content Foundations for Teachers.
 
-OTS-320 is now a controlled architecture rebuild centered on command-line AI workflows using Codex CLI, Claude Code, and Google Antigravity CLI (`agy`).
+OTS-320 is a controlled architecture rebuild centered on command-line AI workflows using Codex CLI, Claude Code, and Google Antigravity CLI (`agy`).
 
 Approved architecture documents:
 
 - `docs/architecture/OTS_320_AI_CLI_COURSE_PLAN_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE1_COURSE_CONTRACT_2026-08-15.md`
+- `docs/architecture/OTS_320_PHASE2_SKILLS_IMPLEMENTATION_2026-08-15.md`
 - `docs/architecture/ots-320-official-sources.json`
 
-**Phase 1 is complete. Phase 2 has not started yet.**
+**Phase 2 is complete. Phase 3 has not started yet.**
 
-Until the user explicitly starts Phase 2:
+Until the user explicitly starts Phase 3:
 
-- do not implement the planned project skills,
 - do not rewrite OTS-320 production lessons,
 - do not regenerate the OTS-320 scaffold,
 - do not bulk-fill OTS-320 routes,
 - do not mark OTS-320 reviewed, beta, public, enriched, or release-ready,
 - do not treat route or packet completeness as OTS-320 progress.
 
-The Phase 1 title, chapter contract, prerequisite boundary, source policy, and capstone contract are the approved migration target for the future production rebuild.
+The Phase 1 title, chapter contract, prerequisite boundary, source policy, and capstone contract remain the approved migration target for the later production rebuild.
 
 All other courses stay Coming Soon unless the user explicitly changes the active-course boundary.
 
@@ -66,41 +66,51 @@ Synthetic terminal output must be labeled as emulated or fixture output. Never p
 
 ## OTS-320 skill architecture
 
-Do not place every future CLI-course procedure directly into this file. Keep `AGENTS.md` focused on project identity, boundaries, and routing. Put specialized workflows in project skills.
+Keep `AGENTS.md` focused on project identity, boundaries, and routing. Put specialist procedures in project skills.
 
-The canonical project-skill location is:
+Canonical skill location:
 
 `.agents/skills/<skill-name>/SKILL.md`
 
-The planned Phase 2 skills are:
+Implemented Phase 2 skills:
 
 - `ots-official-docs` — verify technical claims against current first-party documentation and record provenance.
 - `ots-cli-verifier` — verify commands, flags, and command examples before they enter lessons.
 - `ots-cli-lesson-author` — turn verified CLI behavior into real teacher-facing instruction rather than scaffold activities.
 - `ots-terminal-emulator` — build deterministic, safe terminal-learning fixtures with no arbitrary host-shell execution.
 - `ots-agent-safety` — review permissions, network access, secrets, destructive operations, privacy boundaries, and rollback.
-- `ots-git-evidence` — enforce inspect -> checkpoint/branch -> change -> diff -> test -> review -> commit/revert as the evidence workflow.
+- `ots-git-evidence` — enforce inspect -> checkpoint/branch -> change -> diff -> verify -> review -> commit/revert as the evidence workflow.
 - `ots-cross-agent-compare` — compare Codex, Claude Code, and AGY using observable evidence without inventing feature parity.
 - `ots-course-audit` — detect placeholders, scaffold prose, unverified commands, stale sources, and dishonest release metadata.
 
-These skills are defined but are **not yet authorized for implementation** until the user starts Phase 2.
+Claude Code compatibility lives under `.claude/skills/` as a generated mirror of the canonical `.agents/skills/` content. Do not hand-maintain divergent skill prose.
 
-Codex and Antigravity-compatible skills should use the canonical `.agents/skills` source. Claude compatibility should reuse the same canonical content through a verified compatibility mechanism rather than maintaining divergent skill prose. Prefer a deterministic local sync-and-drift verification script over repository symlinks unless Windows behavior is proven reliable.
+Use:
 
-## No CI / no Vercel boundary
+```bash
+npm run skills:sync
+npm run ci:skills
+```
+
+`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity.
+
+## CI / GitHub Actions / Vercel boundary
+
+**CI is part of OpenTeachStack. GitHub Actions and Vercel are not the CI implementation for this initiative.**
 
 For OTS-320 planning, skills, emulator work, course authoring, audits, and related OpenTeachStack changes:
 
-- **Do not create, enable, require, or run CI gates.**
-- **Do not invoke GitHub Actions as a validation or release gate.**
-- **Do not inspect CI status unless the user explicitly asks for CI work.**
-- **Do not create Vercel deployments.**
-- **Do not invoke Vercel preview deployments, production deployments, deployment checks, or Vercel build validation.**
-- **Do not make course progress or publication depend on Vercel.**
-- Validation for this initiative should be local and user-invoked only, such as targeted scripts, type checks, tests, or content audits when the user asks to run them.
-- A local check may report problems, but it must not become a bureaucratic release gate that blocks course authoring by default.
+- repository-owned CI scripts may be created and run,
+- CI should be provider-agnostic and runnable locally,
+- `npm run ci:skills` is the focused Phase 2 skill CI,
+- `npm run ci` may run the repository's broader validation suite,
+- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, or drift,
+- human instructional quality must not be reduced to a CI score,
+- **do not create or use GitHub Actions workflows for this initiative,**
+- **do not use Vercel builds, previews, deployments, or deployment gates for this initiative,**
+- **do not make publication depend on a Vercel deployment.**
 
-This section overrides any older plan, architecture document, skill draft, or generated instruction that suggests adding a CI gate, GitHub Actions gate, Vercel gate, or deployment-based verification for OTS-320.
+This section supersedes older OTS-320 wording that said to disable CI entirely. The intended boundary is: **CI yes; GitHub Actions no; Vercel no.**
 
 ## Course architecture boundary
 
