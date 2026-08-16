@@ -17,6 +17,18 @@
       "courseUse": ["03", "06"]
     },
     {
+      "id": "codex-init-agents-md",
+      "kind": "command",
+      "evidenceType": "documented",
+      "syntax": "/init",
+      "claim": "The Codex interactive CLI exposes /init to create an AGENTS.md file containing project instructions for Codex.",
+      "risk": "low",
+      "volatile": false,
+      "sourceId": "openai-codex-cli",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["03", "09"]
+    },
+    {
       "id": "codex-session-permissions",
       "kind": "permission",
       "evidenceType": "documented",
@@ -45,7 +57,7 @@
       "kind": "command",
       "evidenceType": "documented",
       "syntax": "/review",
-      "claim": "Codex provides an interactive review command intended to inspect changes and surface issues after work has been performed.",
+      "claim": "Codex provides a dedicated review command that can inspect uncommitted changes, a commit, or a base branch and report findings without modifying the working tree.",
       "risk": "low",
       "volatile": false,
       "sourceId": "openai-codex-cli",
@@ -73,7 +85,7 @@
       "volatile": false,
       "sourceId": "openai-codex-agents-md",
       "verifiedAt": "2026-08-15",
-      "courseUse": ["02", "09"]
+      "courseUse": ["02", "03", "09"]
     },
     {
       "id": "codex-repo-skills",
@@ -96,7 +108,19 @@
       "volatile": false,
       "sourceId": "openai-codex-cli",
       "verifiedAt": "2026-08-15",
-      "courseUse": ["08", "11"]
+      "courseUse": ["03", "08", "11"]
+    },
+    {
+      "id": "codex-read-only-on-request",
+      "kind": "permission",
+      "evidenceType": "documented",
+      "syntax": "codex --sandbox read-only --ask-for-approval on-request",
+      "claim": "Codex documents a read-only sandbox with on-request approvals for browsing and planning without ordinary workspace writes.",
+      "risk": "low",
+      "volatile": true,
+      "sourceId": "openai-codex-security",
+      "verifiedAt": "2026-08-15",
+      "courseUse": ["02", "03"]
     },
     {
       "id": "codex-workspace-write-on-request",
