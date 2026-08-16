@@ -1,193 +1,164 @@
 # OpenTeachStack Handoff
 
-Date: 2026-07-07
+**Updated:** 2026-08-15  
+**Current active build:** OTS-320 — Command Line AI for Teacher Builders
 
-Status: CourseOS boilerplate/control-plane and shared reader-template tranche is functionally built and locally verified. Content remediation should still pause until a real reviewed OTS-101 draft exists.
+The previous July CourseOS handoff is superseded as the current restart point. Its history remains in Git.
 
-## What Changed
+For the detailed current continuation notes, read:
 
-- Published the author blog post: `content/blog/posts/what-my-platform-taught-me-about-course-architecture.md`.
-- Added the CourseOS implementation plan: `docs/architecture/COURSEOS_IMPLEMENTATION_PLAN_2026-07-06.md`.
-- Added the read-only architecture audit: `docs/architecture/OPENTEACHSTACK_ARCHITECTURE_AUDIT.md`.
-- Added Phase 1 CourseOS docs:
-  - `docs/architecture/COURSEOS.md`
-  - `docs/architecture/COURSE_PACKET_CONTRACT.md`
-  - `docs/architecture/PACKETLOCK.md`
-  - `docs/architecture/DRAFT_PROMOTION_WORKFLOW.md`
-- Added packet manifests for the first two migrated courses:
-  - `content/courses/ots-000/course.packet.json`
-  - `content/courses/ots-101/course.packet.json`
-- Added read-only Course Control Plane utilities under `src/lib/course-control/`.
-- Added script-side registry support at `scripts/lib/course-registry.mjs`.
-- Added `npm run check:course-packet`.
-- Added `npm run report:course-health`.
-- Generated OTS-101 health evidence at `content/courses/ots-101/reports/health.json`.
-- Wired `check:course-packet` into both `npm test` and `npm run verify:release`.
-- Generated the all-course health summary at `content/course-health.json` plus per-course `reports/health.json` files.
-- Added the draft manifest contract at `docs/architecture/DRAFT_MANIFEST_SCHEMA.md`.
-- Added the OTS-101 draft workbench at `content/courses/ots-101/drafts/2026-07-07-ots101-review-workbench/`.
-- Added the reader-unification migration note at `docs/architecture/COURSE_READER_UNIFICATION_MIGRATION.md`.
-- Added the first course-level runtime boundary for OTS-101:
-  - `src/components/course-packet/CoursePacketBoundary.tsx`
-  - `src/components/course-packet/CourseUnavailableNotice.tsx`
-  - `src/app/book/ots-101/error.tsx`
-- Added draft promotion with dry-run reports and guarded apply mode:
-  - `scripts/curriculum/promote-course-draft.mjs`
-  - `npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench`
-  - `npm.cmd run promote:course-draft -- --course ots-101 --draft <reviewed-draft-id> --apply --approved-by <reviewer-name> --write-report`
-- Wrote the OTS-101 workbench dry-run report:
-  - `content/courses/ots-101/drafts/2026-07-07-ots101-review-workbench/promotion-dry-run-report.json`
-- Added promotion failure fixtures:
-  - `content/courses/ots-101/drafts/fixture-outside-packet-target`
-  - `content/courses/ots-101/drafts/fixture-missing-draft-file`
-- Added the automated promotion fixture check:
-  - `scripts/check-course-draft-promotion.mjs`
-  - `npm.cmd run check:course-draft-promotion`
-- Aligned PacketLock helper behavior with packet roots:
-  - protected source files come from packet content roots and compatibility metadata
-  - `draftRoot`, `reportsRoot`, `generatedRoot`, and `exportsRoot` are not hashed as approved source
-- Added affected-course detection:
-  - `scripts/affected-courses.mjs`
-  - `npm.cmd run affected:courses`
-- Replaced hardcoded course truth across the core boilerplate checks:
-  - `scripts/verify-release.mjs` now gets course-book smoke routes from `scripts/lib/course-registry.mjs`
-  - `scripts/check-course-source-truth.mjs` reads course directories and normalized records from the registry, while still failing unreadable course folders
-  - `scripts/check-course-content-layout.mjs` reads course directories and normalized records from the registry, while still failing unreadable course folders
-  - `scripts/check-route-contract.mjs` derives expected course slugs and dedicated/generic ownership from course records
-  - `scripts/check-root-doc-truth.mjs` reads course codes/status through the registry
-  - `scripts/check-prompt-library.mjs` validates related course codes against the registry
-  - `scripts/check-course-packet.mjs` centralizes expected packetized courses through the script-side registry
-- Added the shared CourseOS learning-template reader surface:
-  - `src/components/course-packet/CoursePacketLearningShell.tsx`
-  - `src/components/course-packet/CoursePacketSidebar.tsx`
-  - `src/components/course-packet/CoursePacketOverviewTemplate.tsx`
-  - `src/components/course-packet/CoursePacketChapterTemplate.tsx`
-  - `src/components/course-packet/CoursePacketLessonTemplate.tsx`
-  - `src/components/course-packet/CoursePacketUnavailableTemplate.tsx`
-  - `src/components/course-packet/mdxComponents.ts`
-  - `src/lib/course-packet-adapters.ts`
-- Wired OTS-101, OTS-280, and generic `/book/[course]` routes through that shared CourseOS packet template instead of each route hand-building the old field-guide UI.
-- Added PageOS route-template enforcement:
-  - `docs/architecture/PAGEOS_TEMPLATE_REGISTRY.md`
-  - `docs/architecture/page-template-registry.json`
-  - `scripts/check-page-template-registry.mjs`
-  - `npm.cmd run check:page-templates`
-- Wired `check:page-templates` into both `npm test` and `npm run verify:release` so every `src/app/**/page.tsx` must declare and use an approved template family.
+`docs/architecture/OTS_320_HANDOFF_2026-08-15.md`
 
-## Current Course Status
+## Current state
 
-OTS-000 and OTS-101 have authored draft lesson passes and packet manifests.
+OTS-320 is in **Phase 5 — Core course authoring**.
 
-They are not live courses.
+Completed in source:
 
-OTS-101 health currently reports:
+- Phase 1 — course contract and official source registry
+- Phase 2 — project Agent Skills system
+- Phase 3 — Codex / Claude Code / Antigravity CLI evidence library
+- Phase 4 — deterministic terminal engine + xterm presentation layer
 
-- `status: draft`
-- `humanReviewed: false`
-- `lessonCountExpected: 60`
-- `lessonCountActual: 60`
-- `releaseReady: false`
-- release blockers: `status is draft`, `humanReviewed is not true`
+Authored chapters:
 
-That is correct. Do not mark either course live until human review is complete and `status.json` is intentionally updated.
+1. **When AI Enters the Terminal**
+2. **Context, Instructions, and Permissions**
+3. **Codex CLI**
 
-## Verification
+Next instructional task:
 
-Last verified locally on 2026-07-07:
+**Chapter 4 — Claude Code**
 
-```bash
-npm.cmd run check:course-packet
-npm.cmd run check:page-templates
-npm.cmd run report:course-health -- --course ots-101
-npm.cmd run check:script-workflow
-npm.cmd test
-npm.cmd run build
-npm.cmd run verify:release
+Do not bulk-author later chapters.
+
+## Course source of truth
+
+Production metadata/content:
+
+`content/courses/ots-320/`
+
+Dedicated reader and structure:
+
+```text
+src/lib/ots320Course.ts
+src/app/book/ots-320/
 ```
 
-Result: passing.
+Technical evidence:
 
-PageOS verification now also requires every page route to be registered as one of the approved template families: CourseOS packet, field guide, learning resource, template detail, video library, redirect, re-export, or home.
-
-Latest full gate results:
-
-```bash
-npm.cmd test
-npm.cmd run verify:release
+```text
+docs/architecture/ots-320-official-sources.json
+docs/architecture/ots-320-evidence/
 ```
 
-Result: passing. `verify:release` passed all checks plus production route smoke for `/`, `/pathway`, `/book`, `/book/ots-000`, `/book/ots-101`, every pathway course route through `/book/ots-399`, `/courses/ots-280`, `/prompts`, `/evidence`, `/robots.txt`, and `/sitemap.xml`.
+Terminal:
 
-Browser verification after the reader-template migration:
-
-- `/book/ots-101` returned `200`, rendered `.course-packet-page`, and did not render `.field-guide-page`.
-- `/book/ots-101/01-curriculum-vs-course-content/01-0` returned `200`, rendered `.course-packet-page`, and did not render `.field-guide-page`.
-- `/book/ots-201` returned `200`, rendered `.course-packet-page`, and did not render `.field-guide-page`.
-- `/book/ots-280` returned `200`, rendered `.course-packet-page`, and did not render `.field-guide-page`.
-- `/book/ots-280/01-teacher-threat-model/01-0` returned `200`, rendered `.course-packet-page`, and did not render `.field-guide-page`.
-
-Additional focused checks passed:
-
-```bash
-npm.cmd run check:course-packet -- --course ots-101
-npm.cmd run report:course-health -- --course ots-101 --report-only
-npm.cmd run check:ots101-reader
-npm.cmd run check:ots101-book-titles
-npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench
-npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench --write-report
-npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench --apply --approved-by codex
-npm.cmd run promote:course-draft -- --course ots-101 --draft fixture-outside-packet-target --apply --approved-by fixture
-npm.cmd run promote:course-draft -- --course ots-101 --draft fixture-missing-draft-file --apply --approved-by fixture
-npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench --apply --approved-by fixture --simulate-locked
-npm.cmd run check:course-draft-promotion
-npm.cmd run affected:courses -- --file content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-0.mdx
-npm.cmd run affected:courses
+```text
+src/lib/ots320-terminal/
+src/components/ots320/Ots320TerminalLab.tsx
 ```
 
-The `--apply` checks above are expected to fail safely with `copiedFiles: 0`; the locked-course path uses `--simulate-locked` so the check does not temporarily lock OTS-101.
+Canonical project skills:
 
-Current release verification includes `npm run check:course-draft-promotion` and passed on 2026-07-07.
+`.agents/skills/`
 
-Local server verification:
+## Content truth
 
-- Started `npm.cmd run start` on `http://localhost:4000`.
-- `GET /book/ots-101` returned `200` and included the OTS-101 title plus chapter table of contents.
-- `GET /book/ots-101/01-curriculum-vs-course-content/01-0` returned `200` and included OTS-101/course-owned lesson markers.
-- `agent-browser` was not available on PATH, so verification used HTTP route checks instead of visual browser automation.
+Current expected state:
 
-No current lint warnings are expected after the CourseOS reader migration cleanup and `VideoCard.tsx` image fix.
-
-## Next Safe Tranche
-
-Do this before broad content work resumes:
-
-1. Build the first real reviewed OTS-101 draft only after a human review names specific target files.
-2. Promote only through `npm.cmd run promote:course-draft -- --course ots-101 --draft <reviewed-draft-id> --apply --approved-by <reviewer-name> --write-report`.
-3. Keep packet manifests limited to OTS-000 and OTS-101 until the model proves stable.
-
-## Do Not Do Yet
-
-- Do not mass-packetize all courses.
-- Do not rewrite lesson bodies as part of architecture work.
-- Do not mark OTS-000 or OTS-101 live.
-- Do not lock courses before human review.
-- Do not remove existing reader routes.
-- Do not treat Teachable exports as source.
-
-## Restart Command Set
-
-Use this when resuming:
-
-```bash
-git status --short
-npm.cmd run check:course-packet
-npm.cmd run check:page-templates
-npm.cmd run report:course-health -- --course ots-101 --report-only
-npm.cmd run check:ots101-reader
-npm.cmd run promote:course-draft -- --course ots-101 --draft 2026-07-07-ots101-review-workbench
-npm.cmd run check:course-draft-promotion
-npm.cmd run affected:courses -- --file content/courses/ots-101/lessons/01-curriculum-vs-course-content/01-0.mdx
-npm.cmd test
+```text
+status: draft
+hasRealLessons: true
+humanReviewed: false
+chapters 1-3: authored
+chapters 4-11: planned
 ```
 
-If those are green, continue with the reviewed copy phase for draft promotion. Do not rewrite production lessons from the draft folder until promotion has explicit approval flags, target-path validation, lock checks, diff reporting, copying, and post-copy validation.
+The original generated six-chapter OTS-320 lesson scaffold has been removed from active production lesson source.
+
+Do not restore it. Git history is the archive.
+
+## Core rules
+
+The course is not three vendor tutorials.
+
+Codex CLI, Claude Code, and Antigravity CLI are case studies for durable concepts:
+
+- repository context,
+- project instructions,
+- permissions,
+- sandbox/approval boundaries,
+- technical task specifications,
+- Git evidence,
+- verification,
+- rollback,
+- skills,
+- MCP,
+- human review.
+
+Central rule:
+
+**The agent's answer is not the evidence. Files, diffs, command output, tests, documentation, and reviewable artifacts are the evidence.**
+
+Core workflow:
+
+```text
+inspect -> understand -> bound the task -> change -> diff -> verify -> review -> keep or revert
+```
+
+## CI policy
+
+**CI yes. GitHub Actions no. Vercel no.**
+
+Focused OTS-320 checks:
+
+```bash
+npm run ci:skills
+npm run ci:ots320-evidence
+npm run ci:ots320-terminal
+npm run ci:ots320-reader
+```
+
+Do not turn instructional quality into a CI score.
+
+## Known technical loose end
+
+The pushed `package.json` contains:
+
+```text
+@xterm/xterm
+@xterm/addon-fit
+```
+
+The last verified pushed `package-lock.json` did not yet include those xterm records.
+
+Therefore do not claim:
+
+- `npm ci` is clean,
+- xterm browser smoke verification passed,
+- the dependency lock issue is resolved,
+
+until it is verified locally.
+
+Do not manually invent lockfile integrity values.
+
+## Resume order
+
+When continuing:
+
+1. `git pull`
+2. inspect `git status --short`
+3. run `node scripts/curriculum/archive-chats.mjs`
+4. read `AGENTS.md`
+5. read `docs/architecture/OTS_320_HANDOFF_2026-08-15.md`
+6. resolve/verify the xterm package-lock state locally when practical
+7. recheck current Anthropic Claude Code first-party documentation
+8. compare it with `docs/architecture/ots-320-evidence/claude-code.json`
+9. update evidence/fixture only where needed
+10. author Chapter 4 only
+11. update course metadata and handoff state only after Chapter 4 is real
+
+## Short resume instruction
+
+> Continue OTS-320 from `docs/architecture/OTS_320_HANDOFF_2026-08-15.md`. Chapters 1-3 are authored. Reverify Claude Code documentation and author Chapter 4 only. Keep provider-agnostic CI, do not use GitHub Actions or Vercel, do not restore the retired scaffold, and do not claim the xterm lock/browser issue is fixed until locally verified.
