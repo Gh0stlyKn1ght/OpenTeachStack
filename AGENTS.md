@@ -43,9 +43,16 @@ Phases 1-4 are complete in source.
 
 Phase 5 is active.
 
-Chapter 1, **When AI Enters the Terminal**, is authored. The next authoring target is Chapter 2, **Context, Instructions, and Permissions**.
+Authored chapters:
+
+- Chapter 1 — **When AI Enters the Terminal**
+- Chapter 2 — **Context, Instructions, and Permissions**
+
+The next authoring target is Chapter 3 — **Codex CLI**.
 
 Do not bulk-author later chapters. Work one chapter at a time and leave planned sections intentionally unavailable until real lesson bodies exist.
+
+The original six-chapter generated OTS-320 lesson scaffold has been removed from the active production lesson tree. Git history is the archive; do not restore dead scaffold to satisfy stale checks or file counts.
 
 The outstanding xterm `package-lock.json` synchronization and local browser smoke check are technical validation items. They must be fixed, but they are not allowed to become a fake instructional-quality gate that stops authoring.
 
@@ -113,7 +120,7 @@ npm run skills:sync
 npm run ci:skills
 npm run ci:ots320-evidence
 npm run ci:ots320-terminal
-npm run check:ots320-reader
+npm run ci:ots320-reader
 ```
 
 ## CI / GitHub Actions / Vercel boundary
