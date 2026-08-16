@@ -1,0 +1,272 @@
+---
+title: "Project Instructions and Scope"
+description: "Separate repository-wide operating rules from the task-specific instructions that define what an agent should do right now."
+course: "ots-320"
+chapter: "Context, Instructions, and Permissions"
+order: 2
+type: "concept"
+lessonType: "concept"
+minutes: 25
+artifact: "Project instruction and task-scope split"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/02-context-instructions-permissions/02-2"
+---
+A good repository should not depend on you remembering the same warnings every time you open an AI session.
+
+Some rules belong to the project.
+
+Some rules belong to the current task.
+
+Those are not the same thing.
+
+## Project instructions answer: "How do we work here?"
+
+A project instruction file can hold durable rules such as:
+
+```text
+Inspect before modifying anything.
+Treat authored curriculum as protected content.
+Do not replace real lessons with generated filler.
+Show the diff before claiming completion.
+Stop if a task unexpectedly requires project restructuring.
+```
+
+These rules are bigger than one prompt.
+
+They describe how work should happen in the repository.
+
+In the OTS-320 training fixture, the synthetic repository includes an `AGENTS.md` file with exactly this kind of guidance.
+
+The important idea in this chapter is not that every provider uses the same filename. They do not necessarily use identical instruction mechanisms.
+
+The durable idea is:
+
+> **Put stable project rules where the agent can discover them as project context instead of rewriting them from memory every session.**
+
+Provider-specific instruction behavior comes later in the course.
+
+## Task instructions answer: "What are we doing now?"
+
+A current task should be narrower.
+
+Project rule:
+
+```text
+Do not overwrite authored course content with generated filler.
+```
+
+Task instruction:
+
+```text
+Inspect Chapter 2 for broken internal links.
+Do not rewrite lesson prose.
+Fix only confirmed broken links.
+Show the diff afterward.
+```
+
+The project rule protects a permanent boundary.
+
+The task tells the agent what this particular piece of work includes.
+
+## Why one giant prompt is fragile
+
+You could paste every project rule into every request:
+
+```text
+Do not touch authored lessons.
+Do not deploy.
+Do not use student data.
+Read the README.
+Use current docs.
+Do not restructure routes.
+Show diffs.
+Run targeted checks.
+Do not change package versions unless needed.
+Now fix one broken link.
+```
+
+That works until you forget one line.
+
+Or until five people maintain slightly different copies of the "master prompt."
+
+Or until the project changes but your saved prompt does not.
+
+Repository instructions reduce that drift.
+
+Your current task can stay focused on the actual problem.
+
+## Instructions can conflict
+
+Suppose the project says:
+
+```text
+Do not modify files under content/courses/ots-320/lessons.
+```
+
+Your task says:
+
+```text
+Rewrite the weak OTS-320 lesson bodies.
+```
+
+The correct response is not silent improvisation.
+
+There is a conflict.
+
+A useful agent should surface it, and a useful human operator should decide which authority changes.
+
+That may mean:
+
+- changing the task,
+- changing the project rule through an explicit workflow,
+- working in a draft location instead,
+- stopping the session.
+
+<RealityCheck title="A prompt should not quietly erase governance">
+  If a one-off request can silently override a repository rule that protects authored work, the project boundary is not actually doing much. Conflicts should become visible decisions.
+</RealityCheck>
+
+## Scope needs both an allowed area and a protected area
+
+Weak scope:
+
+```text
+Fix the course page.
+```
+
+Better scope:
+
+```text
+Allowed:
+src/components/CourseCard.tsx
+src/lib/courseMetadata.ts
+
+Protected:
+content/courses/**
+package.json
+routing files
+
+Goal:
+Correct the displayed course title using the existing metadata source.
+```
+
+The protected list is valuable because agents often make helpful connections.
+
+Maybe changing a route would also solve the problem.
+
+Maybe renaming content would create consistency.
+
+Maybe updating every title would make the code cleaner.
+
+Those ideas can be good and still be outside the task.
+
+## Stop conditions turn surprises into decisions
+
+Add a stop condition when the task could expand.
+
+```text
+Stop if the displayed title does not come from the existing metadata source.
+Do not invent a second source of truth.
+```
+
+Or:
+
+```text
+Stop if the fix requires a dependency change.
+```
+
+Or:
+
+```text
+Stop if more than two files need modification.
+```
+
+A stop condition is not a sign that the agent failed.
+
+It means the investigation discovered a different problem than the one you authorized.
+
+That is exactly when you want a human decision.
+
+## Inspect the fixture instructions
+
+In the embedded lab later in this chapter, you can run:
+
+```text
+cat AGENTS.md
+```
+
+The fixture instructions tell you:
+
+- inspect before modifying,
+- protect synthetic authored content,
+- avoid network access,
+- show diffs,
+- stop on project restructuring.
+
+Then compare those durable rules to the task you are about to give.
+
+This is the habit:
+
+```text
+project rules
+    +
+current task
+    +
+permission boundary
+    =
+controlled session
+```
+
+## Build: split durable rules from current scope
+
+Take a technical task you might give an AI agent.
+
+Create two blocks.
+
+### Durable project rules
+
+```text
+PROJECT RULES
+1.
+2.
+3.
+4.
+```
+
+Only put rules here that should still matter next week when the task is different.
+
+### Current task
+
+```text
+GOAL
+
+ALLOWED AREA
+
+PROTECTED AREA
+
+EXPECTED CHANGE
+
+VERIFICATION
+
+STOP CONDITION
+```
+
+Now remove anything from the task that really belongs in project rules.
+
+Remove anything from project rules that only matters for this one change.
+
+## Quality check
+
+A strong split has these properties:
+
+- project instructions remain useful across multiple tasks,
+- the current task is small enough to review,
+- protected content is named explicitly where needed,
+- stop conditions cover likely scope expansion,
+- a permission boundary can be chosen from the task instead of from habit.
+
+## Reflection
+
+What rule do you repeat most often when working with AI in a repository?
+
+Should that rule live in the project instead of in your memory?
