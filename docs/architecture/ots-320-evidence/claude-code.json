@@ -12,7 +12,7 @@
       "claim": "Claude Code starts an interactive terminal agent in the current working directory with access to repository files, terminal tools, Git state, project instructions, and configured extensions subject to permissions.",
       "risk": "medium",
       "volatile": false,
-      "sourceId": "anthropic-claude-cli",
+      "sourceId": "anthropic-claude-how-it-works",
       "verifiedAt": "2026-08-15",
       "courseUse": ["04", "06"]
     },
@@ -59,7 +59,7 @@
       "claim": "Claude Code permission rules support allow, ask, and deny behavior, with deny taking precedence over ask and allow.",
       "risk": "low",
       "volatile": false,
-      "sourceId": "anthropic-claude-tools",
+      "sourceId": "anthropic-claude-permissions",
       "verifiedAt": "2026-08-15",
       "courseUse": ["02", "04"]
     },
@@ -70,7 +70,7 @@
       "claim": "Claude Code recognizes a documented set of read-only shell commands and read-only Git forms that can run without a prompt unless policy explicitly asks or denies them.",
       "risk": "medium",
       "volatile": true,
-      "sourceId": "anthropic-claude-tools",
+      "sourceId": "anthropic-claude-permissions",
       "verifiedAt": "2026-08-15",
       "courseUse": ["02", "04"]
     },
