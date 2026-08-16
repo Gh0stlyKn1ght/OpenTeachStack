@@ -1,6 +1,16 @@
 import type { CliProvider, CliScenario, ScenarioInteraction, TerminalEvent } from "./types";
 
 const syntheticFiles: Record<string, string> = {
+  "AGENTS.md": [
+    "# Teacher Tool Lab Instructions",
+    "",
+    "- Inspect before modifying anything.",
+    "- Treat src/data/sample-lessons.json as authored content.",
+    "- Do not replace authored content with generated filler.",
+    "- Do not use network access for this fixture.",
+    "- Show the diff before claiming a change is complete.",
+    "- Stop and ask if the requested task requires changing project structure.",
+  ].join("\n"),
   "README.md": [
     "# Teacher Tool Lab",
     "",
@@ -59,10 +69,11 @@ function sharedInteractions(launchInput: string, launchEvidenceId: string): Scen
       requires: ["read"],
       output: [
         "[EMULATED] Inspection complete.",
-        "[EMULATED] Repository appears to be a small teacher-facing utility with synthetic lesson data.",
+        "[EMULATED] Repository appears to be a small teacher-facing utility with synthetic lesson data and project instructions.",
         "[EMULATED] No files were modified.",
       ],
       events: [
+        emulatedEvent("read", "AGENTS.md", { path: "AGENTS.md" }),
         emulatedEvent("read", "README.md", { path: "README.md" }),
         emulatedEvent("read", "package.json", { path: "package.json" }),
         emulatedEvent("read", "src/data/sample-lessons.json", {
