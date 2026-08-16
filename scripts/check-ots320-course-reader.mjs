@@ -15,6 +15,10 @@ checkCourseReader({
     "[section]",
     "page.tsx",
   ),
+  requiredSectionRouteFragments: [
+    "getCourseLessonBySlugs",
+    "CoursePacketLessonTemplate",
+  ],
   forbiddenFragments: [
     "This is the course-owned source file",
     "Use this file for the permanent lesson body",
