@@ -137,10 +137,23 @@ export const codexScenario = scenario(
   "codex-launch",
   [
     {
+      input: "/init",
+      output: [
+        "[EMULATED] /init would create project instructions in AGENTS.md.",
+        "[EMULATED] This training repository already contains AGENTS.md, so no file was changed.",
+      ],
+      events: [
+        emulatedEvent("info", "Documented Codex /init command represented by this fixture.", {
+          evidenceId: "codex-init-agents-md",
+        }),
+        emulatedEvent("read", "AGENTS.md already exists in the fixture.", { path: "AGENTS.md" }),
+      ],
+    },
+    {
       input: "/status",
       output: [
         "[EMULATED] workspace: /workspace/teacher-tool",
-        "[EMULATED] write: blocked | execute: blocked | network: blocked",
+        "[EMULATED] read: allowed | write: blocked | execute: blocked | network: blocked",
       ],
       events: [
         emulatedEvent("info", "Documented Codex status command represented by this fixture.", {
@@ -154,6 +167,18 @@ export const codexScenario = scenario(
       events: [
         emulatedEvent("approval", "Documented Codex permissions control represented by this fixture.", {
           evidenceId: "codex-session-permissions",
+        }),
+      ],
+    },
+    {
+      input: "/review",
+      output: [
+        "[EMULATED] Review requested for the current fixture state.",
+        "[EMULATED] No working-tree changes are present, so there is nothing to review.",
+      ],
+      events: [
+        emulatedEvent("git", "Documented Codex review workflow represented by this fixture.", {
+          evidenceId: "codex-review",
         }),
       ],
     },
