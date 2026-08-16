@@ -12,8 +12,13 @@ Authored:
 
 - Chapter 1 — When AI Enters the Terminal
 - Chapter 2 — Context, Instructions, and Permissions
+- Chapter 3 — Codex CLI
 
-Planned provider and advanced chapters remain intentionally unavailable until they receive real lesson-body passes.
+Next:
+
+- Chapter 4 — Claude Code
+
+Later provider and advanced chapters remain intentionally unavailable until they receive real lesson-body passes.
 
 ## Source boundaries
 
@@ -40,6 +45,20 @@ Deterministic terminal:
 
 - `src/lib/ots320-terminal/`
 - `src/components/ots320/Ots320TerminalLab.tsx`
+
+## Provider chapter rule
+
+Each provider chapter must translate the same durable questions into that provider's real interface:
+
+```text
+Where am I?
+What context and instructions apply?
+What can the agent do?
+What needs approval?
+What evidence shows what happened?
+```
+
+Do not assume command names or permission semantics transfer between Codex, Claude Code, and Antigravity CLI.
 
 ## Authoring rule
 
