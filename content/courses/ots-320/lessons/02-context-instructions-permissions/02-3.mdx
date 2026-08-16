@@ -1,0 +1,341 @@
+---
+title: "Lab: Build a Permission Boundary"
+description: "Inspect the training repository, read its project instructions, then decide the smallest read, write, execute, and network boundary needed for several agent tasks."
+course: "ots-320"
+chapter: "Context, Instructions, and Permissions"
+order: 3
+type: "practice"
+lessonType: "lab"
+minutes: 30
+artifact: "Permission boundary record"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/02-context-instructions-permissions/02-3"
+---
+This lab is about making one decision **before** the agent acts:
+
+> What access does this task actually need?
+
+You are not trying to maximize capability.
+
+You are trying to match capability to purpose.
+
+The terminal remains a deterministic fixture. The permission cards show the training environment, not your computer. Commands that would require execute or network access remain blocked.
+
+## Step 1: establish location and instructions
+
+Use the terminal below.
+
+<Ots320TerminalLab />
+
+Start with:
+
+```text
+pwd
+```
+
+Record the workspace.
+
+Then:
+
+```text
+ls
+```
+
+You should now see `AGENTS.md` in the synthetic repository.
+
+Read it:
+
+```text
+cat AGENTS.md
+```
+
+Do not skip the instructions because you already know this is a training repository.
+
+The exercise is the habit.
+
+Write down three project rules that would affect an agent task.
+
+```text
+RULE 1:
+
+RULE 2:
+
+RULE 3:
+```
+
+## Step 2: inspect the project before choosing access
+
+Run:
+
+```text
+cat README.md
+```
+
+Then:
+
+```text
+cat package.json
+```
+
+Then:
+
+```text
+git status
+```
+
+Answer:
+
+1. What kind of project is this?
+2. What command is defined as the test script?
+3. Is the starting working tree clean?
+4. Which file is explicitly treated as authored content by the project instructions?
+
+That information should change how you think about the tasks below.
+
+## Step 3: Task A - explain the repository
+
+Task:
+
+```text
+Inspect this project and explain what it does.
+Do not modify anything.
+```
+
+Choose the boundary:
+
+| Permission | Needed? | Why? |
+| --- | --- | --- |
+| Read |  |  |
+| Write |  |  |
+| Execute |  |  |
+| Network |  |  |
+
+A strong answer should be close to:
+
+```text
+READ      yes
+WRITE     no
+EXECUTE   no
+NETWORK   no
+```
+
+Why?
+
+The task is explanation based on local project information. Nothing in the task requires mutation, command execution, or outside access.
+
+Run:
+
+```text
+inspect this project. do not modify it.
+```
+
+Watch which files appear in the evidence panel.
+
+## Step 4: Task B - verify the existing test script
+
+New task:
+
+```text
+Run the repository's existing test command and report the result.
+Do not modify files.
+```
+
+Choose again:
+
+| Permission | Needed? | Why? |
+| --- | --- | --- |
+| Read |  |  |
+| Write |  |  |
+| Execute |  |  |
+| Network |  |  |
+
+This time, execute access is relevant.
+
+But do not jump straight to approval.
+
+You already inspected `package.json`, so you know what `npm test` maps to in this synthetic project.
+
+Try:
+
+```text
+npm test
+```
+
+The fixture blocks it.
+
+That is intentional.
+
+The lab is showing the difference between:
+
+```text
+The task needs execute access.
+```
+
+and:
+
+```text
+The environment currently grants execute access.
+```
+
+Those are two separate statements.
+
+Record:
+
+```text
+Requested action:
+
+Current boundary:
+
+Decision I would make in a real controlled repo:
+
+Evidence I would inspect after execution:
+```
+
+## Step 5: Task C - research a current external dependency
+
+New task:
+
+```text
+Check the current official documentation for a dependency used by this project.
+Do not modify files.
+```
+
+Now network access may be required because the information is explicitly current and external.
+
+Choose:
+
+| Permission | Needed? | Why? |
+| --- | --- | --- |
+| Read |  |  |
+| Write |  |  |
+| Execute |  |  |
+| Network |  |  |
+
+Try the fixture's network example:
+
+```text
+curl https://example.com
+```
+
+It is blocked.
+
+The point is not that `curl` is the correct research workflow.
+
+The point is that the task crossed from **local project inspection** into **outside access**.
+
+That should be visible in your mental model and in the environment.
+
+## Step 6: Task D - fix one lesson title
+
+Imagine the synthetic project has a confirmed incorrect title inside:
+
+```text
+src/data/sample-lessons.json
+```
+
+Task:
+
+```text
+Correct only the confirmed title in src/data/sample-lessons.json.
+Do not change IDs, structure, or other lesson text.
+Show the diff afterward.
+```
+
+Choose the boundary.
+
+You probably need:
+
+```text
+READ      yes
+WRITE     yes
+EXECUTE   maybe, depending on verification
+NETWORK   no
+```
+
+Now apply the project rule:
+
+```text
+Treat src/data/sample-lessons.json as authored content.
+```
+
+Does that mean the file can never change?
+
+No.
+
+It means the change deserves an explicit task and review. "Authored" is not the same as "immutable."
+
+The task names the file and the intended content change, so a write can be justified.
+
+But if the agent proposes rewriting both sample lessons "for consistency," the task has expanded.
+
+That is where the stop condition matters.
+
+## Build your permission boundary record
+
+Choose one real teacher-builder task you may perform later.
+
+Complete:
+
+```text
+TASK:
+
+WORKING DIRECTORY:
+
+PROJECT INSTRUCTIONS THAT APPLY:
+
+READ
+allowed / blocked
+scope:
+reason:
+
+WRITE
+allowed / blocked
+scope:
+reason:
+
+EXECUTE
+allowed / blocked
+expected commands:
+reason:
+
+NETWORK
+allowed / blocked
+expected destinations or purpose:
+reason:
+
+PROTECTED AREAS:
+
+STOP CONDITION:
+
+EVIDENCE TO REVIEW:
+```
+
+## Review test
+
+Before you approve a permission, ask:
+
+> If this action succeeds, what new thing becomes possible?
+
+For read, new information becomes visible.
+
+For write, project state can change.
+
+For execute, a program or project script can act.
+
+For network, the session can cross the local boundary.
+
+That is a better question than "Is this permission dangerous?"
+
+Permissions are contextual. The task determines whether the capability is justified.
+
+## Safety note
+
+Do not practice permission decisions with real student records, school credentials, production systems, or private data you do not need for the lesson.
+
+Synthetic repositories are not childish training wheels. They let you learn the control model without making privacy mistakes part of the learning process.
+
+## Reflection
+
+Which of the four tasks caused your permission boundary to change the most?
+
+What specific requirement caused that change?
