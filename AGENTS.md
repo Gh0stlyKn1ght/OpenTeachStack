@@ -76,7 +76,22 @@ The planned skills are:
 
 These skills are defined in the OTS-320 plan but are **not yet authorized for bulk implementation** until the project reaches Phase 2.
 
-Codex and Antigravity-compatible skills should use the canonical `.agents/skills` source. Claude compatibility should reuse the same canonical content through a verified compatibility mechanism rather than maintaining divergent skill prose. Prefer deterministic sync-and-drift verification over repository symlinks unless Windows behavior is proven reliable.
+Codex and Antigravity-compatible skills should use the canonical `.agents/skills` source. Claude compatibility should reuse the same canonical content through a verified compatibility mechanism rather than maintaining divergent skill prose. Prefer a deterministic local sync-and-drift verification script over repository symlinks unless Windows behavior is proven reliable.
+
+## No CI / no Vercel boundary
+
+For OTS-320 planning, skills, emulator work, course authoring, audits, and related OpenTeachStack changes:
+
+- **Do not create, enable, require, or run CI gates.**
+- **Do not invoke GitHub Actions as a validation or release gate.**
+- **Do not inspect CI status unless the user explicitly asks for CI work.**
+- **Do not create Vercel deployments.**
+- **Do not invoke Vercel preview deployments, production deployments, deployment checks, or Vercel build validation.**
+- **Do not make course progress or publication depend on Vercel.**
+- Validation for this initiative should be local and user-invoked only, such as targeted scripts, type checks, tests, or content audits when the user asks to run them.
+- A local check may report problems, but it must not become a bureaucratic release gate that blocks course authoring by default.
+
+This section overrides any older plan, architecture document, skill draft, or generated instruction that suggests adding a CI gate, GitHub Actions gate, Vercel gate, or deployment-based verification for OTS-320.
 
 ## Course architecture boundary
 
