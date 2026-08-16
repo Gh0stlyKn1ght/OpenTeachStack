@@ -29,12 +29,15 @@ Approved architecture documents:
 - `docs/architecture/OTS_320_AI_CLI_COURSE_PLAN_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE1_COURSE_CONTRACT_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE2_SKILLS_IMPLEMENTATION_2026-08-15.md`
+- `docs/architecture/OTS_320_PHASE3_CLI_EVIDENCE_2026-08-15.md`
 - `docs/architecture/ots-320-official-sources.json`
+- `docs/architecture/ots-320-evidence/`
 
-**Phase 2 is complete. Phase 3 has not started yet.**
+**Phase 3 is complete. Phase 4 has not started yet.**
 
-Until the user explicitly starts Phase 3:
+Until the user explicitly starts Phase 4:
 
+- do not build the terminal emulator,
 - do not rewrite OTS-320 production lessons,
 - do not regenerate the OTS-320 scaffold,
 - do not bulk-fill OTS-320 routes,
@@ -47,7 +50,7 @@ All other courses stay Coming Soon unless the user explicitly changes the active
 
 ## OTS-320 technical truth boundary
 
-Provider-specific technical claims must be grounded in current first-party documentation.
+Provider-specific technical claims must be grounded in current first-party documentation and, when used in lessons, should resolve through the Phase 3 evidence library.
 
 Use official documentation for:
 
@@ -62,7 +65,15 @@ Use official documentation for:
 
 Do not invent commands from memory. If current provider behavior is uncertain, verify it before authoring.
 
+Evidence classifications:
+
+- `documented` — supported by current first-party documentation,
+- `captured` — saved from a real local run and linked by `captureRef`,
+- `emulated` — deterministic course fixture output.
+
 Synthetic terminal output must be labeled as emulated or fixture output. Never present invented output as a captured provider transcript.
+
+Evidence marked `volatile: true` must be rechecked before it becomes learner-facing instruction.
 
 ## OTS-320 skill architecture
 
@@ -90,9 +101,10 @@ Use:
 ```bash
 npm run skills:sync
 npm run ci:skills
+npm run ci:ots320-evidence
 ```
 
-`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity.
+`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity. `ci:ots320-evidence` verifies the three provider evidence files, provenance, metadata, risk marking, and minimum evidence depth.
 
 ## CI / GitHub Actions / Vercel boundary
 
@@ -102,15 +114,32 @@ For OTS-320 planning, skills, emulator work, course authoring, audits, and relat
 
 - repository-owned CI scripts may be created and run,
 - CI should be provider-agnostic and runnable locally,
-- `npm run ci:skills` is the focused Phase 2 skill CI,
+- `npm run ci:skills` validates the Phase 2 skills system,
+- `npm run ci:ots320-evidence` validates the Phase 3 evidence layer,
 - `npm run ci` may run the repository's broader validation suite,
-- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, or drift,
+- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, provenance errors, dangerous commands marked with the wrong risk, or mirror drift,
 - human instructional quality must not be reduced to a CI score,
 - **do not create or use GitHub Actions workflows for this initiative,**
 - **do not use Vercel builds, previews, deployments, or deployment gates for this initiative,**
 - **do not make publication depend on a Vercel deployment.**
 
-This section supersedes older OTS-320 wording that said to disable CI entirely. The intended boundary is: **CI yes; GitHub Actions no; Vercel no.**
+The intended boundary is: **CI yes; GitHub Actions no; Vercel no.**
+
+## Terminal emulator boundary
+
+When Phase 4 is explicitly started, build the emulator as a deterministic teaching fixture, not a browser shell.
+
+It may model:
+
+- current working directory,
+- a fictional repository file tree,
+- read / write / execute / network events,
+- approval prompts,
+- Git status and diffs,
+- reset and rollback,
+- provider-specific presentation based on Phase 3 evidence.
+
+It must not expose unrestricted host command execution, real school systems, real credentials, or real student data.
 
 ## Course architecture boundary
 
@@ -157,7 +186,7 @@ Every real OTS-101 lesson must include a teacher problem, plain-language explana
 
 If those cannot be written honestly, create an authoring note or leave the route unavailable instead of generating filler.
 
-When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract and project skills to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
+When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract, Phase 2 project skills, and Phase 3 evidence library to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
 
 ## Activation and handoff rules
 
