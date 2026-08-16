@@ -42,13 +42,11 @@ function promptFor(state: CliSessionState): string {
 export default function Ots320TerminalLab() {
   const [provider, setProvider] = useState<CliProvider>("codex");
   const [events, setEvents] = useState<TerminalEvent[]>([]);
-  const [sessionView, setSessionView] = useState<CliSessionState>(() =>
-    createCliSession(getOts320Scenario("codex")),
-  );
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const terminalRef = useRef<Terminal | null>(null);
-  const sessionRef = useRef<CliSessionState>(sessionView);
+  const sessionRef = useRef<CliSessionState>(
+    createCliSession(getOts320Scenario("codex")),
+  );
   const submitCommandRef = useRef<SubmitCommand | null>(null);
 
   const scenario = useMemo(() => getOts320Scenario(provider), [provider]);
@@ -73,8 +71,6 @@ export default function Ots320TerminalLab() {
 
     const initialSession = createCliSession(scenario);
     sessionRef.current = initialSession;
-    setSessionView(initialSession);
-    setEvents([]);
 
     const terminal = new Terminal({
       cursorBlink: true,
@@ -90,7 +86,6 @@ export default function Ots320TerminalLab() {
     const fitAddon = new FitAddon();
     terminal.loadAddon(fitAddon);
     terminal.open(container);
-    terminalRef.current = terminal;
 
     container.setAttribute(
       "aria-label",
@@ -133,7 +128,6 @@ export default function Ots320TerminalLab() {
 
       const step = runTerminalInput(sessionRef.current, command);
       sessionRef.current = step.state;
-      setSessionView(step.state);
       setEvents(step.result.events);
       historyIndex = step.state.history.length;
 
@@ -176,7 +170,9 @@ export default function Ots320TerminalLab() {
         return;
       }
 
-      for (const character of data) {
+      const normalizedData = data.replace(/\r\n/g, "\r").replace(/\n/g, "\r");
+
+      for (const character of normalizedData) {
         if (character === "\r") {
           executeInput();
           continue;
@@ -204,7 +200,7 @@ export default function Ots320TerminalLab() {
           continue;
         }
 
-        if (character === "\n" || character < " ") continue;
+        if (character < " ") continue;
 
         inputBuffer += character;
         terminal.write(character);
@@ -236,10 +232,15 @@ export default function Ots320TerminalLab() {
       resizeObserver?.disconnect();
       dataDisposable.dispose();
       submitCommandRef.current = null;
-      terminalRef.current = null;
       terminal.dispose();
     };
   }, [scenario]);
+
+  const selectProvider = (nextProvider: CliProvider) => {
+    if (nextProvider === provider) return;
+    setEvents([]);
+    setProvider(nextProvider);
+  };
 
   const runQuickCommand = (command: string) => {
     submitCommandRef.current?.(command);
@@ -265,7 +266,7 @@ export default function Ots320TerminalLab() {
                 <button
                   key={item}
                   type="button"
-                  onClick={() => setProvider(item)}
+                  onClick={() => selectProvider(item)}
                   aria-pressed={active}
                   className={`rounded-md border px-3 py-1.5 font-mono text-xs font-semibold transition-colors ${
                     active
@@ -298,7 +299,7 @@ export default function Ots320TerminalLab() {
               </p>
               <div className="mt-3 grid grid-cols-2 gap-2">
                 {PERMISSION_ORDER.map((permission) => {
-                  const allowed = sessionView.permissions[permission];
+                  const allowed = scenario.permissions[permission];
                   return (
                     <div
                       key={permission}
