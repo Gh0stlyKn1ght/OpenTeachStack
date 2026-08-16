@@ -1,8 +1,9 @@
 {
   "course": "OTS-320",
   "title": "Command Line AI for Teacher Builders",
-  "registryVersion": 2,
+  "registryVersion": 3,
   "verifiedAt": "2026-08-15",
+  "evidenceLibrary": "docs/architecture/ots-320-evidence",
   "policy": {
     "sourcePriority": "first-party-only-for-provider-specific-technical-behavior",
     "automaticRewrites": false,
@@ -45,6 +46,7 @@
           "id": "openai-codex-security",
           "title": "Agent approvals and security",
           "url": "https://developers.openai.com/codex/agent-approvals-security",
+          "resolvedOfficialUrl": "https://learn.chatgpt.com/docs/agent-approvals-security",
           "topics": ["approvals", "sandboxing", "permissions", "network-access", "risk-boundaries"],
           "verifiedAt": "2026-08-15"
         }
@@ -59,6 +61,20 @@
           "title": "Claude Code CLI reference",
           "url": "https://code.claude.com/docs/en/cli-usage",
           "topics": ["interactive-cli", "print-mode", "piped-input", "sessions", "resume", "output-formats", "permission-options"],
+          "verifiedAt": "2026-08-15"
+        },
+        {
+          "id": "anthropic-claude-how-it-works",
+          "title": "How Claude Code works",
+          "url": "https://code.claude.com/docs/en/how-claude-code-works",
+          "topics": ["working-directory", "project-files", "terminal-access", "git-state", "CLAUDE.md", "extensions"],
+          "verifiedAt": "2026-08-15"
+        },
+        {
+          "id": "anthropic-claude-permissions",
+          "title": "Configure permissions",
+          "url": "https://code.claude.com/docs/en/permissions",
+          "topics": ["allow", "ask", "deny", "permission-precedence", "read-only-commands", "sandboxing"],
           "verifiedAt": "2026-08-15"
         },
         {
@@ -99,7 +115,7 @@
           "id": "google-agy-hands-on",
           "title": "Hands-on with Antigravity CLI",
           "url": "https://codelabs.developers.google.com/antigravity-cli-hands-on",
-          "topics": ["installation", "terminal-ui", "commands", "workspace-navigation", "agent-workflow"],
+          "topics": ["installation", "terminal-ui", "commands", "workspace-navigation", "agent-workflow", "tool-permissions"],
           "verifiedAt": "2026-08-15"
         }
       ]
