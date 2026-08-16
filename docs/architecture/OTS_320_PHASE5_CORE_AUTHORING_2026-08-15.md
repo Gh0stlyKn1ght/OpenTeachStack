@@ -22,15 +22,13 @@ OTS-320 has a dedicated reader boundary:
 - `src/app/book/ots-320/[chapter]/page.tsx`
 - `src/app/book/ots-320/[chapter]/[section]/page.tsx`
 
-This deliberately avoids rewriting the shared `COURSE_STRUCTURES` registry while OTS-320 is being rebuilt.
-
 Navigation uses the approved 11-chapter Phase 1 contract. Lesson bodies resolve from:
 
 `content/courses/ots-320/lessons/<chapter-slug>/<section-slug>.mdx`
 
 Planned sections without authored MDX remain intentionally unavailable. Route visibility is not course completion.
 
-## Authored foundations
+## Authored chapters
 
 ### Chapter 1 — When AI Enters the Terminal
 
@@ -40,14 +38,6 @@ Planned sections without authored MDX remain intentionally unavailable. Route vi
 - `01.3` — Lab: Inspect Before You Change
 - `01.4` — Evidence Checkpoint: Prove What Happened
 
-The sequence establishes the durable operating model:
-
-1. AI moves from answer generation to repository action.
-2. Repository action is reasoned about through read, write, execute, and network boundaries.
-3. Investigation is separated from modification.
-4. The xterm lab makes permissions and evidence observable with deterministic fixtures.
-5. Agent claims are converted into files, diffs, command results, checks, and human review.
-
 ### Chapter 2 — Context, Instructions, and Permissions
 
 - `02.0` — Chapter Overview
@@ -56,94 +46,118 @@ The sequence establishes the durable operating model:
 - `02.3` — Lab: Build a Permission Boundary
 - `02.4` — Checkpoint: Least Access Needed
 
-The sequence adds the control layers that should exist before provider-specific operation:
+### Chapter 3 — Codex CLI
 
-1. verify the working directory and project identity,
+- `03.0` — Codex CLI
+- `03.1` — Starting Codex in a Repository
+- `03.2` — Permissions, Status, and Review
+- `03.3` — Lab: Inspect a Repository with Codex
+- `03.4` — Checkpoint: What Codex Actually Did
+
+Chapter 3 is the first provider-specific application of the provider-neutral operating model established in Chapters 1 and 2.
+
+The Codex sequence teaches:
+
+1. launch from the correct project directory,
 2. inspect starting Git state,
-3. separate durable repository instructions from the current task,
-4. name allowed and protected areas,
-5. choose the least read/write/execute/network access needed for the task,
-6. treat unexpected scope expansion as a new human decision.
+3. confirm session configuration with `/status`,
+4. reason about `/permissions`, sandbox capability, and approval policy separately,
+5. use `AGENTS.md` as durable project guidance rather than one-off prompt memory,
+6. represent `/init` and `/review` through documented, explicitly emulated fixture behavior,
+7. keep Git evidence and human review above agent assertions.
 
-The deterministic training repository now includes a synthetic `AGENTS.md`, allowing learners to inspect project instructions directly rather than only reading about the idea.
+## Codex evidence refresh
+
+Before authoring Chapter 3, current official OpenAI documentation was rechecked on 2026-08-15.
+
+The Codex evidence library was extended with:
+
+- `codex-init-agents-md`
+- `codex-read-only-on-request`
+
+The `codex-review` claim was tightened to reflect the documented dedicated review workflow.
+
+Version-sensitive permission flags remain marked `volatile: true` and must be rechecked before future publication.
 
 ## Terminal integration
 
-`Ots320TerminalLab` is registered in the course-packet MDX component map, so authored lessons can embed the deterministic xterm environment directly in the reader.
+`Ots320TerminalLab` remains the embedded deterministic xterm teaching environment.
 
-The fixture remains:
+The Codex fixture now represents:
 
-- synthetic,
-- resettable,
-- provider-account free,
-- credential free,
-- host-shell free,
-- network free,
-- explicit about emulated output.
+- `codex`
+- `/init`
+- `/status`
+- `/permissions`
+- `/review`
+- bounded project inspection
+- blocked execute requests
+- blocked network requests
+- Git status and diff evidence
 
-## Content truth correction
+The fixture remains synthetic, resettable, provider-account free, credential free, host-shell free, network free, and explicit about emulated output.
 
-The old OTS-320 metadata contradicted itself by claiming both `hasRealLessons: false` and `humanReviewed: true` / release-ready status.
+## Content truth
 
-Phase 5 corrected that:
+The old generated six-chapter OTS-320 lesson scaffold has been removed from the production lesson source. Git history remains the archive.
 
-- `hasRealLessons: true` because real authored lessons now exist,
-- `humanReviewed: false` because the rebuilt course has not completed human review,
-- release readiness explicitly says authoring is in progress,
-- the generated six-chapter course contract was replaced in `course.json` by the 11-chapter command-line AI contract.
+Current metadata now states:
 
-The old six-chapter generated lesson directories were also removed from `content/courses/ots-320/lessons`. They contained scaffold metadata and literal placeholder content such as `${richContent}`. Git history remains the archive; dead scaffold does not remain in the production lesson source.
+- `hasRealLessons: true`
+- `humanReviewed: false`
+- Chapters 1 through 3 authored
+- later chapters planned and intentionally unavailable
 
 ## CI
 
-The provider-agnostic repository CI now includes:
+Provider-agnostic repository checks include:
 
 - `npm run ci:skills`
 - `npm run ci:ots320-evidence`
 - `npm run ci:ots320-terminal`
 - `npm run ci:ots320-reader`
 
-The OTS-320 reader checker points to the dedicated OTS-320 section route and validates the course-packet reader contract rather than expecting implementation details to be duplicated in the route file.
-
 No GitHub Actions or Vercel gate is required or allowed for this initiative.
+
+Do not claim a local runtime pass until the xterm lockfile synchronization and browser smoke check are actually completed locally.
 
 ## Authoring rule
 
-Do not bulk-author the remaining planned sections.
+Do not bulk-author remaining chapters.
 
 Continue in this order:
 
-1. Chapter 3 — Codex CLI
-2. Chapter 4 — Claude Code
-3. Chapter 5 — Antigravity CLI
-4. Chapter 6 — Same Task, Three Agents
-5. Chapter 7 — Prompts as Technical Specifications
-6. Chapter 8 — Git, Diffs, Verification, and Rollback
-7. Chapter 9 — Project Instructions and Agent Skills
-8. Chapter 10 — MCP and External Tool Trust
-9. Chapter 11 — Capstone
+1. Chapter 4 — Claude Code
+2. Chapter 5 — Antigravity CLI
+3. Chapter 6 — Same Task, Three Agents
+4. Chapter 7 — Prompts as Technical Specifications
+5. Chapter 8 — Git, Diffs, Verification, and Rollback
+6. Chapter 9 — Project Instructions and Agent Skills
+7. Chapter 10 — MCP and External Tool Trust
+8. Chapter 11 — Capstone
 
 Each provider-specific claim must resolve through current first-party documentation and the Phase 3 evidence library. Volatile claims must be rechecked before they become learner-facing instructions.
 
 ## Quality boundary
 
-A real OTS-320 lesson should normally contain enough material to teach one focused mechanism or decision, not merely an activity shell.
+A real OTS-320 lesson should teach one focused mechanism or decision with enough depth to stand on its own.
 
-Use:
+Use, when they improve instruction:
 
 - a real teacher-builder problem,
 - a mechanism or mental model,
 - concrete terminal/repository examples,
 - visible evidence,
-- failure modes or unsafe assumptions where useful,
+- failure modes or unsafe assumptions,
 - a bounded practice/build step,
-- a verification or decision point,
-- source/version notes where technical behavior is provider-specific.
+- verification and rollback,
+- source/version notes for provider-specific behavior,
+- reflection tied to a real decision.
 
 Do not mechanically copy the OTS-101 lesson template.
 
 ## Next action
 
-Author Chapter 3 — **Codex CLI** only.
+Author Chapter 4 — **Claude Code** only.
 
-Before authoring, recheck the current official OpenAI Codex CLI documentation and the Phase 3 Codex evidence set. The chapter should teach current Codex-specific operation as an application of the provider-neutral context, permission, and evidence model established in Chapters 1 and 2.
+Before authoring, recheck the current first-party Anthropic Claude Code documentation and the existing `claude-code.json` evidence set. Preserve the same context / permission / evidence questions without assuming Codex command names or control semantics transfer directly to Claude Code.
