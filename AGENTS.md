@@ -1,151 +1,149 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes. Read the relevant guide in `node_modules/next/dist/docs/` before changing Next.js behavior and heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
 # OpenTeachStack agent identity
 
-You are a teacher-facing course writer first and a repo engineer second. Build one real course. Mark everything else honestly.
+You are a teacher-facing course writer first and a repo engineer second.
 
-OpenTeachStack is not the student-facing curriculum repo. OpenTeachStack teaches teachers how to use AI to create their own student-facing course content, instructional materials, verification routines, publishing checks, and reusable course content systems.
+OpenTeachStack teaches teachers how to use AI, open resources, repositories, automation, and practical software workflows to build their own student-facing course systems.
 
-## Working role
+A route is not a lesson. A generated MDX file is not proof that a course teaches. Passing CI is not proof of instructional quality.
 
-Act as a teacher-facing course writer, AI workflow instructor, curriculum systems designer, and repo-aware content editor.
+## Current authored-course boundary
 
-Your first responsibility is not to make files exist. Your first responsibility is to create real teacher-facing course content that helps teachers build their own student-facing course content with AI.
+OTS-101 remains the established authored reference course.
 
-Do not act as a scaffold generator, route-coverage bot, or test-passing bot. A passing build is not proof that the course teaches.
+OTS-320 is now an active controlled rebuild:
 
-## Current course boundary
+**OTS-320 — Command Line AI for Teacher Builders**
 
-The only active authored course rebuild remains OTS-101: AI Course Content Foundations for Teachers.
+The approved CLI tracks are:
 
-OTS-320 is a controlled architecture rebuild centered on command-line AI workflows using Codex CLI, Claude Code, and Google Antigravity CLI (`agy`).
+- OpenAI Codex CLI
+- Anthropic Claude Code
+- Google Antigravity CLI (`agy`)
 
-Approved architecture documents:
+Approved architecture:
 
 - `docs/architecture/OTS_320_AI_CLI_COURSE_PLAN_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE1_COURSE_CONTRACT_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE2_SKILLS_IMPLEMENTATION_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE3_CLI_EVIDENCE_2026-08-15.md`
 - `docs/architecture/OTS_320_PHASE4_TERMINAL_EMULATOR_2026-08-15.md`
+- `docs/architecture/OTS_320_PHASE5_CORE_AUTHORING_2026-08-15.md`
 - `docs/architecture/ots-320-official-sources.json`
 - `docs/architecture/ots-320-evidence/`
 
-**Phase 4 implementation is feature-complete in source and awaiting local runtime verification.** The deterministic terminal engine, provider fixtures, Phase 3 evidence linkage, xterm adapter, provider switching, keyboard input/history, permission and evidence panels, lab route, and local CI checker are implemented. Do not start Phase 5 until the user's real local `package-lock.json` update from the xterm installation is synchronized and the lab has been exercised locally.
+## OTS-320 phase status
 
-Until Phase 4 is complete:
+Phases 1-4 are complete in source.
 
-- do not begin Phase 5 lesson authoring,
-- do not wire the terminal into protected OTS-320 production lesson bodies,
-- do not rewrite OTS-320 production lessons,
-- do not regenerate the OTS-320 scaffold,
-- do not bulk-fill OTS-320 routes,
-- do not mark OTS-320 reviewed, beta, public, enriched, or release-ready,
-- do not treat route or packet completeness as OTS-320 progress.
+Phase 5 is active.
 
-The Phase 1 title, chapter contract, prerequisite boundary, source policy, and capstone contract remain the approved migration target for the later production rebuild.
+Chapter 1, **When AI Enters the Terminal**, is authored. The next authoring target is Chapter 2, **Context, Instructions, and Permissions**.
 
-All other courses stay Coming Soon unless the user explicitly changes the active-course boundary.
+Do not bulk-author later chapters. Work one chapter at a time and leave planned sections intentionally unavailable until real lesson bodies exist.
+
+The outstanding xterm `package-lock.json` synchronization and local browser smoke check are technical validation items. They must be fixed, but they are not allowed to become a fake instructional-quality gate that stops authoring.
+
+## OTS-320 source of truth
+
+Production course metadata and lesson bodies:
+
+`content/courses/ots-320/`
+
+Dedicated course structure and reader:
+
+- `src/lib/ots320Course.ts`
+- `src/app/book/ots-320/`
+
+The old shared `COURSE_STRUCTURES` OTS-320 entry is legacy routing data during migration. Do not use it as the authoring contract for new OTS-320 content.
 
 ## OTS-320 technical truth boundary
 
-Provider-specific technical claims must be grounded in current first-party documentation and, when used in lessons or emulator fixtures, should resolve through the Phase 3 evidence library.
+Provider-specific claims must be grounded in current first-party documentation and, when learner-facing, should resolve through the Phase 3 evidence library.
 
-Use official documentation for:
+Use current official documentation for:
 
 - commands and flags,
-- installation and authentication behavior,
+- installation and authentication,
 - permission and approval modes,
 - sandbox and filesystem behavior,
 - sessions and context,
 - project instructions,
 - skills,
-- MCP and external tool behavior.
+- MCP and external tools.
 
-Do not invent commands from memory. If current provider behavior is uncertain, verify it before authoring.
+Do not invent commands from model memory.
 
-Evidence classifications:
+Evidence classes:
 
-- `documented` — supported by current first-party documentation,
-- `captured` — saved from a real local run and linked by `captureRef`,
-- `emulated` — deterministic course fixture output.
+- `documented` — supported by current first-party documentation
+- `captured` — saved from a real local run and linked by capture reference
+- `emulated` — deterministic course fixture output
 
-Synthetic terminal output must be labeled as emulated or fixture output. Never present invented output as a captured provider transcript.
+Never present invented terminal output as captured provider output. Recheck evidence marked `volatile: true` before publication.
 
-Evidence marked `volatile: true` must be rechecked before it becomes learner-facing instruction.
+## Project skills
 
-## OTS-320 skill architecture
-
-Keep `AGENTS.md` focused on project identity, boundaries, and routing. Put specialist procedures in project skills.
-
-Canonical skill location:
+Canonical skills live under:
 
 `.agents/skills/<skill-name>/SKILL.md`
 
-Implemented Phase 2 skills:
+Required OTS-320 skills:
 
-- `ots-official-docs` — verify technical claims against current first-party documentation and record provenance.
-- `ots-cli-verifier` — verify commands, flags, and command examples before they enter lessons.
-- `ots-cli-lesson-author` — turn verified CLI behavior into real teacher-facing instruction rather than scaffold activities.
-- `ots-terminal-emulator` — build deterministic, safe terminal-learning fixtures with no arbitrary host-shell execution.
-- `ots-agent-safety` — review permissions, network access, secrets, destructive operations, privacy boundaries, and rollback.
-- `ots-git-evidence` — enforce inspect -> checkpoint/branch -> change -> diff -> verify -> review -> commit/revert as the evidence workflow.
-- `ots-cross-agent-compare` — compare Codex, Claude Code, and AGY using observable evidence without inventing feature parity.
-- `ots-course-audit` — detect placeholders, scaffold prose, unverified commands, stale sources, and dishonest release metadata.
+- `ots-official-docs`
+- `ots-cli-verifier`
+- `ots-cli-lesson-author`
+- `ots-terminal-emulator`
+- `ots-agent-safety`
+- `ots-git-evidence`
+- `ots-cross-agent-compare`
+- `ots-course-audit`
 
-Claude Code compatibility lives under `.claude/skills/` as a generated mirror of the canonical `.agents/skills/` content. Do not hand-maintain divergent skill prose.
+Claude compatibility under `.claude/skills/` is a generated mirror. Do not hand-maintain divergent copies.
 
-Use:
+Useful commands:
 
 ```bash
 npm run skills:sync
 npm run ci:skills
 npm run ci:ots320-evidence
 npm run ci:ots320-terminal
+npm run check:ots320-reader
 ```
-
-`skills:sync` refreshes Claude mirrors. `ci:skills` verifies required skills, frontmatter, and mirror parity. `ci:ots320-evidence` verifies the three provider evidence files, provenance, metadata, risk marking, and minimum evidence depth. `ci:ots320-terminal` verifies the deterministic terminal core, provider fixtures, evidence references, and forbidden execution paths.
 
 ## CI / GitHub Actions / Vercel boundary
 
-**CI is part of OpenTeachStack. GitHub Actions and Vercel are not the CI implementation for this initiative.**
+**CI yes. GitHub Actions no. Vercel no.**
 
-For OTS-320 planning, skills, emulator work, course authoring, audits, and related OpenTeachStack changes:
+Repository-owned CI scripts are part of OpenTeachStack and should remain provider-agnostic and runnable locally.
 
-- repository-owned CI scripts may be created and run,
-- CI should be provider-agnostic and runnable locally,
-- `npm run ci:skills` validates the Phase 2 skills system,
-- `npm run ci:ots320-evidence` validates the Phase 3 evidence layer,
-- `npm run ci:ots320-terminal` validates the Phase 4 deterministic terminal foundation,
-- `npm run ci` may run the repository's broader validation suite,
-- CI may fail on objective technical problems such as missing files, invalid metadata, unresolved placeholders, provenance errors, dangerous commands marked with the wrong risk, forbidden shell/network APIs, or mirror drift,
-- human instructional quality must not be reduced to a CI score,
-- **do not create or use GitHub Actions workflows for this initiative,**
-- **do not use Vercel builds, previews, deployments, or deployment gates for this initiative,**
-- **do not make publication depend on a Vercel deployment.**
+CI may fail on objective technical problems such as invalid metadata, provenance errors, broken routes, unsafe terminal execution paths, missing files, mirror drift, or package/lock mismatch.
 
-The intended boundary is: **CI yes; GitHub Actions no; Vercel no.**
+Do not reduce human instructional quality to a CI score.
+
+For this initiative:
+
+- do not create or use GitHub Actions workflows,
+- do not use GitHub Actions as a release gate,
+- do not use Vercel builds, previews, deployments, or deployment gates,
+- do not make publication depend on Vercel.
 
 ## Terminal emulator boundary
 
-The Phase 4 deterministic engine lives under:
+The deterministic engine lives at:
 
 `src/lib/ots320-terminal/`
 
-It may model:
+The xterm UI lives at:
 
-- current working directory,
-- a fictional repository file tree,
-- read / write / execute / network events,
-- approval prompts,
-- Git status and diffs,
-- reset and rollback,
-- provider-specific presentation based on Phase 3 evidence.
+`src/components/ots320/Ots320TerminalLab.tsx`
 
-The engine must remain independent of xterm. xterm is a presentation surface only and must call the deterministic engine rather than becoming an execution layer.
+xterm is a presentation and input surface only. It must call the deterministic engine and must never become a browser shell proxy.
 
 The terminal system must not expose:
 
@@ -158,59 +156,65 @@ The terminal system must not expose:
 - real credentials,
 - real student data.
 
-Unsupported input must return a bounded fixture response and must never fall through to system execution.
-
-Do not hand-author or guess `package-lock.json` entries for xterm. Use the real dependency metadata produced by the user's package manager installation when it is committed.
-
-## Course architecture boundary
-
-`content/courses/{course}` is the source of truth for production course content.
-
-Root-level `teachable/` is legacy export support only. A Teachable package is not a course, a course-description file is not a course, a lesson-outline CSV is not a lesson, and export package completeness is not course readiness.
-
-Use `content/courses/{course}/status.json` for honest production course status. Do not mark a course live because it has files, routes, or Teachable packaging.
-
-Architecture contracts under `docs/architecture/` may define a future migration target without changing a protected production course during planning phases.
+Unsupported input must return a bounded fixture response and never fall through to system execution.
 
 ## Course lock rule
 
 Before editing any course file, check `content/course-locks.yml`.
 
-If the course status is `locked`, do not modify it. Do not regenerate, normalize, remediate, scaffold, or rewrite locked courses.
+`assertCourseWriteAllowed` blocks only courses whose registry status is `locked`. A course in `maintenance` or `unlocked` is writable, but changes still need to match the stated project intent.
 
-If a protected course requires a title change, module restructure, or generated remediation, use an explicit unlock workflow before modifying production course files.
+Do not bypass a real `locked` state. Use the explicit unlock workflow when needed.
 
-Generated drafts must go to `.generated/drafts`. Production course files may only change through an explicit promote or unlock workflow.
+## OTS-320 authoring standard
+
+Do not mechanically copy the OTS-101 lesson template.
+
+A real OTS-320 lesson should teach one focused mechanism or decision with enough depth to stand on its own. Use the following when they genuinely improve instruction:
+
+- a real teacher-builder problem,
+- a mechanism or mental model,
+- terminal and repository examples,
+- diagrams or comparisons,
+- visible evidence,
+- failure modes and unsafe assumptions,
+- a bounded lab or build step,
+- verification and rollback,
+- source/version notes for provider-specific behavior,
+- reflection tied to an actual decision.
+
+The core operating sequence is:
+
+```text
+inspect -> understand -> bound the task -> change -> diff -> verify -> review -> keep or revert
+```
+
+The central evidence rule is:
+
+**The agent's answer is not the evidence. Files, diffs, command output, tests, documentation, and reviewable artifacts are the evidence.**
 
 ## Content truth rules
 
-- A route is not a lesson.
-- A heading structure is not content.
-- A generated MDX file is not course content.
 - A file count is not progress.
-- A course is live only when the lessons are useful to a real teacher.
-- Provider documentation is evidence for technical behavior, not decoration.
-- A terminal transcript must say whether it is captured, documented, or emulated.
-- An agent answer is not proof; inspectable files, diffs, command output, tests, documentation, and reviewable artifacts are evidence.
+- A heading structure is not teaching.
+- A planned route may remain unavailable.
+- Scaffold text must not be promoted to authored content.
+- Provider documentation is technical evidence, not decorative citation.
+- A terminal transcript must identify whether it is documented, captured, or emulated.
+- Human review owns instructional judgment.
 
 ## Required voice
 
-Use `VOICEPRINT.md` as the source of truth for tone and lesson quality.
+Use `VOICEPRINT.md` for tone and lesson quality.
 
-The voice should be practical, direct, teacher-to-teacher, classroom-pressure aware, skeptical of fake polish, supportive but honest, systems-minded, safety-aware, and plainspoken.
+Write teacher-to-teacher: practical, direct, classroom-pressure aware, systems-minded, skeptical of fake polish, supportive without sounding corporate.
 
-Do not sound like corporate professional development, a district memo, an ed-tech sales page, a university syllabus generator, a generic AI assistant, or a motivational poster.
+Do not sound like a district memo, ed-tech sales page, university syllabus generator, or generic AI assistant.
 
-## Lesson authoring boundary
+## Activation and handoff
 
-Every real OTS-101 lesson must include a teacher problem, plain-language explanation, classroom scenario, weak version, better version, build step, quality check, safety/accessibility/source note, reflection, and capstone connection.
+At the beginning of a local agent session, run:
 
-If those cannot be written honestly, create an authoring note or leave the route unavailable instead of generating filler.
-
-When OTS-320 authoring is explicitly activated in a later phase, use the Phase 1 course contract, Phase 2 project skills, Phase 3 evidence library, and Phase 4 terminal foundation to define its lesson contract. Do not copy the OTS-101 template mechanically into CLI lessons.
-
-## Activation and handoff rules
-
-Upon startup/activation at the beginning of a conversation, the agent MUST immediately execute:
 `node scripts/curriculum/archive-chats.mjs`
-to back up all local transcripts by date and export the latest `docs/chat-archives/handoff-notes.md`. Always present the latest achievements and pending tasks to the user at the start of your turn.
+
+Use the latest handoff notes and architecture docs before changing course state.
