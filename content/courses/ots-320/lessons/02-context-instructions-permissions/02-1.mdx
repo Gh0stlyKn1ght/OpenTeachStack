@@ -1,0 +1,261 @@
+---
+title: "Working Directory and Repository Context"
+description: "Understand why the folder where an agent starts changes the files, instructions, Git state, and project assumptions available to the session."
+course: "ots-320"
+chapter: "Context, Instructions, and Permissions"
+order: 1
+type: "concept"
+lessonType: "concept"
+minutes: 20
+artifact: "Repository context trace"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/02-context-instructions-permissions/02-1"
+---
+Before asking an agent to fix anything, know where it is standing.
+
+That sounds almost too basic.
+
+It is not.
+
+In command-line work, the **current working directory** is the folder the session is currently operating from. It affects which relative file paths make sense, which repository you are inside, and which nearby project files are available to inspect.
+
+If your mental picture of the directory does not match the actual directory, every instruction after that starts on shaky ground.
+
+## The prompt is telling you something
+
+A traditional shell may show part of the current path in its prompt. An agent tool may show the workspace or project in a status screen. The exact interface varies.
+
+The stable question does not:
+
+> **What directory is this session actually working from?**
+
+In the OTS-320 fixture:
+
+```text
+$ pwd
+/workspace/teacher-tool
+```
+
+That path tells you the starting location for the training repository.
+
+The command:
+
+```text
+pwd
+```
+
+means **print working directory** in the Unix-style shell model used by the fixture.
+
+You do not need to become a shell expert to understand why that output matters.
+
+## Relative paths depend on where you are
+
+Imagine this repository:
+
+```text
+teacher-tool/
+├── AGENTS.md
+├── README.md
+├── package.json
+└── src/
+    └── data/
+        └── sample-lessons.json
+```
+
+From `/workspace/teacher-tool`, this path:
+
+```text
+src/data/sample-lessons.json
+```
+
+points to the sample lesson file.
+
+From a different working directory, that same relative path may point nowhere.
+
+This is why an error such as:
+
+```text
+No such file or directory
+```
+
+is not always a problem with the file.
+
+Sometimes you are simply standing in the wrong place.
+
+## Repository context is more than the file tree
+
+Once you know the directory, ask what kind of project it is.
+
+Useful inspection questions include:
+
+- Is this directory a Git repository?
+- What does the README say the project is for?
+- What project instructions exist?
+- What scripts are defined in `package.json`?
+- What folders appear to contain authored content?
+- Is the working tree clean or already modified?
+
+A quick investigation may include:
+
+```text
+pwd
+ls
+cat README.md
+cat AGENTS.md
+cat package.json
+git status
+```
+
+Notice what this sequence does **not** include.
+
+No write.
+
+No dependency install.
+
+No formatter.
+
+No "fix everything."
+
+You are building the context map first.
+
+## Git state is part of context
+
+Suppose the agent starts in a repository that already has changes:
+
+```text
+modified: content/lesson-01.mdx
+modified: src/app/page.tsx
+```
+
+Now a new agent task begins.
+
+If you ignore the starting Git state, you may later see a diff and assume every change came from the agent session.
+
+That assumption can be wrong.
+
+This gives you a useful preflight habit:
+
+```text
+before agent work -> inspect git status
+```
+
+A clean working tree is easy to reason about.
+
+A dirty working tree is not forbidden, but you need to know what was already changed before the new task started.
+
+<TakeawayStrip tone="teacher">
+  A diff only tells the truth about the change if you understand the starting state you are comparing against.
+</TakeawayStrip>
+
+## Wrong project, right-looking answer
+
+Consider two folders:
+
+```text
+Projects/
+├── OpenTeachStack/
+└── OpenTeachStack-old/
+```
+
+You intend to fix the current course site.
+
+The agent launches from:
+
+```text
+Projects/OpenTeachStack-old
+```
+
+It reads valid code.
+
+It finds a valid course file.
+
+It makes a technically correct change.
+
+It runs a test successfully.
+
+And none of it matters because you were in the wrong clone.
+
+This is a good example of why **successful execution is not the same as successful work**.
+
+The task can be internally correct and externally useless.
+
+## Context before confidence
+
+A good first agent instruction often includes an explicit inspection step:
+
+```text
+Before proposing changes:
+1. report the current working directory,
+2. identify the project from its README or package metadata,
+3. inspect project instructions,
+4. report Git status,
+5. do not modify anything yet.
+```
+
+That gives you a chance to catch a wrong workspace before it becomes a wrong patch.
+
+## What should not be in context?
+
+More context is not always better.
+
+If the task concerns a small public course repository, the agent does not need access to:
+
+- a Downloads folder full of unrelated documents,
+- student records,
+- password exports,
+- district data,
+- another private project,
+- an entire home directory just because the repository lives inside it.
+
+Scope the workspace around the work.
+
+The cleanest context is the smallest context that still contains the source needed to solve the problem.
+
+## Build: repository context trace
+
+Use a real project you control or a fictional one.
+
+Write this trace before any agent edit:
+
+```text
+WORKING DIRECTORY:
+
+PROJECT NAME:
+
+HOW I VERIFIED THE PROJECT:
+README / package metadata / known files / other
+
+PROJECT INSTRUCTIONS FOUND:
+
+GIT STATE BEFORE WORK:
+clean / modified / not using Git
+
+AUTHORED CONTENT AREAS:
+
+TECHNICAL CODE AREAS:
+
+AREAS THAT SHOULD NOT BE IN SCOPE:
+```
+
+Then write one sentence:
+
+> I know I am in the correct project because ________________________________.
+
+If that sentence is weak, inspect more before changing anything.
+
+## Quality check
+
+You understand the context when you can answer:
+
+1. Where is the session?
+2. What project is this?
+3. What evidence identifies the project?
+4. What state was the repository already in?
+5. What important files or instructions shape the work?
+6. What nearby information should remain outside the task?
+
+## Reflection
+
+Have you ever edited the wrong copy of a file, the wrong folder, or an old version of a project?
+
+What simple context check would have caught it sooner?
