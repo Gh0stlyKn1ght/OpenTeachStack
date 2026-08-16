@@ -1,0 +1,325 @@
+---
+title: "Lab: Inspect Before You Change"
+description: "Use the embedded deterministic terminal to inspect a fictional repository, observe permission boundaries, and collect evidence without touching a real shell."
+course: "ots-320"
+chapter: "When AI Enters the Terminal"
+order: 3
+type: "practice"
+lessonType: "lab"
+minutes: 30
+artifact: "Inspection evidence log"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/01-when-ai-enters-the-terminal/01-3"
+---
+This lab starts with a rule you will use throughout the course:
+
+**Inspect first. Change later.**
+
+The terminal below looks like a real command line because the interface is real xterm. The effects are not real. Every command is routed into a deterministic OTS-320 training engine with a fictional repository in memory.
+
+No Bash. No PowerShell. No provider account. No API key. No hidden network request.
+
+That matters because the first thing you are learning is not installation. You are learning how to **read the evidence of an agent session**.
+
+## Lab goal
+
+By the end of this lab, you should be able to:
+
+- identify the working directory,
+- inspect a small repository,
+- distinguish file reads from Git evidence,
+- recognize a blocked execute or network request,
+- compare the same inspection task across Codex, Claude Code, and Antigravity presentation modes,
+- explain why an agent's final sentence is weaker evidence than observable events.
+
+## The training repository
+
+The fixture contains only synthetic data.
+
+You will see files such as:
+
+```text
+README.md
+package.json
+src/data/sample-lessons.json
+```
+
+The starting permission model is:
+
+```text
+READ      allowed
+WRITE     blocked
+EXECUTE   blocked
+NETWORK   blocked
+```
+
+That is enough access to investigate without allowing the fixture to pretend that investigation requires modification.
+
+## Run the lab
+
+<Ots320TerminalLab />
+
+## Pass 1: learn the workspace
+
+Start on the **Codex CLI** tab.
+
+Run:
+
+```text
+pwd
+```
+
+Record the working directory.
+
+Then run:
+
+```text
+ls
+```
+
+Do not just read the terminal text. Watch the **Evidence events** panel too.
+
+Next inspect the README:
+
+```text
+cat README.md
+```
+
+Questions:
+
+1. What did the terminal show you?
+2. What event appeared beside the terminal?
+3. Did anything in the repository change?
+
+Now inspect Git state:
+
+```text
+git status
+```
+
+and:
+
+```text
+git diff
+```
+
+You should be able to say whether the fictional working tree begins clean and whether there is a change to review.
+
+## Pass 2: launch the represented agent surface
+
+Still in the Codex fixture, run:
+
+```text
+codex
+```
+
+The output is explicitly marked **EMULATED**.
+
+That label is important.
+
+The course is representing a documented launch command, but it is not pretending that OpenAI Codex actually connected to this page.
+
+Now run:
+
+```text
+/status
+```
+
+and:
+
+```text
+/permissions
+```
+
+Look at the evidence IDs shown in the event panel. Those IDs connect the fixture behavior to the OTS-320 technical evidence library.
+
+You do not need to memorize the IDs. Notice the architecture:
+
+```text
+first-party documentation
+        ↓
+OTS-320 evidence claim
+        ↓
+deterministic training fixture
+        ↓
+learner observation
+```
+
+We are separating **documented behavior** from **invented training output** on purpose.
+
+## Pass 3: ask the agent to inspect
+
+Run the bounded task:
+
+```text
+inspect this project. do not modify it.
+```
+
+Watch the event panel.
+
+The important output is not only:
+
+```text
+[EMULATED] Inspection complete.
+```
+
+The stronger evidence is the visible set of reads and the Git event showing that the working tree remained unchanged.
+
+Write down:
+
+```text
+Files inspected:
+
+Git evidence:
+
+Files changed:
+```
+
+If your last line is `none`, explain how you know.
+
+## Pass 4: cross a boundary on purpose
+
+Now try:
+
+```text
+npm test
+```
+
+The terminal should refuse the action because execute permission is blocked in this scenario.
+
+Read the response carefully.
+
+You should see the difference between:
+
+```text
+[EXEC] npm test
+```
+
+and:
+
+```text
+[APPROVAL] blocked execute permission required
+```
+
+The first would represent an executed action.
+
+The second represents a **decision boundary**.
+
+Now try:
+
+```text
+curl https://example.com
+```
+
+Network is blocked too.
+
+Again, the useful question is not "Did the command fail?"
+
+The useful question is:
+
+> **Why was the action unavailable, and what kind of permission would have been required?**
+
+## Pass 5: compare provider surfaces
+
+Switch to **Claude Code**.
+
+Run:
+
+```text
+claude
+```
+
+Then try the inspection task again.
+
+You can also use the fixture's documented plan-mode example:
+
+```text
+claude --permission-mode plan
+```
+
+Switch to **Antigravity CLI**.
+
+Run:
+
+```text
+agy
+```
+
+and:
+
+```text
+agy --help
+```
+
+Then repeat the inspection task.
+
+Do not rank the tools yet.
+
+Chapter 6 is where you will compare the same task across providers carefully.
+
+For now, notice the deeper similarity:
+
+- there is a working context,
+- there is an action surface,
+- there are permissions,
+- there is evidence,
+- there is a human deciding what to trust.
+
+## Your inspection evidence log
+
+Complete this after all three passes:
+
+| Observation | Codex fixture | Claude fixture | AGY fixture |
+| --- | --- | --- | --- |
+| Working directory |  |  |  |
+| Read allowed? |  |  |  |
+| Execute allowed? |  |  |  |
+| Network allowed? |  |  |  |
+| Files inspected |  |  |  |
+| Git state after inspection |  |  |  |
+| Provider-specific evidence shown |  |  |  |
+
+Then answer:
+
+> What evidence proves that the inspection task did not modify the fictional repository?
+
+## Reset behavior
+
+Use:
+
+```text
+reset
+```
+
+The scenario returns to its original deterministic state.
+
+That reset is part of the teaching design. Everyone should be able to reproduce the same starting state and compare observations.
+
+## What this lab does not prove
+
+This lab does **not** prove that a current installation of Codex, Claude Code, or Antigravity will print the same sentences shown here.
+
+It is not a captured provider transcript.
+
+It proves that you can reason about:
+
+- context,
+- permissions,
+- observable actions,
+- evidence,
+- blocked boundaries,
+- resettable state.
+
+Later provider chapters move from this safe model into current documented product behavior.
+
+## Safety / source note
+
+The provider command examples represented by the fixture are backed by the Phase 3 evidence library and first-party documentation verified for this course. Product syntax marked as version-sensitive must be rechecked before publication or live installation work.
+
+The repository in this lab is fictional. Keep real student records, school credentials, secrets, and production systems out of training exercises.
+
+## Reflection
+
+Which was more useful for understanding the session: the agent-style output in the terminal or the event evidence beside it?
+
+Why?
