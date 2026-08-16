@@ -141,7 +141,7 @@ export const OTS320_COURSE: CourseStructure = {
       [
         section("06.0", "Chapter Overview", "overview", "15 minutes"),
         section("06.1", "Same Repository, Same Task, Same Evidence Standard", "section", "20 minutes"),
-        section("06.2", "Equivalent Concepts vs Provider-Specific Behavior", "comparison", "25 minutes"),
+        section("06.2", "Equivalent Concepts vs Provider-Specific Behavior", "section", "25 minutes"),
         section("06.3", "Lab: Run the Comparison", "workshop", "40 minutes", "Cross-agent evidence matrix"),
         section("06.4", "Checkpoint: Compare Without Ranking by Vibes", "checkpoint", "15 minutes", "Cross-agent comparison matrix"),
       ],
@@ -173,7 +173,7 @@ export const OTS320_COURSE: CourseStructure = {
       [
         section("08.0", "Chapter Overview", "overview", "15 minutes"),
         section("08.1", "Checkpoint Before Change", "section", "20 minutes"),
-        section("08.2", "Diff, Test, Review, Revert", "workflow", "25 minutes"),
+        section("08.2", "Diff, Test, Review, Revert", "section", "25 minutes"),
         section("08.3", "Lab: Review and Roll Back an Agent Change", "workshop", "40 minutes", "Change evidence log"),
         section("08.4", "Checkpoint: Ship, Revise, or Revert", "checkpoint", "15 minutes", "Verified change dossier"),
       ],
@@ -205,7 +205,7 @@ export const OTS320_COURSE: CourseStructure = {
       [
         section("10.0", "Chapter Overview", "overview", "15 minutes"),
         section("10.1", "MCP Clients, Servers, Tools, and Data", "section", "25 minutes"),
-        section("10.2", "Authorization, Secrets, and Destructive Operations", "safety", "25 minutes"),
+        section("10.2", "Authorization, Secrets, and Destructive Operations", "section", "25 minutes"),
         section("10.3", "Lab: Audit an MCP Tool Boundary", "workshop", "35 minutes", "MCP trust review"),
         section("10.4", "Checkpoint: Should This Tool Be Connected?", "checkpoint", "15 minutes", "MCP trust-boundary review"),
       ],
