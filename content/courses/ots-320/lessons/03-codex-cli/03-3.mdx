@@ -1,0 +1,443 @@
+---
+title: "Lab: Inspect a Repository with Codex"
+description: "Use the embedded deterministic Codex fixture to practice launch, status, project instructions, permissions, inspection, review, and blocked execution without a live provider account."
+course: "ots-320"
+chapter: "Codex CLI"
+order: 3
+type: "practice"
+lessonType: "lab"
+minutes: 35
+artifact: "Codex evidence record"
+migrationStatus: "authored"
+canonicalRoute: "/book/ots-320/03-codex-cli/03-3"
+---
+This is the first provider-specific lab.
+
+The interface represents **Codex CLI concepts**, but the environment remains the safe OTS-320 fixture.
+
+That distinction is non-negotiable:
+
+```text
+xterm interface: real
+training engine: real course code
+repository: fictional
+Codex service connection: none
+terminal output: emulated
+provider behavior claims: documented in evidence library
+```
+
+You are practicing how to operate a Codex session **before** you practice on a repository you care about.
+
+## Lab goal
+
+Build a Codex evidence record that answers:
+
+```text
+Where did the session start?
+What project instructions existed?
+What permission posture was active?
+What did Codex inspect?
+What actions were blocked?
+What did /review have available to review?
+What evidence proves the working tree remained unchanged?
+```
+
+## Open the Codex fixture
+
+<Ots320TerminalLab />
+
+Select **Codex CLI** if another provider tab is active.
+
+## Pass 1: prove the starting context
+
+Run:
+
+```text
+pwd
+```
+
+Record:
+
+```text
+WORKING DIRECTORY:
+```
+
+Then:
+
+```text
+ls
+```
+
+You should see the synthetic repository files, including:
+
+```text
+AGENTS.md
+README.md
+package.json
+src/data/sample-lessons.json
+```
+
+Now inspect Git state:
+
+```text
+git status
+```
+
+Record:
+
+```text
+STARTING GIT STATE:
+```
+
+Then:
+
+```text
+git diff
+```
+
+A clean fixture should show no changes.
+
+Do not treat that as trivia.
+
+This is your baseline.
+
+## Pass 2: read the project before launching the agent model
+
+Read:
+
+```text
+cat README.md
+```
+
+Then:
+
+```text
+cat AGENTS.md
+```
+
+Write down the project rule that matters most for this lab.
+
+A reasonable answer is:
+
+```text
+Inspect before modifying anything.
+```
+
+But there are several valid choices.
+
+Now inspect the project command surface:
+
+```text
+cat package.json
+```
+
+Notice that the repository defines a test script.
+
+Do **not** run it yet.
+
+You are still mapping context.
+
+## Pass 3: launch the represented Codex session
+
+Run:
+
+```text
+codex
+```
+
+The fixture will respond with `[EMULATED]` output and an evidence event tied to:
+
+```text
+codex-launch
+```
+
+The output is not a transcript from OpenAI.
+
+The command relationship is documented; the displayed sentence is course-authored fixture output.
+
+That is exactly the evidence distinction this course is trying to teach.
+
+## Pass 4: inspect Codex session configuration
+
+Run:
+
+```text
+/status
+```
+
+Record what the fixture says about:
+
+```text
+workspace:
+read:
+write:
+execute:
+network:
+```
+
+Now run:
+
+```text
+/permissions
+```
+
+Compare the terminal response with the permission panel beside it.
+
+Question:
+
+> Does the agent's text tell you anything that the environment panel contradicts?
+
+It should not.
+
+If a training fixture ever says one permission is allowed while the visible engine state says something else, that would be a course bug worth fixing.
+
+## Pass 5: inspect project instructions through the Codex model
+
+Run:
+
+```text
+/init
+```
+
+The real Codex CLI currently documents `/init` as a way to create an `AGENTS.md` file.
+
+In this fixture, `AGENTS.md` already exists.
+
+So the deterministic response does **not** overwrite it. It tells you the documented command is being represented and points you back to the existing file.
+
+This is intentional.
+
+The lab is not going to fake a file write just to make `/init` look dramatic.
+
+Now ask yourself:
+
+> If this were a real repository with an existing AGENTS.md, would I want an agent to replace it automatically?
+
+Probably not without inspection.
+
+## Pass 6: give Codex a bounded investigation
+
+Run:
+
+```text
+inspect this project. do not modify it.
+```
+
+Watch the **Evidence events** panel.
+
+You should see reads for:
+
+```text
+AGENTS.md
+README.md
+package.json
+src/data/sample-lessons.json
+```
+
+and Git evidence indicating the working tree remained unchanged.
+
+Record:
+
+```text
+FILES INSPECTED:
+
+FILES MODIFIED:
+
+GIT EVIDENCE:
+```
+
+Now answer:
+
+> What is stronger evidence that nothing changed: the sentence "No files were modified" or the Git evidence?
+
+The Git evidence is stronger because it is tied to repository state rather than only an agent-style assertion.
+
+## Pass 7: trigger an action outside the current boundary
+
+Run:
+
+```text
+npm test
+```
+
+The fixture has execute permission blocked.
+
+The command should not run.
+
+Record:
+
+```text
+REQUESTED ACTION:
+npm test
+
+ACTION TYPE:
+execute
+
+CURRENT RESULT:
+blocked
+```
+
+Now explain why the block makes sense.
+
+The task you gave was investigation.
+
+You did not yet need execution to answer:
+
+```text
+What is this repository?
+What files matter?
+What instructions apply?
+```
+
+A real task may later justify the test command.
+
+But capability should expand when the task requires it, not automatically at launch.
+
+## Pass 8: use `/review`
+
+Run:
+
+```text
+/review
+```
+
+The current fixture has no working-tree changes.
+
+So the represented review reports that there is nothing to review.
+
+This is more useful than inventing a fake bug finding.
+
+The lesson is:
+
+```text
+review needs an actual review target
+```
+
+In a real Codex workflow, current official documentation describes review targets such as uncommitted changes, a commit, or a base branch.
+
+You will use that model more deeply in Chapter 8.
+
+## Pass 9: inspect the state again
+
+Finish with:
+
+```text
+git status
+```
+
+and:
+
+```text
+git diff
+```
+
+Compare them with your starting state.
+
+Your final record should be able to say:
+
+```text
+Starting state: clean
+Ending state: clean
+Write events: none
+Execute attempt: blocked
+Network use: none
+```
+
+That is a complete result.
+
+A lab does not need to mutate something to be meaningful.
+
+## Codex evidence record
+
+Complete this table:
+
+| Evidence | Observation |
+| --- | --- |
+| Working directory |  |
+| Starting Git status |  |
+| AGENTS.md rule |  |
+| `/status` workspace |  |
+| Read permission |  |
+| Write permission |  |
+| Execute permission |  |
+| Network permission |  |
+| Files inspected |  |
+| Execute action attempted |  |
+| Execute result |  |
+| `/review` result |  |
+| Ending Git status |  |
+| Ending diff |  |
+
+Then identify the evidence IDs you observed:
+
+```text
+codex-launch
+codex-init-agents-md
+codex-session-status
+codex-session-permissions
+codex-review
+```
+
+## What the fixture teaches accurately
+
+The fixture is designed to preserve these documented relationships:
+
+```text
+codex        -> interactive Codex CLI launch concept
+/init        -> project instruction creation concept
+/status      -> session configuration inspection
+/permissions -> permission control
+/review      -> dedicated review workflow
+```
+
+It also teaches the repository-independent concepts:
+
+```text
+cwd
+Git baseline
+project instructions
+read events
+blocked execute
+visible evidence
+```
+
+## What the fixture does not claim
+
+It does not claim:
+
+- that real Codex prints the same sentences,
+- that a live account is authenticated,
+- that a provider model generated these responses,
+- that real filesystem writes occurred,
+- that the current browser has shell access,
+- that all Codex configuration options are represented.
+
+That line protects the course from becoming a demo that lies.
+
+## Optional live transfer
+
+If you already have Codex CLI installed on a machine and repository you control, you may transfer the same **inspection-only** workflow to a small synthetic or personal test project:
+
+```text
+check location
+check git status
+run codex
+inspect /status
+inspect /permissions
+ask for a project explanation without edits
+review the files and Git state yourself
+```
+
+Do not use real student data, school credentials, or production school systems for this practice.
+
+If your installed CLI differs from the lesson, use the current official documentation and `codex --help` / in-product help as the source of truth. Record the difference rather than forcing the current tool to behave like the course fixture.
+
+## Source and version note
+
+The Codex command relationships in this lab were rechecked against current official OpenAI documentation on 2026-08-15. The terminal sentences are emulated course output.
+
+## Reflection
+
+Which single artifact gave you the clearest picture of control in the session: `/status`, `/permissions`, `AGENTS.md`, the event panel, or Git state?
+
+Why?
